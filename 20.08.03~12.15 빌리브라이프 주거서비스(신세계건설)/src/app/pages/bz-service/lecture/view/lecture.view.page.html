@@ -1,0 +1,128 @@
+<v-app>
+    <v-body title="문화강좌">
+        <div class="container">
+            <div class="reservation"><!-- 10-21 태그 추가 -->
+                <h4 class="main_title flt_left">
+                    <p>
+                        <span class="highlight">{{lecDetail?.lecNm}}</span>
+                    </p>
+                </h4>
+                <!-- 강좌 정보 -->
+                <div class="flat_round_box">
+                    <div class="content">
+                        <div class="info_box">
+                            <h5 class="title">강좌 기본정보</h5>
+                            <dl>
+                                <dt>강사</dt>
+                                <dd>{{lecDetail?.techrNm}}</dd>
+
+                                <dt>장소</dt>
+<!--                                TODO 시설정보-->
+                                <dd>휘트니스 센터</dd>
+
+                                <dt>정원</dt>
+                                <dd>{{lecDetail?.rstf}}</dd>
+
+                                <dt>신청대상</dt>
+                                <dd>{{lecDetail?.aplTget}}</dd>
+
+                                <dt>기간/차수</dt>
+                                <dd>{{lecDetail?.lecStrDt | stringDateFormatDt:{isKo:true} }} ~ {{lecDetail?.lecEndDt | stringDateFormatDt:{isKo:true} }} / 총 {{lecDetail?.totCnt}}</dd>
+
+                                <dt>요일/시간</dt>
+                                <dd>{{lecDetail?.lecDay}} / {{lecDetail?.lecTm}}</dd>
+
+                                <dt>접수기간</dt>
+                                <dd>{{lecDetail?.acpStrDt | stringDateFormatDt:{isKo:true} }} ~ {{lecDetail?.acpEndDt | stringDateFormatDt:{isKo:true} }}</dd>
+                            </dl>
+                        </div>
+                        <div class="info_box">
+                            <h5 class="title">강좌 신청정보</h5>
+                            <dl>
+                                <dt>수강료</dt>
+                                <dd>
+                                    <span class="fc_org">{{lecDetail?.lecFee | numberFormatWithComma}} 원</span>
+                                    <span class="ft_gray">(관리비 합산 부과)</span>
+                                </dd>
+                                <dt *ngIf="lecDetail?.lecStats==='A'">신청자</dt>
+                                <dd *ngIf="lecDetail?.lecStats==='A'">{{globalVars.userDetail?.custNm}} │ {{globalVars.userDetail?.blNo}}동 {{globalVars.userDetail?.rmNo}}호 │ {{globalVars.userDetail?.mpPhoneNo | parseFormatPhoneNumber:{ withMasking:true } }}</dd>
+                            </dl>
+                            <div class="btm_btn">
+                                <!-- 신청 가능 -->
+                                <div class="checkb round lt" *ngIf="lecDetail?.lecStats==='A'">
+                                    <label for="chk_01">유의사항을 확인하였습니다.
+                                        <input type="checkbox" [(ngModel)]="selectedAgree" id="chk_01" name="chk_01">
+                                        <span class="chkmark"></span>
+                                    </label>
+                                </div>
+                                <a (click)="onClickLecApply()" class="btn btn_type2" *ngIf="lecDetail?.lecStats==='A'">문화강좌 신청</a>
+                                <!-- // 신청 가능 -->
+                                <!-- 접수 마감 -->
+                                <a href="#" class="btn disabled" *ngIf="lecDetail?.lecStats==='B'">접수마감</a>
+                                <!-- // 접수 마감 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10-21 추가 : 버튼 -->
+                <div class="btn_area">
+                    <a (click)="goListPage()" class="btn btn_type3">목록보기</a>
+                </div>
+                <!-- // 10-21 추가 : 버튼 -->
+
+                <!-- 유의사항 : tab 형태 -->
+                <div class="flat_round_box btm_info_box">
+                    <div class="content">
+                        <div class="tab_list">
+                            <div>
+                                <ul>
+                                    <li [ngClass]="!selectedTab || selectedTab==='lecCts' ? 'on' : ''">
+                                        <a (click)="onClickTab('lecCts')">강좌상세</a>
+                                    </li>
+                                    <li [ngClass]="selectedTab==='techrInf' ? 'on' : ''">
+                                        <a (click)="onClickTab('techrInf')">강사정보</a>
+                                    </li>
+                                    <li [ngClass]="selectedTab==='ntcMatt' ? 'on' : ''">
+                                        <a (click)="onClickTab('ntcMatt')">유의사항</a>
+                                    </li>
+                                    <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                        <a (click)="onClickTab('cncPlcy')">취소/환불규정</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="tab_block">
+                            <li [ngClass]="!selectedTab || selectedTab==='lecCts' ? 'on' : ''">
+                                <div class="admin_content" [innerHTML]="lecDetail?.lecCts">
+                                </div>
+                            </li>
+                            <li [ngClass]="selectedTab==='techrInf' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of lecDetail?.techrInf?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li [ngClass]="selectedTab==='ntcMatt' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of lecDetail?.ntcMatt?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of lecDetail?.cncPlcy?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+
+</v-app>

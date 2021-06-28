@@ -1,0 +1,25 @@
+<v-app>
+    <v-body title="빌리브 이벤트상세">
+        <div class="container">
+            <!-- 디자인 수정으로 <div class="flat_round_box bg_white"> 추가 -->
+            <div class="flat_round_box bg_white notice_box">
+                <div class="notice_title">
+                    <h4>{{eventDetail?.eventTtl}}</h4>
+                    <p class="time">{{eventDetail?.eventStrDt | stringDateFormatDt}}
+                        ~ {{eventDetail?.eventEndDt | stringDateFormatDt}}</p>
+                </div>
+                <div *ngIf="eventDetail?.linkUrl" class="notice_link">
+                    <a (click)="goExternalPage(eventDetail)" class="link">{{eventDetail?.linkUrl}}</a>
+                </div>
+                <!-- 이벤트 상세 -->
+                <div class="admin_content">
+                    <img [src]="eventDetail?.imgFileIdPath | fileToWebPath" alt="샘플"/>
+                </div>
+            </div>
+            <!-- 목록 보기 -->
+            <div class="go_list">
+                <a class="btn btn_type2" (click)="goEventListPage()">목록 보기</a>
+            </div>
+        </div>
+    </v-body>
+</v-app>

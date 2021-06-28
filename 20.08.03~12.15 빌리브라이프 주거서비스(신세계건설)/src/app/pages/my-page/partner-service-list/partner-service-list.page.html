@@ -1,0 +1,99 @@
+<v-app>
+    <v-body title="제휴 서비스 신청내역 조회">
+        <div class="container">
+            <div class="svc_list">
+                <div class="search_area">
+                    <dl>
+                        <dt>서비스 구분</dt>
+                        <dd>
+                            <ng-select class="type2" [items]="ptnrTypeList"
+                                       [searchable]="false"
+                                       [clearable]="false"
+                                       [(ngModel)]="ptnrSearchModel.ptnrTp"
+                                       bindLabel="cdName"
+                                       bindValue="cd"
+                            >
+                            </ng-select>
+                        </dd>
+                    </dl>
+                    <dl class="date_area">
+                        <dt>이용/예약 월</dt>
+                        <dd>
+                            <div class="input_row">
+                                <ng-select [items]="searchStrYearOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="ptnrSearchModel.searchStrYear"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="연도"
+                                >
+                                </ng-select>
+                                <ng-select [items]="searchStrMonthOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="ptnrSearchModel.searchStrMonth"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="월"
+                                >
+                                </ng-select>
+                                <span>~</span>
+                                <ng-select [items]="searchEndYearOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="ptnrSearchModel.searchEndYear"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="연도"
+                                >
+                                </ng-select>
+                                <ng-select [items]="searchEndMonthOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="ptnrSearchModel.searchEndMonth"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="월"
+                                >
+                                </ng-select>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="btn_area">
+                        <button type="button" (click)="onClickSearch()" class="btn btn_type2 w_100">검색</button>
+                    </div>
+                </div>
+                <div class="list_count">
+                    <p>총 <span class="red">{{ptnrSearchModel.totalCount}}</span>건</p>
+                </div>
+                <div class="round_box">
+                    <div class="content">
+                        <ul class="tbl_list">
+                            <li class="thead">
+                                <span class="th">이용/예약 서비스</span>
+                                <span class="th">예약일자</span>
+                                <span class="th">신청자</span>
+                            </li>
+                            <li class="no_data" *ngIf="!isExistList;else other_content">
+                                <p>조회된 서비스 이용/예약 내역이 없습니다.</p>
+                            </li>
+                            <ng-template #other_content>
+                                <li *ngFor="let data of ptnrResvList;">
+                                    <div>
+                                        <p><a (click)="goDetailPage(data.ptnrResvId)">{{data.ptnrNm}}</a></p>
+                                    </div>
+                                    <p>{{data.resvDt | stringDateFormatDt}} ({{data.resvDt | getDayOfTheWeek:{isKo:true} }})</p>
+                                    <p>{{data.custNm}} / {{data.iptDtm | stringDateFormatDtm}}</p>
+                                </li>
+                            </ng-template>
+                        </ul>
+
+                        <!-- 더보기 -->
+                        <a class="add_item" *ngIf="ptnrSearchModel?.page < ptnrSearchModel?.totalEndPage" (click)="loadPtnrResvList(true)">더보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+</v-app>

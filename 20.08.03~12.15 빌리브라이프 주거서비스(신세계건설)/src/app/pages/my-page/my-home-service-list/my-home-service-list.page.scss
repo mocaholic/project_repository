@@ -1,0 +1,488 @@
+
+.schedule h5 {
+    text-align: center;
+    padding-top: 0.8333rem;
+}
+.schedule h5 .month {
+    display: block;
+    margin-top: 1.25rem;
+    margin-bottom: 0.8333rem;
+}
+.schedule h5 .month:before {
+    display: inline-block;
+    content: "";
+    background: url('/assets/icon/class.svg') no-repeat;
+    background-size: 100%;
+    width: 1.667rem;
+    height: 1.75rem;
+    margin-right: 0.4167rem;
+    vertical-align: -0.25rem;
+}
+
+.date_list {
+    position: relative;
+    overflow: hidden;
+    height: 75px;
+    margin: 1.5rem -0.3333rem;
+    width: calc(100% + 0.6667rem);
+    padding: 0 0.3333rem;
+}
+.date_list ion-slides {
+	position: relative;
+	z-index: 1;
+	margin-top: 0.3333rem;
+	background: #F9F9F9;
+	border-radius: 0.25rem;
+    text-align: center;
+    overflow: visible;
+}
+.date_list ion-slide {
+	position: relative;
+	// float: left;
+	height: 4.833rem;
+	width: 14.25%;
+}
+.date_list ion-slide.today:before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 0.3333rem);
+    height: calc(100% - 0.3333rem);
+    border: 0.1667rem solid #4b423c;
+    border-radius: 0.25rem;
+}
+.date_list ion-slide a {
+    display: block;
+	color: #413a34;
+	text-align: center;
+	// z-index: 10;
+    font-family:'Montserrat';
+    position: relative;
+}
+.date_list ion-slide a.exist:before {
+    display: block;
+    content: "";
+    background: #E74536;
+    width: 0.3333rem;
+    height: 0.3333rem;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    margin-left: -0.1667rem;
+}
+.date_list ion-slide a span {
+	display: block;
+}
+.date_list ion-slide a .num {
+	font-weight: bold;
+	font-size: 1.333rem;
+    margin: 0.4167rem 0 0.3333rem;
+    font-family: 'Montserrat';
+}
+.date_list ion-slide a .txt {
+	color: #8D8785;
+	font-size: 1rem;
+}
+.date_list ion-slide a .txt.sat {
+    color: #5A7BD6;
+}
+.date_list ion-slide a .txt.sun {
+    color: #E44E28;
+}
+.date_list ion-slide.on a {
+	color: #fff;
+}
+.date_list ion-slide.on a .txt {
+	color: #fff;
+}
+.date_list ion-slide.on::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: calc(100% + 0.5rem);
+	background: #4b423c;
+	z-index: -1;
+	top: -0.25rem;
+	left: 0;
+	border-radius: 0.25rem;
+	overflow: hidden;
+	box-shadow: 0px 0.3333rem 0.5rem #5A514C94;
+}
+.date_list::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+.sch_list {}
+.sch_list h6 {
+    padding-top: 0.4167rem;
+}
+.sch_list .right_area h6 {
+    padding-top: 2.5rem;
+}
+.schedule h6 span {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    margin-left: 0.5833rem;
+} 
+.sch_list .no_data {
+    height: 8.75rem;
+    background: #fff;
+    line-height: 7;
+    border-top: 0.08333rem solid #D4D9E0;
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    color: #5A514C;
+    padding: 0;
+}
+.sch_list ul {
+    margin-top: 1.25rem;
+    max-height: 38.75rem;
+    overflow-y: auto;
+}
+.sch_list ul li {
+    background: #fff;
+    border-top: 0.08333rem solid #D4D9E0;
+    padding: 0.9167rem 0.8333rem;
+    position: relative;
+}
+.sch_list ul li.closed:after {
+    display: block;
+    content: "휴관";
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.333rem;
+    padding-top: 2.5rem;
+    box-sizing: border-box;    
+}
+.sch_list ul li a {
+    display: block;
+}
+.sch_list ul li .tit {
+    font-size: 1.083rem;
+}
+.sch_list ul li .tit:after {
+    display: inline-block;
+    content: "";
+    background: url('/assets/icon/arr_right_red.svg') no-repeat;
+    background-size: 100%;
+    width: 0.5rem;
+    height: 0.8333rem;
+    margin-left: 0.4167rem;
+    vertical-align: -0.1667rem;
+}
+.sch_list ul li .tit span {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 95%;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.sch_list ul li a > span {
+    display: block;
+    margin-top: 0.6667rem;
+}
+.sch_list ul li .info_txt {
+    font-size: 1.083rem;
+    color: #8D8785;
+}
+.sch_list ul li .date {
+    font-size: 1rem;
+}
+.sch_list ul li + li {
+    margin-top: 0.8333rem;
+}
+
+.sch_list .day li .tit {
+    color: #C81925;
+}
+
+.sch_list .period li .tit {
+    color: #FDBD2A;
+}
+.sch_list .period li .tit:after {
+    background: url('/assets/icon/arr_right_yellow.svg') no-repeat;
+    background-size: 100%;
+}
+
+.ps_txt {
+    font-size: 1.167rem;
+    color: #5A514C;
+    line-height: 1.57;
+    padding-left: 1.25rem;
+    position: relative;
+    margin-top: 1.667rem;
+}
+.ps_txt:before {
+    display: block;
+    content: "※";
+    position: absolute;
+    top: 0.1667rem;
+    left: 0;
+    font-size: 0.75rem;
+}
+
+.bill {
+    margin-top: 2.083rem;
+}
+.bill span.up:before, 
+.bill span.down:before {
+    margin-right: 0.5rem;
+}
+
+.summary .tab_month {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.summary .tab_month li {
+    margin: 0 0.5833rem;
+}
+.summary .tab_month li a {
+    font-size: 1rem;
+    color: #B2AFAE;
+    padding: 0 0.5833rem;
+    position: relative;
+}
+.summary .tab_month li.on {}
+.summary .tab_month li.on a {
+    font-size: 1.333rem;
+    color: #413A34;
+    font-weight: 800;
+}
+.summary .tab_month li.on:after {
+    display: block;
+    content: "";
+    background: #C9E667;
+    height: 0.6667rem;
+    margin-top: -0.5rem;
+}
+.summary .tab_month + div {
+    margin-top: 1.417rem;
+}
+.summary .no_data {
+    display: block;
+    font-size: 1.25rem;
+    color: #5A514C;
+    text-align: center;
+    margin: 2.083rem 0;
+}
+
+.summary .price_list dl.prepare {
+    font-weight: 700;   
+    font-size: 1.333rem;
+    margin-top: 1.417rem;
+    color: #4B423C;
+}
+
+.right_area .btn_area {
+    margin-top: 1.25rem;
+}
+
+@media screen and (min-width: 1025px) {    
+    .schedule h5 {
+        padding-top: 0;
+        text-align: left;
+    }
+    .schedule h5 .month {
+        margin-top: 0;
+        margin-bottom: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .schedule h5 .month:before {
+        width: 23px;
+        height: 24px;
+        margin-right: 15px;
+        vertical-align: -4px;
+    }
+    
+    .date_list {
+        margin: 30px 0;
+        width: 100%;
+        height: 90px;
+    }
+    .date_list ion-slides {
+        margin: 3px 60px 0;
+        border-radius: 3px;
+    }
+    .date_list ion-slide {
+        height: 74px;
+        width: calc(100%/15);
+    }
+    .date_list ion-slide a.exist:before {
+        width: 5px;
+        height: 5px;
+        top: -7px;
+        margin-left: -2px;
+    }
+    .date_list ion-slide a span {
+        display: block;
+    }
+    .date_list ion-slide a .num {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    .date_list ion-slide a .txt {
+        font-size: 15px;
+    }
+    .date_list ion-slide.on::after {
+        height: calc(100% + 6px);
+        border-radius: 3px;
+        box-shadow: 0px 4px 6px #5A514C94;
+    }
+    .date_list > a {
+        display: block;
+        width: 60px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        text-indent: -9999px;
+        z-index: 2;
+    }
+    .date_list > a.btn_prev {
+        background: #EFF1F5 url('/assets/common/arr_left_calendar2.svg') no-repeat center;
+        background-size: 15px 27px;
+        left: 0;
+    }    
+    .date_list > a.btn_next {
+        background: #EFF1F5 url('/assets/common/arr_right_calendar2.svg') no-repeat center;
+        background-size: 15px 27px;
+        right: 0;
+    }    
+
+    .sch_list {}
+    .sch_list .left_area {
+        float: left;
+        width: calc(50% - 22px);
+    }
+    .sch_list .right_area {
+        float: right;
+        width: calc(50% - 22px);
+    }
+    .sch_list h6 {
+        padding-top: 0;
+        font-size: 18px;
+    }
+    .sch_list .right_area h6 {
+        padding-top: 0;
+    }
+    .schedule h6 span {
+        margin-left: 3px;
+        font-size: 20px;
+    } 
+    .sch_list .no_data {
+        height: 140px;
+        line-height: 8.75;
+        border-top-width: 1px;
+        margin-top: 18px;
+        font-size: 16px;
+    }
+    .sch_list ul {
+        margin-top: 16px;
+        max-height: 600px;
+    }
+    .sch_list ul li {
+        border-top-width: 1px;
+        padding: 20px 10px;
+    }
+    .sch_list ul li.closed:after {
+        font-size: 16px;
+        padding-top: 41px;
+    }
+    .sch_list ul li .tit {
+        font-size: 16px;
+    }
+    .sch_list ul li .tit:after {
+        width: 6px;
+        height: 10px;
+        margin-left: 5px;
+    }
+    .sch_list ul li a > span {
+        margin-top: 8px;
+    }
+    .sch_list ul li .info_txt {
+        font-size: 14px;
+    }
+    .sch_list ul li .date {
+        font-size: 14px;
+    }
+    .sch_list ul li + li {
+        margin-top: 12px;
+    }
+    .sch_list:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+    
+    .ps_txt {
+        font-size: 18px;
+        padding-left: 25px;
+        margin-top: 32px;
+    }
+    .ps_txt:before {
+        top: 0;
+        font-size: 18px;
+    }
+    
+    .bill {
+        margin-top: 27px
+    }
+    .bill span.up:before, 
+    .bill span.down:before {
+        margin-right: 6px;
+    }    
+    .bill .right_area {
+        height: 175px;
+    }
+    .bill .right_area .btn_area {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-top: 0;
+        width: 100%;
+    }
+    
+    .summary .tab_month li {
+        margin: 0 13px;
+    }
+    .summary .tab_month li a {
+        font-size: 16px;
+        padding: 0;
+    }
+    .summary .tab_month li.on {}
+    .summary .tab_month li.on a {
+        font-size: 20px;
+    }
+    .summary .tab_month li.on:after {
+        height: 8px;
+        margin-top: -8px;
+    }
+    .summary .tab_month + div {
+        margin-top: 28px;
+    }
+    .summary .no_data {
+        font-size: 16px;
+        margin: 61px 0 80px;
+    }
+    
+    .summary .price_list dl.prepare {
+        font-size: 20px;
+        margin-top: 22px;
+    }
+    
+}

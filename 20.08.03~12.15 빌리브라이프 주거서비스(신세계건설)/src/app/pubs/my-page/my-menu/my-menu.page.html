@@ -1,0 +1,207 @@
+<v-app>
+    <v-body title="마이메뉴 편집">
+        <div class="container">
+            <div class="round_box">
+                <div class="content">
+                    <!-- 11.18 추가 : 등록된 메뉴 없을 때 -->
+                    <p class="no_data">마이메뉴를 추가하려면 각 메뉴 페이지에서<br>별(☆) 아이콘을 클릭하세요.</p>
+                    <!-- // 11.18 추가 : 등록된 메뉴 없을 때 -->
+                    <ion-list>
+                        <ion-reorder-group (ionItemReorder)="reorder($event)" [disabled]="false">
+                            <!-- <ion-item *ngFor="let accessory of accessories;index as i">
+                                <ion-label>{{accessory}}</ion-label>
+                                <ion-reorder></ion-reorder>
+                            </ion-item> -->
+                            <!-- 11.18 추가 : 아이콘 추가 및 그룹화 -->
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon mem_news"></i><span>소식방</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon i_notice"></i><span>공지사항</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon i_lettering"></i><span>레터링신청</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon life_style"></i><span>신세계라이프스타일</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon nursery"></i><span>보육</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon social"></i><span>소셜</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon i_life"></i><span>생활</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon s_service"></i><span>신세계서비스</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <!-- // 11.18 추가 : 아이콘 추가 및 그룹화 -->
+                            <div>
+                                <a href="#" class="favorites off"></a>
+                                <ion-reorder>
+                                    <ion-item class="">
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon health"></i><span>휘트니스센터</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <div>
+                                <a href="#" class="favorites"></a>
+                                <ion-reorder>
+                                    <ion-item> 
+                                        <ion-label>
+                                            <span class="txt_area"><i class="micon ps_list"></i><span>제휴서비스 신청내역 조회</span></span>
+                                        </ion-label>
+                                    </ion-item>
+                                </ion-reorder>
+                            </div>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon myhome"></i><span>우리집 현황</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon expenses"></i><span>관리비 조회</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon lecture"></i><span>문화강좌</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon citizen_board"></i><span>입주민 게시판</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon online"></i><span>랜선 집들이</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon comp_market"></i><span>단지장터</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon ivst"></i><span>설문조사</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon mvote"></i><span>주민투표</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon comp_event"></i><span>단지 이벤트</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                            <ion-reorder>
+                                <ion-item>
+                                    <ion-label>
+                                        <a href="#" class="favorites"></a>
+                                        <span class="txt_area"><i class="micon bza_event"></i><span>주변상권 이벤트</span></span>
+                                    </ion-label>
+                                </ion-item>
+                            </ion-reorder>
+                        </ion-reorder-group>
+                    </ion-list>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button type="button" class="btn btn_type2">저장</button>
+            </div>
+        </div>
+    </v-body>
+</v-app>
+

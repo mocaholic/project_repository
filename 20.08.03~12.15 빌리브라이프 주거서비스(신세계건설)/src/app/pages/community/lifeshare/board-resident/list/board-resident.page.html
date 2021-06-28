@@ -1,0 +1,27 @@
+<v-app>
+    <v-body title="입주민 게시판" mnuId="LC_CM_CSB">
+        <div class="full_cont">
+            <div class="container">
+                <!-- 게시판 리스트 -->
+                <v-bltbrd-list
+                    #bltbrdList
+                    [bltbrdTpCd]="bltbrdTpCd"
+                >
+                    <!-- 이미지 title -->
+                    <div class="flat_round_box img_title">
+                        <div class="content">
+                            <img src="/assets/contents/lifeshare01_m.png" alt="샘플" class="mo" />
+                            <img src="/assets/contents/lifeshare01_p.png" alt="샘플" class="pc" />
+                            <div class="info_float">
+                                <h4>입주민 게시판</h4>
+                                <p>입주민 게시판은 다양함을 존중하며 자유로운 소통을 나누는 곳입니다.</p>
+                                <p>서로를 배려하는 따뜻한 이야기를 나누어주세요.</p>
+                                <button (click)="goInsertPage()" class="posting">게시글 작성하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </v-bltbrd-list>
+            </div>
+        </div>
+    </v-body>
+</v-app>
