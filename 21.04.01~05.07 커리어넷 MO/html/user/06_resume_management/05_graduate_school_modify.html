@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <link rel="stylesheet" href="../../../css/user.css">  <!-- //개인회원 CSS -->
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="popup_wrap" id="">
+        <h1>대학원 작성</h1>
+        <div class="popup_content_wrap cont_wrap">               
+            <div class="form_info_box form_school_box">
+                <div class="form_area">
+                    <div class="form_row">
+                        <div class="form_box insert_list_box">
+                            <input type="text" class="" placeholder="학교명을 입력해 주세요" value="한림대학교"/>
+                            <button type="button" class="btn btn_insert">직접입력</button>
+                            <button type="button" class="btn_txt_del">텍스트 전체 삭제</button>
+                            <div class="school_list">
+                                <ul>
+                                    <li>
+                                        <a href="#none"><em>춘</em>양상업고등학교</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><em>춘</em>천계성학교</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><em>춘</em>천고등학교</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><em>춘</em>천고등학교 부설 방송통신고등학교</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div class="form_row">
+                        <div class="form_box custom_select">
+                            <select>
+                                <option>학위를 선택해 주세요</option>
+                                <option selected>석사</option>
+                                <option>박사</option>
+                                <option>석박사</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form_row half">
+                        <div>
+                            <div class="form_col">
+                                <div class="form_box">
+                                    <input type="text" placeholder="YYYY. MM (입학년월)" value="1997. 03 입학">
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="form_box">
+                                    <input type="text" placeholder="YYYY. MM (졸업년월)" value="2004. 02 졸업">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   <div class="form_row">
+                        <div class="form_box label insert_list_box">
+                            <label for="" class="">주전공</label>
+                            <input type="text" placeholder="전공명을 입력해 주세요" value="전산정보처리학과"/>
+                            <button type="button" class="btn btn_insert">직접입력</button>
+                            <button type="button" class="btn_txt_del">텍스트 전체 삭제</button>
+                            <div class="school_list">
+                                <ul>
+                                    <li>
+                                        <a href="#none"><em>춘</em>양상업고등학교</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><em>춘</em>천계성학교</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><em>춘</em>천고등학교</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><em>춘</em>천고등학교 부설 방송통신고등학교</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>                
+                   </div>
+
+                    <div class="form_row half">
+                        <div>
+                            <div class="form_col">
+                                <div class="form_box">
+                                    <input type="text" placeholder="학점을 입력해 주세요." value="3.5">
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="form_box custom_select">
+                                    <select>
+                                        <option selected>4.5</option>
+                                        <option>4.3</option>
+                                        <option>4.0</option>
+                                        <option>100</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 전공 추가 시 노출-->
+                    <div class="major_add_box" style="display: none;">
+                        <div class="form_row l_type">
+                            <div class="form_col">
+                                <div class="form_box custom_select">
+                                    <select>
+                                        <option>전공선택</option>
+                                        <option>부전공</option>
+                                        <option>복수전공</option>
+                                        <option>이중전공</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="form_box">
+                                    <input type="text" placeholder="전공명을 입력해 주세요">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //전공 추가 시 노출-->
+
+                    <div class="form_row form_major">
+                        <button type="button" class="btn_bg_mid btn_add">전공 추가하기</button>
+                    </div>
+
+                    <div class="form_row">
+                        <div class="form_textarea">
+                            <label for="" class="txt">이수과목 및 연구내용</label>
+                            <textarea placeholder="이수과목 및 연구, 논문제목을 입력해 주세요">시스템 분석 및 설계, 전산수학, 전산학개론, 프로그래밍 언어, UNIX</textarea>
+                        </div>
+                    </div>
+                </div>  
+                <div class="btn_area">           
+                    <button type="button" class="btn">삭제하기</button>         
+                    <button type="button" class="btn primary">저장하기</button>
+                </div>  
+            </div>
+        </div>
+        <button type="button" class="btn_popup_close">팝업닫기</button>
+    </div>   
+</body>
+</html>

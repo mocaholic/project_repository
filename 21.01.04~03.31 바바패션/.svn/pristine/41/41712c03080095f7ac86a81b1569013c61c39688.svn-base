@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1440">
+    <title>BABATHE.COM</title>
+    <script src="../../js/jquery-3.5.1.min.js"></script><!--//juqery js-->
+    <script src="../../js/jquery.mCustomScrollbar.min.js"></script><!--//design scroll-->
+    <script src="../../js/swiper.min.js"></script><!--//swiper-->
+    <script src="../../js/layout.js"></script><!--UI js-->
+    <link rel="stylesheet" href="../../css/babathe.css">
+</head>
+<body>
+    <header></header>
+    <section class="container">
+    <div class="center-wrap w-fixed">
+        <div class="mybaba-wrap">
+            <div class="contents">
+                <!--lnb-->
+                <div class="lnb-wrap">
+                    <nav class="lnb-list">
+                        <ul class="depth1">
+                            <li>
+                                <a href="#">마이바바</a>
+                                <ul class="depth2">
+                                    <li><a href="#">쇼핑정보</a></li>
+                                    <li><a href="#">주문/배송 조회</a></li>
+                                    <li><a href="#">취소/교환/반품 조회</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">혜택정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">멤버십 혜택</a></li>
+                                    <li><a href="#">e포인트</a></li>
+                                    <li><a href="#">마일리지</a></li>
+                                    <li><a href="#">쿠폰</a></li>
+                                    <li><a href="#">임직원 혜택 현황</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">활동정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">상품 문의 내역</a></li>
+                                    <li class="on"><a href="#">1:1 문의 내역</a></li>
+                                    <li><a href="#">나의 상품리뷰</a></li>
+                                    <li><a href="#">관심상품</a></li>
+                                    <li><a href="#">관심브랜드</a></li>
+                                    <li><a href="#">방송알림 신청 현황</a></li>
+                                    <li><a href="#">친구 추천</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">회원정보</a>
+                                <ul class="depth2">
+                                    <li><a href="#">배송지 관리</a></li>
+                                    <li><a href="#">회원정보 수정</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--//lnb-->
+                <!--contents-->
+                <div class="cont-wrap">
+                    <h2 class="page-title">1:1 문의 등록</h2>
+                    <div class="notice-box">
+                        <ul class="list-group dash font-s14">
+                            <li>문의하신 내용에 대한 답변은 이메일 또는 마이바바 &gt; 활동정보 &gt; 1:1문의 내역에서 확인하실 수 있습니다.</li>
+                            <li>답변 완료 시 회원정보에 등록된 휴대전화번호로 알림을 받으실 수 있습니다.</li>
+                            <li>고객님의 소중한 개인정보 보호를 위해, 개인 정보(전화번호, 주민번호, 이름, 아이디 등)는 입력하지 않도록 주의해 주세요.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="form-wrap">
+                        <div class="hd-top mg-t-60">
+                            <h3 class="page-sub-title">문의유형 선택</h3>
+                        </div>
+                        <table class="tb-default">
+                            <caption></caption>
+                            <colgroup>
+                                <col width="180px" />
+                                <col width="" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">주문/배송 관련</td>
+                                    <td>
+                                        <div class="radio-list">
+                                            <div class="radio black"><input type="radio" id="que1-1" name="que1"><label for="que1-1">주문정보</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-2" name="que1"><label for="que1-2">상품정보</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-3" name="que1"><label for="que1-3">결제수단</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-4" name="que1"><label for="que1-4">배송</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-5" name="que1"><label for="que1-5">주문취소</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-6" name="que1"><label for="que1-6">교환</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-7" name="que1"><label for="que1-7">반품</label></div>
+                                            <div class="radio black"><input type="radio" id="que1-8" name="que1"><label for="que1-8">환불</label></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">회원/혜택 관련</td>
+                                    <td>
+                                        <div class="radio-list">
+                                            <div class="radio black"><input type="radio" id="que2-1" name="que2"><label for="que2-1">회원정보관리</label></div>
+                                            <div class="radio black"><input type="radio" id="que2-2" name="que2"><label for="que2-2">바바프리미엄</label></div>
+                                            <div class="radio black"><input type="radio" id="que2-3" name="que2"><label for="que2-3">e포인트</label></div>
+                                            <div class="radio black"><input type="radio" id="que2-4" name="que2"><label for="que2-4">마일리지</label></div>
+                                            <div class="radio black"><input type="radio" id="que2-5" name="que2"><label for="que2-5">쿠폰</label></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">기타</td>
+                                    <td>
+                                        <div class="radio-list">
+                                            <div class="radio black"><input type="radio" id="que3-1" name="que3"><label for="que3-1">이벤트</label></div>
+                                            <div class="radio black"><input type="radio" id="que3-2" name="que3"><label for="que3-2">패션리더</label></div>
+                                            <div class="radio black"><input type="radio" id="que3-3" name="que3"><label for="que3-3">사이트 이용문의</label></div>
+                                            <div class="radio black"><input type="radio" id="que3-4" name="que3"><label for="que3-4">불편/제안</label></div>
+                                            <div class="radio black"><input type="radio" id="que3-5" name="que3"><label for="que3-5">기타 </label></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="page-top mg-t-80">
+                            <h3 class="page-sub-title">주문상품</h3>
+                            <button type="button" class="btn sm primary">주문상품 조회</button>
+                        </div>
+                        <div class="">
+                            </
+
+                        <div class="hd-top mg-t-80">
+                            <h3 class="page-sub-title">문의내역</h3>
+                        </div>
+                        <div class="que-area">
+                            <div class="form-box">
+                                <input type="text" class="" placeholder="문의 제목 (최소 3자 이상 / 최대 30자 이내)" />
+                            </div>
+                            <textarea placeholder="내용을 입력해 주세요. (최소 10자 이상 / 최대 300자 이내)" class="mg-t-20"></textarea>
+                        </div>
+
+                        <div class="hd-top mg-t-80">
+                            <h3 class="page-sub-title">첨부파일</h3>
+                        </div>
+
+                        <div class="hd-top mg-t-80">
+                            <h3 class="page-sub-title">답글 작성 시 알림받기</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--//contents-->
+            </div>
+        </div>
+    </div>
+    </section>
+    <footer></footer>
+</body>
+<script>    
+    $(document).ready(function(){
+        /*publishing UI only*/
+        $('.order-period .period').find('.btn.sm').on('click', function(){
+            var period = $(this).closest('.period');
+            period.find('.btn.sm').removeClass('primary');
+            $(this).addClass('primary');
+        });//period click event
+    });    
+</script>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="wrapper rec">
+        <header class="sub">
+            <div class="header">
+                <h1 class="page_title">자기소개서 무료 컨설팅</h1>
+                <a href="#" class="btn_back">이전</a>
+            </div>
+        </header>
+
+        <section>
+            <div class="pd0_box">
+                <!-- 이력서 있을 경우 -->
+                <div class="resume_sel">
+                    <p>자기소개서 컨설팅을 받을 커리어 이력서를 선택해 주세요.</p>
+                    <div class="form_area">
+                        <div class="form_row">
+                            <div class="form_col">
+                                <div class="radio">
+                                    <input type="radio" id="resume1" name="resume">
+                                    <label for="resume1" class="row">
+                                        인내와 성실이 무기이다
+                                        <span>최종수정일 : <span class="num">21. 03. 14</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="btn_area">
+                                    <button type="button" class="btn sm">보기</button>
+                                    <button type="button" class="btn sm primary">수정</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_col">
+                                <div class="radio">
+                                    <input type="radio" id="resume2" name="resume">
+                                    <label for="resume2" class="row">
+                                        인내와 성실이 무기이다
+                                        <span>최종수정일 : <span class="num">21. 03. 14</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="btn_area">
+                                    <button type="button" class="btn sm">보기</button>
+                                    <button type="button" class="btn sm primary">수정</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 이력서 미완성 -->                            
+                        <div class="form_row">
+                            <div class="form_col">
+                                <div class="radio">
+                                    <input type="radio" id="resume3" name="resume" disabled>
+                                    <label for="resume3" class="row">
+                                        인내와 성실이 무기이다
+                                        <span>최종수정일 : <span class="num">21. 03. 14</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="btn_area">
+                                    <button type="button" class="btn sm primary">이력서 완성하기</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 이력서 미완성 -->
+                        <!-- 이력서 선택 불가 -->
+                        <div class="form_row">
+                            <div class="form_col">
+                                <div class="radio">
+                                    <input type="radio" id="resume3" name="resume" disabled>
+                                    <label for="resume3" class="row">
+                                        인내와 성실이 무기이다
+                                        <span>최종수정일 : <span class="num">21. 03. 14</span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="btn_area">
+                                    <button type="button" class="btn sm">보기</button>
+                                    <button type="button" class="btn sm primary">수정</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 이력서 선택 불가 -->
+                    </div>
+                </div>
+                <!-- // 이력서 있을 경우 -->
+                <!-- 이력서 없을 경우 -->
+                <div class="non_resume">
+                    <p>
+                        등록된 이력서가 없습니다.
+                        <span>자기소개서 컨설팅을 위해서는 커리어 이력서를 먼저 작성해 주세요.</span>
+                    </p>
+                    <div class="btn_area">
+                        <button type="button" class="btn">이력서 작성하기</button>
+                    </div>
+                </div>
+                <!-- // 이력서 없을 경우 -->
+            </div>
+            <hr class="bg db">
+            <div class="pd0_box">
+                <div class="apply_area">
+                    <h2 class="title">컨설팅 신청하기</h2>
+                    <div class="form_area">
+                        <div class="form_row">
+                            <div class="form_box">
+                                <input type="text" placeholder="컨설팅 신청 제목을 입력해 주세요"/>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_textarea">
+                                <textarea placeholder="집중적으로 컨설팅 받고 싶은 부분을 기재해 주세요"></textarea>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_col w_480">
+                                <div class="form_box disabled"><!-- 메일주소 변경 클릭 시 class="disabled" 삭제 -->
+                                    <input type="text" value="takdi78@naver.com" disabled /><!-- 메일주소 변경 클릭 시 disabled 삭제 -->
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <a href="#" class="btn_bg_mid">메일주소 변경</a><!-- 메일주소 변경 클릭 시 '메일주소 저장' 으로 텍스트 변경 -->
+                            </div>
+                            <!-- 메일주소 변경 클릭 시 -->
+                            <!-- // 메일주소 변경 클릭 시 -->
+                        </div>
+                        <p class="ps_txt">자기소개서 컨설팅이 완료되면 기재된 메일로 알려 드립니다.</p>
+                        <div class="btn_area mt60">
+                            <button type="button" class="btn">취소하기</button>
+                            <button type="button" class="btn primary">컨설팅 신청하기</button><!-- 컨설팅 수정 시 '컨설팅 수정하기' 로 버튼명 변경 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer></footer><!-- inc_footer.html -->
+    </div>
+</body>
+</html>

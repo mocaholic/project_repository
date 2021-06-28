@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../css/library.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../css/contents.css">
+    <link rel="stylesheet" href="../../css/user.css">
+    <script src="../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../js/libs/library.js"></script>
+    <script src="../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="wrapper career_user">
+        <header class="sub">
+            <div class="header">
+                <h1 class="page_title">회원가입</h1>
+                <a href="#none" class="btn_back">이전</a>
+            </div>
+        </header>   
+        <section class="pb">
+            <div class="tab_ui tab_menu type2">
+                <ul>
+                    <li class="on"><a href="#none">개인회원</a></li>
+                    <li><a href="02_company_join.html">기업회원</a></li>
+                </ul>
+            </div>
+
+            <div class="join_wrap"> 
+                <div class="login_wrap">    
+                    <div class="sns_login">
+                        <ul>
+                            <li><a href="#" class="facebook">페이스북 로그인</a></li>
+                            <li><a href="#" class="naver">네이버 로그인</a></li>
+                            <li><a href="#" class="google">구글 로그인</a></li>
+                            <li><a href="#" class="katalk">카카오톡 로그인</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="join_box">
+                    <div class="title_box">
+                        <h3>개인회원가입</h3>
+                        <p class="desc">아래 회원정보를 입력하시면 커리어 회원으로 가입이 완료됩니다.<span>(만15세 이상 가입 가능)</span></p>
+                    </div>
+                    
+                    <div class="form_area">
+                        <div class="form_row">
+                            <div class="form_box gray">
+                                <input type="text" placeholder="아이디(5~12자 영문, 숫자)"/>
+                            </div>
+                        </div>
+
+                        <div class="form_row">
+                            <div class="form_box gray">
+                                <input type="password" placeholder="비밀번호(8~32자 영문, 숫자)"/>
+                            </div>
+                        </div>
+
+                        <div class="form_row">
+                            <div class="form_box gray">
+                                <input type="password" placeholder="비밀번호 확인"/>
+                            </div>
+                        </div>    
+
+                        <div class="form_row">
+                            <div class="form_box gray">
+                                <input type="text" placeholder="이름"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form_row error"> <!-- //에러체크 시 .error 적용 -->
+                            <div class="form_box gray ">
+                                <input type="text" placeholder="YYYY. MM. DD(생년월일)" /> 
+                            </div>
+                            <span class="error_txt">취직 최저 연령에  대한 제한 (근로기준법 제 64조 1항)으로 만15세 미만은<br />회원가입이 불가합니다.</span> 
+                        </div>
+
+                        <div class="form_row mail">
+                            <div class="form_col">
+                                <div class="form_box gray">
+                                    <input type="text" placeholder="이메일"/>
+                                </div>
+                            </div>
+                            <span>@</span>
+                            <div class="form_col">
+                                <div class="form_box gray custom_select">
+                                    <select>
+                                        <option>직접입력</option>
+                                        <option>리스트1</option>
+                                        <option>리스트2</option>
+                                        <option>리스트3</option>
+                                        <option>리스트4</option>
+                                        <option>리스트5</option>
+                                        <option>리스트6</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 직접 입력 선택 시 노출 -->
+                        <div class="form_row mail" style="display:none;">
+                            <div class="form_box gray">
+                                <input type="text" placeholder="이메일"/>
+                            </div>
+                        </div>
+                        <!-- // 직접 입력 선택 시 노출 -->
+
+                        <div class="form_row phone error"> <!-- //에러체크 시 .error 적용 -->
+                            <div class="form_col">
+                                <div class="form_box gray custom_select">
+                                    <select>
+                                        <option>010</option>
+                                        <option>011</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form_col">
+                                <div class="form_box gray">
+                                    <input type="text" placeholder="휴대폰 번호(-제외)"/>
+                                </div>
+                            </div>  
+                            <span class="error_txt">휴대폰 번호 자릿수를 확인해 주세요.</span>
+                            <div class="btn_area">
+                                <button type="button" class="btn sm">인증번호 전송</button>   <!-- //비활성화 시 .disalbed 추가 -->
+                            </div>                            
+                        </div>   
+                        <!-- 인증번호 입력 -->                
+                        <div class="form_row certi_box error">  <!-- //에러체크 시 .error 적용 -->
+                            <div class="form_box gray">
+                                <input type="text" placeholder="인증번호를 입력해 주세요." />
+                                <span class="certi_txt">남은시간 <span class="time">03:00</span></span>
+                            </div>
+                            <span class="error_txt finish" style="display: none;">휴대폰 번호로 인증이 완료 되었습니다.</span>  <!-- //인증 완료일 경우 노출 style="display: none;" 삭제 -->
+                            <span class="error_txt">인증 번호가 잘못되었습니다.</span>
+                            <div class="btn_area">
+                                <button type="button" class="btn sm disabled" disabled>인증확인</button>  <!-- //비활성화 시 .disalbed 추가 -->
+                            </div> 
+                        </div>
+                        <!-- //인증번호 입력 -->   
+                    </div>
+                </div>
+
+                <div class="agree_box">
+                    <div class="title_box">
+                        <h3>약관동의</h3>                        
+                    </div>
+                    <div class="agree_list_box">
+                        <div class="checkbox first">
+                            <input type="checkbox" id="chk1">
+                            <label for="chk1">전체동의</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" id="chk2">
+                            <label for="chk2">이용약관 동의<span>(필수)</span><a href="#none" class="btn_detail_view">상세보기</a></label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" id="chk3">
+                            <label for="chk3">개인정보 수집 및 이용동의<span>(필수)</span><a href="#none" class="btn_detail_view">상세보기</a></label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn_area fixed">
+                    <button type="button" class="btn_big">회원가입 완료하기</button>
+                </div>
+            </div>
+        </section>        
+    </div>      
+</body> 
+</html>

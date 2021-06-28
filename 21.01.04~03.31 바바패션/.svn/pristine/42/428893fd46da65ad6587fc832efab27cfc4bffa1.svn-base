@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1440">
+    <title>BABATHE.COM</title>
+    <link rel="stylesheet" href="../../css/babathe.css">
+    <script src="../../js/library.js"></script>
+    <script src="../../js/layout.js"></script>
+</head>
+<body>
+    <header></header>
+    <section class="container">
+        <div class="center-wrap">
+            <!-- 비회원 주문 시 노출 문구 -->
+            <div class="cart-nonmember">
+                <a href="#">로그인</a>하시고 더 많은 혜택을 받아가세요.
+            </div>
+            <!-- //비회원 주문 시 노출 문구 -->
+            <div class="cart-wrap">
+                <!-- 장바구니 상품 -->
+                <div class="cart-area">
+                    <div class="page-top">
+                        <h2 class="page-title">장바구니</h2>
+                        <ul class="cart-step">
+                            <li class="on">장바구니</li>
+                            <li>주문서</li>
+                            <li>주문완료</li>
+                        </ul>
+                    </div>
+                    <!-- 장바구니 상품 없을 경우 -->                    
+                    <p class="no-data">※ 장바구니 상품은 30일 동안만 보관 됩니다.</p>
+                    <!-- // 장바구니 상품 없을 경우 -->
+                    <!-- 장바구니 상품 있을 경우 -->
+                    <div class="prd-list-top">
+                        <div>
+                            <div class="checkbox"><input type="checkbox" id="chk1"><label for="chk1">전체선택 <strong>6</strong></label></div>
+                            <span class="font-w300 c-gray9">※ 장바구니 상품은 30일 동안만 보관됩니다.</span>
+                        </div>
+                        <div>                        
+                            <button type="button" class="btn-txt">품절삭제</button>
+                            <button type="button" class="btn-txt">선택삭제</button>
+                        </div>
+                    </div>
+                    <ul class="prd-list cart">
+                        <li>
+                            <div class="checkbox"><input type="checkbox" id="chk-c1"><label for="chk-c1" class="only">선택</label></div>
+                            <div class="prd-img">
+                                <div class="ratio">
+                                    <img src="../../img/temp_prd_img.jpg" alt="상품이미지" />
+                                </div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">JIGOTT</div>
+                                <div class="name">얼리버드 할인 온라인 단독 캐시미어 100%</div>
+                                <div class="option">캐시미어 100% H라인 코트 / 네이비 / 44</div>
+                                <div class="notice">[품절임박] 잔여 8</div>
+                                <div class="v-bottom">
+                                    <div class="col-left">
+                                        <div class="prd-price">
+                                            <div class="price"><strong>1,254,000</strong>원</div>
+                                            <div class="discount">10%</div>
+                                            <div class="price-org">1,254,000 원</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right">
+                                        <div class="prd-spinner">
+                                            <button type="button" class="btn-minus">수량감소</button>
+                                            <input type="text" value="1">
+                                            <button type="button" class="btn-plus">수량증가</button>
+                                        </div>                                    
+                                        <button type="button" class="btn sm">옵션변경</button>
+                                        <button type="button" class="btn sm secondary">바로구매</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-wish">찜하기</button>
+                                <button type="button" class="btn-delete">삭제하기</button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><input type="checkbox" id="chk-c2"><label for="chk-c2" class="only">선택</label></div>
+                            <div class="prd-img">
+                                <div class="pre-order">
+                                    <span>예약상품</span>
+                                    <p><strong>9.4</strong> 발송</p>
+                                </div>
+                                <div class="ratio">
+                                    <img src="../../img/temp_prd_img.jpg" alt="상품이미지" />
+                                </div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">JIGOTT</div>
+                                <div class="name">얼리버드 할인 온라인 단독 캐시미어 100%</div>
+                                <div class="option">캐시미어 100% H라인 코트 / 네이비 / 44</div>
+                                <div class="delivery">13:00 이전 주문 시 01/22(금) 발송 예정</div>
+                                <div class="v-bottom">
+                                    <div class="col-left">
+                                        <div class="price-special">임직원가 <strong>1,065,960</strong>원</div>
+                                        <div class="prd-price">
+                                            <div class="price"><strong>1,254,000</strong>원</div>
+                                            <div class="discount">10%</div>
+                                            <div class="price-org">1,254,000 원</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right">
+                                        <div class="prd-spinner">
+                                            <button type="button" class="btn-minus">수량감소</button>
+                                            <input type="text" value="1">
+                                            <button type="button" class="btn-plus">수량증가</button>
+                                        </div>                                    
+                                        <button type="button" class="btn sm">옵션변경</button>
+                                        <button type="button" class="btn sm secondary">바로구매</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-wish on">찜하기</button>
+                                <button type="button" class="btn-delete">삭제하기</button>
+                            </div>
+                        </li>                                                
+                        <li class="total-area">
+                            <div class="">
+                                <span class="price">기본가 <span class="num">1,097,398</span>원</span>
+                                <span class="operator">+</span>
+                                <span class="price">할인금액 <span class="num">197,398</span>원</span>
+                                <span class="operator">+</span>
+                                <span class="price">배송비 <span class="num">0</span>원</span>
+                                <span class="operator">=</span>
+                                <span class="total-price">기본가 <span class="num">1,097,398</span>원</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="checkbox"><input type="checkbox" id="chk-c3"><label for="chk-c3" class="only">선택</label></div>
+                            <div class="prd-img">
+                                <div class="ratio">
+                                    <img src="../../img/temp_prd_img.jpg" alt="상품이미지" />
+                                </div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">NIKE</div>
+                                <div class="name">얼리버드 할인 온라인 단독 캐시미어 100%</div>
+                                <div class="option">네이비 / 44</div>
+                                <div class="v-bottom">
+                                    <div class="col-left">
+                                        <div class="prd-price">
+                                            <div class="price"><strong>1,254,000</strong>원</div>
+                                            <div class="discount">10%</div>
+                                            <div class="price-org">1,254,000 원</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right">
+                                        <div class="prd-spinner">
+                                            <button type="button" class="btn-minus">수량감소</button>
+                                            <input type="text" value="1">
+                                            <button type="button" class="btn-plus">수량증가</button>
+                                        </div>                                    
+                                        <button type="button" class="btn sm">옵션변경</button>
+                                        <button type="button" class="btn sm btn-form">SOLD OUT</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-wish">찜하기</button>
+                                <button type="button" class="btn-delete">삭제하기</button>
+                            </div>
+                        </li>
+                        <li class="disabled">
+                            <div class="checkbox"><input type="checkbox" id="chk-c4" disabled><label for="chk-c4" class="only">선택</label></div>
+                            <div class="prd-img">
+                                <div class="ratio">
+                                    <img src="../../img/temp_prd_img.jpg" alt="상품이미지" />
+                                </div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">JIGOTT</div>
+                                <div class="name">얼리버드 할인 온라인 단독 캐시미어 100%</div>
+                                <div class="v-bottom">
+                                    <div class="col-left">
+                                        <div class="prd-price">
+                                            <div class="price"><strong>1,254,000</strong>원</div>
+                                            <div class="discount">10%</div>
+                                            <div class="price-org">1,254,000 원</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-right">
+                                        <div class="prd-eidt">
+                                            <strong class="c-secondary">판매 종료된 상품입니다.</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn-wish" disabled>찜하기</button>
+                                <button type="button" class="btn-delete">삭제하기</button>
+                            </div>
+                        </li>                        
+                        <li class="total-area">
+                            <div class="">
+                                <span class="price">기본가 <span class="num">1,097,398</span>원</span>
+                                <span class="operator">+</span>
+                                <span class="price">할인금액 <span class="num">197,398</span>원</span>
+                                <span class="operator">+</span>
+                                <span class="price">배송비 <span class="num">2,500</span>원</span>
+                                <span class="operator">=</span>
+                                <span class="total-price">기본가 <span class="num">1,097,398</span>원</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- // 장바구니 상품 있을 경우 -->
+                </div>
+                <!-- // 장바구니 상품 -->
+                <!-- 결제 예정 정보 -->
+                <aside class="aside-wrap">
+                    <h2 class="aside-title">결제 예정 정보 <span>(<span class="num">4</span>)</span></h2>
+                    <div class="price-list">
+                        <dl>
+                            <dt>총 주문금액</dt>
+                            <dd><strong>2,090,880</strong> 원</dd>
+                        </dl>
+                        <dl>
+                            <dt>할인 쿠폰</dt>
+                            <dd><strong>- 118,440</strong> 원</dd>
+                        </dl>
+                        <dl>
+                            <dt>중복 할인 쿠폰</dt>
+                            <dd><strong>- 20,000</strong> 원</dd>
+                        </dl>
+                        <dl class="total">
+                            <dt>최종 결제금액</dt>
+                            <dd class="font-s24"><strong class="num">2,090,880</strong>원</dd>
+                        </dl>
+                    </div>
+                    
+                    <!-- 비회원 주문 시 안내문구 -->
+                    <div class="join-guide bd-top">
+                        잠깐만요! 아직 BABATHE.com 회원이 <br>아니신가요? <strong>회원가입 시 즉시 할인</strong>,  <br><strong>신규 가입 쿠폰, 포인트 적립</strong> 등 다양한 회원 
+                        혜택을 받으실 수 있습니다.
+                        <div class="link">
+                            <a href="#" class="tx-link">신규회원 가입하기</a>
+                        </div>
+                    </div>
+                    <!-- // 비회원 주문 시 안내문구 -->
+
+                    <button type="button" class="btn lg primary">주문하기</button>
+                </aside>
+                <!-- // 결제 예정 정보 -->
+            </div>
+            <!-- 배너 -->
+            <div class="banner-wrap">
+                <a href="#"><img src="../../img/full_banner.jpg" alt="배너이미지"></a>
+            </div>            
+            <!-- // 배너 -->
+            <!-- 추천상품 -->
+            <div class="slide-prd-list">
+                <h3 class="page-sub-title">함께 구매하시면 어떨까요?</h3>
+                <p class="page-sub-txt">지금 구매하시려는 상품과 함께 구매한 상품도 살펴보세요.</p>
+                <ul class="prd-list thum col-6">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="badge-group">
+                                <span class="badge">단독</span>
+                            </div>
+                            <div class="prd-img ">
+                                <div class="ratio"><img src="../../img/temp_prd_img.jpg" alt="상품이미지" /></div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">THE IZZAT COLLECTION</div>
+                                <div class="name">
+                                    <div class="tx-ovf">2021 신상품 </div>
+                                    <div class="tx-ovf">밍크 체인 장식 코트형 트위드 자켓</div>
+                                </div>
+                                <div class="prd-price">
+                                    <div class="price"><strong>1,234,567</strong>원</div>
+                                    <div class="discount">10%</div>
+                                    <div class="price-org">1,065,960 원</div>
+                                </div>
+                                <div class="tag-group">
+                                    <span class="tag">NEW</span>
+                                    <span class="tag">BEST</span>
+                                    <span class="tag">10%할인</span>
+                                    <span class="tag">무료배송</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button type="button" class="btn-wish">찜하기</button>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="badge-group">
+                                <span class="badge">펀딩</span>
+                            </div>
+                            <div class="prd-img ">
+                                <div class="ratio"><img src="../../img/temp_prd_img.jpg" alt="상품이미지" /></div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">THE IZZAT COLLECTION</div>
+                                <div class="name">
+                                    <div class="tx-ovf">2021 신상품 </div>
+                                    <div class="tx-ovf">밍크 체인 장식 코트형 트위드 자켓</div>
+                                </div>
+                                <div class="prd-price">
+                                    <div class="price"><strong>1,234,567</strong>원</div>
+                                    <div class="discount">10%</div>
+                                    <div class="price-org">1,065,960 원</div>
+                                </div>
+                                <div class="tag-group">
+                                    <span class="tag">NEW</span>
+                                    <span class="tag">BEST</span>
+                                    <span class="tag">10%할인</span>
+                                    <span class="tag">무료배송</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button type="button" class="btn-wish">찜하기</button>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="badge-group">
+                                <span class="badge">예약</span>
+                            </div>
+                            <div class="prd-img ">
+                                <div class="ratio"><img src="../../img/temp_prd_img.jpg" alt="상품이미지" /></div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">THE IZZAT COLLECTION</div>
+                                <div class="name">
+                                    <div class="tx-ovf">2021 신상품 </div>
+                                    <div class="tx-ovf">밍크 체인 장식 코트형 트위드 자켓</div>
+                                </div>
+                                <div class="prd-price">
+                                    <div class="price"><strong>1,234,567</strong>원</div>
+                                    <div class="discount">10%</div>
+                                    <div class="price-org">1,065,960 원</div>
+                                </div>
+                                <div class="tag-group">
+                                    <span class="tag">NEW</span>
+                                    <span class="tag">BEST</span>
+                                    <span class="tag">10%할인</span>
+                                    <span class="tag">무료배송</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button type="button" class="btn-wish">찜하기</button>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="badge-group">
+                                <span class="badge babaon">바바ON</span>
+                            </div>
+                            <div class="prd-img ">
+                                <div class="ratio"><img src="../../img/temp_prd_img.jpg" alt="상품이미지" /></div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">THE IZZAT COLLECTION</div>
+                                <div class="name">
+                                    <div class="tx-ovf">2021 신상품 </div>
+                                    <div class="tx-ovf">밍크 체인 장식 코트형 트위드 자켓</div>
+                                </div>
+                                <div class="prd-price">
+                                    <div class="price"><strong>1,234,567</strong>원</div>
+                                    <div class="discount">10%</div>
+                                    <div class="price-org">1,065,960 원</div>
+                                </div>
+                                <div class="tag-group">
+                                    <span class="tag">NEW</span>
+                                    <span class="tag">BEST</span>
+                                    <span class="tag">10%할인</span>
+                                    <span class="tag">무료배송</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button type="button" class="btn-wish">찜하기</button>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="badge-group">
+                                <span class="badge">타임세일</span>
+                            </div>
+                            <div class="prd-img ">
+                                <div class="ratio"><img src="../../img/temp_prd_img.jpg" alt="상품이미지" /></div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">THE IZZAT COLLECTION</div>
+                                <div class="name">
+                                    <div class="tx-ovf">2021 신상품 </div>
+                                    <div class="tx-ovf">밍크 체인 장식 코트형 트위드 자켓</div>
+                                </div>
+                                <div class="prd-price">
+                                    <div class="price"><strong>1,234,567</strong>원</div>
+                                    <div class="discount">10%</div>
+                                    <div class="price-org">1,065,960 원</div>
+                                </div>
+                                <div class="tag-group">
+                                    <span class="tag">NEW</span>
+                                    <span class="tag">BEST</span>
+                                    <span class="tag">10%할인</span>
+                                    <span class="tag">무료배송</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button type="button" class="btn-wish">찜하기</button>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="prd-img ">
+                                <div class="ratio"><img src="../../img/temp_prd_img.jpg" alt="상품이미지" /></div>
+                            </div>
+                            <div class="prd-info">
+                                <div class="brand">THE IZZAT COLLECTION</div>
+                                <div class="name">
+                                    <div class="tx-ovf">2021 신상품 </div>
+                                    <div class="tx-ovf">밍크 체인 장식 코트형 트위드 자켓</div>
+                                </div>
+                                <div class="prd-price">
+                                    <div class="price"><strong>1,234,567</strong>원</div>
+                                    <div class="discount">10%</div>
+                                    <div class="price-org">1,065,960 원</div>
+                                </div>
+                                <div class="tag-group">
+                                    <span class="tag">NEW</span>
+                                    <span class="tag">BEST</span>
+                                    <span class="tag">10%할인</span>
+                                    <span class="tag">무료배송</span>
+                                </div>
+                            </div>
+                        </a>
+                        <button type="button" class="btn-wish">찜하기</button>
+                    </li>
+                </ul>
+            </div>
+            <!-- // 추천상품 -->
+        </div>        
+    </section>
+    <footer></footer>
+</body>
+<script>
+    /*publishing UI only*/
+    $('.prd-list').find('.btn-wish').on('click', function(){
+        $(this).toggleClass('on')
+    }); // wish button toggle Class
+    /*
+    var posTop = $('.cart-wrap').offset().top - 51;
+    var posBot = $('.banner-wrap').offset().top + $(window).height();
+    $( window ).scroll( function() {
+        var scTop = $(this).scrollTop();
+        
+        if( scTop > posTop){
+            $('.aside-wrap').addClass('fixed');
+        } else {
+            $('.aside-wrap').removeClass('fixed');
+        }
+    });//aside fixed
+    */
+</script>
+</html>

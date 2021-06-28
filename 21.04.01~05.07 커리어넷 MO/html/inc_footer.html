@@ -1,0 +1,56 @@
+<div class="f_menu">
+    <ul>
+        <li><a href="#">커리어 홈</a></li>
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">PC버전</a></li>
+    </ul>
+</div>
+<div class="footer">
+    <p class="tc"><a href="tel:1577-9577" class="call">1577-9577</a></p>
+    <div>
+        <div class="link_area">
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="javascript:void(0);" class="btn_toggle">CAREER</a>
+        </div>
+        <div class="career_info">
+            <div class="circle_list">
+                <ul>
+                    <li>(주)커리어넷 대표이사 : 윤태윤</li>
+                    <li>사업자등록번호 : 220-86-73547</li>
+                    <li>주소 : 서울특별시 구로구 디지털로32가길 16 (구로동)</li>
+                    <li>직업정보제공사업 신고번호 : 서울관악 2010-10호</li>
+                    <li>통신판매업 신고번호 : 2010-서울구로-0401</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="app_down">
+    <h3>내 손에 취업 필수템! 커리어 앱</h3>
+    <div class="d_flex">
+        <a href="#" class="btn_android">안드로이드 설치하기</a>
+        <a href="#" class="btn_ios">아이폰 설치하기</a>
+    </div>
+</div>
+
+<div class="dimmed"></div><!-- 공통 dimmed -->
+
+<script>
+    /* footer info */
+    $('.link_area .btn_toggle').click(function(){
+        if($(this).hasClass('open')){
+            $('.career_info').css('height','0');
+            $(this).removeClass('open');
+        } else {
+            $('.career_info').css('height','auto');
+            $(this).addClass('open');
+        } return;
+    });
+
+    /* dimmed */
+    $('.dimmed').click(function(){
+        sidemenuClose();
+    });
+</script>

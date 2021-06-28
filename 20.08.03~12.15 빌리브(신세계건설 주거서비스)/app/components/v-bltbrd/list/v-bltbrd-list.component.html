@@ -1,0 +1,69 @@
+<ng-content></ng-content>
+<!-- 게시판 리스트 -->
+<div class="notice_list_box">
+    <div class="sub_title">
+        <!-- 검색 필더 -->
+        <div class="serch_2tab">
+            <ng-select
+                [items]="searchTypeList"
+                [searchable]="false"
+                [(ngModel)]="bltbrdSearchModel.searchType"
+                bindLabel="cdName"
+                bindValue="cd"
+            >
+            </ng-select>
+            <div class="search_form">
+                <input [(ngModel)]="bltbrdSearchModel.searchWord" (keyup.enter)="onClickSearch()" type="text" class="com_inp" placeholder="검색어를 입력하세요.">
+                <a (click)="onClickSearch()"  class="btn_search">검색</a>
+            </div>
+        </div>
+        <!-- 총 개수 -->
+        <p class="list_count">
+            총 <span class="red">{{bltbrdSearchModel.totalCount}}</span>건
+        </p>
+    </div>
+    <!-- 디자인 수정으로 <div class="round_box"> 추가 -->
+    <div class="board_list">
+        <!-- 리스트 분류 PC에만 노출 -->
+        <div class="notice_list_title">
+            <div class="table_w01">NO</div>
+            <div class="">제목</div>
+            <div *ngIf="isFileColumn" class="table_w01">첨부</div>
+            <div class="table_w01" >작성자</div>
+            <div class="table_w02">작성일</div>
+        </div>
+        <div class="no_data" *ngIf="!isExistList;else other_content">
+            <p>조회된 글이 없습니다.</p>
+        </div>
+        <ng-template #other_content>
+            <!-- PC-테이블 MO-리스트 -->
+            <div class="notice_list">
+                <div class="import" *ngFor="let data of bltbrdImptcList;">
+                    <p class="no"><span>중요</span></p>
+                    <h5 class="title">
+                        <!-- NEW,clip 태그 위치 수정 -->
+                        <a (click)="goDetailPage(data?.bltbrdId)" [ngClass]="(data.iptDtm | checkDateIsNew) ? 'tag_block' : ''">{{data.bltbrdTtl}}</a>
+                        <span class="tag red" *ngIf="data.iptDtm | checkDateIsNew">New</span>
+                        <span *ngIf="isFileColumn && data.bltbrdAtchList.length>0" class="clip"></span>
+                    </h5>
+                    <p class="writer_time"><span>관리자</span><span class="time">{{data.iptDtm | stringDateFormatDt }}</span></p>
+                </div>
+                <div *ngFor="let data of bltbrdList;index as i" (click)="goDetailPage(data?.bltbrdId)">
+                    <p class="no"><span>{{bltbrdSearchModel.totalCount - i}}</span></p>
+                    <h5 class="title">
+                        <a (click)="goDetailPage(data?.bltbrdId)" [ngClass]="(data.iptDtm | checkDateIsNew) ? 'tag_block' : ''">{{data.bltbrdTtl}}</a>
+                        <span class="tag red" *ngIf="data.iptDtm | checkDateIsNew">New</span>
+                        <span *ngIf="isFileColumn && data.bltbrdAtchList.length>0" class="clip"></span>
+                    </h5>
+                    <p class="writer_time">
+                        <span *ngIf="bltbrdTpCd!==CodeConstants.BLTBRD.NOTICE;else other">{{ data?.custBlNo }}동 {{ data?.custNmMasked }}</span>
+                        <ng-template #other><span>관리자</span></ng-template>
+                        <span class="time">{{data.iptDtm | stringDateFormatDt }}</span>
+                    </p>
+                </div>
+            </div>
+            <!-- 더보기 -->
+            <a *ngIf="bltbrdSearchModel?.page < bltbrdSearchModel?.totalEndPage" class="add_item" (click)="moreBltbrdList()">더보기</a>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="wrapper rec">
+        <header class="recruit">
+            <div class="header">
+                <div class="left">
+                    <h1><a href="#" class="logo">커리어넷</a></h1>
+                    <div class="custom_select">
+                        <select>
+                            <option>채용정보</option>
+                            <option>지역별</option>
+                            <option>직무별</option>
+                            <option>공채</option>
+                            <option selected>취업자료</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="#" class="btn_search">검색</a>
+                    <button type="button" onclick="sidemenu();" class="btn_sidemenu"></button>
+                </div>
+            </div>
+        </header>
+        
+        <nav></nav><!-- 사이드메뉴 : inc_sidemenu.html-->
+        
+        <!-- gnb -->
+        <div class="gnb">
+            <ul class="dep1 jcontent_s">
+                <li><a href="#">취업뉴스</a></li>
+                <li class="on"><a href="#">성공취업 TOOL</a></li>
+            </ul>
+        </div> 
+        <!-- // gnb -->
+        <!-- swiper-menu -->
+        <div class="swiper-container tab_menu2">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                    <a href="#">글자수 세기</a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">연봉 계산기</a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">학점 변환기</a>
+                </li>
+                <li class="swiper-slide">
+                    <a href="#">어학 변환기</a>
+                </li>
+                <li class="swiper-slide on">
+                    <a href="#">경력 계산기</a>
+                </li>
+            </ul>
+            <script>                
+                // gnb
+                var swiperMenu = new Swiper('.tab_menu2', {
+                    slidesPerView: 'auto',
+                });
+            </script>
+        </div>
+        <!-- //swiper-menu -->
+
+        <section>
+            <h2 class="skip_txt">경력 계산기 Tool</h2>
+            <div>
+                <div class="form_area car_calc">
+                    <div class="tit">
+                        <span>입사일</span>
+                        <span>퇴사일</span>
+                    </div>
+
+                    <div class="form_row">
+                        <div class="form_col">
+                            <div class="form_box">
+                                <input type="text" placeholder="YYYY.MM"/>
+                            </div>
+                        </div>
+                        <div class="form_col">
+                            <div class="form_box">
+                                <input type="text" placeholder="YYYY.MM"/>
+                            </div>
+                            <div class="form_box custom_select">
+                                <select>
+                                    <option>퇴사</option>
+                                    <option>재직중</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form_col">
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+
+                    <div class="form_row">
+                        <div class="form_col">
+                            <div class="form_box">
+                                <input type="text" placeholder="YYYY.MM"/>
+                            </div>
+                        </div>
+                        <div class="form_col">
+                            <div class="form_box">
+                                <input type="text" placeholder="YYYY.MM"/>
+                            </div>
+                            <div class="form_box custom_select">
+                                <select>
+                                    <option>퇴사</option>
+                                    <option>재직중</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form_col">
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+
+                    <div class="btn_area mt60 mb20">
+                        <button type="button" class="btn">경력기간 추가</button>
+                        <button type="button" class="btn primary">경력 계산하기</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 결과 -->
+            <hr class="bg">
+            
+            <div>
+                <h3 class="result">결과</h3>
+                <p class="lb_box">
+                   총 경력은 <strong>10<span class="fw_4">년</span> 00<span class="fw_4">개월</span></strong> 입니다. 
+                </p>
+                <div class="btn_area mt60">
+                    <button type="button" class="btn reset">초기화</button>
+                </div>
+            </div>
+            <!-- // 결과 -->
+            
+        </section>
+
+        <footer></footer><!-- inc_footer.html -->
+    </div>
+</body>
+</html>

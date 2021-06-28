@@ -1,0 +1,147 @@
+/* 이벤트 리스트 2 */
+
+.flat_round_box .txt_box {
+    padding: 2rem 1.333rem;
+}
+
+.event_list.type02 li{
+    margin-bottom:1rem;
+}
+.event_list.type02 li .cont_area{
+    position: relative;
+    // padding: 0.4167rem 0;
+}
+.event_list.type02 li .cont_area .img_box{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.3333rem;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+.event_list.type02 li .cont_area .img_box img{
+    width: 100%;
+    height: 100%;
+}
+.event_list.type02 li .cont_area .img_box.no_img{
+    min-height:  7.5rem;
+    background: #d2d6d5;
+}
+.event_list.type02 li .cont_area .img_box.no_img:after {
+    line-height: 5;
+}
+.event_list.type02 li .cont_area .txt_area{
+    margin-left: 9.25rem;
+    padding: 0;
+    min-height: 7.5rem;
+    background: none;
+}
+.event_list.type02 li .cont_area .txt_area .sub_title{
+    font-size: 1rem;
+    padding: 0.33rem 0;
+    color: #5A514C;
+}
+.event_list.type02 li .cont_area .txt_area h4{
+    font-weight: bold;
+    font-size: 1.333rem;
+    margin-bottom: 0.83rem;
+    height: 3.333rem;
+    line-height: 1.25;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.event_list.type02 li .cont_area  p.time{
+    font-family:'Montserrat';
+    color: #8D8785;
+    letter-spacing: 0;
+    font-size: 1rem;
+}
+.event_list.type02 li .cont_area .img_box .tag_box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin:0;
+    text-align: left;
+    z-index: 1;
+}
+.event_list.type02 li .cont_area .img_box .tag_box .tag{
+    color: #fff;
+    padding: 0.4rem 0.75rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+}
+.event_list.type02 li .cont_area .img_box .tag_box .tag+.tag{
+  margin-left: 0.25rem;
+}
+/* pc */
+@media screen and (min-width: 1025px) {
+
+    .container {
+        padding-bottom: 75px;
+    }
+    .flat_round_box .txt_box {
+        padding: 24px 40px;
+    }
+
+    /* 이벤트 리스트 2 */
+    .event_list.type02 li{
+        margin-bottom:25px;
+    }
+    .event_list.type02 li .cont_area {
+        padding: 0;
+    }
+    .event_list.type02 li .cont_area .img_box{
+        position: absolute;
+        width: 140px;
+        height: 120px;
+        border-radius: 4px;
+    }
+    .event_list.type02 li .cont_area .img_box.no_img{
+        min-height: 120px;
+    }
+    .event_list.type02 li .cont_area .img_box.no_img:after {
+        line-height: 4.29;
+    }
+    .event_list.type02 li .cont_area .img_box img{
+        width: auto;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .event_list.type02 li .cont_area .txt_area{
+        margin-left: 160px;
+        padding: 0;
+        min-height: 120px;
+    }
+    .event_list.type02 li .cont_area .txt_area .sub_title{
+        padding: 10px 0 7px;
+        font-size: 14px;
+    }
+    .event_list.type02 li .cont_area .txt_area h4{
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 1.35;
+        height: 54px;
+    }
+    .event_list.type02 li .cont_area  p.time {
+        font-size: 13px;
+    }
+    .event_list.type02 li .cont_area .img_box .tag_box .tag{
+        padding:5px 13px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    .event_list.type02 li .cont_area .img_box .tag_box .tag+.tag{
+      margin-left: 4px;
+    }
+}

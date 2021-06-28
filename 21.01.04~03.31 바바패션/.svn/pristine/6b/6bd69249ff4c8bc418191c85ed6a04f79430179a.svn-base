@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>template</title>
+    <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/templateA.css">
+    <link rel="stylesheet" href="../css/templateB.css">
+    <link rel="stylesheet" href="../css/templateC.css">
+    <link rel="stylesheet" href="../css/templateD.css">
+    <script src="../js/library.js"></script>
+    <script src="../js/layout.js"></script>
+    <style>
+        h1{margin: 10px 0;}
+    </style>
+</head>
+<body>
+    <h1>TITLE</h1>
+    <h2 class="title-a">배송지 정보</h2>
+    <h2 class="title-a required">배송지 정보</h2>
+    <h3 class="title-b">개인통관고유번호 입력</h3>
+    <h3 class="title-c">중복 할인 쿠폰 ( 사용 가능 쿠폰 1장 )</h3>
+    <h1>HEADER</h1>
+    <div class="header-orderComple">
+        <strong>주문이 정상적으로<br>완료되었습니다.</strong>
+        <em>주문일자 : 2020.12.01  14:12:12</em>
+    </div>
+    <div class="header-aggreConfrim">
+        <h2>이용약관에 모두 동의합니다. <a href="#">보기</a></h2>
+        <div class="txt">
+            잠깐만요! 아직 BABATHE.com 회원이<br> 
+            아니신가요? <strong>회원가입 시 즉시 할인, 신규 가입 쿠폰,<br>
+            포인트 적립</strong> 등 다양한 회원 혜택을<br>
+            받으실 수 있습니다.
+        </div>
+        <a href="#" class="link-b">신규회원 가입하기</a>
+    </div>
+    <h1>INPUT</h1>
+    <input type="text" placeholder="휴대전화 번호 입력">
+    <input type="text" value="baba@email.com" disabled>
+    <div class="inpToBtn">
+        <input type="text" placeholder="추천인 코드 입력">
+        <button>확인</button>
+    </div>
+    <div class="tip">적용 가능 포인트가 1,000P이상일 경우 사용 가능하며, 10P단위로 사용하실 수 있습니다. (1P=1원) 단, 최종 결제금액의 90%까지만 사용 가능합니다. (나머지 10% 별도 결제)</div>
+
+    <div class="inpToBtn">
+        <input type="text" placeholder="추천인 코드 입력" disabled>
+        <button disabled>확인</button>
+    </div>
+    
+    <div class="inpToBtn type2">
+        <input type="text" value="2,880 원">
+        <button>쿠폰사용</button>
+    </div>
+    <div class="inpToBtn">
+        <input type="text" placeholder="우편번호" disabled>
+        <button>우편번호 검색</button>
+    </div>
+
+    <h1>BUTTON</h1>
+    <button class="btn-basicL">대버튼(결제/로그인)</button>
+    <button class="btn-basicL" disabled>대버튼(결제/로그인)</button>
+    <button class="btn-basicL">장바구니</button>
+    <button class="btn-basicL pink">바로구매</button>
+    <button class="btn-basicM">취소</button>
+    <button class="btn-basicM black">확인</button>
+    <button class="btn-basicM" disabled>확인</button>
+    <button class="btn-basicM pink">구매</button>
+    
+    <button class="btn-basicS black">신규등록</button>
+    <button class="btn-basicS pink">바로구매</button>
+    <button class="btn-basicS soldout">SOLD OUT</button>
+
+    
+    <div class="btnWrap">
+        <button class="btn-basicM">쇼핑 계속하기</button>
+        <button class="btn-basicM black">주문내역 보기</button>
+    </div>
+    
+    <div class="btnWrap centerMiddle">
+        <button class="btn-basicS">배송지 목록</button>
+        <button class="btn-basicS black">신규등록</button>
+    </div>
+
+    <h1>CHECK &amp; RADIO</h1>
+    <label><input type="checkbox"><span>THE IZZAT</span></label>
+    <label><input type="checkbox" class="type2"><span>THE IZZAT</span></label>
+    <input type="checkbox" class="check-like">
+
+    <br>
+
+    <label><input type="radio" name="radio1"><span>Radio</span></label>
+    <label><input type="radio" name="radio1"><span>Radio</span></label>
+    <label><input type="radio" name="radio1"><span>Radio</span></label>
+
+    <br>
+
+    <label><input type="radio" class="type2" name="radio2"><span>Radio</span></label>
+    <label><input type="radio" class="type2" name="radio2"><span>Radio</span></label>
+    <label><input type="radio" class="type2" name="radio2"><span>Radio</span></label>
+
+    <h1>SELECT UI</h1>
+    <div class="select-payment">
+        <div class="inner">
+            <label>
+                <input type="radio" name="selectPayment">
+                <div class="item">
+                    <span>
+                        <strong>신용 체크카드</strong>
+                        <em>최근결제</em>
+                    </span>
+                </div>
+            </label>
+            <label>
+                <input type="radio" name="selectPayment">
+                <div class="item">
+                    <span>
+                        <strong>신용 체크카드</strong>
+                        <em>최근결제</em>
+                    </span>
+                </div>
+            </label>
+            <label>
+                <input type="radio" name="selectPayment">
+                <div class="item">
+                    <span>
+                        <strong>신용 체크카드</strong>
+                        <em>최근결제</em>
+                    </span>
+                </div>
+            </label>
+            <label>
+                <input type="radio" name="selectPayment">
+                <div class="item">
+                    <span>
+                        <strong>신용 체크카드</strong>
+                        <em>최근결제</em>
+                    </span>
+                </div>
+            </label>
+        </div>
+    </div>
+    <br>
+    <div class="selectUi-thumb">
+        <div class="inner">
+            <label>
+                <input type="radio" name="goodsSelect" checked>
+                <span>
+                    <img src="../img/temp/thumb-104x150.jpg" alt="">
+                </span>
+            </label>
+            <label>
+                <input type="radio" name="goodsSelect">
+                <span>
+                    <img src="../img/temp/thumb-104x150.jpg" alt="">
+                </span>
+            </label>
+            <label>
+                <input type="radio" name="goodsSelect">
+                <span>
+                    <img src="../img/temp/thumb-104x150.jpg" alt="">
+                </span>
+            </label>
+            <label>
+                <input type="radio" name="goodsSelect">
+                <span>
+                    <img src="../img/temp/thumb-104x150.jpg" alt="">
+                </span>
+            </label>
+            <label>
+                <input type="radio" name="goodsSelect">
+                <span>
+                    <img src="../img/temp/thumb-104x150.jpg" alt="">
+                </span>
+            </label>
+        </div>
+    </div>
+    <br>
+    <div class="selectUi-a">
+        <label>
+            <input type="radio" name="sizeSelect" checked>
+            <span>44</span>
+        </label>
+        <label>
+            <input type="radio" name="sizeSelect">
+            <span>55</span>
+        </label>
+        <label>
+            <input type="radio" name="sizeSelect">
+            <span>66</span>
+        </label>
+        <label>
+            <input type="radio" name="sizeSelect">
+            <span>77</span>
+        </label>
+    </div>
+    <h1>ACCRODIAN</h1>
+    <div class="accordion-title"><h2 class="title-a">아코디언</h2><button>열림</button></div>
+    <div class="accordion-panel">
+        <div>
+            아코디언 내용
+        </div>
+    </div>
+    <div class="aarodionBox">
+        <div class="accordion-title type2 open"><label><input type="checkbox" class="type2"><span>통관정보 수집, 제공에 동의 (필수)</span></label><button>열림</button></div>
+        <div class="accordion-panel">
+            <div>
+                통관업무를 위해 개인통관고유부호를 수집하여 판매자에게 제공하며, 다음 주문 시 사용할 수 있도록 탈퇴 시까지 저장됩니다. 단, 비회원 주문일 경우 개인통관고유부호를 별도로 저장하지 않습니다.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-title type2 open"><label><input type="checkbox" class="type2"><span>통관정보 수집, 제공에 동의 (필수)</span></label><button>열림</button></div>
+    <div class="accordion-panel">
+        <div>
+            통관정보 수집, 제공에 동의 (필수) 내용
+        </div>
+    </div>
+    <div class="accordion-title type2">개인통관고유부호 안내<button>열림</button></div>
+    <div class="accordion-panel">
+        <div>
+            개인통관고유부호 안내 내용
+        </div>
+    </div>
+    <div class="accordion-title type2">해외배송상품 이용 안내<button>열림</button></div>
+    <div class="accordion-panel">
+        <div>
+            해외배송상품 이용 안내 내용
+        </div>
+    </div>
+    <h1>TIP</h1>
+    <div class="tip">
+        적용 가능 포인트가 1,000P이상일 경우 사용 가능하며, 10P단위로 사용하실 수 있습니다. (1P=1원) 단, 최종 결제금액의 90%까지만 사용 가능합니다. (나머지 10% 별도 결제)
+    </div>
+    <div class="tip">
+        자세한 주문내역은 <strong>마이바바 > 주문/배송 현황</strong> 페이지에서 확인하실 수 있습니다.
+    </div>
+    <h1>정보리스트</h1>
+    <div class="list-info fixLeft">
+        <ul>
+            <li>
+                <strong>받으시는 분</strong>
+                <span>받으시는 분</span>
+            </li>
+            <li>
+                <strong>휴대전화 번호</strong>
+                <span>01012341234</span>
+            </li>
+            <li>
+                <strong>주소</strong>
+                <span>[06531] 서울특별시 서초구 신반포로 339 (논현빌딩) 바바패션 6층</span>
+            </li>
+            <li>
+                <strong>배송메시지</strong>
+                <span>빠른 배송 부탁드려요.</span>
+            </li>
+        </ul>
+    </div>
+    <div class="list-info">
+        <ul>
+            <li>
+                <strong>총 주문금액</strong>
+                <span>2,090,880 원</span>
+            </li>
+            <li>
+                <strong>할인쿠폰</strong>
+                <span>-118,440 원</span>
+            </li>
+            <li>
+                <strong>중복 할인쿠폰</strong>
+                <span>-20,000 원</span>
+            </li>
+            <li>
+                <strong>배송비</strong>
+                <span>2,500 원</span>
+            </li>
+            <li>
+                <strong>배송비 무료쿠폰</strong>
+                <span>-2,500 원</span>
+            </li>
+            <li>
+                <strong>e포인트</strong>
+                <span>-2,500 원</span>
+            </li>
+            <li>
+                <strong>마일이지</strong>
+                <span>-20,000 P</span>
+            </li>
+            <li>
+                <strong>추천인 할인</strong>
+                <span>-20,000 P</span>
+            </li>
+            <li class="total">
+                <strong>최종 결제금액</strong>
+                <span>2,090,880 원</span>
+            </li>
+        </ul>
+    </div>
+    <div class="list-info grayBox">
+        <ul>
+            <li>
+                <strong>적립 예정 e포인트</strong>
+                <span>+38,648 P</span>
+            </li>
+            <li>
+                <strong>적립 예정 마일리지</strong>
+                <span>+19,324 P</span>
+            </li>
+            <li>
+                <strong>상품 리뷰 작성 시 추가 포인트</strong>
+                <span>+500 P</span>
+            </li>
+        </ul>
+        <div class="tip">e포인트/마일리지 적립은 구매확정 시 적립되며, 자동 구매확정은 배송 완료 후 7일(영업일) 이후에 처리됩니다.</div>
+    </div>
+    <div class="list-info grayBox">
+        <ul>
+            <li class="payment">
+                <strong>결제수단</strong>
+                <span>신용카드:1,932,440원<br>KB국민카드 / 일시불</span>
+            </li>
+        </ul>
+    </div>
+
+    <h1>TABLE</h1>
+    <table>
+        <tbody>
+            <tr>
+                <th>구분</th>
+                <th>개인정보 수집 항목</th>
+            </tr>
+            <tr>
+                <td>상품 배송 및 서비스 제공을 위한 사용자 정보 확인</td>
+                <td>배송의뢰인 및 수령인의 성명, 전화번호 또는 휴대전화번호</td>
+            </tr>
+            <tr>
+                <td>상품 구매에 대한 대금결제 및 취소</td>
+                <td>신용카드정보, 은행계좌정보, 휴대전화번호</td>
+            </tr>
+            <tr>
+                <th colspan="2">보관기간</th>
+            </tr>
+            <tr>
+                <td colspan="2">5년보관<br>(전자상거래 등에서의 소비자보호에 관한 법률)</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!--
+    <div class="searchBox-a open">
+        <input type="text" placeholder="브랜드명을 입력해주세요">
+        <div class="dropdownBox">
+            <a href="#"><strong><em>DI</em>DIER DUBOT</strong><span>디디에두보</span></a>
+            <a href="#"><strong><em>DI</em>OR Beauty</strong><span>디올뷰티</span></a>
+        </div>
+        <button class="btn-del">삭제</button>
+        <button class="btn-search">검색</button>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="tagSet-a">
+        <div class="inner">
+            <span>핸드메이트코트<button class="del">삭제</button></span>
+            <span>레더<button class="del">삭제</button></span>
+        </div>
+    </div>
+    <div class="tagSet-b">
+        <div class="inner">
+            <span>핸드메이트코트<button class="del">삭제</button></span>
+            <span>레더<button class="del">삭제</button></span>
+        </div>
+    </div>
+    <div class="tab-a">
+        <ul>
+            <li class="on"><a href="#">Original</a></li>
+            <li><a href="#">A-Z</a></li>
+            <li><a href="#">ㄱ-ㅎ</a></li>
+        </ul>
+    </div>
+    <div class="findAlpabet">
+        <ul>
+            <li>
+                <label>A</label>
+                <a href="#"><strong>A.P.C</strong><span>아페쎄</span></a>
+                <a href="#"><strong>ACNE STUDIOS</strong><span>아크네스튜디오</span></a>
+            </li>
+            <li>
+                <label>B</label>
+                <a href="#"><strong>BOTTEGA VENETA</strong><span>보테가베네타</span></a>
+                <a href="#"><strong>BY WOOL</strong><span>바이울</span></a>
+            </li>
+            <li>
+                <label>C</label>
+            </li>
+            <li>
+                <label>D</label>
+                <a href="#"><strong>DIDIER DUBOT</strong><span>디디에두보</span></a>
+                <a href="#"><strong>DIOR</strong><span>디올</span></a>
+                <a href="#"><strong>DIOR Beauty</strong><span>디올 뷰티</span></a>
+                <a href="#"><strong>Diagonal</strong><span>다이애그널</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="selectUI-a n3">
+        <div class="inner">
+            <label><input type="radio" name="select-size" checked><span>44</span></label>
+            <label><input type="radio" name="select-size"><span>55</span></label>
+            <label><input type="radio" name="select-size"><span>66</span></label>
+            <label><input type="radio" name="select-size"><span>FREE</span></label>
+            <label><input type="radio" name="select-size"><span>25</span></label>
+            <label><input type="radio" name="select-size"><span>26</span></label>
+            <label><input type="radio" name="select-size"><span>27</span></label>
+            <label><input type="radio" name="select-size"><span>28</span></label>
+            <label><input type="radio" name="select-size"><span>XL</span></label>
+            <label><input type="radio" name="select-size"><span>X</span></label>
+            <label><input type="radio" name="select-size"><span>M</span></label>
+            <label><input type="radio" name="select-size" disabled><span>S</span></label>
+            <label><input type="radio" name="select-size"><span>250</span></label>
+            <label><input type="radio" name="select-size"><span>240</span></label>
+            <label><input type="radio" name="select-size"><span>230</span></label>
+        </div>
+    </div>
+    <br>
+    <div class="selectUI-a">
+        <div class="inner">
+            <label><input type="radio" name="select-material" checked><span>울</span></label>
+            <label><input type="radio" name="select-material"><span>캐시미어</span></label>
+            <label><input type="radio" name="select-material"><span>면</span></label>
+            <label><input type="radio" name="select-material" disabled><span>폴리에스터</span></label>
+        </div>
+    </div>
+    <br>
+    <div class="selectUI-a">
+        <div class="inner">
+            <label><input type="radio" name="select-material" checked><span><i>품절 임박 상품<br><em>(재고 10개이하)</em></i></span></label>
+            <label><input type="radio" name="select-material"><span>캐시미어</span></label>
+            <label><input type="radio" name="select-material"><span>면</span></label>
+            <label><input type="radio" name="select-material" disabled><span>폴리에스터</span></label>
+        </div>
+    </div>
+    <div class="selectUI-color">
+        <div class="inner">
+            <label><input type="radio" name="select-color"><span><em style="background:#000"></em>블랙</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#fff;border: 1px solid #eaeaea;"></em>화이트</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#999"></em>그레이</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#d8bc8b"></em>베이지</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#112d4e"></em>네이비</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#153d9d"></em>블루</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#7c38ab"></em>퍼플</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#f0e7d8"></em>골드</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#d63a30"></em>레드</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#158122"></em>그린</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#cede00"></em>올리브</span></label>
+            <label><input type="radio" name="select-color"><span><em style="background:#ffd200"></em>옐로우</span></label>
+        </div>
+    </div>
+    <div class="customInputRange">
+        <div class="fieldSet">
+            <input type="text"> ~ 
+            <input type="text">
+        </div>
+        <button>입력완료</button>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="bottomToast">
+        <button class="reset">초기화</button>
+        <strong>999999개의 상품보기</strong>
+    </div>
+    -->
+    
+</body>
+</html>

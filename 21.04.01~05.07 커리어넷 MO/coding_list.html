@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>커리어넷 MO 리뉴얼 코딩리스트</title>
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded',domload);
+        function domload(){
+            //번호 자동으로 붙이는거 start
+            var table = document.getElementsByTagName('table')
+            Array.from(table).forEach(function(item,index){
+                item.querySelectorAll('table td:first-child').forEach(function(item,index){
+                    item.innerText = index + 1;
+                })
+            })
+            //번호 자동으로 붙이는거 end
+        }
+    </script> -->
+<style>
+
+    .index-wrap {padding:50px 40px;}
+    .index-wrap .title {font-size:24px; margin-bottom:20px; font-weight:400;}
+    .index-wrap table {width: 100%;border-collapse: collapse;}
+    .index-wrap table th, .index-wrap table td {padding:5px;border:1px solid #ddd;font-size: 12px;font-weight:300;}
+    .index-wrap table th {background:#f0f0f0; color:#111;}
+    .index-wrap table td { color:#333;text-align: left;}
+    .index-wrap table td.center {text-align:center;}
+    .index-wrap table tr:hover td {background:#f2feff;}
+    .index-wrap table .disabled td {background:#ddd; opacity: 0.6;}
+    .index-wrap table .end td {background-color:#e2ffea;}
+    @media screen and (max-width: 768px) {
+        table th:not(:nth-child(10)),
+        table td:not(:nth-child(10)){display: none;}
+    }
+</style>
+</head>
+<body>
+    <div class="index-wrap">
+        <h1 class="title">Mobile 코딩 리스트</h1>
+        <table>
+            <colgroup>
+                <col width="130px" />
+                <col width="170px" />
+                <col width="170px" />
+                <col width="170px" />
+                <col width="170px" />
+                <col width="90px" />
+                <col width="200px" />
+                <col width="" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>1 Depth</th>
+                    <th>2 Depth</th>
+                    <th>3 Depth</th>
+                    <th>4 Depth</th>
+                    <th>상태</th>
+                    <th>HTML</th>
+                    <th>내용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="end">
+                    <td class="center"></td>
+                    <td>리뷰용</td>
+                    <td>공통메인</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a href="html/main_link.html" target="_blank">html/main_link.html</a></td>
+                    <td></td>
+                </tr>
+                <tr class="end">
+                    <td class="center"></td>
+                    <td></td>
+                    <td>기업서비스 메인</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a href="html/company/01_main/main_link.html" target="_blank">html/company/01_main/main_link.html</a></td>
+                    <td></td>
+                </tr>
+                <tr class="end">
+                    <td class="center"></td>
+                    <td>Style Guide</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a href="style_guide.html" target="_blank">style_guide.html</a></td>
+                    <td>수시로 수정 가능</td>
+                </tr>
+                <!-- 공통 -->
+                <tr>
+                    <td rowspan="6" class="center">공통</td>
+                    <td>메인</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/main.html">html/main.html</a></td>
+                    <td>공통(header/footer) include<br>사이드메뉴 적용(로그인 전 ver.)<br><span style="color:blue;">수정 : 4/27 (플래티넘/프리미엄 스페셜 +버튼 삭제)</span><br><span style="color:blue;">수정 : 5/3 (배너 전체보기 기능 적용 id="layer_banner")</span></td>
+                </tr>
+                <tr class="disabled">
+                    <td>공통</td>
+                    <td>header</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/inc_header.html</a></td>
+                    <td>파일경로확인용</td>
+                </tr>
+                <tr class="disabled">
+                    <td></td>
+                    <td>sidemenu</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/inc_sidemenu.html</a></td>
+                    <td>파일경로확인용</td>
+                </tr>
+                <tr class="disabled">
+                    <td></td>
+                    <td>footer</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/inc_footer.html</a></td>
+                    <td>전체 공통<br>파일경로확인용</td>
+                </tr>
+                <tr>
+                    <td>사이드메뉴</td>
+                    <td>로그인 후 ver</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/sidemenu_main.html">html/sidemenu_main.html</a></td>
+                    <td>화면 확인용 파일</td>
+                </tr>
+                <tr>
+                    <td>검색</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/search_main.html">html/search_main.html</a></td>
+                    <td>화면 확인용 파일<br>인기 검색어(tab), 검색어 입력(input 클릭시) 포함</td>
+                </tr>
+                <!-- 회원가입 -->
+                <tr>
+                    <td rowspan="2" class="center" style="background:#fff; opacity:1;">회원가입</td>
+                    <td>개인회원</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/join/01_user_join.html">html/join/01_user_join.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>기업회원</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/join/02_company_join.html">html/join/02_company_join.html</a></td>
+                    <td></td>
+                </tr>
+                <!-- 개인회원 -->
+                <tr class="disabled">
+                    <td rowspan="68" class="center" style="background:#fff; opacity:1;">개인회원</td>
+                    <td>공통</td>
+                    <td>header</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/user/inc/inc_header.html</a></td>
+                    <td>파일경로확인용</td>
+                </tr>
+                <tr class="disabled">
+                    <td></td>
+                    <td>sidemenu</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/user/inc/inc_sidemenu.html</a></td>
+                    <td>파일경로확인용</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>로그인</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/00_login/01_login.html">html/user/00_login/01_login.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>아이디 찾기</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/00_login/02_id_find.html">html/user/00_login/02_id_find.html</a></td>
+                    <td>휴대폰 인증 포함</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>결과</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/00_login/02_id_find_result.html">html/user/00_login/02_id_find_result.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>비밀번호 찾기</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/00_login/03_pw_find.html">html/user/00_login/03_pw_find.html</a></td>
+                    <td>휴대폰 인증 포함<br><span style="color:blue">수정 - 4/21</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>결과</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/00_login/03_pw_find_result.html">html/user/00_login/03_pw_find_result.html</a></td>
+                    <td><span style="color:blue">수정 - 4/21</span></td>
+                </tr>
+                <tr>
+                    <td>개인서비스</td>
+                    <td>홈</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/01_main/01_user_home.html">html/user/01_main/01_user_home.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>관심직종선택</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/01_main/02_occupation_select.html">html/user/01_main/02_occupation_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>이력서관리</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/07_resume/01_resume_management_list.html">html/user/07_resume/01_resume_management_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>이력서 보기</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/07_resume/02_resume_view.html">html/user/07_resume/02_resume_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>지원현황</td>
+                    <td>입사지원 현황</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/02_job_application/01_job_application_status.html">html/user/02_job_application/01_job_application_status.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>지원취소</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/02_job_application/02_job_application_cancel.html">html/user/02_job_application/02_job_application_cancel.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>취업활동 증명서</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/02_job_application/03_employment_certificate.html">html/user/02_job_application/03_employment_certificate.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>취업활동 증명서(프린트)</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/02_job_application/04_employment_certificate_print.html">html/user/02_job_application/04_employment_certificate_print.html</a></td>
+                    <td>이메일 발송 alert popup 페이지 하단에 있음(id="pop_alert_email")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>지원할 만한 공고</td>
+                    <td>맞춤채용정보</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/01_recruitment_info.html">html/user/03_apply_announce/01_recruitment_info.html</a></td>
+                    <td>페이지 하단에 맞춤채용정보 없음 화면 포함</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>맞춤채용정보 설정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/02_recruitment_info_setting.html">html/user/03_apply_announce/02_recruitment_info_setting.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>희망 직무 선택</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/03_hope_job_select.html">html/user/03_apply_announce/03_hope_job_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>희망 근무지 선택</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/04_hope_location_select.html">html/user/03_apply_announce/04_hope_location_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>스크랩 채용정보</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/05_scrap_info.html">html/user/03_apply_announce/05_scrap_info.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>최근 본 공고</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/06_lately_announcement.html">html/user/03_apply_announce/06_lately_announcement.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>관심기업</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/07_attention_company.html">html/user/03_apply_announce/07_attention_company.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>회원정보 관리</td>
+                    <td>회원정보 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/04_member_info_management/01_member_info_modify.html">html/user/04_member_info_management/01_member_info_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>스크랩 채용정보</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/05_scrap_info.html">html/user/03_apply_announce/05_scrap_info.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>최근 본 공고</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/06_lately_announcement.html">html/user/03_apply_announce/06_lately_announcement.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>관심기업</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/03_apply_announce/07_attention_company.html">html/user/03_apply_announce/07_attention_company.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>회원정보 관리</td>
+                    <td>회원정보 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/04_member_info_management/01_member_info_modify.html">html/user/04_member_info_management/01_member_info_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>이력서</td>
+                    <td>이력서 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/01_resume_register.html">html/user/05_resume_registration/01_resume_register.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>프로필</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/02_profile.html">html/user/05_resume_registration/02_profile.html</a></td>
+                    <td>사진용량 초과 alert popup 페이지 하단에 있음(id="pop_alert_photo")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>학력사항 목록/등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/03_school_list.html">html/user/05_resume_registration/03_school_list.html</a></td>
+                    <td>학력사항 추가 alert popup 페이지 하단에 있음(id="pop_school_list")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>고등학교 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/04_high_school_insert.html">html/user/05_resume_registration/04_high_school_insert.html</a></td>
+                    <td>페이지 하단에 alert popup 2개 만들어두었음(id="pop_alert_01", id="pop_alert_02")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>대학교 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/05_university_school_insert.html">html/user/05_resume_registration/05_university_school_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>대학원 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/06_graduate _school_insert.html">html/user/05_resume_registration/06_graduate _school_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>경력사항 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/07_career_list.html">html/user/05_resume_registration/07_career_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>경력사항 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/08_career_insert.html">html/user/05_resume_registration/08_career_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>직무선택</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/09_occupation_select.html">html/user/05_resume_registration/09_occupation_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>프로젝트 수행경력</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/10_project_insert.html">html/user/05_resume_registration/10_project_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>인턴·대외활동 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/11_intern_list.html">html/user/05_resume_registration/11_intern_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>인턴·대외활동 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/12_intern_insert.html">html/user/05_resume_registration/12_intern_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>자격증 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/13_certificate_list.html">html/user/05_resume_registration/13_certificate_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>자격증 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/14_certificate_insert.html">html/user/05_resume_registration/14_certificate_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>어학능력 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/15_language_list.html">html/user/05_resume_registration/15_language_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>어학능력 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/16_language_insert.html">html/user/05_resume_registration/16_language_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>수상내역 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/17_awars_list.html">html/user/05_resume_registration/17_awars_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>수상내역 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/18_awards_insert.html">html/user/05_resume_registration/18_awards_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>교육이수 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/19_education_list.html">html/user/05_resume_registration/19_education_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>교육이수 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/20_education_insert.html">html/user/05_resume_registration/20_education_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>해외경험 목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/21_overseas_list.html">html/user/05_reume_registration/21_overseas_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>해외경험 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/22_overseas_insert.html">html/user/05_reume_registration/22_overseas_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>취업우대·병역 등록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/23_military_insert.html">html/user/05_reume_registration/23_military_insert.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>희망근무조건</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/24_hope_working_condition.html">html/user/05_reume_registration/24_hope_working_condition.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>희망근무지역</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/25_hope_location_select.html">html/user/05_reume_registration/25_hope_location_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>희망 직무·산업</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/05_resume_registration/26_hope_job_select.html">html/user/05_reume_registration/26_hope_job_select.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>이력서 관리</td>
+                    <td>이력서 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/01_resume_modify.html">html/user/06_resume_management/01_resume_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>프로필 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/02_profile_modify.html">html/user/06_resume_management/02_profile_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>고등학교 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/03_high_school_modify.html">html/user/06_resume_management/03_high_school_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>대학교 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/04_university_school_modify.html">html/user/06_resume_management/04_university_school_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>대학원 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/05_graduate_school_modify.html">html/user/06_resume_management/05_graduate_school_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>경력사항 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/06_career_modify.html">html/user/06_resume_management/06_career_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>프로젝트 경력 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/07_project_modify.html">html/user/06_resume_management/07_project_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>인턴·대외활동 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/08_intern_modify.html">html/user/06_resume_management/08_intern_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>자격증 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/09_certificate_modify.html">html/user/06_resume_management/09_certificate_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>어학능력 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/10_language_modify.html">html/user/06_resume_management/10_language_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>수상내역 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/11_awards_modify.html">html/user/06_resume_management/11_awards_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>교육이수 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/12_education_modify.html">html/user/06_resume_management/12_education_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>해외경험 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/13_overseas_modify.html">html/user/06_resume_management/13_overseas_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>취업우대·병역 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/14_military_modify.html">html/user/06_resume_management/14_military_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>희망근무조건 수정</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/user/06_resume_management/15_hope_working_condition_modify.html">html/user/06_resume_management/15_hope_working_condition_modify.html</a></td>
+                    <td></td>
+                </tr>
+                <!-- 기업회원 -->
+                <tr class="disabled">
+                    <td rowspan="21" class="center" style="background:#fff; opacity:1;">기업회원</td>
+                    <td>공통</td>
+                    <td>header</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/company/inc/inc_header.html</a></td>
+                    <td>파일경로확인용(gnb 포함X)<br>gnb는 각 페이지에 적용</td>
+                </tr>
+                <tr class="disabled">
+                    <td></td>
+                    <td>sidemenu</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center"></td>
+                    <td><a target="_blank">html/company/inc/inc_sidemenu.html</a></td>
+                    <td>파일경로확인용</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>로그인</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/00_login/01_login.html">html/company/00_login/01_login.html</a></td>
+                    <td><span style="color:blue">수정 : 5/6(문구수정 및 회원가입 링크 추가)</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>아이디 찾기</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/00_login/02_id_find.html">html/company/00_login/02_id_find.html</a></td>
+                    <td><span style="color:blue">수정 : 5/6(문구 위치 변경으로 마크업 수정)</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>결과</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/00_login/02_id_find_result.html">html/company/00_login/02_id_find_result.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>비밀번호 찾기</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/00_login/03_pw_find.html">html/company/00_login/03_pw_find.html</a></td>
+                    <td><span style="color:blue">수정 : 5/6(문구 위치 변경으로 마크업 수정)</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>결과</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/00_login/03_pw_find_result.html">html/company/00_login/03_pw_find_result.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>기업서비스</td>
+                    <td>홈</td>
+                    <td>진행중</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/01_main/main.html">html/company/01_main/main.html</a></td>
+                    <td>공통파일 include : 모든 page 적용<br><span style="color:blue">수정 - 4/21</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>접수마감</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/01_main/main2.html">html/company/01_main/main2.html</a></td>
+                    <td><span style="color:blue">수정 - 4/21</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>대기중</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/01_main/main3.html">html/company/01_main/main3.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>공고없음</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/01_main/main4.html">html/company/01_main/main4.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>공고관리</td>
+                    <td>전체</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/02_recruitment/01_recruitment_list.html">html/company/02_recruitment/01_recruitment_list.html</a></td>
+                    <td>header include X, 페이지 적용</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>지원자현황</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/02_recruitment/02_applicant_status.html">html/company/02_recruitment/02_applicant_status.html</a></td>
+                    <td>서브페이지 footer 없음</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>결과안내</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/02_recruitment/03_result_info.html">html/company/02_recruitment/03_result_info.html</a></td>
+                    <td>팝업(id="popup_result")<br>form태그 수정 - 4/22</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>이력서보기</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/02_recruitment/04_resume_view.html">html/company/02_recruitment/04_resume_view.html</a></td>
+                    <td>팝업(id="popup_resume")<br><span style="color:blue">수정 - 4/21</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>인재관리</td>
+                    <td>열람한 인재</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/03_human_management/01_read_human.html">html/company/03_human_management/01_read_human.html</a></td>
+                    <td>열람한 인재 없음 화면 포함<br><span style="color:blue;">수정 - 4/30</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>스크랩 인재</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/03_human_management/02_scrap_human.html">html/company/03_human_management/02_scrap_human.html</a></td>
+                    <td>스크랩한 인재 없음 화면 포함<br><span style="color:blue;">수정 - 4/30</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>기업정보</td>
+                    <td>홈</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/04_comp_info/01_comp_info.html">html/company/04_comp_info/01_comp_info.html</a></td>
+                    <td>form태그 수정 - 4/22</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>사내근무환경<br>(동영상 업로드)</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/04_comp_info/02_mov_upload.html">html/company/04_comp_info/02_mov_upload.html</a></td>
+                    <td>팝업(id="popup_upload")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>사내근무환경<br>(로고변경, 사진등록)</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/04_comp_info/03_photo_upload.html">html/company/04_comp_info/03_photo_upload.html</a></td>
+                    <td>팝업(id="popup_upload")<br>동영상업로드 팝업과 id 동일, 디자인 별도</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>채용절차법 안내</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a target="_blank" href="html/company/04_comp_info/04_recruit_law.html">html/company/04_comp_info/04_recruit_law.html</a></td>
+                    <td>팝업(id="popup_reclaw")</td>
+                </tr>
+                <!-- 채용 -->
+                <tr class="">
+                    <td rowspan="48" class="center" style="background:#fff; opacity:1;">채용</td>
+                    <td>채용정보</td>
+                    <td>홈</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/1_01_main.html" target="_blank">html/recruit/01_recruit_info/1_01_main.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>공통 - 상세검색</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/inc_search.html" target="_blank">html/recruit/01_recruit_info/inc_search.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>채용속보</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/2_01_recruit_breaking_news.html" target="_blank">html/recruit/01_recruit_info/2_01_recruit_breaking_news.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>기업별</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/3_01_recruit_business.html" target="_blank">html/recruit/01_recruit_info/3_01_recruit_business.html</a></td>
+                    <td></td>
+                </tr>                
+                <tr>
+                    <td></td>
+                    <td>학력별</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/4_01_recruit_shcool.html" target="_blank">html/recruit/01_recruit_info/4_01_recruit_shcool.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>전문채용관</td>
+                    <td>목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/5_01_recruit_hire_list.html" target="_blank">html/recruit/01_recruit_info/5_01_recruit_hire_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/5_02_recruit_hire_view.html" target="_blank">html/recruit/01_recruit_info/5_02_recruit_hire_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>50대그룹</td>
+                    <td>목록</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/6_01_50_group_list.html" target="_blank">html/recruit/01_recruit_info/6_01_50_group_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/6_02_50_group_view.html" target="_blank">html/recruit/01_recruit_info/6_02_50_group_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>인턴</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/7_01_intern_hire.html" target="_blank">html/recruit/01_recruit_info/7_01_intern_hire.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>중견기업</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/8_01_midsize_company_hire.html" target="_blank">html/recruit/01_recruit_info/8_01_midsize_company_hire.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>공기업</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/01_recruit_info/9_01_public_company_hire.html" target="_blank">html/recruit/01_recruit_info/9_01_public_company_hire.html</a></td>
+                    <td></td>
+                </tr><tr>
+                    <td>지역별</td>
+                    <td>국내지역</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/02_area/1_01_region.html" target="_blank">html/recruit/02_area/1_01_region.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>지역별(지역추가)</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/02_area/1_02_region_bottom_popup.html" target="_blank">html/recruit/02_area/1_02_region_bottom_popup.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>지역별(지역선택)</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/02_area/1_03_region_popup.html" target="_blank">html/recruit/02_area/1_03_region_popup.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>해외채용</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/02_area/2_01_overseas.html" target="_blank">html/recruit/02_area/2_01_overseas.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>직무별</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/03_duty/01_job.html" target="_blank">html/recruit/03_duty/01_job.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>직무별(직무추가)</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/03_duty/02_job_bottom_popup.html" target="_blank">html/recruit/03_duty/02_job_bottom_popup.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>직무별(직무선택)</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/03_duty/03_job_popup_.html" target="_blank">html/recruit/03_duty/03_job_popup_.html</a></td>
+                    <td></td>
+                </tr>      
+                <tr>
+                    <td>공채</td>
+                    <td>채용속보</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/1_01_major_list.html" target="_blank">html/recruit/04_open_rec/1_01_major_list.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>일정으로 보는 채용</td>
+                    <td>채용달력</td>
+                    <td>주간</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/2_01_rec_calendar_week.html" target="_blank">html/recruit/04_open_rec/2_01_rec_calendar_week.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>월간</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/2_01_rec_calendar_month.html" target="_blank">html/recruit/04_open_rec/2_01_rec_calendar_month.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>채용 예상/확정 공고</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/2_02_rec_announcement.html" target="_blank">html/recruit/04_open_rec/2_01_rec_calendar_month.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>공채 필수 팁</td>
+                    <td>이력서/자소서 작성팁</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_01_write_tip.html" target="_blank">html/recruit/04_open_rec/3_01_write_tip.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_01_write_tip_view.html" target="_blank">html/recruit/04_open_rec/3_01_write_tip_view.html</a></td>
+                    <td>팝업(id="popup_tip")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>자소서 작성 가이드</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_02_write_guide.html" target="_blank">html/recruit/04_open_rec/3_02_write_guide.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_02_write_guide_view.html" target="_blank">html/recruit/04_open_rec/3_02_write_guide_view.html</a></td>
+                    <td>팝업(id="popup_vguide")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>자기소개서 분석</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_02_self_intro_analysis.html" target="_blank">html/recruit/04_open_rec/3_02_self_intro_analysis.html</a></td>
+                    <td>팝업(id="popup_analysis")</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>자소서 무료 컨설팅</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_03_free_consulting.html" target="_blank">html/recruit/04_open_rec/3_03_free_consulting.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세-답변완료</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_03_free_consulting_view.html" target="_blank">html/recruit/04_open_rec/3_03_free_consulting_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세-답변없음</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_03_free_consulting_view_none.html" target="_blank">html/recruit/04_open_rec/3_03_free_consulting_view_none.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>무료컨설팅 신청하기</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/3_03_free_consulting_apply.html" target="_blank">html/recruit/04_open_rec/3_03_free_consulting_apply.html</a></td>
+                    <td>이력서 선택불가, 이력서 미완성, 이력서 없는 경우 화면 포함<br>무료컨설팅 수정시, 메일주소 변경 시 내용 주석처리</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>취업자료실</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/4_01_reference_room.html" target="_blank">html/recruit/04_open_rec/4_01_reference_room.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/04_open_rec/4_01_reference_room_view.html" target="_blank">html/recruit/04_open_rec/4_01_reference_room_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>취업자료</td>
+                    <td>취업뉴스</td>
+                    <td>취업 경제뉴스</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/1_01_economy_news.html" target="_blank">html/recruit/05_data/1_01_economy_news.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/1_01_economy_news_view.html" target="_blank">html/recruit/05_data/1_01_economy_news_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>시사상식 카드뉴스</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/1_02_card_news.html" target="_blank">html/recruit/05_data/1_02_card_news.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/1_02_card_news_view.html" target="_blank">html/recruit/05_data/1_02_card_news_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>커리어 보도자료</td>
+                    <td>목록</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/1_03_press_news.html" target="_blank">html/recruit/05_data/1_03_press_news.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>상세</td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/1_03_press_news_view.html" target="_blank">html/recruit/05_data/1_03_press_news_view.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>성공취업tool</td>
+                    <td>글자수 세기</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/2_01_letter_count.html" target="_blank">html/recruit/05_data/2_01_letter_count.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>연봉 계산기</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/2_02_salary_calc.html" target="_blank">html/recruit/05_data/2_02_salary_calc.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>학점 변환기</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/2_03_credit_changer.html" target="_blank">html/recruit/05_data/2_03_credit_changer.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>어학 변환기</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/2_04_language_changer.html" target="_blank">html/recruit/05_data/2_04_language_changer.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>경력 계산기</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/05_data/2_05_career_calc.html" target="_blank">html/recruit/05_data/2_05_career_calc.html</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>채용정보 뷰</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/06_view/01_announcement_view.html" target="_blank">html/recruit/06_view/01_announcement_view.html</a></td>
+                    <td>지원자현황 그래프는 영역만 지정</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>입사지원</td>
+                    <td></td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/06_view/02_job_application.html" target="_blank">html/recruit/06_view/02_job_application.html</a></td>
+                    <td>팝업(id="popup_application")<br>이력서 없음, 자사이력서, 자유양식 이력서, 이력서(첨부파일) 전체보기 화면 포함, 연락처 수정화면 주석처리</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>입사지원 완료</td>
+                    <td></td>
+                    <td class="center">완료</td>
+                    <td><a href="html/recruit/06_view/02_job_application_complete.html" target="_blank">html/recruit/06_view/02_job_application_complete.html</a></td>
+                    <td>팝업(id="popup_application") : 위 입사지원하기 팝업과 아이디 동일</td>
+                </tr>
+                <!-- // 채용 -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

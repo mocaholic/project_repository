@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바바패션 퍼블리싱 리스트</title>
+    <style>
+        table {border-spacing: 0;border-collapse: collapse;width: 100%;}
+        table td:first-child{text-align: center}
+        table thead th{background: #000;color: #fff;min-width: 60px;}
+        table thead th,table thead td{border: 1px solid #000;padding: 8px;}
+        @media screen and (max-width: 768px) {
+            table th:not(:nth-child(3)),
+            table td:not(:nth-child(3)){display: none;}
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',domload);
+        function domload(){
+            //번호 자동으로 붙이는거 start
+            var table = document.getElementsByTagName('table')
+            Array.from(table).forEach(function(item,index){
+                item.querySelectorAll('table td:first-child').forEach(function(item,index){
+                    item.innerText = index + 1;
+                })
+            })
+            //번호 자동으로 붙이는거 end
+        }
+    </script>
+</head>
+<body>
+    <h1>바바패션 퍼블리싱 리스트(Mobile)</h1>
+    <h2>- 공통요소</h2>
+    <table>
+        <colgroup>
+            <col style="width: 40px;">
+            <col style="width: 150px;">
+            <col style="width: 400px">
+            <col style="width: 150px;">
+            <col style="width: 150px;">
+            <col style="width: 150px;">
+            <col style="width: auto">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>카테고리</th>
+                <th>파일명</th>
+                <th>담당자</th>
+                <th>완료일</th>
+                <th>최종수정일</th>
+                <th>비고</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>레이아웃</td>
+                <td><a href="pages/template-layout.html" target="_blank">template-layout.html</a></td>
+                <td>윤영도</td>
+                <td>2020-11-03</td>
+                <td>2020-11-03</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>팝업</td>
+                <td><a href="pages/template-popup.html" target="_blank">template-popup.html</a></td>
+                <td>윤영도</td>
+                <td>2020-11-03</td>
+                <td>2020-11-03</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>탭</td>
+                <td><a href="pages/template-tab.html" target="_blank">template-tab.html</a></td>
+                <td>윤영도</td>
+                <td>2020-12-11</td>
+                <td>2020-12-11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>swiper</td>
+                <td><a href="pages/template-swiper.html" target="_blank">template-swiper.html</a></td>
+                <td>윤영도</td>
+                <td>2020-12-11</td>
+                <td>2020-12-11</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>폰트 테스트</td>
+                <td><a href="pages/template-fontTest.html" target="_blank">template-fontTest.html</a></td>
+                <td>윤영도</td>
+                <td>2020-12-23</td>
+                <td>2020-12-23</td>
+                <td></td>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

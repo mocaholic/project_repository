@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="popup_wrap" id="popup_application">
+        <h1>입사지원</h1>
+        <div class="cont_wrap">
+            <div class="contents">
+                <div class="comp_area">
+                    <strong class="comp">(주)유라코퍼레이션</strong>
+                    <h2 class="title">경영기획팀 경영지원 경력자 모집</h2>
+                    <div class="form_box custom_select">
+                        <select>
+                            <option>지원분야를 선택해 주세요.</option>
+                            <option>웹 기획</option>
+                            <option>웹 개발</option>
+                            <option>웹 디자인</option>
+                        </select>
+                    </div>
+                </div>
+                <hr class="bg db">
+                
+                <div class="apply_info">
+                    <!-- 이력서 -->
+                    <!-- 기본 이력서 : 없음 -->
+                    <div class="list_box blue">
+                        <h3 class="bg_gray_eef2f7">지원이력서</h3>
+                        <div class="d_flex aitems_c">
+                            <span class="txt">지원할 이력서가 없습니다.<br>이력서를 작성해 주세요</span>
+                            <a href="#" class="btn_bg_mid sm">이력서 작성</a>
+                        </div>
+                    </div>
+                    <!-- // 기본 이력서 : 없음 -->
+                    <!-- 기본 이력서 : 있음 -->
+                    <div class="list_box blue">
+                        <h3 class="bg_gray_eef2f7">지원이력서</h3>
+                        <!-- 이력서 여러개 있을 시 선택 영역 -->
+                        <div class="acd_box">
+                            <div class="accordion_title">
+                                <div class="title">
+                                    총 <span class="fc_blue">3개</span>의 이력서
+                                </div>
+                                <button>닫힘</button>
+                            </div>
+                            <div class="accordion_panel">
+                                <div class="d_flex aitems_c">
+                                    <div class="radio">
+                                        <input type="radio" id="resume1" name="resume">
+                                        <label for="resume1">
+                                            <div class="res_info">
+                                                <span><strong class="fc_org">기본이력서</strong>(21. 03. 14 수정)</span>
+                                                홍길동님의 이력서 입니다
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <a href="#" class="btn sm">보기</a>
+                                </div>
+
+                                <div class="d_flex aitems_c">
+                                    <div class="radio">
+                                        <input type="radio" id="resume2" name="resume">
+                                        <label for="resume2">
+                                            <div class="res_info">
+                                                <span><strong class="fc_org">기본이력서</strong>(21. 03. 14 수정)</span>
+                                                홍길동님의 이력서 입니다
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <a href="#" class="btn sm">보기</a>
+                                </div>
+
+                                <div class="d_flex aitems_c">
+                                    <div class="radio">
+                                        <input type="radio" id="resume3" name="resume">
+                                        <label for="resume3">
+                                            <div class="res_info">
+                                                <span><strong class="fc_org">기본이력서</strong>(21. 03. 14 수정)</span>
+                                                홍길동님의 이력서 입니다
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <a href="#" class="btn sm">보기</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // 이력서 여러개 있을 시 선택 영역 -->
+                        <div class="d_flex aitems_c">
+                            <div class="res_info">
+                                <span><strong class="fc_org">기본이력서</strong>(21. 03. 14 수정)</span>
+                                홍길동님의 이력서 입니다
+                            </div>
+                            <a href="#" class="btn sm">보기</a>
+                        </div>
+                    </div>
+                    <!-- // 기본 이력서 : 있음 -->
+ 
+                    <!-- 자사 이력서 -->
+                    <div class="list_box blue">
+                        <h3 class="bg_gray_eef2f7">자사이력서</h3>
+                        <a href="#" class="download">양식 다운로드</a>
+                        <!-- 이력서 첨부 전 -->
+                        <div class="d_flex aitems_c">
+                            <div class="form_box upload">
+                                <div class="file_txt off">작성하신 자사 이력서를 첨부해 주세요</div><!-- 이력서 첨부 전 : class="off" 적용, 첨부 후 : class="off" 삭제 -->
+                                <input type="file" />
+                                <button type="button" class="btn_bg_mid sm">양식첨부</button>
+                            </div>
+                        </div>
+                        <!-- // 이력서 첨부 전 -->
+                        <!-- 이력서 첨부 후 -->
+                        <div class="d_flex aitems_c">
+                            <div class="form_box upload">
+                                <div class="file_txt">
+                                    2021 커리어 자사양식_홍길동.hwp
+                                    <button type="button" class="btn_del">파일 삭제</button>
+                                </div>
+                                <input type="file" />
+                                <button type="button" class="btn_bg_mid sm">양식첨부</button>
+                            </div>
+                        </div>
+                        <!-- // 이력서 첨부 후 -->
+                    </div>
+                    <!-- // 자사 이력서 -->
+
+                    <!-- 자유양식 이력서 -->
+                    <div class="list_box blue">
+                        <h3 class="bg_gray_eef2f7">자유양식 이력서</h3>
+                        <!-- 이력서 첨부 전 -->
+                        <div class="d_flex aitems_c">
+                            <div class="form_box upload">
+                                <div class="file_txt off">작성하신 자유양식 이력서를 첨부해 주세요</div><!-- 이력서 첨부 전 : class="off" 적용, 첨부 후 : class="off" 삭제 -->
+                                <input type="file" />
+                                <button type="button" class="btn_bg_mid sm">양식첨부</button>
+                            </div>
+                        </div>
+                        <!-- // 이력서 첨부 전 -->
+                        <!-- 이력서 첨부 후 -->
+                        <div class="d_flex aitems_c">
+                            <div class="form_box upload">
+                                <div class="file_txt">
+                                    2021 커리어 자사양식_홍길동.hwp
+                                    <button type="button" class="btn_del">파일 삭제</button>
+                                </div>
+                                <input type="file" />
+                                <button type="button" class="btn_bg_mid sm">양식첨부</button>
+                            </div>
+                        </div>
+                        <!-- // 이력서 첨부 후 -->
+                    </div>
+                    <!-- // 자유양식 이력서 -->
+                    <!-- // 이력서 -->
+
+                    <!-- 연락처 -->
+                    <div class="p_info">
+                        <h3>연락처</h3>
+                        <button type="button" class="btn primary sm mr28">수정</button><!-- 수정 클릭 시 '완료' 로 변경 -->
+                        <div class="form_area">
+                            <div class="form_row">
+                                <div class="form_col">
+                                    <label for="">휴대폰</label>
+                                </div>
+                                <div class="form_col">
+                                    <div class="form_box gray">
+                                        <input type="text" placeholder="" value="010-0000-0000" readonly /><!-- 수정 버튼 클릭 시 readonly 제거 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_row">
+                                <div class="form_col">
+                                    <label for="">이메일</label>
+                                </div>
+                                <div class="form_col">
+                                    <div class="form_box gray">
+                                        <input type="text" placeholder="" value="takdi78@gmail.com" readonly /><!-- 수정 버튼 클릭 시 readonly 제거 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 연락처 -->
+                    <!-- 첨부파일 -->
+                    <div class="list_box">
+                        <h3>첨부파일</h3>
+                        <div class="acd_box">
+                            <div class="accordion_title">
+                                <div class="title">
+                                    첨부파일 <span class="fc_blue">3개</span> 
+                                </div>
+                                <button>닫힘</button>
+                            </div>
+                            <div class="accordion_panel">
+                                <div class="d_flex aitems_c">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="attach1" name="attach">
+                                        <label for="attach1">
+                                            <div class="res_info">
+                                                <span><strong class="">기획서</strong>(21. 03. 14 등록)</span>
+                                                homepage화면기획서.pdf
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="d_flex aitems_c">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="attach2" name="attach">
+                                        <label for="attach2">
+                                            <div class="res_info">
+                                                <span><strong class="">기획서</strong>(21. 03. 14 등록)</span>
+                                                homepage화면기획서.pdf
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="d_flex aitems_c">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="attach3" name="attach">
+                                        <label for="attach3">
+                                            <div class="res_info">
+                                                <span><strong class="">포트폴리오</strong>(21. 03. 14 등록)</span>
+                                                homepage포트폴리오.pdf
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="btn_area"><!-- 첨부파일 선택 시 class="on" 적용, 선택 해제 시 class="on" 삭제 -->
+                                    <button type="button" class="btn primary sm btn_ok">완료</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 첨부파일 -->
+                </div>
+            </div>
+            <div class="btn_area bg_gray_f3">
+                <button type="button" class="btn primary">입사지원하기</button>
+            </div>
+        </div>
+        <button type="button" class="btn_popup_close">팝업닫기</button>
+    </div>
+</body>
+</html>

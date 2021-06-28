@@ -1,0 +1,52 @@
+<div class="container">
+    <!-- 이미지 title -->
+    <ng-content></ng-content>
+
+    <div class="user_write_box">
+        <div class="write_inst">
+            <a (click)="openInfoPopup()" class="info">게시글 작성 유의사항</a>
+        </div>
+        <div class="editor_box">
+            <input type="text" [(ngModel)]="bltbrdTtl" class="title" placeholder="제목을 입력하세요."/>
+            <div id="editor" #editor class="put_text" contenteditable="true"
+            ></div>
+        </div>
+        <div class="attached_file">
+            <div class="put_img">
+                <input type="file"
+                       accept=".gif, .jpg, .jpeg, .png"
+                       class="upload_img"
+                       id="upload_img"
+                       [(ngModel)]="file"
+                       (change)="uploadFile($event)"
+                />
+                <label for="upload_img" class="upload_img">이미지 삽입</label>
+            </div>
+        </div>
+        <div class="enroll_btn_box">
+            <a (click)="goListPage()" class="btn btn_type1">취소하기</a>
+            <a (click)="insertBltbrd()" class="btn btn_type2 upload">{{isNew() ? '등록' : '수정'}}하기</a>
+        </div>
+    </div>
+</div>
+
+<!-- 레이어팝업 -->
+<ng-container *ngIf="isShowInfoPopup">
+    <div class="dimmed" [ngClass]="{'inactiveDimmer': !infoPopupLayer}"></div>
+    <div class="layer_popup write_popup_info" [ngClass]="{'active' : infoPopupLayer, 'inactive': !infoPopupLayer}">
+        <div class="content">
+            <h1>게시글 작성 유의사항</h1>
+            <div class="cont_pop">
+                <ul class="dot_list">
+                    <li>등록한 글은 수정이 불가 하오니 등록 전 작성 내용을 꼭! 확인해주세요</li>
+                    <li>등록한 글은 댓글이 등록되기 전까지 수정, 삭제가 가능합니다</li>
+                    <li>광고성 글, 게시판의 성격과 맞지않은 글, 사회통념 등에 어긋나는 내용의 글은 별도의 사전 통보 없이 관리자에 의해 삭제 될 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn_area">
+            <button type="button" (click)="closeInfoPopup()" class="btn btn_type2 w_100">확인</button>
+        </div>
+    </div>
+</ng-container>
+<!-- // 레이어팝업 -->

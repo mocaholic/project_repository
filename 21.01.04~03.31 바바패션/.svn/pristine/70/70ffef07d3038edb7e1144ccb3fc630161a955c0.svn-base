@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/*Login & Join*/
+.loginWrap {padding:40px 20px 56px;}
+.login-title {font-size: 28px; font-weight: 100; line-height: 1.5; letter-spacing: -2px; color:#000; font-weight:300;}
+.login-subTitle {font-size: 14px; line-height: 1.43; letter-spacing: -0.08px; color:#000; margin-top:16px;}
+.login-subText {font-size: 14px; margin-top:8px;line-height: 1.43; letter-spacing: -0.08px; color: #999999;}
+
+.loginWrap .c-black {color:#000;}
+
+.loginWrap .btn-base {
+    display:inline-block; vertical-align:top; border:1px solid #000;  padding:12px 16px; background-color:#fff; color:#000;
+    font-size: 16px; font-weight: 300; letter-spacing: -0.1px; text-align: center;
+}
+.loginWrap .btn-base.black {background-color:#000; color:#fff;}
+
+.loginWrap .btn-full {display:block; width:100%;}
+.loginWrap .btn-full + .btn-full {margin-top:8px;}
+.loginWrap .btn-group {display:flex; justify-content: space-between; flex-wrap: wrap; margin-top:48px;}
+.loginWrap .btn-group .btn-half {width:calc(50% - 3px);}
+
+.login-sns {display:flex; justify-content: center; padding-top:48px; border-top: solid 1px #eaeaea;}
+.login-sns .btn {
+    display:inline-block; width:46px; height:46px; font-size:0;
+    background-color:transparent;  background-repeat: no-repeat; background-size: contain; 
+}
+.login-sns .btn + .btn {margin-left:28px;}
+.login-sns .btn.naver {background-image:url('../img/loginSns01.png');}
+.login-sns .btn.kakao {background-image:url('../img/loginSns02.png');}
+.login-sns .btn.facebook {background-image:url('../img/loginSns03.png');}
+.login-sns .btn.instagram {background-image:url('../img/loginSns04.png');}
+
+.login-info {display:flex; justify-content: space-between; margin:26px 0 32px;}
+.login-info .btn-group {display:flex; align-items: center; margin-top:0;}
+.login-info .btn-group li+ li::before {content:''; display: inline-block; width:1px; height:12px; background-color:#eaeaea; margin:0 12px;}
+.login-info .btn-group a {display:inline-block;  font-size: 14px; letter-spacing: -0.44px; color:#999; }
+
+
+
+.login-input {margin:40px -20px 0 0;}
+.login-input li {position:relative; border-bottom:1px solid #eaeaea; padding:0 20px 16px;}
+.login-input li + li {margin-top:24px;}
+.login-input li.star::before {content:'*'; color:#b1863c; font-size:16px; position:absolute; top:4px; left:8px;}
+.login-input ::placeholder{color: #666;}
+
+.login-input input[type=text], 
+.login-input input[type=password],
+.login-input input[type=tel] {border:none; width:100%; height:24px; padding:0; font-size:16px; font-weight: 300; letter-spacing: -0.5px;}
+
+.btn-guest {display:block; margin:32px auto 0; font-size: 14px; color: #999; letter-spacing: -0.44px; border-bottom:1px solid #b0b0b0;}
+
+.member-benefit {background-color: #f2f2f2; padding:32px 20px 40px;}
+.member-benefit .title {font-size: 16px; font-weight: 500; line-height:1.5; letter-spacing: -0.1px; margin-bottom:24px;}
+.member-benefit .btn-more { display:inline-block; vertical-align:top; width:24px; height:24px; font-size:0; background:url('../img/loginBtnmore.png') center center no-repeat; background-size:8px 13px;}
+.member-benefit .coupon-list li + li {margin-top:15px;}
+.member-benefit .coupon-list + .title {margin-top:50px;}
+
+.benefit-coupon {
+    position:relative; display:flex; align-items: center; width:100%; height:98px; color:#000; background:#fff; box-shadow: 0 0px 20px 5px rgba(0, 0, 0, 0.07);
+    background-repeat: no-repeat; background-size:43px 39px; background-position:right top;
+}
+.benefit-coupon.member {background-image:url('../img/loginCoupon01.png');}
+.benefit-coupon.premium {background-image:url('../img/loginCoupon02.png');}
+.benefit-coupon::before {content:''; position:absolute; top:16px; left:38%; width:1px; height:calc(100% - 32px); border-right:1px dotted #d0d0d0;}
+.benefit-coupon .name {display:block; font-size: 12px; font-weight: 300; letter-spacing: -0.07px;}
+.benefit-coupon .discount {display:block; font-size: 32px; font-weight: 700; letter-spacing: -0.2px;}
+.benefit-coupon .text {flex:1; font-size: 14px; letter-spacing: -0.09px; padding-left:16px;}
+.benefit-coupon .text > span {color:#b1863c;}
+.benefit-coupon .left {width:38%; text-align:center;}
+
+.member-benefit .swiper-box {margin:-20px -20px -30px 0; padding:20px 20px 60px 0; overflow:hidden;}
+.member-benefit .swiper-container{overflow: visible;}
+.member-benefit .swiper-slide {width:88.5vw;}
+.member-benefit .swiper-container-horizontal>.swiper-scrollbar {bottom:-30px; border-radius: 0; height:2px;}
+.member-benefit .swiper-scrollbar-drag {border-radius: 0; background-color: #000;}
+
+.layerPop.full-size .cont{margin:0; width:100vw; height:100vh; overflow-y:auto;}
+.layerPop.full-size .btn-close {
+    bottom:auto; top:12px; right:16px; font-size:0; width:32px; height:32px;
+    background:url('../img/layerPopClosed.png') center center no-repeat; background-size:16px 16px;
+}
+.layerPop.full-size .layer-title {font-size: 18px; font-weight: 300; line-height: 1.56; letter-spacing: -0.12px; padding:14px 56px 14px 20px; color:#000;}
+
+.guide-list {margin-top:8px;}
+.guide-list li {display:flex; align-items: flex-start; font-size: 12px; line-height: 1.5; letter-spacing: -0.06px; color: #999}
+.guide-list li + li {margin-top:2px;}
+.guide-list.dash li::before {content:'-'; display:inline-block; flex-shrink: 0; margin-right:4px;}
+
+.loginWrap .tab-b {margin:-40px -20px 32px; padding:0; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);}
+.loginWrap .tab-b li {width:50%;}
+.loginWrap .tab-b > ul > li > a {height:56px;}
+
+.loginWrap .login-findId {margin:40px -20px 0 0; padding-bottom:16px;  font-size: 24px; letter-spacing: -0.14px;  color:#000; border-bottom:2px solid #000;}

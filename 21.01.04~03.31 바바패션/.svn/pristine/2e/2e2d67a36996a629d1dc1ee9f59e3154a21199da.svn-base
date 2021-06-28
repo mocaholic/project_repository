@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ui 샘플</title>
+    <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/templateA.css">
+    <link rel="stylesheet" href="../css/templateB.css">
+    <link rel="stylesheet" href="../css/templateC.css">
+    <link rel="stylesheet" href="../css/templateD.css">
+    <script src="../js/library.js"></script>
+    <script src="../js/layout.js"></script>
+    <style>
+        h1{margin: 20px 0;font-size: 20px;}
+        h1:before{content: "";display: inline-block;vertical-align: middle;width: 5px;height: 5px;background: #000;border-radius: 50%;margin: -5px 5px 0 5px;}
+    </style>
+</head>
+<body>
+
+    <!-- 툴팁 start -->
+    <h1>툴팁</h1>
+    <div class="tooltip">
+        <a class="tipIcon" href="javascript:void(0)">?</a>
+        <div class="tipCont">
+            툴팁
+        </div>
+    </div>
+    <!-- 툴팁 end -->
+
+    <!-- 탭 start -->
+    <h1>탭</h1>
+    <div class="tab-a tab-ui">
+        <ul>
+            <li class="on"><a href="javascript:void(0)">All</a></li>
+            <li><a href="javascript:void(0)">Fashion</a></li>
+            <li><a href="javascript:void(0)">Beauty</a></li>
+            <li><a href="javascript:void(0)">Health</a></li>
+        </ul>
+    </div>
+    <div class="tab-cont">
+        <div class="on">tabCont1</div>
+        <div>tabCont2</div>
+        <div>tabCont3</div>
+        <div>tabCont4</div>
+    </div>
+
+    <div class="tab-b">
+        <ul>
+            <li class="on"><a href="javascript:void(0)">상품정보</a></li>
+            <li><a href="javascript:void(0)">상품리뷰 (117)</a></li>
+            <li><a href="javascript:void(0)">사이즈 추천</a></li>
+            <li><a href="javascript:void(0)">상품문의 (20)</a></li>
+        </ul>
+    </div>
+
+    <div class="tab-b swiper" id="tab-b-swiper-sample">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide on"><a href="javascript:void(0)">타임특가</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">BABA ONLY 단독전</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">베스트 리뷰</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">실시간 인기</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">타임특가</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">BABA ONLY 단독전</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">베스트 리뷰</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">실시간 인기</a></li>
+        </ul>
+    </div>
+    <script>
+        var tab_b_swiper_sample = new Swiper('#tab-b-swiper-sample', {
+            slidesPerView: 'auto',
+            freeMode: true
+        });
+    </script>
+    
+    <div class="tab-c">
+        <ul>
+            <li class="on"><a href="javascript:void(0)">MENU</a></li>
+            <li><a href="javascript:void(0)">BRAND</a></li>
+        </ul>
+    </div>
+
+    <div class="tab-d">
+        <ul>
+            <li class="on"><a href="javascript:void(0)">전체</a></li>
+            <li><a href="javascript:void(0)">의류</a></li>
+            <li><a href="javascript:void(0)">액세서리</a></li>
+            <li><a href="javascript:void(0)">스킨케어</a></li>
+            <li><a href="javascript:void(0)">향수</a></li>
+        </ul>
+    </div>
+
+    <div class="tab-d swiper" id="tab-d-swiper-sample">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide on"><a href="javascript:void(0)">전체</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">의류</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">액세서리</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">스킨케어</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">향수</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">의류</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">액세서리</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">스킨케어</a></li>
+            <li class="swiper-slide"><a href="javascript:void(0)">향수</a></li>
+        </ul>
+    </div>
+    <script>
+        var tab_d_swiper_sample = new Swiper('#tab-d-swiper-sample', {
+            slidesPerView: 'auto',
+            freeMode: true
+        });
+    </script>
+    <!-- 탭 end -->
+
+    <!-- 아코디언 start -->
+    <h1>아코디언</h1>
+    <button class="accordion-title">Section 1</button>
+    <div class="accordion-panel">
+        <p>Lorem ipsum...</p>
+        <p>Lorem ipsum...</p>
+        <p>Lorem ipsum...</p>
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion-title">Section 2</button>
+    <div class="accordion-panel">
+        <p>Lorem ipsum...</p>
+    </div>
+
+    <button class="accordion-title">Section 3</button>
+    <div class="accordion-panel">
+        <p>Lorem ipsum...</p>
+    </div>
+    <!-- 아코디언 end -->
+
+    <!-- 셀렉트박스 start -->
+    <h1>셀렉트박스</h1>
+    <div class="selectbox">
+        <a class="title" href="javascript:void(0)">셀렉트title</a>
+        <ul class="cont">
+            <li><a href="javascript:void(0)">메뉴1</a></li>
+            <li><a href="javascript:void(0)">메뉴2</a></li>
+            <li><a href="javascript:void(0)">메뉴3</a></li>
+            <li><a href="javascript:void(0)">메뉴4</a></li>
+        </ul>
+    </div>
+    <!-- 셀렉트박스 end -->
+</body>
+</html>

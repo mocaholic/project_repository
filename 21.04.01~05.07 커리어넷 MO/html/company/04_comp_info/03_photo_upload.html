@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="popup_wrap" id="popup_upload">
+        <h1>사내 근무환경 (사진등록)</h1><!-- 로고변경 시 '로고변경' 으로 텍스트 변경 -->
+        <div class="cont_wrap">
+            <div class="contents">
+                <div>
+                    <div class="form_area">
+                        <div class="form_row">
+                            <div class="form_box upload">
+                                <div class="file_txt"></div>
+                                <input type="file" />
+                                <button type="button" class="btn_bg_mid">사진선택</button>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <div class="form_box w_full">
+                                <input type="text" placeholder="사진에 대한 설명글을 작성해 주세요." value="" />
+                            </div>
+                        </div>
+                        <p class="ps_txt">4MB 이하 jpg, jpeg, png, gif 이미지 파일만 등록 가능합니다.</p>
+                        <p class="ps_txt">이미지 권장 사이즈는 가로 744px, 세로 494px 이상입니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button type="button" class="btn primary">확인</button>
+            </div>
+        </div>
+        <button type="button" class="btn_popup_close">팝업닫기</button>
+    </div>
+    
+    <script>
+        /* 리뷰용 */
+        $('.btn_popup_close').click(function(){
+            history.back();
+        });
+    </script>
+</body> 
+</html>

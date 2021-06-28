@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1440">
+    <title>BABATHE.COM</title>
+    <link rel="stylesheet" href="../../css/babathe.css">
+    <script src="../../js/library.js"></script>
+    <script src="../../js/layout.js"></script>
+</head>
+<body>
+    <div class="layerPop open" id="lyOrder1">
+        <div class="cont w-440">
+            <h1 class="layerTitle">장바구니 쿠폰</h1>
+            <div class="layerBody ly-ord-coupon">
+                <!--
+                <div class="tab-a tab-ui">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0)">쿠폰받기</a></li>
+                        <li><a href="javascript:void(0)">쿠폰적용</a></li>
+                    </ul>
+                </div>
+                [P] tab 사용X-->
+           
+                    
+                   
+                <div class="form-box reset">
+                    <label for="inp-p1">쿠폰 코드 입력</label>
+                    <input type="text" value="" id="inp-p2">
+                </div>
+                <button type="button" class="btn primary w-full">쿠폰 등록</button>
+                <ul class="list-group dot">
+                    <li>이미 등록한 쿠폰이거나 유효기간이 만료된 쿠폰은 적용이 불가합니다.</li>
+                    <li>본 주문에서만 사용 가능한 쿠폰만 적용할 수 있습니다.</li>
+                    <li>사용하지 않은 쿠폰은 유효기간이 남아있는 경우에 한하여 쿠폰 코드 재적용 후 사용이 가능합니다.</li>
+                </ul>
+                <div class="coupon-list">
+                    <ul class="list">
+                        <li>
+                            <div class="coupon">
+                                <div class="inner-box">
+                                    <div class="discount"><strong>10</strong>%</div>
+                                    <div class="info">
+                                        <p class="name">FW 특별 할인쿠폰 10%</p>
+                                        <p class="date">2020.12.01 ~ 2020.12.31</p>
+                                        <p class="txt">50,000원 이상 구매 시<br>최대 100,000원<br>(일부 상품 제외)</p>
+                                    </div>
+                                    <button type="button" class="btn-down">다운로드</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="coupon">
+                                <div class="inner-box">
+                                    <div class="discount"><strong>10</strong>%</div>
+                                    <div class="info">
+                                        <p class="name">FW 특별 할인쿠폰 10%</p>
+                                        <p class="date">2020.12.01 ~ 2020.12.31</p>
+                                        <p class="txt">50,000원 이상 구매 시<br>최대 100,000원<br>(일부 상품 제외)</p>
+                                    </div>
+                                    <button type="button" class="btn-down">다운로드</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--
+                <div class="radio black">
+                    <input type="radio" id="ra-cT" name="ra-cT" checked>
+                    <label for="ra-cT" class="">최대 할인 쿠폰으로 적용</label>
+                </div>
+                <div class="coupon-list">
+                    <div class="scroll-wrap">
+                        <ul class="list">
+                            <li>
+                                <div class="coupon">
+                                    <div class="radio">
+                                        <input type="radio" id="ra-c1" name="ra-c" checked>
+                                        <label for="ra-c1" class="only inner-box">
+                                            <div class="discount"><strong>10</strong>%</div>
+                                            <div class="info">
+                                                <p class="name">FW 특별 할인쿠폰 10%</p>
+                                                <p class="date">2020.12.01 ~ 2020.12.31</p>
+                                                <p class="txt">50,000원 이상 구매 시<br>최대 100,000원<br>(일부 상품 제외)</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="coupon">
+                                    <div class="radio">
+                                        <input type="radio" id="ra-c2" name="ra-c">
+                                        <label for="ra-c2" class="only inner-box">
+                                            <div class="discount"><strong>10</strong>%</div>
+                                            <div class="info">
+                                                <p class="name">FW 특별 할인쿠폰 10%</p>
+                                                <p class="date">2020.12.01 ~ 2020.12.31</p>
+                                                <p class="txt">50,000원 이상 구매 시<br>최대 100,000원<br>(일부 상품 제외)</p>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="coupon notused">
+                                    <div class="radio">
+                                        <input type="radio" id="ra-c3" name="ra-c">
+                                        <label for="ra-c3" class="only inner-box">
+                                            <div class="info">적용안함</div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-bottom-group">
+                        <button type="button" type="button" class="btn">취소</button>
+                        <button type="button" type="button" class="btn primary">확인</button>
+                    </div>
+                </div>
+                [P] 쿠폰적용 사용X-->
+            </div>
+            <button class="btn-close" onclick="popClose('lyOrder1')">팝업닫기</button>
+        </div>
+        <!--쿠폰없을경우-->
+        <div class="cont w-440" style="margin-left:100px;">
+            <h1 class="layerTitle">중복 할인 쿠폰</h1>
+            <div class="layerBody ly-ord-coupon">
+                <div class="tab-a tab-ui">
+                    <ul>
+                        <li><a href="javascript:void(0)">쿠폰받기</a></li>
+                        <li class="on"><a href="javascript:void(0)">쿠폰적용</a></li>
+                    </ul>
+                </div>
+                <div class="tab-cont">
+                    <!--쿠폰받기-->
+                    <div>
+                        <div class="no-data">&nbsp;</div>
+                    </div>
+                    <!--//쿠폰받기-->
+                    <!--쿠폰적용-->
+                    <div class="on">
+                        <!--쿠폰이 없을경우-->
+                        <div class="no-data">적용 가능한 쿠폰이 없습니다.</div>
+                        <!--//쿠폰이 없을경우-->
+                    </div>
+                    <!--//쿠폰적용-->
+                </div>
+            </div>
+            <button class="btn-close" onclick="popClose('lyOrder1')">팝업닫기</button>
+        </div>
+        <!--//쿠폰없을경우-->
+    </div>
+</body>
+</html>

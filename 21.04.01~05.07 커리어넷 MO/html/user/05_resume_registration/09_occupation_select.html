@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <link rel="stylesheet" href="../../../css/user.css">  <!-- //개인회원 CSS -->
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="wrapper career_user">
+        <header class="sub">
+            <div class="header">
+                <h1 class="page_title">직무선택</h1>
+                <a href="#none" class="btn_back">이전</a>
+                <a href="#none" class="btn_occu_search">직무검색</a>
+                <div class="occu_search_box">
+                    <div class="form_area">
+                        <div class="form_row">
+                            <div class="form_box insert_list_box">
+                                <input type="text" class="" placeholder="직무 키워드를 입력해 주세요"/>
+                                <button type="button" class="btn btn_insert">직접입력</button>
+                                <button type="button" class="btn_txt_del">텍스트 전체 삭제</button>
+                                <div class="school_list">
+                                    <ul>
+                                        <li>
+                                            <a href="#none">경영·<em>기획</em> > 경영·전략·<em>기획</em> > 경영<em>기획</em></a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">정보통신·IT > 웹<em>기획</em>·웹마케팅·PM > 웹<em>기획</em></a>
+                                        </li>                                    
+                                    </ul>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>                
+            </div>            
+        </header>   
+        <section>
+            <div class="occu_box">
+                <div class="tab_ui tab_menu2 type2">
+                    <ul>
+                        <li class="on"><a href="javascript:void(0);">직무(직종)</a></li>
+                        <li><a href="javascript:void(0);">키워드</a></li>                   
+                    </ul>
+                </div>
+                <div class="tab_cont">
+                    <div class="on">
+                        <div class="select_type_box select_part">
+                            <div class="select_box01">
+                                <ul class="list">
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk01" checked>  <!-- //checked 일 경우 -->
+                                        <label for="chk01">경영·기획</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk02" disabled>  <!-- //disabled 일 경우 -->
+                                        <label for="chk02">마케팅·광고</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk03" disabled>
+                                        <label for="chk03">전문직</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk04" disabled>
+                                        <label for="chk04">서비스업</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk05" disabled>
+                                        <label for="chk05">유통·무역·물류업</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk06" disabled>
+                                        <label for="chk06">운송·운수업</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk07" disabled>
+                                        <label for="chk07">정보통신·IT</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk08" disabled>
+                                        <label for="chk08">제조업</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk09" disabled>
+                                        <label for="chk09">건설업</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk10" disabled>
+                                        <label for="chk10">공공기관·공기업·협회</label>
+                                    </li>
+    
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk10" disabled>
+                                        <label for="chk10">공공기관·공기업·협회</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk10" disabled>
+                                        <label for="chk10">공공기관·공기업·협회</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select01" id="chk10" disabled>
+                                        <label for="chk10">공공기관·공기업·협회</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="select_box02">
+                                <ul class="list">
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk11">
+                                        <label for="chk11">사회복지</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk12" checked>
+                                        <label for="chk12">연구조사·컨설팅</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk13">
+                                        <label for="chk13">법무·세무·회계</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk14" checked>
+                                        <label for="chk14">호텔·여행·항공</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk15">
+                                        <label for="chk15">외식 프렌차이즈·음식료</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk16">
+                                        <label for="chk16">스포츠·레저·여가</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk17">
+                                        <label for="chk17">시설관리·경비용역·파견대행</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk18">
+                                        <label for="chk18">카센터·AS센터·주유</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk19">
+                                        <label for="chk19">렌탈·대여</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="select02" id="chk20">
+                                        <label for="chk20">결혼예식장·상조</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div>
+                        <div class="keyword_wrap select_part">
+                            <div class="keyword_box">
+                                <p>웹기획·웹마케팅·PM</p>
+                                <ul class="keyword_list">
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key01" checked>
+                                        <label for="key01">웹기획</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key02">
+                                        <label for="key02">웹PD</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key03" checked>
+                                        <label for="key03">웹마케팅</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key04" checked>
+                                        <label for="key04">PM</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key05">
+                                        <label for="key05">웹스토리보드</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key06">
+                                        <label for="key06">웹광고기획</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key07">
+                                        <label for="key07">정보설계</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="keyword" id="key08">
+                                        <label for="key08">스토리보드</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+                <div class="choose_box">
+                    <div>
+                         <div class="choose_title">직무</div>
+                         <div class="choose_list_box">
+                            <ul>
+                                <li class="txt">경영·기획 > 연구조사·컨설팅<a href="#none" class="btn_close">닫기</a></li>
+                                <li class="txt">웹 기획<a href="#none" class="btn_close">닫기</a></li>
+                                <li class="txt">PM<a href="#none" class="btn_close">닫기</a></li>
+                                <li class="txt">웹 마케팅<a href="#none" class="btn_close">닫기</a></li>
+                            </ul>
+                         </div>
+                    </div>
+                    <div class="btn_area">
+                     <button type="button" class="btn primary">직무 선택완료</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>  
+</body>
+</html>

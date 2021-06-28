@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temp.D</title>
+    <link rel="stylesheet" href="../../css/library.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/templateA.css">
+    <link rel="stylesheet" href="../../css/templateB.css">
+    <link rel="stylesheet" href="../../css/templateC.css">
+    <link rel="stylesheet" href="../../css/templateD.css">
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/layout.js"></script>
+</head>
+<body>
+    <header>
+        <div class="sub-hedaer">
+            <button type="button" class="btn-back">뒤로가기</button>
+            <h1 class="page-title">templete</h1>
+            <button type="button" class="btn-search">검색</button>
+            <button type="button" class="btn-cart">장바구니</button>
+        </div>
+    </header>
+    <section>
+        <style>
+            .guide-wrap{margin-top: 40px;}
+            .guide-wrap >h1{margin-bottom: 20px;}
+        </style>
+        <div class="guide-wrap">
+            <h1>title</h1>
+            <!-- title-area -->
+            <div class="title-area">
+                <div class="title-area-inner">
+                    <h3 class="title">실시간 급상승 검색어</h3>
+                    <div class="title-extra">2020-12-29 14:00 기준</div>
+                </div>
+            </div>
+            <!-- //title-area -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>Tab</h1>
+            <div class="tab-e">
+                <ul>
+                    <li class="on"><a href="javascript:void(0)">쇼핑 트렌드</a></li>
+                    <li><a href="javascript:void(0)">추천 브랜드</a></li>
+                    <li><a href="javascript:void(0)">추천 상품</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-f">
+                <ul>
+                    <li class="on"><a href="">전체 <span>21</span></a></li>
+                    <li><a href="">이벤트 <span>1</span></a></li>
+                    <li><a href="">기획전 <span>2</span></a></li>
+                    <li><a href="">에디토리얼 <span>1</span></a></li>
+                    <li><a href="">픽토리얼 <span>17</span></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="guide-wrap">
+            <h1>no-data</h1>
+            <div class="no-data">
+                <span class="txt">다운 가능한 쿠폰이 없습니다.</span>
+            </div>
+        </div>
+        <div class="guide-wrap">
+            <h1>banner</h1>
+            <!-- banner-type2 -->
+            <div class="banner-type2">
+                <div class="swiper-box">
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="../../img/temp/banner3.png" alt="">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="../../img/temp/banner3.png" alt="">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="../../img/temp/banner3.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ///banner-type2 -->
+
+            <script>
+                var swiper = new Swiper('.banner-type2 .swiper-container', {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                    freeMode: true,
+                    pagination:{
+                        el: '.swiper-pagination',
+                    },
+                });
+            </script>
+        </div>
+
+        <div class="guide-wrap">
+            <h1>banner</h1>
+            <!-- banner-has-scroll -->
+            <div class="banner-has-scroll">
+                <div class="swiper-box">
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="../../img/temp/banner2.jpg" alt="">
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#">
+                                    <img src="../../img/temp/banner.jpg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ///banner-has-scroll -->
+
+            <script>
+                var swiper = new Swiper('.banner-has-scroll .swiper-container', {
+                    slidesPerView: 1,
+                    spaceBetween: 9,
+                    freeMode: true,
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                        // dragSize: '50px',
+                    },
+                });
+            </script>
+        </div>
+
+        <div class="guide-wrap">
+            <h1>form type1</h1>
+            <ul class="form-input">
+                <li><input type="text" placeholder="이름 입력" /></li>
+                <li><input type="text" placeholder="이메일 주소 또는 휴대폰번호 입력" /></li>
+                <li><input type="text" placeholder="이메일 주소 또는 휴대폰번호 입력" /></li>
+                <li><input type="text" placeholder="이메일 주소 또는 휴대폰번호 입력" /></li>
+            </ul>
+        </div>
+
+
+        <div class="guide-wrap">
+            <h1>form type2</h1>
+            <ul class="form-input">
+                <li class="form-flex">
+                    <div class="form-flex-cell">
+                        <input type="text" placeholder="아이디 입력(email , 휴대폰번호)" />
+                    </div>
+                    <div class="form-flex-btn">
+                        <button class="btn-basicM">확인</button>
+                    </div>
+                </li>
+                <li class="form-flex">
+                    <div class="form-flex-cell">
+                        <input type="text" placeholder="이름 입력" />
+                    </div>
+                    <div class="form-flex-select">
+                        <select>
+                            <option>내국인</option>
+                            <option>외국인</option>
+                        </select>
+                    </div>
+                </li>
+
+                <li class="form-flex">
+                    <div class="form-flex-select">
+                        <select class="placeholderOn">
+                            <option selected disabled hidden>선택</option>
+                            <option>선택1</option>
+                            <option>선택2</option>
+                        </select>
+                    </div>
+                    <div class="form-flex-btn">
+                        <button class="btn-basicM">쿠폰다운</button>
+                    </div>
+                </li>
+
+                <li class="form-flex priceAndPoint">
+                    <div class="headerWrap">
+                        <div class="tooltip">
+                            e포인트 <a class="tipIcon" href="javascript:void(0)">?</a> ( 사용 가능 10,000P / 보유 10,005P )
+                            <div class="tipCont">
+                                e포인트 툴팁
+                                <button class="btn-close">툴팁닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-flex-cell">
+                        <input type="text" />
+                        <span class="unit">원</span>
+                    </div>
+
+                    <div class="form-flex-btn">
+                        <button class="btn-basicM">전액사용</button>
+                    </div>
+                </li>
+                
+                <li class="form-flex">
+                    <div class="form-flex-cell cm">
+                        <input type="text" disabled value="165" />
+                        <span class="unit">CM</span>
+                    </div>
+                </li>
+
+                <li class="form-flex dateSelect">
+                    <div class="form-flex-label">
+                        <label>월별보기</label>
+                    </div>
+                    <div class="form-flex-select">
+                        <select>
+                            <option>2021</option>
+                        </select>
+                    </div>
+                    <div class="form-flex-select">
+                        <select>
+                            <option>01월</option>
+                        </select>
+                    </div>
+                </li>
+
+                <li class="form-flex datePicker">
+                    <div class="form-flex-label">
+                        <label>직접선택</label>
+                    </div>
+                    <div class="form-flex-select">
+                        <select>
+                            <option>2021</option>
+                        </select>
+                    </div>
+                    <div class="form-flex-select">
+                        <select>
+                            <option>01월</option>
+                        </select>
+                    </div>
+                </li>
+
+                <li class="form-flex">
+                    <div class="form-flex-cell">
+                        <div class="verify-num">
+                            <input type="text" placeholder="인증번호 입력">
+                            <span>02:00</span>
+                            <button type="button">인증번호 재전송</button>
+                        </div>
+                        <div class="verify-message">
+                            인증 시간이 경과했습니다. 인증번호 재전송을 통해 인증을 다시 진행해 주세요.
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="btnWrap">
+                <button class="btn-basicM fill">인증번호 전송</button>
+            </div>
+        </div>
+        
+        <div class="guide-wrap">
+            <h1>form-check</h1>
+            <!-- form-check -->
+            <ul class="form-check">
+                <li>
+                    <label class="chk-agree">
+                        <input type="checkbox" class="type2">
+                        <span>대표배송지로 설정합니다.</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="chk-agree">
+                        <input type="checkbox" class="type2">
+                        <span>기본배송지 목록에 추가합니다.</span>
+                    </label>
+                </li>
+            </ul>
+            <!-- //form-check -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>check agree</h1>
+            <!-- accordionBox -->
+            <div class="accordionBox">
+                <div class="accordion-title type2 fixed">
+                    <label>
+                        <input type="checkbox" class="type2">
+                        <span>약관 모두 동의</span>
+                    </label>
+                    <!-- <button>닫힘</button> -->
+                </div>
+                <div class="accordion-panel">
+                    <div>
+                        <!-- form-check -->
+                        <ul class="form-check">
+                            <li>
+                                <label class="chk-agree">
+                                    <input type="checkbox">
+                                    <span>(필수) 웹사이트 이용약관</span>
+                                </label>
+                                <button>보기</button>
+                            </li>
+                            <li>
+                                <label class="chk-agree">
+                                    <input type="checkbox">
+                                    <span>(필수) 멤버십 이용약관 </span>
+                                </label>
+                                <button>보기</button>
+                            </li>
+                            <li>
+                                <label class="chk-agree">
+                                    <input type="checkbox">
+                                    <span>(필수) 개인 정보처리방침 </span>
+                                </label>
+                                <button>보기</button>
+                            </li>
+                            <li>
+                                <label class="chk-agree">
+                                    <input type="checkbox">
+                                    <span>(선택) 장기 미접속 시에도 계정 유지<br><em class="tip">미동의시 1년 미접속 회원탈퇴 전환</em></span>
+                                </label>
+                                <button>보기</button>
+                            </li>
+                            <li>
+                                <label class="chk-agree">
+                                    <input type="checkbox">
+                                    <span>(선택) 마케팅 정보 수신 전체 동의</span>
+                                </label>
+                                <button>보기</button>
+                            </li>
+                        </ul>
+                        <!-- //form-check -->
+                        <div class="" style="background:red;text-align:center;padding:30px;color:#fff;margin:10px 0">TBD</div>
+                        <p class="term-txt">바바더닷컴의 신제품, 이벤트에 대해 안내받으실 수 있습니다. </p>
+                        <div class="alarm-chk">
+                            <label class="chk-agree">
+                                <input type="checkbox">
+                                <span>SMS</span>
+                            </label>
+                            <label class="chk-agree">
+                                <input type="checkbox">
+                                <span>email</span>
+                            </label>
+                            <label class="chk-agree">
+                                <input type="checkbox">
+                                <span>DM</span>
+                            </label>
+                            <label class="chk-agree">
+                                <input type="checkbox">
+                                <span>앱PUSH</span>
+                            </label>
+                        </div>
+
+                        <!-- tip-wrap -->
+                        <ul class="tip-wrap">
+                            <li class="tip type3">
+                                마케팅 정보 수신 동의를 하지 않더라도 회원서비스를 이용 할 수 있습니다. 다만, 이벤트 소식 및 일부 할인 쿠폰 서비스를 받을 수 없습니다.</li>
+                            <li class="tip type3">
+                                회원가입, 주문 배송, 계약상 지급의 의무가 있는 쿠폰이나 포인트, 회사 주요 정책 관련 정보는 수신 동의와 관계없이 모든 회원에게 발송됩니다.
+                            </li>
+                        </ul>
+                        <!-- //tip-wrap -->
+                    </div>
+                </div>
+            </div>
+            <!-- //accordionBox -->
+
+            <ul class="tip-wrap">
+                <li class="tip">선택항목에 동의하지 않으셔도 가입을 진행하실 수 있습니다.</li>
+            </ul>
+
+        </div>
+
+        <div class="guide-wrap">
+            <h1>message box</h1>
+            <!-- message-box -->
+            <div class="message-box">
+                <div class="message-box-tit">인증 메일이 수신되지 않으시나요?</div>
+                <div class="message-box-txt">
+                    인증 메일을 받으실 메일 주소를 정확히 입력했는지 확인해 주세요. 메일 주소가 정확한데도 메일이 확인되지 않는다면, '스팸메일' 함으로 수신되었는지 확인해주세요.
+                </div>
+            </div>
+            <!-- //message-box -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>tip type1</h1>
+            <!-- tip-wrap -->
+            <ul class="tip-wrap">
+                <li class="tip">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+            </ul>
+            <!-- //tip-wrap -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>tip type2</h1>
+            <!-- tip-wrap -->
+            <ul class="tip-wrap">
+                <li class="tip type2">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type2">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type2">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type2">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+            </ul>
+            <!-- //tip-wrap -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>tip type3</h1>
+            <!-- tip-wrap -->
+            <ul class="tip-wrap">
+                <li class="tip type3">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type3">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type3">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type3">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+            </ul>
+            <!-- //tip-wrap -->
+        </div>
+        <div class="guide-wrap">
+            <h1>tip type4</h1>
+            <!-- tip-wrap -->
+            <ul class="tip-wrap">
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+            </ul>
+            <!-- //tip-wrap -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>tip type4</h1>
+            <!-- tip-wrap -->
+            <ul class="tip-wrap">
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li class="tip type4">1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+            </ul>
+            <!-- //tip-wrap -->
+        </div>
+
+        <div class="guide-wrap">
+            <h1>tip ol</h1>
+            <!-- tip-wrap -->
+            <ol class="tip-wrap">
+                <li>1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li>1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li>1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+                <li>1회 입력 가능하며, 잘못 입력한 경우 혜택이 제공되지 않습니다.</li>
+            </ol>
+            <!-- //tip-wrap -->
+        </div>
+        
+
+
+
+    </section>
+    <footer></footer>
+</body>
+</html>

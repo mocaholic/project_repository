@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BABATHE.COM - 브랜드</title>
+    <link rel="stylesheet" href="../../css/library.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/templateA.css">
+    <link rel="stylesheet" href="../../css/templateB.css">
+    <link rel="stylesheet" href="../../css/templateC.css">
+    <link rel="stylesheet" href="../../css/templateD.css">
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/layout.js"></script>
+</head>
+<body>
+    <header>
+        <div class="sub-hedaer">
+            <button type="button" class="btn-back">뒤로가기</button>
+            <h1 class="page-title"><span class="for-a11y">브랜드</span></h1>
+            <button type="button" class="btn-search">검색</button>
+            <button type="button" class="btn-cart">장바구니</button>
+        </div>
+    </header>
+    <section>
+
+        <!-- brand-title -->
+        <div class="brand-title luxury">
+            <div class="brand-title-img">
+                <img src="../../img/temp/brand_title2.png" alt="PRADA">
+            </div>
+            <div class="brand-title-fav">
+                <input type="checkbox">
+            </div>
+        </div>
+        <!-- //brand-title -->
+
+        <!-- tab-e -->
+        <div class="tab-e">
+            <ul>
+                <li class="on"><a href="">브랜드홈</a></li>
+                <li><a href="">전체상품</a></li>
+                <li><a href="">기획전</a></li>
+                <li><a href="">콘텐츠</a></li>
+            </ul>
+        </div>
+        <!-- //tab-e -->
+
+        <!-- brand-introduce -->
+        <div class="brand-introduce">
+            <dl class="brand-introduce-cont">
+                <dt>
+                    <span class="en">PRADA</span>
+                    <span class="kr">프라다</span>
+                </dt>
+                <dd>
+                    고급스럽고 세련된 룩에 트렌디한 요소와 클래식한 요소를 담아
+                    고감도 소비자의 라이프 스타일을 충족시킬 수 있는 드레스업과
+                    캐주얼 스타일을 표현한 고감도 테이스트풀 컨템포러리
+                    캐주얼 캐릭터 브랜드
+                </dd>
+            </dl>
+        </div>
+        <!-- //brand-introduce -->
+
+        <!-- gallery-swiper -->
+        <div class="gallery-swiper">
+            <!-- gallery-top -->
+            <div class="gallery-top swiper" id="galleryTop">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp01.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp02.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp03.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp04.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp05.jpg" alt="">
+                    </li>
+                </ul>
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+            </div>
+            <!-- //gallery-top -->
+
+            <!-- gallery-thumb -->
+            <div class="gallery-thumb swiper expand-slider" id="galleryThumb">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp01.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp02.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp03.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp04.jpg" alt="">
+                    </li>
+                    <li class="swiper-slide">
+                        <img src="../../img/temp/gallery-temp05.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+            <script>
+                var galleryThumb = new Swiper('#galleryThumb', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 15,
+                    slidesOffsetBefore:20,
+                    slidesOffsetAfter:20,
+                    resistance : false,
+                });
+                var galleryTop = new Swiper('#galleryTop', {
+                    slidesPerView: '1',
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    thumbs: {
+                        swiper: galleryThumb
+                    }
+                });
+            </script>
+
+        </div>
+        <!-- //gallery-swiper -->
+
+        <!-- video-area -->
+        <div class="video-area">
+            <div class="videoWrap">
+                <video src='http://www.tomodevel.jp/material/video/disneyTour.mp4'>
+                    해당 브라우저는 video 태그를 지원하지 않습니다.
+                </video>
+                <button class="btn-play">재생버튼</button>
+            </div>
+        </div>
+        <!-- //video-area -->
+
+        <!-- admin-regist-area -->
+        <div class="admin-regist-area" style="background: red;padding: 100px 0;text-align: center;">
+            관리자 등록 콘텐츠
+        </div>
+        <!-- //admin-regist-area -->
+
+    </section>
+    <footer>
+    </footer>
+
+
+</body>
+</html>

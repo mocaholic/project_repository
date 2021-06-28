@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.for-a11y{display: block;z-index: -1;height: 1px;overflow: hidden;font-size: 1px;line-height: 1px;color: transparent;border: 0;padding: 0;opacity: 0;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);background: none;position: absolute;width: 1px;margin: 0;}
+
+.btn-basicXS{height: 20px;min-width: 30px;border-radius:10px;padding:0 10px;font-size: 10px;}
+.btn-basicXS.fill{background: #111;border-color: #111;color: #fff;}
+
+.form-flex{display: flex;}
+.form-flex .form-flex-cell{flex:1}
+.form-flex .form-flex-cell + div{margin-left: 10px;}
+
+.tab-e{}
+.tab-e > ul{display:flex;padding:5px 0;}
+.tab-e > ul > li:not(:first-child){margin-left:28px}
+.tab-e > ul > li{font-weight:200;color:#d0d0d0;margin-bottom:-1px}
+.tab-e > ul > li > a{display:block;padding:10px 0 7px 0;font-weight: 300;}
+.tab-e > ul > li.on{font-weight:400;color:#000}
+.tab-e > ul > li.on > a{border-bottom:2px solid #000;font-weight: 500;}
+
+
+/* 배송지 입력 */
+.shippingAddress{padding: 10px 20px 20px;}
+.shippingAddress .btnWrap{margin-top: 20px;}
+.shipping-input{}
+.shipping-input > div + div{margin-top: 10px;}
+.shipping-check{margin-top: 20px;}
+.shipping-check > div + div{margin-top: 20px;}
+.chk-agree{font-size: 12px;vertical-align:top;display: inline-block;}
+.chk-agree span{vertical-align: middle;}
+
+/* 배송지 목록 */
+.shippingListTop{padding:0 20px 20px;border-bottom:15px solid #f5f5f5}
+.shipping-list-cont{color:#111;position: relative;padding-top: 20px;}
+.shipping-list-cont .name{font-size: 14px;font-weight: 500;margin-right: 40px;}
+.shipping-list-cont .phone{font-size: 12px;font-weight: 500;margin-top: 10px;}
+.shipping-list-cont .address{font-size: 12px;margin-top: 10px;}
+.shipping-list-cont .btns{font-size: 0;text-align: right;margin-top: 15px;}
+.shipping-list-cont .btns button{font-size: 12px;}
+.shipping-list-cont .btns button + button{margin-left: 10px;}
+.shipping-list-cont .delete{position: absolute;right: 0;top: 20px;}
+.shipping-list-cont .delete button{font-size: 12px;font-weight: 500;color: #999;}
+
+.shippingListBottom{padding:0 20px;}
+.shippingListBottom .shipping-list-cont{padding-bottom: 20px;}
+.shippingListBottom .shipping-list-cont + .shipping-list-cont{border-top:1px solid #eee}
+
+.title-wrap{position: relative;}
+.title-wrap button{position:absolute;right: 0;top: 50%;margin-top:-15px;height:30px;font-size: 11px;padding:0 15px}
+
+/* 중복할인쿠폰 */
+.dcCouponWrap{padding:10px 20px 0}
+.dcCouponWrap .coupon-add{padding:20px 10px 0;}
+.dcCouponWrap .tip-wrap{padding:20px 10px 0;}
+.tip-wrap{}
+.tip-wrap .tip + .tip{margin-top: 10px;}
+
+.coupon-wrap{background:#f5f5f5;padding:20px 20px 80px;margin:20px -20px 0}
+.coupon-wrap .btnWrap{margin-top: 20px;}
+.coupon-list li + li{margin-top: 15px;}
+.discount-coupon{position: relative;}
+.discount-coupon > input[type="radio"]{position: absolute;left: 20px;top: 50%;margin-top: -10px;z-index: 1;}
+.discount-coupon .discount-coupon-inner{display:block;border-radius: 8px;position: relative;background: url(../img/bg_coupon.png) no-repeat 0 0;background-size: 100% 100%;}
+.discount-coupon .discount-coupon-inner .flex-box{display: flex;align-items:stretch}
+.discount-coupon .discount-coupon-inner .flex-box .dc-rate{margin-left: 20px;width: 80px;color: #111;font-weight: 700;font-size: 0;display:flex;align-items:center}
+.discount-coupon .discount-coupon-inner .flex-box .dc-rate .num{font-size: 35px;}
+.discount-coupon .discount-coupon-inner .flex-box .dc-rate .unit{font-size: 16px;position: relative;top:5px}
+.discount-coupon .discount-coupon-inner .flex-box .info{flex:1;margin: 0 10px;padding:22px 0}
+.discount-coupon .discount-coupon-inner .flex-box .info .tit{font-size: 14px;color: #111;font-weight: 500;}
+.discount-coupon .discount-coupon-inner .flex-box .info .date{font-size: 12px;color: #111;margin-top: 5px;}
+.discount-coupon .discount-coupon-inner .flex-box .info .desc{font-size: 12px;color: #999;font-weight: 300;margin-top: 5px;}
+.discount-coupon .discount-coupon-inner .flex-box .download{width:40px;}
+.discount-coupon .discount-coupon-inner .flex-box .download button{background:#111 url(../img/ico_download.png) no-repeat 50% 50%;background-size:14px 12px;width:100%;height:100%;border-radius:0 6px 6px 0;}
+
+.discount-coupon label.discount-coupon-inner .flex-box .dc-rate{margin-left: 50px;}
+.discount-coupon label.discount-coupon-inner .flex-box .info{margin-right: 20px;}
+.discount-coupon > input[type="radio"]:checked + .discount-coupon-inner{filter: drop-shadow(2px 3px 8px #b7b7b7);}
+.discount-coupon .discount-coupon-inner.none{background: url(../img/bg_coupon_none.png) no-repeat 0 0;background-size: 100% 100%;}
+.discount-coupon .discount-coupon-inner.none .flex-box > div{flex:auto;margin-left:50px;padding:17px 0;font-size: 12px;}
+
+.dcCouponWrap .chk-maximum{font-size: 12px;padding-top: 20px;}
+.dcCouponWrap .chk-maximum span{vertical-align: middle;}
+
+.empty{text-align: center;font-size: 14px;color: #999;position: relative;padding: 120px 0;}
+/* .empty ~ div{display: none;} */
+.empty span{display: block;}
+.empty:before{content:'';display: inline-block;width:34px;height:34px;background: red;}

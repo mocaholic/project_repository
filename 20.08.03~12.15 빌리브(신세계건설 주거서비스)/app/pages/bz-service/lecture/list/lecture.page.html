@@ -1,0 +1,85 @@
+<v-app>
+    <v-body title="문화강좌" mnuId="BS_CULTURE">
+        <div class="full_cont">
+            <div class="container">
+                <!-- 게시판 리스트 -->
+                <div class="notice_list_box">
+                    <div class="top_filter">
+                        <dl>
+                            <dt>강좌유형</dt>
+                            <dd>
+                                <ng-select class="type2" [items]="lecTyCatList"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="lecSearchModel.lecTp"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                >
+                                </ng-select>
+                            </dd>
+                        </dl>
+                        <dl class="btn_box">
+                            <dt>접수상태</dt>
+
+                            <dd>
+                                <a  *ngFor="let cate of lecStatsCatList;"
+                                    [ngClass]="lecSearchModel.lecStats === cate.cd ? 'on' : ''"
+                                    (click)="onClickStatsCatCd(cate.cd)">{{cate.cdName}}</a>
+                            </dd>
+                        </dl>
+                        <a (click)="onClickSearch()" class="btn btn_type2">검색</a>
+                    </div>
+                    <div class="sub_title">
+                        <div class="list_count">
+                            <p>총<span class="red">{{lecSearchModel?.totalCount}}</span>건</p>
+                        </div>
+                    </div>
+                    <div class="flat_round_box">
+                        <div class="content">
+                            <div class="txt_box">
+                                <!-- 리스트 분류 PC에만 노출 -->
+                                <div class="notice_list_title">
+                                    <div class="table_w01">강좌유형</div>
+                                    <div class="">강좌명/기간</div>
+                                    <div class="table_w02">요일/시간</div>
+                                    <div class="table_w01">수강료</div>
+                                    <div class="table_w01">접수상태</div>
+                                </div>
+                                <!-- PC-테이블 MO-리스트 -->
+                                
+                                <!-- 11.24 추가 : 내역 없을때 -->
+                                <div class="no_data" *ngIf="!isExistList;else other_content">
+                                    <p>조회된 내역이 없습니다.</p>
+                                </div>
+                                <!-- // 11.24 추가 : 내역 없을때 -->
+                                <ng-template #other_content>
+                                    <div class="notice_list">
+                                        <div *ngFor="let lec of lecList;" >
+                                            <p class="no">
+                                                <span>{{getLecTpName(lec.lecTp)}}</span>
+                                            </p>
+                                            <h5 class="title">
+                                                <a (click)="goDetailPage(lec.lecId)">{{lec.lecNm}}</a>
+                                                <p>{{lec.acpStrDt | stringDateFormatDt}} - {{lec.acpEndDt | stringDateFormatDt}} / {{lec.totCnt}}</p>
+                                            </h5>
+                                            <p class="writer_time">
+                                                <span>{{lec.lecDay}}<em>{{lec.lecTm}}</em>
+                                                </span>
+                                                <span>{{lec.lecFee | numberFormatWithComma}}</span>
+                                            </p>
+                                            <p class="ft_right ing">{{getLecStatsName(lec.lecStats)}}</p>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                                <!-- 더보기 -->
+                                <a class="add_item" *ngIf="lecSearchModel?.page < lecSearchModel?.totalEndPage" (click)="moreLecList()">더보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+
+
+</v-app>

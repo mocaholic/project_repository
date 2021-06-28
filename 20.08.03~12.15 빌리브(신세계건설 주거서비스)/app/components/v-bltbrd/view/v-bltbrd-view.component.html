@@ -1,0 +1,89 @@
+<div class="container">
+    <!-- 글자 크기 조절 -->
+    <v-font-size
+        *ngIf="isChangeFontSize"
+        [(fontClassName)]="fontSizeClassName"
+    ></v-font-size>
+
+    <!-- class flat_round_box bg_white 추가 확인 -->
+    <div class="flat_round_box bg_white user_community">
+        <div class="content">
+            <div class="view_cont">
+                <div class="title_box">
+                    <h4>{{bltbrdDetail?.bltbrdTtl}}<span class="tag red" *ngIf="bltbrdDetail?.iptDtm | checkDateIsNew">New</span></h4>
+                    <p class="writer_time">
+                        <span *ngIf="bltbrdTpCd!==CodeConstants.BLTBRD.NOTICE;else other">{{ bltbrdDetail?.custBlNo }}동 {{ bltbrdDetail?.custNmMasked }}</span>
+                        <ng-template #other><span>관리자</span></ng-template>
+                        <span class="time">{{bltbrdDetail?.iptDtm | stringDateFormatDtm }}</span>
+                    </p>
+                </div>
+                <div class="notice_link" *ngIf="isAtchFile">
+                    <a (click)="downloadFile(file.atchFileId)" class="clip" *ngFor="let file of bltbrdDetail?.bltbrdAtchList;">
+                        {{file.atchFileIdOrg}}
+                    </a>
+                    <p *ngIf="bltbrdDetail?.bltbrdAtchList === null || bltbrdDetail?.bltbrdAtchList?.length===0">
+                        첨부된 파일이 없습니다.</p>
+                </div>
+                <div class="admin_content" [ngClass]="fontSizeClassName" [innerHTML]="bltbrdDetail?.bltbrdCts | parseEnterToHtmlTag"></div>
+            </div>
+            <div class="input_cont" *ngIf="bltbrdTpCd!==CodeConstants.BLTBRD.NOTICE">
+                <div class="comment_input_box" *ngIf="isRply">
+                    <div class="input_box">
+                        <textarea [(ngModel)]="newReplyInputData" [maxLength]="200" class="com_texta" id="comment" name="comment" placeholder="댓글은 200자 이내로 입력할 수 있으며, 입주민간 서로를 배려하는 댓글 부탁드립니다."></textarea>
+                        <span>{{newReplyInputData.length}}/200</span>
+                    </div>
+                    <div class="btn_area">
+                        <a (click)="insertRply()" class="btn btn_type2">등록</a>
+                    </div>
+                </div>
+                <div class="comment_box" *ngIf="isRply">
+                    <!-- 등록 수 -->
+                    <h4 class="title">등록된 댓글 <span class="red">{{rplySearchModel?.totalCount}}</span></h4>
+
+                    <!-- 댓글 없음 -->
+                    <div class="no_info" *ngIf="rplySearchModel?.totalCount===0;else other_content">
+                        <div class="comment">
+                            등록된 댓글이 없습니다.
+                        </div>
+                    </div>
+                    <!-- 댓글 -->
+                    <ng-template #other_content>
+                        <div class="comments_list">
+                            <div *ngFor="let data of rplyList;index as i">
+            <!--                    <div class="user_pic">-->
+            <!--                        <img src="/assets/dummy/sample_user.png" alt="샘플" />-->
+            <!--                    </div>-->
+                                <div class="info">
+                                    <p class="writer_time"><span>{{data?.custBlNo}}동 {{data?.custNmMasked}}</span><span class="time">{{data?.iptDtm | stringDateFormatDtm }}</span></p>
+                                    <p class="text" [innerHTML]="data?.rplyCts | parseEnterToHtmlTag"></p>
+                                    <a *ngIf="data.iptId === globalVars.userDetail?.custId" (click)="deleteRply(data.rplyId)" class="delet">삭제</a>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <a class="add_item" *ngIf="rplySearchModel?.page < rplySearchModel?.totalEndPage" (click)="moreRplyList()">더보기</a>
+
+                    <div class="btn_area fix_n_del" *ngIf="isEnableUpdate() || isEnableUpdate() || (bltbrdTpCd===CodeConstants.BLTBRD.SHARE && bltbrdDetail?.bltbrdStats !== GlobalConstants.BLTBRD_STATS.SALE_COMPLETED.TYPE)">
+                        <!--단지장터 && 판매중일떄만-->
+                        <button *ngIf="bltbrdTpCd===CodeConstants.BLTBRD.SHARE && bltbrdDetail?.bltbrdStats !== GlobalConstants.BLTBRD_STATS.SALE_COMPLETED.TYPE" (click)="onClickSaleDone()" type="button" class="btn btn_type3">판매완료</button>
+                        <button *ngIf="isEnableUpdate()" (click)="goUpdatePage(bltbrdDetail?.bltbrdId)" type="button" class="btn btn_type1">수정</button>
+                        <button *ngIf="isEnableUpdate()" (click)="deleteBltbrd()" type="button" class="btn btn_type1">삭제</button>
+                    </div>
+                    <!-- 더보기 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_nav">
+        <div class="content">
+            <div class="nav" *ngIf="bltbrdDetail?.prevId != -1 || bltbrdDetail?.nextId != -1">
+                <a class="prev" *ngIf="bltbrdDetail?.prevId != -1" (click)="goPage(bltbrdDetail?.prevId)">이전 글</a>
+                <a class="next" *ngIf="bltbrdDetail?.nextId != -1" (click)="goPage(bltbrdDetail?.nextId)">다음 글</a>
+            </div>
+            <!-- 목록 보기 -->
+            <div class="go_list">
+                <a class="btn btn_type2" (click)="goListPage()">목록 보기</a>
+            </div>
+        </div>
+    </div>
+</div>

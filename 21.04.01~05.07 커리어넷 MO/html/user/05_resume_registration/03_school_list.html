@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>커리어넷</title>
+    <link rel="stylesheet" href="../../../css/library.css">
+    <link rel="stylesheet" href="../../../css/common.css">
+    <link rel="stylesheet" href="../../../css/layout.css">
+    <link rel="stylesheet" href="../../../css/main.css"><!-- main.html 에서만 사용 -->
+    <link rel="stylesheet" href="../../../css/contents.css">
+    <link rel="stylesheet" href="../../../css/user.css">  <!-- //개인회원 CSS -->
+    <script src="../../../js/libs/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/libs/library.js"></script>
+    <script src="../../../js/ui/layout.js"></script>
+</head>
+<body>
+    <div class="wrapper career_user">
+        <header class="sub">
+            <div class="header">
+                <h1 class="page_title">학교</h1>
+                <a href="#none" class="btn_back">이전</a>
+            </div>
+        </header>   
+        <section class="pb bg">
+            <div class="school_list_box">                
+                <div class="item">
+                    <h3>대학교</h3>
+                    <div>
+                        <div class="school_box">
+                            <a href="#none">
+                                <p class="title">서울디지털대 (4년)</p>
+                                <ul>
+                                    <li>경영학과</li>
+                                    <li>입학 2007년 03월 ~ 휴학중 2011년 02월</li>
+                                </ul>
+                            </a>
+                        </div>
+                        <div class="school_box">
+                            <a href="#none">
+                                <p class="title">한림성심대학 (2,3년)</p>
+                                <ul>
+                                    <li>경영학과</li>
+                                    <li>입학 2007년 03월 ~ 휴학중 2011년 02월</li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <h3>고등학교</h3>
+                    <div>
+                        <div class="school_box">
+                            <a href="#none">
+                                <p class="title">춘천고등학교</p>
+                                <ul>
+                                    <li>경영학과</li>
+                                    <li>졸업 1997년 03월 </li>
+                                </ul>
+                            </a>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="btn_area fixed">
+                    <button type="button" class="btn_big">학력사항 추가</button>
+                </div>
+            </div>  
+        </section>
+
+        <!-- 힉력사항 등록 -->
+        <div class="no_top10_box gray no_data">
+            <p class="text">학력사항을 등록해 주세요.</p>
+            <div class="no_btn_area">
+                <a href="#none" class="btn_select" onclick="popOpen('pop_school_list');">학력사항 추가</a>
+            </div>            
+        </div>
+        <!-- //힉력사항 등록 -->
+    </div>    
+
+
+    <!-- 학력사항 추가 alert popup -->
+    <div class="layer_popup" id="pop_school_list">
+        <div class="cont_wrap">
+            <div class="ly_body">
+                <div class="pop_school_list">
+                    <p class="ps_txt dgray">대부분의 분들이 고등학교부터 입력을 합니다.</p>
+                    <ul>
+                        <li>
+                            <a href="#none">고등학교</a>
+                        </li>
+                        <li>
+                            <a href="#none">대학 (2,3년)</a>
+                        </li>
+                        <li>
+                            <a href="#none">대학교 (4년)</a>
+                        </li>
+                        <li>
+                            <a href="#none">대학원</a>
+                        </li>
+                    </ul>
+                </div>
+               
+            </div>
+            <div class="btn_area">
+                <button type="button" class="btn_p" onclick="popClose('pop_school_list');">창닫기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //학력사항 추가 alert popup -->
+
+</body> 
+</html>

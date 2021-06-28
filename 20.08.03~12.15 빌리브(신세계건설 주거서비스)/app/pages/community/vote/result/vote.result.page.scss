@@ -1,0 +1,173 @@
+.vote_total {
+  background: #fff;
+  padding: 1.333rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.333rem;
+}
+.vote_total dl {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+.vote_total dl:before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 3.333rem;
+  background: #C8CBCF61;
+  position: absolute;
+  top: 0.1667rem;
+  left: 0;
+}
+.vote_total dl:first-of-type:before {
+  display: none;
+}
+.vote_total dl dt {
+  color: #4B423C;
+  font-size: 1.083rem;
+}
+.vote_total dl dd {
+  color: #9CC023;
+  font-size: 1.833rem;
+  font-weight: 600;
+  font-family: "Montserrat";
+  margin-top: 0.3333rem;
+}
+.vote_total dl dd span {
+  font-size: 1.083rem;
+  vertical-align: 1px;
+  margin-left: 1px;
+  display: inline-block;
+  font-weight: 400;
+}
+.vote ul li {
+  height: 7.25rem;
+  padding-top: 1.167rem;
+}
+.vote_rst {
+  position: relative;
+}
+.vote_rst dl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #4B423C;
+}
+.vote_rst dl dt {
+  font-size: 1.167rem;
+}
+.vote_rst dl dd {
+  font-size: 1.333rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+.vote_rst dl dd span {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 1px;
+}
+.vote_rst .graph {
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+  background: #D4D9E0;
+  margin-top: 1.083rem;
+}
+.vote_rst .graph, .vote_rst .graph .fill {
+  display: inline-block;
+  overflow: hidden;
+}
+.vote_rst .graph .fill {
+  line-height: 0;
+  vertical-align: top;
+  height: 1.5rem;
+  background: #A3A6AA;
+  border-radius: 0.75rem;
+}
+.win .vote_rst .graph .fill {
+  background: #9CC023;
+}
+.vote_rst .graph .num {
+  position: absolute;
+  top: 0;
+  right: 0.8333rem;
+  font-size: 0.9167rem;
+  color: #4B423C;
+  line-height: 1.5rem;
+}
+.vote_rst .graph .num:before {
+  display: inline-block;
+  content: "";
+  background: url('/assets/icon/people.svg') no-repeat;
+  width: 0.6667rem;
+  height: 0.6667rem;
+  background-size: 100%;
+  margin-right: 0.5833rem;
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (min-width: 1025px) {
+  .vote_total {
+    padding: 30px 0 25px;
+    margin-top: 36px;
+  }
+  .vote_total dl:before {
+    width: 2px;
+    height: 62px;
+    top: 8px;
+  }
+  .vote_total dl dt {
+    font-size: 16px;
+  }
+  .vote_total dl dd {
+    font-size: 42px;
+    margin-top: 4px;
+  }
+  .vote_total dl dd span {
+    font-size: 26px;
+    vertical-align: 1px;
+    margin-left: 4px;
+  }
+  .vote ul li {
+    height: 121px;
+    padding-top: 23px;
+  }
+  .vote_rst dl dt {
+    font-size: 16px;
+  }
+  .vote_rst dl dd {
+    position: absolute;
+    bottom: -2px;
+    right: 4px;
+    font-size: 30px;
+  }
+  .vote_rst dl dd span {
+    font-size: 20px;
+  }
+  .vote_rst .graph {
+    width: 765px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 16px;
+  }
+  .vote_rst .graph .fill {
+    height: 30px;
+    border-radius: 50px;
+  }
+  .vote_rst .graph .num {
+    right: 27px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  .vote_rst .graph .num:before {
+    background: url('/assets/pc/icon/people.png') no-repeat;
+    width: 12px;
+    height: 13px;
+    background-size: 100%;
+    margin-right: 9px;
+  }
+}
