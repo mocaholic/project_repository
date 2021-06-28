@@ -1,0 +1,438 @@
+// output: ../../../../../../publish/html/ko/Legal/news/sub_search_layout.html
+-var imgUrl = '../images/dummy/' 
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container.news
+      .top_visual_box
+        .breadcrumb.main
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 자료와 소식
+        h2 <strong>INSIGHTS</strong>자료와 소식
+      .content
+        .search_top
+          span.big_input
+            input(type='text')
+            a(href='javascript:void(0);').btn_delete.hidden_text 검색어 삭제
+            a(href='javascript:void(0);').btn_search.hidden_text 검색
+          a(href='javascript:void(0);').btn_expertise 업무분야
+          
+        // 19.01.28 업무분야 영역 pc/mo 기능 달라지면서 분기 처리
+        // pc
+        .category_area.pc 
+          // 19.01.22 각 li 내 span class='bar_up' 추가 s
+          ul.highLight_tab.tab_menu.top_tab
+            li
+              a(href='javascript:void(0);' data-value='tab1') Practice 
+                span 분야별
+              span.bar_up 
+              span.bar
+            li
+              a(href='javascript:void(0);' data-value='tab2') Industry
+                span 산업별
+              span.bar_up
+              span.bar
+            li
+              a(href='javascript:void(0);' data-value='tab3') Region
+                span 지역별
+              span.bar_up
+              span.bar
+            // 19.01.22 각 li 내 span class='bar_up' 추가 e
+              
+          .tab_container.bg
+            .tab_section.on
+              ul.field_list.highLight_js
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 공공감사 지원
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 공정거래
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 관세 및 국제통상
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 국제중재·소송
+                li(data-value='tab1').select
+                  a(href='javascript:void(0);') 금융 규제
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 기업구조조정
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 기업인수·합병
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 기업지배구조
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 기업형사·화이트칼라범죄
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 방송·통신
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 베트남
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 보험
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 부동산·건설
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 부패방지·준법경영
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 비은행 금융회사
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 사모투자
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 소송
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 에너지
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 엔터테인먼트·스포츠·레저
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 유럽
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 은행
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 인사·노무
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 일본
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 자본시장
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 자산운용
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 전자금융·핀테크
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 제약·의료기기·식품·화장품
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 조세
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 중국
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 증권
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 지식재산권
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 파생상품
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 파이낸싱
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 프라이버시·정보보호
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 항공우주·방산 
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 해상
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 해외법무
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 홍콩
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 환경
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') AML
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') FX
+        // mo
+        .category_area.mo
+          ul.tab_menu.top_tab
+            li.on
+              a(href='javascript:void(0);' data-value='tab1') Practice 
+                span 분야별
+            li
+              a(href='javascript:void(0);' data-value='tab2') Industry
+                span 산업별
+            li
+              a(href='javascript:void(0);' data-value='tab3') Region
+                span 국가별
+              
+          .tab_container
+            .tab_section.on 
+              .field_list.mo
+                .tab_box.accordion_wrap
+                  p 
+                    a.btn_toggle.first(href='javascript:void(0);')
+                      규제 및 컴플라이언스 
+                      span.hidden_text 접기
+                  // 3n개씩 노출 필요. 빈 li는 a태그 삭제
+                  .box_open.select_box_open
+                    .scroll
+                      ul.field_list
+                        li
+                          a(href='javascript:void(0);') 공공감사 지원
+                        li.on
+                          a(href='javascript:void(0);') 공정거래
+                        li
+                          a(href='javascript:void(0);') 인사·노무
+                        li
+                          a(href='javascript:void(0);') 관세 및 국제통상
+                        li
+                          a(href='javascript:void(0);') 조세
+                        li
+                          a(href='javascript:void(0);') 금융 규제
+                        li
+                          a(href='javascript:void(0);') 프라이버시·정보보호
+                        li
+                          a(href='javascript:void(0);') 부패방지·준법경영
+                        li
+                          a(href='javascript:void(0);') 환경
+                .tab_box.accordion_wrap
+                  p 
+                    a.btn_toggle(href='javascript:void(0);')
+                      경영 및 거래 법률 자문 
+                      span.hidden_text 펼치기
+                  .box_open.select_box_open
+                    .scroll
+                      ul.field_list
+                        li
+                          a(href='javascript:void(0);') 방송·통신
+                        li
+                          a(href='javascript:void(0);') 기업구조조정
+                        li
+                          a(href='javascript:void(0);') 지식재산권
+                        li
+                          a(href='javascript:void(0);') 기업인수·합병
+                        li
+                          a(href='javascript:void(0);') 파생상품
+                        li
+                          a(href='javascript:void(0);') 기업지배구조
+                        li
+                          a(href='javascript:void(0);') 파이낸싱
+                        li
+                          a(href='javascript:void(0);') 사모투자
+                        li
+                          a(href='javascript:void(0);') 해외법무
+                        li
+                          a(href='javascript:void(0);') 자본시장
+                .tab_box.accordion_wrap
+                  p 
+                    a.btn_toggle(href='javascript:void(0);')
+                      분쟁 해결 
+                      span.hidden_text 펼치기
+                  .box_open.select_box_open
+                    .scroll
+                      ul.field_list
+                        li
+                          a(href='javascript:void(0);') 국제중재·소송
+                        li
+                          a(href='javascript:void(0);') 기업형사·화이트칼라범죄
+                        li
+                          a(href='javascript:void(0);') 소송
+                  
+            .tab_section 
+              // pc : 4개씩 , mo : 3개씩 열 맞춰서 노출
+              .select_box_open 
+                .scroll
+                  ul.field_list
+                    li
+                      a(href='javascript:void(0);') 방송·통신
+                    li
+                      a(href='javascript:void(0);') 보험
+                    li
+                      a(href='javascript:void(0);') 부동산·건설
+                    li
+                      a(href='javascript:void(0);') 비은행 금융회사
+                    li
+                      a(href='javascript:void(0);') 에너지
+                    li
+                      a(href='javascript:void(0);') 엔터테인먼트·스포츠·레저
+                    li
+                      a(href='javascript:void(0);') 은행
+                    li
+                      a(href='javascript:void(0);') 자산운용
+                    li
+                      a(href='javascript:void(0);') 전자금융·핀테크
+                    li
+                      a(href='javascript:void(0);') 제약·의료기기·식품·화장품
+                    li
+                      a(href='javascript:void(0);') 증권
+                    li
+                      a(href='javascript:void(0);') 항공우주·방산 
+                    li
+                      a(href='javascript:void(0);') 해상
+            .tab_section 
+              // pc : 4개씩 , mo : 3개씩 열 맞춰서 노출
+              .select_box_open 
+                .scroll
+                  ul.field_list
+                    li
+                      a(href='javascript:void(0);') 베트남
+                    li
+                      a(href='javascript:void(0);') 유럽
+                    li
+                      a(href='javascript:void(0);') 일본
+                    li
+                      a(href='javascript:void(0);') 중국
+                    li
+                      a(href='javascript:void(0);') 홍콩
+                      
+        .btn_center_box
+          a(href='javascript:void(0);').btn_white.btn_search_reset.btn_hover.bg_black
+            span 초기화
+          a(href='javascript:void(0);').btn_orange.btn_search_js.btn_hover.bg_orange
+            span 검색
+        .search_result 
+          // 검색결과 있음
+          #result_top.result_top.result_js
+            span.tag 공공감사 지원
+              a(href='javascript:void(0);').delete 
+            span.tag 기업지배구조
+              a(href='javascript:void(0);').delete 
+            span.tag 조세
+              a(href='javascript:void(0);').delete 
+            span.tag 홍길동
+              a(href='javascript:void(0);').delete 
+            // 19.01.23 띄어쓰기 수정 
+            span.text_result 에 대한 검색 결과입니다.
+          .wide_box 
+            .result_news
+              ul.btn_group
+                  li 
+                    a(href='javascript:void(0);').on 전체
+                  li 
+                    a(href='javascript:void(0);') 1개월
+                  li 
+                    a(href='javascript:void(0);') 6개월
+                  li 
+                    a(href='javascript:void(0);') 1년
+              .fixed_mo_tab.tab_sticky
+                ul.tab_menu.news_tab
+                  li.on
+                    a(href='javascript:void(0);') 뉴스레터
+                  li
+                    a(href='javascript:void(0);').disabled 기고문
+                  li
+                    a(href='javascript:void(0);') 업무사례
+                  li
+                    a(href='javascript:void(0);').disabled 뉴스
+                  li
+                    a(href='javascript:void(0);') 수상
+                // 모바일에서만 적용되는 영역
+                // 수정사항 19.01.29 기능 삭제로 a > span 태그로 변경
+                .btn_menu_tab
+                  span 메뉴 전체보기
+                // 수정사항 19.01.29 마크업 삭제
+                
+              .tab_container
+                .tab_section.on 
+                  ul.board_list.br_top
+                    li.text 뉴스레터 <span>30건</span>
+                    -for(var i = 0; i < 6; i ++)
+                      li
+                        a(href='javascript:void(0);')
+                          p.title 뉴스레터_노동조합 운영비 지원 금지 조항에 대한 헌법불합치 결정
+                          p.tag_area 
+                            span #4차산업혁명
+                            span #패널토론
+                            span #규제개혁
+                            span #김독혁신
+                            span #뉴스
+                            span #사회공헌위원회
+                            span #4차산업혁명
+                          span.date 2018.11.21  
+                  .btn_center_box
+                    a.btn_text_more(href='javascript:void(0)') 더 보기
+                .tab_section 222 컨텐츠 비활성
+                .tab_section 
+                  ul.board_list.br_top
+                    li.text 업무사례 <span>30건</span>
+                    -for(var i = 0; i < 6; i ++)
+                      li
+                        a(href='javascript:void(0);')
+                          p.title 업무사례_노동조합 운영비 지원 금지 조항에 대한 헌법불합치 결정
+                          p.tag_area 
+                            span #4차산업혁명
+                            span #패널토론
+                            span #규제개혁
+                            span #김독혁신
+                            span #뉴스
+                            span #사회공헌위원회
+                            span #4차산업혁명
+                          span.date 2018.11.21  
+                  .btn_center_box
+                    a.btn_text_more(href='javascript:void(0)') 더 보기
+                .tab_section 444 컨텐츠 비활성
+                .tab_section 
+                  ul.board_list.br_top
+                    li.text 수상 <span>30건</span>
+                    -for(var i = 0; i < 6; i ++)
+                      li
+                        a(href='javascript:void(0);')
+                          p.title 수상_노동조합 운영비 지원 금지 조항에 대한 헌법불합치 결정
+                          p.tag_area 
+                            span #4차산업혁명
+                            span #패널토론
+                            span #규제개혁
+                            span #김독혁신
+                            span #뉴스
+                            span #사회공헌위원회
+                            span #4차산업혁명
+                          span.date 2018.11.21  
+                  .btn_center_box
+                    a.btn_text_more(href='javascript:void(0)') 더 보기
+          // 검색결과 없음
+          p.no_data.p_top 검색 결과가 없습니다.
+    
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {/* callback */});
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      
+      $(function() {
+        var $dimm = $('.dimm');
+        var fixedTarget = $('.fixed_mo_tab');
+        
+        var btnHighLight = $('.highLight_tab > li > a');
+        var targetElement = $('.highLight_js');
+        front.highLight(btnHighLight, 'on', targetElement);
+        
+        // expertise 버튼 클릭시 
+        $('.btn_expertise').click(function(event){
+          event.preventDefault();
+          if ($('.btn_expertise').hasClass('on')) { 
+            $(this).removeClass('on');
+            $('.category_area').removeClass('on');
+            btnCateTab.removeClass('on');
+            $('.highLight_js').find('li').removeClass('on');
+          }else {
+            $(this).addClass('on');
+            $('.category_area').addClass('on');
+          }
+        });
+        
+        var btnCateTab = $('.category_area .tab_menu > li > a');
+        var tabContents = $('.category_area .tab_container');
+        
+        var btnHighLight = $('.highLight_tab > li > a');
+        var targetElement = $('.highLight_js');
+        front.highLight(btnHighLight, 'on', targetElement);
+        
+        // 검색 버튼 클릭시 함수 실행
+        var searchInput = $('.big_input > input[type="text"]');
+        var btnSearchResult = $('.btn_search_js');
+        var scrollTarget = $('.search_result');
+        front.btnClick(btnSearchResult, function() {
+          // 데이타 로드 완료시 실행함수
+          front.searchLoading(scrollTarget, 1000);
+          
+        });
+        
+        // 초기화 버튼 클릭시 실행함수
+        var btnReset = $('.btn_search_reset');
+        front.btnClick(btnReset, function() {
+          searchInput.val('');
+          $('html, body').stop().animate({scrollTop: 0}, 500, 'easeOutCubic');
+          
+        });
+        // 자료와소식 검색결과 뉴스 tab
+        var btnNewsTab = $('.result_news .tab_menu > li > a');
+        var newsTabContents = $('.result_news .tab_container');
+        front.tabMenu(btnNewsTab, 'on', newsTabContents, function($this) {
+          $('.box_open').hide();
+        });
+        
+        
+        // 수정사항 19.01.29 스크립트 삭제
+        // 검색결과 뉴스영역 menu 클릭시 
+      });

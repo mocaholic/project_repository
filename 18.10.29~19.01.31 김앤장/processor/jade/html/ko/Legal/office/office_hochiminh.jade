@@ -1,0 +1,71 @@
+// output: ../../../../../../publish/html/ko/Legal/office/office_hochiminh.html
+-var imgUrl = '../images/dummy/'
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap 
+    
+    // 각 서브별 검색 노출 타입 다름
+    .container.location
+      .top_visual_box
+        .breadcrumb
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 사무소 위치
+        h2 <strong>LOCATION</strong>사무소 위치
+      .content
+        ul.office_top
+          li.seoul
+            a(href='javascript:void(0);') 서울
+          li.hochiminh.on
+            a(href='javascript:void(0);') 호치민
+              span Deutsches Haus
+          li.hongkong
+            a(href='javascript:void(0);') 홍콩
+        .office_cont
+          .office_container
+            .office_section.on
+              .bg_box
+                .location_info
+                  img(src='../images/common/pc/hochiminh_map.jpg' alt='호치민 지도')
+                  .info_text 
+                    p.title Deutsches Haus
+                    p.map_text uite 1601, Deutsches Haus 33 Le Duan Boulevard District 1, Ho Chi Minh City, Vietnam
+
+                    dl 
+                      dt T. 
+                      dd 
+                        span.tel 
+                          a(href='tel:+852-3468-6390') +852-3468-6390
+                      dt F.
+                      dd +852-3620-2889
+                      dt E.
+                      dd
+                        a(href='mailto:') lawkim@kimchang.com
+                    .btn_center_box
+                      a(href='javascript:void(0);').google 구글지도
+                      a(href='javascript:void(0);').print print
+            
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      $(function() {
+        // 사무소위치 페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        // tab 
+        var btnCateTab = $('.office_cont .tab_menu > li > a');
+        var tabContents = $('.office_cont .office_container');
+        front.tabMenu(btnCateTab, 'on', tabContents);
+      });
+      
+      

@@ -1,0 +1,579 @@
+//output:../../publish/guide.html
+include guideUtil.jade
+
+doctype html
+html(lang='ko')
+  head
+    title Kim &amp; Chang Webpublishing Guide
+    meta(charset='utf-8')
+    style(type='text/css')
+      | body#guide {margin:0;padding:0;min-width:1280px;color:#333;}
+      | header {width:100%;position:fixed;top:0;left:0;z-index:10;}
+      | a {text-decoration:none;color:#666;}
+      | a:hover {text-decoration:underline;}
+      | h1 { margin:0;padding:10px;font-size:16px;background:#333;color:#fff;position:relative;}
+      | h1 a {display:inline-block;font-size:12px;padding:5px 16px;font-weight:bold;color:#666;background:#fff;border-radius:4px;position:absolute;right:10px;top:8px;}
+      | h1 a:hover {text-decoration:none;color:red;}
+      | ul, menu {margin:0;padding:0;list-style-type:none;}
+      | menu {border-bottom:1px solid #666;box-shadow:0 2px 4px #888;}
+      | menu > li {width:25%;float:left;box-sizing:border-box;padding:10px;text-align:center;background:#fff;font-size:14px;font-weight:bold;position:relative;}
+      | menu > li:hover, menu > li.on {background:#eee;}
+      | menu > li.on a {color:blue;}
+      | menu > li:after {display:block;content:'';width:1px;height:10px;background:#555;position:absolute;top:50%;right:0;margin-top:-5px;}
+      | menu > li:last-child:after {display:block;content:'';width:0;height:0;background:transparent;position:absolute;top:0;right:0;}
+      | menu:after {display:block;height:0;content:'';clear:both;}
+      | article {padding:80px 20px 0;}
+      | h2 {margin:0;padding:20px 10px 10px;font-size:16px;border-bottom:2px solid #666;}
+      | h3 {margin:0;padding:16px 10px 5px;font-size:14px;position:relative;}
+      | h3 a {display:inline-block;font-size:12px;padding:4px 10px 5px;background:#ddd;border-top-left-radius:5px;position:absolute;right:0;bottom:0;}
+      | h3 a.close {color:#000;}
+      | h3 a.open {color:#555;}
+      | h4 {margin:0;padding:0 0 0 9px;font-size:13px;position:relative;}
+      | h4:before {display:block;height:4px;width:4px;content:'';background:#222;border-radius:2px;position:absolute;top:50%;left:0;margin-top:-2px;}
+      | .pages {padding:0 0 0 20px;}
+      | .pages > li {font-size:13px;}
+      | .pages.line > li {padding:5px 0;border-bottom:1px dashed #ddd;}
+      | .basicBox {padding:10px 0 0 0;}
+      | .contentsBox {padding:10px;border:1px solid #ddd;font-size:14px;color:#666;}
+      | .contentsBox > .basicBox:first-child {padding:0;}
+      | svg {vertical-align:middle;}
+      | ul.folders li {overflow:hidden;position:relative;}
+      | ul.folders li:before {display:block;content:'';width:1px;height:100%;border-left:1px dashed #bbb;position:absolute;top:34px;left:10px;}
+      | ul.folders > li ul {margin-left:80px;}
+      | ul.folders > li > ul li {padding:5px 0;}
+      | span.dic {display:inline-block;padding:3px 8px;border:1px dashed #ddd;font-size:12px;color:#aaa;margin-left:10px;}
+      | .basicTable {width:100%;border-collapse:collapse;margin-top:8px;}
+      | .basicTable th, .basicTable td {padding:10px 20px;text-align:left;border-top:1px dashed #ccc;border-bottom:1px dashed #ccc;border-left:1px dashed #ccc;font-size:13px;}
+      | .basicTable tr > th:first-child, .basicTable tr > td:first-child {border-left:0;}
+      | .basicTable th {background:#eef;}
+      | .basicTable span.name {display:inline-block;margin-left:10px;vertical-align:center;}
+      | footer {margin-top:30px;height:40px;line-height:40px;padding:0 20px;font-size:12px;color:#aaa;background:#eee;border-top:1px solid #ddd;}
+      | a.goTop {display:block;position:fixed;bottom:20px;right:20px;opacity:0.5;z-index:9;}
+      | ul.info > li {padding-top:5px;padding-left:10px;position:relative;}
+      | ul.info > li:first-child {padding-top:0;}
+      | ul.info > li:before {display:block;height:4px;width:4px;content:'';background:#666;border-radius:2px;position:absolute;top:50%;left:0;margin-top:2px;}
+      | ul.info > li:first-child:before {margin-top:0;}
+      
+    script(type='text/javascript' src='html/ko/Legal/js/jquery-2.2.4.min.js')
+    
+  body#guide
+    header
+      h1 Kim &amp; Chang Webpublishing Guide
+
+      nav
+        menu
+          li.on
+            a(href='javascript:void(0);') 퍼블리싱 개요
+          li
+            a(href='javascript:void(0);') 코딩 가이드
+          li
+            a(href='javascript:void(0);') 요소디자인(CSS) 가이드
+          li
+            a(href='javascript:void(0);') JS 가이드
+    article
+      section
+        h2 1. 퍼블리싱 개요
+          h3 1-1. 기본사항
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            .basicBox
+              h4 node js
+              ul.pages.line
+                li node js 설치
+                li URL : <a href="https://nodejs.org" target="_blank" style="color:#222; text-decoration:underline;">node js</a>
+                li LTS 버전 설치
+                li node 실행 방법 : cmd 해당 폴더 진입 후 node server.js 입력
+            .basicBox
+              h4 editor 
+              ul.pages.line
+                li Atom : <a href="https://atom.io/" target="_blank" style="color:#222; text-decoration:underline;">Atom 링크</a>
+                li Atom Plugin 중 jade-autocompile 설치
+                li URL 및 사용법 : <a href="https://atom.io/packages/jade-autocompile" target="_blank" style="color:#222; text-decoration:underline;">jade-autocompile</a>
+                li less : Atom Plugin 중 less-autocompile
+                li URL 및 사용법 : <a href="https://atom.io/packages/less-autocompile" target="_blank" style="color:#222; text-decoration:underline;">less-autocompile</a>
+            .basicBox
+              h4 less
+              ul.pages.line
+                li PC(반응형) : px 코딩
+                li Mobile(반응형) : rem 코딩
+            .basicBox
+              h4 레이아웃
+              ul.pages.line
+                li localhost 경로 : project/publish/
+                li 전시 head : publish/html/ko/Legal/include/head.jade
+            .basicBox
+              h4 resource 생성방법
+              table.basicTable
+                colgroup
+                  col(style='width:16%;')
+                  col(style='width:16%;')
+                  col(style='width:auto;')
+                tbody
+                  tr
+                    th(rowspan='3') 코드검사 및 중복코드 처리
+                    th html
+                    td html 문서는 jade를 사용하여 생성한다.
+                  tr
+                    th css
+                    td style sheet 문서는 less를 사용하여 생성한다.
+                  tr
+                    th javascript
+                    td 개발자도구를 사용하여 validation한다.
+                  tr
+                    th(colspan='2') image 최적화
+                    td 데이터가 아닌 경우 image sprite 기법으로 생성
+          h3 1-2. 퍼블리싱 주요이슈
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            .basicBox
+              h4 크로스브라우징
+              table.basicTable
+                colgroup
+                  col(style='width:16%;')
+                  col(style='width:16%;')
+                  col(style='width:auto;')
+                thead
+                  tr
+                    th(colspan='2') 브라우저
+                    th 크로스브라우징 범위
+                tbody
+                  tr
+                    th(rowspan='2')
+                      + svgWindows
+                      span.name windows
+                    th
+                      + svgIE
+                      span.name IE10~
+                    td 기능 : 정상작동 | CSS interaction : 정상작동 | JS interaction : 정상 작동.
+                  tr
+                    th
+                      + svgChrome
+                      span.name Chrome
+                    td 기능 : 정상작동 | CSS interaction : 정상작동 | JS interaction : 정상 작동.
+                  tr
+                    th
+                      + svgApple
+                      span.name MAC
+                    th
+                      + svgSafari
+                      span.name Safari
+                    td 기능 : 정상작동 | CSS interaction : 정상작동 | JS interaction : 정상 작동.
+            .basicBox
+              h4 폰트
+              table.basicTable
+                colgroup
+                  col(style='width:20%;')
+                  col(style='width:auto;')
+                tbody
+                  tr
+                    th
+                      + svgApple
+                      span.name MAC
+                    td 한글 & 영어 혼용 : Lato(Web-font), NotoSans-Medium(Web-font), NotoSans-DemiLight(Web-font), NotoSans-Light(Web-font)
+                  tr
+                    th
+                      + svgWindows
+                      span.name windows
+                    td 한글 & 영어 혼용 : Lato(Web-font), NotoSans-Medium(Web-font), NotoSans-DemiLight(Web-font), NotoSans-Light(Web-font)
+            
+          h3 1-3. 퍼블리싱 폴더 구조 및 주요 파일
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            ul.folders
+              li
+                + svgFolder('project', 'Kim & Chang 퍼블리싱 폴더')
+                ul
+                  li
+                    + svgFolder('processor', 'jade 및 less 원본파일 폴더')
+                    ul
+                      li
+                        + svgFolder('jade', 'jade 원본 폴더')
+                        ul
+                          li
+                            + svgFolder('html', '실 사용 html 문서')
+                            ul
+                              li
+                                + svgFolder('ko', '다국어 분기')
+                                ul
+                                  li
+                                    + svgFolder('Legal', '리갈')
+                                  li
+                                    + svgFolder('Ip', 'Ip')
+                                  li
+                                    + svgFolder('recruit', '채용')
+                              li
+                                + svgFiles('index.jade', '작업목록 jade')
+                              li
+                                + svgFiles('guide.jade', '가이드 jade')
+                      li
+                        + svgFolder('less', 'less 원본 폴더')
+                        ul
+                          li
+                            + svgFolder('ko', '다국어 분기')
+                            ul
+                              li
+                                + svgFolder('Legal', '리갈')
+                                ul
+                                  li
+                                    + svgFiles('kimchang.less', '스타일시트 통합')
+                                  li
+                                    + svgFiles('layout.less', '스타일시트 레이아웃')
+                                  li
+                                    + svgFiles('ui.less', '스타일시트 UI')
+                                  li
+                                    + svgFiles('content.less', '스타일시트 content')
+                                  li
+                                    + svgFiles('common.less', '스타일시트 common')
+                              li
+                                + svgFolder('IP', 'IP')
+                                ul
+                                  li
+                                    + svgFiles('kimchang.less', '스타일시트 통합')
+                                  li
+                                    + svgFiles('layout.less', '스타일시트 레이아웃')
+                                  li
+                                    + svgFiles('ui.less', '스타일시트 UI')
+                                  li
+                                    + svgFiles('content.less', '스타일시트 content')
+                                  li
+                                    + svgFiles('common.less', '스타일시트 common')
+                              li
+                                + svgFolder('recruit', '채용')
+                                ul
+                                  li
+                                    + svgFiles('kimchang.less', '스타일시트 통합')
+                                  li
+                                    + svgFiles('layout.less', '스타일시트 레이아웃')
+                                  li
+                                    + svgFiles('ui.less', '스타일시트 UI')
+                                  li
+                                    + svgFiles('content.less', '스타일시트 content')
+                                  li
+                                    + svgFiles('common.less', '스타일시트 common')
+                          
+                  li
+                    + svgFolder('publish', '컴파일된 소스 포함 최종 퍼블리싱 폴더')
+                    ul
+                      li
+                        //+ svgFolder('ko', '다국어 분기')
+                        + svgFolder('html', '실 사용 html 문서')
+                        ul
+                          li
+                            + svgFolder('ko', '다국어 분기')
+                            ul
+                              li
+                                + svgFolder('Legal', '리갈')
+                                ul
+                                  li
+                                    + svgFolder('css', 'css')
+                                    ul
+                                      li
+                                        + svgFiles('common.css', '스타일시트 common')
+                                      li
+                                        + svgFiles('content.css', '스타일시트 content')
+                                      li
+                                        + svgFiles('kimchang.css', '스타일시트 통합')
+                                      li
+                                        + svgFiles('layout.css', '스타일시트 layout')
+                                      li
+                                        + svgFiles('main.css', '스타일시트 main')
+                                      li
+                                        + svgFiles('ui.css', '스타일시트 ui')
+                                  li
+                                    + svgFolder('js', 'js')
+                                    ul
+                                      li
+                                        + svgFiles('debug.addIndicators.min.js', '')
+                                      li
+                                        + svgFiles('jquery.bxslider.min.js', '')
+                                      li
+                                        + svgFiles('jquery.touchSwipe.min.js', '')
+                                      li
+                                        + svgFiles('jquery-2.2.4.min.js', '')
+                                      li
+                                        + svgFiles('jquery-ui.js', '')
+                                      li
+                                        + svgFiles('main.js', '')
+                                      li
+                                        + svgFiles('modernizr.min.js', '')
+                                      li
+                                        + svgFiles('ScrollMagic.min.js', '')
+                                      li
+                                        + svgFiles('TweenMax.min.js', '')
+                                      li
+                                        + svgFiles('ui-front.js', '')
+                              li
+                                + svgFolder('IP', 'IP')
+                                ul
+                                  li
+                                    + svgFolder('css', 'css')
+                                    ul
+                                      li
+                                        + svgFiles('common.css', '스타일시트 common')
+                                      li
+                                        + svgFiles('content.css', '스타일시트 content')
+                                      li
+                                        + svgFiles('kimchang.css', '스타일시트 통합')
+                                      li
+                                        + svgFiles('layout.css', '스타일시트 layout')
+                                      li
+                                        + svgFiles('main.css', '스타일시트 main')
+                                      li
+                                        + svgFiles('ui.css', '스타일시트 ui')
+                                  li
+                                    + svgFolder('js', 'js')
+                                    ul
+                                      li
+                                        + svgFiles('debug.addIndicators.min.js', '')
+                                      li
+                                        + svgFiles('jquery.bxslider.min.js', '')
+                                      li
+                                        + svgFiles('jquery.touchSwipe.min.js', '')
+                                      li
+                                        + svgFiles('jquery-2.2.4.min.js', '')
+                                      li
+                                        + svgFiles('jquery-ui.js', '')
+                                      li
+                                        + svgFiles('main.js', '')
+                                      li
+                                        + svgFiles('modernizr.min.js', '')
+                                      li
+                                        + svgFiles('ScrollMagic.min.js', '')
+                                      li
+                                        + svgFiles('TweenMax.min.js', '')
+                                      li
+                                        + svgFiles('ui-front.js', '')
+                              li
+                                + svgFolder('recruit', '채용')
+                                ul
+                                  li
+                                    + svgFolder('css', 'css')
+                                    ul
+                                      li
+                                        + svgFiles('common.css', '스타일시트 common')
+                                      li
+                                        + svgFiles('content.css', '스타일시트 content')
+                                      li
+                                        + svgFiles('kimchang.css', '스타일시트 통합')
+                                      li
+                                        + svgFiles('layout.css', '스타일시트 layout')
+                                      li
+                                        + svgFiles('main.css', '스타일시트 main')
+                                      li
+                                        + svgFiles('ui.css', '스타일시트 ui')
+                                  li
+                                    + svgFolder('js', 'js')
+                                    ul
+                                      li
+                                        + svgFiles('debug.addIndicators.min.js', '')
+                                      li
+                                        + svgFiles('jquery.bxslider.min.js', '')
+                                      li
+                                        + svgFiles('jquery.touchSwipe.min.js', '')
+                                      li
+                                        + svgFiles('jquery-2.2.4.min.js', '')
+                                      li
+                                        + svgFiles('jquery-ui.js', '')
+                                      li
+                                        + svgFiles('main.js', '')
+                                      li
+                                        + svgFiles('modernizr.min.js', '')
+                                      li
+                                        + svgFiles('ScrollMagic.min.js', '')
+                                      li
+                                        + svgFiles('TweenMax.min.js', '')
+                                      li
+                                        + svgFiles('ui-front.js', '')
+                        
+      section(style="display:none")
+        h2 2. 코딩 가이드
+          h3 2-1. 코딩 기본사항
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            table.basicTable
+              colgroup
+                col(style='width:20%')
+                col(style='width:auto')
+              tbody
+                tr
+                  th 빈 href 처리
+                  td 개발요소 href 처리는 undefined 시킨다. 예) &lt;a href='javascript:void(0);'&gt;
+                tr
+                  th 이미지 처리
+                  td 
+                    ul.info 
+                      li 데이터 이미지가 아닌 경우 style sheet로 배경처리한다.
+                tr
+                  th 데이터 Style sheet
+                  td BO(운영)에서 제공하는 스타일은 element에 style 속성으로 처리한다. 예) &lt;img src='smaple.jpg' alt='%게시물 제목%' style='width:200px; height:250px;'&gt;
+                tr
+                  th 기타 주의사항
+                  td
+                    ul.info
+                      li id는 페이지 내 네비게이션 링크, 테이블 headers 제공 시 사용하는 경우를 제외하고 사용하지 않는다. 사용 id엔 style sheet 디자인 하지 않는다.
+                      li css 모든 파일은 kimchang.css에 import 하여 사용한다.
+                      li html5 문서에 xhtml 태그를 사용하지 않는다. 잘못 사용하는 예) &lt;input type='text' /&gt;
+          h3 2-2. 네이밍규칙
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            table.basicTable
+              colgroup
+                col(style='width:16%;')
+                col(style='width:16%;')
+                col(style='width:auto;')
+              tbody
+                tr
+                  th(colspan='2') 공통
+                  td 잘 알려진 축약어를 제외하고 풀 네임을 사용한다.
+                tr
+                  th(rowspan='2') Class
+                  th Design
+                  td 스네이크표기법을 사용한다. ex) 버튼 : btn_, 이미지 : img_, 백그라운드 : bg_
+                tr
+                  th ID
+                  td 카멜표기법 사용한다. 예) contentHeader
+                tr
+                  th(rowspan='2') document
+                  th html
+                  td 스네이크표기법 사용한다. 예) layout_main.html
+          h3 2-3. 웹접근성
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            table.basicTable
+              colgroup
+                col(style='width:20%;')
+                col(style='width:auto;')
+              tbody
+                tr
+                  th 대체텍스트
+                  td
+                    ul.info
+                      li 데이터 이미지의 경우 alt 속성으로 대체 텍스트 제공
+                      li 배경 이미지의 경우 글자 숨김처리 또는 title 속성으로 대체 텍스트 제공
+                      li QR코드 대체텍스트는 연결 URL을 포함시켜서 제공
+                      li 미디어 콘텐츠는 title 뿐만 아니고, 내용의 원고를 제공
+                tr
+                  th 키보드 보장
+                  td
+                    ul.info
+                      li blur() 내장함수 및 tabindex 속성 사용금지. 단, anchor가 아닌 element에 포커스 이동시에만 tabindex='0'을 사용한다.
+                      li 논리적인 element 코딩
+                      li shift + tab 기능 보장
+                tr
+                  th 쉬운 네비게이션
+                  td
+                    ul.info
+                      li 건너띄기 링크를 제공하고, '본문으로 이동'만 사용
+                      li 용도와 목적에 맞게 구체적인 링크 텍스트 제공 예) title='더보기' (x), title='공지사항 더보기' (o)
+                tr
+                  th 이해할 수 있는 테이블 구조
+                  td
+                    ul.info
+                      li caption은 th내용을 포함시킨다.
+                      li 2중 구조 이상의 th를 사용할 경우 반드시 headers를 제공한다.
+                tr
+                  th 사용자 오류방지
+                  td
+                    ul.info
+                      li 새창알림 title 속성의 value는 '새창 알림'으로 통일하여 제공한다.
+                      li 사용자 의도에 관계없이 운영자가 자동으로 데이터를 변경하지 않도록 한다.
+                      li 입력 폼 필드엔 label을 제공한다. label을 제공하기 곤란한 경우 title 속성으로 대체할 수 있다.
+                tr
+                  th 사용자의 쉬운 이해
+                  td
+                    ul.info
+                      li 모호한 안내 문장의 경우, 기획과 협업하여 구체적인 명시를 할 수 있도록 한다.
+                      li 컨텐츠의 명도대비 및 정보구분(데이터 뷰)의 경우, 디자인과 협업하여 사용자가 충분히 인식할 수 있는 수준으로 한다.
+      section(style="display:none")
+        h2 3. 요소디자인(CSS) 가이드
+          h3 3-1. 요소디자인
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            iframe(src='html/ko/Legal/guide/guide.html' style='display: block; width:100%; height: 620px; border: none;' frameborder='0' marginwidth='0' marginheight='0')
+      section(style="display:none")
+        h2 4. JS 가이드
+          h3 4-1. js 파일 개요
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            table.basicTable
+              colgroup
+                col(style='width:20%;')
+                col(style='width:auto;')
+              tbody
+                tr
+                  th jquery-2.2.4
+                  td jquery 라이브러리 2.2.4버전
+                tr
+                  th jquery-ui.min.js
+                  td jquery 기반 ui 라이브러리
+                tr
+                  th modernizr.min.js
+                  td jquery 기반 modernizr 라이브러리
+                tr
+                  th jquery.touchSwipe.min.js
+                  td Legal Main Touch Event용 Plugin
+                tr
+                  th ScrollMagic.min.js
+                  td jquery 기반 Scroll Event용 Plugin
+                tr
+                  th debug.addIndicators.min.js
+                  td jquery 기반 Scroll Event용 Plugin
+                tr
+                  th jquery.bxslider.min.js
+                  td jquery 기반 Slide Plugin
+                tr
+                  th TweenMax.min.js
+                  td jquery 기반 Animation Plugin
+                tr
+                  th main.js
+                  td Main Page용 interaction
+                tr
+                  th ui-front.js
+                  td front ui용 interaction
+                
+          h3 4-2. ui-front.js
+            a(href='javascript:void(0);').open - 접기
+          .contentsBox
+            table.basicTable
+              colgroup
+                col(style='width:20%;')
+                col(style='width:auto;')
+              tbody
+                + trc('pageLoading', 'header, footer loading function')
+                + trc('btnClick', 'button click callback')
+                + trc('showCallback', 'element show callback function')
+                + trc('hideCallback', 'element hide callback function')
+                + trc('tabMenu', 'tabMenu callback function')
+                + trc('scrollAnchor', 'sub page scroll event function')
+                + trc('mobScrollAnchor', 'sub page mobile scroll event function')
+                + trc('scrollAside', 'sub detail page aside scroll fixed event function')
+                + trc('accordion', 'sub detail page accordion event function')
+                + trc('scrollFixed', 'sub page scroll fixed event function')
+                + trc('highLight', 'sub page high light event function')
+                + trc('searchLoading', '검색 후 scroll event function')
+                + trc('scrollAni', 'scroll animation event function')
+                + trc('selectDropDown', 'select box DropDown animation event function')
+                + trc('numberCount', 'number animation event function')
+                + trc('scaleNumber', 'number scale animation event function')
+                + trc('slider', 'slide animation event function')
+                + trc('newsSlider', 'news slide animation event function')
+                
+                
+                
+    footer &copy; Kimg &amp; Chang 프로젝트
+      a(href='javascript:void(0);').goTop
+        + svgGoTop
+                    
+    script(type='text/javascript').
+      var menu = $('menu > li > a');
+      menu.off('click').on('click', function() {
+        var myli = $(this).parent('li');
+        if(!myli.hasClass('on')) {var myIdx = myli.index(); $('menu > li').removeClass('on'); myli.addClass('on'); $('article > section').slideUp(100); $('article > section').eq(myIdx).slideDown(100);}
+      });
+      $('h3 a').off('click').on('click', function() {
+        if($(this).hasClass('open')) {$(this).parent('h3').next('.contentsBox').slideUp(100); $(this).removeClass('open').addClass('close'); $(this).text('+ 펼치기');}
+        else {$(this).parent('h3').next('.contentsBox').slideDown(100); $(this).removeClass('close').addClass('open'); $(this).text('- 접기');}
+      });
+      $('a.goTop').off('click').on('click', function() {$('html, body').stop().animate({ scrollTop : 0 }, 100)});
+
+      

@@ -1,0 +1,111 @@
+// output: ../../../../../../publish/html/ko/Legal/office/office_introduce.html
+-var imgUrl = '../images/dummy/'
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap 
+    
+    // 각 서브별 검색 노출 타입 다름
+    .container.office
+      .visual_area.introduce
+        ul.page_tab
+          li
+            a(href='javascript:void(0);').on K&C 소개
+          li
+            a(href='javascript:void(0);') 연혁
+          li
+            a(href='javascript:void(0);') 글로벌 역량
+          li
+            a(href='javascript:void(0);') 사회공헌
+        .text_box
+          .big_text
+            |Korea's Premier Law firm
+            span 시대와 미래를 내다보는 로펌
+          .small_text
+            |1973년 설립한 김‧장 법률사무소는 대한민국 법률시장에 선진 시스템을 도입함으로써 로펌 역사에 새로운 장을 열었습니다. <br />
+            |시대와 미래를 내다보는 혜안을 통해 고객의 성공을 최우선 가치로 삼아 현재 아시아를 넘어 글로벌 시장에서 최고의 파트너로 인정받고 있습니다.<br />
+            |앞으로도 우리 사회와 고객이 가야 할 곳을 먼저 바라보고, 함께 나아가는 동반자가 되겠습니다.
+      .content.bg 
+        .top_text_area 
+          span K&C 소개
+          |KOREA'S PREMIER<br />LAW FIRM
+        ul.cont_list 
+          li.row1
+            a(href='javascript:void(0);') 
+              .title.count_year.year(data-value='1973')
+                strong 1973 
+                span 년 설립
+              .text
+                |한국 경제와 함께한 45년
+          li
+            a(href='javascript:void(0);') 
+              .title
+                strong 1,500 
+                span 명
+              .text
+                |다양한 분야의 최고의 인재들
+                span 한국 최대, 아시아 10대 규모
+          li.center
+            a(href='javascript:void(0);')
+              .img
+                img(src='../images/common/pc/img_office_list01.jpg' alt='ALB Korea Law Awards 2018')
+              .text
+                span ALB Korea Law Awards 2018
+          li
+            a(href='javascript:void(0);') 
+              .title
+                strong.scale_num 1 
+                span ST
+              .text
+                |세계가 인정하는 Top-tier
+                span Chambers & Partners, Legal 500<br />한국로펌평가 대상 전분야 Tier 1
+          li.center
+            a(href='javascript:void(0);') 
+              .img
+                img(src='../images/common/pc/img_office_list02.jpg' alt='Chambers Asia Pacific 2019')
+              .text
+                span Chambers Asia Pacific 2019
+          li.wide.bg1
+            a(href='javascript:void(0);') 
+              .title.count_ranking.ranking(data-value='67')
+                strong 67 
+                span 위
+              .text
+                |대한민국의 글로벌 로펌
+                span 한국 유일 American Lawyer's Global 100 랭크
+          li.wide.bg2
+            a(href='javascript:void(0);') 
+              .title.count_time(data-value='15337')
+                strong 15337  
+                span 시간
+              .text
+                |지식과 마음을 나누며, 함께 걸음을 맞추어 가겠습니다.
+                span 1년간 한국 변호사의 공익활동 시간
+          li.center
+            a(href='javascript:void(0);') 
+              .img
+                img(src='../images/common/pc/img_office_list03.jpg' alt='WWL 2017:Pro bono')
+              .text
+                span Who's Who Legal 2017:Pro bono
+            
+        
+    footer.footer_wrap
+    .dimm
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      $(function() {
+        // 사무소위치 페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        front.numberCount($('.count_year'), 100);
+        front.numberCount($('.count_ranking'), 600);
+        front.numberCount($('.count_time'), 900);
+        front.scaleNumber($('.scale_num'), 350);
+      });

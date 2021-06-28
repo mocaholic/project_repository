@@ -1,0 +1,225 @@
+// output: ../../../../../../publish/html/ko/Legal/office/office_contact.html
+
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container.detail.contact_us
+      .top_visual_box
+        .breadcrumb
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 사무소 연락처
+        h2 <strong>CONTACT US</strong>사무소 연락처
+      .content
+        .top_area
+          h3.p_top0 대표 연락처
+          ul.box_cont
+            li 
+              span.text_orange T.
+              span.tel
+                a(href='tel:02-3703-4807') 02-3703-4807
+            li 
+              span.text_orange F.
+              span 02-737-9091 / 9092
+            li 
+              span.text_orange E.
+              span.email
+                a(href='mailto:lawkim@kimchang.com') lawkim@kimchang.com
+            
+        .link_area
+          .inner_cont.notice_news_js
+            h3.hidden_text 관련 링크
+            ul
+              li
+                p.title Expertise 
+                  span 업무분야
+                .text '업무분야' 페이지에서 관련된 이슈와 산업,<br />지역별 담당팀을 찾으실 수 있습니다.
+                  
+                a(href='javascript:void(0);').btn_text_more 더 보기
+              li
+                p.title Professionals 
+                  span 구성원
+                .text '구성원' 페이지에서 분야별 도움을 드릴<br />변호사 및 전문 인력을 찾으실 수 있습니다.
+                  
+                a(href='javascript:void(0);').btn_text_more 더 보기
+              li
+                p.title Carrers 
+                  span 인재채용
+                .text 채용과 관련된 문의는 '인재채용' 사이트를<br />방문하여 주세요.
+                  
+                a(href='javascript:void(0);').btn_text_more 더 보기
+              li
+                p.title Intellectual Property 
+                  span 지식재산권
+                .text 지식재산건 그룹 관련 상세한 정보는<br />'지식재산권' 사이트를 방문하여 주세요.
+                  
+                a(href='javascript:void(0);').btn_text_more 더 보기
+        .work_info
+          h3 업무별 문의처 안내
+          ul.info_list.accordion_area
+            li.accordion_wrap
+              p.label
+                a(href='javascript:void(0);').btn_toggle 송무
+              .info_list_cont 
+                ul
+                  li 
+                    p.name 성기주
+                      span 이사
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com
+                  li 
+                    p.name 김승섭
+                      span 이사
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com
+            li.accordion_wrap
+              p.label
+                a(href='javascript:void(0);').btn_toggle 기업<br />법무
+              .info_list_cont 
+                ul
+                  li 
+                    p.name 홍선일
+                      span 이사
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com 
+            li.accordion_wrap
+              p.label 
+                a(href='javascript:void(0);').btn_toggle 회사설립/<br />주주총회/<br />상업등기
+              .info_list_cont 
+                ul
+                  li 
+                    p.name 차홍순
+                      span 부장
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com 
+            li.accordion_wrap
+              p.label
+                a(href='javascript:void(0);').btn_toggle 부동산<br />등기
+              .info_list_cont 
+                ul
+                  li 
+                    p.name 안병군
+                      span 부장
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com 
+            li.accordion_wrap
+              p.label
+                a(href='javascript:void(0);').btn_toggle 세무
+              .info_list_cont 
+                ul
+                  li 
+                    p.name 남덕경
+                      span 차장
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com
+            li.accordion_wrap
+              p.label
+                a(href='javascript:void(0);').btn_toggle 입국비자<br />(내·외국인<br />Immigration/<br />Visa)
+              .info_list_cont 
+                ul
+                  li 
+                    p.name 김영수
+                      span 이사
+                    p T.
+                      span.tel
+                        a(href='tel:') 02-3703-4807
+                    p E.
+                      a(href='mailto:').mail lawkim@kimchang.com
+                    
+        
+    footer.footer_wrap
+    .dimm
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      
+      $(function() {
+        // 상세페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        var $dimm = $('.dimm');
+        // anchor
+        var btnScrollAnchor = $('.bullet_list > li > a');
+        var scrollTarget = $('.content_wrap');
+        front.scrollAnchor(btnScrollAnchor, 600, scrollTarget, 'on', false);        
+        
+        var fixedTarget = $('.fixed_mo_tab');
+        // 상단 tab menu 클릭시 (모바일)
+        var $btnAllNews = $('.btn_menu_tab > a');
+        var $allMenuEle = $('.menu_tab_all');
+        front.btnClick($btnAllNews, function($this) {
+          if ($this.hasClass('on')) {
+            $('body').removeClass('hidden');
+            $this.removeClass('on');
+            $('.dimm_news.on').remove();
+            $allMenuEle.removeClass('on');
+          } else {
+            front.scrollAni(fixedTarget, function() {
+              $this.addClass('on');
+              fixedTarget.append('<div class="dimm_news on"></div>').ready(function() {
+                $(document).on('touchstart click', '.dimm_news', function() {
+                  $('body').removeClass('hidden');
+                  $this.removeClass('on');
+                  $('.dimm_news.on').remove();
+                  $allMenuEle.removeClass('on');
+                });
+              });
+              $allMenuEle.addClass('on');
+            });
+          }
+        });
+        var accordionWrap = '.accordion_wrap';
+        var btnAccordion = $(accordionWrap).find('.btn_toggle');
+        if ($(window).width() <= 1024) {
+          // accordion 함수
+          front.accordion(btnAccordion, accordionWrap, 'active', 200, function() {
+            
+          });
+        }
+        
+        
+        var resizeTimer;
+        var windowW = $(window).width();
+        $(window).on('resize', function(e) {
+          if ($(window).width() == windowW) {return;}
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function() {
+            if ($(window).width() > 1024) {
+              $('.info_list_cont').css('display', 'table-cell');
+            } else {
+              $('.info_list_cont').css('display', 'none');
+              front.accordion(btnAccordion, accordionWrap, 'active', 200, function() {
+                
+              });
+            }
+          }, 250);
+        });
+      });
+      
+      

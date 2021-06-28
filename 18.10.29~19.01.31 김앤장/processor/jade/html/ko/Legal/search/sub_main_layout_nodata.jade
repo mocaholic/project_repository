@@ -1,0 +1,109 @@
+// output: ../../../../../../publish/html/ko/Legal/search/sub_main_layout_nodata.html
+-var imgUrl = '../images/dummy/'
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap 
+    
+    // 각 서브별 검색 노출 타입 다름
+    .container.search
+      .top_visual_box
+        .breadcrumb.main
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 통합검색
+        .breadcrumb
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 통합검색
+        h2 <strong>SEARCH</strong>통합검색
+      .content
+        .search_top
+          span.big_input
+            // 19.01.23 placeholder 문구 삭제
+            input(type='text' placeholder='')
+            a(href='javascript:void(0);').btn_delete.hidden_text 검색어 삭제
+            a(href='javascript:void(0);').btn_search.hidden_text 검색
+        
+        // 검색영역
+        .search_result 
+          
+          // 검색결과 전체 없음
+          // 19.01.23 문구 수정
+          p.result_text
+            span.text_orange '박은영'
+            |에 대한 
+            span.mo_block
+              span 총 11건
+              |의 검색 결과가 있습니다.
+          .search_cont_area
+            .fixed_mo_tab.tab_sticky
+              ul.anchor_tab.search_tab
+                li
+                  a(href='javascript:void(0);' data-name='expertise').disabled EXPERTISE
+                li
+                  a(href='javascript:void(0);' data-name='professionals').disabled PROFESSIONALS
+                li
+                  a(href='javascript:void(0);' data-name='insights').disabled INSIGHTS
+                li
+                  a(href='javascript:void(0);' data-name='about').disabled ABOUT
+            p.no_data 검색 결과가 없습니다.
+              span
+                a(href='javascript:void(0);') 지식재산권
+                |사이트에서 찾아보시겠습니까? 
+                // 19.01.22 문구 수정
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      
+      $(function() {
+        // 통합검색 페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        
+        var btnScrollAnchor = $('.anchor_tab > li > a');
+        var scrollTarget = $('.search_content');
+        front.scrollAnchor(btnScrollAnchor, 600, scrollTarget, 'on', true);
+        
+        var fixedTarget = $('.fixed_mo_tab');
+        var fixedoffSet = fixedTarget.offset().top;
+        
+        $(window).on('scroll', function() {
+          var nowPosition = $(window).scrollTop();
+          front.scrollFixed(fixedTarget, nowPosition, fixedoffSet);
+        });
+        
+        // 검색결과 뉴스영역 menu 클릭시 
+        var $btnAllNews = $('.btn_menu_tab > a');
+        var $allMenuEle = $('.menu_tab_all');
+        front.btnClick($btnAllNews, function($this) {
+          if ($this.hasClass('on')) {
+            $('body').removeClass('hidden');
+            $this.removeClass('on');
+            $('.dimm_news.on').remove();
+            $allMenuEle.removeClass('on');
+          } else {
+            front.scrollAni(fixedTarget, function() {
+              $this.addClass('on');
+              fixedTarget.append('<div class="dimm_news on"></div>').ready(function() {
+                $(document).on('touchstart click', '.dimm_news', function() {
+                  $('body').removeClass('hidden');
+                  $this.removeClass('on');
+                  $('.dimm_news.on').remove();
+                  $allMenuEle.removeClass('on');
+                });
+              });
+              $allMenuEle.addClass('on');
+            });
+          }
+        });
+      });

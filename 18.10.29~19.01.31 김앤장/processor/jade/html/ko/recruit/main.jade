@@ -1,0 +1,283 @@
+// output: ../../../../../publish/html/ko/recruit/main.html
+include include/jadeUtil.jade
+-var imgUrl = './images/dummy/'
+doctype html
+html(lang='ko')
+
+  head
+    +pageName('Kim & Chang')
+    +metaCharset('utf-8')
+    +metaName('viewport', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no')
+    +httpEquiv('X-UA-Compatible', 'ie=edge')
+    +metaName('robots', 'noydir, noodp, index, follow')
+    +metaName('copyright', '© 2017 Kim & Chang. All Rights Reserved.')
+    +metaName('description', '')
+    +metaName('keywords', 'Kim & Chang')
+    +metaProperty('og:title', 'Kim & Chang')
+    +linkRel('stylesheet', 'text/css', './css/main.css', 'all')
+    +jsCall('text/javascript', './js/modernizr.min.js')
+    +jsCall('text/javascript', './js/jquery-2.2.4.min.js')
+    +jsCall('text/javascript', './js/jquery-ui.min.js')
+    +jsCall('text/javascript', './js/ScrollMagic.min.js')
+    +jsCall('text/javascript', './js/TweenMax.min.js')
+    +jsCall('text/javascript', './js/jquery.touchSwipe.min.js')
+    +jsCall('text/javascript', './js/jquery.bxslider.min.js')
+    +jsCall('text/javascript', './js/ui-front.js')
+  body.main
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+      .gnb_wrap
+        .inner
+          .lang_wrap
+            a(href='javascript:void(0);') KO
+            a(href='javascript:void(0);') EN
+            a(href='javascript:void(0);') JP
+            a(href='javascript:void(0);') CN
+          
+          .family_site_wrap
+            a(href='javascript:void(0);' target='_blank') Kim & Chang
+            a(href='javascript:void(0);' target='_blank') 지식재산권 사이트
+            a(href='javascript:void(0);' target='_blank') 사회공헌
+      .header
+        // 
+          a(href='javascript:void(0)').btn_menu
+            span.hidden_text 메뉴
+        a(href='javascript:void(0);').logo
+          span.hidden_text KIM &amp; CHANG
+        .search_top_area
+          span.custom_input
+            input(type='text' placeholder='')
+          a(href='javascript:void(0);').btn_search
+    .container
+      .btn_anchor_wrap
+        ul
+          li.on
+            a(href='javascript:void(0);' data-value='section01') 채용안내
+          li
+            a(href='javascript:void(0);' data-value='section02') 채용소식
+          li
+            a(href='javascript:void(0);' data-value='section03') K&C Value
+          li
+            a(href='javascript:void(0);' data-value='section04') Meet<br>Our<br>People
+      .section_wrap
+        section#section01
+          .gate_title 
+            span.top 채용 안내
+            p 인재, 로펌의 시작이자 핵심
+            span.text '로펌은 사람이다'라는 믿음으로 인재를 발굴하고, 역량을 발휘할 수 있는 시스템으로 인재가 빛을 발할 수 있도록 지원합니다.
+          ul.job_recruit
+            li 
+              span 변호사
+              .hover_box 
+                .title 변호사
+                  span 세계적 경쟁력을 갖춘 변호사로 성장할 수 있는 기회가 열려 있습니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+            li 
+              span Foreign Attorney
+              .hover_box 
+                .title Foreign Attorney
+                  span Opportunities to grow as a world-class lawyer are open.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+            li 
+              span 공인회계사
+              .hover_box 
+                .title 공인회계사
+                  span 세계적 경쟁력을 갖춘 인력으로 성장할 공인회계사를 기다립니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+            li 
+              span 변리사
+              .hover_box 
+                .title 변리사
+                  span 우리 사회가 기대하고 바라는 참된 변리사로서의 잠재역량을 꽃피울 여러분을 기다립니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+            li 
+              span 세무사
+              .hover_box 
+                .title 세무사
+                  span 효율적인 업무 시스템, 함께 성장하는 분위기 속에서 세계적 수준으로 성장할 여러분을 기다립니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+            li 
+              span 인턴
+              .hover_box 
+                .title 인턴
+                  span 세계적인 경쟁력을 갖춘 법률전문가들과의 만남과 다양한 업무 체험의 인턴 프로그램을 실시하고 있습니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+            li 
+              span Staff
+              .hover_box 
+                .title Staff
+                  span 김·장 법률사무소의 더 큰 미래를 열어나갈 여러분을 기다립니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 상세보기
+              
+        section#section02
+          .gate_title 
+            span.top 채용소식
+            p 로펌은 사람이다
+            span.text 김·장 법률사무소와 함께 새로운 도전을 이어갈 분들을 기다립니다.
+          ul.tab_menu 
+            li: a(href='javascript:void(0);').on ALL
+            li: a(href='javascript:void(0);') 변호사
+            li: a(href='javascript:void(0);') Foreign Attorney
+            li: a(href='javascript:void(0);') 공인회계사
+            li: a(href='javascript:void(0);') 변리사
+            li: a(href='javascript:void(0);') 세무사
+            li: a(href='javascript:void(0);') 인턴
+            li: a(href='javascript:void(0);') STAFF
+          .tab_cont_area 
+            .tab_section
+              ul
+                li
+                  a(href='javascript:void(0);')
+        
+        section#section03
+          .gate_title 
+            span.top 인재채용
+            p 인재, 로펌의 시작이자 핵심
+            span.text '로펌은 사람이다'라는 믿음으로 인재를 발굴하고, 역량을 발휘할 수 있는 시스템으로 인재가 빛을 발할 수 있도록 지원합니다.<br />김·장 법률사무소의 자산이자 미래는 '인재 제일주의'입니다.
+          ul.job_recruit
+            li 
+              span 변호사
+              .hover_box 
+                .title 변호사
+                  span 세계적 경쟁력을 갖춘 변호사로 성장할 수 있는 기회가 열려 있습니다.
+                ul.btn_area 
+                  li: a(href='https://recruit.kimchang.com:500/recruit/step1.do') 신입 지원하기
+                  li: a(href='https://recruit.kimchang.com:500/lateral/step1.do') 경력 지원하기
+            li 
+              span Foreign Attorney
+              .hover_box 
+                .title Foreign Attorney
+                  span Opportunities to grow as a world-class lawyer are open.
+                ul.btn_area 
+                  li: a(href='https://recruit.kimchang.com:500/foreignattorney/step1.do') Apply for Foreign <br />Attorney Position 
+            li 
+              span 공인회계사
+              .hover_box 
+                .title 공인회계사
+                  span 세계적 경쟁력을 갖춘 인력으로 성장할 공인회계사를 기다리고 있습니다.
+                ul.btn_area 
+                  li: a(href='https://recruit.kimchang.com:500/accountant/step1.do') 공인회계사 지원하기
+            li 
+              span 변리사
+              .hover_box 
+                .title 변리사
+                  span 우리 사회가 기대하고 바라는 참된 변리사로서의 잠재역량을 꽃피울 여러분을 기다립니다.
+                ul.btn_area 
+                  li: a(href='https://recruit.kimchang.com:500/patentattorney/step1.do') 변리사 지원하기
+            li 
+              span 세무사
+              .hover_box 
+                .title 세무사
+                  span 효율적인 업무 시스템, 함께 성장하는 분위기 속에서 세계적 수준으로 성장할 여러분을 기다립니다.
+                ul.btn_area 
+                  li: a(href='https://recruit.kimchang.com:500/taxaccountant/step1.do') 세무사 지원하기
+            li 
+              span 인턴
+              .hover_box 
+                .title 인턴
+                  span 세계적인 경쟁력을 갖춘 법률전문가들과의 만남과 다양한 업무 체험을 통해 여러분들의 능력이 한층 더 성장하기를 희망합니다.
+                ul.btn_area 
+                  li: a(href='javascript:void(0);') 사법연수생 인턴 지원하기
+                  li: a(href='javascript:void(0);') 법학전문대학원생 인턴 지원하기
+                  li: a(href='javascript:void(0);') 사법연수생 실무수습 지원하기
+                  li: a(href='https://recruit.kimchang.com:500/clerkship/step1.do') 해외 로스쿨 Clerkship
+            li 
+              span Staff
+              .hover_box 
+                .title Staff
+                  span 각 분야의 우수한 인력들과 상호협력을 통해 새로운 가치와 변화를 모색하며, 책임감과 열정을 가지고 김·장 법률사무소의 더 큰 미래를 열어나갈 여러분을 기다립니다.
+                ul.btn_area 
+                  li: a(href='https://recruit3.kimchang.com:5005/recruit/general/step1.do') Staff 지원하기
+        
+        section#section04 Section 4
+          .gate_title 
+            span.top 채용 안내
+            p 인재, 로펌의 시작이자 핵심
+            span.text '로펌은 사람이다'라는 믿음으로 인재를 발굴하고, 역량을 발휘할 수 있는 시스템으로 인재가 빛을 발할 수 있도록 지원합니다.<br />김·장 법률사무소의 자산이자 미래는 '인재 제일주의'입니다.
+          
+    footer.footer_wrap
+      .footer
+        ul.address
+          li
+            a(href='javascript:void(0);') 사무소위치
+          li
+            a(href='javascript:void(0);') 연락처
+          li
+            a(href='javascript:void(0);').btn_exemption 면책공고
+          li
+            a(href='javascript:void(0);') 개인정보처리방침
+          li
+            a(href='javascript:void(0);').btn_web 웹접근성
+        .copyright © 2019 Kim & Chang. All Rights Reserved. 
+      // 웹접근성 레이어팝업
+      .layer.layer_web_accessibility
+        .layer_header
+          h1.br_bottom 웹접근성
+        .layer_cont
+          p.layer_sub_title 김 · 장 법률사무소는<br> 장애인 및 비장애인 누구나 편리하게  웹서비스를 이용하실 수 있도록, 웹접근성 준수 및 개선을 위하여 노력하고 있습니다.
+          p.layer_desc 김 · 장 법률사무소는 앞으로도 모든 사용자들이 편리하게 서비스를 이용할 수 있도록 최선을 다하겠습니다. 
+          p.layer_desc 불편사항은 <a href="mailto:lawkim@kimchang.com" class="text_orange">lawkim@kimchang.com</a>으로 연락 주시면 친절하게 안내해 드리겠습니다.
+        a(href='javascript:void(0);').btn_layer_close
+          span.hidden_text 레이어 닫기
+      // 면책 공고 레이어 팝업
+      .layer.layer_exemption
+        .layer_header
+          h1.br_bottom 면책공고
+        .layer_cont
+          p.layer_sub_title 본 웹사이트는 일반적인 정보를 제공할 목적으로 제작된 것으로 법률적인 자문이나 홍보를 위한 것은 아닙니다.
+          p.layer_desc 본 웹사이트에서 취득한 정보로 인해 문제가 발생하여 직·간접적으로 손해를 입었다 하더라도 김·장 법률사무소는 어떠한 법적 책임도 지지 아니하며, 이 웹사이트에서 제공하는 정보에 기반하여 조치를 취하시기에 앞서 반드시 저희 사무소에 법률적 자문을 구하시기 바랍니다.
+        a(href='javascript:void(0);').btn_layer_close
+          span.hidden_text 레이어 닫기
+        
+      a(href='javascript:void(0);').btn_top top
+
+          
+    .layer.layer_menu
+      .layer_cont
+        .layer_lang
+          ul
+            li: a(href='javascript:void(0);') KR
+            li: a(href='javascript:void(0);') EN
+            li: a(href='javascript:void(0);') JP
+            li: a(href='javascript:void(0);') CN
+        ul.menu_list
+          li: a(href='javascript:void(0);') EXPERTISE
+          li: a(href='javascript:void(0);') PROFESSIONALS
+          li: a(href='javascript:void(0);') INSIGHTS
+          li: a(href='javascript:void(0);') ABOUT
+        .family_site
+          a(href='javascript:void(0);' target='_blank') 지식재산권 사이트
+          a(href='javascript:void(0);' target='_blank') 사회공헌
+          a(href='javascript:void(0);' target='_blank') 인재채용
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+    // 웹접근성 레이어팝업
+    .layer.layer_web_accessibility
+      .layer_header
+        h1.br_bottom 웹접근성
+      .layer_cont
+        p.layer_sub_title 김 · 장 법률사무소는<br> 장애인 및 비장애인 누구나 편리하게  웹서비스를 이용하실 수 있도록, 웹접근성 준수 및 개선을 위하여 노력하고 있습니다.
+        p.layer_desc 김 · 장 법률사무소는 앞으로도 모든 사용자들이 편리하게 서비스를 이용할 수 있도록 최선을 다하겠습니다. 
+        p.layer_desc 불편사항은 <a href="mailto:lawkim@kimchang.com" class="text_orange">lawkim@kimchang.com</a>으로 연락 주시면 친절하게 안내해 드리겠습니다.
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+    // 면책 공고 레이어 팝업
+    .layer.layer_exemption
+      .layer_header
+        h1.br_bottom 면책공고
+      .layer_cont
+        p.layer_sub_title 본 웹사이트는 일반적인 정보를 제공할 목적으로 제작된 것으로 법률적인 자문이나 홍보를 위한 것은 아닙니다.
+        p.layer_desc 본 웹사이트에서 취득한 정보로 인해 문제가 발생하여 직·간접적으로 손해를 입었다 하더라도 김·장 법률사무소는 어떠한 법적 책임도 지지 아니하며, 이 웹사이트에서 제공하는 정보에 기반하여 조치를 취하시기에 앞서 반드시 저희 사무소에 법률적 자문을 구하시기 바랍니다.
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+    .dimm
+  
+    +jsCall('text/javascript', './js/main.js')

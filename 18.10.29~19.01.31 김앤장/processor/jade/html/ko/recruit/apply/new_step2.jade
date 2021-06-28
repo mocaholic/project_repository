@@ -1,0 +1,285 @@
+// output: ../../../../../../publish/html/ko/recruit/apply/new_step2.html
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container 
+      ul.step 
+        li
+          span STEP 01
+          |개인정보 제공동의 확인
+        li.on  
+          span STEP 02
+          |기본정보 입력
+        li 
+          span STEP 03
+          |세부정보 입력
+        li 
+          span STEP 04
+          |서류제출
+        li 
+          span STEP 05
+          |입력정보 확인
+        li 
+          span STEP 06
+          |지원완료
+      h2 기본정보
+      p.gry_text 지원서 작성 내용은 임시저장되나 창을 닫게 되면 다시 처음부터 작성해야 하오니 유의해 주시기 바랍니다.
+      
+      table(cellpadding='0')
+        colgroup
+          col(width='220px')
+          col(width='*')
+          col(width='260px')
+        tbody
+          tr
+            th 지원자격 구분
+            td(colspan='2') 
+              // 변호사, 실무수습, 인턴지원일 경우 적용
+                |변호사 입사 지원 - 법무관
+              // 변리사 지원 시 적용
+              label.checkcontainer 기계
+                input(type='checkbox' name='agree')
+                span.checkmark
+              label.checkcontainer 화학
+                input(type='checkbox' name='agree')
+                span.checkmark
+              label.checkcontainer 전자
+                input(type='checkbox' name='agree')
+                span.checkmark
+              label.checkcontainer 복합
+                input(type='checkbox' name='agree')
+                span.checkmark
+              label.checkcontainer 상표
+                input(type='checkbox' name='agree')
+                span.checkmark
+              |(복수선택 가능)
+          tr.br_bn
+            th.top_f 이름(한글)
+            td.top_f
+              input(type='text').mb10
+            td.bd_bot(rowspan='3') 
+              .img_box
+          tr.br_bn
+            th.top 이름(영어)
+            td.top 
+              input(type='text' placeholder="First Name (ex. Gil-Dong)'-'를 넣어주세요.").mb10
+              input(type='text' placeholder="Last Name").mb10
+          tr
+            th.top 사진첨부
+            td.top.pb20
+              .file_area
+                input(type='file' name='file[] ' id='file1').inputfile
+                label(for='file1')
+                  span 홍길동_증명사진.jpg
+                  strong 찾아보기
+              p.ps_text ※ 첨부파일명에 ~!@#$%:;&lt;&gt;^&amp;*\()\-=+\' 등과 같은 특수문자 포함 시 오류가 발생하므로 주의 부탁드립니다.<br />
+                span.orange (jpg, jpeg 파일만 가능, 이미지 크기는 1MB 이내)
+          tr.br_bn
+            th.top_f 자택 전화번호
+            td(colspan='2').top_f
+              .custom_select
+                // 클릭시 class='on' 적용
+                a(href='javascript:void(0);') 선택
+                ul.list
+                  li.on
+                    a(href='javascript:;' data-id='') 02
+                  li
+                    a(href='javascript:;' data-id='') 031
+                  li
+                    a(href='javascript:;' data-id='') 032
+              span.i_block -
+              input(type='text').w2.mb10
+              span.i_block -
+              input(type='text').w2.mb10
+          tr
+            th.pt0 휴대 전화번호
+            td(colspan='2').pt0
+              .custom_select
+                // 클릭시 class='on' 적용
+                a(href='javascript:void(0);') 선택
+                ul.list
+                  li.on
+                    a(href='javascript:;' data-id='') 02
+                  li
+                    a(href='javascript:;' data-id='') 031
+                  li
+                    a(href='javascript:;' data-id='') 032
+              span.i_block -
+              input(type='text').w2
+              span.i_block -
+              input(type='text').w2
+          tr
+            th 생년월일
+            td(colspan='2')
+              .custom_select
+                // 클릭시 class='on' 적용
+                a(href='javascript:void(0);') 선택
+                ul.list
+                  li.on
+                    a(href='javascript:;' data-id='') 1980
+                  li
+                    a(href='javascript:;' data-id='') 1981
+                  li
+                    a(href='javascript:;' data-id='') 1982
+              span.i_block 년
+              .custom_select
+                // 클릭시 class='on' 적용
+                a(href='javascript:void(0);') 선택
+                ul.list
+                  li.on
+                    a(href='javascript:;' data-id='') 1
+                  li
+                    a(href='javascript:;' data-id='') 2
+                  li
+                    a(href='javascript:;' data-id='') 3
+              span.i_block 월
+              input(type='text').w2
+              span.i_block 일
+              span.ml30
+                label.checkcontainer 양력
+                  input(type='radio' name='birth')
+                  span.radiobtn
+                label.checkcontainer 음력
+                  input(type='radio' name='birth')
+                  span.radiobtn
+          tr.br_bn
+            th.pb0 성별
+            td(colspan='2').pb0
+              label.checkcontainer 남자
+                input(type='radio' name='gender')
+                span.radiobtn
+              label.checkcontainer 여자
+                input(type='radio' name='gender')
+                span.radiobtn
+          tr
+            th 병역
+            td(colspan='2')
+              label.checkcontainer 필
+                input(type='radio' name='military')
+                span.radiobtn
+              label.checkcontainer 면제
+                input(type='radio' name='military')
+                span.radiobtn
+              label.checkcontainer 미필
+                input(type='radio' name='military')
+                span.radiobtn
+          tr
+            th 주소
+            td(colspan='2')
+              input(type='text' disabled='disabled' value='(우)03170').w3.mb10
+              a(href='javascript:void();').btn_zip 우편번호
+              input(type='text').mb10
+              input(type='text')
+          tr
+            th 이메일
+            td(colspan='2')
+              input(type='text').w4
+              span.i_block @
+              input(type='text').w5 
+              .custom_select
+                // 클릭시 class='on' 적용
+                a(href='javascript:void(0);') 선택
+                ul.list
+                  li.on
+                    a(href='javascript:;' data-id='') 1980
+                  li
+                    a(href='javascript:;' data-id='') 1981
+                  li
+                    a(href='javascript:;' data-id='') 1982
+              
+      p.center_box
+        a(href='javascript:void(0);').btn_orange_line.left 임시저장
+        a(href='javascript:void(0);').btn_white 이전
+        a(href='javascript:void(0);').btn_orange 다음
+    
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      $(function(){
+        var x, i, j, selElmnt, a, b, c;
+        /* Look for any elements with the class "custom-select": */
+        x = document.getElementsByClassName("custom-select");
+        for (i = 0; i < x.length; i++) {
+          selElmnt = x[i].getElementsByTagName("select")[0];
+          /* For each element, create a new DIV that will act as the selected item: */
+          a = document.createElement("DIV");
+          a.setAttribute("class", "select-selected");
+          a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+          x[i].appendChild(a);
+          /* For each element, create a new DIV that will contain the option list: */
+          b = document.createElement("DIV");
+          b.setAttribute("class", "select-items select-hide");
+          for (j = 1; j < selElmnt.length; j++) {
+            /* For each option in the original select element,
+            create a new DIV that will act as an option item: */
+            c = document.createElement("DIV");
+            c.innerHTML = selElmnt.options[j].innerHTML;
+            c.addEventListener("click", function(e) {
+                /* When an item is clicked, update the original select box,
+                and the selected item: */
+                var y, i, k, s, h;
+                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                h = this.parentNode.previousSibling;
+                for (i = 0; i < s.length; i++) {
+                  if (s.options[i].innerHTML == this.innerHTML) {
+                    s.selectedIndex = i;
+                    h.innerHTML = this.innerHTML;
+                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                    for (k = 0; k < y.length; k++) {
+                      y[k].removeAttribute("class");
+                    }
+                    this.setAttribute("class", "same-as-selected");
+                    break;
+                  }
+                }
+                h.click();
+            });
+            b.appendChild(c);
+          }
+          x[i].appendChild(b);
+          a.addEventListener("click", function(e) {
+            /* When the select box is clicked, close any other select boxes,
+            and open/close the current select box: */
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+          });
+        }
+
+        function closeAllSelect(elmnt) {
+          /* A function that will close all select boxes in the document,
+          except the current select box: */
+          var x, y, i, arrNo = [];
+          x = document.getElementsByClassName("select-items");
+          y = document.getElementsByClassName("select-selected");
+          for (i = 0; i < y.length; i++) {
+            if (elmnt == y[i]) {
+              arrNo.push(i)
+            } else {
+              y[i].classList.remove("select-arrow-active");
+            }
+          }
+          for (i = 0; i < x.length; i++) {
+            if (arrNo.indexOf(i)) {
+              x[i].classList.add("select-hide");
+            }
+          }
+        }
+
+        /* If the user clicks anywhere outside the select box,
+        then close all select boxes: */
+        document.addEventListener("click", closeAllSelect);
+      });

@@ -1,0 +1,566 @@
+// output: ../../../../../../publish/html/ko/ip/field/sub_layout.html
+-var imgUrl = '../images/dummy/'
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container.detail.field
+      .top_container
+        .breadcrumb
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: a(href='javascript:void(0);') 업무분야 
+            li: a(href='javascript:void(0);') 기술별 
+            li: span 기계
+        h2.bg 기계 
+          p.text "Kim & Chang is the largest and possibly the most recognisable law firm in Korea.<br /> 
+            |It dominates the market across all practice areas where it secures a top tier berth."
+            span - IFLR1000 (2017) -
+        .wide_box
+          .btn_box
+            a(href='javascript:void(0);').pdf pdf
+            a(href='javascript:void(0);').print.btn_print 프린트
+      .content_wrap
+        .page_wrapper
+          aside.aside.aside_sticky
+            ul.lnb
+              li.on: a(href='javascript:void(0);' data-name='field_info') 소개
+              li: a(href='javascript:void(0);' data-name='lawyer') 구성원
+              li: a(href='javascript:void(0);' data-name='notice_news') 관련 소식
+            .tag_area.pc
+              p.title 관련 분야
+              .left_tag
+                ul
+                  li: a(href='javascript:void(0);') 금융분쟁
+                  li: a(href='javascript:void(0);') 금융조세
+                  li: a(href='javascript:void(0);') 프로젝트파이낸스
+                  li: a(href='javascript:void(0);') 사모투자
+                  li: a(href='javascript:void(0);') 외국인투자
+                  li: a(href='javascript:void(0);') 증권
+                  li: a(href='javascript:void(0);') 프로젝트파이낸스
+            .search_area.pc
+              p.title 구성원 검색
+              span.custom_input
+                // 19.01.23 placeholder 문구 수정 
+                input(type='text', placeholder='이름을 입력하세요.')
+              a(href='javascript:void(0);').btn_select.btn_select_pc_js
+                |업무분야
+              a(href='javascript:void(0);').btn_search.hidden_text.btn_hover.bg_orange 검색
+                span.icon 
+          article#content.content 
+            section(data-name='field_info')#field_info.field_infobox
+              h3.hidden_text 소개
+              .view_more_area
+                // 수정내용 더보기 class 추가 19.01.29
+                .top_text.hidden_area
+                  p 
+                    strong 김·장 법률사무소의 자산운용 그룹은 변호사 및 관련 전담인력을 포함하여 30명 김·장 법률사무소의 자산운용 그룹은 변호사 및 관련 전담인력을 포함하여 30명 김·장 법률사무소의 자산운용 그룹은 변호사 및 관련 전담인력을 포함하여 30명
+                  p 축적된 경험<br /> 
+                   |자산운용 그룹은 다국적 자산운용회사 및 국내 자산운용회사에 대한 다양하고 광범위한 자문업무를 수행한 경험을 바탕으로 자산운용과 관련한 모든 영역에서 종합적이고 수준 높은 서비스를 제공하고 있습니다.
+                  p 최선의 고객 서비스<br />
+                    |자산운용 그룹은 각 분야의 우수하고 탁월한 역량을 갖춘 구성원들의 협업을 통해 고객에게 맞춤형 조언을 신속하게 제공합니다.
+                  p 축적된 경험<br /> 
+                   |자산운용 그룹은 다국적 자산운용회사 및 국내 자산운용회사에 대한 다양하고 광범위한 자문업무를 수행한 경험을 바탕으로 자산운용과 관련한 모든 영역에서 종합적이고 수준 높은 서비스를 제공하고 있습니다.
+                //
+                  dl.field_info_text
+                    dt 축적된 경험 
+                    dd 자산운용 그룹은 다국적 자산운용회사 및 국내 자산운용회사에 대한 다양하고 광범위한 자문업무를 수행한 경험을 바탕으로 자산운용과 관련한 모든 영역에서 종합적이고 수준 높은 서비스를 제공하고 있습니다.
+                    dt 최선의 고객 서비스
+                    dd 자산운용 그룹은 각 분야의 우수하고 탁월한 역량을 갖춘 구성원들의 협업을 통해 고객에게 맞춤형 조언을 신속하게 제공합니다.
+                    dt 최선의 고객 서비스
+                    dd 자산운용 그룹은 각 분야의 우수하고 탁월한 역량을 갖춘 구성원들의 협업을 통해 고객에게 맞춤형 조언을 신속하게 제공합니다.
+                .btn_center_box
+                  a(href='javascript:void(0);').btn_view 더 보기
+              .accordion_area.border_top
+                // 업무분야 있음
+                h4 주요 업무
+                .field_text
+                  ul
+                    li 
+                      a(href='javascript:void(0);') 금융분쟁
+                    li 
+                      a(href='javascript:void(0);') 금융조세
+                    li 
+                      a(href='javascript:void(0);') 프로젝트파이낸스
+                    li 
+                      a(href='javascript:void(0);') 금융조세
+                    li 
+                      a(href='javascript:void(0);') 프로젝트파이낸스
+            
+                // 업무분야 없음
+                .box_gray.accordion_wrap.active
+                  h4  
+                    a.btn_toggle(href='javascript:void(0);').on 주요 서비스
+                      span.hidden_text 접기
+                  .box_open
+                    p.info_text 기계부는 특허의 출원 및 획득, 발명의 유효성 및 FTO(freedom to operate)관련 선행기술문헌/특허 조사, 특허청·특허심판원·특허법원에서의 특허·실용신안 관련 쟁송절차(정보제공, 거절결정불복심판, 무효심판, 권리범위확인심판, 정정심판 등), 특허권·실용신안권 침해관련 민·형사 소송, 특허·실용신안 출원/분쟁 관련 상담, 협상 및 중재, 특허·실용신안 관련 기업실사(due diligence), 라이센싱 상담 등 특허 관련 종합적인 서비스를 제공하고 있습니다.<br /><br />
+
+                      |기계부는 다양한 산업분야에서 오랜 경험과 특화된 지식을 갖춘 팀으로 구성되어 어떠한 복잡한 기술 분야의 사건이라도 처리할 수 있습니다. <br />
+                      |특히 일반·정밀·제어·측정·시험기계, 자동차, 항공기, 선박·해양설비, 제철·제련기술, 합금기술, 금형, 광학기술, 공조·냉동장치, 에너지·환경기술, 토목·건축기술 및 장비, 사무자동화기술, 공장자동화기술, 마이크로전자기계시스템, 가정용전자기기 및 제조 기술, 반도체 제조 및 시험 장비 등의 분야관련 중소기업에서 글로벌 기업에 이르기까지 다양한 고객을 대리하고 있습니다.
+
+                .box_gray.accordion_wrap
+                  h4
+                    a.btn_toggle(href='javascript:void(0);') 주요 실적
+                      span.hidden_text 펼치기
+                  .box_open
+                    p.info_text 저희 자산운용 그룹은 관련 인허가를 보유한 회사를 포함한 고객에게 자산운용업에 대한 폭넓은 범위의 규제 및 준수 관련 사안에 관한 자문을 제공하고 있으며, 여기에는 영업, 기업지배구조, 내부통제, 규제 준수 등에 대한 자문이 포함됩니다. <br> 아울러, 국내 및 국제적으로 고객의 새로운 펀드 상품 출시 및 판매에 관한 자문을 제공하며, 국내에서 판매될 펀드의 설립 및 등록을 위한 작업을 지원해 드리고 있습니다. 특히 해외 펀드의 국내 판매 등록 업무에 있어서 독보적인 track record를 쌓고 있으며, 아울러, 국내 PEF의 설립 및 운용에 관한 풍부한 고객 자문 경험을 가지고 있습니다. 또한, 관련 공시 법령, 내부자거래 문제, 시세조종행위 등을 포함하여 국내 증권 및 자산 투자에 대해 고객들에게 자문을 제공하고 있습니다. 
+                    ul.field_history
+                      li NPS 및 KIC의 투자관련 지원업무
+                      li 화인파트너스의 화인자산관리 합병 관련 자문
+                      li IMM Private Equity, Macquarie Korea Opportunities Management, MBK 파트너스, VIG 파트너스, 한앤컴퍼니, 우리블랙스톤 및 Standard Chartered Private Equity의 역내(onshore) PEF 조성     
+          
+            section(data-name='lawyer')#lawyer.field_lawyer
+              h3.p_top0 구성원
+              h4 주요 연락처
+              .lawyer_slide
+                // slide li 마지막에 class='last' 적용
+                ul.lawyer_profile
+                  li 
+                    p.img 
+                      a(href='javascript:void(0);')
+                        img(src=imgUrl + 'pc/lawyer_01.jpg', alt='%게시물 제목%')
+                    .lawyer_info
+                      span.name 
+                        a(href='javascript:void(0);') 김효상 
+                          span 변호사
+                      a(href='mailto:').email.hidden_text 이메일
+                      span.telephone TEL:
+                        a(href='tel:02-3703-4807') 02-3703-4807
+                  li 
+                    p.img 
+                      a(href='javascript:void(0);')
+                        img(src=imgUrl + 'pc/lawyer_02.jpg', alt='%게시물 제목%')
+                    .lawyer_info
+                      span.name 
+                        a(href='javascript:void(0);') 박마리 
+                          span 변호사
+                      a(href='mailto:').email.hidden_text 이메일
+                      span.telephone TEL:
+                        a(href='tel:02-3703-4807') 02-3703-4807
+                  li 
+                    p.img 
+                      a(href='javascript:void(0);')
+                        img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                    .lawyer_info
+                      span.name 
+                        a(href='javascript:void(0);') 데이빗, 조엘 
+                          span 변호사
+                      a(href='mailto:').email.hidden_text 이메일
+                      span.telephone TEL:
+                        a(href='tel:02-3703-4807') 02-3703-4807
+                  li 
+                    p.img
+                      a(href='javascript:void(0);')
+                        img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                    .lawyer_info
+                      span.name 
+                        a(href='javascript:void(0);') 하지수 
+                          span 변호사
+                      a(href='mailto:').email.hidden_text 이메일
+                      span.telephone TEL:
+                        a(href='tel:02-3703-4807') 02-3703-4807
+                
+                  li 
+                    p.img 
+                      a(href='javascript:void(0);')
+                        img(src=imgUrl + 'mo/img_lawyer03.jpg', alt='%게시물 제목%')
+                    .lawyer_info
+                      span.name 
+                        a(href='javascript:void(0);') 데이빗, 조엘 
+                          span 변호사
+                      a(href='mailto:').email.hidden_text 이메일
+                      span.telephone TEL:
+                        a(href='tel:02-3703-4807') 02-3703-4807
+                  li.last 
+                    p.img 
+                      a(href='javascript:void(0);')
+                        img(src=imgUrl + 'mo/img_lawyer04.jpg', alt='%게시물 제목%')
+                    .lawyer_info
+                      span.name 
+                        a(href='javascript:void(0);') 데이빗, 조엘 
+                          span 변호사
+                      a(href='mailto:').email.hidden_text 이메일
+                      span.telephone TEL:
+                        a(href='tel:02-3703-4807') 02-3703-4807
+                .slide_control
+                  span.btn_prev  
+                  span.btn_next
+              .btn_center_box
+                a(href='javascript:void(0)').btn_text_more 더 보기
+                
+            section(data-name='notice_news')#notice_news.notice_news
+              h3.p_top0 관련 소식
+              ul.notice_list
+                -for(var i = 0; i < 6; i ++)
+                  li
+                    a(href='javascript:void(0);')
+                      h5.notice_title 수상
+                      p.notice_txt 4년 연속 ‘National Law Firm of the Year - South Korea’ 수상 – Asialaw Asia-Pacific
+                      span 2018.08.30
+              .btn_center_box
+                a(href='javascript:void(0)').btn_text_more 더 보기  
+            .tag_area.mo 
+              p.title 관련 분야
+              .left_tag
+                ul
+                  li: a(href='javascript:void(0);') 금융분쟁
+                  li: a(href='javascript:void(0);') 금융조세
+                  li: a(href='javascript:void(0);') 프로젝트파이낸스
+                  li: a(href='javascript:void(0);') 사모투자
+                  li: a(href='javascript:void(0);') 외국인투자
+                  li: a(href='javascript:void(0);') 증권
+                  li: a(href='javascript:void(0);') 프로젝트파이낸스
+            .search_area.mo
+              p.title 구성원 검색
+              span.custom_input
+                // 19.01.23 placeholder 문구 수정
+                input(type='text', placeholder='이름을 입력하세요.')
+              a(href='javascript:void(0);').btn_select.btn_select_mo_js
+                |업무분야
+              a(href='javascript:void(0);').btn_search.hidden_text 검색
+  
+    // 업무분야 레이어팝업 : pc,mo 디자인 및 기능 다름
+    // pc 전체 하이라이트
+    .layer.layer_select.pc
+      .layer_header
+        h1 업무분야 선택
+      .layer_cont
+        .category_area 
+          ul.highLight_tab.tab_menu.top_tab
+            li
+              a(href='javascript:void(0);' data-value='tab1') Practice 
+                span 분야별
+            li
+              a(href='javascript:void(0);' data-value='tab2') Technology
+                span 기술별
+            li
+              a(href='javascript:void(0);' data-value='tab3') Region
+                span 지역별
+              
+          .tab_container.scroll_cont
+            .tab_section.on
+              ul.field_list.highLight_js
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 가전기기
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 기계
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 디자인
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 라이센싱
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 미국
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 바이오 & 생명과학
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 상표
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 소프트웨어, 컴퓨터 & 비즈니스 모델
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 에너지 & 신재생에너지
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 영업비밀·기업정보 보호
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 유럽
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 일본
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 자동차, 항공 & 운송
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 자문 & 전략
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 재료 & 금속
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 저작권
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 전자 & 반도체
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 제약
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 중국
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 지식재산권 소송
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 통신 & ICT
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 특허
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 헬스케어 & 의료 기기
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 화학 & 농약
+                  
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+    // mo select형
+    .layer.layer_select.mobile
+      .layer_header
+        h1 업무분야 선택
+      .layer_cont
+        .category_area 
+          ul.tab_menu.top_tab
+            // 19.01.29 class='on' 적용
+            li.on
+              a(href='javascript:void(0);' data-value='tab1') Practice 
+                span 분야별
+            li
+              a(href='javascript:void(0);' data-value='tab2') Technology
+                span 기술별
+            li
+              a(href='javascript:void(0);' data-value='tab3') Region
+                span 지역별
+              
+          .tab_container.scroll_cont
+            // 19.01.29 class='on' 적용
+            .tab_section.on
+              .select_box_open 
+                // 19.01.28 삭제처리
+                  a(href='javascript:void(0);').select_box 선택
+                .scroll
+                  ul.field_list
+                    li(data-value='tab1')
+                      a(href='javascript:void(0);') 디자인
+                    li(data-value='tab2')
+                      a(href='javascript:void(0);') 라이센싱
+                    li(data-value='tab2')
+                      a(href='javascript:void(0);') 상표
+                    li
+                      a(href='javascript:void(0);') 소송 & 분쟁해결
+                    li(data-value='tab2')
+                      a(href='javascript:void(0);') 영업비밀
+                    li(data-value='tab3')
+                      a(href='javascript:void(0);') 자문 & 전략
+                    li(data-value='tab2')
+                      a(href='javascript:void(0);') 저작권
+                    li(data-value='tab3')
+                      a(href='javascript:void(0);') 특허
+                
+            .tab_section 
+              .select_box_open 
+                // 19.01.28 삭제처리
+                  a(href='javascript:void(0);').select_box 선택
+                .scroll
+                  ul.field_list
+                    li
+                      a(href='javascript:void(0);') 가전기기
+                    li
+                      a(href='javascript:void(0);') 기계
+                    li
+                      a(href='javascript:void(0);') 바이오 & 생명과학
+                    li
+                      a(href='javascript:void(0);') 소프트웨어, 컴퓨터 & 비즈니스 모델
+                    li
+                      a(href='javascript:void(0);') 에너지 & 신재생에너지
+                    li
+                      a(href='javascript:void(0);') 자동차, 항공 & 운송
+                    li
+                      a(href='javascript:void(0);') 재료 & 야금
+                    li
+                      a(href='javascript:void(0);') 전자 & 반도체
+                    li
+                      a(href='javascript:void(0);') 제약
+                    li
+                      a(href='javascript:void(0);') 통신, ICT
+                    li
+                      a(href='javascript:void(0);') 헬스케어 & 의료 기기
+                    li
+                      a(href='javascript:void(0);') 화학 & 농약
+            .tab_section 
+              .select_box_open 
+                // 19.01.28 삭제처리
+                  a(href='javascript:void(0);').select_box 선택
+                .scroll
+                  ul.field_list
+                    li
+                      a(href='javascript:void(0);') 미국
+                    li
+                      a(href='javascript:void(0);') 유럽
+                    li
+                      a(href='javascript:void(0);') 일본
+                    li
+                      a(href='javascript:void(0);') 중국
+            // 처음 팝업 노출시에만 확인 가능 : 전체업무분야 19.01.28 삭제처리
+              .tab_section.on 
+              ul.field_list
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 가전기기
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 기계
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 디자인
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 라이센싱
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 미국
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 바이오 & 생명과학
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 상표
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 소송 & 분쟁해결
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 소프트웨어, 컴퓨터 & 비즈니스 모델
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 영업비밀
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 에너지 & 신재생에너지
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 유럽
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 일본
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 자동차, 항공 & 운송
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 자문 & 전략
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 재료 & 야금
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 저작권
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 제약
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 전자 & 반도체
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 중국
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 통신, ICT
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 특허
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 헬스케어 & 의료 기기
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 화학 & 농약
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+        
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      
+      $(function() {
+        // 상세페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        var dimm = $('.dimm');
+        
+        // left menu click 함수
+        var btnScrollAnchor = $('.lnb > li > a');
+        var scrollTarget = $('.content_wrap');
+        front.scrollAnchor(btnScrollAnchor, 600, scrollTarget, 'on', true);
+        
+        // accordion 함수
+        var accordionWrap = '.accordion_wrap';
+        var btnAccordion = $(accordionWrap).find('.btn_toggle');
+        front.accordion(btnAccordion, accordionWrap, 'active', 200, function() {
+          //- if (DEVICEWIDTH > 1024) {front.scrollAside(aside, content, asideOffsetTop);}
+          //front.selectDropDown(btndropDown, scrollElement); 19.01.28 삭제처리
+        });
+        
+        // 구성원 슬라이드 함수
+        var slideWrap = $('.lawyer_slide');
+        front.slider(slideWrap);
+        
+        // text 영역 가리기 19.01.29 스크립트 수정
+        // 텍스트 더보기 버튼 함수
+        var btnViewMore = $('.btn_view');
+        front.btnClick(btnViewMore, function($this) {
+          if ($this.hasClass('on')) {
+            $this.parents('.view_more_area').find('.hidden_area').removeClass('on');$this.text('더보기').removeClass('on');
+          }
+          else {
+            $this.parents('.view_more_area').find('.hidden_area').addClass('on');$this.text('접기').addClass('on');
+          }
+        });
+        
+        // 공유하기 레이어
+        var btnShare = $('.btn_box a.share');
+        var layershare = $('.layer_share');
+        front.btnClick(btnShare, function($this) {
+          $('body').addClass('hidden');
+          dimm.addClass('on');
+          layershare.addClass('on');
+          // 레이어 팝업 닫기 버튼
+          var closeBtn = layershare.find('.btn_layer_close');
+          front.btnClick(closeBtn, function() {
+            layershare.removeClass('on');
+            $('body').removeClass('hidden');
+            dimm.removeClass('on');
+          });
+        });
+        
+        // 업무분야 선택 레이어 19.01.21 수정 s
+        // pc layer popup
+        var btnSearchPcSelect = $('.btn_select_pc_js');
+        var layerPcSelect = $('.layer_select.pc');
+        front.btnClick(btnSearchPcSelect, function($this) {
+          $('body').addClass('hidden');
+          dimm.addClass('on');
+          layerPcSelect.addClass('on');
+          var btnHighLight = $('.highLight_tab > li > a');
+          var targetElement = $('.layer_select.pc').find('.highLight_js');
+          front.highLight(btnHighLight, 'on', targetElement);
+          var closePcBtn = layerPcSelect.find('.btn_layer_close');
+          front.btnClick(closePcBtn, function() {
+            layerPcSelect.removeClass('on');
+            $('body').removeClass('hidden');
+            dimm.removeClass('on');
+          });
+        });
+        
+        // mo layer popup
+        var btnSearchMoSelect = $('.btn_select_mo_js');
+        var layerMoSelect = $('.layer_select.mobile');
+        front.btnClick(btnSearchMoSelect, function($this) {
+          $('body').addClass('hidden');
+          dimm.addClass('on');
+          layerMoSelect.addClass('on');
+          var btnCateTab = $('.category_area .tab_menu > li > a');
+          var tabContents = $('.layer_select.mobile').find('.category_area .tab_container');
+          front.tabMenu(btnCateTab, 'on', tabContents, function($this) {
+            // front.selectDropDown(btndropDown, scrollElement); 19.01.28 삭제처리
+          });
+          var closeMoBtn = layerMoSelect.find('.btn_layer_close');
+          front.btnClick(closeMoBtn, function() {
+            layerMoSelect.removeClass('on');
+            $('body').removeClass('hidden');
+            dimm.removeClass('on');
+          });
+        });
+        // 업무분야 선택 레이어 19.01.21 수정 e
+        
+        // left menu fixed 함수
+        var aside = $('aside.aside');
+        var content = $('.content');
+        var asideOffsetTop = Math.ceil($('aside.aside').offset().top);
+        var nowPosition = $(window).scrollTop();
+        if ($(window).width() > 1024) {
+          front.scrollAside(aside, content, asideOffsetTop);
+        }
+        $(window).on('resize', function() {
+          if ($(window).width() > 1024) {
+            $('html, body').stop().animate({scrollTop: 0}, 0, 'easeOutCubic', function() {
+              $('.fixed_box_mo').attr('style', '');
+              nowPosition = $(window).scrollTop();
+              asideOffsetTop = Math.ceil($('aside.aside').offset().top);
+              front.scrollAside(aside, content, asideOffsetTop);
+            });
+          } else {
+            aside.attr('style', '');
+          }
+        });
+        
+        // select dropdown 함수
+        var btndropDown = $('.tab_section a.select_box');
+        var scrollElement = $('.select_box_open').find('.scroll');
+        //front.selectDropDown(btndropDown, scrollElement); 19.01.28 삭제처리
+      });
+      

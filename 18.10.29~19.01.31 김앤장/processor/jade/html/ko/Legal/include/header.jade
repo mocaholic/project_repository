@@ -1,0 +1,137 @@
+// output: ../../../../../../publish/html/ko/Legal/include/header.html
+
+span.header_bar
+.gnb_wrap
+  .inner
+    .lang_wrap
+      a(href='javascript:void(0);') KO
+      a(href='javascript:void(0);') EN
+      a(href='javascript:void(0);') JP
+      a(href='javascript:void(0);') CN
+      //a(href='javascript:void(0);') TW
+    
+    .family_site_wrap
+      a(href='javascript:void(0);') 지식재산권
+      a(href='javascript:void(0);') 사회공헌
+      a(href='javascript:void(0);') 인재채용
+.header
+  a(href='javascript:void(0)').btn_menu
+    span.hidden_text 메뉴
+  a(href='javascript:void(0);').logo
+    span.hidden_text KIM &amp; CHANG
+  .search_top_area
+    span.custom_input
+      input(type='text' placeholder='')
+    a(href='javascript:void(0);').btn_search
+.layer.layer_menu
+  .layer_cont
+    .layer_lang
+      ul
+        li: a(href='javascript:void(0);') KR
+        li: a(href='javascript:void(0);') EN
+        li: a(href='javascript:void(0);') JP
+        li: a(href='javascript:void(0);') CN
+    ul.menu_list
+      li: a(href='javascript:void(0);') EXPERTISE
+      li: a(href='javascript:void(0);') PROFESSIONALS
+      li: a(href='javascript:void(0);') INSIGHTS
+      li: a(href='javascript:void(0);') ABOUT
+    .family_site
+      a(href='javascript:void(0);' target='_blank') 지식재산권
+      a(href='javascript:void(0);' target='_blank') 사회공헌
+      a(href='javascript:void(0);' target='_blank') 인재채용
+  a(href='javascript:void(0);').btn_layer_close
+    span.hidden_text 레이어 닫기
+span.header_line
+.layer_dimm
+script(type='text/javascript').
+  $(function() {
+    var timerTick;
+    var tickTime = 2;
+    var $btnLeftMenu = $('.btn_menu'), $leftLayer = $('.layer_menu'), $dimm = $('.layer_dimm');
+    var $header = $('header');
+    var $logo = $header.find('.logo');
+    var scrollCtrl = false;
+    var $headerBar = $('.header_bar');
+    var $searchTop = $('.search_top_area');
+    var $btnTopSearch = $searchTop.find('.btn_search'), $searchTopInput = $searchTop.find('input[type="text"]');
+    var $headerLine = $('.header_line');
+    var windowH = $(window).height();
+    $(window).on('scroll', function() {
+      var documentH = $('body').height();
+      var nowPosition = $(window).scrollTop();
+      var persent = (nowPosition/(documentH - windowH)) * 100;
+      $headerBar.css({'width' : persent + '%'});
+    });
+    front.btnClick($btnLeftMenu, function() {
+      var nowPosition = $(window).scrollTop();
+      $dimm.addClass('on');
+      $leftLayer.addClass('on');
+      $('body').addClass('hidden');
+      front.btnClick($('.layer_dimm.on'), function() {
+        $leftLayer.removeClass('on');
+        $dimm.removeClass('on');
+        $('body').removeClass('hidden');
+      });
+      var btnLayerClose = $leftLayer.find('.btn_layer_close');
+      front.btnClick(btnLayerClose, function() {
+        $dimm.removeClass('on');
+        $leftLayer.removeClass('on');
+        $('body').removeClass('hidden');
+      });
+    });
+    
+    // 2019.01.25 스크립트 수정
+    front.btnClick($btnTopSearch, function($this) {
+      if ($(window).width() > 1024) {
+        if ($btnTopSearch.hasClass('on')) {$searchTopInput.parent().removeClass('on');$this.removeClass('on');}
+        else {$searchTopInput.parent().addClass('on');$this.addClass('on');}
+      } else {
+        if ($btnTopSearch.hasClass('on')) {
+          $btnLeftMenu.show();
+          $logo.show();
+          $searchTopInput.parent().removeClass('on');
+          $this.removeClass('on');
+        }
+        else {
+          $btnLeftMenu.hide();
+          $logo.hide();
+          $searchTopInput.parent().addClass('on');
+          $this.addClass('on');
+        }
+      }
+    });
+    
+    $(window).on('scroll', function() {
+      var nowPosition = $(window).scrollTop();
+      if ( scrollCtrl == true && nowPosition == 0 ) {
+        scrollCtrl = false;
+        if ($('body').hasClass('hidden')) {
+          
+        } else {
+          $header.removeClass('fixed');
+        }
+      } else if ( scrollCtrl == false &&  nowPosition > 0  ){
+        scrollCtrl = true;
+        $header.addClass('fixed');
+      }
+    });
+    
+    var interval = function () {
+      percentTime += 1 / (tickTime + 0.1);
+      $headerLine.css({width: percentTime+"%"});
+      if(percentTime >= 100) {
+        clearTimeout(timerTick);
+      }
+    }
+    var resetProgressbar = function () {
+      $headerLine.css({width: 0+'%'});
+      clearTimeout(timerTick);
+    };
+    var startProgressbar = function () {
+      resetProgressbar();
+      percentTime = 0;
+      timerTick = setInterval(interval, 4);
+    };
+    //startProgressbar();
+  });

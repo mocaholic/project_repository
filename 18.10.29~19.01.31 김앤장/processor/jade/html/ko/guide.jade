@@ -1,0 +1,54 @@
+// output: ../../../../publish/html/ko/Legal/guide/guide.html
+
+doctype html
+html(lang="ko")
+  include ./Legal/include/head.jade
+  body(style="padding:0 30px;")
+    h2 - 폰트 가이드 -
+    .demi_light(style='font-size:24px;') NotoSans DemiLight
+    .medium(style='font-size:24px;') NotoSans Medium
+    .lato(style='font-size:24px;') Lato
+    .serif(style='font-size:24px;') NotoSerif 
+      
+    h2(style='margin-top:40px;') - 버튼 가이드 -
+    p
+      a(href='javascript:void(0);').btn_text_more 더보기 (페이지 이동)
+    p
+      a(href='javascript:void(0);').btn_view 더보기 (hidden 영역 노출)
+    p
+      a(href='javascript:void(0);').btn_white.btn_hover.bg_black
+        span 초기화
+      a(href='javascript:void(0);').btn_orange.btn_hover.bg_orange
+        span 검색
+    
+    h2(style='margin-top:40px;') - 타이틀 가이드 -
+    .container
+      h2(style='text-align:left;padding:0;') h2 상단 타이틀
+    h3(style='padding:0;') h3 타이틀
+    h4 h4 타이틀
+    
+    h2(style='margin-top:40px;') - list 가이드 -
+    ul.bullet_list
+      li 테스트
+      li 테스트
+      li 테스트
+      li 테스트
+    
+    h2(style='margin-top:20px;') - table 가이드 -
+    ul.board_list
+      -for (var i = 0; i < 2; i++)
+        li
+          a(href='javascript:void(0);')
+            p.title 노동조합 운영비 지원 금지 조항에 대한 헌법불합치 결정
+            p.tag_area
+              span #4차산업혁명
+            span.date 2018.11.21  
+    
+    h2(style='margin-top:40px;') - paging 가이드 -
+    .paging
+      a(href='javascript:void(0);').prev_more.hidden_text 처음
+      a(href='javascript:void(0);').prev.hidden_text 이전
+      a(href='javascript:void(0);').on 1
+      a(href='javascript:void(0);') 2
+      a(href='javascript:void(0);').next.hidden_text  다음
+      a(href='javascript:void(0);').next_more.hidden_text  마지막

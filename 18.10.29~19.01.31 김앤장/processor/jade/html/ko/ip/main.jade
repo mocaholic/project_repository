@@ -1,0 +1,149 @@
+// output: ../../../../../publish/html/ko/ip/main.html
+include include/jadeUtil.jade
+-var imgUrl = './images/dummy/'
+doctype html
+html(lang='ko')
+
+  head
+    +pageName('Kim & Chang')
+    +metaCharset('utf-8')
+    +metaName('viewport', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no')
+    +httpEquiv('X-UA-Compatible', 'ie=edge')
+    +metaName('robots', 'noydir, noodp, index, follow')
+    +metaName('copyright', '© 2017 Kim & Chang. All Rights Reserved.')
+    +metaName('description', '')
+    +metaName('keywords', 'Kim & Chang')
+    +metaProperty('og:title', 'Kim & Chang')
+    +linkRel('stylesheet', 'text/css', './css/main.css', 'all')
+    +jsCall('text/javascript', './js/modernizr.min.js')
+    +jsCall('text/javascript', './js/jquery-2.2.4.min.js')
+    +jsCall('text/javascript', './js/jquery-ui.min.js')
+    +jsCall('text/javascript', './js/ScrollMagic.min.js')
+    //- +jsCall('text/javascript', './js/TweenMax.min.js')
+    //- +jsCall('text/javascript', './js/jquery.touchSwipe.min.js')
+    //- +jsCall('text/javascript', './js/jquery.bxslider.min.js')
+    +jsCall('text/javascript', './js/ui-front.js')
+  body.main
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+      // 19.01.25 span 태그 추가
+      span.header_bar
+      .gnb_wrap
+        .inner
+          .lang_wrap
+            a(href='javascript:void(0);') KO
+            a(href='javascript:void(0);') EN
+            a(href='javascript:void(0);') JP
+            a(href='javascript:void(0);') CN
+          
+          .family_site_wrap
+            a(href='javascript:void(0);' target='_blank') Kim & Chang
+            a(href='javascript:void(0);' target='_blank') 사회공헌
+            a(href='javascript:void(0);' target='_blank') 인재채용
+      .header
+        a(href='javascript:void(0)').btn_menu
+          span.hidden_text 메뉴
+        a(href='javascript:void(0);').main_logo
+          span.hidden_text KIM &amp; CHANG
+        .search_top_area
+          span.custom_input
+            input(type='text' placeholder='')
+          a(href='javascript:void(0);').btn_search
+    .container
+      .visual_wrap
+        h2.lato Intellecatual <span class="mob_block">Property Group</span>
+      article#content.content
+        .banner_wrap
+          .banner_big
+            strong.title.lato EXPERTISE
+            span.desc Creative solutions are necessary to provide<br>the level of service a client expects from a top law firm
+            a(href='javascript:void(0);').btn_more view more
+          .banner_list
+            .banner_box
+              a(href='javascript:void(0);')
+                .notice_title Newsletters
+                span.notice_txt
+                  span.title KIM & CHANG Legal Newsletter<br>(October 2018, Issue 3)
+                  span.desc Article Prohibiting Financial Support for Operating<br>Labor Unions Found Unconstitutional
+                span.btn_go
+                  span.hidden_text Newsletters 더보기
+            .banner_box
+              a(href='javascript:void(0);')
+                .notice_title Newsletters
+                span.notice_txt
+                  span.title LO Intellectual<br>Property Newsle …
+                  span.desc To view the article, please<br>download the attachment…
+                span.btn_go
+                  span.hidden_text Newsletters 더보기
+            .banner_box
+              a(href='javascript:void(0);')
+                .notice_title News
+                span.notice_txt
+                  span.title IPO Annual Meeting in Chicago ...
+                  span.desc Young Kim, a senior patent<br>attorney in Kim & Chang's IP…
+                span.btn_go
+                  span.hidden_text News 더보기
+        .bottom_box
+          a(href='javascript:void(0);')
+            dl
+              dt.location <span class="mo_none">사무소</span> 위치
+          a(href='javascript:void(0);')
+            dl
+              dt.telephone <span class="mo_none">사무소</span> 연락처
+    footer.footer_wrap
+      .footer
+        ul.address
+          li
+            a(href='javascript:void(0);') 사무소위치
+          li
+            a(href='javascript:void(0);') 연락처
+          li
+            a(href='javascript:void(0);').btn_exemption 면책공고
+          li
+            a(href='javascript:void(0);') 개인정보처리방침
+          li
+            a(href='javascript:void(0);').btn_web 웹접근성
+        .copyright © 2019 Kim & Chang. All Rights Reserved. 
+        a(href='javascript:void(0);').btn_top 맨 위로 이동
+    .layer.layer_menu
+      .layer_cont
+        .layer_lang
+          ul
+            li: a(href='javascript:void(0);') KR
+            li: a(href='javascript:void(0);') EN
+            li: a(href='javascript:void(0);') JP
+            li: a(href='javascript:void(0);') CN
+        ul.menu_list
+          li: a(href='javascript:void(0);') EXPERTISE
+          li: a(href='javascript:void(0);') PROFESSIONALS
+          li: a(href='javascript:void(0);') INSIGHTS
+        .family_site
+          a(href='javascript:void(0);' target='_blank') Kim &amp; Chang
+          a(href='javascript:void(0);' target='_blank') 사회공헌
+          a(href='javascript:void(0);' target='_blank') 인재채용
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+      
+    // 웹접근성 레이어팝업
+    .layer.layer_web_accessibility
+      .layer_header
+        h1.br_bottom 웹접근성
+      .layer_cont
+        p.layer_sub_title 김 · 장 법률사무소는<br> 장애인 및 비장애인 누구나 편리하게  웹서비스를 이용하실 수 있도록, 웹접근성 준수 및 개선을 위하여 노력하고 있습니다.
+        p.layer_desc 김 · 장 법률사무소는 앞으로도 모든 사용자들이 편리하게 서비스를 이용할 수 있도록 최선을 다하겠습니다. 
+        p.layer_desc 불편사항은 <a href="mailto:lawkim@kimchang.com" class="text_orange">lawkim@kimchang.com</a>으로 연락 주시면 친절하게 안내해 드리겠습니다.
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+    // 면책 공고 레이어 팝업
+    .layer.layer_exemption
+      .layer_header
+        h1.br_bottom 면책공고
+      .layer_cont
+        p.layer_sub_title 본 웹사이트는 일반적인 정보를 제공할 목적으로 제작된 것으로 법률적인 자문이나 홍보를 위한 것은 아닙니다.
+        p.layer_desc 본 웹사이트에서 취득한 정보로 인해 문제가 발생하여 직·간접적으로 손해를 입었다 하더라도 김·장 법률사무소는 어떠한 법적 책임도 지지 아니하며, 이 웹사이트에서 제공하는 정보에 기반하여 조치를 취하시기에 앞서 반드시 저희 사무소에 법률적 자문을 구하시기 바랍니다.
+      a(href='javascript:void(0);').btn_layer_close
+        span.hidden_text 레이어 닫기
+    .dimm
+    .layer_dimm
+  +jsCall('text/javascript', './js/main.js')

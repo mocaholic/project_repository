@@ -1,0 +1,186 @@
+// output: ../../../../../../publish/html/ko/recruit/include/footer.html
+
+.footer
+  ul.address
+    li
+      a(href='javascript:void(0);') 사무소위치
+    li
+      a(href='javascript:void(0);') 연락처
+    li
+      a(href='javascript:void(0);').btn_exemption 면책공고
+    li
+      a(href='javascript:void(0);') 개인정보처리방침
+    li
+      a(href='javascript:void(0);').btn_web 웹접근성
+  .copyright © 2019 Kim & Chang. All Rights Reserved.
+// 웹접근성 레이어팝업
+.layer.layer_web_accessibility
+  .layer_header
+    h1.br_bottom 웹접근성
+  .layer_cont
+    p.layer_sub_title 김 · 장 법률사무소는<br> 장애인 및 비장애인 누구나 편리하게  웹서비스를 이용하실 수 있도록, 웹접근성 준수 및 개선을 위하여 노력하고 있습니다.
+    p.layer_desc 김 · 장 법률사무소는 앞으로도 모든 사용자들이 편리하게 서비스를 이용할 수 있도록 최선을 다하겠습니다. 
+    p.layer_desc 불편사항은 <a href="mailto:lawkim@kimchang.com" class="text_orange">lawkim@kimchang.com</a>으로 연락 주시면 친절하게 안내해 드리겠습니다.
+  a(href='javascript:void(0);').btn_layer_close
+    span.hidden_text 레이어 닫기
+// 면책 공고 레이어 팝업
+.layer.layer_exemption
+  .layer_header
+    h1.br_bottom 면책공고
+  .layer_cont
+    p.layer_sub_title 본 웹사이트는 일반적인 정보를 제공할 목적으로 제작된 것으로 법률적인 자문이나 홍보를 위한 것은 아닙니다.
+    p.layer_desc 본 웹사이트에서 취득한 정보로 인해 문제가 발생하여 직·간접적으로 손해를 입었다 하더라도 김·장 법률사무소는 어떠한 법적 책임도 지지 아니하며, 이 웹사이트에서 제공하는 정보에 기반하여 조치를 취하시기에 앞서 반드시 저희 사무소에 법률적 자문을 구하시기 바랍니다.
+  a(href='javascript:void(0);').btn_layer_close
+    span.hidden_text 레이어 닫기
+  
+a(href='javascript:void(0);').btn_top top
+
+script(type='text/javascript').
+  ;(function(global, $){
+    'use strict';
+    var _scope,ctrl,topBtn;
+    //console.log(_scope, ctrl, $topBtn);
+
+
+    function init(){
+      _scope = global;
+      ctrl = false;
+      //$topBtn = $(".back-to-top");
+      topBtn = document.querySelector('.btn_top');
+      //console.log(topBtn);
+      bind();
+    };
+
+    function bind(){
+      $(_scope).on('scroll', function(){
+        var _scrollTop = $(_scope).scrollTop();
+        if ( ctrl == true && _scrollTop == 0 ) {
+          ctrl = false;
+          $(topBtn).removeClass('show');
+        } else if ( ctrl == false &&  _scrollTop > 0  ){
+          ctrl = true;
+          $(topBtn).addClass("show");
+          front.btnClick($(topBtn), function() {
+            $('html, body').stop().animate({scrollTop : 0}, 300);
+          });
+        }
+      });
+    }
+    init();
+  }(window, $));
+  $(function() {
+    var $dimm = $('.dimm')
+    // 웹접근성
+    var btnWeb = $('.btn_web');
+    var layerWeb = $('.layer_web_accessibility');
+    front.btnClick(btnWeb, function($this) {
+      var nowPosition = $(window).scrollTop();
+      if (!$this.hasClass('on')) {
+        layerWeb.addClass('on');
+        $this.addClass('on');
+        $dimm.addClass('on');
+        //- if ( $('body').hasClass('iphone') ) {
+        //-   $('body').css({'top' : - nowPosition + 'px'});
+        //-   $('body').addClass('hidden');
+        //-   if ($('.fixed_mo_tab').length > 0) {$('.fixed_mo_tab').addClass('scroll_fixed');}
+        //-   else if ($('.fixed_box > .top_info.mo').length > 0) {$('.fixed_box > .top_info.mo').addClass('scroll_fixed');}
+        //-   else if ($('.lnb').length > 0) {$('.lnb').addClass('scroll_fixed');}
+        //- } else {
+        //-   $('body').addClass('hidden');
+        //- }
+        $('body').addClass('hidden');
+        
+        if ($('.history_slide .slide').length > 0) {
+          historySlider.redrawSlider();
+          if ($('.bx-pager > .bx-pager-item').length > 0) {
+            var year = ['2018s', '2010s', '2000s', '1990s', '1980s', '1970s'];
+            for (var i = 0; i < $('.bx-pager > .bx-pager-item').length; i++) {
+              $('.bx-pager > .bx-pager-item').eq(i).find('> a').html(year[i]);
+            }
+          }
+        }
+        var btnClose = layerWeb.find('.btn_layer_close');
+        front.btnClick(btnClose, function() {
+          if ($('.fixed_mo_tab').length) {$('.fixed_mo_tab').removeClass('scroll_fixed');}
+          else if ($('.fixed_box > .top_info.mo').length > 0) {$('.fixed_box > .top_info.mo').removeClass('scroll_fixed');}
+          else if ($('.lnb').length > 0) {$('.lnb').removeClass('scroll_fixed');}
+          $this.removeClass('on');
+          layerWeb.removeClass('on');
+          $dimm.removeClass('on');
+          //- if ( $('body').hasClass('iphone') ) {
+          //-   $('body').css({'top' : ''}).removeClass('hidden').ready(function() {
+          //-     $('html, body').stop().animate({scrollTop: nowPosition}, 0);
+          //-   });
+          //- } else {
+          //-   $('body').removeClass('hidden');
+          //- }
+          $('body').removeClass('hidden');
+          if ($('.history_slide .slide').length > 0) {
+            historySlider.redrawSlider();
+            if ($('.bx-pager > .bx-pager-item').length > 0) {
+              var year = ['2018s', '2010s', '2000s', '1990s', '1980s', '1970s'];
+              for (var i = 0; i < $('.bx-pager > .bx-pager-item').length; i++) {
+                $('.bx-pager > .bx-pager-item').eq(i).find('> a').html(year[i]);
+              }
+            }
+          }
+        });
+      }
+    });
+    // 면책 공고
+    var btnExemption = $('.btn_exemption');
+    var layerExemption = $('.layer_exemption');
+    front.btnClick(btnExemption, function($this) {
+      var nowPosition = $(window).scrollTop();
+      if (!$this.hasClass('on')) {
+        layerExemption.addClass('on');
+        $this.addClass('on');
+        $dimm.addClass('on');
+        //- if ( $('body').hasClass('iphone') ) {
+        //-   $('body').css({'top' : - nowPosition + 'px'});
+        //-   $('body').addClass('hidden');
+        //-   if ($('.fixed_mo_tab').length > 0) {$('.fixed_mo_tab').addClass('scroll_fixed');}
+        //-   else if ($('.fixed_box > .top_info.mo').length > 0) {$('.fixed_box > .top_info.mo').addClass('scroll_fixed');}
+        //-   else if ($('.lnb').length > 0) {$('.lnb').addClass('scroll_fixed');}
+        //- } else {
+        //-   $('body').addClass('hidden');
+        //- }
+        $('body').addClass('hidden');
+        if ($('.history_slide .slide').length > 0) {
+          historySlider.redrawSlider();
+          if ($('.bx-pager > .bx-pager-item').length > 0) {
+            var year = ['2018s', '2010s', '2000s', '1990s', '1980s', '1970s'];
+            for (var i = 0; i < $('.bx-pager > .bx-pager-item').length; i++) {
+              $('.bx-pager > .bx-pager-item').eq(i).find('> a').html(year[i]);
+            }
+          }
+        }
+        var btnClose = layerExemption.find('.btn_layer_close');
+        front.btnClick(btnClose, function() {
+          if ($('.fixed_mo_tab').length) {$('.fixed_mo_tab').removeClass('scroll_fixed');}
+          else if ($('.fixed_box > .top_info.mo').length > 0) {$('.fixed_box > .top_info.mo').removeClass('scroll_fixed');}
+          else if ($('.lnb').length > 0) {$('.lnb').removeClass('scroll_fixed');}
+          $this.removeClass('on');
+          layerExemption.removeClass('on');
+          $dimm.removeClass('on');
+          //- if ( $('body').hasClass('iphone') ) {
+          //-   $('body').css({'top' : ''}).removeClass('hidden').ready(function() {
+          //-     $('html, body').stop().animate({scrollTop: nowPosition}, 0);
+          //-   });
+          //- } else {
+          //-   $('body').removeClass('hidden');
+          //- }
+          $('body').removeClass('hidden');
+          if ($('.history_slide .slide').length > 0) {
+            historySlider.redrawSlider();
+            if ($('.bx-pager > .bx-pager-item').length > 0) {
+              var year = ['2018s', '2010s', '2000s', '1990s', '1980s', '1970s'];
+              for (var i = 0; i < $('.bx-pager > .bx-pager-item').length; i++) {
+                $('.bx-pager > .bx-pager-item').eq(i).find('> a').html(year[i]);
+              }
+            }
+          }
+        });
+      }
+    });
+  });

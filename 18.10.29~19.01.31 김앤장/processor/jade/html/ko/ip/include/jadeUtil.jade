@@ -1,0 +1,31 @@
+//- common
+
+mixin pageName(title)
+  title #{title}
+
+mixin metaCharset(charset)
+  meta(charset=charset)
+
+mixin httpEquiv(name, content)
+  meta(http-equiv=name content=content)
+
+mixin metaName(name, content)
+  meta(name=name content=content)
+
+mixin metaProperty(property, content)
+  meta(property=property content=content)
+
+mixin linkRel(rel, type, href, media)
+  link(rel=rel type=type href=href media=media)
+
+mixin jsCall(type, src)
+  script(type=type src=src)
+  
+mixin void(text, className, id, target)
+  a(href='javascript:void(0);' class=className id=id target=target) #{text}
+
+mixin imgLink(src, alt, className, id, target)
+  a(href='javascript:void(0);' class=className id=id target=target): img(src=src alt=alt)
+
+mixin blankLink(text, className, id, target, title)
+  a(href='javascript:void(0);' class=className id=id target='_blank' title='새창으로') #{text}

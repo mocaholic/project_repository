@@ -1,0 +1,240 @@
+// output: ../../../../../publish/html/ko/Legal/layout.html
+
+doctype html
+html(lang='ko')
+  include ./include/jadeUtil.jade
+  head
+    +pageName('Kim & Chang')
+    +metaCharset('utf-8')
+    +metaName('viewport', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no')
+    +httpEquiv('X-UA-Compatible', 'ie=edge')
+    +metaName('robots', 'noydir, noodp, index, follow')
+    +metaName('copyright', '© 2017 Kim & Chang. All Rights Reserved.')
+    +metaName('format-detection', 'telephone=no')
+    +metaName('description', '')
+    +metaName('keywords', 'Kim & Chang')
+    +metaProperty('og:title', 'Kim & Chang')
+    +linkRel('stylesheet', 'text/css', './css/kimchang.css', 'all')
+    +jsCall('text/javascript', './js/modernizr.min.js')
+    +jsCall('text/javascript', './js/jquery-2.2.4.min.js')
+    +jsCall('text/javascript', './js/jquery-ui.js')
+    +jsCall('text/javascript', './js/TweenMax.min.js')
+    +jsCall('text/javascript', './js/ScrollMagic.min.js')
+    +jsCall('text/javascript', './js/debug.addIndicators.min.js')
+    +jsCall('text/javascript', './js/jquery.bxslider.min.js')
+    +jsCall('text/javascript', './js/ui-front.js')
+  body
+    style
+      | .area_intro.first.year .value strong {
+      |    animation-name: textAni;
+      | }
+      | @keyframes textAni {
+      |    from {transform: rotate(0deg);}
+      |    to {transform: rotate(360deg);}
+      | }
+      | .water-fill {
+      | animation: wave 0.7s infinite linear, 
+      | fill-up 10s infinite ease-out alternate;
+      | }
+
+      | @keyframes wave {
+      |   0% { x: -400px; }
+      |   100% { x: 0; }
+      | }
+
+
+      | @keyframes fill-up {
+      |   0% {
+      |     height: 0;
+      |     y: 130px;
+      |   }
+      |   100% {
+      |     height: 160px;
+      |     y: -30px;
+      |   }
+      | }
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container_wrap
+      .container
+        article#content.content(style='padding-top:118px')
+          .area_intro.first.year(data-value='1973')
+            .value
+              strong(style='font-size:100px; color:#000') 1973
+          .area_intro.second(data-value='1500')
+            .value
+              strong(style='display:inline-block; position:relative; font-size:100px; color:#000; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-image:url(http://www.blueb.co.kr/SRC2/_image/linkbg.png); line-height:1;') 1500
+          .area_intro.third(data-value='15337')
+            .value
+              strong(style='font-size:100px; color:#000') 15337
+          .global_wrap
+            a(href='javascript:void(0)' data-num='0') Nigeria<br>
+            a(href='javascript:void(0)' data-num='1') 일본<br>
+            a(href='javascript:void(0)' data-num='2') 홍콩<br>
+          .global_wrap(style='position:relative; overflow:hidden;')
+            .global_map
+              a(href='javascript:void(0)' data-num='0') Nigeria<br>
+              a(href='javascript:void(0)' data-num='1') 일본<br>
+              a(href='javascript:void(0)' data-num='2') 홍콩<br>
+              img(src='./images/dummy/global_map.jpg')
+            .global_detail.asia(style='position:absolute; left:0; top:0; z-index:10; opacity:0; display:none; transform:scale(2)')
+              a(href='javascript:void(0)' data-num='3') Nigeria<br>
+              a(href='javascript:void(0)' data-num='4') 일본<br>
+              a(href='javascript:void(0)' data-num='5') 홍콩<br>
+              img(src='./images/dummy/global_detail.jpg')
+            .global_detail.europe(style='position:absolute; left:0; top:0; z-index:10; opacity:0; display:none; transform:scale(2)')
+              a(href='javascript:void(0)' data-num='2') 홍콩<br>
+              img(src='./images/dummy/global_detail.jpg')
+            .global_detail.affrica(style='position:absolute; left:0; top:0; z-index:10; opacity:0; display:none; transform:scale(2)')
+              a(href='javascript:void(0)' data-num='2') 홍콩<br>
+              img(src='./images/dummy/global_detail.jpg')
+            
+    footer.footer_wrap
+    .layer_map(style='display:none; width:400px; position:fixed; bottom:0; right:0; z-index:100; height:400px; background-color:#ff9999;')
+      h1 
+      p.location
+      p.team
+      p.professonals
+      p.cases
+      p.network
+      p.news
+      a(href='javascript:void(0);').btn_layer_close 닫기
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, './include/header.html', function() {/* callback */});
+      
+      var btnCtrl = true;
+      var btnMap = $('.global_map > img');
+      front.btnClick(btnMap, function() {
+        if (btnCtrl) {
+          btnCtrl = false;
+          TweenMax.to('.global_map', .7, {
+            css:{scale:2, opacity:0}, ease:Quad.easeInOut,
+            onComplete : function() {
+              btnCtrl = true;
+            },
+          });
+          TweenMax.to('.global_detail', .7, {
+            css:{scale:1, opacity:1,display:'block'}, ease:Quad.easeInOut
+          });
+        }
+      });
+      front.btnClick($('.global_detail > img'), function() {
+        if (btnCtrl) {
+          btnCtrl = false;
+          TweenMax.to('.global_detail', .7, {
+            css:{scale:2, opacity:0}, ease:Quad.easeInOut,
+            onComplete : function() {
+              btnCtrl = true;
+              $('.global_detail').hide();
+            },
+          });
+          TweenMax.to('.global_map', .7, {
+            css:{scale:1, opacity:1,display:'block'}, ease:Quad.easeInOut
+          });
+        }
+      });
+      var globalObj = [
+        {
+          'region' : 'Nigeria',
+          'location' : 'xxx 사무소',
+          'team' : 'xxx 그룹',
+          'professonals' : 'xxx 변호사 | xxx 변호사 | xxx 변호사',
+          'cases' : '한국건설사의 나이지리아 철도공사프로젝트<br>한국건설사의 나이지리아 철도공사프로젝트',
+          'network' : 'Yes',
+          'news' : '나이지리아 대표 로펌'
+        },
+        {
+          'region' : '일본',
+          'location' : '일본 사무소',
+          'team' : '일본 그룹',
+          'professonals' : '일본 변호사 | xxx 변호사 | xxx 변호사',
+          'cases' : '한국건설사의 나이지리아 철도공사프로젝트',
+          'network' : 'No',
+          'news' : '일본 대표 로펌'
+        },
+        {
+          'region' : '홍콩',
+          'location' : '홍콩 사무소',
+          'team' : '홍콩 그룹',
+          'professonals' : '홍콩 변호사 | xxx 변호사 | xxx 변호사',
+          'cases' : '한국건설사의 나이지리아 철도공사프로젝트',
+          'network' : 'No',
+          'news' : '홍콩 대표 로펌'
+        },
+      ];
+      var btnGlobal = $('.global_wrap > a');
+      var layerGlobal = $('.layer_map');
+      front.btnClick(btnGlobal, function($this) {
+        var idx = $this.attr('data-num');
+        front.showCallback(layerGlobal, function() {
+          var btnClose = layerGlobal.find('.btn_layer_close');
+          layerGlobal.find('h1').html(globalObj[idx].region);
+          layerGlobal.find('.location').html(globalObj[idx].location);
+          layerGlobal.find('.team').html(globalObj[idx].team);
+          layerGlobal.find('.professonals').html(globalObj[idx].professonals);
+          layerGlobal.find('.cases').html(globalObj[idx].cases);
+          layerGlobal.find('.network').html(globalObj[idx].network);
+          layerGlobal.find('.news').html(globalObj[idx].news);
+          front.btnClick(btnClose, function() {
+            front.hideCallback(layerGlobal, function() {
+              layerGlobal.find('h1').empty();
+              layerGlobal.find('.location').empty();
+              layerGlobal.find('.team').empty();
+              layerGlobal.find('.professonals').empty();
+              layerGlobal.find('.cases').empty();
+              layerGlobal.find('.network').empty();
+              layerGlobal.find('.news').empty();
+            });
+          });
+        });
+      });
+      
+      $.fn.numberCount = function(options) {
+        var $scope = $(this);
+        var $valueArea = $scope.find('.value');
+        var $target = $valueArea.find('strong');
+        var percent= $scope.attr('data-value');
+        var counter;
+        var time = 0.3;
+        var ui = {
+          reset : function() {
+            if ($scope.hasClass('year')) {counter = { value: 2019 }}
+            else {counter = { value: 1 }}
+            ui.countUp();
+            TweenMax.set( $valueArea, { paddingLeft:40, opacity:0 });
+          },
+          countUp : function() {
+            $target.html(Math.ceil(counter.value));
+          },
+          act : function() {
+            if ( percent == undefined ) {
+        	   	TweenMax.to($valueArea, 0.5, {
+                paddingLeft: 0, opacity:1,
+                onComplete : function() {/* callback */}
+              });
+        	   	return;
+        	  }
+        	  TweenMax.to($valueArea, 0.5, {
+              paddingLeft: 0, opacity:1,
+              onComplete : function() {/* callback */}
+            });
+            TweenMax.to(counter, time+1, {
+              value: percent, onUpdate: ui.countUp, ease: Power2.easeInOut,
+              onComplete : function() {/* callback */}
+            });
+          },
+          init : function() {
+            ui.reset();
+            ui.act();
+          }
+        }
+        if (options == 'reset') {ui.reset()}
+        else if (options == 'act') {ui.init()}
+        return ui;
+      };
+      $('.area_intro.first').numberCount('act');
+      $('.area_intro.second').numberCount('act');
+      $('.area_intro.third').numberCount('act');

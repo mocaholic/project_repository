@@ -1,0 +1,29 @@
+// output: ../../../../../publish/html/ko/Legal/error_503.html
+include include/jadeUtil.jade
+-var imgUrl = './images/dummy/'
+doctype html
+html(lang='ko')
+
+  head
+    +pageName('Kim & Chang')
+    +metaCharset('utf-8')
+    +metaName('viewport', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no')
+    +httpEquiv('X-UA-Compatible', 'ie=edge')
+    +metaName('robots', 'noydir, noodp, index, follow')
+    +metaName('copyright', '© 2017 Kim & Chang. All Rights Reserved.')
+    +metaName('description', '')
+    +metaName('keywords', 'Kim & Chang')
+    +metaProperty('og:title', 'Kim & Chang')
+    +linkRel('stylesheet', 'text/css', './css/kimchang.css', 'all')
+  body(style='height:100%;')
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    .error_wrap
+      .inner
+        h1.h1_error
+          a(href='javascript:void(0);') kim&chang
+        p.error_title 서비스 이용이 원활하지 않습니다.
+        .error_desc
+          p 웹사이트의 빠른 복구와 안정적인 서비스를 위하여 최선의 노력을 다하겠습니다.<br />이용에 불편을 드려 죄송합니다.
+          //p 불편사항은 <a href="mailto:lawkim@kimchang.com" class="text_orange">lawkim@kimchang.com</a>으로 연락 주시면 친절하게 안내해 드리겠습니다.
+      

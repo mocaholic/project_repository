@@ -1,0 +1,685 @@
+// output: ../../../../../../publish/html/ko/ip/member/sub_main_layout.html
+-var imgUrl = '../images/dummy/'
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container.member
+      .top_visual_box
+        .breadcrumb.main
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 구성원
+        h2 <strong>PROFESSIONALS</strong>구성원
+      .content
+        // 공통영역 
+        .search_top
+          span.big_input
+            input(type='text' placeholder='이름을 입력하세요.')
+            a(href='javascript:void(0);').btn_delete.hidden_text 검색어 삭제
+            a(href='javascript:void(0);').btn_search.hidden_text 검색
+        .category_area 
+          ul.tab_menu.top_tab
+            li
+              a(href='javascript:void(0);') Practice 
+                span 분야별
+              span.bar_up 
+              span.bar
+            li
+              a(href='javascript:void(0);') Technology
+                span 기술별
+              span.bar_up 
+              span.bar
+            li
+              a(href='javascript:void(0);') Region
+                span 지역별
+              span.bar_up 
+              span.bar
+          .tab_container
+            .tab_section
+              ul.field_list
+                li(data-value='tab1')
+                  a(href='javascript:void(0);') 디자인
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 라이센싱
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 상표
+                li
+                  a(href='javascript:void(0);') 영업비밀·기업정보 보호
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 자문 & 전략
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 저작권
+                li(data-value='tab2')
+                  a(href='javascript:void(0);') 지식재산권 소송
+                li(data-value='tab3')
+                  a(href='javascript:void(0);') 특허
+                
+            .tab_section 
+              ul.field_list
+                li
+                  a(href='javascript:void(0);') 가전기기
+                li
+                  a(href='javascript:void(0);') 기계
+                li
+                  a(href='javascript:void(0);') 바이오 & 생명과학
+                li
+                  a(href='javascript:void(0);') 소프트웨어, 컴퓨터 & 비즈니스 모델
+                li
+                  a(href='javascript:void(0);') 에너지 & 신재생에너지
+                li
+                  a(href='javascript:void(0);') 자동차, 항공 & 운송
+                li
+                  a(href='javascript:void(0);') 재료 & 금속
+                li
+                  a(href='javascript:void(0);') 전자 & 반도체
+                li
+                  a(href='javascript:void(0);') 제약
+                li
+                  a(href='javascript:void(0);') 통신 & ICT
+                li
+                  a(href='javascript:void(0);') 헬스케어 & 의료 기기
+                li
+                  a(href='javascript:void(0);') 화학 & 농약
+            .tab_section 
+              ul.field_list
+                li
+                  a(href='javascript:void(0);') 미국
+                li
+                  a(href='javascript:void(0);') 유럽
+                li
+                  a(href='javascript:void(0);') 일본
+                li
+                  a(href='javascript:void(0);') 중국
+        .btn_center_box
+          a(href='javascript:void(0);').btn_white.btn_search_reset.btn_hover.bg_black
+            span 초기화
+          a(href='javascript:void(0);').btn_orange.btn_search_js.btn_hover.bg_orange
+            span 검색
+        // 검색결과 영역
+        .search_result 
+          // 검색결과 있음
+          #result_top.result_top.result_js
+            span.tag 공공감사 지원
+              a(href='javascript:void(0);').delete 
+            span.tag 기업지배구조
+              a(href='javascript:void(0);').delete 
+            span.tag 조세
+              a(href='javascript:void(0);').delete 
+            span.tag 홍길동
+              a(href='javascript:void(0);').delete 
+            // 19.01.23 띄어쓰기 수정 
+            span.text_result 에 대한 검색 결과입니다.
+          // '이름' 으로만 검색했을 경우
+          .wide_box.contact
+            ul.lawyer_profile.wide
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_01.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 김효상 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_02.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 박마리 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 데이빗, 조엘 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li.last 
+                p.img
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 하지수 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+          // '업무분야+이름' 또는 '업무분야' 로만 검색했을 경우
+          .wide_box.contact
+            h3.p_top0 주요 연락처
+            .lawyer_slide
+              // slide li 마지막에 class='last' 적용
+              ul.lawyer_profile.wide
+                li 
+                  p.img 
+                    a(href='javascript:void(0);')
+                      img(src=imgUrl + 'pc/lawyer_01.jpg', alt='%게시물 제목%')
+                  .lawyer_info
+                    span.name 
+                      a(href='javascript:void(0);') 김효상 
+                        span 변호사
+                    a(href='mailto:').email.hidden_text 이메일
+                    span.telephone T.
+                      a(href='tel:02-3703-4807') 02-3703-4807
+                    p.hashtag
+                      span 
+                        a(href='javascript:void(0);') Technology
+                        |, 
+                      span 
+                        a(href='javascript:void(0);') Media & Telecomm-unications
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Antitrust & Competiti-on
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Intellectual Property
+                li 
+                  p.img 
+                    a(href='javascript:void(0);')
+                      img(src=imgUrl + 'pc/lawyer_02.jpg', alt='%게시물 제목%')
+                  .lawyer_info
+                    span.name 
+                      a(href='javascript:void(0);') 박마리 
+                        span 변호사
+                    a(href='mailto:').email.hidden_text 이메일
+                    span.telephone T.
+                      a(href='tel:02-3703-4807') 02-3703-4807
+                    p.hashtag
+                      span 
+                        a(href='javascript:void(0);') Technology
+                        |, 
+                      span 
+                        a(href='javascript:void(0);') Media & Telecomm-unications
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Antitrust & Competiti-on
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Intellectual Property
+                li 
+                  p.img 
+                    a(href='javascript:void(0);')
+                      img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                  .lawyer_info
+                    span.name 
+                      a(href='javascript:void(0);') 데이빗, 조엘 
+                        span 변호사
+                    a(href='mailto:').email.hidden_text 이메일
+                    span.telephone T.
+                      a(href='tel:02-3703-4807') 02-3703-4807
+                    p.hashtag
+                      span 
+                        a(href='javascript:void(0);') Technology
+                        |, 
+                      span 
+                        a(href='javascript:void(0);') Media & Telecomm-unications
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Antitrust & Competiti-on
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Intellectual Property
+                li 
+                  p.img
+                    a(href='javascript:void(0);')
+                      img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                  .lawyer_info
+                    span.name 
+                      a(href='javascript:void(0);') 하지수 
+                        span 변호사
+                    a(href='mailto:').email.hidden_text 이메일
+                    span.telephone T.
+                      a(href='tel:02-3703-4807') 02-3703-4807
+                    p.hashtag
+                      span 
+                        a(href='javascript:void(0);') Technology
+                        |, 
+                      span 
+                        a(href='javascript:void(0);') Media & Telecomm-unications
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Antitrust & Competiti-on
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Intellectual Property
+                li 
+                  p.img 
+                    a(href='javascript:void(0);')
+                      img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                  .lawyer_info
+                    span.name 
+                      a(href='javascript:void(0);') 데이빗, 조엘 
+                        span 변호사
+                    a(href='mailto:').email.hidden_text 이메일
+                    span.telephone T.
+                      a(href='tel:02-3703-4807') 02-3703-4807
+                    p.hashtag
+                      span 
+                        a(href='javascript:void(0);') Technology
+                        |, 
+                      span 
+                        a(href='javascript:void(0);') Media & Telecomm-unications
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Antitrust & Competiti-on
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Intellectual Property
+                li.last 
+                  p.img
+                    a(href='javascript:void(0);')
+                      img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                  .lawyer_info
+                    span.name 
+                      a(href='javascript:void(0);') 하지수 
+                        span 변호사
+                    a(href='mailto:').email.hidden_text 이메일
+                    span.telephone T.
+                      a(href='tel:02-3703-4807') 02-3703-4807
+                    p.hashtag
+                      span 
+                        a(href='javascript:void(0);') Technology
+                        |, 
+                      span 
+                        a(href='javascript:void(0);') Media & Telecomm-unications
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Antitrust & Competiti-on
+                        |,
+                      span 
+                        a(href='javascript:void(0);') Intellectual Property
+              .slide_control
+                span.btn_prev  
+                span.btn_next
+          .thumnail_list.wide_box
+            h3 소속 구성원
+            ul.btn_group
+              li 
+                a(href='javascript:void(0);').on 전체
+              li 
+                a(href='javascript:void(0);') 변호사 
+              li 
+                a(href='javascript:void(0);').disabled 외국변호사
+              li 
+                a(href='javascript:void(0);').disabled 변리사
+              li 
+                a(href='javascript:void(0);') 회계사
+              li  
+                a(href='javascript:void(0);') 전문인력
+            ul.lawyer_profile
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_01.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 김효상 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_02.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 박마리 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 데이빗, 조엘 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 하지수 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 데이빗, 조엘 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 하지수 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_01.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 김효상 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_02.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 박마리 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img 
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_03.jpg', alt='%게시물 제목%')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 데이빗, 조엘 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+              li 
+                p.img
+                  a(href='javascript:void(0);')
+                    img(src=imgUrl + 'pc/lawyer_04.jpg', alt='%게시물제목')
+                .lawyer_info
+                  span.name 
+                    a(href='javascript:void(0);') 하지수 
+                      span 변호사
+                  a(href='mailto:').email.hidden_text 이메일
+                  span.telephone T.
+                    a(href='tel:02-3703-4807') 02-3703-4807
+                  p.hashtag
+                    span 
+                      a(href='javascript:void(0);') Technology
+                      |, 
+                    span 
+                      a(href='javascript:void(0);') Media & Telecomm-unications
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Antitrust & Competiti-on
+                      |,
+                    span 
+                      a(href='javascript:void(0);') Intellectual Property
+            .paging
+              a(href='javascript:void(0);').prev_more.hidden_text 첫 페이지
+              a(href='javascript:void(0);').prev.hidden_text 이전
+              a(href='javascript:void(0);').first.on 1
+              a(href='javascript:void(0);') 2
+              a(href='javascript:void(0);') 3
+              a(href='javascript:void(0);') 4
+              a(href='javascript:void(0);') 5
+              a(href='javascript:void(0);').next.hidden_text 다음
+              a(href='javascript:void(0);').next_more.hidden_text 마지막 페이지
+          // 검색결과 없음
+          p.no_data 검색 결과가 없습니다.
+        
+        
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {/* callback */});
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      
+      $(function() {
+        var accordionWrap = '.accordion_wrap';
+        var btnAccordion = $(accordionWrap).find('.btn_toggle');
+        front.accordion(btnAccordion, accordionWrap, 'active', 200, function(){
+          $('.field_list.mo a.select_box').removeClass('on');
+          $('.field_list.mo .box_open').removeClass('on');
+          front.selectDropDown(btndropDown, scrollElement);
+        });
+        
+        var btnHighLight = $('.highLight_tab > li > a');
+        var targetElement = $('.highLight_js');
+        front.highLight(btnHighLight, 'on', targetElement);
+        
+        // 업무분야 tab
+        var btnCateTab = $('.category_area .tab_menu > li > a');
+        var tabContents = $('.category_area .tab_container');
+        front.tabMenu(btnCateTab, 'on', tabContents, function($this) {
+          front.selectDropDown(btndropDown, scrollElement);
+          if ($this.parent().index() != 0) {
+            $('#highlight_tab').find('li > a').removeClass('on');
+            btnHighLight.removeClass('on');
+            $('.highLight_js').find('li').removeClass('on');
+            $(accordionWrap).removeClass('active');
+            btnAccordion.removeClass('on');
+            $('.box_open').removeClass('on').hide();
+            $('.select_box_open').removeClass('on');
+          }
+        });
+        
+        // select dropdown 함수
+        var btndropDown = $('.tab_section a.select_box');
+        var scrollElement = $('.select_box_open').find('.scroll');
+        front.selectDropDown(btndropDown, scrollElement);
+        
+        // 주요연락처 슬라이드 함수
+        var slideWrap = $('.lawyer_slide');
+        front.slider(slideWrap);
+        
+        // 검색 버튼 클릭시 함수 실행
+        var searchInput = $('.big_input > input[type="text"]');
+        var btnSearchResult = $('.btn_search_js');
+        var scrollTarget = $('.search_result');
+        front.btnClick(btnSearchResult, function() {
+          // 데이타 로드 완료시 실행함수
+          front.searchLoading(scrollTarget, 1000);
+        });
+        
+        // 초기화 버튼 클릭시 실행함수
+        var btnReset = $('.btn_search_reset');
+        front.btnClick(btnReset, function() {
+          btnCateTab.parent().removeClass('on');
+          tabContents.find('> div').removeClass('on');
+          searchInput.val('');
+          $('html, body').stop().animate({scrollTop: 0}, 500, 'easeOutCubic');
+        });
+      });
+
+      

@@ -1,0 +1,77 @@
+// output: ../../../../../../publish/html/ko/recruit/apply/new_step1.html
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container 
+      ul.step 
+        li.on 
+          span STEP 01
+          |개인정보 제공동의 확인
+        li 
+          span STEP 02
+          |기본정보 입력
+        li 
+          span STEP 03
+          |세부정보 입력
+        li 
+          span STEP 04
+          |서류제출
+        li 
+          span STEP 05
+          |입력정보 확인
+        li 
+          span STEP 06
+          |지원완료
+      h2 개인정보 처리에 관한 동의서
+      p.gry_text 귀하는 아래의 내용을 확인하고, 김·장 법률사무소 (이하 "사무소" 라고 합니다)가 다음과 같이 귀하의 개인정보를 처리하는 것에 동의합니다.
+      p.title.first 필수적 수집 및 이용
+      ul.agree 
+        li 1. 수집항목
+          ul.bullet_list
+            li 성명, 사진, 성별, 생년월일, 주소, 자택 전화번호, 휴대전화번호, 전자우편주소
+            li 학력(학교명 및 소재지, 전공, 입학 및 졸업연도, 졸업 여부, 성적, 장학금 수령 여부 등), 경력(근무지, 직책, 담당업무, 입사일 및 퇴사일, 근무연한, 근무태도/업무성 등에 대한 평가 등), 병역사항
+            li 기타 귀하가 사무소에 제출하는 자기소개서 및 성적증명서 등 서류에 기재된 각종 개인정보 일체
+        li 2. 수집 및 이용 목적
+          p 지원자의 신원 및 학력·경력의 확인, 채용 여부의 검토·결정 및 통지, 과거 지원이력의 관리, 추가 채용시 지원의사의 확인 등
+        li 3. 보유 및 이용기간
+          p 관계 법령의 규정에 따라 귀하의 개인정보를 보존할 의무가 있는 경우가 아닌 한, 사무소는 위의 수집 및 이용목적을 달성할 때까지 귀하의 개인정보를 보유 및 이용합니다.
+      
+      p.title 선택적 수집 및 이용
+      ul.agree 
+        li 1. 수집항목
+          ul.bullet_list
+            li 자격사항 및 어학능력, 수상경력
+            li 가족사항(귀하와의 관계, 성명, 연령 등)
+        li 2. 수집 및 이용 목적
+          p 채용 여부를 검토함에 있어 참고자료로 활용
+        li 3. 보유 및 이용기간
+          p 관계 법령의 규정에 따라 귀하의 개인정보를 보존할 의무가 있는 경우가 아닌 한, 사무소는 위의 수집 및 이용목적을 달성할 때까지 귀하의 개인정보를 보유 및 이용합니다.
+      p.center.pt30.pb30
+        label.checkcontainer 선택적 정보의 수집 및 이용에 동의합니다.
+          input(type='radio' name='agree')
+          span.radiobtn
+        label.checkcontainer 동의하지 않습니다.
+          input(type='radio' name='agree')
+          span.radiobtn
+      p.gry_text 귀하는 위와 같은 개인정보의 수집 및 이용을 거부할 수 있습니다. 다만, 개인정보의 필수적 수집 및 이용에 동의하지 않을 경우 사무소와의 계약 체결 및 유지가 불가능할 수 있으며, 자격사항 및 어학능력, 수상경력 등의 선택적 수집 및 이용에 동의하지 않는 경우에는 해당 항목들이 채용 여부를 검토함에 있어 고려되지 않을 수 있습니다.<br /><br />
+        |귀하의 가족을 비롯한 제3자(이하 "가족 등")의 개인정보를 사무소에 제공하는 경우, 귀하는 그에 앞서 가족 등에게 그들의 정보를 사무소에 제공한다는 점과 제공하는 개인정보의 항목, 제공 목적(사무소가 이를 다시 제3자에게 제공하는 경우에는 그와 관련된 내용을 포함), 사무소가 해당 개인정보를 보유 및 이용하는 기간을 충분히 설명하고 이에 대한 동의를 받아야 합니다. 귀하는 이 동의서에 서명하거나 전자적으로 동의함으로써 귀하가 가족 등에게 그와 같은 설명을 제공하고 해당 가족 등으로부터 적법한 동의를 받았음을 진술합니다.<br /><br />
+        |본인은 상기 내용을 상세히 읽어 보았고, 이에 관하여 충분히 이해하였으며, 본인의 자유로운 의사에 동의하는 바, 아래와 같이 확인합니다.
+      p.center_box
+        a(href='javascript:void(0);').btn_white.big 동의하지 않습니다.
+        a(href='javascript:void(0);').btn_orange.big 동의합니다.
+    
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});

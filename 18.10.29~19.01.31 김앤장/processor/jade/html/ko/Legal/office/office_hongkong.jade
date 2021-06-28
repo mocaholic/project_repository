@@ -1,0 +1,71 @@
+// output: ../../../../../../publish/html/ko/Legal/office/office_hongkong.html
+-var imgUrl = '../images/dummy/'
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap 
+    
+    // 각 서브별 검색 노출 타입 다름
+    .container.location
+      .top_visual_box
+        .breadcrumb
+          ul
+            li: a(href='javascript:void(0);') Home 
+            li: span 사무소 위치
+        h2 <strong>LOCATION</strong>사무소 위치
+      .content
+        ul.office_top
+          li.hochiminh
+            a(href='javascript:void(0);') 호치민
+          li.hongkong.on
+            a(href='javascript:void(0);') 홍콩
+              span Alexandra House
+          li.seoul
+            a(href='javascript:void(0);') 서울
+        .office_cont
+          .office_container
+            .office_section.on
+              .bg_box
+                .location_info
+                  img(src='../images/common/pc/hongkong_map.jpg' alt='홍콩 지도')
+                  .info_text 
+                    p.title Alexandra House
+                    p.map_text Suites 808-809, 8/F, Alexandra House 18 Chater Road, Central, Hong Kong
+
+                    dl 
+                      dt T. 
+                      dd 
+                        span.tel 
+                          a(href='tel:+852-3468-6390') +852-3468-6390
+                      dt F.
+                      dd +852-3620-2889
+                      dt E.
+                      dd
+                        a(href='mailto:') lawkim@kimchang.com
+                    .btn_center_box
+                      a(href='javascript:void(0);').google 구글지도
+                      a(href='javascript:void(0);').print print
+            
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      $(function() {
+        // 사무소위치 페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        // tab 
+        var btnCateTab = $('.office_cont .tab_menu > li > a');
+        var tabContents = $('.office_cont .office_container');
+        front.tabMenu(btnCateTab, 'on', tabContents);
+      });
+      
+      

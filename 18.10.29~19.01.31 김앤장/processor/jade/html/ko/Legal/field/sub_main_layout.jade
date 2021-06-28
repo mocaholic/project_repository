@@ -1,0 +1,435 @@
+// output: ../../../../../../publish/html/ko/Legal/field/sub_main_layout.html
+doctype html
+html(lang='ko')
+  include ../include/head.jade
+  body
+    .skip_navi
+      a(href='#content') 본문 바로가기
+    header.header_wrap
+    
+    .container.field
+      .top_visual_box
+        include ../include/breadcrumb.jade
+        h2 <strong>EXPERTISE</strong>업무분야
+      .content
+        .search_top
+          span.big_input
+            input(type='text')
+            a(href='javascript:void(0);').btn_delete.hidden_text 검색어 삭제
+            a(href='javascript:void(0);').btn_search.hidden_text 검색
+        
+        // 검색영역
+        .search_result 
+          // 검색결과 있음
+          p.result_text
+            span.text_orange '공정거래'
+            |에 대한 
+            span.mo_block
+              span.text_orange 총 12건
+              |의 검색 결과가 있습니다.
+          .result_area 
+            ul
+              li
+                a(href='javascript:void(0);') 구조화금융
+              li
+                a(href='javascript:void(0);') 금융 및 자본시장
+              li
+                a(href='javascript:void(0);') 금융규제
+              li
+                a(href='javascript:void(0);') 기업형사·화이트칼라범죄
+              li
+                a(href='javascript:void(0);') 은행·증권·금융 소송
+              li
+                a(href='javascript:void(0);') 은행·증권·금융 소송
+              li
+                a(href='javascript:void(0);') 은행·증권·금융 소송
+              li
+                a(href='javascript:void(0);') 인수금융
+              li
+                a(href='javascript:void(0);') 은행·증권·금융 소송
+          // 검색결과 없음
+          p.no_data 검색 결과가 없습니다.
+        
+        // 공통영역
+        .category_area 
+          ul.tab_menu.top_tab
+            li
+              a(href='javascript:void(0);') Practice 
+                span 분야별
+              span.bar_up 
+              span.bar
+            li
+              a(href='javascript:void(0);') Industry
+                span 산업별
+              span.bar_up 
+              span.bar
+            li
+              a(href='javascript:void(0);') Region
+                span 지역별
+              span.bar_up 
+              span.bar
+            // pc만 노출
+            li.pc.on
+              a(href='javascript:void(0);') All
+                span 전체
+              span.bar_up 
+              span.bar
+          .tab_container
+            .tab_section
+              // 분야별 업무분야 pc/mo 기능 변화로 2type class 분리 
+              //pc 분야별 
+              .pc
+                ul#highlight_tab.small_tab
+                  li
+                    a(href='javascript:void(0);' data-value='tab1') 규제 및 컴플라이언스
+                    span.bar
+                  li
+                    a(href='javascript:void(0);' data-value='tab2') 경영 및 거래 법률 자문
+                    span.bar
+                  li 
+                    a(href='javascript:void(0);' data-value='tab3') 분쟁 해결
+                    span.bar
+                ul.field_list.highLight_js
+                  li(data-value='tab1').select
+                    a(href='javascript:void(0);') 공공감사 지원
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 공정거래
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 관세 및 국제통상
+                  li(data-value='tab3')
+                    a(href='javascript:void(0);') 국제중재·소송
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 금융 규제
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 기업구조조정
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 기업인수·합병
+                  li(data-value='tab2').select
+                    a(href='javascript:void(0);') 기업지배구조
+                  li(data-value='tab3')
+                    a(href='javascript:void(0);') 기업형사·화이트칼라범죄
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 부패방지·준법경영
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 사모투자
+                  li(data-value='tab3')
+                    a(href='javascript:void(0);') 소송
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 인사·노무
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 자본시장
+                  li(data-value='tab1').select
+                    a(href='javascript:void(0);') 조세
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 지식재산권
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 파생상품
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 파이낸싱
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 프라이버시·정보보호
+                  li(data-value='tab2')
+                    a(href='javascript:void(0);') 해외법무
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') 환경
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') AML
+                  li(data-value='tab1')
+                    a(href='javascript:void(0);') FX
+              // mo 분야별
+              .field_list.mo
+                .tab_box.accordion_wrap
+                  p 
+                    a.btn_toggle.first(href='javascript:void(0);')
+                      규제 및 컴플라이언스 
+                      span.hidden_text 접기
+                  // 3n개씩 노출 필요. 빈 li는 a태그 삭제
+                  .box_open.select_box_open
+                    // 19.01.28 삭제처리
+                      a(href='javascript:void(0);').select_box 선택
+                    .scroll
+                      ul.field_list
+                        li
+                          a(href='javascript:void(0);') 공공감사 지원
+                        li
+                          a(href='javascript:void(0);') 공정거래
+                        li
+                          a(href='javascript:void(0);') 인사·노무
+                        li.on
+                          a(href='javascript:void(0);') 관세 및 국제통상
+                        li
+                          a(href='javascript:void(0);') 조세
+                        li
+                          a(href='javascript:void(0);') 금융 규제
+                        li
+                          a(href='javascript:void(0);') 프라이버시·정보보호
+                        li
+                          a(href='javascript:void(0);') 부패방지·준법경영
+                        li
+                          a(href='javascript:void(0);') 환경
+                .tab_box.accordion_wrap
+                  p 
+                    a.btn_toggle(href='javascript:void(0);')
+                      경영 및 거래 법률 자문 
+                      span.hidden_text 펼치기
+                  .box_open.select_box_open
+                    // 19.01.28 삭제처리
+                      a(href='javascript:void(0);').select_box 선택
+                    .scroll
+                      ul.field_list
+                        li
+                          a(href='javascript:void(0);') 방송·통신
+                        li
+                          a(href='javascript:void(0);') 기업구조조정
+                        li
+                          a(href='javascript:void(0);') 지식재산권
+                        li
+                          a(href='javascript:void(0);') 기업인수·합병
+                        li
+                          a(href='javascript:void(0);') 파생상품
+                        li
+                          a(href='javascript:void(0);') 기업지배구조
+                        li
+                          a(href='javascript:void(0);') 파이낸싱
+                        li
+                          a(href='javascript:void(0);') 사모투자
+                        li
+                          a(href='javascript:void(0);') 해외법무
+                        li
+                          a(href='javascript:void(0);') 자본시장
+                .tab_box.accordion_wrap
+                  p 
+                    a.btn_toggle(href='javascript:void(0);')
+                      분쟁 해결 
+                      span.hidden_text 펼치기
+                  .box_open.select_box_open
+                    // 19.01.28 삭제처리
+                      a(href='javascript:void(0);').select_box 선택
+                    .scroll
+                      ul.field_list
+                        li
+                          a(href='javascript:void(0);') 국제중재·소송
+                        li
+                          a(href='javascript:void(0);') 기업형사·화이트칼라범죄
+                        li
+                          a(href='javascript:void(0);') 소송
+                  
+            .tab_section 
+              // pc : 4개씩 , mo : 3개씩 열 맞춰서 노출
+              .select_box_open 
+                // 19.01.28 삭제처리
+                  a(href='javascript:void(0);').select_box 선택
+                .scroll
+                  ul.field_list
+                    li
+                      a(href='javascript:void(0);') 방송·통신
+                    li
+                      a(href='javascript:void(0);') 보험
+                    li
+                      a(href='javascript:void(0);') 부동산·건설
+                    li
+                      a(href='javascript:void(0);') 비은행 금융회사
+                    li
+                      a(href='javascript:void(0);') 에너지
+                    li
+                      a(href='javascript:void(0);') 엔터테인먼트·스포츠·레저
+                    li
+                      a(href='javascript:void(0);') 은행
+                    li
+                      a(href='javascript:void(0);') 자산운용
+                    li
+                      a(href='javascript:void(0);') 전자금융·핀테크
+                    li
+                      a(href='javascript:void(0);') 제약·의료기기·식품·화장품
+                    li
+                      a(href='javascript:void(0);') 증권
+                    li
+                      a(href='javascript:void(0);') 항공우주·방산 
+                    li
+                      a(href='javascript:void(0);') 해상
+            .tab_section 
+              // pc : 4개씩 , mo : 3개씩 열 맞춰서 노출
+              .select_box_open 
+                // 19.01.28 삭제처리
+                  a(href='javascript:void(0);').select_box 선택
+                .scroll
+                  ul.field_list
+                    li
+                      a(href='javascript:void(0);') 베트남
+                    li
+                      a(href='javascript:void(0);') 유럽
+                    li
+                      a(href='javascript:void(0);') 일본
+                    li
+                      a(href='javascript:void(0);') 중국
+                    li
+                      a(href='javascript:void(0);') 홍콩
+            // pc만 노출
+            .tab_section.pc.on 
+              ul.field_list
+                li
+                  a(href='javascript:void(0);') 공공감사 지원
+                li
+                  a(href='javascript:void(0);') 공정거래
+                li
+                  a(href='javascript:void(0);') 관세 및 국제통상
+                li
+                  a(href='javascript:void(0);') 국제중재·소송
+                li.select
+                  a(href='javascript:void(0);') 금융 규제
+                li
+                  a(href='javascript:void(0);') 기업구조조정
+                li
+                  a(href='javascript:void(0);') 기업인수·합병
+                li
+                  a(href='javascript:void(0);') 기업지배구조
+                li
+                  a(href='javascript:void(0);') 기업형사·화이트칼라범죄
+                li
+                  a(href='javascript:void(0);') 방송·통신
+                li
+                  a(href='javascript:void(0);') 베트남
+                li
+                  a(href='javascript:void(0);') 보험
+                li
+                  a(href='javascript:void(0);') 부동산·건설
+                li
+                  a(href='javascript:void(0);') 부패방지·준법경영
+                li
+                  a(href='javascript:void(0);') 비은행 금융회사
+                li
+                  a(href='javascript:void(0);') 사모투자
+                li
+                  a(href='javascript:void(0);') 소송
+                li
+                  a(href='javascript:void(0);') 에너지
+                li
+                  a(href='javascript:void(0);') 엔터테인먼트·스포츠·레저
+                li
+                  a(href='javascript:void(0);') 유럽
+                li
+                  a(href='javascript:void(0);') 은행
+                li
+                  a(href='javascript:void(0);') 인사·노무
+                li
+                  a(href='javascript:void(0);') 일본
+                li
+                  a(href='javascript:void(0);') 자본시장
+                li
+                  a(href='javascript:void(0);') 자산운용
+                li
+                  a(href='javascript:void(0);') 전자금융·핀테크
+                li
+                  a(href='javascript:void(0);') 제약·의료기기·식품·화장품
+                li
+                  a(href='javascript:void(0);') 조세
+                li
+                  a(href='javascript:void(0);') 중국
+                li
+                  a(href='javascript:void(0);') 증권
+                li
+                  a(href='javascript:void(0);') 지식재산권
+                li
+                  a(href='javascript:void(0);') 파생상품
+                li
+                  a(href='javascript:void(0);') 파이낸싱
+                li
+                  a(href='javascript:void(0);') 프라이버시·정보보호
+                li
+                  a(href='javascript:void(0);') 항공우주·방산 
+                li
+                  a(href='javascript:void(0);') 해상
+                li
+                  a(href='javascript:void(0);') 해외법무
+                li
+                  a(href='javascript:void(0);') 홍콩
+                li
+                  a(href='javascript:void(0);') 환경
+                li
+                  a(href='javascript:void(0);') AML
+                li
+                  a(href='javascript:void(0);') FX
+        .notice_news.bg_field
+          .inner_cont.notice_news_js
+            h3.white 최근 소식
+            ul.notice_list
+              li
+                a(href='javascript:void(0);')
+                  h4.notice_title 뉴스레터
+                  p.notice_txt 노동조합 운영비 지원 금지 조항에 대한 헌법불합치 결정
+                  span.notice_date 2018.08.30
+              li
+                a(href='javascript:void(0);')
+                  h4.notice_title 기고문
+                  p.notice_txt 약사법 시행규칙에서 규정된 행위 유형에 대한 해설
+                  span.notice_date 2018.08.30
+              li
+                a(href='javascript:void(0);')
+                  h4.notice_title 뉴스레터
+                  p.notice_txt 담합, 보복조치에 대한 징벌적 손해배상제도 도입 등 공정거래법...
+                  span.notice_date 2018.08.30
+              li
+                a(href='javascript:void(0);')
+                  h4.notice_title 업무사례
+                  p.notice_txt 두산엔진의 투자사업부문을 두산 중공업에 흡수합병하고 ...
+                  span.notice_date 2018.08.30
+              li
+                a(href='javascript:void(0);')
+                  h4.notice_title 업무사례
+                  p.notice_txt 삼성생명과 삼성화재의 삼성전자 주식 매각 관련 자문
+                  span.notice_date 2018.08.30
+              li
+                a(href='javascript:void(0);')
+                  h4.notice_title 기고문
+                  p.notice_txt [세무이야기] 디지털과세, 법고창신의 지혜 필요하다
+                  span.notice_date 2018.08.30
+            .btn_center_box.bg
+              a(href='javascript:void(0)').btn_text_more.white 더 보기  
+          
+    footer.footer_wrap
+    .dimm
+    
+    script(type='text/javascript').
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {/* callback */});
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      
+      $(function() {
+        
+        var accordionWrap = '.accordion_wrap';
+        var btnAccordion = $(accordionWrap).find('.btn_toggle');
+        front.accordion(btnAccordion, accordionWrap, 'active', 200, function(){
+          $('.field_list.mo a.select_box').removeClass('on');
+          $('.field_list.mo .box_open').removeClass('on');
+          //front.selectDropDown(btndropDown, scrollElement); 19.01.28 삭제처리
+        });
+        
+        var btnHighLight = $('#highlight_tab > li > a');
+        var targetElement = $('.highLight_js');
+        front.highLight(btnHighLight, 'on', targetElement);
+        
+        // 업무분야 tab
+        var btnCateTab = $('.category_area .tab_menu > li > a');
+        var tabContents = $('.category_area .tab_container');
+        front.tabMenu(btnCateTab, 'on', tabContents, function($this) {
+          // front.selectDropDown(btndropDown, scrollElement); 19.01.28 삭제처리
+          if ($(window).width() > 1024) {
+            scrollElement.show();
+          }
+          if ($this.parent().index() != 0) {
+            $('#highlight_tab').find('li > a').removeClass('on');
+            btnHighLight.removeClass('on');
+            $('.highLight_js').find('li').removeClass('on');
+            $(accordionWrap).removeClass('active');
+            btnAccordion.removeClass('on');
+            $('.box_open').removeClass('on').hide();
+          }
+        });
+        
+        // select dropdown 함수
+        var btndropDown = $('.tab_section a.select_box');
+        var scrollElement = $('.select_box_open').find('.scroll');
+        //front.selectDropDown(btndropDown, scrollElement); 19.01.28 삭제처리
+      });
+      
