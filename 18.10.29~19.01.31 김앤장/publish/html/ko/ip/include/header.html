@@ -1,0 +1,122 @@
+<span class="header_bar"></span>
+<div class="gnb_wrap">
+  <div class="inner">
+    <div class="lang_wrap"><a href="javascript:void(0);">KO</a><a href="javascript:void(0);">EN</a><a href="javascript:void(0);">JP</a><a href="javascript:void(0);">CN</a></div>
+    <div class="family_site_wrap"><a href="javascript:void(0);">Kim & Chang</a><a href="javascript:void(0);">사회공헌</a><a href="javascript:void(0);">인재채용</a></div>
+  </div>
+</div>
+<div class="header"><a href="javascript:void(0)" class="btn_menu"><span class="hidden_text">메뉴</span></a><a href="javascript:void(0);" class="logo"><span class="hidden_text">KIM &amp; CHANG</span></a>
+  <div class="search_top_area"><span class="custom_input">
+      <input type="text" placeholder=""/></span><a href="javascript:void(0);" class="btn_search"></a></div>
+</div>
+<div class="layer layer_menu">
+  <div class="layer_cont">
+    <div class="layer_lang">
+      <ul>
+        <li><a href="javascript:void(0);">KR</a></li>
+        <li><a href="javascript:void(0);">EN</a></li>
+        <li><a href="javascript:void(0);">JP</a></li>
+        <li><a href="javascript:void(0);">CN</a></li>
+      </ul>
+    </div>
+    <ul class="menu_list">
+      <li><a href="javascript:void(0);">EXPERTISE</a></li>
+      <li><a href="javascript:void(0);">PROFESSIONALS</a></li>
+      <li><a href="javascript:void(0);">INSIGHTS</a></li>
+    </ul>
+    <div class="family_site"><a href="javascript:void(0);" target="_blank">Kim &amp; Chang</a><a href="javascript:void(0);" target="_blank">사회공헌</a><a href="javascript:void(0);" target="_blank">인재채용</a></div>
+  </div><a href="javascript:void(0);" class="btn_layer_close"><span class="hidden_text">레이어 닫기</span></a>
+</div><span class="header_line"></span>
+<div class="layer_dimm"></div>
+<script type="text/javascript">
+  $(function() {
+    // 19.01.25 스크립트 수정
+    var timerTick;
+    var tickTime = 2;
+    var $btnLeftMenu = $('.btn_menu'), $leftLayer = $('.layer_menu'), $dimm = $('.layer_dimm');
+    var $header = $('header');
+    var $logo = $header.find('.logo');
+    var scrollCtrl = false;
+    var $headerBar = $('.header_bar');
+    var $searchTop = $('.search_top_area');
+    var $btnTopSearch = $searchTop.find('.btn_search'), $searchTopInput = $searchTop.find('input[type="text"]');
+    var $headerLine = $('.header_line');
+    var windowH = $(window).height();
+    $(window).on('scroll', function() {
+      var documentH = $('body').height();
+      var nowPosition = $(window).scrollTop();
+      var persent = (nowPosition/(documentH - windowH)) * 100;
+      $headerBar.css({'width' : persent + '%'});
+    });
+    front.btnClick($btnLeftMenu, function() {
+      var nowPosition = $(window).scrollTop();
+      $dimm.addClass('on');
+      $leftLayer.addClass('on');
+      $('body').addClass('hidden');
+      front.btnClick($('.layer_dimm.on'), function() {
+        $leftLayer.removeClass('on');
+        $dimm.removeClass('on');
+        $('body').removeClass('hidden');
+      });
+      var btnLayerClose = $leftLayer.find('.btn_layer_close');
+      front.btnClick(btnLayerClose, function() {
+        $dimm.removeClass('on');
+        $leftLayer.removeClass('on');
+        $('body').removeClass('hidden');
+      });
+    });
+    // 2019.01.25 스크립트 수정
+    front.btnClick($btnTopSearch, function($this) {
+      if ($(window).width() > 1024) {
+        if ($btnTopSearch.hasClass('on')) {$searchTopInput.parent().removeClass('on');$this.removeClass('on');}
+        else {$searchTopInput.parent().addClass('on');$this.addClass('on');}
+      } else {
+        if ($btnTopSearch.hasClass('on')) {
+          $btnLeftMenu.show();
+          $logo.show();
+          $searchTopInput.parent().removeClass('on');
+          $this.removeClass('on');
+        }
+        else {
+          $btnLeftMenu.hide();
+          $logo.hide();
+          $searchTopInput.parent().addClass('on');
+          $this.addClass('on');
+        }
+      }
+    });
+    
+    $(window).on('scroll', function() {
+      var nowPosition = $(window).scrollTop();
+      if ( scrollCtrl == true && nowPosition == 0 ) {
+        scrollCtrl = false;
+        if ($('body').hasClass('hidden')) {
+          
+        } else {
+          $header.removeClass('fixed');
+        }
+      } else if ( scrollCtrl == false &&  nowPosition > 0  ) {
+        scrollCtrl = true;
+        $header.addClass('fixed');
+      }
+    });
+    
+    var interval = function () {
+      percentTime += 1 / (tickTime + 0.1);
+      $headerLine.css({width: percentTime+"%"});
+      if(percentTime >= 100) {
+        clearTimeout(timerTick);
+      }
+    }
+    var resetProgressbar = function () {
+      $headerLine.css({width: 0+'%'});
+      clearTimeout(timerTick);
+    };
+    var startProgressbar = function () {
+      resetProgressbar();
+      percentTime = 0;
+      timerTick = setInterval(interval, 9);
+    };
+    //startProgressbar();
+  });
+</script>
