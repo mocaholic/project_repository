@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- output: ../../../../../../publish/html/ko/Legal/include/head.html-->
+  <head>
+      <title>Kim &amp; Chang</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta name="robots" content="noydir, noodp, index, follow">
+      <meta name="copyright" content="© 2017 Kim &amp; Chang. All Rights Reserved.">
+      <meta name="format-detection" content="telephone=no">
+      <meta name="description" content="">
+      <meta name="keywords" content="Kim &amp; Chang">
+      <meta property="og:title" content="Kim &amp; Chang">
+      <link rel="stylesheet" type="text/css" href="../css/kimchang.css" media="all">
+      <script type="text/javascript" src="../js/modernizr.min.js"></script>
+      <script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script>
+      <script type="text/javascript" src="../js/jquery-ui.js"></script>
+      <script type="text/javascript" src="../js/TweenMax.min.js"></script>
+      <script type="text/javascript" src="../js/ScrollMagic.min.js"></script>
+      <script type="text/javascript" src="../js/debug.addIndicators.min.js"></script>
+      <script type="text/javascript" src="../js/jquery.bxslider.min.js"></script>
+      <script type="text/javascript" src="../js/ui-front.js"></script>
+  </head>
+  <body>
+    <div class="skip_navi"><a href="#content">본문 바로가기</a></div>
+    <header class="header_wrap"> </header>
+    <!-- 각 서브별 검색 노출 타입 다름-->
+    <div class="container location">
+      <div class="top_visual_box">
+        <div class="breadcrumb">
+          <ul>
+            <li><a href="javascript:void(0);">Home </a></li>
+            <li><span>사무소 위치</span></li>
+          </ul>
+        </div>
+        <h2><strong>LOCATION</strong>사무소 위치</h2>
+      </div>
+      <div class="content">
+        <ul class="office_top">
+          <li class="hochiminh"><a href="javascript:void(0);">호치민</a></li>
+          <li class="hongkong on"><a href="javascript:void(0);">홍콩<span>Alexandra House</span></a></li>
+          <li class="seoul"><a href="javascript:void(0);">서울</a></li>
+        </ul>
+        <div class="office_cont">
+          <div class="office_container">
+            <div class="office_section on">
+              <div class="bg_box">
+                <div class="location_info"><img src="../images/common/pc/hongkong_map.jpg" alt="홍콩 지도">
+                  <div class="info_text"> 
+                    <p class="title">Alexandra House</p>
+                    <p class="map_text">Suites 808-809, 8/F, Alexandra House 18 Chater Road, Central, Hong Kong</p>
+                    <dl> 
+                      <dt>T. </dt>
+                      <dd> <span class="tel"> <a href="tel:+852-3468-6390">+852-3468-6390</a></span></dd>
+                      <dt>F.</dt>
+                      <dd>+852-3620-2889</dd>
+                      <dt>E.</dt>
+                      <dd><a href="mailto:">lawkim@kimchang.com</a></dd>
+                    </dl>
+                    <div class="btn_center_box"><a href="javascript:void(0);" class="google">구글지도</a><a href="javascript:void(0);" class="print">print</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer_wrap"></footer>
+    <div class="dimm"></div>
+    <script type="text/javascript">
+      var header = $('header.header_wrap');
+      front.pageLoading(header, '../include/header.html', function() {
+        
+      });
+      var footer = $('footer.footer_wrap');
+      front.pageLoading(footer, '../include/footer.html', function() {/* callback */});
+      $(function() {
+        // 사무소위치 페이지 진입시 header 태그 class bg_white 추가
+        $('header').addClass('bg_black');
+        // tab 
+        var btnCateTab = $('.office_cont .tab_menu > li > a');
+        var tabContents = $('.office_cont .office_container');
+        front.tabMenu(btnCateTab, 'on', tabContents);
+      });
+    </script>
+  </body>
+</html>
