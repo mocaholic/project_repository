@@ -1,0 +1,230 @@
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+	File : Base.CSS(Front)	
+	-Font-
+메인 폰트 : Roboto 
+
+-Color-
+Point Color :
+#333333 ---Gray
+#ff0060 ---Red
+ 	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, color/font, align, etc 
+--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+*,
+*:before, *:after {margin: 0px; padding: 0px; box-sizing: inherit; -webkit-box-sizing: inherit; -moz-box-sizing: inherit; -o-box-sizing: inherit;}
+html {height: 100%; font-size: 16px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -o-box-sizing: border-box;}
+body {scrollbar-3dlight-color: #b4b4b4; scrollbar-arrow-color: #333333; scrollbar-base-color: #eeeeee; scrollbar-darkshadow-color: #efefef; scrollbar-face-color: #efefef;
+scrollbar-highlight-color: #ffffff; scrollbar-shadow-color: #b4b4b4; width:100%; height: 100%; font-family: "Roboto", "Noto Sans KR", "Arial", "self"; font-size: 100%;  /*font:inherit;*/
+    line-height: 1.2;
+    vertical-align: baseline;
+    color: #000;
+    /* font-smoothing: antialiased; */
+    -webkit-font-smoothing: antialiased;
+}
+address, article, aside, canvas, details, figure, figcaption, footer, header, hgroup, menu, nav, section {display: block; margin: 0; padding: 0;}
+hr {display: none;}
+caption {overflow: hidden; height: 0px; font-size: 0px; line-height: 0px;}
+h1, h2, h3, h4, h5 {color: #000; font-weight: bold;}
+img {border: none; vertical-align: middle;}
+ol, ul, li, dl, dt, dd { list-style: none;}
+table {table-layout: fixed; width: 100%; border: 0px; border-spacing: 0px; border-collapse: collapse; box-sizing: border-box;  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -o-box-sizing: border-box;}
+th, td {border: 0px; word-break: keep-all; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -o-box-sizing: border-box;}
+th {font-weight:normal;}
+td {}
+fieldset {width:100%; border:0px;}
+legend {display:none;}
+frameset {border: 0px;}
+iframe {width:100%; border:0px;}
+em, address, i {font-style:normal;}
+button, a, input,label, textarea {vertical-align:middle;}
+select {vertical-align:middle;}
+button {overflow: visible; cursor:pointer; border:0px; font-family: "Roboto", "Noto Sans KR", "Arial", "self";}
+button::-moz-focus-inner {padding:0px;}
+input, textarea {box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -webkit-appearance: none; border:none; font-family: "Roboto", "Noto Sans KR", "Arial", "self"; resize:none;}
+input:focus, textarea:focus {outline:0;}
+input::placeholder {color:#c4c4c4; font-weight:300;}
+select {appearance:none; -webkit-appearance:none; -moz-appearance:none; -o-appearance:none; width:100%; border:none; background:#fff; font-family: "Roboto", "Noto Sans KR", "Arial", "self";}
+a {text-decoration:none; color:#000;}
+html {overflow-x:hidden; font-family:'Roboto', sans-serif; letter-spacing:0;}
+
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {display: none;}
+article h3 {display: none;}
+.hr {width: 100%; height: 1px; background: rgba(0, 0, 0, 0.2); margin: auto;}
+.hidden {position:absolute !important; overflow:hidden; visibility:hidden; width:0 !important; height:0 !important; font:0/0 m !important; padding:0 !important; margin:0 !important;}
+
+/* Global Class */
+.block {display: block;}
+.i-block {display: inline-block; vertical-align: middle;}
+.clear {display: block; content: ''; height: 0; font-size: 0;
+  opacity: 0; filter: alpha(opacity=0); clear: both;}
+.show {display:block;}
+.hide {display:none;}
+.align-l {text-align:left !important;}
+.align-c {text-align:center !important;}
+.align-r {text-align:right !important;}
+.scroll-h {overflow-y:auto !important;}
+
+/* font */
+.fw-thin {font-weight:300 !important;}
+.fw-normal {font-weight:400 !important;}
+.fw-bold {font-weight:500 !important;}
+
+.fs {}
+
+.fc-pink {color:#ff0060 !important;}
+.fc-blue {color:#80bbff !important;}
+.fc-green {color:#31adb5 !important;}
+
+/* custom checkbox */
+.chk-area {
+  display: block;
+  position: relative;
+  padding-left: 2.125rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 0.9167rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height:1.375rem;
+  color:#777;
+}
+.chk-area input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.chk-area .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.417rem;
+  width: 1.417rem;
+  background-color: #fff;
+  border:solid 0.08333rem #d7d7d7;
+  border-radius:0.4167rem;
+  box-sizing:border-box;
+}
+.chk-area:hover input ~ .checkmark {
+  background-color: #fff;
+}
+.chk-area input:checked ~ .checkmark {
+  background-color: #ff0664;
+  border:solid 0.08333rem #ff0664;
+}
+.chk-area .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.chk-area input:checked ~ .checkmark:after {
+  display: block;
+}
+.chk-area .checkmark:after {
+  left: 0.2083rem;
+  top: 0.3333rem;
+  width: 0.875rem;
+  height: 0.5833rem;
+  background:url(../image/icon_check2.png) no-repeat 0 0;
+  background-size:100%;;
+}
+
+/* custom radio */
+.radio-area {
+  display: block;
+  position: relative;
+  padding-left: 1.667rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 0.9167rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height:1.375rem;
+  color:#777;
+}
+.radio-area input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.radio-area .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.radio-area:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.radio-area input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+.radio-area .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radio-area input:checked ~ .checkmark:after {
+  display: block;
+}
+.radio-area .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+
+/* padding */
+.pd-t0 {padding-top:0 !important;}
+.pd-t30 {padding-top:1.25rem !important;}
+.pd-t48 {padding-top:2rem !important;}
+
+.pd-r0 {padding-right:0 !important;}
+
+.pd-b0 {padding-bottom:0 !important;}
+
+.pd-l0 {padding-left:0 !important;}
+
+/* margin */
+.mg-auto {margin:0 auto !important;}
+
+.mg-t0 {margin-top:0 !important;}
+.mg-t15 {margin-top:0.625rem !important;}
+.mg-t20 {margin-top:0.8333rem !important;}
+.mg-t27 {margin-top:1.125rem !important;}
+.mg-t48 {margin-top:2rem !important;}
+.mg-t60 {margin-top:2.5rem !important;}
+.mg-t70 {margin-top:2.917rem !important;}
+
+.mg-r0 {margin-right:0 !important;}
+.mg-r20 {margin-right:0.8333rem !important;}
+.mg-r25 {margin-right:1.042rem !important;}
+
+.mg-b0 {margin-bottom:0 !important;}
+.mg-b15 {margin-bottom:0.625rem !important;}
+.mg-b20 {margin-bottom:0.8333rem !important;}
+.mg-b30 {margin-bottom:1.25rem !important;}
+
+.mg-l0 {margin-left:0 !important;}
+.mg-l7 {margin-left:0.2917rem !important;}
+.mg-l10 {margin-left:0.4167rem !important;}
+.mg-l20 {margin-left:0.8333rem !important;}
+.mg-l25 {margin-left:1.042rem !important;}
+
