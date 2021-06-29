@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="">
+        <meta name="autocomplete" content="off">
+        <link rel="shortcut icon" href="">
+        <title>BLUE MOON STUDYCAFE</title>
+
+        <!-- Publish Common : CSS-->
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/contents.css">
+
+        <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+        <!-- Publish Common : JS-->
+        <script type="text/javascript" src="js/common.js"></script>
+        <script>
+            $(function(){
+                /* 종료예정사물함 팝업 호출 */
+                $('.btn_end_locker').click(function(){
+                    $('.pop_end_locker').show();
+                });
+                /* 사물함선택 팝업 호출 */
+                $('.btn1').click(function(){
+                    $('.pop_locker_select').show();
+                });
+                /* 내 사물함 연장 및 변경 팝업 호출 */
+                $('.btn2').click(function(){
+                    $('.pop_my_locker').show();
+                });
+            });
+        </script>
+        <style>
+            p.btn_box {margin-top:1.875rem;text-align:center;}
+            p.btn_box a {display:inline-block;border: 1px solid #ddd;padding:0.625rem 1.25rem;margin-bottom:0.625rem;}
+        </style>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <!-- header -->
+            <header id="header">
+                <div class="inner">
+                    <a href="#" class="back">이전페이지</a>
+                    <h1>사물함</h1>
+                    <a href="javascript:void(0);" class="menu">메뉴</a>
+                </div>
+            </header>
+            <!--// header -->
+            <!-- side menu -->
+            <nav id="side_menu">
+                <div class="inner">
+                    <div class="top">
+                        <p>이용중인 지점<strong>인천논현점</strong></p>
+                        <a href="#">지점선택</a>
+                    </div>
+                    <div class="menu_list">
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">이용 가이드</a></li>
+                            <li><a href="#">환불 규정</a></li>
+                            <li><a href="#">알림 설정</a></li>
+                            <li><a href="#">보호자 등록</a></li>
+                            <li><a href="#" class="logout">로그아웃</a></li>
+                        </ul>
+                    </div>
+                    <div class="side_ft">
+                        <p>
+                            블루문 스터디카페 인천논현점<br>
+                            사업자번호 _ 0078754654<br>
+                            대표자명 _ 원효주<br>
+                            매장주소 _ 남동구 논고개로 123<br>블루문빌딩 4층<br>
+                            매장번호 _ 02-452-0112
+                        </p>
+                    </div>
+                </div>
+                <a href="javascript:void(0);" class="btn_nav_close">사이드메뉴 닫기</a>
+            </nav>
+            <!-- // side menu -->
+
+            <!-- container -->
+            <div id="container">
+                <div id="content" class="studyzone">
+                    <div class="section">
+                        <div class="category">
+                            <span>이용가능</span>
+                            <span class="disabled">이용불가</span>
+                            <span class="selected">내 사물함</span>
+                            <a href="javascript:void(0);" class="btn_end_locker">종료예정사물함</a>
+                        </div>
+
+                        <!-- 팝업 확인용 버튼 -->
+                        <p class="btn_box">
+                            <a href="javascript:void(0);" class="btn1">사물함 선택</a>
+                            <a href="javascript:void(0);" class="btn2">내 사물함</a>
+                        </p>
+                        <!-- // 팝업 확인용 버튼 -->
+                    </div>
+                </div>
+            </div>
+            <!-- // container -->
+            <!-- footer -->
+            <footer id="ft_toolbar">
+                <ul>
+                    <li><a href="#" class="home">홈</a></li>
+                    <li><a href="#" class="zone">스터디존</a></li>
+                    <li><a href="#" class="room">스터디룸</a></li>
+                    <li><a href="#" class="locker on">사물함</a></li>
+                    <li><a href="#" class="mypage">마이페이지</a></li>
+                </ul>
+            </footer>
+            <!--// footer -->
+        </div>
+
+        <!-- 레이어팝업 -->
+        <!-- 종료예정사물함 -->
+        <div class="layer_popup pop_end_locker">
+            <h1>종료예정사물함</h1>
+            <div class="pop_cont">
+                <p class="ltgry_txt">2일 이내 종료예정사물함만 표시됩니다.</p>
+                <div class="tbl_area">
+                    <p class="th">
+                        <span>사물함번호</span>
+                        <span>남은시간</span>
+                    </p>
+                    <div class="scroll_y">
+                        <table class="tbl">
+                            <colgroup>
+                                <col width="40%" />
+                                <col width="60%" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>2</td>
+                                    <td>13분</td>
+                                </tr>
+                                <tr>
+                                    <td>25</td>
+                                    <td>18시간 15분</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>1일 11시간 30분</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <a href="#" class="">확인</a>
+                </div>
+            </div>
+            <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+        </div>
+        <!-- // 종료예정사물함 -->
+        <!-- 사물함선택 -->
+        <div class="layer_popup pop_locker_select">
+            <h1>3번 사물함 선택</h1>
+            <div class="pop_cont">
+                <p>결제 하시겠습니까?</p>
+                <div class="btn_area">
+                    <a href="#" class="">결제하기</a>
+                </div>
+            </div>
+            <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+        </div>
+        <!-- // 사물함선택 -->
+        <!-- 내 사물함 연장 및 변경 -->
+        <div class="layer_popup pop_my_locker">
+            <h1>내 사물함 3번</h1>
+            <div class="pop_cont">
+                <p>잔여시간 3일 17시간 52분</p>
+                <div class="btn_area">
+                    <a href="#" class="">시간연장</a>
+                    <a href="#" class="">사물함 변경</a>
+                </div>
+            </div>
+            <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+        </div>
+        <!-- // 내 사물함 연장 및 변경 -->
+        <!-- // 레이어팝업 -->
+
+        <div class="sidemenu_dimmed"></div>
+
+    </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <meta property="og:description" content="">
+        <meta name="autocomplete" content="off">
+        <link rel="shortcut icon" href="">
+        <title>BLUE MOON STUDYCAFE</title>
+
+        <!-- Publish Common : CSS-->
+        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/contents.css">
+
+    </head>
+
+    <body>
+        <div id="wrap">
+            <div id="container">
+                <!-- 레이어팝업 // 
+                    페이지내 팝업 확인을 위해 각 팝업에 style을 따로 적용해 두었습니다. 
+                    css로 화면 가운데에 팝업이 노출되도록 적용되어 있으니 페이지 내 팝업 style="" 부분은 삭제하시고 적용바랍니다. -->
+
+                <!-- 좌석 현황 -->
+                <!-- 이용중인 티켓이 없습니다. -->
+                <div class="layer_popup pop_no_use" style="display:block;position:relative;">
+                    <h1>이용중인 티켓이 없습니다.</h1>
+                    <div class="pop_cont">
+                        <p>구매 후 이용해주세요</p>
+                        <div class="btn_area">
+                            <a href="#" class="">충 전 권</a>
+                            <a href="#" class="">기 간 권</a>
+                            <a href="#" class="">일 회 권</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 이용중인 티켓이 없습니다. -->
+                <!-- 이용좌석 -->
+                <div class="layer_popup pop_use_seat" style="display:block;position:relative;margin-top:10px;">
+                    <h1>이용 좌석 1번</h1>
+                    <div class="pop_cont">
+                        <p>잔여시간 15분</p>
+                        <div class="btn_area">
+                            <a href="#" class="">시간연장</a>
+                            <a href="#" class="">자리이동</a>
+                            <a href="#" class="">퇴실</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 이용좌석 -->
+                <!-- 퇴실예정좌석 -->
+                <div class="layer_popup pop_exit_seat" style="display:block;position:relative;margin-top:10px;">
+                    <h1>퇴실예정좌석</h1>
+                    <div class="pop_cont">
+                        <p class="ltgry_txt">2시간 이내 퇴실예정좌석만 표시됩니다.</p>
+                        <div class="tbl_area">
+                            <p class="th">
+                                <span>좌석번호</span>
+                                <span>남은시간</span>
+                            </p>
+                            <div class="scroll_y">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col width="50%" />
+                                        <col width="50%" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>13분</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25</td>
+                                            <td>15분</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>30분</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="btn_area">
+                            <a href="#" class="">확인</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 퇴실예정좌석 -->
+                <!-- 좌석선택 -->
+                <div class="layer_popup pop_seat_select" style="display:block;position:relative;margin-top:10px;">
+                    <h1>1번 좌석 선택</h1>
+                    <div class="pop_cont">
+                        <p>입실 하시겠습니까?</p>
+                        <div class="btn_area">
+                            <a href="#" class="">입실하기</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 좌석선택 -->
+                <!-- 티켓선택 -->
+                <div class="layer_popup pop_ticket_select" style="display:block;position:relative;margin-top:10px;">
+                    <h1>티켓 선택</h1>
+                    <div class="pop_cont">
+                        <div class="scroll_y">
+                            <ul>
+                                <li class="charge">
+                                    <a href="#">
+                                        <em class="fc_type1">200시간 충전권</em>
+                                        <div>
+                                            <p>
+                                                <span class="tit">잔여시간</span>
+                                                <span>123시간 48분</span>
+                                            </p>
+                                            <p>
+                                                <span class="tit">유효기간</span>
+                                                <span>2022/07/22</span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="term">
+                                    <a href="#">
+                                        <em class="fc_type2">4주 기간권</em>
+                                        <div>
+                                            <p>
+                                                <span class="tit">잔여시간</span>
+                                                <span>사용대기</span>
+                                            </p>
+                                            <p>
+                                                <span class="tit">유효기간</span>
+                                                <span>- - - - / - - / - -</span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 티켓선택 -->
+
+                <!-- 사물함 -->
+                <!-- 종료예정사물함 -->
+                <div class="layer_popup pop_end_locker" style="display:block;position:relative;margin-top:10px;">
+                    <h1>종료예정사물함</h1>
+                    <div class="pop_cont">
+                        <p class="ltgry_txt">2일 이내 종료예정사물함만 표시됩니다.</p>
+                        <div class="tbl_area">
+                            <p class="th">
+                                <span>사물함번호</span>
+                                <span>남은시간</span>
+                            </p>
+                            <div class="scroll_y">
+                                <table class="tbl">
+                                    <colgroup>
+                                        <col width="40%" />
+                                        <col width="60%" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>13분</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25</td>
+                                            <td>18시간 15분</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>1일 11시간 30분</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="btn_area">
+                            <a href="#" class="">확인</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 종료예정사물함 -->
+                <!-- 사물함선택 -->
+                <div class="layer_popup pop_locker_select" style="display:block;position:relative;margin-top:10px;">
+                    <h1>3번 사물함 선택</h1>
+                    <div class="pop_cont">
+                        <p>결제 하시겠습니까?</p>
+                        <div class="btn_area">
+                            <a href="#" class="">결제하기</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 사물함선택 -->
+                <!-- 내 사물함 연장 및 변경 -->
+                <div class="layer_popup pop_my_locker" style="display:block;position:relative;margin-top:10px;">
+                    <h1>내 사물함 3번</h1>
+                    <div class="pop_cont">
+                        <p>잔여시간 3일 17시간 52분</p>
+                        <div class="btn_area">
+                            <a href="#" class="">시간연장</a>
+                            <a href="#" class="">사물함 변경</a>
+                        </div>
+                    </div>
+                    <a onclick="this.parentNode.style.display = 'none'" class="btn_pop_close">팝업 닫기</a>
+                </div>
+                <!-- // 내 사물함 연장 및 변경 -->
+            </div>
+        </div>
+
+    </body>
+</html>
