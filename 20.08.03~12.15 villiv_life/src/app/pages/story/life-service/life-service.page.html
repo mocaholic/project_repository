@@ -1,0 +1,100 @@
+ <v-app>
+    <v-body title="라이프 서비스 운영" mnuId="VLV_LSM">
+        <div class="container type2">
+            <div class="villiv_info">
+                <!-- 11.30 단지별 탭 모바일 디자인 변경 : tab slide -> select -->
+                <ng-select class="mo comp_top" [items]="bzList"
+                        [searchable]="false"
+                        [clearable]="false"
+                        [(ngModel)]="selectedBzCd"
+                        (change)="onClickBzNm()"
+                        bindLabel="bzNm"
+                        bindValue="bzCd"
+                        placeholder="선택"
+                >
+                </ng-select>
+                <!-- // 11.30 단지별 탭 모바일 디자인 변경 : tab slide -> select -->
+                <!-- 상단 단지별 탭 : mo 3 / pc7 -->
+                <div class="round_box slide_area tab_slide pc">
+                    <div>
+                        <ion-button (click)="slider.slidePrev()" class="btn_prev">
+                            <ion-icon name="chevron-back"></ion-icon>
+                        </ion-button>
+                        <ion-button (click)="slider.slideNext()" class="btn_next">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                        </ion-button>
+                        <ion-slides  #slider pager="false" [options]="{
+                            slidesPerView: globalVars.isPc ? 7 : 2,
+                            initialSlide: 0,
+                            speed: 400,
+                             spaceBetween: 0
+                        }">
+                            <ion-slide *ngFor="let data of bzList; index as i" [ngClass]="data.bzCd===selectedBzCd ? 'on' : ''">
+                                <a (click)="onClickBzNm(data.bzCd)">{{data.bzNm}}</a>
+                            </ion-slide>
+                        </ion-slides>
+                    </div>
+                </div>
+                <!-- 기존 코드 삭제 
+                <div class="round_box tab_slide">
+                    <div>
+                        <ul>
+                            <li *ngFor="let data of bzList; index as i"
+                                [ngClass]="i==selectedBzIndex ? 'on' : ''"
+                            >
+                                <a (click)="onClickBzNm(i)">{{data.bzNm}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a (click)="onClickBzNm(selectedBzIndex-1)" class="ts_btn btn_left">왼쪽</a>
+                    <a (click)="onClickBzNm(selectedBzIndex+1)" class="ts_btn btn_right">오른쪽</a>
+                </div> -->
+                <!-- // 상단 단지별 탭 -->
+                <!-- 컨텐츠 영역 -->
+                <div class="apt_complex_info">
+                    <!-- 페이지 탭 -->
+                    <div class="nav_bar">
+                        <ul>
+                            <li *ngIf="isExistMnu(menuConstants.VLV_LSM_CNTINF.MNU_ID)" [ngClass]="menuConstants.VLV_LSM_CNTINF.MNU_ID === selectedTabCode ? 'on' : ''"><a (click)="onClickTab(menuConstants.VLV_LSM_CNTINF.MNU_ID)">임대료/계약 안내</a></li>
+                            <li *ngIf="isExistMnu(menuConstants.VLV_LSM_BZINF.MNU_ID)" [ngClass]="menuConstants.VLV_LSM_BZINF.MNU_ID === selectedTabCode ? 'on' : ''"><a (click)="onClickTab(menuConstants.VLV_LSM_BZINF.MNU_ID)">단지정보</a></li>
+                            <li *ngIf="isExistMnu(menuConstants.VLV_LSM_POSENV.MNU_ID)" [ngClass]="menuConstants.VLV_LSM_POSENV.MNU_ID === selectedTabCode ? 'on' : ''"><a (click)="onClickTab(menuConstants.VLV_LSM_POSENV.MNU_ID)">입지환경</a></li>
+                            <li *ngIf="isExistMnu(menuConstants.VLV_LSM_SIZEINF.MNU_ID)" [ngClass]="menuConstants.VLV_LSM_SIZEINF.MNU_ID === selectedTabCode ? 'on' : ''"><a (click)="onClickTab(menuConstants.VLV_LSM_SIZEINF.MNU_ID)">평면안내</a></li>
+                            <li *ngIf="isExistMnu(menuConstants.VLV_LSM_INTERIOR.MNU_ID)" [ngClass]="menuConstants.VLV_LSM_INTERIOR.MNU_ID === selectedTabCode ? 'on' : ''"><a (click)="onClickTab(menuConstants.VLV_LSM_INTERIOR.MNU_ID)">인테리어</a></li>
+                            <li *ngIf="isExistMnu(menuConstants.VLV_LSM_BZWAY.MNU_ID)" [ngClass]="menuConstants.VLV_LSM_BZWAY.MNU_ID === selectedTabCode ? 'on' : ''"><a (click)="onClickTab(menuConstants.VLV_LSM_BZWAY.MNU_ID)">오시는 길</a></li>
+                        </ul>
+                    </div>
+                    <!-- // 페이지 탭 -->
+                    <!--  페이지 내용 -->
+                    <div>
+                        <v-contract-info
+                                *ngIf="selectedTabCode===menuConstants.VLV_LSM_CNTINF.MNU_ID"
+                                [bzMstDetail]="bzDetail"
+                        ></v-contract-info>
+                        <v-bz-info
+                                *ngIf="selectedTabCode===menuConstants.VLV_LSM_BZINF.MNU_ID"
+                                [bzMstDetail]="bzDetail"
+                        ></v-bz-info>
+                        <v-position-info
+                                *ngIf="selectedTabCode===menuConstants.VLV_LSM_POSENV.MNU_ID"
+                                [bzCd]="bzDetail.bzCd"
+                        ></v-position-info>
+                        <v-plane-info
+                                *ngIf="selectedTabCode===menuConstants.VLV_LSM_SIZEINF.MNU_ID"
+                                [bzCd]="bzDetail.bzCd"
+                        ></v-plane-info>
+                        <v-interior-info
+                                *ngIf="selectedTabCode===menuConstants.VLV_LSM_INTERIOR.MNU_ID"
+                                [bzCd]="bzDetail.bzCd"
+                        ></v-interior-info>
+                        <v-way-info
+                                *ngIf="selectedTabCode===menuConstants.VLV_LSM_BZWAY.MNU_ID"
+                                [bzMstDetail]="bzDetail"
+                        ></v-way-info>
+                    </div>
+                    <!--  // 페이지 내용 -->
+                </div>
+                <!-- // 컨텐츠 영역 -->
+            </div>
+        </div>
+    </v-body>
+</v-app>

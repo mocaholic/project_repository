@@ -1,0 +1,76 @@
+<v-app>
+    <v-body title="회원등록">
+        <div class="container">
+            <div class="mem_enrollment">
+                <div class="top">
+                    <h4 class="main_title">
+                        <span class="highlight">약관동의</span>
+                    </h4>
+                    <ul class="step">
+                        <li class="on">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+                <p class="stxt">서비스를 이용하기 위해 약관동의가 필요합니다.</p>
+                <div class="agree_area">
+                    <div class="round_box">
+                        <div class="content">
+                            <div class="checkb round lt">
+                                <label for="all_agree">아래의 약관에 모두 동의합니다.
+                                    <input type="checkbox" id="all_agree" name="agree" [ngModel]="isAllSelected"
+                                           (change)="checkAll($event)">
+                                    <span class="chkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="round_box">
+                        <div class="content">
+                            <div class="checkb round lt">
+                                <label><span class="fc_org">(필수)</span> 서비스 이용약관
+                                    <input type="checkbox" name="agree" [(ngModel)]="checkboxList[0]">
+                                    <span class="chkmark"></span>
+                                </label>
+                            </div>
+                            <div class="terms_box">
+                                <div class="terms_cont" [innerHTML]="getTermsCtsByIndex(0)"></div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="round_box">
+                        <div class="content">
+                            <div class="checkb round lt">
+                                <label><span class="fc_org">(필수)</span> 개인정보 수집 및 이용동의
+                                    <input type="checkbox" name="agree" [(ngModel)]="checkboxList[1]">
+                                    <span class="chkmark"></span>
+                                </label>
+                            </div>
+                            <div class="terms_box">
+                                <div class="terms_cont" [innerHTML]="getTermsCtsByIndex(1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="round_box">
+                        <div class="content">
+                            <div class="checkb round lt">
+                                <label><span class="fc_org">(필수)</span> 개인정보처리 위탁동의
+                                    <input type="checkbox" name="agree" [(ngModel)]="checkboxList[2]">
+                                    <span class="chkmark"></span>
+                                </label>
+                            </div>
+                            <div class="terms_box">
+                                <div class="terms_cont" [innerHTML]="getTermsCtsByIndex(2)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_area">
+                        <button (click)="onClickCancel()" type="button" class="btn btn_type1">취소</button>
+                        <button (click)="onClickNext()" type="button" class="btn btn_type2">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+</v-app>

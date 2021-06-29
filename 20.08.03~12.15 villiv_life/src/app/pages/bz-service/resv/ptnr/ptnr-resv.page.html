@@ -1,0 +1,128 @@
+<v-app>
+    <v-body title="서비스 이용/예약 신청">
+        <div class="container">
+            <div class="reservation">
+                <!-- 영구크린 청소서비스 -->
+                <h4 class="main_title"><span class="highlight">{{ptnr?.ptnrNm}}</span></h4>
+                <div class="round_box reserv_area">
+                    <div class="content">
+                        <div class="reserv_section">
+                            <h5><span class="num">01.</span> <span>예약일자 선택</span></h5>
+                            <div class="calendar_area">
+                                <ion-calendar
+                                        [(ngModel)]="selectedDate"
+                                        [options]="{
+                                        monthFormat: 'YYYY년 MM월 ',
+                                        monthPickerFormat: ['1월','2월','3월','4월' ,'5월','6월','7월','8월','9월','10월','11월','12월'],
+                                        weekdays: ['일','월','화','수','목','금','토']
+                                    }"
+                                        type="string"
+                                        format="YYYYMMDD">
+                                </ion-calendar>
+                                <p class="category"><span class="today">오늘</span><span class="choice">선택</span></p>
+                            </div>
+                        </div>
+                        <div class="info_section">
+                            <h5><span>이용/예약 신청정보</span></h5>
+                            <div class="reserv_info">
+                                <div class="reserv_ibox">
+                                    <dl>
+                                        <dt>예약일자</dt>
+                                        <dd>
+                                            <!-- 일 선택 전 : 적용 시 br 태그 삭제 -->
+                                            <span class="fc_lgry" *ngIf="!selectedDate; else other">예약일자를 선택해주세요.</span>
+                                            <!-- 일 선택 후 -->
+                                            <ng-template #other>
+                                                <span class="fc_org">{{selectedDate | stringDateFormatDt}}({{ selectedDate | getDayOfTheWeek:{isKo:true} }})</span>
+                                            </ng-template>
+                                        </dd>
+                                    </dl>
+                                    <dl *ngIf="ptnr?.ptnrTp==='A';else otherTp">
+                                        <dt class="pt">객실타입</dt>
+                                        <dd>
+                                            <ul class="room_type">
+                                                <li *ngFor="let room of roomTypeCodeList; index as i">
+                                                    <div class="radio lt">
+                                                        <label [attr.id]="'room1'+i">{{room.cdName}}<span class="txt">{{room.cdDesc}}</span>
+                                                            <input type="radio" [(ngModel)]="reqCts" [attr.id]="'room1'+i" name="room" [value]="room.cdName">
+                                                            <span class="chkmark"></span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                    <ng-template #otherTp>
+                                        <dl>
+                                            <dt>요청사항</dt>
+                                            <dd><textarea [(ngModel)]="reqCts" class="com_texta" placeholder="※ 이용하실 내용 등을 입력해 주세요."
+                                                          rows="6"></textarea></dd>
+                                        </dl>
+                                    </ng-template>
+
+                                    <dl>
+                                        <dt>신청자</dt>
+                                        <dd class="txt_group">
+                                            <span>{{globalVars.userDetail?.custNm}}</span><span>{{globalVars.userDetail?.blNo}}동 {{globalVars.userDetail?.rmNo}}호</span><br class="mo"><span>{{globalVars.userDetail?.mpPhoneNo | parseFormatPhoneNumber:{ withMasking:true } }}</span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="bot_area">
+                                <div class="radio lt">
+                                    <label >유의사항 및 취소/환불정책을 확인하였습니다.
+                                        <input type="checkbox" [(ngModel)]="selectedAgree" name="reserv_agree">
+                                        <span class="chkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="btn_area">
+                                    <button (click)="onClickReserv()" type="button" class="btn btn_type2">서비스 이용/예약 신청</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 영구크린 청소서비스 -->
+
+                <!-- 10-21 추가 : 버튼 -->
+                <div class="btn_area">
+                    <a (click)="goServiceInfoPage()" class="btn btn_type3">취소하기</a>
+                </div>
+                <!-- // 10-21 추가 : 버튼 -->
+
+                <!-- 유의사항 : tab 형태 -->
+                <div class="round_box btm_info_box">
+                    <div class="content">
+                        <div class="tab_list">
+                            <div>
+                                <ul>
+                                    <li [ngClass]="!selectedTab || selectedTab==='ntcMatt' ? 'on' : ''">
+                                        <a (click)="onClickTab('ntcMatt')">유의사항</a>
+                                    </li>
+                                    <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                        <a (click)="onClickTab('cncPlcy')">취소/환불규정</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="tab_block">
+                            <li [ngClass]="!selectedTab || selectedTab==='ntcMatt' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of ptnr?.ntcMatt?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of ptnr?.cncPlcy?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+</v-app>

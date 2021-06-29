@@ -1,0 +1,75 @@
+<v-app>
+    <v-body title="설문조사" mnuId="LC_CM_POL">
+        <!-- 진행중인 설문조사 -->
+        <div class="full_cont">
+            <div class="container">
+                <!-- 타이틀 -->
+                <h4 class="main_title">
+                    <p>진행중인 설문조사
+                        <span class="highlight"><span class="num">{{ingQstnList.length}}</span>개</span>
+                    </p>
+                </h4>
+                <div class="vote_list slide_area">
+                    <div class="no_data icon" *ngIf="!isExistIngList;else ing_content">
+                        <p>진행중인 설문조사가 없습니다.</p>
+                    </div>
+                    <ng-template #ing_content>
+                        <!-- 설문조사 리스트 -->
+                        <ion-button (click)="slider.slidePrev()" class="btn_prev">
+                            <ion-icon name="chevron-back"></ion-icon>
+                        </ion-button>
+                        <ion-button (click)="slider.slideNext()" class="btn_next">
+                            <ion-icon name="chevron-forward"></ion-icon>
+                        </ion-button>
+                        <ion-slides #slider pager="true" [options]="{
+                            slidesPerView: globalVars.isPc ? 2 : 1,
+                            initialSlide: 0,
+                            speed: 400
+                        }">
+                            <ion-slide *ngFor="let qstn of ingQstnList;">
+                                <div class="flat_round_box">
+                                    <a (click)="goDetailPage(qstn.qstnId)">
+                                        <div class="content">
+                                            <h5>{{qstn.qstnTtl}}</h5>
+                                            <p class="time">{{qstn.qstnStrDt | stringDateFormatDt }} ~ {{qstn.qstnEndDt | stringDateFormatDt }}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ion-slide>
+                        </ion-slides>
+                        <!-- // 설문조사 리스트 -->
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <!-- 종료된 설문조사 -->
+        <div class="full_cont">
+            <div class="container">
+                <!-- 타이틀 -->
+                <h4 class="main_title">
+                    <p>종료된 설문조사
+                        <span class="highlight"><span class="num">{{qstnSearchModel?.totalCount}}</span>개</span>
+                    </p>
+                </h4>
+                <div class="vote_list">
+                    <div class="no_data icon" *ngIf="!isExistEndList;else end_content">
+                        <p>종료된 설문조사가 없습니다.</p>
+                    </div>
+                    <ng-template #end_content>
+                        <!-- 설문조사 리스트 -->
+                        <ul class="">
+                            <li class="flat_round_box disabled" *ngFor="let qstn of endQstnList;"><!-- 설문조사 종료 시 class="disabled" 적용  -->
+                                <div class="content">
+                                    <h5>{{qstn.qstnTtl}}</h5>
+                                    <p class="time">설문종료</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </ng-template>
+                </div>
+                <!-- 더보기 -->
+                <a class="add_item" *ngIf="qstnSearchModel.page < qstnSearchModel.totalEndPage" (click)="moreEndQstnList()">더보기</a>
+            </div>
+        </div>
+    </v-body>
+</v-app>

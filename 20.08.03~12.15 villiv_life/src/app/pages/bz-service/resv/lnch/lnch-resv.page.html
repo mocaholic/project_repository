@@ -1,0 +1,253 @@
+<v-app>
+    <v-body title="서비스 이용/예약 신청">
+        <div class="container">
+            <div class="reservation">
+                <!-- 이마트24 조식서비스 -->
+                <h4 class="main_title"><span class="highlight">{{lnChMst?.lnchNm}}</span></h4>
+                <div class="round_box menu_slide">
+                    <div class="content">
+                        <h5>조식메뉴</h5>
+                        <div class="scroll_box">
+                            <ul class="menu_info">
+                                <li *ngFor="let prd of lnChMst?.lnchPrdList">
+                                    <div class="menu_area">
+                                        <span class="img"><img [src]="prd.prdImgFileIdPath | fileToWebPath" alt="메뉴이미지"></span>
+                                        <p class="info">
+                                            <span class="prd-name">{{prd.prdNm}}</span>
+                                            <span class="prd-price">{{prd.prdPrc| numberFormatWithComma}}원</span>
+                                        </p>
+                                    </div>
+                                    <div class="btn_area">
+                                        <a (click)="openMenuInfoPopup(prd)" class="btn btn_type1">상세정보</a>
+                                        <button type="button" (click)="addMenuOdr(prd)" class="btn btn_type2">담기</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="round_box reserv_area">
+                    <div class="content">
+                        <div class="odmenu_section">
+                            <h5><span>주문 메뉴</span></h5>
+                            <div class="order_list">
+                                <p *ngIf="odrList.length===0; else existOdr;" class="txt">주문할 메뉴를 담아주세요.</p>
+                                <ng-template #existOdr>
+                                    <ul>
+                                        <li *ngFor="let odr of odrList;index as i">
+                                            <div>
+                                                <div class="menu_area">
+                                                    <span class="img"><img [src]="odr.prdDetail.prdImgFileIdPath | fileToWebPath" alt="메뉴이미지"></span>
+                                                    <p>
+                                                        <span class="tit">{{odr.prdDetail.prdNm}}</span>
+                                                        <span class="price">({{odr.prdDetail.prdPrc | numberFormatWithComma}}원)</span>
+                                                    </p>
+                                                </div>
+                                                <div class="price_area">
+                                                    <span class="total_p">
+                                                        <span class="num">{{odr.getTotalPrc() | numberFormatWithComma}}</span>
+                                                        <span>원</span>
+                                                    </span>
+                                                    <div class="amount">
+                                                        <button type="button" (click)="onClickQntMinus(odr)" class="btn_minus">감소</button>
+                                                        <span>{{odr.odrQnt}}</span>
+                                                        <button type="button" (click)="onClickQntPlus(odr)" class="btn_plus">증가</button>
+                                                    </div>
+                                                </div>
+                                                <a (click)="removeMenuOdr(i)" class="btn_del">메뉴 삭제</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </ng-template>
+                            </div>
+                            <div class="total_price">
+                                <dl>
+                                    <dt>총 이용요금</dt>
+                                    <dd>
+                                        <em class="price"><span class="num fc_default">{{getTotalPrc() | numberFormatWithComma}}</span>원</em>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="info_section">
+                            <h5><span>이용/예약 신청정보</span></h5>
+                            <div class="reserv_info">
+                                <div class="reserv_ibox">
+                                    <dl>
+                                        <dt>예약일자</dt>
+                                        <dd>
+                                            <div class="input_row rsv_ip">
+                                                <input type="text" class="com_inp2" [ngModel]="selectedOpenDate" placeholder="예약일자를 선택하세요." readonly>
+                                                <a (click)="openDatePickerPopup()" class="btn_calendar">달력보기</a>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>주문금액</dt>
+                                        <dd><span class="fc_org">{{getTotalPrc() | numberFormatWithComma}} 원 (총 주문수량 : {{getTotalQnt()}}개)</span></dd>
+                                    </dl>
+                                    <dl *ngIf="isUseFree">
+                                        <dt>무료혜택</dt>
+                                        <dd>
+                                            <a (click)="openFreeMenuPopup()" class="btn btn_type1 btn_menu">메뉴선택</a>
+                                            <span *ngIf="!confirmFreeOdr;else other" class="menu_txt none">적용할 메뉴를 선택해주세요.</span>
+                                            <ng-template #other>
+                                                <span class="menu_txt">{{confirmFreeOdr?.prdDetail?.prdNm}}
+                                                    <span class="fc_org">- {{confirmFreeOdr?.prdDetail?.prdPrc | numberFormatWithComma}} 원</span>
+                                                    <a (click)="onClickDeleteFreePrd()" class="btn_del">메뉴 삭제</a>
+                                                </span>
+                                            </ng-template>
+                                        </dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>신청자</dt>
+                                        <dd class="txt_group">
+                                            <span>{{globalVars.userDetail?.custNm}}</span><span>{{globalVars.userDetail?.blNo}}동 {{globalVars.userDetail?.rmNo}}호</span><br class="mo"><span>{{globalVars.userDetail?.mpPhoneNo | parseFormatPhoneNumber:{ withMasking:true } }}</span></dd>
+                                    </dl>
+                                </div>
+                                <div class="total_price">
+                                    <dl>
+                                        <dt>총 이용요금</dt>
+                                        <dd>
+                                            <em class="price"><span class="num">{{getTotalPrc(true) | numberFormatWithComma}}</span>원</em>
+                                            <span class="txt">(관리비 합산 부과)</span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="bot_area">
+                                <div class="radio lt">
+                                    <label >유의사항 및 취소/환불정책을 확인하였습니다.
+                                        <input type="checkbox" [(ngModel)]="selectedAgree" name="reserv_agree">
+                                        <span class="chkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="btn_area">
+                                    <button type="button" (click)="onClickLnchApply()" class="btn btn_type2">서비스 이용/예약 신청</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 이마트24 조식서비스 -->
+
+                <!-- 10-21 추가 : 버튼 -->
+                <div class="btn_area">
+                    <a (click)="goServiceInfoPage()" class="btn btn_type3">취소하기</a>
+                </div>
+                <!-- // 10-21 추가 : 버튼 -->
+
+                <!-- 유의사항 : tab 형태 -->
+                <div class="round_box btm_info_box">
+                    <div class="content">
+                        <div class="tab_list">
+                            <div>
+                                <ul>
+                                    <li [ngClass]="!selectedTab || selectedTab==='ntcMatt' ? 'on' : ''">
+                                        <a (click)="onClickTab('ntcMatt')">유의사항</a>
+                                    </li>
+                                    <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                        <a (click)="onClickTab('cncPlcy')">취소/환불규정</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="tab_block">
+                            <li [ngClass]="!selectedTab || selectedTab==='ntcMatt' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of lnChMst?.ntcMatt?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of lnChMst?.cncPlcy?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+
+    <!-- 레이어팝업 : 이마트24 조식 -->
+    <ng-container *ngIf="isShowMenuInfoPopup.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowMenuInfoPopup.layer}"></div>
+        <!-- 메뉴 상세정보 -->
+        <div class="layer_popup menu_det" [ngClass]="{'active' : isShowMenuInfoPopup.layer, 'inactive': !isShowMenuInfoPopup.layer}">
+            <div class="content">
+                <h1>상세정보</h1>
+                <div class="cont_pop">
+                    <div class="scroll_box">
+                        <p class="menu_tit">{{prdInfo?.prdNm}}</p>
+                        <span class="img"><img [src]="prdInfo?.prdImgFileIdPath | fileToWebPath" alt="메뉴이미지"></span>
+                        <p class="txt">{{prdInfo?.prdCts}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button type="button" (click)="closeMenuInfoPopup()" class="btn btn_type2 w_100">확인</button>
+            </div>
+            <a (click)="closeMenuInfoPopup()" class="btn_popup_close">닫기</a>
+        </div>
+    </ng-container>
+    <!-- // 메뉴 상세정보 -->
+    <!-- 무료혜택 메뉴선택 -->
+    <ng-container *ngIf="isShowFreeMenuPopup.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowFreeMenuPopup.layer}"></div>
+        <div class="layer_popup free_benefits" [ngClass]="{'active' : isShowFreeMenuPopup.layer, 'inactive': !isShowFreeMenuPopup.layer}">
+            <div class="content">
+                <h1>무료혜택 메뉴선택</h1>
+                <div class="cont_pop">
+                    <div class="scroll_box">
+                        <p class="dot_tit">무료혜택을 적용할 메뉴를 선택해주세요.</p>
+                        <ul class="list">
+                            <li *ngFor="let odr of odrList;index as i" [ngClass]="selectedFreePrdId===odr.prdId ? 'on' : ''"><!-- 선택 시 class="on" 적용 -->
+                                <div class="radio lt">
+                                    <label [attr.for]="'fb1'+i">{{odr.prdDetail.prdNm}} <span class="price">- {{odr.prdDetail.prdPrc | numberFormatWithComma}}원</span>
+                                        <input type="radio" [(ngModel)]="selectedFreePrdId" [attr.id]="'fb1'+i" [name]="'free_benefits'+i" [value]="odr.prdId" >
+                                        <span class="chkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button (click)="onClickConfirmFreePrd()" type="button" class="btn btn_type2 w_100">확인</button>
+            </div>
+            <a (click)="closeFreeMenuPopup()" class="btn_popup_close">닫기</a>
+        </div>
+    </ng-container>
+    <!-- // 무료혜택 메뉴선택 -->
+    <!-- 예약일자 선택 -->
+    <ng-container *ngIf="isShowDatePickerPopup.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowDatePickerPopup.layer}"></div>
+        <div class="layer_popup reserv_date" [ngClass]="{'active' : isShowDatePickerPopup.layer, 'inactive': !isShowDatePickerPopup.layer}">
+            <div class="content">
+                <h1>예약일자 선택</h1>
+                <div class="cont_pop">
+                    <ion-calendar [(ngModel)]="selectedDate"
+                                  [options]="options"
+                                  type="string"
+                                  format="YYYY.MM.DD">
+                    </ion-calendar>
+                    <p class="category"><span class="impossible">예약불가</span><span class="today">오늘</span><span
+                            class="choice">선택</span></p>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button type="button"  (click)="closeDatePickerPopup()"class="btn btn_type1">취소하기</button>
+                <button type="button"  (click)="closeDatePickerPopup(true)"class="btn btn_type2">선택완료</button>
+            </div>
+            <a (click)="closeDatePickerPopup()" class="btn_popup_close">닫기</a>
+        </div>
+    </ng-container>
+    <!-- // 예약일자 선택 -->
+    <!-- // 레이어팝업 : 이마트24 조식 -->
+</v-app>

@@ -1,0 +1,80 @@
+<v-app>
+    <v-body title="제휴 서비스 신청내역 조회">
+        <div class="container">
+            <div class="svc_mng">
+                <!-- 이용/예약 신청정보 -->
+                <div class="round_box apply">
+                    <div class="content">
+                        <h5>이용/예약 신청정보</h5>
+                        <div>
+                            <dl>
+                                <dt>서비스 구분</dt>
+                                <dd>영구크린 청소서비스</dd>
+                            </dl>
+                            <dl *ngIf="ptnrResv?.ptnrTp === 'A'">
+                                <dt>객실타입</dt>
+                                <dd>{{ptnrResv?.reqCts}}</dd>
+                            </dl>
+                            <dl>
+                                <dt>예약일자</dt>
+                                <dd>{{ptnrResv?.resvDt | stringDateFormatDt}} ({{ptnrResv?.resvDt | getDayOfTheWeek:{isKo:true} }})</dd>
+                            </dl>
+                            <dl *ngIf="ptnrResv?.ptnrTp !== 'A'">
+                                <dt>요청사항</dt>
+                                <dd>{{ptnrResv?.reqCts}}
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>신청자</dt>
+                                <dd>{{globalVars.userDetail?.custNm}} / {{globalVars.userDetail?.blNo}}동 {{globalVars.userDetail?.rmNo}}호 / {{globalVars.userDetail?.mpPhoneNo | parseFormatPhoneNumber:{ withMasking:true } }}</dd>
+                            </dl>
+                            <dl>
+                                <dt>신청일시</dt>
+                                <dd>{{ptnrResv?.iptDtm | stringDateFormatDtm}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_area">
+                    <a (click)="goListPage()" class="btn btn_type3">목록보기</a>
+                </div>
+
+                <!-- 유의사항 : tab 형태 -->
+                <div class="round_box btm_info_box">
+                    <div class="content">
+                        <div class="tab_list">
+                            <div>
+                                <ul>
+                                    <li [ngClass]="!selectedTab || selectedTab==='ntcMatt' ? 'on' : ''">
+                                        <a (click)="onClickTab('ntcMatt')">유의사항</a>
+                                    </li>
+                                    <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                        <a (click)="onClickTab('cncPlcy')">취소/환불규정</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="tab_block">
+                            <li [ngClass]="!selectedTab || selectedTab==='ntcMatt' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of ptnrResv?.ntcMatt?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li [ngClass]="selectedTab==='cncPlcy' ? 'on' : ''">
+                                <div class="admin_content">
+                                    <ul class="dot_list">
+                                        <li *ngFor="let str of ptnrResv?.cncPlcy?.split('\n')">{{str}}</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </v-body>
+</v-app>

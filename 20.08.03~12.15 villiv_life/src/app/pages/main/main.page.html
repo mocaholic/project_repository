@@ -1,0 +1,314 @@
+<v-app id="main">
+
+    <v-header title="메인 페이지"></v-header>
+
+    <v-body>
+        <ng-lottie *ngIf="mainAnimOptions" [options]="mainAnimOptions" id="lottie"
+                   containerClass="lottie" (animationCreated)="animationCreated($event)" ></ng-lottie>
+        <div class="container">
+            <div class="main_text">
+                <em>
+                    <span [ngClass]="globalVars.isLogin ? 'highlight' : ''">{{globalVars.isLogin ? globalVars.userDetail.custNm : '방문자' }}</span>님,<!-- 로그인한 경우에 class="highlight" 적용 -->
+                    <br>반갑습니다!
+                </em>
+                <span [innerHTML]="lterng?.lterngCts | parseEnterToHtmlTag"></span>
+            </div>
+
+            <div class="main_content">
+                <div class="round_box fir_info">
+                    <div class="content">
+                        <h2></h2>
+                        <div class="top">
+                            <span class="date">{{today | stringDateFormatDt}} {{today | getDayOfTheWeek}}</span>
+<!--                            앱에서는 비노출-->
+                            <span *ngIf="!globalVars.isApp" class="location pc">{{globalVars.bzNm}}</span>
+                        </div>
+                        <div class="fr_menu">
+                            <div class="frm1">
+                                <div class="weather">
+                                    <i [ngClass]="getWeatherCode">기상</i>
+                                    <span class="temp">{{weatherInfoArray[2]}}°</span>
+                                </div>
+                                <span>오늘의 날씨</span>
+                            </div>
+                            <div class="frm2">
+                                <div class="schedule">
+                                    <!-- 비로그인 시 노출 -->
+                                    <p *ngIf="!globalVars.isLogin;else other_content">
+                                        <span class="highlight">로그인 후</span>확인하세요
+                                    </p>
+                                    <!-- 비로그인 시 노출 -->
+                                    <!-- 로그인 시 노출-->
+                                    <ng-template #other_content>
+                                        <a (click)="goPage(menuTypeConstants.MP_HOME.URL)">{{scheduleCount}}</a>
+                                        <span>건</span>
+                                    </ng-template>
+                                    <!-- // 로그인 시 노출 -->
+                                </div>
+                                <span>오늘의 일정</span>
+                            </div>
+                            <div class="frm3">
+                                <div class="">
+                                    <a (click)="goPage(menuTypeConstants.LC_EVT_SSG.URL,{grpcId:ssgGrpc.grpcId})">
+                                        <img [src]="ssgGrpc?.pcMlogoFileIdPath | fileToWebPath " alt="샘플" class="pc" />
+                                        <img [src]="ssgGrpc?.mpMlogoFileIdPath | fileToWebPath" alt="샘플" class="mo" />
+<!--                                        <img src="/assets/dummy/banner01_p.png" class="pc" alt="">-->
+<!--                                        <img src="/assets/dummy/banner01_m.png" class="mo" alt="">-->
+                                    </a>
+                                </div>
+                                <span>{{ssgGrpc?.grpcNm}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="round_box notice_box">
+                    <div class="content">
+                        <h2>Notice</h2>
+                        <p class="notice">
+                            <span class="badge">NOTICE</span>
+                            <span>
+								<a (click)="goPage(menuTypeConstants.LC_CM_NTC_VIEW.URL+'/'+notice?.bltbrdId)">{{notice?.bltbrdTtl}}</a>
+							</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="round_box btn_box_list">
+                    <div class="content">
+                        <h2>main 메뉴</h2>
+                        <ul>
+                            <li class="bill_box">
+                                <div>
+                                    <a (click)="goPage(menuTypeConstants.MP_BILL.URL)">
+                                        <p class="txt_area">
+                                            <strong>관리비</strong>
+                                            <!-- 11.27 로그인 전 text 추가 -->
+                                            <span *ngIf="!globalVars.isLogin" class="r_txt">로그인 후 확인하세요.</span>
+                                            <!-- // 11.27 로그인 전 text 추가 -->
+                                            <span *ngIf="globalVars.isLogin" class="badge">
+                                                11<span>월분</span>
+                                            </span>
+                                            <span *ngIf="globalVars.isLogin" class="price">
+                                                <span class="num">191,650</span>원
+                                            </span>
+                                            <!-- <span class="">
+                                                <span class="">진행상황</span>
+                                                <span class="arrow gry">청구완료</span>
+                                            </span> -->
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="reserv">
+                                <div>
+                                    <!--<a (click)="goPage('/')">-->
+                                    <a (click)="openInnerSvcPopup()">
+                                        <p class="txt_area">
+                                            <strong>시설 예약</strong>
+                                            <!-- <span class="">
+                                                <span class="arrow">예약하기</span>
+                                            </span> -->
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="breakfast">
+                                <div>
+                                    <a (click)="goLnchPage()">
+                                        <p class="txt_area">
+                                            <strong>조식 예약</strong>
+                                            <!-- <span class="">
+                                                <span class="arrow">예약하기</span>
+                                            </span> -->
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="m_vote">
+                                <div>
+                                    <a (click)="goPage(menuTypeConstants.LC_CM_VOT.URL)">
+                                        <p class="txt_area">
+                                            <strong>주민투표</strong>
+                                            <span *ngIf="globalVars.isLogin && voteCount>0" class="badge">{{voteCount}}</span>
+                                            <!-- <span class="">
+                                                <span class="">진행상황</span>
+                                                <span class="arrow">진행중</span>
+                                            </span> -->
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="m_survey">
+                                <div>
+                                    <a (click)="goPage(menuTypeConstants.LC_CM_POL.URL)">
+                                        <p class="txt_area">
+                                            <strong>설문조사</strong>
+                                            <span *ngIf="globalVars.isLogin && qstnCount>0" class="badge">{{qstnCount}}</span>
+                                            <!-- <span class="">
+                                                <span class="">진행상황</span>
+                                                <span class="arrow">진행중</span>
+                                            </span> -->
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="m_lecture">
+                                <div class="content">
+                                     <a (click)="goPage(menuTypeConstants.BS_CULTURE.URL,{lecStats:'A'})">
+                                        <p class="txt_area">
+                                            <strong>강좌 신청</strong>
+                                        <span *ngIf="globalVars.isLogin && lecCount>0" class="badge">{{lecCount}}</span>
+                                            <!-- <span class="">
+                                                <span class="">진행상황</span>
+                                                <span class="arrow">접수중</span>
+                                            </span> -->
+                                        </p>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+    <!-- 레이어팝업  isNewTerms-->
+    <ng-container *ngIf="isNewTerms && isShowNewTerms.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowNewTerms.layer}"></div>
+        <div class="layer_popup main_popup" [ngClass]="{'active' : isShowNewTerms.layer, 'inactive': !isShowNewTerms.layer}" >
+            <div class="content">
+                <h1>이용약관 및 개인정보처리방침<br>개정 안내</h1>
+                <div class="cont_pop">
+                    <p>빌리브 라이프 서비스 이용약관 및 개인정보 처리방침이 개정됨을 안내 드립니다. 자세한 개정사항은 이용약관에서 확인하실 수 있습니다.<br>시행일 전까지 별도의 이의(회원 탈퇴)를 표시하지 않을 경우 본 개정 사항에 동의하신 것으로 간주합니다.</p>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button (click)="goTermsPage()" type="button" class="btn btn_type2 w_100">개정 내용 보기</button>
+            </div>
+        </div>
+    </ng-container>
+    <!-- // 레이어팝업 -->
+
+    <!-- 앱 다운로드 플로팅 -->
+    <div class="app_down pc">
+        <p><strong>빌리브 라이프 서비스</strong>앱을 다운받으시고<br>스마트홈 제어 등 편리하게<br>빌리브 라이프 서비스를<br>이용해보세요.</p>
+        <span class="btn_area">
+            <a (click)="openIOSPopup()" class="btn_ios">IOS</a>
+            <a (click)="openAndroidPopup()" class="btn_android">Android</a>
+        </span>
+    </div>
+    <!-- // 앱 다운로드 플로팅 -->
+    <!-- 레이어팝업 : QR 코드 - Android -->
+    <ng-container *ngIf="isShowAndroidPopup.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowAndroidPopup.layer}"></div>
+        <div class="layer_popup qr_popup" [ngClass]="{'active' : isShowAndroidPopup.layer, 'inactive': !isShowAndroidPopup.layer}">
+            <div class="content">
+                <h1>라이프 서비스 앱 - Android</h1>
+                <div class="cont_pop">
+                    <div class="qrcode">
+                        <div class="img">
+                            <img src="/assets/common/qr_android.png" alt="Android QR 코드">
+                        </div>
+                        <a (click)="goExternalPage(menuTypeConstants.ANDROID_STORE.URL)" class="btn_android">Google play 바로가기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button (click)="closeAndroidPopup()" type="button" class="btn btn_type2 w_100">닫기</button>
+            </div>
+        </div>
+    </ng-container>
+    <!-- // 레이어팝업 : QR 코드 - Android -->
+    <!-- 레이어팝업 : QR 코드 - IOS -->
+    <ng-container *ngIf="isShowIOSPopup.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowIOSPopup.layer}"></div>
+        <div class="layer_popup qr_popup" [ngClass]="{'active' : isShowIOSPopup.layer, 'inactive': !isShowIOSPopup.layer}">
+            <div class="content">
+                <h1>라이프 서비스 앱 - IOS</h1>
+                <div class="cont_pop">
+                    <div class="qrcode">
+                        <div class="img">
+                            <img src="/assets/common/qr_ios.png" alt="IOS QR 코드">
+                        </div>
+                        <a (click)="goExternalPage(menuTypeConstants.IOS_STORE.URL)" class="btn_ios">Apple Store 바로가기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button (click)="closeIOSPopup()" type="button" class="btn btn_type2 w_100">닫기</button>
+            </div>
+        </div>
+    </ng-container>
+    <!-- // 레이어팝업 : QR 코드 - IOS -->
+
+    <!-- 10.29 추가 : 레이어팝업 - 앱 접근 권한 안내  -->
+    <ng-container *ngIf="isShowAppAuth.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowAppAuth.layer}"></div>
+        <div class="layer_popup app_authority" [ngClass]="{'active' : isShowAppAuth.layer, 'inactive': !isShowAppAuth.layer}">
+            <div class="content">
+                <h1>앱 접근 권한 안내</h1>
+                <div class="cont_pop">
+                    <div class="scroll_box">
+                        <h2>선택적 접근권한</h2>
+                        <div class="list">
+                            <dl class="alram">
+                                <dt>알림</dt>
+                                <dd>정보 제공을 위한 푸시 서비스</dd>
+                            </dl>
+                            <dl class="camera">
+                                <dt>카메라</dt>
+                                <dd>커뮤니티/문의 사진 첨부 또는 촬영</dd>
+                            </dl>
+                            <dl class="storage">
+                                <dt>저장공간</dt>
+                                <dd>첨부파일 업로드 및 다운로드</dd>
+                            </dl>
+                        </div>
+                        <ul class="dot_list">
+                            <li>선택적 접근 권한은 해당 기능 이용 시 동의를 받고 있으며, 미동의 시에도 해당 기능 외 서비스 이용이 가능합니다.</li>
+                            <li>접근권한 변경 방법
+                                <p class="fc_lgry">휴대폰 설정 > 빌리브 라이프 서비스</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button (click)="onClickShowAppAuthInfo()" type="button" class="btn btn_type2 w_100">확인</button>
+            </div>
+            <a (click)="onClickShowAppAuthInfo()" class="btn_popup_close">닫기</a>
+        </div>
+    </ng-container>
+    <!-- // 10.29 추가 : 레이어팝업 - 앱 접근 권한 안내  -->
+    <!-- 시설예약 팝업 -->
+    <ng-container *ngIf="isShowInnerSvcPopup.container">
+        <div class="dimmed" [ngClass]="{'inactiveDimmer': !isShowInnerSvcPopup.layer}"></div>
+        <div class="layer_popup reserv_popup" [ngClass]="{'active' : isShowInnerSvcPopup.layer, 'inactive': !isShowInnerSvcPopup.layer}">
+            <div class="content">
+                <h1>시설이용예약 서비스 선택</h1>
+                <div class="cont_pop">
+                    <div class="scroll_box">
+                        <p class="dot_tit">예약하실 서비스를 선택해주세요.</p>
+                        <ul class="list">
+                            <li *ngFor="let svc of innerRsvList;index as i" [ngClass]="selectedInnerSvc===svc.svcId ? 'on' : ''"><!-- 선택 시 class="on" 적용 -->
+                                <div class="radio lt">
+                                    <label [attr.for]="'innersvc'+i">{{svc.svcNm}}
+                                        <input type="radio" [(ngModel)]="selectedInnerSvc" [attr.id]="'innersvc'+i" [name]="'innersvc'+i" [value]="svc.svcId" >
+                                        <span class="chkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button (click)="closeInnerSvcPopup()" type="button" class="btn btn_type1" >취소</button>
+                <button (click)="onClickConfirmInnerSvc()" type="button" class="btn btn_type2">선택완료</button>
+            </div>
+            <a (click)="closeInnerSvcPopup()" class="btn_popup_close">닫기</a>
+        </div>
+    </ng-container>
+    <!-- // 시설예약 팝업 -->
+</v-app>
