@@ -1,0 +1,55 @@
+<v-app>
+    <v-body title="문의하기">
+        <div class="container">
+            <!-- 타이틀 죄측정렬 -->
+            <h4 class="main_title flt_left">
+                <p>나의 <span class="highlight">문의내용</span></p>
+            </h4>
+            <!-- 나의 질문 20-09-15 class="inqui_box flat_round_box" 변경 -->
+            <div class="inqui_box flat_round_box">
+                <div class="notice_title">
+                    <h4>{{bltbrdInquireDetail?.bltbrdTtl}}</h4>
+                    <p class="time">{{bltbrdInquireDetail?.iptDtm | stringDateFormatDt }}</p>
+                </div>
+                <div class="notice_link">
+                    <a (click)="downloadFile(file.atchFileId)" class="clip" *ngFor="let file of bltbrdInquireDetail?.bltbrdAtchList;">
+                        {{file.atchFileIdOrg}}
+                    </a>
+                    <p *ngIf="bltbrdInquireDetail?.bltbrdAtchList === null || bltbrdInquireDetail?.bltbrdAtchList?.length===0">
+                        첨부된 파일이 없습니다.</p>
+                </div>
+                <!-- 질문 내용 -->
+                <div class="admin_content" [innerHtml]="bltbrdInquireDetail?.bltbrdCts"></div>
+            </div>
+
+            <!-- 답변내용 - 답변 후 노출 -->
+            <ng-container *ngIf="bltbrdInquireDetail?.ansStatus==='1'">
+                <h4 class="main_title flt_left">
+                    <p><span class="highlight">답변내용</span></p>
+                </h4>
+                <div class="inqui_box flat_round_box answer">
+                    <div class="notice_title">
+                        <h4>{{bltbrdAnswerDetail?.bltbrdTtl}}</h4>
+                        <p class="writer_time"><span>관리자</span><span
+                                class="time">{{bltbrdAnswerDetail?.iptDtm | stringDateFormatDt }}</span></p>
+                    </div>
+                    <div class="notice_link">
+                        <a (click)="downloadFile(file.atchFileId)" class="clip" *ngFor="let file of bltbrdAnswerDetail?.bltbrdAtchList;">
+                            {{file.atchFileIdOrg}}
+                        </a>
+                        <p *ngIf="bltbrdAnswerDetail?.bltbrdAtchList === null || bltbrdAnswerDetail?.bltbrdAtchList?.length===0">
+                            첨부된 파일이 없습니다.</p>
+                    </div>
+                    <!-- 답변 내용 -->
+                    <div class="admin_content" [innerHtml]="bltbrdAnswerDetail?.bltbrdCts"></div>
+                </div>
+            </ng-container>
+            <!-- 목록 보기 -->
+            <div class="go_list block">
+                <a (click)="goListPage()" class="btn btn_type2 only_pc">목록 보기</a>
+                <!-- 답변 전 에만 노출 -->
+                <a (click)="deleteBltbrd()" *ngIf="bltbrdInquireDetail?.ansStatus!=='1'" class="btn btn_type1">게시글 삭제하기</a>
+            </div>
+        </div>
+    </v-body>
+</v-app>

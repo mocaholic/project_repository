@@ -1,0 +1,90 @@
+<v-app>
+  <v-body title="로그인">
+    <div class="container">
+      <div class="login">
+        <p class="top_txt"><span class="highlight">빌리브</span> 라이프 서비스에<br>오신 것을 환영합니다.</p>
+        <div class="login_form">
+          <ul>
+            <li>
+              <div class="input_row">
+                <ng-select [items]="[
+                            { name: '1단지'},
+                            { name: '2단지'},
+                            { name: '3단지'},
+                            { name: '4단지'}
+                          ]"
+                          [searchable]="false"
+                          bindLabel="name"
+                          placeholder="단지 선택"
+                >
+                </ng-select>
+              </div>
+            </li>
+            <li>
+              <div class="input_row">
+                <ng-select [items]="[
+                            { name: '1동'},
+                            { name: '2동'},
+                            { name: '3동'},
+                            { name: '4동'}
+                          ]"
+                          [searchable]="false"
+                          bindLabel="name"
+                          placeholder="동 선택"
+                >
+                </ng-select>
+                <ng-select [items]="[
+                            { name: '1호'},
+                            { name: '2호'},
+                            { name: '3호'},
+                            { name: '4호'}
+                          ]"
+                          [searchable]="false"
+                          bindLabel="name"
+                          placeholder="호수 선택"
+                >
+                </ng-select>
+              </div>
+            </li> 
+            <li>
+              <div class="input_row">
+                <input type="text" class="com_inp3" placeholder="휴대폰번호 입력 (-없이 숫자만 입력)">
+              </div>
+            </li>
+          </ul>
+          <div class="btn_area">
+            <button type="button" class="btn btn_type2">인증번호 요청</button>
+          </div>
+          <div class="certi_num">
+            <div class="input_row">
+              <input type="text" class="com_inp3" placeholder="인증번호 입력">
+              <span class="fc_org">03:00</span>
+            </div>
+            <div class="btn_area">
+              <button type="button" class="btn btn_type3">재전송</button><!-- 인증번호 요청 3분 이내에는 class="disabled" 적용 -->
+            </div>
+          </div>
+          <p class="ps_txt">앱 푸시를 받지 못하셨다면 <a href="#">SNS 인증번호 요청</a> 을 선택해 주세요.</p><!-- 인증번호 요청 3분 이후 -->
+          <p class="ps_txt fc_org">* 3분 이후 재전송 가능합니다.</p><!-- 인증번호 요청 3분 이내 -->
+          <div class="btn_area">
+            <button type="button" class="btn btn_type1">취소</button>
+            <button type="button" class="btn btn_type2">확인</button>
+          </div>
+        </div>
+        <ul class="dot_list">
+          <li>빌리브 입주민만 이용 가능합니다.</li>
+          <li>'빌리브 라이프 서비스'앱 푸시 알림 또는 입주 카드 작성 시 등록한 휴대폰 번호로 전송된 6자리 인증번호를 입력하세요.</li>
+          <li>'빌리브 라이프 서비스'앱이 설치 되어 있지 않거나 앱 푸시 알림 인증번호가 오지 않는다면, 휴대폰 문자로 인증번호를 받을 수 있습니다.</li>
+          <li>등록한 휴대폰 번호가 기억나지 않는 경우 관리사무실에 문의하세요.</li>
+        </ul>
+        <div class="app_down bot_area">
+            <p><strong>빌리브 라이프 서비스</strong>앱을 다운받으시고<br>스마트홈 제어 등 편리하게<br>빌리브 라이프 서비스를<br>이용해보세요.</p>
+            <span class="btn_area">
+                <a href="#" class="btn_ios">IOS</a>
+                <a href="#" class="btn_android">Android</a>
+            </span>
+        </div>
+      </div>
+    </div>
+  </v-body>
+</v-app>

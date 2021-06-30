@@ -1,0 +1,121 @@
+<v-app>
+    <v-body title="서비스 이용/예약관리">
+        <div class="container">
+            <div class="svc_list">
+                <div class="search_area">
+                    <dl>
+                        <dt>서비스 구분</dt>
+                        <dd>
+                            <ng-select class="type2" [items]="svcGrpCdList"
+                                       [searchable]="false"
+                                       [clearable]="false"
+                                       [(ngModel)]="resvSearchModel.svcGrpCd"
+                                       bindLabel="cdName"
+                                       bindValue="cd"
+                            >
+                            </ng-select>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>이용상태</dt>
+                        <dd>
+                            <ng-select [items]="utStatsCdList"
+                                       [searchable]="false"
+                                       [clearable]="false"
+                                       [(ngModel)]="resvSearchModel.utStats"
+                                       bindLabel="cdName"
+                                       bindValue="cd"
+                            >
+                            </ng-select>
+                        </dd>
+                    </dl>
+                    <dl class="date_area">
+                        <dt>이용/예약 월</dt>
+                        <dd>
+                            <div class="input_row">
+                                <ng-select [items]="searchStrYearOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="resvSearchModel.searchStrYear"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="연도"
+                                >
+                                </ng-select>
+                                <ng-select [items]="searchStrMonthOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="resvSearchModel.searchStrMonth"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="월"
+                                >
+                                </ng-select>
+                                <span>~</span>
+                                <ng-select [items]="searchEndYearOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="resvSearchModel.searchEndYear"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="연도"
+                                >
+                                </ng-select>
+                                <ng-select [items]="searchEndMonthOption"
+                                           [searchable]="false"
+                                           [clearable]="false"
+                                           [(ngModel)]="resvSearchModel.searchEndMonth"
+                                           bindLabel="cdName"
+                                           bindValue="cd"
+                                           placeholder="월"
+                                >
+                                </ng-select>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="btn_area">
+                        <button type="button" (click)="onClickSearch()" class="btn btn_type2 w_100">검색</button>
+                    </div>
+                </div>
+                <div class="list_count">
+                    <p>총 <span class="red">{{resvSearchModel.totalCount}}</span>건</p>
+                </div>
+                <div class="round_box">
+                    <div class="content">
+                        <ul class="tbl_list">
+                            <li class="thead">
+                                <span class="th">이용/예약 서비스</span>
+                                <span class="th">옵션</span>
+                                <span class="th">청구예정</span>
+                                <span class="th">신청자</span>
+                                <span class="th">이용상태</span>
+                            </li>
+                            <li class="no_data" *ngIf="!isExistList;else other_content">
+                                <p>조회된 서비스 이용/예약 내역이 없습니다.</p>
+                            </li>
+                            <ng-template #other_content>
+                                <li *ngFor="let data of resvHisList;" (click)="goDetailPage(data.resvId)">
+                                    <div>
+                                        <span class="ctgr" [ngClass]="getTitleColorClass(data.resvTp,data.resvCd)">{{getSvcNm(data)}}</span>
+                                        <p><a (click)="goDetailPage(data.resvId)">{{getSvcDetail(data)}}</a></p>
+<!--                                        TODO 타입별로 보여지는 형식이 다름-->
+                                        <span class="date">{{getSvcPeriod(data)}}</span>
+                                    </div>
+                                    <p>{{data.optnNm}}</p>
+                                    <p>{{data.feeReqMm | stringDateFormatDt:{isKo:true} }}<span class="block">{{data.feeTot | numberFormatWithComma}} 원</span></p>
+                                    <p>{{data.aplCustNm}}<span class="block">{{data.aplDt | stringDateFormatDtm}}</span></p>
+<!--                                    TODO utStat-->
+                                    <p>{{data.utStats}}<span class="iblock">(이용전)</span><span class="block cancel">{{data.cncDt | stringDateFormatDtm }}</span></p>
+                                </li>
+                            </ng-template>
+                        </ul>
+
+                        <!-- 더보기 -->
+                        <a class="add_item" *ngIf="resvSearchModel?.page < resvSearchModel?.totalEndPage"
+                           (click)="loadResvHisList(true)">더보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+</v-app>

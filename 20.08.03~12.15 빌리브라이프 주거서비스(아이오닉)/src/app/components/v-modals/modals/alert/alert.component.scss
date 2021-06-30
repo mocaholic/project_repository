@@ -1,0 +1,94 @@
+.layer_popup_wrapper {
+
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+}
+
+.layer_popup {
+    width: 26.67rem;
+    min-height: 14.83rem;
+    height: auto; 
+    max-height: 40rem;
+    // margin-top: -9.167rem;
+    margin-left: -13.33rem;
+    line-height: 1.6;
+    font-size: 1.167rem;
+    position: relative;
+}
+.layer_popup .cont_pop {
+    height: calc(100% - 6.25rem);
+    // overflow-y: auto;
+}
+
+.inactive{
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    animation-name: inactiveAnimated;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+}
+
+.inactiveDimmer{
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    animation-name: inactiveDimmerAnimated;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in;
+}
+
+.active{
+    animation-name: activeAnimated;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+}
+
+
+.cont_pop {
+    text-align: center;
+}
+
+@keyframes activeAnimated {
+    0%   {transform: scale(0.95)}
+    20%   {transform: scale(0.98)}
+    100% {transform: scale(1)}
+}
+
+@keyframes inactiveAnimated {
+
+    0%   {opacity: 1}
+    100%   {opacity: 0}
+    0%   {transform: scale(1)}
+    30%   {transform: scale(0.96)}
+    100% {transform: scale(0.93)}
+}
+
+@keyframes inactiveDimmerAnimated {
+
+    0%   {opacity: 1}
+    100%   {opacity: 0}
+}
+
+
+@media screen and (min-width: 1025px) {
+    .layer_popup {
+        width: 320px;
+        min-height: 178px;
+        max-height: 480px;
+        font-size: 14px;
+        margin-left: -160px;
+    }
+    .layer_popup .cont_pop {
+        height: calc(100% - 75px);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

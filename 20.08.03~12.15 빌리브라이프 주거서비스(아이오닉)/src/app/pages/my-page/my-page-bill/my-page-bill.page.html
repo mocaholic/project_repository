@@ -1,0 +1,173 @@
+<v-app>
+    <v-body title="관리비 조회" mnuId="MP_BILL">
+        <div class="container">
+            <div class="bill">
+                <!-- 관리비 청구 이력 없을 경우 -->
+                <div class="flat_round_box" *ngIf="!isExistBillData;else bill_content">
+                    <div class="content">
+                        <div class="txt_box">
+                            <em>관리비 청구 이력이 없습니다.</em>
+                            <p>최초 입주로 인하여 관리비 청구이력이 없는 경우에는 관리비 조회를 할 수 없습니다.<br>이는 오류가 아니며 입주 후 관리비가 최초 청구되는 시점부터 정상적으로
+                                이용하실 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 관리비 청구 이력 없을 경우 -->
+
+                <!-- 관리비 청구 이력 있을 경우 -->
+                <ng-template #bill_content>
+                    <div class="search_top">
+                        <span>조회 연월</span>
+                        <ng-select [items]="yearList"
+                                   [searchable]="false"
+                                   [clearable]="false"
+                                   [(ngModel)]="selectedYear"
+                                   (change)="onChangeYear()"
+                                   bindLabel="cdName"
+                                   bindValue="cd"
+                                   placeholder="연도 선택"
+                        >
+                        </ng-select>
+                        <ng-select [items]="monthList"
+                                   [searchable]="false"
+                                   [clearable]="false"
+                                   [(ngModel)]="selectedMonth"
+                                   (change)="onChangeMonth()"
+                                   bindLabel="cdName"
+                                   bindValue="cd"
+                                   placeholder="월 선택"
+                        >
+                        </ng-select>
+                    </div>
+
+                    <!-- 관리비 요약 -->
+                    <div class="round_box">
+                        <div class="content">
+                            <h5>관리비 요약</h5>
+                            <div class="summary">
+                                <div class="price_list">
+                                    <dl class="claim">
+                                        <dt>청구금액</dt>
+                                        <dd>{{totalFee | numberFormatWithComma}}<span>원</span></dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>당월 부과금액</dt>
+                                        <dd>{{billModel?.fee | numberFormatWithComma}} 원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>전월 미납액</dt>
+                                        <dd>{{billModel?.unpaidFee | numberFormatWithComma}} 원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>전월 미납 연체료</dt>
+                                        <dd>{{billModel?.unpaidCharge | numberFormatWithComma}} 원</dd>
+                                    </dl>
+                                </div>
+                                <div class="right_area">
+                                    <p>납부
+                                        마감일<span><strong>{{billModel?.dueDate | stringDateFormatDt:{isKo: true} }}</strong> 까지</span>
+                                    </p>
+                                    <ul class="dot_list">
+                                        <li>납기 후 금액은 납부일 기준으로 관리사무소에 문의하여 확인하실 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리비 비교 -->
+                    <div class="round_box">
+                        <div class="content">
+                            <h5>관리비 비교</h5>
+                            <div class="compare">
+                                <div class="left_area">
+                                    <h6>당월 동일면적 비교</h6>
+                                    <div class="bg_box">
+                                        <div class="w_graph">
+                                            <span class="fill" [style]="'width:' + calcFeePercent +'%'"></span>
+                                            <span class="value" [ngClass]="calcFeePercent>=90 ? 'right' : ''"
+                                                  [style]="'left:' + calcFeePercent + '%'">우리집<strong>{{billModel?.fee | numberFormatWithComma}}
+                                                원</strong></span><!-- left:90% 이상일때 class="right" 추가 적용 -->
+                                        </div>
+                                        <ul class="g_data">
+                                            <li>최저<span>{{billModel?.minFee | numberFormatWithComma}} 원</span></li>
+                                            <li>평균<span>{{billModel?.avgFee | numberFormatWithComma}} 원</span></li>
+                                            <li>최고<span>{{billModel?.maxFee | numberFormatWithComma}} 원</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <h6>전월 비교</h6>
+                                    <table class="tbl3">
+                                        <colgroup>
+                                            <col width="33.3%">
+                                            <col width="33.3%">
+                                            <col width="33.4%">
+                                        </colgroup>
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">전월(9월)</th>
+                                            <th scope="col">당월(10월)</th>
+                                            <th scope="col">증감</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>{{billModel?.beforeFee | numberFormatWithComma}} 원</td>
+                                            <td>{{billModel?.fee | numberFormatWithComma}} 원</td>
+                                            <td><span
+                                                    [ngClass]="compareFee(billModel?.fee,billModel?.beforeFee)"> {{billModel?.fee - billModel?.beforeFee | numberFormatWithComma}}
+                                                원</span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="right_area">
+                                    <h6>기간별 동일면적 비교</h6>
+                                    <div class="bg_box">
+                                        <canvas style="height:100%; width:100%" #chart></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리비 항목 상세 -->
+                    <div class="round_box">
+                        <div class="content">
+                            <h5>관리비 항목 상세 <span class="right">단위: 원</span></h5>
+                            <div class="bill_det">
+                                <table class="tbl4">
+                                    <colgroup>
+                                        <col class="col1">
+                                        <col class="col2">
+                                        <col class="col3">
+                                        <col class="col4">
+                                    </colgroup>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">항목</th>
+                                        <th scope="col">전월(9월)</th>
+                                        <th scope="col">당월(10월)</th>
+                                        <th scope="col">증감</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr *ngFor="let data of billModel?.billDtlList;">
+                                        <td>{{data.mchrDtlNm}}</td>
+                                        <td>{{data.beforeLvyamt | numberFormatWithComma}}</td>
+                                        <td>{{data.lvyamt | numberFormatWithComma}}</td>
+                                        <td><span
+                                                [ngClass]="compareFee(data.lvyamt,data.beforeLvyamt)"> {{data.lvyamt - data.beforeLvyamt | numberFormatWithComma}}</span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+                <!-- // 관리비 청구 이력 있을 경우 -->
+            </div>
+        </div>
+    </v-body>
+</v-app>

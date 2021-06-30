@@ -1,0 +1,549 @@
+<v-app>
+  <v-body title="스마트홈">
+    <div class="container">
+        <div class="smart_home">
+            <div class="top">
+                <ul class="tab_menu">
+                    <li><a href="javascript:void(0);" class="on">우리집 정보</a></li>
+                    <li><a href="javascript:void(0);">우리집 제어</a></li>
+                </ul>
+                <a href="#" class="btn_refresh">새로고침</a>
+            </div>
+            <!-- 우리집 정보 -->
+            <div class="tab_cont">
+                <div class="link_area">
+                    <div class="round_box car">
+                        <div class="content">
+                            <a href="#">
+                                <h5>차량</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="round_box delivery">
+                        <div class="content">
+                            <a href="#">
+                                <h5>택배</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="energy_usage">
+                    <div class="round_box">
+                        <div class="content">
+                            <h5>에너지 현재 사용량<span>(동평형 대비)</span></h5>
+                            <ul class="energy_list">
+                                <li>
+                                    <div>
+                                        <dl>
+                                            <dt class="electricity">전기</dt>
+                                            <dd>
+                                                <span class="num">380</span>
+                                                <span>kWh</span>
+                                            </dd>
+                                        </dl>
+                                        <div class="graph">
+                                            <span class="fill" style="width:40%"></span>
+                                            <span class="average">500kWh</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <dl>
+                                            <dt class="waterworks">수도</dt>
+                                            <dd>
+                                                <span class="num">20</span>
+                                                <span>m³</span>
+                                            </dd>
+                                        </dl>
+                                        <div class="graph">
+                                            <span class="fill" style="width:40%"></span>
+                                            <span class="average">60m³</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <dl>
+                                            <dt class="gas">가스</dt>
+                                            <dd>
+                                                <span class="num">80</span>
+                                                <span>m³</span>
+                                            </dd>
+                                        </dl>
+                                        <div class="graph">
+                                            <span class="fill" style="width:40%"></span>
+                                            <span class="average">100m³</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <dl>
+                                            <dt class="hot_water">온수</dt>
+                                            <dd>
+                                                <span class="num">40</span>
+                                                <span>m³</span>
+                                            </dd>
+                                        </dl>
+                                        <div class="graph">
+                                            <span class="fill" style="width:85%"></span>
+                                            <span class="average over">30m³</span><!-- 평균값 넘으면 class="over" 추가 적용 -->
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <dl>
+                                            <dt class="heating">난방</dt>
+                                            <dd>
+                                                <span class="num">20</span>
+                                                <span>m³</span>
+                                            </dd>
+                                        </dl>
+                                        <div class="graph">
+                                            <span class="fill" style="width:40%"></span>
+                                            <span class="average">50m³</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 우리집 정보 -->
+            <!-- 우리집 제어 -->
+            <div class="tab_cont">
+                <ul class="ctrl_list">
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="light">조명</h5>
+                                <span class="btn_group">
+                                    <button type="button" class="txt_btn">전체끄기</button>
+                                    <button type="button" class="txt_btn">전체켜기</button>
+                                </span>
+                                <a href="javascript:void(0);" class="btn_toggle">열기</a>
+                            </div>
+                            <div class="ctrl_area">
+                                <ul>
+                                    <li>
+                                        <div class="switch_area">
+                                            <em>거실 1<span class="on">켜짐</span></em>
+                                            <div class="btn_switch type2">
+                                                <input type="checkbox" id="light1" name="light" class="input_on_off" checked>
+                                                <label for="light1" class="label_on_off">
+                                                    <span class="marble"></span>
+                                                    <span class="on">on</span>
+                                                    <span class="off">off</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="switch_area">
+                                            <em>방 1<span>꺼짐</span></em>
+                                            <div class="btn_switch type2">
+                                                <input type="checkbox" id="light2" name="light" class="input_on_off">
+                                                <label for="light2" class="label_on_off">
+                                                    <span class="marble"></span>
+                                                    <span class="on">on</span>
+                                                    <span class="off">off</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="switch_area">
+                                            <em>방 2<span>꺼짐</span></em>
+                                            <div class="btn_switch type2">
+                                                <input type="checkbox" id="light3" name="light" class="input_on_off">
+                                                <label for="light3" class="label_on_off">
+                                                    <span class="marble"></span>
+                                                    <span class="on">on</span>
+                                                    <span class="off">off</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="cooling">냉방</h5>
+                                <span class="btn_group">
+                                    <button type="button" class="txt_btn">전체끄기</button>
+                                    <button type="button" class="txt_btn">전체켜기</button>
+                                </span>
+                                <a href="javascript:void(0);" class="btn_toggle">열기</a>
+                            </div>
+                            <div class="ctrl_area">
+                                <ul>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="switch_area">
+                                                <em>방 1<span class="on">켜짐</span></em>
+                                                <div class="btn_switch type2">
+                                                    <input type="checkbox" id="cooling1" name="cooling" class="input_on_off" checked>
+                                                    <label for="cooling1" class="label_on_off">
+                                                        <span class="marble"></span>
+                                                        <span class="on">on</span>
+                                                        <span class="off">off</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>현재온도 20 ℃</dt>
+                                                </dl>
+                                                <dl>
+                                                    <dt>설정온도 <span class="fc_blue">20 ℃</span></dt>
+                                                    <dd>
+                                                        <div class="slider cooling">
+                                                            <button type="button" class="btn_minus">감소</button>
+                                                            <ion-range></ion-range>
+                                                            <button type="button" class="btn_plus">증가</button>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>모드</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_mode1" name="c_mode">
+                                                            <label for="c_mode1">냉방</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_mode2" name="c_mode">
+                                                            <label for="c_mode2">제습</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_mode3" name="c_mode">
+                                                            <label for="c_mode3">송풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_mode4" name="c_mode">
+                                                            <label for="c_mode4">자동</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>풍량</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_air_volume1" name="c_air_volume">
+                                                            <label for="c_air_volume1">약풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_air_volume2" name="c_air_volume">
+                                                            <label for="c_air_volume2">중풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_air_volume3" name="c_air_volume">
+                                                            <label for="c_air_volume3">강풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="c_air_volume4" name="c_air_volume">
+                                                            <label for="c_air_volume4">자동</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="heating">난방</h5>
+                                <span class="btn_group">
+                                    <button type="button" class="txt_btn">전체끄기</button>
+                                    <button type="button" class="txt_btn">전체켜기</button>
+                                </span>
+                                <a href="javascript:void(0);" class="btn_toggle">열기</a>
+                            </div>
+                            <div class="ctrl_area">
+                                <ul>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="switch_area">
+                                                <em>방 1<span class="on">켜짐</span></em>
+                                                <div class="btn_switch type2">
+                                                    <input type="checkbox" id="heating1" name="heating1" class="input_on_off" checked>
+                                                    <label for="heating1" class="label_on_off">
+                                                        <span class="marble"></span>
+                                                        <span class="on">on</span>
+                                                        <span class="off">off</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>현재온도 20 ℃</dt>
+                                                </dl>
+                                                <dl>
+                                                    <dt>설정온도 <span class="fc_org">20 ℃</span></dt>
+                                                    <dd>
+                                                        <div class="slider heating">
+                                                            <button type="button" class="btn_minus">감소</button>
+                                                            <ion-range></ion-range>
+                                                            <button type="button" class="btn_plus">증가</button>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>모드</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="h_mode1_1" name="h_mode1">
+                                                            <label for="h_mode1_1">일반</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="h_mode1_2" name="h_mode1">
+                                                            <label for="h_mode1_2">외출</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="switch_area">
+                                                <em>방 1<span>꺼짐</span></em>
+                                                <div class="btn_switch type2">
+                                                    <input type="checkbox" id="heating2" name="heating2" class="input_on_off">
+                                                    <label for="heating2" class="label_on_off">
+                                                        <span class="marble"></span>
+                                                        <span class="on">on</span>
+                                                        <span class="off">off</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>현재온도 20 ℃</dt>
+                                                </dl>
+                                                <dl>
+                                                    <dt>설정온도 <span class="fc_org">20 ℃</span></dt>
+                                                    <dd>
+                                                        <div class="slider heating">
+                                                            <button type="button" class="btn_minus">감소</button>
+                                                            <ion-range></ion-range>
+                                                            <button type="button" class="btn_plus">증가</button>
+                                                        </div>
+                                                    </dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>모드</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="h_mode2_1" name="h_mode2">
+                                                            <label for="h_mode2_1">일반</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="h_mode2_2" name="h_mode2">
+                                                            <label for="h_mode2_2">외출</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="gas">가스<span>가스 밸브가 열려있습니다.</span></h5>
+                                <span class="btn_group right">
+                                    <button type="button" class="btn">밸브잠금</button><!-- 밸브잠금 적용 시 class="disabled" 추가 적용 -->
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="ventilation">환기<span>전체 / <span class="on">켜짐</span></span></h5>
+                                <div class="btn_switch type2">
+                                    <input type="checkbox" id="pan" name="light" class="input_on_off" checked>
+                                    <label for="pan" class="label_on_off">
+                                        <span class="marble"></span>
+                                        <span class="on">on</span>
+                                        <span class="off">off</span>
+                                    </label>
+                                </div>
+                                <a href="javascript:void(0);" class="btn_toggle">열기</a>
+                            </div>
+                            <div class="ctrl_area">
+                                <ul>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>풍량</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="v_air_volume1" name="v_air_volume">
+                                                            <label for="v_air_volume1">약풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="v_air_volume2" name="v_air_volume">
+                                                            <label for="v_air_volume2">중풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="v_air_volume3" name="v_air_volume">
+                                                            <label for="v_air_volume3">강풍</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="v_air_volume4" name="v_air_volume">
+                                                            <label for="v_air_volume4">자동</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="standby_power">대기전력</h5>
+                                <span class="btn_group">
+                                    <button type="button" class="txt_btn">전체끄기</button>
+                                    <button type="button" class="txt_btn">전체켜기</button>
+                                </span>
+                                <a href="javascript:void(0);" class="btn_toggle">열기</a>
+                            </div>
+                            <div class="ctrl_area">
+                                <ul>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="switch_area">
+                                                <em>방 1<span class="on">켜짐</span></em>
+                                                <div class="btn_switch type2">
+                                                    <input type="checkbox" id="s_power1" name="standby_power1" class="input_on_off" checked>
+                                                    <label for="s_power1" class="label_on_off">
+                                                        <span class="marble"></span>
+                                                        <span class="on">on</span>
+                                                        <span class="off">off</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>슬립모드</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="s_power1_1" name="s_power1">
+                                                            <label for="s_power1_1">자동</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="s_power1_2" name="s_power1">
+                                                            <label for="s_power1_2">수동</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="switch_area">
+                                                <em>방 1<span>꺼짐</span></em>
+                                                <div class="btn_switch type2">
+                                                    <input type="checkbox" id="s_power2" name="standby_power2" class="input_on_off">
+                                                    <label for="s_power2" class="label_on_off">
+                                                        <span class="marble"></span>
+                                                        <span class="on">on</span>
+                                                        <span class="off">off</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>슬립모드</dt>
+                                                    <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="s_power2_1" name="s_power2">
+                                                            <label for="s_power2_1">자동</label>
+                                                        </span>
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" id="s_power2_2" name="s_power2">
+                                                            <label for="s_power2_2">수동</label>
+                                                        </span>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="round_box">
+                        <div class="content">
+                            <div class="ctrl_top">
+                                <h5 class="guard">방범<span>방범설정이 해제되었습니다.</span></h5>
+                                <span class="btn_group">
+                                    <button type="button" class="btn">방범설정</button><!-- 방범설정 적용 시 class="disabled" 추가 적용 -->
+                                </span>
+                                <a href="javascript:void(0);" class="btn_toggle">열기</a>
+                            </div>
+                            <div class="ctrl_area">
+                                <ul>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>입장지연시간</dt>
+                                                    <dd class="time_ctrl">
+                                                        <button type="button" class="btn_left">줄이기</button>
+                                                        <span>30초</span>
+                                                        <button type="button" class="btn_right">늘이기</button>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ctrl_box">
+                                            <div class="ctrl_det">
+                                                <dl>
+                                                    <dt>퇴장지연시간</dt>
+                                                    <dd class="time_ctrl">
+                                                        <button type="button" class="btn_left disabled">줄이기</button><!-- 버튼 비활성 시 class="disabled" 추가 적용 -->
+                                                        <span>30초</span>
+                                                        <button type="button" class="btn_right disabled">늘이기</button><!-- 버튼 비활성 시 class="disabled" 추가 적용 -->
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="btn_area">
+                                    <button type="button" class="btn btn_type3">적용</button><!-- 방범설정 적용 시 class="disabled" 추가 적용 -->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- // 우리집 제어 -->
+        </div>
+    </div>
+  </v-body>
+</v-app>

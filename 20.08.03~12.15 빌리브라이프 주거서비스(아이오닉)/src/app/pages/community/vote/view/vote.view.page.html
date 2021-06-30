@@ -1,0 +1,45 @@
+<v-app>
+    <v-body title="주민투표">
+        <div class="container">
+            <!-- 글자 크기 조절 -->
+            <v-font-size
+                    [(fontClassName)]="fontSizeClassName"
+            ></v-font-size>
+            <!-- 투표영역 -->
+            <div class="round_box vote" [ngClass]="fontSizeClassName"><!-- 글자크기 버튼 클릭시 class ft_m, ft_l 적용 -->
+                <div class="content">
+                    <div class="vote_top">
+                        <h4>{{qstnDetail?.qstnTtl}}</h4>
+                        <span class="date">{{qstnDetail?.qstnStrDt | stringDateFormatDt}} - {{qstnDetail?.qstnEndDt | stringDateFormatDt}}</span>
+                    </div>
+                    <p *ngIf="qstnDetail?.qstnCts" class="info_txt">
+                        {{qstnDetail?.qstnCts}}
+                    </p>
+                    <!-- 문항 -->
+                    <ng-container *ngFor="let row of qstnDetail?.qstnRowList;index as i">
+                        <h5>{{i+1}}.{{row.rowTtl}}</h5>
+                        <ul [ngClass]="voteYn ? 'disabled' : ''" >
+                            <li *ngFor="let item of row?.qstnItemList;" [ngClass]="voteYn && ansList[row.rowNo-1]==item.itemNo.toString() ? 'checked' : ''">
+                                <div class="radio">
+                                    <label>{{item.itemTtl}}
+                                        <input type="radio" [(ngModel)]="ansList[row.rowNo-1]" [name]="row.rowNo.toString()" [value]="!voteYn ? item.itemNo.toString() : ''">
+                                        <span class="chkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </div>
+            </div>
+            <!-- // 투표영역 -->
+            <!-- 버튼영역 - 참여 전 -->
+            <div class="btn_area">
+                <button type="button" (click)="goListPage(!voteYn)" class="btn btn_type1" [ngClass]="!voteYn ? 'btn_type2' : 'btn_type1'">
+                    {{!voteYn ? '취소하기' : '목록보기'}}
+                </button>
+                <button *ngIf="!voteYn" (click)="onClickSubmit()" type="button" class="btn btn_type2">제출하기</button>
+            </div>
+
+        </div>
+    </v-body>
+</v-app>

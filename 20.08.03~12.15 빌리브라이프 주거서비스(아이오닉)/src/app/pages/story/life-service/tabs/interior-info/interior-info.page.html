@@ -1,0 +1,61 @@
+<h4 class="title_mg"><span class="highlight">TYPE</span></h4>
+<div class="tab slide">
+    <ul>
+        <li *ngFor="let cat of supTpCatList;index as i"
+            [ngClass]="selectedSupTpIndex === i ? 'on' : ''"
+            (click)="onChangeSupTp(i)"
+        >
+            <a >{{cat.supTp}}</a>
+        </li>
+    </ul>
+</div>
+<div class="operation_info">
+    <div class="plane_area flat_round_box bg_white">
+        <!-- 데이터 노출 영역 -->
+        <!-- 선택 된 이미지 노출 -->
+        <div class="img_extend">
+            <img [src]="selectedImgIndex > -1 ? (imageListBySupTp[selectedImgIndex]?.imgFileIdPath | fileToWebPath) : ''" alt="type 평면도">
+            <div class="btm_box">
+                <a (click)="openFullImageModal(imageListBySupTp[selectedImgIndex]?.imgFileIdPath)" class="extend_btn">원본보기</a>
+            </div>
+        </div>
+        <!-- MO- 슬라이드 -->
+        <div class="img_slide mo">
+            <div class="slide_box">
+                <ion-slides
+                        #mpSlider
+                        pager="false"
+                        [options]="{
+                        slidesPerView:3,
+                        initialSlide: 0
+                    }">
+                    <ion-slide [ngClass]="selectedImgIndex===i? 'on' : ''" *ngFor="let img of imageListBySupTp; index as i">
+                        <img [src]="img.imgFileIdPath | fileToWebPath" (click)="onChangeMainImage(i)" alt="">
+                    </ion-slide>
+                </ion-slides>
+            </div>
+        </div>
+        <!-- PC- 슬라이드 -->
+        <div class="img_slide pc">
+            <div class="slide_box">
+                <ion-slides #pcSlider pager="false" [options]="{
+                      slidesPerView:5,
+                      initialSlide: 0,
+                      speed: 400,
+                      spaceBetween : 20
+                    }">
+
+                    <ion-slide [ngClass]="selectedImgIndex===i? 'on' : ''" *ngFor="let img of imageListBySupTp; index as i">
+                        <img [src]="img.imgFileIdPath | fileToWebPath" (click)="onChangeMainImage(i)" alt="">
+                    </ion-slide>
+                </ion-slides>
+            </div>
+            <button (click)="pcSlider.slidePrev()" class="arrow_btn btn_left">왼쪽</button>
+            <button (click)="pcSlider.slideNext()" class="arrow_btn btn_right">오른쪽</button>
+        </div>
+        <!-- // 데이터 노출 영역 -->
+    </div>
+    <ul class="dot_list">
+        <li *ngFor="let str of ntcsModel?.ntcMattList">{{str}}</li>
+    </ul>
+</div>

@@ -1,0 +1,216 @@
+.faq_seatch{
+    position: relative;
+    font-size: 1.167rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #fff;
+}
+.faq_seatch:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: #D7D9DC;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.tab.category.auto li{
+    width: auto;
+}
+ul.tab.category.auto li:nth-child(4n){
+    margin-right: 2.6%;
+}
+
+.round_box {
+    padding-left: 1.333rem;
+    padding-right: 1.333rem;
+}
+
+.faq_list dl{
+    margin: 0 0 1.16667rem;
+}
+.faq_list dl:last-of-type {
+    margin-bottom: 0;
+}
+.faq_list dl dt.title{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    padding-right: 2.083rem;
+    font-weight: bold;
+    font-size: 1.167rem;
+    color: #4B423C;
+    line-height: 1.43;
+}
+.faq_list dl dt.title p{
+    position: relative;
+    padding-left: 2rem;
+}
+.faq_list dl dt.title p::before{
+    content: "Q.";
+    display: inline-block;
+    font-size: 1.5rem;
+    position: absolute;
+    font-family:'Montserrat';
+    color: #9CC023;
+    left: 0;
+    top: 0;
+    line-height: 1;
+}
+.faq_list dl dt.title a {
+    // position: relative;
+    display: block;
+}
+.faq_list dl dt.title .toggle_btn:after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: -2.083rem;
+    top: 50%;
+    width: 1.2rem;
+    height: 0.8rem;
+    margin-top: -0.4rem;
+    transform: rotate(0deg);
+    background: url('/assets/common/arr_btm_gry2.svg') no-repeat;
+    background-size: 100% 100%;
+}
+.faq_list dl.on dt.title .toggle_btn:after {
+    transform: rotate(180deg);
+}
+.faq_list dl dd.cont{
+    display: none;
+    height: 0;
+    background: #fff;
+    border-top: 1px solid #D4D9E0;
+    padding: 1.25rem;
+    margin: 1.083rem 0 0;
+    overflow: hidden;
+    // margin: 0 0 1rem;
+}
+.faq_list dl dd.cont p{
+    position: relative;
+    padding-left: 2rem;
+    color: #4B423C;
+    line-height: 1.66667;
+    font-size: 1rem;
+}
+.faq_list dl dd.cont p::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+    width:  1.75rem;
+    height: 1.667rem;
+    background: url('/assets/common/answer_img.svg') no-repeat;
+    background-size: 100%;
+}
+.faq_list dl.on dd.cont{
+    display: block;
+    height: auto;
+}
+.faq_list + a.add_item{
+    margin-top: 2.5rem;
+}
+
+/* 글자크기 - M (s+2px)*/
+.ft_m.faq_list dl dt.title {
+    font-size: 1.333rem;
+}
+.ft_m.faq_list dl dd.cont p {
+    font-size: 1.167rem;
+}
+/* 글자크기 - L (s+4px) */
+.ft_l.faq_list dl dt.title {
+    font-size: 1.5rem;
+}
+.ft_l.faq_list dl dd.cont p {
+    font-size: 1.333rem;
+}
+
+/* pc */
+@media screen and (min-width: 1025px) {
+    .font_size_fix{
+        padding: 0;
+    }
+    .faq_seatch{
+        font-size: 16px;
+        margin: 0;
+    }
+    .faq_seatch .search_form{
+        width: 580px;
+        margin: 0 auto;
+    }
+    .faq_list{
+        padding: 0;
+    }
+    .tab.category.auto li{
+        padding: 0 15px;
+        font-size: 16px;
+    }
+    ul.tab.category.auto li:nth-child(4n){
+        margin-right: 16px;
+    }
+    ul.tab.category.auto li:nth-child(8n){
+        margin-right: 16px;
+    }
+    
+    .round_box {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .faq_list dl {
+        margin-bottom: 25px;
+    }
+    .faq_list dl dt.title{
+        font-size: 18px;
+        padding:0;
+        margin-bottom: 0;
+    }
+    .faq_list dl dt.title p{
+        padding-left: 40px;
+        line-height: 1.278;
+    }
+    .faq_list dl dt.title p::before{
+        font-size: 26px;
+    }
+    .faq_list dl dt.title .toggle_btn:after {
+        right: 0;
+        width: 16px;
+        height: 10px;
+        margin-top: -5px;
+    }
+    .faq_list dl dd.cont{
+        padding: 34px 40px;
+        margin-bottom: 0;
+        margin-top: 23px;
+    }
+    .faq_list dl dd.cont p{
+        padding-left: 40px;
+        font-size: 15px;
+        line-height: 1.467;
+    }
+    .faq_list dl dd.cont p::before{
+        width: 26px;
+        height: 32px;
+    }
+
+    .faq_list + a.add_item{
+        margin-top: 45px;
+    }
+
+    /* 글자크기 - M (s+2px)*/
+    .ft_m.faq_list dl dt.title {
+        font-size: 20px;
+    }
+    .ft_m.faq_list dl dd.cont p {
+        font-size: 17px;
+    }
+    /* 글자크기 - L (s+4px) */
+    .ft_l.faq_list dl dt.title {
+        font-size: 22px;
+    }
+    .ft_l.faq_list dl dd.cont p {
+        font-size: 19px;
+    }
+}

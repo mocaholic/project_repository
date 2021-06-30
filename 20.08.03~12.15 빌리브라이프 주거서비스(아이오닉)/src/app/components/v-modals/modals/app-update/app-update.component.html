@@ -1,0 +1,15 @@
+<div class="dimmed" *ngIf="_popupInfo?.show" [ngClass]="{'inactiveDimmer': !isActive}"></div>
+<div class="layer_popup" *ngIf="_popupInfo?.show" [ngClass]="{'active' : isActive, 'inactive': !isActive}" >
+    <div class="content">
+        <h1>업데이트</h1>
+        <div class="cont_pop">
+            새롭게 업데이트된 기능이 있습니다.
+            <br>빌리브 라이프 서비스 앱을 업데이트 후 사용하세요.
+        </div>
+    </div>
+    <div class="btn_area">
+        <button type="button" *ngIf="!_popupInfo?.isRequired" class="btn btn_type1" (click)="onClick(true)" >지금 안 함</button>
+        <button type="button" class="btn btn_type2" (click)="onClick(false)" >업데이트</button>
+    </div>
+
+</div>
