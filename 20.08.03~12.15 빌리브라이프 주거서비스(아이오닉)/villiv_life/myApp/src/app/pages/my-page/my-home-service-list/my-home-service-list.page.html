@@ -1,0 +1,191 @@
+<v-app>
+    <v-body title="우리집현황">
+        <div class="container">
+            <div class="status">
+                <!-- 일정 -->
+                <div class="round_box schedule">
+                    <div class="content">
+                        <h5>우리 집 서비스 이용/예약 일정입니다.<span class="month">{{selectedDayStr?.substring(4,6)}}월</span></h5>
+                        <div class="date_list">
+                            <ion-slides #slides pager="false" [options]="{
+                                slidesPerView: viewCount,
+                                initialSlide: 0,
+                                speed: 400
+                                }"
+                                        (ionSlidesDidLoad)="ionSlidesDidLoad(slides)"
+                            >
+                                <ion-slide *ngFor="let data of dayConfigList" [ngClass]="getTodayClassName(data.day)"><!-- class 적용 : 오늘-today / 선택시-on -->
+                                    <div class="">
+                                        <a (click)="onClickDay(data.day)" [ngClass]="data.isExist === '1' ? 'exist' : ''" ><!-- 예약내역 있을 경우 class="exist" 적용 -->
+                                            <span class="num">{{data.day.substring(6, 8)}}</span>
+                                            <span class="txt" [ngClass]="getDayOfTheWeekClassName(data.day | getDayOfTheWeek)" >{{(data.day | getDayOfTheWeek).toUpperCase() }}</span>
+                                        </a>
+                                    </div>
+                                </ion-slide>
+                            </ion-slides>
+                            <a (click)="onClickPrev(slides)" class="btn_prev pc">이전</a>
+                            <a (click)="onClickNext(slides)" class="btn_next pc">다음</a>
+                        </div>
+                        <div class="sch_list">
+                            <div class="left_area">
+                                <h6>일자별 <span class="fc_org">0</span> 건</h6>
+                                <p class="no_data" *ngIf="!isExistListByDate;else date_other_content">서비스 이용/예약 신청정보가 없습니다.</p>
+                                <ng-template #date_other_content>
+                                    <ul class="day">
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>이마트24 조식</span></p>
+                                                <span class="info_txt">유부초밥세트(대왕불고기&새콤유부) 외 1건</span>
+                                                <span class="date">2020.09.09 07:00</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>공유키친</span></p>
+                                                <span class="info_txt">공유키친 / 1동 2층 B-LINE</span>
+                                                <span class="date">2020.09.09 10:00 ~ 13:00</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>마팅룸</span></p>
+                                                <span class="info_txt">7층-미팅룸 A / 1동 7층 B-LINE</span>
+                                                <span class="date">2020.09.09 14:00 ~ 17:00</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>미디어룸</span></p>
+                                                <span class="info_txt">1인 방송실 / 1동 9층 B-LINE</span>
+                                                <span class="date">2020.09.09 19:00 ~ 21:00</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ng-template>
+                            </div>
+                            <div class="right_area">
+                                <h6>기간별 <span class="fc_yellow">0</span> 건</h6>
+                                <p class="no_data" *ngIf="!isExistListByDate;else period_other_content">서비스 이용/예약 신청정보가 없습니다.</p>
+                                <ng-template #period_other_content>
+                                    <ul class="period" >
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>휘트니스 센터</span></p>
+                                                <span class="info_txt">휘트니스 센터 / 6층 A-LINE 동측</span>
+                                                <span class="date">2020.09.01 ~ 2020.09.30</span>
+                                            </a>
+                                        </li>
+                                        <li class="closed"><!-- 휴관일 때 class="closed" 적용 -->
+                                            <a href="#">
+                                                <p class="tit"><span>바이올린 성인 중급반</span></p>
+                                                <span class="info_txt">레슨룸 A / 1동 9층 B-LINE</span>
+                                                <span class="date">2020.09.01 ~ 2020.09.30 / 수 / 13:00 ~ 15:00</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>바른 자세 성장마사지&요가(3~5세, 성인)</span></p>
+                                                <span class="info_txt">스크린룸 / 1동 9층 B-LINE</span>
+                                                <span class="date">2020.09.01 ~ 2020.11.30 / 화,금 / 13:00 ~ 15:00</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>파티오하우스</span></p>
+                                                <span class="info_txt">전체(게스트룸 A/B, 라운지) / 2층 중정</span>
+                                                <span class="date">2020.09.09 ~ 2020.09.20</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>소액 부동산재태크 유형별 실전 사례</span></p>
+                                                <span class="info_txt">7층-미팅룸 A / 1동 7층 B-LINE</span>
+                                                <span class="date">2020.09.01 ~ 2020.11.30 / 월,수,금 / 10:00 ~ 12:00</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>파티오하우스</span></p>
+                                                <span class="info_txt">전체(게스트룸 A/B, 라운지) / 2층 중정</span>
+                                                <span class="date">2020.09.09 ~ 2020.09.20</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <p class="tit"><span>소액 부동산재태크 유형별 실전 사례</span></p>
+                                                <span class="info_txt">7층-미팅룸 A / 1동 7층 B-LINE</span>
+                                                <span class="date">2020.09.01 ~ 2020.11.30 / 월,수,금 / 10:00 ~ 12:00</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ng-template>
+                            </div>
+                        </div>
+                        <p class="ps_txt">서비스 이용/예약 일정은 '우리단지 서비스'에서 신청한 내역 중, 관리비로 합산 청구되는 내역만 확인이 가능합니다.</p>
+                    </div>
+                </div>
+                <!-- // 일정 -->
+                <!-- 관리비 현황 -->
+                <div class="round_box bill">
+                    <div class="content">
+                        <h5>관리비 현황</h5>
+                        <div class="summary">
+                            <ul class="tab_month">
+                                <li [ngClass]="selectedBillMonthStr === getMonth(-1,'YYYYMM') ? 'on' : ''">
+                                    <a (click)="onClickBill(getMonth(-1,'YYYYMM'))">{{getMonth(-1)}}월</a>
+                                </li>
+                                <li [ngClass]="selectedBillMonthStr === getMonth(0,'YYYYMM') ? 'on' : ''">
+                                    <a (click)="onClickBill(getMonth(0,'YYYYMM'))">{{getMonth(0)}}월</a>
+                                </li>
+                                <li [ngClass]="selectedBillMonthStr === getMonth(1,'YYYYMM') ? 'on' : ''">
+                                    <a (click)="onClickBill(getMonth(1,'YYYYMM'))">{{getMonth(1)}}월</a>
+                                </li>
+                            </ul>
+                            <div class="">
+                                <!-- 관리비 청구내역 없을 경우 or 예정인 경우 -->
+                                <p class="no_data" *ngIf="!isExistBill;else bill_other_content">관리비 청구내역이 없습니다.</p>
+                                <!-- // 관리비 청구내역 없을 경우 or 예정인 경우 -->
+                                <!-- 관리비 청구내역 있을 경우 -->
+                                <ng-template #bill_other_content>
+                                    <div class="price_list">
+                                        <dl class="claim">
+                                            <dt>청구금액</dt>
+                                            <dd>{{billTotalFee | numberFormatWithComma}}<span>원</span></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>당월 부과금액</dt>
+                                            <dd>{{billModel?.fee | numberFormatWithComma}} 원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>전월 미납액</dt>
+                                            <dd>{{billModel?.unpaidFee | numberFormatWithComma}} 원</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>전월 미납 연체료</dt>
+                                            <dd>{{billModel?.unpaidCharge | numberFormatWithComma}} 원</dd>
+                                        </dl>
+                                        <dl class="prepare">
+                                            <dt>전월 대비</dt>
+                                            <dd><span [ngClass]="compareBillFee(billModel?.fee,billModel?.beforeFee)">{{billModel?.fee - billModel?.beforeFee | numberFormatWithComma}} 원</span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="right_area">
+                                        <p>납부 마감일<span><strong>{{billModel?.dueDate | stringDateFormatDt:{isKo: true} }}</strong> 까지</span></p>
+                                        <ul class="dot_list">
+                                            <li>납기 후 금액은 납부일 기준으로 관리사무소에 문의하여 확인하실 수 있습니다.</li>
+                                        </ul>
+                                        <div class="btn_area">
+                                            <a (click)="goPageBillDetail()" class="btn btn_type2 w_100">청구내역 자세히 보기</a>
+                                        </div>
+                                    </div>
+                                <!-- // 관리비 청구내역 있을 경우 -->
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 관리비 현황 -->
+            </div>
+        </div>
+    </v-body>
+</v-app>

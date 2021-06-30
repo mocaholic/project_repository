@@ -1,0 +1,560 @@
+.container .round_box .content {
+	position: relative;
+	z-index: 1;
+}
+/* 공통 - 타이틀 작업 */
+.container .round_box .content > .title {
+	position: relative;
+	border-bottom: 0.08333rem solid #fff;
+    padding: 0 0 1rem;
+    font-size: 1.25rem;
+}
+.container .round_box .content > .title.has_btn {
+	padding-right: 4.667rem;
+}
+.container .round_box .content > .title::after {
+	content: "";
+	position: absolute;
+	height: 0.08333rem;
+	background: #abb3c1;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0.3;
+}
+.container .round_box .content > .title h2 {
+	font-size: 1.333rem;
+	font-weight: bold;
+	color: #4b423c;
+}
+.container .round_box .content > .title h2 span.name {
+	position: relative;
+	z-index: 1;
+}
+.container .round_box .content > .title h2 span.name::after {
+	content: "";
+	position: absolute;
+	background: #c9e667;
+	width: 100%;
+	height: 0.6667rem;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: -10;
+}
+.container .round_box .content > .title .right_btn {
+	position: absolute;
+	right: 0;
+	bottom: 1rem;
+	font-size: 1rem;
+	text-align: right;
+	color: #413a34;
+	text-decoration: underline;
+	margin-right: 0.5rem;
+}
+.container .round_box .content > .title .right_btn::after {
+	content: "";
+	position: absolute;
+	right: -0.75rem;
+	top: 50%;
+	margin-top: -0.35rem;
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.7rem;
+	background: url('/assets/icon/arrow_right.svg') no-repeat;
+	background-size: contain;
+}
+.container .round_box .content > .title .right_btn.date {
+	width: 4.667rem;
+	font-size: 1.333rem;
+	font-weight: bold;
+	text-decoration: none;
+	margin-right: 0;
+}
+.container .round_box .content > .title .right_btn.date .icn {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -0.8333rem;
+}
+.container .round_box .content > .title .right_btn.date::after {
+	display: none;
+}
+/* 상단 - 1주일 선택 */
+.container .round_box .content .date_list {
+	position: relative;
+	z-index: 1;
+	margin: 1.833rem 0;
+	background: #F9F9F9;
+	border-radius: 0.25rem;
+	text-align: center;
+}
+.container .round_box .content .date_list li {
+	position: relative;
+	float: left;
+	height: 4.833rem;
+	width: 14.25%;
+}
+.container .round_box .content .date_list li a {
+	color: #413a34;
+	text-align: center;
+	z-index: 10;
+	font-family:'Montserrat';
+}
+.container .round_box .content .date_list li a span {
+	display: block;
+}
+.container .round_box .content .date_list li a .num {
+	font-weight: bold;
+	font-size: 1.333rem;
+	margin: 1.167rem 0 0.5rem;
+}
+.container .round_box .content .date_list li a .txt {
+	color: #8d8785;
+	font-size: 0.9167rem;
+}
+.container .round_box .content .date_list li.on a {
+	color: #fff;
+}
+.container .round_box .content .date_list li.on a .txt {
+	color: #fff;
+}
+.container .round_box .content .date_list li.on::after {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 110.4%;
+	background: #4b423c;
+	z-index: -5;
+	top: -5.2%;
+	left: 0;
+	border-radius: 0.25rem;
+	overflow: hidden;
+	box-shadow: 0px 4px 6px #5a514c;
+}
+.container .round_box .content .date_list::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+/* 공통 - 전체 페이지 full */
+.container .round_box .content .full {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+.container .round_box .content .full.bg_wt {
+	background: #ffffff80;
+}
+/* 공통 - 내부 타이틀 */
+.container .round_box .content .full .title {
+	color: #4b423c;
+	font-size: 1.333rem;
+	font-weight: bold;
+	padding-bottom: 0.8333rem;
+	padding-top: 2rem;
+}
+/* 공통 - 내부 타이틀 월 선택 */
+.container .round_box .content .full .title.month {
+	padding-bottom: 0;
+	min-height: 2.083rem;
+	font-weight: normal;
+	font-size: 1rem;
+	padding: 2rem 5rem 0.83rem;
+}
+.container .round_box .content .full .title.month li {
+	display: inline-block;
+	margin-right: 1.917rem;
+	padding-bottom: 0.09rem;
+	border-bottom: 1px solid #413a34;
+}
+.container .round_box .content .full .title.month li a {
+	color: #413a34;
+}
+.container .round_box .content .full .title.month li:last-child {
+	margin-right: 0;
+	opacity: 0.4;
+}
+.container .round_box .content .full .title.month li.on {
+	position: relative;
+	font-size: 1.333rem;
+	font-weight: bold;
+	z-index: 1;
+	border-bottom: 0;
+}
+.container .round_box .content .full .title.month li.on:last-child{
+	opacity: 1;
+}
+.container .round_box .content .full .title.month li.on a {
+	font-weight: bold;
+}
+.container .round_box .content .full .title.month li.on::after {
+	content: "";
+	position: absolute;
+	background: #c9e667;
+	width: 100%;
+	height: 0.6667rem;
+	right: 0;
+	left: 0;
+	bottom: -0.1667rem;
+	z-index: -10;
+}
+.container .round_box .content .full .title.month::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* 공통 - 내부 가격 */
+.container .round_box .content .full .content {
+	color: #8d8785;
+	font-size: 1.167rem;
+	line-height: 1.53;
+}
+.container .round_box .content .full .content.price {
+	padding: 1rem 0 1.417rem;
+}
+.container .round_box .content .full .content.price p {
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 2.833rem;
+	padding-right: 1.2rem;
+}
+.container .round_box .content .full .content.price p a {
+	color: #4b423c;
+	display: inline-block;
+	vertical-align: middle;
+	font-family:'Montserrat';
+}
+.container .round_box .content .full .content.price p a.case {
+	margin-right: 0.7rem;
+	font-size: 1.25rem;
+	color: #e44e28;
+	vertical-align: -0.25rem;
+	border-bottom: 1px solid #e44e28;
+}
+.container .round_box .content .full .content.price p::after {
+	content: "원";
+	color: #4b423c;
+	font-size: 1.667rem;
+}
+.container .round_box .content .full .content.price p::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -0.25rem;
+	right: 0;
+	display: inline-block;
+	width: 0.5rem;
+	height: 1rem;
+	background-size: cover;
+	background: url('/assets/icon/arrow_right.svg') no-repeat;
+	background-size: 100%;
+}
+.container .round_box .content .full .content.table dl {
+	font-size: 1.167rem;
+	text-align: left;
+	padding-top: 2rem;
+}
+.container .round_box .content .full .content.table dl dt, .container .round_box .content .full .content.table dl dd {
+	margin-bottom: 10px;
+	letter-spacing: -0.05rem;
+}
+.container .round_box .content .full .content.table dl dt {
+	width: 5rem;
+	float: left;
+}
+.container .round_box .content .full .content.table dl dd {
+	width: auto;
+	color: #4b423c;
+}
+/* 타임라인 */
+.container .round_box .content .full .content.schedule p.sq_title {
+	position: relative;
+	text-align: left;
+	line-height: 1.37;
+	color: #5a514c;
+	font-size: 1.25rem;
+	font-weight: bold;
+	padding-left: 2rem;
+	overflow: hidden;
+}
+.container .round_box .content .full .content.schedule p.sq_title::after{
+	content: "";
+	position: absolute;
+	width: 1.833rem;
+	top:0;
+	left: 0;
+	height: 1.833rem;
+	background:#EFF1F5 url('/assets/icon/sq_clock.svg') no-repeat;
+	background-size: 1.5rem 1.5rem;
+	background-position:center center;
+}
+.container .round_box .content .full .content.schedule p.sq_title span {
+	position: absolute;
+	left: 1.833rem;
+	width: 3.667rem;
+	text-align: center;
+	font-family:'Montserrat';
+}
+.container .round_box .content .full .content.schedule p.sq_title a {
+	display: block;
+	position: relative;
+	font-size: 1.333rem;
+	color: #4b423c;
+	margin-left: 4.667rem;
+	height: 1.8rem;
+	padding-right: 1.8rem;
+}
+.container .round_box .content .full .content.schedule p.sq_title a::after {
+	position: absolute;
+	content: "";
+	display: inline-block;
+	width: 0.5rem;
+	height: 0.7rem;
+	background: url('/assets/icon/arrow_right.svg') no-repeat;
+	background-size: contain;
+	margin-left: 0.5rem;
+	right: 0;
+	top: 50%;
+	margin-top: -0.35rem;
+}
+.container .round_box .content .full .content.schedule .cont {
+	position: relative;
+	margin: 0.3rem 0;
+	padding-bottom: 2.5rem;
+	padding-top: 0.5rem;
+	padding-left:1.833rem;
+}
+.container .round_box .content .full .content.schedule .cont img {
+	position: absolute;
+	width: 3.667rem;
+	height: 3.667rem;
+	top: 0.5rem;
+	left: 1.833rem;
+}
+.container .round_box .content .full .content.schedule .cont p {
+	text-align: left;
+	padding-left: 4.667rem;
+}
+.container .round_box .content .full .content.schedule .cont p span{
+	display: block;
+}
+.container .round_box .content .full .content.schedule::before {
+	position: absolute;
+	top: 0;
+	left: 0.85rem;
+	content: "";
+	display: block;
+	width: 0.1667rem;
+	height: 100%;
+	background: url('/assets/icon/sqdul_line.png');
+	background-size: 100%;
+	z-index: -5;
+}
+.container .round_box.today_sq {
+	margin-top: 2.667rem;
+}
+.container .round_box.today_sq .contents > .title{
+    padding: 1rem 0;
+}
+/* 현황 */
+.container .status .round_box {
+	margin-top: 2.167rem;
+}
+/*아이콘*/
+.icn {
+	font-size: 0;
+	text-indent: -9999px;
+	color: #000;
+	display: inline-block;
+}
+.icn.icn_date {
+	width: 1.667rem;
+	height: 1.667rem;
+	background: url('/assets/icon/class.svg') no-repeat;
+	background-size: cover;
+}
+
+/* pc */
+@media screen and (min-width: 1025px) { 
+	.container .round_box .content .full{
+		min-height: 140px;
+    }
+	.container .round_box .content .full .content.schedule::before{
+		left: 50%;
+		width: 1px;
+	}
+	.container .round_box .content .full .content.schedule::after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.container .round_box .content .full .content.schedule li{
+		width: 50%;
+		float: right;
+		margin-left: 50%;
+		margin-right: 0;
+	}
+	.container .round_box .content .full .content.schedule li .cont{
+		padding-left: 20px;
+		padding-top: 0;
+	}
+	.container .round_box .content .full .content.schedule li .cont img{
+		left: 20px;
+		top: 0;
+		width: 60px;
+		height: 60px;
+	}
+	.container .round_box .content .full .content.schedule li .cont p {
+		text-align: left; 
+		padding-left: 80px;
+	}
+	.container .round_box .content .full .title {
+		font-size: 16px;
+        letter-spacing: -1px;
+        padding: 12px 0;
+	}
+	.container .round_box .content .full .content{
+		font-size: 14px;
+	}
+	.container .round_box .content .full .content.table dl {
+        font-size: 15px;
+        padding: 12px 0 0;
+    }
+    .container .round_box .content .full .content.table dl dt{
+        width: 50px;
+    }
+	.container .round_box .content .full .content.schedule p.sq_title {
+		font-size: 18px;
+		line-height: 40px;
+		height: 40px;
+		padding-left:40px;
+		margin-left: -20px;
+	}
+	.container .round_box .content .full .content.schedule p.sq_title span {
+		width: 60px;
+		left: 40px;
+	}
+	.container .round_box .content .full .content.schedule p.sq_title::after{
+		width: 40px;
+		left: 0;
+		height: 40px;
+	}
+	.container .round_box .content .full .content.schedule p.sq_title a {
+		font-size: 18px;
+		margin-left: 80px;
+		padding: 0;
+		height: 40px;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1){
+		float: left;
+		margin-left: 0;
+		margin-right: 50%;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) p.sq_title {
+		text-align: right;
+		padding-left:0;
+		padding-right:40px;
+		margin-right: -20px;
+		margin-left: 0;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) p.sq_title span {
+		right: 40px;
+		left: auto !important;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) p.sq_title::after{
+		width: 40px;
+		right: 0;
+		left: auto !important;
+		height: 40px;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) p.sq_title a {
+		margin-left: 0;
+		margin-right: 80px;
+		padding: 0;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) .sq_title a::after{
+		display: none;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) .sq_title a::before{
+		position: absolute;
+		content: "";
+		display: inline-block;
+		width: 0.5rem;
+		height: 0.7rem;
+		background: url('/assets/icon/arrow_right.svg') no-repeat;
+		background-size: contain;
+		margin-left: 0.5rem;
+		left: 0;
+		top: 50%;
+		margin-top: -0.35rem;
+		transform: rotate( 180deg );
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) .cont{
+		padding-left: 0;
+		padding-right: 20px;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) .cont p {
+		text-align: right;
+		padding-left: 0;
+		padding-right: 80px;
+	}
+	.container .round_box .content .full .content.schedule li:nth-child(2n-1) .cont img {
+		right:20px;
+		left: auto !important;
+	}
+    /* Atype */
+    .container:after{
+        display: table;
+        content: "";
+        clear: both;
+    }
+	.container .round_box.today_sq{
+		width: 535px;
+		float: left;
+	}
+	.container .status{
+		margin-top: 0.5rem;
+		width: 460px;
+		float: right;
+    }
+    .container .status .round_box{
+        width: 50%;
+        float: left;
+    }
+    .container .status .round_box:nth-child(2n){
+        width: calc(50% - 5px);
+        margin-left: 5px;
+    }
+	.container .status .round_box .contents{
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .container .status .round_box .contents .title.month{
+        padding: 10px 0;
+    }
+	.container .round_box .content .full .content.price p{
+		padding-right: 19px;
+		font-size: 25px;
+	}
+    .container .round_box .content .full .content.price p::after{
+		font-size: 25px;
+    }
+	.container .round_box .content .full .content.price p::before{
+        font-size: 25px;
+        transform: translateY(-50%);
+        margin-top: 0;
+	}
+	.clear_both{
+		display: table;
+		width: 100%;
+	}
+
+	.icn.icn_date {
+		width: 26px;
+		height: 26px;
+		background-size: 100% 100%;
+	}
+}

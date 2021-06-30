@@ -1,0 +1,101 @@
+<!-- // 페이지 탭 -->
+<div class="operation_info">
+    <h4><span class="highlight">단지정보</span></h4>
+    <div class="normal_info flat_round_box bg_white">
+        <div class="img_extend">
+            <img [src]="bzMstDetail?.mainImageModel?.imgFileIdPath | fileToWebPath" alt="샘플" />
+            <div class="btm_box">
+                <a (click)="openFullImageModal(bzMstDetail?.mainImageModel?.imgFileIdPath)" class="extend_btn"></a>
+            </div>
+        </div>
+        <div class="text_info">
+            <h5 class="title">{{bzMstDetail?.bzNm}}</h5>
+            <table class="tbl2">
+                <caption>개인정보의 수집 및 이용 동의 표</caption>
+                <colgroup>
+                    <col style="width: 25%">
+                    <col>
+                </colgroup>
+                <tbody>
+                <tr>
+                    <th>위치</th>
+                    <td class="left">{{bzMstDetail?.bzAddr}}</td>
+                </tr>
+                <tr>
+                    <th>대지면적</th>
+                    <td class="left">{{bzMstDetail?.erthSqms}}</td>
+                </tr>
+                <tr>
+                    <th>규모</th>
+                    <td class="left">{{bzMstDetail?.scal}}</td>
+                </tr>
+                <tr>
+                    <th>공급면적</th>
+                    <td class="left">{{bzMstDetail?.splSqms}}</td>
+                </tr>
+                <tr>
+                    <th>총세대수</th>
+                    <td class="left">{{bzMstDetail?.totHhldCnt}}</td>
+                </tr>
+                <tr>
+                    <th>총주차대수</th>
+                    <td class="left">{{bzMstDetail?.totParkCnt}}</td>
+                </tr>
+                <tr>
+                    <th>준공월</th>
+                    <td class="left">{{bzMstDetail?.ccnstMm}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h4><span class="highlight">특화시설</span></h4>
+    <div class="bz_info flat_round_box bg_white">
+        <div class="bz_infobox" *ngFor="let spclFcl of spclFclList; index as i">
+            <div class="top_div slide_area">
+                <ion-button (click)="slidePrev(slider)" class="btn_prev round">
+                    <ion-icon name="chevron-back"></ion-icon>
+                </ion-button>
+                <ion-button (click)="slideNext(slider)" class="btn_next round">
+                    <ion-icon name="chevron-forward"></ion-icon>
+                </ion-button>
+                <ion-slides  #slider pager="true" [options]="{
+                    initialSlide: 0,
+                    speed: 400
+                  }">
+                    <ion-slide *ngFor="let image of spclFcl?.spclFclImgList">
+                        <div class="img_extend">
+                            <img [src]="image?.imgFileIdPath | fileToWebPath" alt="샘플" />
+                            <div class="btm_box">
+                                <a (click)="openFullImageModal(image?.imgFileIdPath)" class="extend_btn"></a>
+                                <h5 class="title">{{image?.imgTtl}}</h5>
+                            </div>
+                        </div>
+                    </ion-slide>
+                </ion-slides>
+            </div>
+            <div class="btm_info">
+                <div class="text_info">
+                    <h5 class="title left">
+                        {{spclFcl.fclTtl}}
+                    </h5>
+                    <p class="green">
+                        {{spclFcl.dtlDesc}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4><span class="highlight">단지 배치도</span></h4>
+    <div class="normal_info flat_round_box bg_white">
+        <div class="img_extend">
+            <img [src]="bzMstDetail?.bzLayoutModel?.imgFileIdPath | fileToWebPath" alt="샘플" />
+            <div class="btm_box">
+                <a (click)="openFullImageModal(bzMstDetail?.bzLayoutModel?.imgFileIdPath)" class="extend_btn"></a>
+            </div>
+        </div>
+    </div>
+    <ul class="dot_list">
+        <li *ngFor="let str of ntcsModel?.ntcMattList">{{str}}</li>
+    </ul>
+</div>

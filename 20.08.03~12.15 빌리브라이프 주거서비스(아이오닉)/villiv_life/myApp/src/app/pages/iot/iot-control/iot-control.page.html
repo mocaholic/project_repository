@@ -1,0 +1,481 @@
+<v-app>
+    <v-body title="스마트홈">
+        <div class="container">
+            <div class="smart_home">
+                <div class="top">
+                    <ul class="tab_menu">
+                        <li><a (click)="onClickTab('info')" [ngClass]="selectedTab==='info' ? 'on' : ''">우리집 정보</a></li>
+                        <li><a (click)="onClickTab('control')" [ngClass]="selectedTab==='control' ? 'on' : ''">우리집
+                            제어</a></li>
+                    </ul>
+                    <a (click)="onClickRefresh()" class="btn_refresh">새로고침</a>
+                </div>
+                <!-- 우리집 정보 -->
+                <div class="tab_cont" [hidden]="selectedTab!=='info'">
+                    <div class="link_area" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_VCAR.MNU_ID) || isExistMnuByMnuId(menuTypeConstants.SMRT_HM_DELI.MNU_ID)">
+                        <div class="round_box car" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_VCAR.MNU_ID)">
+                            <div class="content">
+                                <a (click)="goDetailPage('parking')">
+                                    <h5>차량</h5>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="round_box delivery" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_DELI.MNU_ID)">
+                            <div class="content">
+                                <a (click)="goDetailPage('parcel')">
+                                    <h5>택배</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="energy_usage">
+                        <div class="round_box">
+                            <div class="content">
+                                <h5>에너지 현재 사용량<span>(동평형 대비)</span></h5>
+                                <ul class="energy_list">
+                                    <li *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_ELEC.MNU_ID)">
+                                        <div>
+                                            <dl>
+                                                <dt class="electricity">전기</dt>
+                                                <dd>
+                                                    <span class="num">{{ getUsageByType('ELEC')?.usage }}</span>
+                                                    <span>kWh</span>
+                                                </dd>
+                                            </dl>
+                                            <div class="graph">
+                                                <span class="fill" [style]="'width:'+ getAvgUsageByType('ELEC') +'%'"></span>
+                                                <span class="average" [ngClass]="isOverUsage('ELEC') ? 'over': ''">{{getUsageByType('ELEC')?.sameAreaTypeUsage}}kWh</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_WAT.MNU_ID)">
+                                        <div>
+                                            <dl>
+                                                <dt class="waterworks">수도</dt>
+                                                <dd>
+                                                    <span class="num">{{ getUsageByType('WATER')?.usage }}</span>
+                                                    <span>m³</span>
+                                                </dd>
+                                            </dl>
+                                            <div class="graph">
+                                                <span class="fill" [style]="'width:'+ getAvgUsageByType('WATER') +'%'"></span>
+                                                <span class="average" [ngClass]="isOverUsage('WATER') ? 'over': ''">{{getUsageByType('WATER')?.sameAreaTypeUsage}}m³</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_GAS.MNU_ID)">
+                                        <div>
+                                            <dl>
+                                                <dt class="gas">가스</dt>
+                                                <dd>
+                                                    <span class="num">{{ getUsageByType('GAS')?.usage }}</span>
+                                                    <span>m³</span>
+                                                </dd>
+                                            </dl>
+                                            <div class="graph">
+                                                <span class="fill" [style]="'width:'+ getAvgUsageByType('GAS') +'%'"></span>
+                                                <span class="average" [ngClass]="isOverUsage('GAS') ? 'over': ''">{{getUsageByType('GAS')?.sameAreaTypeUsage}}m³</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_HWAT.MNU_ID)">
+                                        <div>
+                                            <dl>
+                                                <dt class="hot_water">온수</dt>
+                                                <dd>
+                                                    <span class="num">{{ getUsageByType('HOTWATER')?.usage }}</span>
+                                                    <span>m³</span>
+                                                </dd>
+                                            </dl>
+                                            <div class="graph">
+                                                <span class="fill" [style]="'width:'+ getAvgUsageByType('HOTWATER') +'%'"></span>
+                                                <span class="average" [ngClass]="isOverUsage('HOTWATER') ? 'over': ''">{{getUsageByType('HOTWATER')?.sameAreaTypeUsage}}m³</span>
+                                                <!-- 평균값 넘으면 class="over" 추가 적용 -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_HEAT.MNU_ID)">
+                                        <div>
+                                            <dl>
+                                                <dt class="heating">난방</dt>
+                                                <dd>
+                                                    <span class="num">{{ getUsageByType('HEATING')?.usage }}</span>
+                                                    <span>m³</span>
+                                                </dd>
+                                            </dl>
+                                            <div class="graph">
+                                                <span class="fill" [style]="'width:'+ getAvgUsageByType('HEATING') +'%'"></span>
+                                                <span class="average" [ngClass]="isOverUsage('HEATING') ? 'over': ''">{{getUsageByType('HEATING')?.sameAreaTypeUsage}}m³</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // 우리집 정보 -->
+                <!-- 우리집 제어 -->
+                <div class="tab_cont" [hidden]="selectedTab!=='control'">
+                    <ul class="ctrl_list">
+                        <li class="round_box" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_HEAT.MNU_ID)">
+                            <div class="content">
+                                <div class="ctrl_top">
+                                    <h5 class="light">조명</h5>
+                                    <span class="btn_group"  *ngIf="getOnlyOneDeviceStatus('multi_switch','light')">
+                                        <button type="button" (click)="allLightManage(false)" class="txt_btn">전체끄기</button>
+                                        <button type="button" (click)="allLightManage(true)" class="txt_btn">전체켜기</button>
+                                    </span>
+                                    <a (click)="light.hidden = !light.hidden" class="btn_toggle" [ngClass]="light && light.hidden ? '' : 'on'">{{ light.hidden ? '열기' : '닫기'}}</a>
+                                </div>
+                                <div class="ctrl_area" #light>
+                                    <ul>
+                                        <li *ngFor="let device of getDeviceListByType('light');index as i">
+                                            <div class="switch_area">
+                                                <em>{{device.deviceLocation}}<span class="on">켜짐</span></em>
+                                                <div class="btn_switch type2">
+                                                    <input type="checkbox" [attr.id]="'light1'+i" name="light"
+                                                           class="input_on_off" (change)="changePower(device,$event)" [defaultChecked]="getStatusObj(device.statusList,'light').value === 'on'">
+                                                    <label [attr.for]="'light1'+i" class="label_on_off">
+                                                        <span class="marble"></span>
+                                                        <span class="on">on</span>
+                                                        <span class="off">off</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="round_box" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_AIRC.MNU_ID)">
+                            <div class="content">
+                                <div class="ctrl_top">
+                                    <h5 class="cooling">냉방</h5>
+<!--                                    <span class="btn_group">-->
+<!--                                    <button type="button" class="txt_btn">전체끄기</button>-->
+<!--                                    <button type="button" class="txt_btn">전체켜기</button>-->
+<!--                                </span>-->
+                                    <a (click)="cooling.hidden = !cooling.hidden" class="btn_toggle" [ngClass]="cooling.hidden ? '' : 'on'">{{ cooling.hidden ? '열기' : '닫기'}}</a>
+                                </div>
+                                <div class="ctrl_area" #cooling>
+                                    <ul>
+                                        <li *ngFor="let device of getDeviceListByType('aircon'); index as i">
+                                            <div class="ctrl_box">
+                                                <div class="switch_area">
+                                                    <em>{{device.deviceLocation}}<span [ngClass]="getStatusObj(device.statusList,'power').value === 'off' ? '' : 'on'">{{getStatusObj(device.statusList,'power').value === 'off' ? '꺼짐' : '켜짐'}}</span></em>
+                                                    <div class="btn_switch type2">
+                                                        <input type="checkbox" [attr.id]="'cooling1'+i" name="cooling"
+                                                               class="input_on_off" (change)="changePower(device,$event)" [defaultChecked]="getStatusObj(device.statusList,'power').value === 'on'">
+                                                        <label [attr.for]="'cooling1'+i" class="label_on_off">
+                                                            <span class="marble"></span>
+                                                            <span class="on">on</span>
+                                                            <span class="off">off</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="ctrl_det">
+                                                    <dl>
+                                                        <dt>현재온도 {{getStatusObj(device.statusList,'currTemperature').value }} ℃</dt>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>설정온도 <span class="fc_blue">{{getStatusObj(device.statusList,'setTemperature').value}} ℃</span></dt>
+                                                        <dd>
+                                                            <div class="slider cooling">
+                                                                <button type="button" [disabled]="range.value==tempConstants.AIR_CON.MIN" (click)="onClickTmprRange(getStatusObj(device.statusList,'setTemperature'),true)" class="btn_minus">감소</button>
+                                                                <ion-range #range (ionChange)="changeTemperature(device,range.value)" [(ngModel)]="getStatusObj(device.statusList,'setTemperature').value" [min]="tempConstants.AIR_CON.MIN" [max]="tempConstants.AIR_CON.MAX"></ion-range>
+                                                                <button type="button" [disabled]="range.value==tempConstants.AIR_CON.MAX" (click)="onClickTmprRange(getStatusObj(device.statusList,'setTemperature'),false)" class="btn_plus">증가</button>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>모드</dt>
+                                                        <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'c_mode1'+i" (change)="changeMode(device,$event)" [(ngModel)]="getStatusObj(device.statusList,'mode').value" [name]="'c_mode'+i" value="cool">
+                                                            <label [attr.for]="'c_mode1'+i">냉방</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input (change)="changeMode(device,$)" [attr.id]="'c_mode2'+i" [(ngModel)]="getStatusObj(device.statusList,'mode').value" type="radio" class="" [name]="'c_mode'+i" value="dehumidify">
+                                                            <label [attr.for]="'c_mode2'+i">제습</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input (change)="changeMode(device,$event)" [attr.id]="'c_mode3'+i" [(ngModel)]="getStatusObj(device.statusList,'mode').value" type="radio" class="" [name]="'c_mode'+i" value="airwash">
+                                                            <label [attr.for]="'c_mode3'+i">송풍</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input (change)="changeMode(device,$event)" [attr.id]="'c_mode4'+i" [(ngModel)]="getStatusObj(device.statusList,'mode').value" type="radio" class="" [name]="'c_mode'+i" value="auto">
+                                                            <label [attr.for]="'c_mode4'+i">자동</label>
+                                                        </span>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>풍량</dt>
+                                                        <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" value="light" (change)="changeMode(device,$event,'wind')" [(ngModel)]="getStatusObj(device.statusList,'wind').value"
+                                                                   [attr.id]="'c_air_volume1'+i" [name]="'c_air_volume'+i">
+                                                            <label [attr.for]="'c_air_volume1'+i">약풍</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+
+                                                            <input type="radio" class="" value="mid" (change)="changeMode(device,$event,'wind')" [(ngModel)]="getStatusObj(device.statusList,'wind').value"
+                                                                   [attr.id]="'c_air_volume2'+i" [name]="'c_air_volume'+i">
+                                                            <label [attr.for]="'c_air_volume2'+i">중풍</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+
+                                                            <input type="radio" class="" value="pow" (change)="changeMode(device,$event,'wind')" [(ngModel)]="getStatusObj(device.statusList,'wind').value"
+                                                                   [attr.id]="'c_air_volume3'+i" [name]="'c_air_volume'+i">
+                                                            <label [attr.for]="'c_air_volume3'+i">강풍</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+
+                                                            <input type="radio" class="" value="auto" (change)="changeMode(device,$event,'wind')" [(ngModel)]="getStatusObj(device.statusList,'wind').value"
+                                                                   [attr.id]="'c_air_volume4'+i" [name]="'c_air_volume'+i">
+                                                            <label [attr.for]="'c_air_volume4'+i">자동</label>
+                                                        </span>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="round_box" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_HEAT.MNU_ID)">
+                            <div class="content">
+                                <div class="ctrl_top">
+                                    <h5 class="heating">난방</h5>
+<!--                                    <span class="btn_group">-->
+<!--                                    <button type="button" class="txt_btn">전체끄기</button>-->
+<!--                                    <button type="button" class="txt_btn">전체켜기</button>-->
+<!--                                </span>-->
+                                    <a (click)="heating.hidden = !heating.hidden" class="btn_toggle" [ngClass]="heating.hidden ? '' : 'on'">{{ heating.hidden ? '열기' : '닫기'}}</a>
+                                </div>
+                                <div class="ctrl_area" #heating>
+                                    <ul>
+                                        <li *ngFor="let device of getDeviceListByType('heating'); index as i">
+                                            <div class="ctrl_box">
+                                                <div class="switch_area">
+                                                    <em>{{device.deviceLocation}}<span [ngClass]="getStatusObj(device.statusList,'power').value === 'off' ? '' : 'on'">{{getStatusObj(device.statusList,'power').value === 'off' ? '꺼짐' : '켜짐'}}</span></em>
+                                                    <div class="btn_switch type2">
+                                                        <input type="checkbox" [attr.id]="'heating1'+i" name="heating1"
+                                                               class="input_on_off" (change)="changePower(device,$event)" [defaultChecked]="getStatusObj(device.statusList,'power').value === 'on'">
+                                                        <label [attr.for]="'heating1'+i" class="label_on_off">
+                                                            <span class="marble"></span>
+                                                            <span class="on">on</span>
+                                                            <span class="off">off</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="ctrl_det">
+                                                    <dl>
+                                                        <dt>현재온도 {{getStatusObj(device.statusList,'currTemperature').value}} ℃</dt>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>설정온도 <span class="fc_blue">{{getStatusObj(device.statusList,'setTemperature').value}} ℃</span></dt>
+                                                        <dd>
+                                                            <div class="slider heating">
+                                                                <button type="button" [disabled]="range.value==tempConstants.HEAT.MIN" (click)="onClickTmprRange(getStatusObj(device.statusList,'setTemperature'),true)" class="btn_minus">감소</button>
+                                                                <ion-range #range (ionChange)="changeTemperature(device,range.value)" [(ngModel)]="getStatusObj(device.statusList,'setTemperature').value" [min]="tempConstants.HEAT.MIN" [max]="tempConstants.HEAT.MAX"></ion-range>
+                                                                <button type="button" [disabled]="range.value==tempConstants.HEAT.MAX" (click)="onClickTmprRange(getStatusObj(device.statusList,'setTemperature'),false)" class="btn_plus">증가</button>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>모드</dt>
+                                                        <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'h_mode1_1'+i" (change)="changeMode(device,$event)" [(ngModel)]="getStatusObj(device.statusList,'mode').value" [name]="'h_mode1'+i" value="in">
+                                                            <label [attr.for]="'h_mode1_1'+i">일반</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'h_mode1_2'+i" (change)="changeMode(device,$event)" [(ngModel)]="getStatusObj(device.statusList,'mode').value" [name]="'h_mode1'+i" value="out">
+                                                            <label [attr.for]="'h_mode1_2'+i">외출</label>
+                                                        </span>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="round_box" *ngIf="getOnlyOneDeviceStatus('multi_switch','gas') && isExistMnuByMnuId(menuTypeConstants.SMRT_HM_GAS.MNU_ID)" >
+                            <div class="content">
+                                <div class="ctrl_top">
+                                    <h5 class="gas">가스<span>가스 밸브가 {{getOnlyOneDeviceStatus('multi_switch','gas')==='on' ? '열려' : '닫혀'}}있습니다.</span></h5>
+                                    <span class="btn_group right">
+                                    <button type="button" class="btn" [ngClass]="getOnlyOneDeviceStatus('multi_switch','gas')==='on' ? '' : 'disabled'" (click)="closeGas()">밸브잠금</button><!-- 밸브잠금 적용 시 class="disabled" 추가 적용 -->
+                                </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="round_box" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_VENT.MNU_ID)">
+                            <div class="content">
+                                <div class="ctrl_top">
+<!--                                    <h5 class="ventilation">환기<span>전체 / <span class="on">켜짐</span></span></h5>-->
+                                    <h5 class="ventilation">환기</h5>
+<!--                                    <div class="btn_switch type2">-->
+<!--                                        <input type="checkbox" id="fan" name="light" class="input_on_off" checked>-->
+<!--                                        <label for="fan" class="label_on_off">-->
+<!--                                            <span class="marble"></span>-->
+<!--                                            <span class="on">on</span>-->
+<!--                                            <span class="off">off</span>-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+                                    <a (click)="fan.hidden = !fan.hidden" class="btn_toggle" [ngClass]="fan.hidden ? '' : 'on'">{{ fan.hidden ? '열기' : '닫기'}}</a>
+                                </div>
+                                <div class="ctrl_area" #fan>
+                                    <ul>
+                                        <li *ngFor="let device of getDeviceListByType('fan'); index as i">
+                                            <div class="ctrl_box">
+                                                <div class="switch_area">
+                                                    <em>{{device.deviceLocation}}<span [ngClass]="getStatusObj(device.statusList,'power').value === 'off' ? '' : 'on'">{{getStatusObj(device.statusList,'power').value === 'off' ? '꺼짐' : '켜짐'}}</span></em>
+                                                    <div class="btn_switch type2" >
+                                                        <input type="checkbox" [attr.id]="'fan'+i"  name="fan"
+                                                               class="input_on_off" (change)="changePower(device,$event)" [defaultChecked]="getStatusObj(device.statusList,'power').value === 'on'">
+                                                        <label [attr.for]="'fan'+i" class="label_on_off">
+                                                            <span class="marble"></span>
+                                                            <span class="on">on</span>
+                                                            <span class="off">off</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="ctrl_det">
+                                                    <dl>
+                                                        <dt>풍량</dt>
+                                                        <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'v_air_volume1'+i" (change)="changeMode(device,$event,'level')" [(ngModel)]="getStatusObj(device.statusList,'level').value" [name]="'v_air_volume1'+i" value="light"
+                                                                   >
+                                                            <label [attr.for]="'v_air_volume1'+i">약풍</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'v_air_volume2'+i" (change)="changeMode(device,$event,'level')" [(ngModel)]="getStatusObj(device.statusList,'level').value" [name]="'v_air_volume1'+i" value="mid"
+                                                                   >
+                                                            <label [attr.for]="'v_air_volume2'+i">중풍</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'v_air_volume3'+i" (change)="changeMode(device,$event,'level')" [(ngModel)]="getStatusObj(device.statusList,'level').value" [name]="'v_air_volume1'+i" value="pow"
+                                                                   >
+                                                            <label [attr.for]="'v_air_volume3'+i">강풍</label>
+                                                        </span>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="round_box" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_WELEC.MNU_ID)">
+                            <div class="content">
+                                <div class="ctrl_top">
+                                    <h5 class="standby_power">대기전력</h5>
+<!--                                    <span class="btn_group">-->
+<!--                                    <button type="button" class="txt_btn">전체끄기</button>-->
+<!--                                    <button type="button" class="txt_btn">전체켜기</button>-->
+<!--                                </span>-->
+                                    <a (click)="electric.hidden = !electric.hidden" class="btn_toggle" [ngClass]="electric.hidden ? '' : 'on'">{{ electric.hidden ? '열기' : '닫기'}}</a>
+                                </div>
+                                <div class="ctrl_area" #electric>
+                                    <ul>
+                                        <li *ngFor="let device of getDeviceListByType('wallsocket'); index as i">
+                                            <div class="ctrl_box">
+                                                <div class="switch_area">
+                                                    <em>{{device.deviceLocation}}<span [ngClass]="getStatusObj(device.statusList,'power').value === 'off' ? '' : 'on'">{{getStatusObj(device.statusList,'power').value === 'off' ? '꺼짐' : '켜짐'}}</span></em>
+                                                    <div class="btn_switch type2" *ngIf="getStatusObj(device.statusList,'sleep').value === 'off' ">
+                                                        <input type="checkbox" [attr.id]="'wallsocket'+i"  name="wallsocket"
+                                                               class="input_on_off" (change)="changePower(device,$event)" [defaultChecked]="getStatusObj(device.statusList,'power').value === 'on'">
+                                                        <label [attr.for]="'wallsocket'+i" class="label_on_off">
+                                                            <span class="marble"></span>
+                                                            <span class="on">on</span>
+                                                            <span class="off">off</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="ctrl_det">
+                                                    <dl>
+                                                        <dt>슬립모드</dt>
+                                                        <dd class="btn_group">
+                                                        <span class="ctrl_btn">
+                                                            <input type="radio" class="" [attr.id]="'s_power1'+i" (change)="changeMode(device,$event)" [(ngModel)]="getStatusObj(device.statusList,'sleep').value" [name]="'s_power1'+i" value="on"
+                                                                   >
+                                                            <label [attr.for]="'s_power1'+i">자동</label>
+                                                        </span>
+                                                            <span class="ctrl_btn">
+                                                            <input type="radio" class=""  [attr.id]="'s_power2'+i" (change)="changeMode(device,$event)" [(ngModel)]="getStatusObj(device.statusList,'sleep').value" [name]="'s_power1'+i" value="off"
+                                                                   >
+                                                            <label [attr.for]="'s_power2'+i">수동</label>
+                                                        </span>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="round_box" *ngIf="isExistMnuByMnuId(menuTypeConstants.SMRT_HM_SECU.MNU_ID)">
+                            <div class="content">
+                                <div class="ctrl_top">
+                                    <h5 class="guard">방범<span>방범설정이 해제되었습니다.</span></h5>
+                                    <span class="btn_group">
+                                    <button type="button" class="btn">방범설정</button>
+                                        <!-- 방범설정 적용 시 class="disabled" 추가 적용 -->
+                                </span>
+                                    <a (click)="guard.hidden = !guard.hidden" class="btn_toggle" [ngClass]="guard.hidden ? '' : 'on'">{{ guard.hidden ? '열기' : '닫기'}}</a>
+                                </div>
+                                <div class="ctrl_area" #guard>
+                                    <ul>
+                                        <li>
+                                            <div class="ctrl_box">
+                                                <div class="ctrl_det">
+                                                    <dl>
+                                                        <dt>입장지연시간</dt>
+                                                        <dd class="time_ctrl">
+                                                            <button type="button" class="btn_left">줄이기</button>
+                                                            <span>30초</span>
+                                                            <button type="button" class="btn_right">늘이기</button>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="ctrl_box">
+                                                <div class="ctrl_det">
+                                                    <dl>
+                                                        <dt>퇴장지연시간</dt>
+                                                        <dd class="time_ctrl">
+                                                            <button type="button" class="btn_left disabled">줄이기</button>
+                                                            <!-- 버튼 비활성 시 class="disabled" 추가 적용 -->
+                                                            <span>30초</span>
+                                                            <button type="button" class="btn_right disabled">늘이기
+                                                            </button><!-- 버튼 비활성 시 class="disabled" 추가 적용 -->
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="btn_area">
+                                        <button type="button" class="btn btn_type3">적용</button>
+                                        <!-- 방범설정 적용 시 class="disabled" 추가 적용 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- // 우리집 제어 -->
+            </div>
+        </div>
+    </v-body>
+</v-app>

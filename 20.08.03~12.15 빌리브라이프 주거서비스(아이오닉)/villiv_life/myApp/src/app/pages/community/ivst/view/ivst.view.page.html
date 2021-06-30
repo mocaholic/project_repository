@@ -1,0 +1,51 @@
+<v-app>
+    <v-body title="설문조사">
+        <div class="container">
+            <!-- 글자 크기 조절 -->
+            <v-font-size
+                    [(fontClassName)]="fontSizeClassName"
+            ></v-font-size>
+            <!-- 설문조사영역 -->
+            <div class="round_box vote" [ngClass]="fontSizeClassName"><!-- 글자크기 버튼 클릭시 class ft_m, ft_l 적용 -->
+                <div class="content">
+                    <div class="vote_top">
+                        <h4>{{qstnDetail?.qstnTtl}}</h4>
+                        <span class="date">{{qstnDetail?.qstnStrDt | stringDateFormatDt}} - {{qstnDetail?.qstnEndDt | stringDateFormatDt}}</span>
+                    </div>
+                    <p *ngIf="qstnDetail?.qstnCts" class="info_txt">
+                        {{qstnDetail?.qstnCts}}
+                    </p>
+
+                    <!-- 문항 -->
+                    <ng-container *ngFor="let row of qstnDetail?.qstnRowList;index as i">
+                        <h5>{{i+1}}.{{row.rowTtl}}</h5>
+
+                        <!-- 주관식 -->
+                        <div *ngIf="row.rowTp === CodeConstants.ROW_TP.SHORT_ANSWER;else other_content" class="text_area">
+                            <textarea class="com_texta" [placeholder]="textAreaMaxLength+'자 내로 작성해주세요.'" rows="5" [(ngModel)]="row.qstnAnsDTO.ansCts" [maxlength]="textAreaMaxLength"></textarea>
+                            <p class="numb">{{row.qstnAnsDTO.ansCts.length}} / {{textAreaMaxLength}}</p>
+                        </div>
+
+                        <!-- 객관식 -->
+                        <ng-template #other_content>
+                            <ul>
+                                <li *ngFor="let item of row?.qstnItemList;">
+                                    <div class="radio">
+                                        <label>{{item.itemTtl}}
+                                            <input type="radio" [(ngModel)]="ansList[row.rowNo-1]" [name]="row.rowNo.toString()" [value]="item.itemNo.toString()">
+                                            <span class="chkmark"></span>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </ng-template>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="btn_area">
+                <button type="button" (click)="goListPage()" class="btn btn_type1">취소하기</button>
+                <button type="button" (click)="onClickSubmit()" class="btn btn_type2">제출하기</button>
+            </div>
+        </div>
+    </v-body>
+</v-app>

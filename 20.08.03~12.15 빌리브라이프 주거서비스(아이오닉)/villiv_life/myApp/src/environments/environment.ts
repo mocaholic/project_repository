@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  development: false,
+  local: true,
+  pagePath: './pages',
+  hostname: 'http://d_service.shinsegae-con.co.kr/',
+  baseDomain: 'http://d_service.shinsegae-con.co.kr/',
+  curenv: 'www-local'
 };
 
 /*
@@ -14,3 +20,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+

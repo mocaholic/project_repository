@@ -1,0 +1,146 @@
+<v-app id="Gatepage">
+  <v-body title="게이트 페이지">
+    <div class="container">
+      <!-- 팝업 활성화시 class="on" 추가 -->
+      <div class="popup_box on">
+        <div class="popup">
+          <div class="pop_head">
+            <h2 class="title">단지 선택하기 <a href="#" class="close">close</a></h2>
+            <!-- 1. 지역 선택 하기 활성화시 class="on" 추가-->
+            <div class="location on">
+              <h3>시/도 선택</h3>
+            </div>
+            <!-- 2. 단지 선택 하기 활성화시 class="on" 추가-->
+            <div class="location">
+              <h3>부산시 <span>3</span></h3>
+              <a class="back" href="#">변경</a>
+            </div>
+          </div>
+          <!-- 1. 지역 선택 하기 활성화시 class="on" 추가-->
+          <div class="pop_body chs_city">
+            <div class="check_box">
+              <div class="btn_switch">
+                <input type="checkbox" id="switch1" name="switch1" class="input_on_off">
+                <label for="switch1" class="label_on_off">
+                    <span class="marble"></span>
+                    <span class="on">on</span>
+                    <span class="off">off</span>
+                </label>
+                <span class="switch_txt">빌리브 라이프 서비스 예정단지 포함</span><!-- 스위치 활성화시 class="on" 추가 적용 필요 : 10.28 문구 수정 -->
+              </div>
+            </div>
+            <!-- 시,도 리스트 클릭 활선화 class="on" 추가-->
+            <div class="list_box">
+              <div class="on">
+                <a href="#">서울시 <span>2</span></a>
+              </div>
+              <div class="on">
+                <a href="#">경기도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">인천시 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">부산시 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">대전시 <span>2</span></a>
+              </div>
+              <div class="on">
+                <a href="#">대구시 <span>2</span></a>
+              </div>
+              <div class="on">
+                <a href="#">울산시 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">세종시 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">광주시 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">강원도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">충청북도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">충청남도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">경상북도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">경상남도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">전라북도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">전라남도 <span>2</span></a>
+              </div>
+              <div>
+                <a href="javascript:void(0);">제주도 <span>2</span></a>
+              </div>
+            </div>
+          </div>
+          <!-- 2. 단지 선택 하기 활성화시 class="on" 추가-->
+          <div class="pop_body on">
+            <div class="chose_box">
+              <span class="tag">예정</span>
+              <h4 class="title"><span>해운대구</span>빌리브 패러그라프 해운대</h4>
+              <div class="go_page">
+                <a href="javascript:void(0);" class="btn01">분양 홈페이지</a>
+                <a href="javascript:void(0);" class="btn02">공사정보 보기</a>
+              </div>
+            </div>
+            <div class="chose_box">
+              <h4 class="title"><span>남구</span>빌리브 센트로</h4>
+              <div class="go_page">
+                <a href="javascript:void(0);" class="full btn02">빌리브 라이프 서비스</a>
+              </div>
+            </div>
+            <div class="chose_box">
+              <h4 class="title"><span>남구</span>빌리브 센트로</h4>
+              <div class="go_page">
+                <a href="javascript:void(0);" class="full btn02">빌리브 라이프 서비스</a>
+              </div>
+            </div>
+          </div>
+          <h3 class="btm_info">※ 빌리브 라이프 서비스 예정단지는 운영 여건에 따라<br>추후 변경될 수 있습니다.</h3><!-- 10.28 문구 수정 및 br 태그 추가 -->
+        </div>
+        <!-- 딤 처리 -->
+        <div class="dim"></div>
+      </div>
+      <!-- 해더 -->
+      <div class="header">
+        <h1>
+          <a href="#">villiv</a>
+        </h1>
+        <span>빌리브 라이프 서비스</span>
+      </div>
+      <!-- 버튼 & 안내 -->
+      <div class="base_cont">
+        <!-- 문구 -->
+        <div class="txt_title">
+          <h2>
+            <span>다양함이 존중되는</span><br />
+            라이프 스타일먼트 실현<br />
+            빌리브 라이프 서비스가 함께합니다.<!-- 문구수정 -->
+          </h2>
+          <p>Life Service</p>
+        </div>
+        <!-- 버튼 숨김 시 -->
+        <div class="btn_box">
+          <button type="button" class="chose_est">단지선택하기</button>
+        </div>
+      </div>
+      
+      <!-- 백그라운드 이미지 -->
+      <div class="gate_bg">
+        <img src="/assets/bg/gate_bg01.png" alt="샘플" />
+      </div>
+    </div>
+  </v-body>
+
+</v-app> 

@@ -1,0 +1,167 @@
+<v-app>
+    <v-body title="문화강좌">
+        <div class="full_cont">
+            <div class="container">
+                <!-- 게시판 리스트 -->
+                <div class="notice_list_box">
+                    <div class="top_filter">
+                        <dl>
+                            <dt>강좌유형</dt>
+                            <dd>
+                                <ng-select
+                                    [items]="[
+                                                { name: 'Strawberries'},
+                                                { name: 'Mango'},
+                                                { name: 'Bananas'},
+                                                { name: 'Watermelon'},
+                                                { name: 'Apples'}
+                                            ]"
+                                    [searchable]="false"
+                                    bindLabel="name"
+                                    placeholder="선택"></ng-select>
+                            </dd>
+                        </dl>
+                        <dl class="btn_box">
+                            <dt>접수상태</dt>
+                            <dd>
+                                <a class="on" href="#">전체</a>
+                                <a href="#">접수중</a>
+                                <a href="#">접수마감</a>
+                            </dd>
+                        </dl>
+                        <a href="#" class="btn btn_type2">검색</a>
+                    </div>
+                    <div class="sub_title">
+                        <div class="list_count">
+                            <p>총<span class="red">24</span>건</p>
+                        </div>
+                    </div>
+                    <div class="round_box">
+                        <div class="content">
+                            <!-- 리스트 분류 PC에만 노출 -->
+                            <div class="notice_list_title">
+                                <div class="table_w01">강좌유형</div>
+                                <div class="">강좌명/기간</div>
+                                <div class="table_w02">요일/시간</div>
+                                <div class="table_w01">수강료</div>
+                                <div class="table_w01">접수상태</div>
+                            </div>
+                            <!-- PC-테이블 MO-리스트 -->
+                            <div class="notice_list">
+                                <div>
+                                    <p class="no">
+                                        <span>취미</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반 바이올린 성인 초급반 바이올린 성인 초급반 바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right ing">접수중</p>
+                                </div>
+                                <div>
+                                    <p class="no">
+                                        <span>건강/운동</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right ing">접수중</p>
+                                </div>
+                                <div>
+                                    <p class="no">
+                                        <span>취미</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right end">접수마감</p>
+                                </div>
+                                <div>
+                                    <p class="no">
+                                        <span>건강/운동</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right end">접수마감</p>
+                                </div>
+                                <div>
+                                    <p class="no">
+                                        <span>취미</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right ing">접수중</p>
+                                </div>
+                                <div>
+                                    <p class="no">
+                                        <span>건강/운동</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right end">접수마감</p>
+                                </div>
+                                <div>
+                                    <p class="no">
+                                        <span>취미</span>
+                                    </p>
+                                    <h5 class="title">
+                                        <a href="#">바이올린 성인 초급반</a>
+                                        <p>2020.10.05 - 2020.11.13 / 12회</p>
+                                    </h5>
+                                    <p class="writer_time">
+                                        <span>매주 월, 수, 금<em>13:00~15:00</em>
+                                        </span>
+                                        <span>20,000</span>
+                                    </p>
+                                    <p class="ft_right ing">접수중</p>
+                                </div>
+                            </div>
+                            <!-- 더보기 -->
+                            <a class="add_item" href="#">더보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </v-body>
+
+
+</v-app>
