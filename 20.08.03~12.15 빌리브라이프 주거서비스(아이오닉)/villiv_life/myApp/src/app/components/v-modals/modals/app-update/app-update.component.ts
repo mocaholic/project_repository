@@ -29,10 +29,16 @@ export class AppUpdateComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.eventBus.on('common:appUpdate').subscribe((info: ModalEventModel) => {
+        /* this.eventBus.on('common:appUpdate').subscribe((info: ModalEventModel) => {
             this._popupInfo = info;
             this._popupInfo.show = true;
             this.isActive = true;
+        }); */
+        this.eventBus.on('common:appUpdate').subscribe((info: ModalEventModel) => { 
+            this._popupInfo = info;
+            this._popupInfo.show = true;
+            this.isActive = true;
+            // console.log("test");
         });
     }
 

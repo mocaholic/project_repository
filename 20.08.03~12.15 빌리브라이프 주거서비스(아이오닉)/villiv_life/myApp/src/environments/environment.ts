@@ -6,9 +6,12 @@ export const environment = {
   production: false,
   development: false,
   local: true,
-  pagePath: './pages',
+  pagePath: './pubs',
+  hostname: 'http://localhost:8100',
+  baseDomain: 'http://localhost:8100',
+  /*pagePath: './pages',
   hostname: 'http://d_service.shinsegae-con.co.kr/',
-  baseDomain: 'http://d_service.shinsegae-con.co.kr/',
+  baseDomain: 'http://d_service.shinsegae-con.co.kr/', */ 
   curenv: 'www-local'
 };
 
