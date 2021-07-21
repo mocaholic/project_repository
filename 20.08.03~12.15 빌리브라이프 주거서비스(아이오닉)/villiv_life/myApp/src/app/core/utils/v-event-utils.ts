@@ -24,7 +24,7 @@ export class VEventUtils {
         if(title==='') {
             title='알림'
         }
-        let info = new ModalEventModel();
+        const info = new ModalEventModel();
         info.title = title;
         info.content = msg;
         info.callback = callback
@@ -43,7 +43,7 @@ export class VEventUtils {
         if(title==='') {
             title='확인'
         }
-        let info = new ModalEventModel();
+        const info = new ModalEventModel();
         info.title = title;
         info.content = msg;
         info.confirmBtnNm = confirmBtnNm;

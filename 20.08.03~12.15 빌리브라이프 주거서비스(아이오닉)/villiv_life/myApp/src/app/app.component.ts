@@ -199,7 +199,7 @@ export class AppComponent {
                 window.location.href = '/';
             }
         }
-        let info = new ModalEventModel();
+        const info = new ModalEventModel();
         // info.title = title;
         // info.content = msg;
         info.callback = callback
@@ -240,13 +240,13 @@ export class AppComponent {
                 .then((model) => {
 
                     if(this.compareAppVer(model.result['mandYVer'].osVer)<0) {
-                        let info = new ModalEventModel();
+                        const info = new ModalEventModel();
                         info.isRequired = true;
                         this.eventBus.cast('common:appUpdate', info);
                         return;
                     }
                     if(this.compareAppVer(model.result['data'].osVer)<0) {
-                        let info = new ModalEventModel();
+                        const info = new ModalEventModel();
                         this.eventBus.cast('common:appUpdate', info);
                         this.globalVars.isNewestApp = false;
                         return;

@@ -107,7 +107,7 @@ export class SettingPage extends BasePage implements OnInit {
                 this.isPinCode = false;
             }
         }
-        let info = new ModalEventModel();
+        const info = new ModalEventModel();
         info.callback = callback
         this.eventBus.cast('common:setPinCode', info);
     }
