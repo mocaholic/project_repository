@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>KT RCS :: 메세지전송결과</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo">KT RCS Admin</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container" class="sub">  
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">메세지전송결과</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>발송/과금 현황</li>
+							<li>메세지전송결과</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				
+				<div class="tab-menu">
+					<ul>
+						<li class="current"><a href="#">처리 완료</a></li>
+						<li><a href="#">처리 중</a></li>
+					</ul>
+				</div>
+
+				<div class="card txt-type">
+					<div class="card-body">
+						<p>설명</p>
+					</div>
+				</div>
+
+				<div class="card srch-type">
+					<div class="card-body">
+						<div class="row flex">
+							<span class="tit fx-init">구분</span>
+
+							<div class="radio-group radio-ctrl">
+								<span class="radio-type"><input type="radio" id="division01" name="div-radio" checked><label for="division01" onclick="radioCtrl(event,0)">MSG ID  </label></span>
+								<span class="radio-type"><input type="radio" id="division02" name="div-radio"><label for="division02" onclick="radioCtrl(event,1)">발신번호 + 수신번호</label></span>
+								<span class="radio-type"><input type="radio" id="division03" name="div-radio"><label for="division03" onclick="radioCtrl(event,2)">발신번호 + 수신번호 + RCS ID</label></span>
+
+								<div class="input-group radio-ctrl-result">
+									<span class="div-input01">
+									    <label>MSG ID</label><input type="text">
+								    </span>
+									<span class="div-input02">
+								        <label>발신번호</label><input type="text">
+									    <label>수신번호</label><input type="text">
+								    </span>
+									<span class="div-input03">
+								        <label>발신번호</label><input type="text">       
+									    <label>수신번호</label><input type="text">
+									    <label>RCS ID</label><input type="text">
+				                    </span>
+								</div>
+								
+							</div>
+						</div>
+
+						<div class="row flex">
+							<span class="tit fx-init tit-btn">결과코드</span>
+
+							<div class="radio-group result-ctrl">
+								<span class="radio-type"><input type="radio" id="result01" name="result-radio" checked><label for="result01">전체</label></span>
+								<span class="radio-type"><input type="radio" id="result02" name="result-radio"><label for="result02">성공</label></span>
+								<span class="radio-type"><input type="radio" id="result03" name="result-radio"><label for="result03" >실패</label><input type="text" class="fail-code" placeholder="실패코드를 입력하세요." disabled></span>
+							</div>
+							
+						</div>
+
+						<div class="row flex">
+							<span class="tit fx-init tit-btn">검색기간</span>
+
+							<div class="fx1">
+
+								<div class="period-select">
+									<select>
+										<option>2019년</option>
+										<option>2018년</option>
+										<option>2017년</option>
+										<option selected>2016년</option>
+										<option>2015년</option>
+										<option>2014년</option>
+										<option>2013년</option>
+										<option>2012년</option>
+										<option>2011년</option>
+										<option>2010년</option>
+									</select>
+									<select>
+										<option>1월</option>
+										<option>2월</option>
+										<option>3월</option>
+										<option>4월</option>
+										<option>5월</option>
+										<option>6월</option>
+										<option>7월</option>
+										<option>8월</option>
+										<option>9월</option>
+										<option>10월</option>
+										<option>11월</option>
+										<option selected>12월</option>
+									</select>
+									<select>
+										<option>1일</option>
+										<option>2일</option>
+										<option>3일</option>
+										<option>4일</option>
+										<option>5일</option>
+										<option selected>6일</option>
+										<option>7일</option>
+										<option>8일</option>
+										<option>9일</option>
+										<option>10일</option>
+										<option>11일</option>
+										<option>12일</option>
+									</select>
+									<select>
+										<option>1시</option>
+										<option>2시</option>
+										<option>3시</option>
+										<option>4시</option>
+										<option>5시</option>
+										<option>6시</option>
+										<option>7시</option>
+										<option>8시</option>
+										<option>9시</option>
+										<option>10시</option>
+										<option>11시</option>
+										<option>12시</option>
+									</select>
+									<select>
+										<option>1분</option>
+										<option>2분</option>
+										<option>3분</option>
+										<option>4분</option>
+										<option>5분</option>
+										<option>6분</option>
+										<option>7분</option>
+										<option>8분</option>
+										<option>9분</option>
+										<option>10분</option>
+										<option>11분</option>
+										<option>12분</option>
+									</select>
+									<span class="div">~</span>
+									<select>
+										<option>2019년</option>
+										<option>2018년</option>
+										<option>2017년</option>
+										<option>2016년</option>
+										<option>2015년</option>
+										<option>2014년</option>
+										<option>2013년</option>
+										<option>2012년</option>
+										<option>2011년</option>
+										<option>2010년</option>
+									</select>
+									<select>
+										<option>1월</option>
+										<option>2월</option>
+										<option>3월</option>
+										<option>4월</option>
+										<option>5월</option>
+										<option>6월</option>
+										<option>7월</option>
+										<option>8월</option>
+										<option>9월</option>
+										<option>10월</option>
+										<option>11월</option>
+										<option>12월</option>
+									</select>
+									<select>
+										<option>1일</option>
+										<option>2일</option>
+										<option>3일</option>
+										<option>4일</option>
+										<option>5일</option>
+										<option>6일</option>
+										<option>7일</option>
+										<option>8일</option>
+										<option>9일</option>
+										<option>10일</option>
+										<option>11일</option>
+										<option>12일</option>
+									</select>
+									<select>
+										<option>1시</option>
+										<option>2시</option>
+										<option>3시</option>
+										<option>4시</option>
+										<option>5시</option>
+										<option>6시</option>
+										<option>7시</option>
+										<option>8시</option>
+										<option>9시</option>
+										<option>10시</option>
+										<option>11시</option>
+										<option>12시</option>
+									</select>
+									<select>
+										<option>1분</option>
+										<option>2분</option>
+										<option>3분</option>
+										<option>4분</option>
+										<option>5분</option>
+										<option>6분</option>
+										<option>7분</option>
+										<option>8분</option>
+										<option>9분</option>
+										<option>10분</option>
+										<option>11분</option>
+										<option>12분</option>
+									</select>
+								</div>
+							</div>
+
+						</div>
+						<div class="btn-area align-c">
+							<button type="button" class="btn btn-sm2 btn-primary">조회</button>
+							<button type="button" class="btn btn-sm btn-icon"><i class="ico ico-refresh">refresh</i></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="card table-type">
+					<div class="card-header">
+						<h2>목록</h2>
+						<div class="btn-area">
+							<button type="button" class="btn btn-xs2">엑셀 다운로드</button>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-wrap">
+							<table class="table-data">
+								<caption>메세지전송결과 처리완료</caption>
+								<colgroup>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th>생성시간</th>
+										<th>착신번호</th>
+										<th>발신번호</th>
+										<th>MSG_ID<br>(기업/대행사)</th>
+										<th>MSG_ID<br>(중계사)</th>
+										<th>RCS_ID</th>
+										<th>착신통신사</th>
+										<th>상태</th>
+										<th>에러코드</th>
+										<th>에러 설명</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2019.10.15</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="pagination">
+							<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+							<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+							<span>1</span>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+							<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+							<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+
+	<!-- poup -->
+	<div class="popup fild-rcs">
+		<div class="popup-header">
+			<h3>RCS ID를 선택해주세요</h3>
+		</div>
+		<div class="popup-body">
+			<div class="table-wrap scroll-y">
+				<table class="table-data">
+					<caption>RCS ID를 선택</caption>
+					<colgroup>
+						<col style="width:50px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>선택</th>
+							<th>RCS_ID</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" id="chk1"><label for="chk1"></label></span></td>
+							<td>KIA_01</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" id="chk2"><label for="chk2"></label></span></td>
+							<td>KIA_02</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" id="chk3"><label for="chk3"></label></span></td>
+							<td>KIA_03</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" id="chk4"><label for="chk4"></label></span></td>
+							<td>KIA_04</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" id="chk5"><label for="chk5"></label></span></td>
+							<td>KIA_05</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" id="chk6"><label for="chk6"></label></span></td>
+							<td>KIA_06</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose(this)">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">확인</button>
+			</div>
+		</div>
+	</div>
+	<!--// poup -->
+	
+	<script type="text/javascript">
+        window.onload=function(){
+            inputFail(event);
+        }
+        
+        function radioCtrl(event,idx){
+            var target = event.target.parentNode;
+            var targetLeft = target.offsetLeft+23;
+            var ctrlResult = document.querySelectorAll(".radio-ctrl-result");
+            var ctrlResultSpan = ctrlResult[0].getElementsByTagName("span");
+            console.log(ctrlResultSpan[idx])
+            ctrlResult[0].style.paddingLeft = targetLeft+"px";
+
+            for(i=0;i<ctrlResultSpan.length;i++) {
+                ctrlResultSpan[i].style.display = "none"
+            }
+            ctrlResultSpan[idx].style.display = "inline-block"
+        }
+        
+        
+        function inputFail(event){
+            var resultCtrl = document.getElementsByClassName("result-ctrl");
+            var failCode = document.getElementsByClassName("fail-code");
+            if (failCode.length){
+                var resultCtrlCh = resultCtrl[0].children;
+
+                for(i=0;i<resultCtrlCh.length;i++) {
+                    var chNode = resultCtrlCh[i].childNodes[1];
+                    chNode.addEventListener('click', function(event){
+
+                        var target = this.getAttribute("for");
+
+                        if ( target == "result03" ){
+                            this.nextSibling.disabled = false;
+                        } else {
+                            failCode[0].disabled = true;
+                        }
+                    });
+                }
+            }
+        }
+        
+        function popup(obj){
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.opacity = "0";
+            popupObj[0].style.display = 'block';
+            popupObj[0].style.marginTop = '-30%';
+            var popupH = popupObj[0].offsetHeight;
+            var h = popupH/2;
+            var body = document.getElementsByTagName("body");
+            addDimmed();
+
+            setTimeout(function() {
+            popupObj[0].style.opacity = "1";
+            popupObj[0].style.marginTop = -h+"px";
+            }, 100);
+
+            function addDimmed() {
+                var body = document.getElementsByTagName("body")[0].insertAdjacentHTML('afterbegin', '<div id="dimmed" class="dimmed"></div>');
+            }
+        }
+        
+        function popupClose(obj){
+            var body = document.getElementById("body");
+            var dimmed = document.getElementById('dimmed');
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.marginTop = '-30%';
+            setTimeout(function() {
+                popupObj[0].removeAttribute("style");
+                document.body.removeChild(dimmed);
+            }, 10);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>KT RCS :: 브랜드 관리</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo">KT RCS Admin</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container" class="sub">  
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">브랜드 권한 조회</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>브랜드 관리</li>
+							<li>브랜드 권한 조회</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+
+				<div class="card srch-type">
+					<div class="card-body">
+						<div class="row flex">
+							<span class="tit fx-init tit-btn">브랜드</span>
+							<div class="input-group">
+								<span class="input-group"><label for="brandId">브랜드 ID</label><input type="text" id="brandId"></span>
+								<span class="input-group"><label for="brandName">브랜드 명</label><input type="text" id="brandName"></span>
+								<span class="input-group"><label for="generalNum">대표 발신 번호</label><input type="text" id="generalNum"></span>
+							</div>
+						</div>
+						<div class="btn-area align-c">
+							<button type="button" class="btn btn-sm2 btn-primary">조회</button>
+							<button type="button" class="btn btn-sm btn-icon"><i class="ico ico-refresh">refresh</i></button>
+						</div>
+					</div>
+				</div>          
+               
+                <div class="card table-type mg-t25">
+                    <div class="card-header">
+                        <h2>목록 <span class="list-total">Total 50</span></h2>
+
+                        <div class="right-area">
+                            <button type="button" class="btn btn-xs2 btn-gray mg-l2">관계 추가</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-wrap">
+                            <table class="table-data">
+                                <caption>권한 목록</caption>
+                                <colgroup>
+                                    <col style="width:60px">
+                                    <col style="width:20%">
+                                    <col style="width:40%">
+                                    <col style="width:40%">
+                                    <col style="width:110px">
+                                    <col style="width:140px">
+                                    <col style="width:140px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>브랜드 ID</th>
+                                        <th>브랜드명</th>
+                                        <th>Master ID</th>
+                                        <th>사업자명</th>
+                                        <th>생성일</th>
+                                        <th>수정일</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Shinhan_call_center</td>
+                                        <td>신한은행 콜센터</td>
+                                        <td>Shinhan</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Shinhan_call_center</td>
+                                        <td>신한은행 콜센터</td>
+                                        <td>슈어엠</td>
+                                        <td>슈어엠</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+						<div class="btn-area">
+							<button type="button" class="btn btn-xs2">선택삭제</button>
+						</div>
+                       
+                        <div class="pagination">
+                            <a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+                            <a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+                            <span>1</span>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">7</a>
+                            <a href="#">8</a>
+                            <a href="#">9</a>
+                            <a href="#">10</a>
+                            <a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+                            <a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+    
+    <!-- poup -->
+    <!-- 브랜드 KEY 등록 -->
+	<div class="popup brand-key">
+		<div class="popup-header">
+			<h3>브랜드 KEY 등록</h3>
+			<p>RCS비즈니스센터에서 입력받은 브랜드 KEY를 입력 하여 주세요</p>
+		</div>
+		<div class="popup-body">
+			<div class="form-wrap">
+				<span class="input-group">
+					<label class="tit ess">브랜드 KEY</label><input type="text" placeholder="브랜드포탈에서 발급 받은 브랜드 KEY">
+				</span>
+			</div>
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('brand-key')">닫기</button>
+				<button type="button" class="btn btn-sm2 btn-primary">등록</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 브랜드 KEY 등록 -->
+	
+	<!-- 마스터 id 조회 -->	
+	<div class="popup fild-list fild-brand">
+		<div class="popup-header">
+			<h3>마스터 조회</h3>
+		</div>
+		<div class="popup-body">
+			<fieldset class="srch-area">
+				<legend>검색영역</legend>
+				<div class="flex">
+                    <select>
+                        <option>전체</option>
+                    </select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button type="button" class="btn btn-sm4 btn-gray fx-init">검색</button>
+				</div>
+			</fieldset>
+			<div class="table-wrap">
+				<table class="table-data">
+					<caption>마스터 선택</caption>
+					<colgroup>
+						<col style="width:42px;">
+						<col style="width:42px;">
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>선택</th>
+							<th>번호</th>
+							<th>Master ID</th>
+							<th>고객명</th>
+							<th>사업자번호</th>
+							<th>Aqency ID</th>
+							<th>Corp ID</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk1"><label for="chk1"></label></span></td>
+							<td>5</td>
+							<td>KIA_05</td>
+							<td>기아자동차 울산</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk2"><label for="chk2"></label></span></td>
+							
+							<td>4</td>
+							<td>KIA_04</td>
+							<td>기아자동차 대전</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk3"><label for="chk3"></label></span></td>
+							
+							<td>3</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk4"><label for="chk4"></label></span></td>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk5"><label for="chk5"></label></span></td>
+							
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pagination">
+				<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+				<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+				<span>1</span>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a href="#">7</a>
+				<a href="#">8</a>
+				<a href="#">9</a>
+				<a href="#">10</a>
+				<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+				<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+			</div>
+			
+			<div class="brand-select">
+				<div class="brand-selected">
+					<span>Brand1 <button type="button" class="btn-del"><i class="ico ico-clear2">delete</i></button></span>
+				</div>
+			</div>
+
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('fild-brand')">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 마스터 id 조회 -->
+	<!--// poup -->
+</body>
+</html>

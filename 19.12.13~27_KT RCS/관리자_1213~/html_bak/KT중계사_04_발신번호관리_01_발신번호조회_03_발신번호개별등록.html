@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<title>KT RCS :: 발신번호 개별 등록</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo ico">KT</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">발신번호 개별 등록</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>발신번호 관리</li>
+							<li>발신번호 개별 등록</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+
+				<div class="card form-type">
+					<div class="card-body">
+						<table>
+							<colgroup>
+								<col style="width:180px">
+								<col>
+							</colgroup>
+							<tr>
+								<th>대화방 명</th><td><span class="input-type"><input type="text" placeholder="대화방 표시 이름을 입력하세요."></span></td>
+							</tr>
+							<tr>
+								<th>발신번호 (chatbotId)</th><td><span class="input-group"><input type="text" placeholder="번호를 입력하세요."><button type="button" class="btn btn-xs btn-gray">중복체크</button></span></td>
+							</tr>
+							<tr>
+								<th class="valign-t">통신서비스 가입증명원</th>
+								<td>
+									<span class="input-group">
+										<p>통신서비스 가입증명원을 제출하시면 서류 심사 후 등록 가능합니다. <br>입력한 발신번호와 통신서비스가입증명원의 전화번호가 동일해야만 발신번호가 등록됩니다.</p>
+										<span class="input-group file-input-group">
+											<span class="file-input fileinput-type mg-t6">
+												<input type="file" id="inputFile02" name="inputFile02" class="file-input-hidden" onchange="getCmaFileView('inputFile02','all','fileName02')">
+												<label for="inputFile02">파일선택</label> <span id="fileName02" class="filename-inner"></span>
+											</span>
+										</span>
+										<span class="txt-caution">파일형식 : jpg, png, pdf, tiff (최대50MB) </span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th>브랜드 선택</th><td><span class="input-group"><input type="text" readonly><button type="button" class="btn btn-xs btn-gray" onclick="popup('brand-reg')">조회</button></span></td>
+							</tr>
+							<tr>
+								<th>챗봇 탭 전시 여부</th>
+								<td>
+									<span class="radio-group">
+										<span class="radio-type"><input type="radio" id="dis01" name="radio01" checked><label for="dis01">전시</label></span>
+										<span class="radio-type"><input type="radio" id="dis02" name="radio01"><label for="dis02">비전시</label></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th>대화방 전시 여부</th>
+								<td>
+									<span class="radio-group">
+										<span class="radio-type"><input type="radio" id="srch01" name="radio02" checked><label for="srch01">전시</label></span>
+										<span class="radio-type"><input type="radio" id="srch02" name="radio02"><label for="srch02">비전시</label></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th>MO 수신여부</th>
+								<td>
+									<span class="radio-group">
+										<span class="radio-type"><input type="radio" id="sms01" name="radio03" checked><label for="sms01">RCS(postback)</label></span>
+										<span class="radio-type"><input type="radio" id="sms02" name="radio03"><label for="sms02">SMS</label></span>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<p class="txt-caution pd-t8">발신번호 승인 소요시간은 영업일 기준 약 3일  소요됩니다.</p>
+
+				<div class="btn-area pd-t40 align-c">
+					<button type="button" class="btn">취소</button>
+					<button type="button" class="btn">임시저장</button>
+					<button type="button" class="btn btn-primary">승인요청</button>
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 02-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+
+	<!-- poup -->
+	<div class="popup brand-reg">
+		<div class="popup-header">
+			<h3>브랜드추가</h3>
+			<p>KT RCS를 통해 브랜드의 발신번호, 템플릿을 관리하기 위해서는 <br>
+			RCS 비즈니스 센터에서 해당 브랜드가 KTRCS를 대행사로 지정한 후에만 사용이 가능합니다.<br>
+			브랜드 담당자를 통해 브랜드ID, 브랜드 KEY를 요청하여 입력하여 주세요.</p>
+		</div>
+		<div class="popup-body">
+			<div class="form-wrap">
+				<span class="input-group">
+					<label class="tit ess">브랜드 ID</label><input type="text" placeholder="브랜드포탈에서 생성된 ID">
+				</span>
+				<span class="input-group">
+					<label class="tit ess">브랜드 KEY</label><input type="text" placeholder="브랜드포탈에서 발급 받은 브랜드 KEY">
+				</span>
+				<span class="input-group">
+					<label class="tit">용도 입력</label><input type="text">
+				</span>
+			</div>
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('brand-reg')">닫기</button>
+				<button type="button" class="btn btn-sm2 btn-primary">요청</button>
+			</div>
+		</div>
+	</div>
+	<!--// poup -->
+    
+    <script type="text/javascript">
+        function getCmaFileInfo(obj,stype) {
+            var fileObj, pathHeader , pathMiddle, pathEnd, allFilename, fileName, extName;
+
+            if(obj == "[object HTMLInputElement]") {
+                fileObj = obj.value
+            } else {
+                fileObj = document.getElementById(obj).value;
+            }
+            if (fileObj != "") {
+                    pathHeader = fileObj.lastIndexOf("\\");
+                    pathMiddle = fileObj.lastIndexOf(".");
+                    pathEnd = fileObj.length;
+                    fileName = fileObj.substring(pathHeader+1, pathMiddle);
+                    extName = fileObj.substring(pathMiddle+1, pathEnd);
+                    allFilename = fileName+"."+extName;
+                    allFilename = fileName+"."+extName;
+
+                    if(stype == "all") {
+                            return allFilename; // 확장자 포함 파일명
+                    } else if(stype == "name") {
+                            return fileName; // 순수 파일명만(확장자 제외)
+                    } else if(stype == "ext") {
+                            return extName; // 확장자
+                    } else {
+                            return fileName; // 순수 파일명만(확장자 제외)
+                    }
+            } else {
+                    alert("파일을 선택해주세요");
+                    return false;
+            }
+            // getCmaFileView(this,'name');
+            // getCmaFileView('upFile','all');
+         }
+
+        function getCmaFileView(obj,stype,target,btnType) {
+            var result = getCmaFileInfo(obj,stype);
+            var extFileName = getCmaFileInfo(obj,'ext');
+            var fileTarget = document.getElementById(target);
+            var fileSize = document.getElementById(obj).files[0].size;
+            var parentFile = document.getElementById(obj).parentNode;
+            if (btnType == "type3"){
+                fileTarget.value = result;
+            } else {
+                fileTarget.innerHTML = result + ' <button type=button class=btn-clear onclick=clearInput(\''+obj+'\',\''+target+'\')><i class="ico ico-clear">Clear</i></button>';
+            }
+            if (btnType == "btnType"){
+                parentFile.insertAdjacentHTML('afterend', '<span class="file-info">'+formatSizeUnits(fileSize)+", "+extFileName+'</span>');
+            }
+
+        }
+        
+        function popup(obj){
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.opacity = "0";
+            popupObj[0].style.display = 'block';
+            popupObj[0].style.marginTop = '-30%';
+            var popupH = popupObj[0].offsetHeight;
+            var h = popupH/2;
+            var body = document.getElementsByTagName("body");
+            addDimmed();
+
+            setTimeout(function() {
+            popupObj[0].style.opacity = "1";
+            popupObj[0].style.marginTop = -h+"px";
+            }, 100);
+
+            function addDimmed() {
+                var body = document.getElementsByTagName("body")[0].insertAdjacentHTML('afterbegin', '<div id="dimmed" class="dimmed"></div>');
+            }
+        }
+        
+        function popupClose(obj){
+            var body = document.getElementById("body");
+            var dimmed = document.getElementById('dimmed');
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.marginTop = '-30%';
+            setTimeout(function() {
+                popupObj[0].removeAttribute("style");
+                document.body.removeChild(dimmed);
+            }, 10);
+        }
+    </script>
+</body>
+</html>

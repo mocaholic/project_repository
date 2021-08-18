@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>KT RCS :: 고객관리</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo">KT RCS Admin</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container" class="sub">  
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">고객 계정 등록</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>고객 포탈 계정 관리</li>
+							<li>고객 계정 등록</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="info-wrap">
+					
+					<div class="flex between">
+						<h2 class="tit-info">운영 담당자 정보</h2>
+						<a href="javascript:popup('fild-mkt')" class="txt-link">청약 시 등록한 마케팅 협력사 정보 바로 입력하기</a>
+					</div>
+					<table class="table-info form-type">
+						<colgroup>
+							<col style="width:180px">
+							<col>
+							<col style="width:180px">
+							<col>
+						</colgroup>
+						<tr>
+							<th>Master ID</th>
+							<td>
+                                <button type="button" class="btn btn-xs2 btn-gray" onclick="popup('fild-mstid')">선택</button>
+							</td>
+							<th>고객명</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th>이름</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+							<th>전화번호</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+						</tr>
+						<tr>
+							<th>구분</th>
+							<td>Sub</td>
+							<th>이메일</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+						</tr>
+						<tr>
+							<th>메모</th><td colspan="3"><input type="text" placeholder="입력하세요"></td>
+						</tr>
+					</table>
+
+					<h2 class="tit-info mg-t25">메뉴 권한 설정</h2>
+					<table class="table-info bg-none">
+						<colgroup>
+							<col style="width:180px">
+							<col>
+						</colgroup>
+						<tr>
+							<th>전체 권한 부여</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio1-1" name="radio01" checked><label for="radio1-1">권한 부여</label></span>
+								<span class="radio-type"><input type="radio" id="radio1-2" name="radio01"><label for="radio1-2">권한 부여 안함</label></span>
+							</td>
+						</tr>
+						<tr>
+							<th>브랜드 관리</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio2-1" name="radio02" checked><label for="radio2-1">허용</label></span>
+								<span class="radio-type"><input type="radio" id="radio2-2" name="radio02"><label for="radio2-2">허용안함</label></span>
+							</td>
+						</tr>
+						<tr>
+							<th class="valign-t">발신번호 관리</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio3-1" name="radio03" checked><label for="radio3-1" onclick="radioSwitch2(this,'.option','show')">허용</label></span>
+								<span class="radio-type"><input type="radio" id="radio3-2" name="radio03"><label for="radio3-2" onclick="radioSwitch2(this,'.option','hide')">허용안함</label></span>
+
+								<p class="option mg-t4">
+									<span class="checkbox-type txt"><input type="checkbox" id="chk1-1" checked><label for="chk1-1">조회</label></span>
+									<span class="checkbox-type txt"><input type="checkbox" id="chk1-2"><label for="chk1-2">등록</label></span>
+									<span class="checkbox-type txt"><input type="checkbox" id="chk1-3"><label for="chk1-3">수정</label></span>
+									<span class="checkbox-type txt"><input type="checkbox" id="chk1-4"><label for="chk1-4">삭제</label></span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th class="valign-t">템플릿관리</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio4-1" name="radio04" checked><label for="radio4-1" onclick="radioSwitch2(this,'.option','show')">허용</label></span>
+								<span class="radio-type"><input type="radio" id="radio4-2" name="radio04"><label for="radio4-2" onclick="radioSwitch2(this,'.option','hide')">허용안함</label></span>
+
+								<p class="option mg-t4">
+									<span class="checkbox-type txt"><input type="checkbox" id="chk2-1" checked><label for="chk2-1">조회</label></span>
+									<span class="checkbox-type txt"><input type="checkbox" id="chk2-2"><label for="chk2-2">등록</label></span>
+									<span class="checkbox-type txt"><input type="checkbox" id="chk2-3"><label for="chk2-3">수정</label></span>
+									<span class="checkbox-type txt"><input type="checkbox" id="chk2-4"><label for="chk2-4">삭제</label></span>
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<th class="valign-t">파일관리</th>
+							<td>
+								<div class="radio-group">
+									<span class="radio-type"><input type="radio" id="radio5-1" name="radio05" checked><label for="radio5-1" onclick="radioSwitch2(this,'.option','show')">허용</label></span>
+									<span class="radio-type"><input type="radio" id="radio5-2" name="radio05"><label for="radio5-2" onclick="radioSwitch2(this,'.option','hide')">허용안함</label></span>
+
+									<p class="option mg-t4">
+										<span class="checkbox-type txt"><input type="checkbox" id="chk3-1" checked><label for="chk3-1">조회</label></span>
+										<span class="checkbox-type txt"><input type="checkbox" id="chk3-2"><label for="chk3-2">등록</label></span>
+										<span class="checkbox-type txt"><input type="checkbox" id="chk3-3"><label for="chk3-3">수정</label></span>
+										<span class="checkbox-type txt"><input type="checkbox" id="chk3-4"><label for="chk3-4">삭제</label></span>
+									</p>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>발송/과금 조회</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio6-1" name="radio06" checked><label for="radio6-1">허용</label></span>
+								<span class="radio-type"><input type="radio" id="radio6-2" name="radio06"><label for="radio6-2">허용안함</label></span>
+							</td>
+						</tr>
+						<tr>
+							<th>운영 담당자 관리</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio7-1" name="radio07" checked><label for="radio7-1">허용</label></span>
+								<span class="radio-type"><input type="radio" id="radio7-2" name="radio07"><label for="radio7-2">허용안함</label></span>
+							</td>
+						</tr>
+						<tr>
+							<th>청약정보조회</th>
+							<td>
+								<span class="radio-type"><input type="radio" id="radio8-1" name="radio08" checked><label for="radio8-1">허용</label></span>
+								<span class="radio-type"><input type="radio" id="radio8-2" name="radio08"><label for="radio8-2">허용안함</label></span>
+							</td>
+						</tr>
+					</table>
+
+					<div class="btn-area align-c pd-t40">
+						<button type="button" class="btn btn-sm">취소</button>
+						<button type="button" class="btn btn-sm btn-primary">저장</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+
+	<!-- poup -->
+	<!-- 마케팅 협력자 정보-->
+	<div class="popup fild-list fild-mkt">
+		<div class="popup-header">
+			<h3>마케팅 협력사 담당자를 선택해주세요</h3>
+		</div>
+		<div class="popup-body">
+			<fieldset class="srch-area">
+				<legend>검색영역</legend>
+				<div class="flex">
+                    <select>
+                        <option>전체</option>
+                    </select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button type="button" class="btn btn-sm4 btn-gray fx-init">검색</button>
+				</div>
+			</fieldset>
+			<div class="table-wrap">
+				<table class="table-data">
+					<caption>브랜드 선택</caption>
+					<colgroup>
+						<col style="width:42px;">
+						<col style="width:42px;">
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th><span class="checkbox-type"><input type="checkbox" name="listChk" id="chkAll" onchange="checkAll(this,'listChk')"><label for="chkAll"></label></span></th>
+							<th>번호</th>
+							<th>협력업체 명</th>
+							<th>협력업체 ID</th>
+							<th>담당자명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk1"><label for="chk1"></label></span></td>
+							<td>5</td>
+							<td>누리</td>
+							<td>abcdabcd</td>
+							<td>이루온</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk2"><label for="chk2"></label></span></td>
+							
+							<td>4</td>
+							<td>누리</td>
+							<td></td>
+							<td>이루온</td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk3"><label for="chk3"></label></span></td>
+							
+							<td>3</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk4"><label for="chk4"></label></span></td>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk5"><label for="chk5"></label></span></td>
+							
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pagination">
+				<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+				<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+				<span>1</span>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a href="#">7</a>
+				<a href="#">8</a>
+				<a href="#">9</a>
+				<a href="#">10</a>
+				<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+				<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+			</div>
+
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('fild-mkt')">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 마케팅 협력자 정보-->
+	
+	<!-- 마스터id 선택 -->	
+	<div class="popup fild-list fild-mstid">
+		<div class="popup-header">
+			<h3>마스터 조회</h3>
+		</div>
+		<div class="popup-body">
+			<fieldset class="srch-area">
+				<legend>검색영역</legend>
+				<div class="flex">
+                    <select>
+                        <option>전체</option>
+                    </select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button type="button" class="btn btn-sm4 btn-gray fx-init">검색</button>
+				</div>
+			</fieldset>
+			<div class="table-wrap">
+				<table class="table-data">
+					<caption>마스터 id 조회</caption>
+					<colgroup>
+						<col style="width:42px;">
+						<col style="width:42px;">
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th><span class="checkbox-type"><input type="checkbox" name="listChk" id="chkAll" onchange="checkAll(this,'listChk')"><label for="chkAll"></label></span></th>
+							<th>번호</th>
+							<th>Master ID</th>
+							<th>고객명</th>
+							<th>사업자번호</th>
+							<th>Agency ID</th>
+							<th>corp ID</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk6"><label for="chk6"></label></span></td>
+							<td>5</td>
+							<td>KIA_05</td>
+							<td>기아자동차 울산</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk7"><label for="chk7"></label></span></td>
+							
+							<td>4</td>
+							<td>KIA_04</td>
+							<td>기아자동차 대전</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk8"><label for="chk8"></label></span></td>
+							
+							<td>3</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk9"><label for="chk9"></label></span></td>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk10"><label for="chk10"></label></span></td>							
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pagination">
+				<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+				<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+				<span>1</span>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a href="#">7</a>
+				<a href="#">8</a>
+				<a href="#">9</a>
+				<a href="#">10</a>
+				<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+				<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+			</div>
+
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('fild-mstid')">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 마스터id 선택 -->
+	<!--// poup -->
+    
+    <script type="text/javascript">
+        function radioSwitch2(event,obj,showHide){
+            var target = event.parentNode.parentNode;
+            var option = target.querySelectorAll(obj);
+            if ( showHide == "show" ){
+                option[0].style.display = "block"
+            } else {
+                option[0].style.display = "none"
+            }	
+        }
+        
+        function popup(obj){
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.opacity = "0";
+            popupObj[0].style.display = 'block';
+            popupObj[0].style.marginTop = '-30%';
+            var popupH = popupObj[0].offsetHeight;
+            var h = popupH/2;
+            var body = document.getElementsByTagName("body");
+            addDimmed();
+
+            setTimeout(function() {
+            popupObj[0].style.opacity = "1";
+            popupObj[0].style.marginTop = -h+"px";
+            }, 100);
+
+            function addDimmed() {
+                var body = document.getElementsByTagName("body")[0].insertAdjacentHTML('afterbegin', '<div id="dimmed" class="dimmed"></div>');
+            }
+        }
+
+        function popupClose(obj){
+            var body = document.getElementById("body");
+            var dimmed = document.getElementById('dimmed');
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.marginTop = '-30%';
+            setTimeout(function() {
+                popupObj[0].removeAttribute("style");
+                document.body.removeChild(dimmed);
+            }, 10);
+        }
+        
+        function checkAll(e,name) {
+           var checkboxes = document.getElementsByName(name);
+            if (e.checked) {
+                for (var i = 0; i < checkboxes.length; i++) { 
+                    checkboxes[i].checked = true;
+                }
+            } else {
+                for (var i = 0; i < checkboxes.length; i++) {
+                    checkboxes[i].checked = false;
+                }
+            }
+         }
+    </script>
+</body>
+</html>

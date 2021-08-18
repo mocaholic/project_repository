@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>KT RCS :: 스팸 차단 이력 조회</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo ico">KT</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">스팸 차단 이력 조회</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>스팸 관리</li>
+							<li>스팸 차단 내역 조회</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				
+				<div class="card srch-type">
+					<div class="card-body">
+					    <div class="row flex">
+							<span class="tit fx-init tit-btn">MSGID</span>
+							<div class="input-area">
+							    <input type="text" >
+                            </div>
+						</div>
+						<div class="row flex">
+							<span class="tit fx-init tit-btn">RCSID</span>
+							<div class="input-group">
+								<span class="input-group"><label for="rcsId" class="hide">RCSID</label><input type="text" id="rcsId"></span>
+                                <span class="input-group"><label for="callNum">발신번호 <span class="fc_red">*</span></label><input type="text" id="callNum"></span>
+                                <span class="input-group"><label for="receiveNum">수신번호 <span class="fc_red">*</span></label><input type="text" id="receiveNum"></span>
+							</div>
+						</div>
+						<div class="btn-area align-c">
+							<button type="button" class="btn btn-sm2 btn-primary">조회</button>
+							<button type="button" class="btn btn-sm btn-icon"><i class="ico ico-refresh">refresh</i></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="card table-type">
+					<div class="card-header">
+						<h2>목록 <span class="list-total">Total 10</span></h2>
+					</div>
+					<div class="card-body">
+						<div class="table-wrap">
+							<table class="table-data">
+								<caption>스팸 차단 내역</caption>
+								<colgroup>
+									<col style="width:70px">
+									<col style="width:120px">
+									<col style="width:120px">
+									<col style="width:13%">
+									<col style="width:9%">
+									<col style="width:9%">
+									<col style="width:16%">
+									<col style="width:16%">
+									<col style="width:9%">
+									<col style="width:16%">
+									<col style="width:16%">
+								</colgroup>
+								<thead>
+									<tr class="notice important">
+										<th>번호</th>
+										<th>발송일시</th>
+										<th>차단일시</th>
+										<th>MSG ID</th>
+										<th>RCSID</th>
+										<th>고객명</th>
+										<th>발신번호</th>
+										<th>수신번호</th>
+										<th>구분</th>
+										<th>차단구분</th>
+										<th>차단조건</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>10</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>XXX</td>
+										<td></td>
+										<td>1588-1000</td>
+										<td></td>
+										<td>관리자</td>
+										<td>문구차단</td>
+										<td>이박사, 신바람</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>YYY</td>
+										<td></td>
+										<td>1588-1051</td>
+										<td></td>
+										<td>관리자</td>
+										<td>발신번호 차단</td>
+										<td>1588-1051</td>
+									</tr>
+									<tr>
+										<td>10</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>ZZZ</td>
+										<td></td>
+										<td>1655-1233</td>
+										<td></td>
+										<td>KISA</td>
+										<td>발신번호 차단</td>
+										<td>1655-1233</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="pagination">
+							<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+							<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+							<span>1</span>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#">4</a>
+							<a href="#">5</a>
+							<a href="#">6</a>
+							<a href="#">7</a>
+							<a href="#">8</a>
+							<a href="#">9</a>
+							<a href="#">10</a>
+							<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+							<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+
+	<!-- poup -->
+	<div class="popup brand-key">
+		<div class="popup-header">
+			<h3>브랜드 KEY 등록</h3>
+			<p>RCS비즈니스센터에서 입력받은 브랜드 KEY를 입력 하여 주세요</p>
+		</div>
+		<div class="popup-body">
+			<div class="form-wrap">
+				<span class="input-group">
+					<label class="tit ess">브랜드 KEY</label><input type="text" placeholder="브랜드포탈에서 발급 받은 브랜드 KEY">
+				</span>
+			</div>
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('brand-key')">닫기</button>
+				<button type="button" class="btn btn-sm2 btn-primary">등록</button>
+			</div>
+		</div>
+	</div>
+	<!--// poup -->
+
+</body>
+</html>

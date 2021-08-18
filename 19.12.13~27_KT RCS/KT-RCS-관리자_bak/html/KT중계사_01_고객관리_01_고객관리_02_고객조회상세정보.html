@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<title>KT RCS :: 고객 관리</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo ico">KT</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">고객 조회 상세 정보</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>고객 관리</li>
+							<li>고객 조회 상세 정보</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+
+				<div class="info-wrap">
+                    <div class="title-header">
+                        <h2 class="tit-info">기본 정보</h2>
+                        <div class="right-area">
+                            <button type="button" class="btn btn-xs2 btn-gray mg-l2">저장</button>
+                        </div>
+                    </div>
+					<table class="table-info">
+						<colgroup>
+							<col style="width:180px">
+							<col>
+							<col style="width:180px">
+							<col>
+						</colgroup>
+						<tr>
+							<th>생성 구분</th>
+							<td>ICIS</td>
+							<th>처리 담당자</th>
+							<td>자동</td>
+						</tr>
+						<tr>
+							<th>Master ID</th>
+							<td>Shinhan master</td>
+							<th>고객명</th>
+							<td>신한카드</td>
+						</tr>
+						<tr>
+							<th>법인등록번호</th>
+							<td>******</td>
+							<th>사업자등록번호</th>
+							<td>111-21-23134</td>
+						</tr>
+						<tr>
+							<th>종업원 수</th>
+							<td>8</td>
+							<th>고객유형</th>
+							<td>기업</td>
+						</tr>
+						<tr>
+							<th>CORP ID</th>
+							<td>A0001</td>
+							<th>기업명</th>
+							<td>신한카드</td>
+						</tr>
+						<tr>
+							<th>발신번호 체크여부</th>
+							<td colspan="3">체크/미체크</td>
+						</tr>
+					</table>
+                   
+                    <!-- 청약 목록 -->
+					<div class="card table-type mg-t25">
+						<div class="card-header">
+							<h2>청약 목록 <span class="list-total">Total 50</span></h2>
+							
+							<div class="right-area">
+							    <button type="button" class="btn btn-xs2 btn-gray mg-r2">추가 등록</button>
+								<fieldset class="srch-area">
+									<legend>검색영역</legend>
+									<select>
+										<option>전체</option>
+										<option>고객명</option>
+										<option>청약 ID</option>
+                                        <option>크로샷 ID</option>
+									</select>
+									<input type="text" placeholder="검색어를 입력해주세요."><span class="ico-type"><i class="ico ico-srch"></i></span>
+								</fieldset>
+
+								<button type="button" class="btn btn-xs2 btn-gray mg-l2">검색</button>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-wrap">
+								<table class="table-data">
+									<caption>청약목록</caption>
+									<colgroup>
+										<col style="width:60px">
+										<col style="width:20%">
+										<col style="width:40%">
+										<col style="width:40%">
+										<col style="width:110px">
+										<col style="width:140px">
+										<col style="width:140px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>NO</th>
+											<th>청약 ID</th>
+											<th>고객명</th>
+											<th>크로샷ID</th>
+											<th>상태</th>
+											<th>등록일</th>
+											<th>최종수정일</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>10</td>
+											<td>RCS01</td>
+											<td></td>
+											<td>Xroshot_shinhan</td>
+											<td>사용</td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>RCS01</td>
+											<td></td>
+											<td>Xroshot_shinhan</td>
+											<td>사용불가</td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="pagination">
+								<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+								<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+								<span>1</span>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+								<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+								<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+							</div>
+						</div>
+					</div>
+                   
+                    <!-- 소유 브랜드 목록 -->
+                    <div class="card table-type mg-t25">
+						<div class="card-header">
+							<h2>소유 브랜드 목록 <span class="list-total">Total 50</span></h2>
+							
+							<div class="right-area">
+								<fieldset class="srch-area">
+									<legend>검색영역</legend>
+									<select>
+										<option>전체</option>
+										<option>브랜드명</option>
+										<option>브랜드 ID</option>
+                                        <option>대표발신번호</option>
+									</select>
+									<input type="text" placeholder="검색어를 입력해주세요."><span class="ico-type"><i class="ico ico-srch"></i></span>
+								</fieldset>
+
+								<button type="button" class="btn btn-xs2 btn-gray mg-l2">검색</button>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-wrap">
+								<table class="table-data">
+									<caption>소유 브랜드 목록</caption>
+									<colgroup>
+										<col style="width:60px">
+										<col style="width:20%">
+										<col style="width:40%">
+										<col style="width:40%">
+										<col style="width:110px">
+										<col style="width:140px">
+										<col style="width:140px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>NO</th>
+											<th>브랜드명</th>
+											<th>브랜드 ID</th>
+											<th>대표발신번호</th>
+											<th>브랜드KEY</th>
+											<th>등록일</th>
+											<th>최종수정일</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>10</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>등록됨</td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><button type="button" class="btn btn-xs2 btn-gray" onclick="popup('brand-key')">등록</button></td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="pagination">
+								<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+								<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+								<span>1</span>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+								<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+								<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 대행 브랜드 목록-->
+					<div class="card table-type mg-t25">
+						<div class="card-header">
+							<h2>대행 브랜드 목록 <span class="list-total">Total 50</span></h2>
+							
+							<div class="right-area">
+							    <a href="javascript:popup('fild-brand')" class="btn btn-xs2 btn-gray mg-l2">브랜드 추가</a>
+								<fieldset class="srch-area">
+									<legend>검색영역</legend>
+									<select>
+										<option>전체</option>
+										<option>브랜드명</option>
+										<option>브랜드 ID</option>
+                                        <option>대표발신번호</option>
+										<option>기업명</option>
+										<option>사업자등록번호</option>
+									</select>
+									<input type="text" placeholder="검색어를 입력해주세요."><span class="ico-type"><i class="ico ico-srch"></i></span>
+								</fieldset>
+
+								<button type="button" class="btn btn-xs2 btn-gray mg-l2">검색</button>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-wrap">
+								<table class="table-data">
+									<caption>대행 브랜드 목록</caption>
+									<colgroup>
+										<col style="width:60px">
+										<col style="width:20%">
+										<col style="width:40%">
+										<col style="width:40%">
+										<col style="width:110px">
+										<col style="width:140px">
+										<col style="width:140px">
+										<col style="width:140px">
+										<col style="width:140px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>NO</th>
+											<th>브랜드명</th>
+											<th>브랜드 ID</th>
+											<th>대표발신번호</th>
+											<th>브랜드KEY</th>
+											<th>기업명</th>
+											<th>사업자 등록번호</th>
+											<th>등록일</th>
+											<th>최종수정일</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>10</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td><button type="button" class="btn btn-xs2 btn-gray" onclick="popup('brand-key')">등록</button></td>
+											<td></td>
+											<td></td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>등록됨</td>
+											<td></td>
+											<td></td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="pagination">
+								<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+								<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+								<span>1</span>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+								<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+								<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 담당자 목록 -->
+					<div class="card table-type mg-t25">
+						<div class="card-header">
+							<h2>담당자 목록 <span class="list-total">Total 50</span></h2>
+							
+							<div class="right-area">
+							    <a href="#" class="btn btn-xs2 btn-gray mg-r2">등록</a>
+								<fieldset class="srch-area">
+									<legend>검색영역</legend>
+									<select>
+										<option>전체</option>
+										<option>담당자명</option>
+										<option>전화번호</option>
+									</select>
+									<input type="text" placeholder="검색어를 입력해주세요."><span class="ico-type"><i class="ico ico-srch"></i></span>
+								</fieldset>
+
+								<button type="button" class="btn btn-xs2 btn-gray mg-l2">검색</button>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-wrap">
+								<table class="table-data">
+									<caption>담당자 목록</caption>
+									<colgroup>
+										<col style="width:60px">
+										<col style="width:20%">
+										<col style="width:20%">
+										<col style="width:10%">
+										<col style="width:40%">
+										<col style="width:110px">
+										<col style="width:140px">
+										<col style="width:140px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>NO</th>
+											<th>담당자 이름</th>
+											<th>전화번호</th>
+											<th>구분</th>
+											<th>이메일</th>
+											<th>상태</th>
+											<th>등록일</th>
+											<th>최종수정일</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>10</td>
+											<td>김담당</td>
+											<td>010-1111-1111</td>
+											<td>Master</td>
+											<td>abc@naver.com</td>
+											<td>정상</td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>이담당</td>
+											<td>010-1111-1111</td>
+											<td>Sub</td>
+											<td>abc@naver.com</td>
+											<td>정상</td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>박담당</td>
+											<td>010-1111-1111</td>
+											<td>Sub</td>
+											<td>abc@naver.com</td>
+											<td>일시정지</td>
+											<td>2019-09-11</td>
+											<td>2019-09-11</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="pagination">
+								<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+								<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+								<span>1</span>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<a href="#">5</a>
+								<a href="#">6</a>
+								<a href="#">7</a>
+								<a href="#">8</a>
+								<a href="#">9</a>
+								<a href="#">10</a>
+								<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+								<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+							</div>
+						</div>
+					</div>
+                   
+                    <!-- 이력정보 -->
+                    <div class="title-header">
+                        <h2 class="tit-info">이력정보 <a href="#" class="txt-link gray mg-l10">상세조회</a></h2>
+                    </div>
+                    <table class="table-info">
+                        <caption>이력정보</caption>
+                        <colgroup>
+                            <col style="width:180px">
+                            <col>
+                            <col style="width:180px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>최초등록일</th>
+                                <td></td>
+                                <th>처리담당자</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>최종수정일</th>
+                                <td></td>
+                                <th>처리담당자</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="align-c mg-t25">
+                        <a href="#" class="btn">목록</a>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+    
+    <!-- poup -->
+    <!-- 브랜드 KEY 등록 팝업 -->
+	<div class="popup brand-key">
+		<div class="popup-header">
+			<h3>브랜드 KEY 등록</h3>
+			<p>RCS비즈니스센터에서 입력받은 브랜드 KEY를 입력 하여 주세요</p>
+		</div>
+		<div class="popup-body">
+			<div class="form-wrap">
+				<span class="input-group">
+					<label class="tit ess">브랜드 KEY</label><input type="text" placeholder="브랜드포탈에서 발급 받은 브랜드 KEY">
+				</span>
+			</div>
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('brand-key')">닫기</button>
+				<button type="button" class="btn btn-sm2 btn-primary">등록</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 브랜드 KEY 등록 팝업 -->
+	
+	<!-- 브랜드추가 팝업 -->	
+	<div class="popup fild-list fild-brand">
+		<div class="popup-header">
+			<h3>브랜드를 선택해주세요</h3>
+		</div>
+		<div class="popup-body">
+			<fieldset class="srch-area">
+				<legend>검색영역</legend>
+				<div class="flex">
+                    <select>
+                        <option>전체</option>
+                    </select>
+					<input type="text" placeholder="검색어를 입력해주세요.">
+					<button type="button" class="btn btn-sm4 btn-gray fx-init">검색</button>
+				</div>
+			</fieldset>
+			<div class="table-wrap">
+				<table class="table-data">
+					<caption>브랜드 선택</caption>
+					<colgroup>
+						<col style="width:42px;">
+						<col style="width:42px;">
+						<col>
+						<col>
+						<col>
+						<col>
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th>선택</th>
+							<th>번호</th>
+							<th>브랜드 ID</th>
+							<th>브랜드명</th>
+							<th>대표발신번호</th>
+							<th>기업ID</th>
+							<th>기업명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk1"><label for="chk1"></label></span></td>
+							<td>5</td>
+							<td>KIA_05</td>
+							<td>기아자동차 울산</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk2"><label for="chk2"></label></span></td>
+							
+							<td>4</td>
+							<td>KIA_04</td>
+							<td>기아자동차 대전</td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk3"><label for="chk3"></label></span></td>
+							
+							<td>3</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk4"><label for="chk4"></label></span></td>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><span class="checkbox-type"><input type="checkbox" name="listChk" id="chk5"><label for="chk5"></label></span></td>
+							
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="pagination">
+				<a href="#" class="btn-first"><i class="ico ico-first">처음으로</i></a>
+				<a href="#" class="btn-prev"><i class="ico ico-prev">이전</i></a>
+				<span>1</span>
+				<a href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+				<a href="#">5</a>
+				<a href="#">6</a>
+				<a href="#">7</a>
+				<a href="#">8</a>
+				<a href="#">9</a>
+				<a href="#">10</a>
+				<a href="#" class="btn-next"><i class="ico ico-next">다음</i></a>
+				<a href="#" class="btn-last"><i class="ico ico-last">마지막으로</i></a>
+			</div>
+			
+			<div class="multi-chk">
+                <div class="list">
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                    <span>BRAND01<a href="#" class="btn_del">삭제</a></span>
+                </div>
+            </div>
+
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('fild-brand')">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">확인</button>
+			</div>
+		</div>
+	</div>
+	<!-- // 브랜드추가 팝업 -->
+	<!--// poup -->
+	
+	<script type="text/javascript">
+        function popup(obj){
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.opacity = "0";
+            popupObj[0].style.display = 'block';
+            popupObj[0].style.marginTop = '-30%';
+            var popupH = popupObj[0].offsetHeight;
+            var h = popupH/2;
+            var body = document.getElementsByTagName("body");
+            addDimmed();
+
+            setTimeout(function() {
+            popupObj[0].style.opacity = "1";
+            popupObj[0].style.marginTop = -h+"px";
+            }, 100);
+
+            function addDimmed() {
+                var body = document.getElementsByTagName("body")[0].insertAdjacentHTML('afterbegin', '<div id="dimmed" class="dimmed"></div>');
+            }
+        }
+        
+        function popupClose(obj){
+            var body = document.getElementById("body");
+            var dimmed = document.getElementById('dimmed');
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.marginTop = '-30%';
+            setTimeout(function() {
+                popupObj[0].removeAttribute("style");
+                document.body.removeChild(dimmed);
+            }, 10);
+        }
+    </script>
+</body>
+</html>

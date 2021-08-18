@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>KT RCS :: 가입자 관리</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo">KT RCS Admin</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container" class="sub">  
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">RCS 가입자 관리(캐싱 DB)</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>RCS 가입자 관리</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				
+				<div class="card srch-type">
+					<div class="card-body">
+					    <div class="row flex">
+							<span class="tit fx-init tit-btn">수신자 조회</span>
+							<div class="input-area"><input type="text" placeholder="전화번호"></div>
+						</div>
+						<div class="btn-area align-c">
+							<button type="button" class="btn btn-sm2 btn-primary">조회</button>
+							<button type="button" class="btn btn-sm btn-icon"><i class="ico ico-refresh">refresh</i></button>
+						</div>
+					</div>
+				</div>
+
+				<div class="card table-type">
+					<div class="card-header">
+						<h2>수신자 조회 결과 및 관리</h2>
+
+						<div class="btn-area">
+							<button type="button" class="btn btn-xs2 btn-gray" onclick="popup('rcs-refusal')">RCS수신거부등록</button>
+							<button type="button" class="btn btn-xs2 btn-gray mg-l2">통신사 초기화</button>
+							<button type="button" class="btn btn-xs2 btn-gray mg-l2" onclick="popup('rcs-capa')">RCS Capa 초기화</button>
+							<button type="button" class="btn btn-xs2 btn-gray mg-l2">수정</button>
+							<button type="button" class="btn btn-xs2 btn-gray mg-l2">삭제</button>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="table-wrap">
+							<table class="table-data">
+								<caption>수신자 조회 결과</caption>
+								<colgroup>
+									<col style="width:40%">
+									<col style="width:100px">
+									<col style="width:120px">
+									<col style="width:120px">
+									<col style="width:120px">
+									<col style="width:100px">
+									<col style="width:90px">
+									<col style="width:100px">
+									<col style="width:100px">
+									<col style="width:100px">
+									<col style="width:60px">
+								</colgroup>
+								<thead>
+									<tr class="notice important">
+										<th>전화번호</th>
+										<th>통신사</th>
+										<th>RCS지원</th>
+										<th>생성일시</th>
+										<th>변경일시</th>
+										<th>수신거부 등록일시</th>
+										<th>RCS수신거부</th>
+										<th>RCS성공이력</th>
+										<th>RCS실패이력</th>
+										<th>크로샷이력</th>
+										<th>선택</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>010-1234-5678</td>
+										<td>KT</td>
+										<td>지원</td>
+										<td>2019-10-12</td>
+										<td>2019-12-13</td>
+										<td>2019-10-10</td>
+										<td>Y</td>
+										<td><button type="button" class="btn btn-xs2 btn-gray" onclick="">조회</button></td>
+										<td><button type="button" class="btn btn-xs2 btn-gray" onclick="">조회</button></td>
+										<td><button type="button" class="btn btn-xs2 btn-gray" onclick="">조회</button></td>
+										<td><span class="checkbox-type"><input type="checkbox" id="chk1"><label for="chk1"></label></span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+				
+				<div class="card table-type">
+					<div class="card-body">
+						조회 영역
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+
+	<!-- poup -->
+	<div class="popup rcs-refusal">
+		<div class="popup-header">
+			<h3>RCS 수신거부 등록</h3>
+		</div>
+		<div class="popup-body">
+			<div class="form-wrap">
+				<span class="input-group">
+					<label class="tit">전화번호</label><input type="text">
+				</span>
+				<span class="input-group">
+					<label class="tit">사유</label><textarea id="inputTextarea" style="display:block; flex:1;"></textarea>
+				</span>
+			</div>
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('rcs-refusal')">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">등록</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="popup fild-list rcs-capa">
+		<div class="popup-header">
+			<h3>RCS Capa</h3>
+		</div>
+		<div class="popup-body">
+			<div class="table-wrap">
+				<table class="table-data form-type">
+					<thead>
+						<tr>
+							<th>전화번호</th>
+							<th>MNO</th>
+							<th>RCS여부</th>
+							<th>생성일자</th>
+							<th>만료일자</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>010-1234-567</td>
+							<td></td>
+							<td>Y</td>
+							<td>2016-01-17</td>
+							<td>2020-01-17</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+		<div class="popup-footer">
+			<div class="btn-area">
+				<button type="button" class="btn btn-sm2" onclick="popupClose('rcs-capa')">취소</button>
+				<button type="button" class="btn btn-sm2 btn-primary">초기화</button>
+			</div>
+		</div>
+	</div>
+	<!--// poup -->
+	
+	<script type="text/javascript">
+        function popup(obj){
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.opacity = "0";
+            popupObj[0].style.display = 'block';
+            popupObj[0].style.marginTop = '-30%';
+            var popupH = popupObj[0].offsetHeight;
+            var h = popupH/2;
+            var body = document.getElementsByTagName("body");
+            addDimmed();
+
+            setTimeout(function() {
+            popupObj[0].style.opacity = "1";
+            popupObj[0].style.marginTop = -h+"px";
+            }, 100);
+
+            function addDimmed() {
+                var body = document.getElementsByTagName("body")[0].insertAdjacentHTML('afterbegin', '<div id="dimmed" class="dimmed"></div>');
+            }
+        }
+        
+        function popupClose(obj){
+            var body = document.getElementById("body");
+            var dimmed = document.getElementById('dimmed');
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.marginTop = '-30%';
+            setTimeout(function() {
+                popupObj[0].removeAttribute("style");
+                document.body.removeChild(dimmed);
+            }, 10);
+        }
+    </script>
+
+</body>
+</html>

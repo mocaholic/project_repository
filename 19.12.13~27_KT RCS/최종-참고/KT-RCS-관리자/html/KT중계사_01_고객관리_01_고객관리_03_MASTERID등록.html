@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>KT RCS :: 고객관리</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo">KT RCS Admin</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container" class="sub">  
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">Master ID 등록</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>고객 관리</li>
+							<li>Master ID 등록</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+
+				<div class="info-wrap">					
+					<div class="flex between">
+						<h2 class="tit-info">테스트 계정 생성</h2>
+					</div>
+					<table class="table-info form-type">
+						<colgroup>
+							<col style="width:180px">
+							<col>
+							<col style="width:180px">
+							<col>
+						</colgroup>
+						<tr>
+							<th>생성 구분</th>
+							<td>
+								<select class="fx-init" style="width:102px;">
+									<option>사업용</option>
+									<option>테스트용</option>
+								</select>
+							</td>
+							<th>처리 담당자</th>
+							<td><input type="text" placeholder="ID(이름)"></td>
+						</tr>
+						<tr>
+							<th>Master ID</th>
+							<td><input type="text" placeholder="kt_"></td>
+							<th>고객명</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+						</tr>
+						<tr>
+							<th>법인등록번호</th>
+							<td><input type="password" class="w100"></td>
+							<th>사업자등록번호</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+						</tr>
+						<tr>
+							<th>종업원수</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+							<th>고객유형</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+						</tr>
+						<tr>
+							<th>CORP ID</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+							<th>기업명</th>
+							<td><input type="text" placeholder="입력하세요"></td>
+						</tr>
+						<tr>
+							<th>발신번호 체크여부</th>
+							<td colspan="3">
+								<select class="fx-init" style="width:102px;">
+									<option>체크</option>
+									<option>미체크</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+
+					<h2 class="tit-info mg-t25">Master 담당자 정보</h2>
+					<table class="table-info form-type">
+						<colgroup>
+							<col style="width:180px">
+							<col>
+							<col style="width:180px">
+							<col>
+						</colgroup>
+						<tbody>
+                            <tr>
+                                <th>Master 담당자 이름</th>
+                                <td></td>
+                                <th>Master 무선번호</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Master PW<br>(로그인 비밀번호)</th>
+                                <td></td>
+                                <th>Master Email</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+				
+
+					<div class="btn-area align-c pd-t40">
+						<button type="button" class="btn btn-sm">취소</button>
+						<button type="button" class="btn btn-sm btn-primary">저장</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 102-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+	
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<title>KT RCS :: 템플릿 상세 조회</title>
+	<link type="text/css" rel="stylesheet" href="assets/css/common.css" />
+	<script type="text/javascript" src="assets/js/ui.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrapper" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="header-top">
+				<span class="logo ico">KT</span>
+
+				<!-- [D] 로그인 전 -->
+				<!-- <div class="util-menu">
+					<a href="#">고객가입</a>
+					<a href="#">로그인</a>
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+				</div> -->
+				<!--// [D] 로그인 전 -->
+				<!-- [D] 로그인 후 -->
+				<div class="util-menu">
+					<a href="#">마이페이지</a>
+					<a href="#">고객센터</a>
+					<a href="#">로그아웃</a>
+				</div>
+				<!--// [D] 로그인 후 -->
+			</div>
+            <div class="lnb-wrap">
+				<div class="lnb-top">
+                    
+				    <div class="user-info">
+						<h3 class="tit">내정보</h3>
+						<span class="name">abcdefg12</span>
+						<span class="office">KB국민은행 분당</span>
+					</div>
+                </div>
+                <nav class="lnb-area">
+                    <ul id="lnb">
+						<li><a href="#" class="depth01">KT RCS 소개</a>
+							<ul class="depth02">
+								<li><a href="#">이용안내</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">상품소개</a>
+							<ul class="depth02">
+								<li><a href="#">상품소개</a></li>
+								<li><a href="#">기본템플릿조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">브랜드 관리</a>
+							<ul class="depth02">
+								<li><a href="#">나의 브랜드 조회</a></li>
+								<li><a href="#">대행 브랜드 관리</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발신번호 관리</a>
+							<ul class="depth02">
+								<li><a href="#">브랜드별 발신번호 조회</a></li>
+								<li><a href="#">발신번호 개별 등록</a></li>
+								<li><a href="#">발신번호 상세 조회</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">템플릿 관리</a>
+							<ul class="depth02">
+								<li class="current"><a href="#">나의 템플릿 관리</a></li>
+								<li><a href="#">개별등록</a></li>
+								<li><a href="#">대량등록</a></li>
+								<li><a href="#">상세/수정</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">파일관리</a>
+							<ul class="depth02">
+								<li><a href="#">파일관리</a></li>
+								<li><a href="#">파일등록</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="depth01">발송/과금현황</a>
+							<ul class="depth02">
+								<li><a href="#">발송(착신)현황</a></li>
+								<li><a href="#">전송결과</a></li>
+								<li><a href="#">과금현황</a></li>
+							</ul>
+						</li>
+                    </ul>
+                </nav>
+            </div>
+		</header>
+		<!-- //header -->
+		
+		<!-- container -->
+		<div id="container">
+			<div class="container-header">
+				<div class="inner">
+					<h1 class="tit">템플릿 상세 조회</h1>
+					<div class="breadcrumb">
+						<ul>
+							<li><i class="ico ico-home">Home</i></li>
+							<li>템플릿 관리</li>
+							<li>템플릿 상세 조회</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="content temp-dtl">
+				
+				<div class="info-wrap">
+					<div class="flex between">
+						<h2 class="tit-info pd-t2 mg-t23">템플릿 상세 정보</h2>
+					</div>
+					<table class="table-info">
+						<colgroup>
+							<col style="width:180px">
+							<col>
+							<col style="width:180px">
+							<col>
+							<col style="width:180px">
+							<col>
+						</colgroup>
+						<tr>
+							<th>메세지 베이스 ID</th><td></td>
+							<th>템플릿명</th><td></td>
+							<th>메세지베이스 양식ID</th><td></td>
+						</tr>
+						<tr>
+							<th>브랜드ID</th><td></td>
+							<th>브랜드명</th><td></td>
+							<th>상태</th><td></td>
+						</tr>
+						<tr>
+							<th>상품코드</th><td></td>
+							<th>카드타입</th><td></td>
+							<th>spec</th><td></td>
+						</tr>
+						<tr>
+							<th>설명</th><td></td>
+							<th>승인상태</th><td></td>
+                            <th>검증정책(policyInfo)</th><td><a href="#" class="btn btn-xs btn-gray">조회</a></td>
+						</tr>
+						<tr>
+							<th>생성자</th><td></td>
+							<th>생성일자</th><td></td>
+							<th>최종수정일</th><td></td>
+						</tr>
+					</table>
+					
+					<div class="title-header mg-t10">
+                        <h2 class="tit-info">formattedString <button type="button" class="btn btn-xs2 btn-gray mg-l10" onclick="form_s();">자세히보기</button></h2>
+                    </div>
+					
+					<div class="card table-type mg-t10">
+                        <div class="card-header">
+                            <h2>ParamInfo</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-wrap">
+                                <table class="table-data">
+                                    <colgroup>
+                                        <col style="width:">
+                                        <col>
+                                        <col style="width:">
+                                        <col>
+                                        <col style="width:">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>param</th>
+                                            <th>type</th>
+                                            <th>contentType</th>
+                                            <th>strSize</th>
+                                            <th>filesize</th>
+                                            <th>verification</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				
+				<div class="btn-area pd-t40 align-c">
+					<button type="button" class="btn">삭제</button>
+					<button type="button" class="btn btn-gray">목록</button>
+				</div>
+
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<footer id="footer">
+			<div class="footer-info">
+				<p><span>대표이사 : 황창규</span><span>사업자등록번호 : 02-81-42945</span><span>통신판매업신고 : 2002-경기성남-0048 <a href="#" target="_blank" title="새창">사업자정보확인</a></span><span>주소 : 경기도 성남시 분당구 불정로 90 (정자동 206번지)</span></p>
+				<p><span>KT 대표전화 100</span><span>크로샷 고객센터 TEL : 080-258-0303 FAX : 02-2074-8582 EMAIL : BUSINESS@KT.COM</span></p>
+				<p class="copy">COPYRIGHT (C) 2019 KT CORP. ALL RIGHTS RESERVED.</p>
+			</div>
+		</footer>
+		<!-- //footer -->
+	</div>
+	<!-- //wrap -->
+
+	<script>
+        function popup(obj){
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.opacity = "0";
+            popupObj[0].style.display = 'block';
+            popupObj[0].style.marginTop = '-30%';
+            var popupH = popupObj[0].offsetHeight;
+            var h = popupH/2;
+            var body = document.getElementsByTagName("body");
+            addDimmed();
+
+            setTimeout(function() {
+            popupObj[0].style.opacity = "1";
+            popupObj[0].style.marginTop = -h+"px";
+            }, 100);
+
+            function addDimmed() {
+                var body = document.getElementsByTagName("body")[0].insertAdjacentHTML('afterbegin', '<div id="dimmed" class="dimmed"></div>');
+            }
+        }
+        
+        function popupClose(obj){
+            var body = document.getElementById("body");
+            var dimmed = document.getElementById('dimmed');
+            var popupObj = document.getElementsByClassName(obj);
+            popupObj[0].style.marginTop = '-30%';
+            setTimeout(function() {
+                popupObj[0].removeAttribute("style");
+                document.body.removeChild(dimmed);
+            }, 10);
+        }
+        
+        /* formatted String */
+		function form_s(){
+             "RCSMessage":{
+              "openrichcardMessage":{
+               "layout":{
+                "orientation":"vertical",
+                "widget":"LinearLayout",
+                "children":[{
+                 "widget":"ImageView",
+                 "mediaUrl":"https://media-stg.hermes.kt.com/data/MEDIA/messagebase/473f119070c64edaa3a4c50746ffa532.LT-FF003D-FUIi.png",
+                 "mediaFileSize":2470,
+                 "width":"content",
+                 "marginBottom":"8dp",
+                 "paddingTop":"16dp",
+                 "mediaContentType":"image/png",
+                 "height":"content"
+                },
+                {
+                 "orientation":"vertical",
+                 "widget":"LinearLayout",
+                 "paddingBottom":"8dp",
+                 "children":[{
+                  "widget":"TextView",
+                  "paddingBottom":"8dp",
+                  "textSize":"15dp",
+                  "textAlignment":"textStart",
+                  "width":"content",
+                  "text":"{{description}}",
+                  "textColor":"#404040",
+                  "height":"content"
+                 }],
+                 "width":"match",
+                 "height":"content"
+                }],
+                "background":"#ffffff",
+                "paddingRight":"16dp",
+                "width":"284dp",
+                "paddingLeft":"16dp",
+                "height":"content"
+               },
+               "suggestions":[{
+                "action":{
+                 "mapAction":{
+                  "showLocation":{
+                   "fallbackUrl":"https://www.google.com/maps/place/광화문광장/@37.5740381",
+                   "location":{
+                    "query":"광화문광장"
+                   }
+                  }
+                 },
+                 "displayText":"지도 쿼리",
+                 "postback":{
+                  "data":"set_by_chatbot_search_locations"
+                 }
+                }
+               },
+               {
+                "action":{
+                 "displayText":"캘린더",
+                 "postback":{
+                  "data":"set_by_chatbot_request_location_push"
+                 },
+                 "calendarAction":{
+                  "createCalendarEvent":{
+                   "description":"RCS Biz Center 오픈을 기념하여 이벤트를 진행합니다.",
+                   "startTime":"2017-03-14",
+                   "endTime":"2017-03-14",
+                   "title":"오픈이벤트"
+                  }
+                 }
+                }
+               }],
+               "card":"open_rich_card"
+              },
+              "trafficType":"advertisement"
+             }
+        }
+        /* // formatted String */
+	</script>
+</body>
+</html>

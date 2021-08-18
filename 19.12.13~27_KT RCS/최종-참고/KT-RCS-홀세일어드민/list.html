@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+
+	<title>KT RCS :: LIST</title>
+	<style>
+		/* layout */
+		#wrap{position:relative;height:100%;box-sizing:border-box}
+		#header{overflow:hidden;position:absolute;top:0;left:0;right:0;min-width:1280px;height:70px;background:#ed2027;z-index:30}
+		#header h1{display:inline-block;margin-left:27px;font-size:20px;color:#fff;line-height:70px}
+ 
+		/* lnb */
+		#lnb{overflow:auto;position:absolute;top:70px;bottom:0;width:136px;padding:0 23px 0 24px;border-right:1px solid #e5e5e5;background:#fff;z-index:10}
+		#lnb .lnb-title{position:relative;margin-top:37px;font-size:16px}
+
+		/* Container */
+		#container{overflow-y:hidden;min-width:1280px;height:100%;padding:70px 0 0 183px;box-sizing:border-box}
+		#contents{overflow-y:auto;height:100%;margin:-1px auto 0;box-sizing:border-box}
+
+		/* Table */
+		table{table-layout:fixed;width:100%}
+		table tr:first-child th,
+		table tr:first-child td{border-top:0}
+		.table-box{border-top:1px solid #7e7e7e}
+		.table-box table th,
+		.table-box table td{padding:15px 22px;border:1px solid #e6e6e6;text-align:left;box-sizing:border-box}
+		.table-box table th{background:#fcfcfc;color:#000;text-align:center;vertical-align:top}
+		.table-box table td{color:#777}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1>KT RCS 목록</h1>
+		</div>
+		<div id="lnb" class="active">
+			<h2 class="lnb-title">전체 페이지</h2>
+		</div>
+		<div id="container">
+			<div id="contents">
+				<div class="section">
+					<div class="table-box bottom-line center">
+						<table>
+							<caption>작업 리스트 표</caption>
+							<colgroup>
+								<col style="width:20%;">
+								<col style="width:20%;">
+								<col style="width:20%;">
+								<col style="width:20%;">
+								<col style="width:20%;">
+							</colgroup>
+							<thead>
+								<th class="border-left0">1depth</th>
+								<th>2depth</th>
+								<th>3depth</th>
+								<th>4depth</th>
+								<th class="border-right0">URL</th>
+							</thead>
+							<tbody>
+							<tr>
+								<td>중계사 관리</td>
+								<td>상세보기 ( 변경이력 )</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/01_중계사관리_중계사_상세정보.html" title="새창열림" target="_blank">01_중계사관리_중계사_상세정보</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>미조회시</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/01_중계사관리_중계사_상세정보_미조회시.html" title="새창열림" target="_blank">01_중계사관리_중계사_상세정보_미조회시</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>등록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/01_중계사관리_중계사_등록.html" title="새창열림" target="_blank">01_중계사관리_중계사_등록</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>수정</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/01_중계사관리_중계사_수정.html" title="새창열림" target="_blank">01_중계사관리_중계사_수정</a></td>
+							</tr>
+							<tr>
+								<td>기업관리</td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/02_기업관리_기업조회.html" title="새창열림" target="_blank">02_기업관리_기업조회</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>상세보기</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/02_기업관리_기업조회_기업상세정보.html" title="새창열림" target="_blank">02_기업관리_기업조회_기업상세정보</a></td>
+							</tr>
+							<tr>
+								<td>브랜드관리</td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/03_브랜드관리_브랜드조회.html" title="새창열림" target="_blank">03_브랜드관리_브랜드조회</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>상세보기</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/03_브랜드관리_브랜드_상세정보.html" title="새창열림" target="_blank">03_브랜드관리_브랜드_상세정보</a></td>
+							</tr>
+							<tr>
+								<td>대행사 관리</td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/04_대행사관리_조회.html" title="새창열림" target="_blank">04_대행사관리_조회</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>상세보기</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/04_대행사관리_상세정보.html" title="새창열림" target="_blank">04_대행사관리_상세정보</a></td>
+							</tr>
+							<tr>
+								<td>챗봇관리</td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/05_챗봇관리_챗봇_목록.html" title="새창열림" target="_blank">05_챗봇관리_챗봇_목록</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>상세보기</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/05_챗봇관리_챗봇_상세정보.html" title="새창열림" target="_blank">05_챗봇관리_챗봇_상세정보</a></td>
+							</tr>
+							<tr>
+								<td>템플릿관리</td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/06_템플릿관리_메시지베이스양식_조회.html" title="새창열림" target="_blank">06_템플릿관리_메시지베이스양식_조회</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/06_템플릿관리_메시지베이스_조회.html" title="새창열림" target="_blank">06_템플릿관리_메시지베이스_조회</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>상세보기</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/06_템플릿관리_메시지베이스_상세정보.html" title="새창열림" target="_blank">06_템플릿관리_메시지베이스_상세정보</a></td>
+							</tr>
+							<tr>
+								<td>통계관리</td>
+								<td>대행사별</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(대행사별).html" title="새창열림" target="_blank">07_통계관리(대행사별)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>메시지 상품별</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(메시지 상품별).html" title="새창열림" target="_blank">07_통계관리(메시지 상품별)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>브랜드별</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(브랜드별).html" title="새창열림" target="_blank">07_통계관리(브랜드별)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>삼성 Maap 실패에 대한 시간대 통계</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(삼성 Maap 실패에 대한 시간대 통계조회).html" title="새창열림" target="_blank">07_통계관리(삼성 Maap 실패에 대한 시간대 통계조회)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>성공,실패 전체에 대한 시간대별 통계</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(성공,실패 전체에 대한 시간대별 통계조회).html" title="새창열림" target="_blank">07_통계관리(성공,실패 전체에 대한 시간대별 통계조회)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>중계사별 실패에 대한 시간대 통계</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(중계사별 실패에 대한 시간대 통계조회).html" title="새창열림" target="_blank">07_통계관리(중계사별 실패에 대한 시간대 통계조회)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>중계사별</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(중계사별).html" title="새창열림" target="_blank">07_통계관리(중계사별)</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>실시간 트래픽 통계</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/07_통계관리(실시간 트래픽 통계).html" title="새창열림" target="_blank">07_통계관리(실시간 트래픽 통계)</a></td>
+							</tr>
+							<tr>
+								<td>발송이력관리</td>
+								<td>상세보기</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/08_발송이력관리.html" title="새창열림" target="_blank">08_발송이력관리</a></td>
+							</tr>
+							<tr>
+								<td>가입자관리</td>
+								<td>가입자관리</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/09_가입자관리_가입자 관리.html" title="새창열림" target="_blank">09_가입자관리_가입자 관리</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>검색결과</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/09_가입자관리_검색결과.html" title="새창열림" target="_blank">09_가입자관리_검색결과</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>검색결과 수정</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/09_가입자관리_검색결과 수정.html" title="새창열림" target="_blank">09_가입자관리_검색결과 수정</a></td>
+							</tr>
+							<tr>
+								<td>권한관리</td>
+								<td>목록</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/10_권한관리_목록.html" title="새창열림" target="_blank">10_권한관리_목록</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>상세보기</td>
+								<td>관리자승인</td>
+								<td></td>
+								<td><a href="./html/10_권한관리_관리자승인.html" title="새창열림" target="_blank">10_권한관리_관리자승인</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>관리자 정보조회(접속로그)</td>
+								<td></td>
+								<td><a href="./html/10_권한관리_관리자_정보조회.html" title="새창열림" target="_blank">10_권한관리_관리자_정보조회</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>관리자 정보조회 수정</td>
+								<td></td>
+								<td><a href="./html/10_권한관리_관리자승인_정보조회수정.html" title="새창열림" target="_blank">10_권한관리_관리자승인_정보조회수정</a></td>
+							</tr>
+							<tr>
+								<td>기타</td>
+								<td>팝업</td>
+								<td>Alert</td>
+								<td>저장</td>
+								<td><a href="./html/팝업_alert_저장.html" title="새창열림" target="_blank">팝업_alert_저장</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>수정</td>
+								<td><a href="./html/팝업_alert_수정.html" title="새창열림" target="_blank">팝업_alert_수정</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>실패코드</td>
+								<td></td>
+								<td><a href="./html/팝업_실패코드.html" title="새창열림" target="_blank">팝업_실패코드</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>메시지베이스 양식 규격 리스트</td>
+								<td></td>
+								<td><a href="./html/팝업_메시지베이스_양식_규격.html" title="새창열림" target="_blank">팝업_메시지베이스_양식_규격</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>로그인</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/로그인.html" title="새창열림" target="_blank">로그인</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>운영자신청</td>
+								<td></td>
+								<td><a href="./html/로그인_운영자신청.html" title="새창열림" target="_blank">로그인_운영자신청</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Error</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/오류페이지.html" title="새창열림" target="_blank">오류페이지</a></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>대시보드</td>
+								<td></td>
+								<td></td>
+								<td><a href="./html/대시보드.html" title="새창열림" target="_blank">대시보드</a></td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
