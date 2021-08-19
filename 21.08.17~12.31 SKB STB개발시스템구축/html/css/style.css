@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------------------------------------------------------------------------------
+	File : style.css(Front)
+ 	Author : Jihye, Yun 2021-08
+ 	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* layout */
+#wrapper {position:relative; display:flex; background:#fff;}
+#left_wrap {background:#faf9f8; width:300px; height:100vh; padding-top:29px; overflow-y:auto; border-right:1px solid #dedede;}
+#left_wrap + #container {width:calc(100% - 300px);}
+#container {width:100%; position:relative; height:100vh;}
+#contents {position:relative; min-height:calc(100vh - 85px); padding:45px 0 0 30px;} 
+#footer {border-top:1px solid #f5f5f5; }
+
+
+#wrapper h1 {margin-left:53px; position:relative; font-size:0;}
+#wrapper h1::before {display:block; content:""; background:url('../images/logo.png') no-repeat; background-size:100%; width:184px; height:60px;}
+#wrapper h1 span {display:inline-block; margin-top:15px; font-size:21px; letter-spacing:-0.05em; margin-bottom:43px;} 
+
+.util_menu {display:flex; align-items:stretch; height:108px; border-top:1px solid #dedede; border-bottom:1px solid #dedede; background:#f0ebe8;}
+.util_menu a {flex:1; text-align:center; border-left:1px solid #fff; border-right:1px solid #dedede; color:#333; font-weight:700;}
+.util_menu a:first-of-type {border-left:none;}
+.util_menu a:nth-of-type(3) {border-right:none;}
+.util_menu a::before {display:block; content:""; margin:24px auto 0; width:39px; height:39px;}
+.util_menu a:first-of-type::before {background:url('../images/icon_util01.png') no-repeat center top;}
+.util_menu a:nth-of-type(2)::before {background:url('../images/icon_util02.png') no-repeat center top;}
+.util_menu a:nth-of-type(3)::before {background:url('../images/icon_util03.png') no-repeat center top; margin-left:33px;}
+.util_menu a span {display:block; margin-top:10px;}
+.util_menu a:nth-of-type(3) span {letter-spacing:-0.02em;}
+
+.lnb-area {padding:20px 0;}
+.lnb-area > ul > li {position:relative;min-height:45px;line-height:45px;}
+.lnb-area li .ico {display:none;margin-right:24px;vertical-align:text-top;}
+.lnb-area li a {display:block;padding:0 25px;font-size:14px;font-weight:300;color:#fff;letter-spacing:-0.05em;white-space:nowrap;}
+.lnb-area li li a {font-size:13px;letter-spacing:-0.03em;}
+.lnb-area li.on .depth01 {font-weight:500;color:#0fe0ff;}
+.lnb-area > ul > li > a:after {content:"";display:block;position:absolute;top:22px;right:25px;width:8px;height:6px;background:url(../images/spr_icons.png) no-repeat -75px 0;-webkit-transform: rotate(0);transform: rotate(0);-webkit-transition:transform 0.4s ease;transition:transform 0.4s ease;}
+.lnb-area > ul > li.current a:after {background-position:-75px -11px;-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+.lnb-area li .depth02 {display:none;padding:15px 0;background-color:#252525;}
+.lnb-area .on .depth02 {display:block;}
+.lnb-area li .depth02 li a {display:block;height:30px;line-height:30px;}
+.lnb-area li .depth02 li.current a {color:#0fe0ff;}
+
+#contents.login {width:460px; margin:0 auto; padding:68px 0 110px;}
+#contents.login h1 {width:216px; height:69px; margin:0 auto;}
+#contents.login h1 + h2 {margin-top:50px; color:#222;}
+#contents.login h2 + .form_area {margin-top:68px;}
+
+.form_area {position:relative;}
+.form_area .form_row + .form_row {margin-top:5px;}
+
+.btn_area {text-align:center;}
+.btn_area a {display:inline-block;}
+
+.footer_info {padding:35px 0; text-align:center; color:#6a6a6a;}
+
+
