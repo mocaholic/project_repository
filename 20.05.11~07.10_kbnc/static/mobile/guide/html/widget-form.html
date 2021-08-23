@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <link rel="stylesheet" href="/mobile/css/common.css">
+    <link rel="stylesheet" href="/mobile/css/contents.css">
+    <link rel="stylesheet" href="/mobile/guide/css/guide.css">
+
+    <!-- rainbow : CSS -->
+    <link rel="stylesheet" href="/mobile/guide/css/github.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/mobile/css/slick.css">
+    <link rel="stylesheet" href="/mobile/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/mobile/css/selectric.css">
+
+    <!-- rainbow : JS-->
+    <script src="/mobile/guide/js/rainbow.min.js"></script>
+    <script src="/mobile/guide/js/rainbow.coffeescript.js"></script>
+    <script src="/mobile/guide/js/rainbow.generic.js"></script>
+    <script src="/mobile/guide/js/rainbow.css.js"></script>
+    <script src="/mobile/guide/js/rainbow.html.js"></script>
+    <script src="/mobile/guide/js/rainbow.javascript.js"></script>
+    <script src="/mobile/guide/js/rainbow.php.js"></script>
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/mobile/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/slick.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/mobile/js/action.js"></script>
+
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            datePicker.fn('.datepicker'); //데이터피커 설정할 대상 전달
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="header-inner">
+                <h1><span class="type">PC</span>Guide</h1>
+                <div class="btn-area">
+                    <a href="/mobile/weblist.html">웹리스트</a>
+                    <a href="/mobile/guide/html/guide-code.html">퍼블리싱 가이드</a>
+                    <a href="/mobile/guide/html/component-lib.html">컴포넌트</a>
+                    <a href="/mobile/guide/html/widget-form.html" class="on">위젯</a>
+                </div>
+            </div>
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div id="aside">
+                <div class="aside-inner">
+                    <h2 class="aside-tit">위젯(단위)</h2>
+                    <ul class="aside-list">
+                        <li class="on"><a href="/mobile/guide/html/widget-form.html">폼 요소</a></li>
+                        <li><a href="widget-button.html">버튼</a></li>
+                        <li><a href="widget-accordion.html">아코디언</a></li>
+                        <li><a href="widget-step.html">스탭</a></li>
+                        <li><a href="widget-typo.html">타이포</a></li>
+                        <li><a href="widget-tab.html">탭</a></li>
+                        <li><a href="widget-table.html">테이블</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //#aside -->
+            <div id="content">
+                <div class="g-container">
+                    <h1 class="g-h1">Input Only</h1>
+                    <h2 class="g-h2">Text/Password/Number</h2>
+                    <h3 class="g-h3">Default: 기본 상태</h3>
+                    <div class="g-content">
+                        <label for="inputOnly1" class="form-ti">라벨</label>
+                        <span class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" id="inputOnly1" placeholder="텍스트 입력" value="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="guide-txt">가이드 메시지 출력 영역 입니다.</span>
+                        </span>
+                    </div>
+                    <div class="g-content">
+                        <label for="inputOnly2" class="form-ti">라벨</label>
+                        <span class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="password" placeholder="비밀번호 입력" value="testpw">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="guide-txt">가이드 메시지 출력 영역 입니다.</span>
+                        </span>
+                    </div>
+                    <div class="g-content">
+                        <label id="aria-exp-label1" class="form-ti">라벨</label>
+                        <span class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="number" placeholder="숫자 입력" title="input" value="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="guide-txt">가이드 메시지 출력 영역 입니다.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Readonly: 수정 불가, 값 전달 가능</h2>
+                    <div class="g-content">
+                        <label id="aria-exp-label1" class="form-ti">라벨</label>
+                        <span class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" placeholder="텍스트 입력" title="input" value="" readonly>
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="guide-txt">가이드 메시지 출력 영역 입니다.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Error: 입력 필드 오류 시</h2>
+                    <div class="g-content">
+                        <label id="aria-exp-label1" class="form-ti">라벨</label>
+                        <span class="input-box error"><!-- 필드오류: .error 추가 -->
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" placeholder="텍스트 입력" title="input" value="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="error-txt">에러 메시지 출력 영역 입니다.</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="g-container">
+                    <h1 class="g-h1">Form Combined</h1>
+                    <h2 class="g-h2">Input(Text or File)/Button/Select/Textarea</h2>
+                    <h3 class="g-h3">Type1</h3>
+                    <div class="g-content">
+                        <label for="formType1" class="form-ti">주소</label>
+                        <span class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" id="formType1" title="우편번호" value="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="btn-box"><button>우편번호</button></span>
+                                </span>
+                            </span>
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" title="상세 주소" value="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" placeholder="상세주소를 입력해주세요." title="상세 주소">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="error-txt">에러 메시지 출력 영역 입니다.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Type2</h2>
+                    <div class="g-content">
+                        <span for="formType2" class="form-ti">인증번호</span>
+                        <span class="input-box error"><!-- 필드오류: .error 추가 -->
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="number" id="formType2" placeholder="‘-’ 없이 숫자만 입력" title="인증번호 받기">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <span class="btn-box"><button>인증번호 받기</button></span>
+                                </span>
+                            </span>
+                            <span class="error-txt">입력하신 정보가 일치하지 않습니다.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Type3</h2>
+                    <div class="g-content">
+                        <label for="formType3" class="form-ti">이메일</label>
+                        <span class="input-box disabled"><!-- 비활성화: .disabled 추가 -->
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" id="formType3" placeholder="회원정보에 등록한 이메일" value="" title="휴대폰 이메일 주소">
+                                    <button href="javascript:void(0)" class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <span class="btn-box"><button>인증번호 받기</button></span>
+                                </span>
+                            </span>
+                            <span class="error-txt">회원정보에 등록된 이메일이 아닙니다.</span>
+                            <span class="valide-txt">정상적으로 발송되었습니다.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Type4</h2>
+                    <div class="g-content">
+                        <span class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="number" placeholder="YYYY" title="시작" maxlength="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <input type="number" placeholder="MM" title="종료" maxlength="">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="error-txt">시작 기간은 종료 기간보다 나중일 수 없습니다.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Type6</h2>
+                    <div class="g-content">
+                        <div class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <select name="" id="">
+                                        <option value="010">010</option>
+                                        <option value="012">012</option>
+                                        <option value="013">013</option>
+                                    </select>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="hyp">-</span>
+                                </span>
+                                <span class="input-cell">
+                                    <input type="number" maxlength="4" title="휴대폰 중간자리 입력">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="hyp">-</span>
+                                </span>
+                                <span class="input-cell">
+                                    <input type="number" maxlength="4" title="휴대폰 끝자리 입력">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                            </span>
+                            <span class="error-txt">시작 기간은 종료 기간보다 나중일 수 없습니다.</span>
+                        </div>
+                    </div>
+                    <h2 class="g-h2">Type7</h2>
+                    <div class="g-content">
+                        <div class="input-box address-wrap"><!-- 영역 크기에 따라 width 조절 -->
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="number" placeholder="동 입력" maxlength="4" title="동">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="dongho">동</span>
+                                </span>
+                                <span class="input-cell">
+                                    <input type="number" placeholder="호 입력" maxlength="2" title="호">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="dongho">호</span>
+                                </span>
+                            </span>
+                            <span class="error-txt">동, 호를 다시 확인해주세요.</span>
+                        </div>
+                    </div>
+                    <h2 class="g-h2">Type8</h2>
+                    <div class="g-content">
+                        <div class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="number" placeholder="앞자리" maxlength="" title="우편번호 앞자리">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="hyp">-</span>
+                                </span>
+                                <span class="input-cell">
+                                    <input type="number" placeholder="뒷자리" maxlength="" title="우편번호 뒷자리">
+                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="btn-box"><button>조회</button></span>
+                                </span>
+                            </span>
+                            <span class="error-txt">우편번호를 다시 확인해주세요.</span>
+                        </div>
+                    </div>
+                    <h2 class="g-h2">Type9</h2>
+                    <div class="g-content">
+                        <span class="input-box widget">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input class="fileview" type="text" placeholder="" title="파일명" readonly>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="btn-file">파일찾기</span>
+                                    <input class="file" type="file" value="파일찾기">
+                                </span>
+                            </span>
+                            <span class="error-txt">파일 형식을 확인해주세요.</span>
+                        </span>
+                    </div>
+                    <h2 class="g-h2">Type10</h2>
+                    <div class="g-content">
+                        <div class="input-box">
+                            <span class="input-row">
+                                <span class="input-cell">
+                                    <input type="text" value="" title="시작날짜 선택" class="datepicker" readonly>
+                                </span>
+                                <span class="input-cell">
+                                    <span class="bar">~</span>
+                                </span>
+                                <span class="input-cell">
+                                    <input type="text" value="" title="마지막날짜 선택" class="datepicker" readonly>
+                                </span>
+                            </span>
+                            <span class="error-txt">날짜를 다시 선택해주세요.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="g-container">
+                    <h1 class="g-h1">Checkbox/Radio</h1>
+                    <h2 class="g-h2">Checkbox</h2>
+                    <h3 class="g-h3">가로 정렬</h3>
+                    <div class="g-content">
+                        <span class="checks">
+                            <input type="checkbox" id="ex_chk1">
+                            <label for="ex_chk1">체크박스</label>
+                        </span>
+                        <span class="checks">
+                            <input type="checkbox" id="ex_chk2" checked>
+                            <label for="ex_chk2">체크박스</label>
+                        </span>
+                        <span class="checks">
+                            <input type="checkbox" id="ex_chk3" disabled>
+                            <label for="ex_chk3">체크박스</label>
+                        </span>
+                        <span class="checks">
+                            <input type="checkbox" id="ex_chk4" checked disabled>
+                            <label for="ex_chk4">체크박스</label>
+                        </span>
+                    </div>
+                    <h3 class="g-h3">세로 정렬</h3>
+                    <div class="g-content">
+                        <ul class="list-checks">
+                            <li>
+                                <span class="checks">
+                                    <input type="checkbox" id="ex_chk5">
+                                    <label for="ex_chk5">체크박스</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="checks">
+                                    <input type="checkbox" id="ex_chk6" checked>
+                                    <label for="ex_chk6">체크박스</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="checks">
+                                    <input type="checkbox" id="ex_chk7" disabled>
+                                    <label for="ex_chk7">체크박스</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="checks">
+                                    <input type="checkbox" id="ex_chk8" checked disabled>
+                                    <label for="ex_chk8">체크박스</label>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h2 class="g-h2">Radio</h2>
+                    <h3 class="g-h3">가로 정렬</h3>
+                    <div class="g-content">
+                        <span class="checks">
+                            <input type="radio" id="ex_rd1" name="ex_rdsA">
+                            <label for="ex_rd1">라디오버튼</label>
+                        </span>
+                        <span class="checks">
+                            <input type="radio" id="ex_rd2" name="ex_rdsA" checked>
+                            <label for="ex_rd2">라디오버튼</label>
+                        </span>
+                        <span class="checks">
+                            <input type="radio" id="ex_rd3" name="ex_rdsB" disabled>
+                            <label for="ex_rd3">라디오버튼</label>
+                        </span>
+                        <span class="checks">
+                            <input type="radio" id="ex_rd4" name="ex_rdsB" checked disabled>
+                            <label for="ex_rd4">라디오버튼</label>
+                        </span>
+                    </div>
+                    <h3 class="g-h3">세로 정렬</h3>
+                    <div class="g-content">
+                        <ul class="list-checks">
+                            <li>
+                                <span class="checks">
+                                    <input type="radio" id="ex_rd5" name="ex_rdsC">
+                                    <label for="ex_rd5">라디오버튼</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="checks">
+                                    <input type="radio" id="ex_rd6" name="ex_rdsC" checked>
+                                    <label for="ex_rd6">라디오버튼</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="checks">
+                                    <input type="radio" id="ex_rd7" name="ex_rdsD" disabled>
+                                    <label for="ex_rd7">라디오버튼</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="checks">
+                                    <input type="radio" id="ex_rd8" name="ex_rdsD" checked disabled>
+                                    <label for="ex_rd8">라디오버튼</label>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //.g-container -->
+                <div class="g-container">
+                    <h1 class="g-h1">Selectbox</h1>
+                    <h2 class="g-h2">Default: 기본 상태</h2>
+                    <div class="g-content">
+                        <select>
+                            <option value="apple">Apple</option>
+                            <option value="banana">Banana</option>
+                            <option value="orange">Orange</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- //.g-container -->
+                
+            </div>
+            <!-- //#content -->
+        </div>
+        <!-- //#container -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

@@ -17,9 +17,9 @@
                 <span>STB SW 개발 시스템</span>
             </h1>
             <div class="util_menu">
-                <a href="#"><span>시스템관리</span></a>
-                <a href="#"><span>정보수정</span></a>
-                <a href="#"><span>Logout</span></a>
+                <a href="javascript:void(0);"><span>시스템관리</span></a>
+                <a href="javascript:void(0);"><span>정보수정</span></a>
+                <a href="javascript:void(0);"><span>Logout</span></a>
             </div>
 
             <nav class="lnb_area">
@@ -30,23 +30,37 @@
                     <li class="on">
                         <a href="#" class="depth01">PLAN</a>
                         <ul class="depth02">
-                            <li><a href="#">프로젝트 관리</a></li>
-                            <li><a href="#">Source 브렌치</a></li>
-                            <li><a href="#">3rd Party 브렌치</a></li>
-                            <li><a href="#">펌웨어 브렌치</a></li>
+                            <li class="on"><a href="#">프로젝트</a></li>
+                            <li><a href="#">Source</a></li>
+                            <li><a href="#">3rd Party</a></li>
+                            <li><a href="#">펌웨어</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#" class="depth01">Code 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Commit 요청</a></li>
+                            <li><a href="#">Tagging 요청</a></li>
+                            <li><a href="#">Code review 요청</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" class="depth01">Build 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Build 요청</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" class="depth01">Test 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Test 요청</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" class="depth01">Release 전송</a>
+                        <ul class="depth02">
+                            <li><a href="#">Release 전송</a></li>
+                        </ul>
                     </li>
                 </ul>
             </nav>
@@ -65,10 +79,10 @@
                             <a href="#">사용자 관리</a>
                         </li>
                         <li>
-                            <a href="#">개발사 모듈별 담당자</a>
+                            <a href="#">개발사 모듈별 담당자 등록</a>
                         </li>
                         <li>
-                            <a href="#">Git 관리</a>
+                            <a href="#">Git 관리 등록</a>
                         </li>
                     </ul>
                 </div>
@@ -119,7 +133,16 @@
                                 <td>SK Broadband</td>
                                 <td>디바이스개발스쿼드</td>
                                 <td>fasds@gmail.com</td>
-                                <td><span class="ico_switch on"></span></td>
+                                <td>
+                                    <div class="btn_switch">
+                                        <input type="checkbox" id="switch1" name="switch1" class="input_on_off">
+                                        <label for="switch1" class="label_on_off">
+                                            <span class="marble"></span>
+                                            <span class="txt on">ON</span>
+                                            <span class="txt off">OFF</span>
+                                        </label>
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td>skadmin</td>

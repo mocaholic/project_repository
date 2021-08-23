@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+	<meta name="autocomplete" content="off">
+    <link rel="shortcut icon" href="">
+    <title>통합복지몰</title>
+
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/contents.css"><!-- 메인: main.css / 서브: contents.css -->
+
+     <!-- Publish Theme : CSS-->
+     <!-- <link rel="stylesheet" href="/css/theme/theme1.css"> -->
+     <!-- <link rel="stylesheet" href="/css/theme/theme2.css"> -->
+     <link rel="stylesheet" href="/css/theme/theme3.css">
+     <!-- <link rel="stylesheet" href="/css/company/ibk.css"> -->
+     <!-- <link rel="stylesheet" href="/css/company/lg.css"> -->
+     <link rel="stylesheet" href="/css/company/kb.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-selectify.js"></script>
+
+     <!-- Publish Common : JS-->
+     <script type="text/javascript" src="/js/action.js"></script>
+     <script type="text/javascript" src="/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+
+     <script type="text/javascript">
+        function checkForm() {
+            if (viewComps.$authNo.val().length < 6) {
+                alert(msg.wrongPasswdCnt);
+                return false;
+            }
+        
+           // viewComps.$authNo.val("");
+            return true;
+        }
+        
+        function stopPropagationForScreenReader(event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        
+        function reset() {
+            viewComps.$authNo.val("");
+            showKeyDisplayers();
+        }
+        
+        function showKeyDisplayers() {
+            $.each(viewComps.$keyDisplayers, function(index, $keyDisplayer) {
+                if (index < viewComps.$authNo.val().length) {
+                    onKeyDisplayer($keyDisplayer);
+                } else {
+                    offKeyDisplayer($keyDisplayer);
+                }
+            });
+        }
+        
+
+        
+        function offKeyDisplayer($keyDisplayer) {
+            $keyDisplayer.removeClass("active");
+        }
+        
+        function onKeyDisplayer($keyDisplayer) {
+            $keyDisplayer.addClass("active");
+        }
+        
+        var prop = {
+            isClickTargetEnv: false,
+            isIOS: true
+        };
+
+        
+        var viewComps = {
+            $authNo: null,
+            $keyDisplayers: [],
+            $deleteBtnArea: null,
+        };
+    
+      
+        
+        function initViewComps() {
+            var i;
+        
+            viewComps.$authNo = $("#authNo");
+            viewComps.$clearAllBtn = $("#clearAllBtn");
+            viewComps.$clearInputBtn = $("#clearInputBtn");
+            viewComps.$keypadBtn = $(".btn-keypad");
+            viewComps.$form = $("#fm");
+            viewComps.$slecNumber =$("#slecNumber");
+        
+            viewComps.$keyDisplayers = [];
+            for (i = 1; i <= 6; i++) {
+                viewComps.$keyDisplayers.push($("#key-display-" + i));
+            }
+
+        }
+        
+        function handlePasswdTouch(event, val) {
+            event.preventDefault();
+        
+            return handlePasswdEvent(val);
+        }
+        
+        function handlePasswdClick(event, val) {
+            event.preventDefault();
+        
+            if (!handlePasswdEvent(val)) {
+                return false;
+            }
+        
+
+            return false;
+        }
+        
+        function handlePasswdEvent(val) {
+            var curUpw;
+        
+            if (!val) {
+                return false;
+            }
+        
+            curUpw = viewComps.$authNo.val();
+            if (curUpw.length >= 6) {
+                return false;
+            }
+        
+            viewComps.$authNo.val(viewComps.$authNo.val() + val);
+            viewComps.$slecNumber.text(val);
+            showKeyDisplayers();
+            return true;
+        }
+        
+        function clearInput() {
+            var curUpw;
+        
+            if (viewComps.$authNo.val() === "") {
+                return;
+            }
+            
+            viewComps.$slecNumber.text("");
+            curUpw = viewComps.$authNo.val();
+            viewComps.$authNo.val(curUpw.substr(0, curUpw.length -1));
+        
+            showKeyDisplayers();
+        }
+        
+        function clearAll(){
+            if (viewComps.$authNo.val() === "") {
+                return;
+            }
+            
+            viewComps.$slecNumber.text("");
+            viewComps.$authNo.val("");
+            showKeyDisplayers();
+        }
+        
+        function attachTouchEvent() {
+            var eventType = "touchstart";
+        
+            
+            (eventType);
+        
+            // $(".btn-keypad").on("touchend", function(event) {
+            //     if (viewComps.$authNo.val().length >= 6 && checkForm()) {
+            //         $(viewComps.$form).submit();
+            //     }
+            // });
+        }
+        
+        function attachClickEvent() {
+            var eventType = "click";
+        
+            bindCommonEvent(eventType);
+        }
+        
+        function bindCommonEvent(eventType) {
+  
+            viewComps.$clearAllBtn.on(eventType, function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+        
+                clearAll();
+            });
+        
+            viewComps.$clearInputBtn.on(eventType, function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+        
+                clearInput();
+            });
+        
+        }
+        
+        
+        $(document).ready(function() {
+            initViewComps();
+            reset();
+
+            attachClickEvent(); //웹테스트시
+
+        
+            if (prop.isClickTargetEnv) {
+                attachClickEvent();//웹테스트시
+            } else {
+                attachTouchEvent();//모바일에서
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap" class="login-area">
+        <!-- #wrap class 구분  main페이지: main-area | 인트로페이지: intro-area |  sub페이지 공통: sub-area | login관련 페이지: login-area -->
+        <!-- header -->
+        <header id="header" class="sub-hd">
+            <div class="inner">
+            	<h1 class="hd-tit">로그인</h1>
+            	<button type="button" class="btn-back"><span class="blind">이전으로</span></button>
+            </div>
+        </header>
+
+         <!--// header -->
+        <!-- container -->
+        <div id="container">
+            <div id="content" class="login-cont">
+                <div class="tit-area">
+                    <h2 class="logo"><span class="blind">IBK 기업은행</span></h2>
+                    <p class="txt">기업은행 임직원만을 위한 쇼핑</p>
+                </div>
+
+                <div class="cont-area easy-cont pt20">
+                    <form id="fm" action="">
+                        <input type="hidden" id="authNo" name="authNo">
+                        <div class="gray-box">
+                            <h3 class="tit ico-none">간편 비밀번호</h3>
+                            <div class="password-box pt0">
+                                <span id="key-display-1" class="key-display"></span>
+                                <span id="key-display-2" class="key-display"></span>
+                                <span id="key-display-3" class="key-display"></span>
+                                <span id="key-display-4" class="key-display"></span>
+                                <span id="key-display-5" class="key-display"></span>
+                                <span id="key-display-6" class="key-display"></span>
+                                <span id="slecNumber" class="num"></span>
+                            </div>
+                        </div>
+    
+                        <div class="basic-btn-box">
+                            <button class="btn-basic3">취소</button>
+                            <button class="btn-basic1">확인</button>
+                        </div>
+                        
+                        
+                        <div class="keyboard-wrap">
+                            <table cellspacing="0" class="tbl-keyboard">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '1'); return false;" onclick="handlePasswdClick(event, '1'); return false;" class="btn-keypad"><span class="key">1</span></a>
+                                            <!-- 웹테스트시에만 onclick이벤트 사용 모바일웹에서 사용안할경우에는 onclick이벤트 삭제 -->
+                                        </td>
+                                        <td>
+                                            <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '2'); return false;" onclick="handlePasswdClick(event, '2'); return false;" class="btn-keypad"><span class="key">2</span></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '3'); return false;" onclick="handlePasswdClick(event, '3'); return false;" class="btn-keypad"><span class="key">3</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '4'); return false;" onclick="handlePasswdClick(event, '4'); return false;" class="btn-keypad"><span class="key">4</span></a>
+                                        </td>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '5'); return false;" onclick="handlePasswdClick(event, '5'); return false;" class="btn-keypad"><span class="key">5</span></a>
+                                        </td>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '6'); return false;" onclick="handlePasswdClick(event, '6'); return false;" class="btn-keypad"><span class="key">6</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '7'); return false;" onclick="handlePasswdClick(event, '7'); return false;" class="btn-keypad"><span class="key">7</span></a>
+                                        </td>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '8'); return false;" onclick="handlePasswdClick(event, '8'); return false;" class="btn-keypad"><span class="key">8</span></a>
+                                        </td>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '9'); return false;" onclick="handlePasswdClick(event, '9'); return false;" class="btn-keypad"><span class="key">9</span></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="javascript:;" id="clearAllBtn" class="btn-keypad btn-clear"><span class="key">전체삭제<span></a>
+                                        </td>
+                                        <td>
+                                           <a href="javascript:;" ontouchstart="handlePasswdTouch(event, '0'); return false;" onclick="handlePasswdClick(event, '0'); return false;" class="btn-keypad"><span class="key">0</span></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:;" id="clearInputBtn" class="btn-keypad btn-clear"><span class="key">삭제</span></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--// container -->
+    </div>
+    <div class="sidemenu-dimmed"></div>
+    <div class="gnb-dimmed"></div>
+</body>
+</html>

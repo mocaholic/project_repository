@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="../../css/theme/theme1.css">
+    <link rel="stylesheet" href="../../css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="../../css/slick.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/selectric.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(2) > ul > li:eq(0) > a').addClass('on');
+            }, 100);
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">       
+                   
+                    <div class="content-hd">
+                        <h3 class="tit">최근 본 상품</h3>
+                    </div>
+                    
+                    <!-- 최근 본 상품 -->
+                    <div class="desc_top">
+                        <h4 class="tit">총 6개<span class="ins fc-777">최근 본 상품은 1주일간 최대 50개 까지 보관됩니다.</span></h4>
+                    </div>
+                        <!-- // .desc_top -->
+                    <div class="interest-prd">
+                        <!-- 최대 10개 노출 -->
+                        <ul class="product-list"><!-- 2020-05-25 class 추가 -->
+                            <li class="soldout"><!-- 2020-06-23 품절시 class="soldout" 추가 -->
+                                <div class="">
+                                    <div class="prd-info"><!-- 2020-06-23 class="soldout" 삭제 -->
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product1.png" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+												<!-- 2020-06-24 추가 : 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+												<span class="badge">
+													<span class="we-prd">복지비상품</span>
+												</span>
+												<!-- // 2020-06-24 추가 : 복지비상품 뱃지 -->
+                                            	<span class="tit">★균일가★일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</span>
+                                            	<span class="delivery">
+													<span class="txt">무료배송</span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">1,168,800</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">72,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep on">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product2.png" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">[프레시지] Fresh Easy! 엄마밥상 국물요리 4종세트</span>
+                                            	<span class="delivery">
+													<span class="txt">배송비 <span class="num">2,500</span><span class="unit">원</span></span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">38,200</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">48,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product3.png" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">(아워홈) 아워홈 지리산수 핑크에디션 500ml x 60병/생수</span>
+                                            	<span class="delivery">
+													<span class="txt">배송비 <span class="num">2,500</span><span class="unit">원</span></span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">14,400</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">48,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product4.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">유통기한 임박 셀레지오네 포도씨유 4종 선물세트</span>
+                                            	<span class="delivery">
+													<span class="txt">무료배송</span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">14,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">24,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product5.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">보솜이 카모마일 프리미엄 물티슈 캡형 70매 x 10입</span>
+                                            	<span class="delivery">
+													<span class="txt">배송비 <span class="num">2,500</span><span class="unit">원</span></span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">15,800</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">18,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product6.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">(부광) 안티프라그S 초극세모 10입 1세트 + 탄력모 10입 2세트(총30입)</span>
+                                            	<span class="delivery">
+													<span class="txt">무료배송</span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">10,800</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">20,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product7.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+												<!-- 2020-06-24 추가 : 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+												<span class="badge">
+													<span class="we-prd">복지비상품</span>
+												</span>
+												<!-- // 2020-06-24 추가 : 복지비상품 뱃지 -->
+                                            	<span class="tit">대웅제약 이지듀 DW-EGF 마스터마스크 28g 10매입 / 미백, 주름개선 이중 기능성(유통기한 2020년 10월 및 11월)</span>
+                                            	<span class="delivery">
+													<span class="txt">배송비 <span class="num">2,500</span><span class="unit">원</span></span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">14,800</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">30,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product8.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">[우리집 밥도적] 제주특산품 자연산 가재새우장 1kg/30~40미</span>
+                                            	<span class="delivery">
+													<span class="txt">무료배송</span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">23,500</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">42,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product9.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">[횡성축협] 횡성한우 진한 사골곰탕 액기스 12g*10팩 </span>
+                                            	<span class="delivery">
+													<span class="txt">무료배송</span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">8,500</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">20,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="">
+                                    <div class="prd-info">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product10.jpg" alt="상품 썸네일"></span>
+                                            <!-- 2020-05-25 수정 -->
+                                            <p class="txt-area">
+                                            	<span class="tit">(아토스프레이) 손세정제 200ml</span>
+                                            	<span class="delivery">
+													<span class="txt">무료배송</span>
+												</span>
+											</p>
+                                       		<!-- // 2020-05-25 수정 -->
+                                        </a>
+                                    </div>
+                                    <div class="price-area">
+                                        <em class="price">
+                                            <span class="num">12,400</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                        <em class="price line-through">
+                                            <span class="num">28,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="btn-basic2 btn-keep">찜</button><!-- 05.22 class 수정 -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- // 최대 10개 노출 -->
+                    </div>
+                        <!-- // .interest-prd -->
+                    <!-- // 최근 본 상품 -->
+                    
+                    <!-- 페이징 -->
+                    <div class="paging-wrap">
+                        <ul class="paging">
+                            <li><a href="#" class="arw-dir first">처음페이지</a></li>
+                            <li><a href="#" class="arw-dir prev">이전페이지</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#" class="arw-dir next">다음페이지</a></li>
+                            <li><a href="#" class="arw-dir last">마지막페이지</a></li>
+                        </ul>
+                    </div>
+                    <!--// 페이징 -->
+                                
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        
+        <div class="popup-wrap"><!-- .popup-wrap > .popup-layer 복수로 띄움(.popup-wrap은 무조건 하나) -->
+            <!-- 복지비 승인 관련 안내 -->
+            <div id="MY_PAY_01_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h4 class="tit">복지비 승인 관련 안내</h4>
+                    </div>
+                    <div class="tbl-basic-type1">
+                        <table>
+                            <caption>복지비 승인 관련 안내</caption>
+                            <colgroup>
+                                <col width="50%">
+                                <col width="">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">결제수단</th> 
+                                    <th scope="col">복지비 승인</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>카드</td>
+                                    <td>O</td>
+                                </tr>
+                                <tr>
+                                    <td>무통장</td>
+                                    <td>X</td>
+                                </tr>
+                                <tr>
+                                    <td>급여공제</td>
+                                    <td>X</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="notice">
+                        <p>복지 카드시스템에서 신청등록 후 서무 담당자에게 증빙 자료를 제출하시기 바랍니다.</p>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //복지비 승인 관련 안내 -->
+            
+            <!-- 개인정보 판매자 제공에 동의 -->
+            <div id="MY_PAY_02_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h4 class="tit">개인정보 판매자 제공에 동의</h4>
+                    </div>
+                    <div class="pop-ol">
+                        <ol>
+                            <li>
+                                <span class="tit">1. 개인정보 판매자 제공에 동의</span>
+                                <div class="tbl-basic-type1 ea">
+                                    <table>
+                                        <caption>개인정보 판매자 제공정보</caption>
+                                        <colgroup>
+                                            <col width="100px">
+                                            <col width="">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">제공받는 자</th>
+                                                <td class="tl">배송공급업체</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">목적</th>
+                                                <td class="tl">주문상품의 배송, 고객상담 및 불만처리</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">항목</th>
+                                                <td class="tl">성명, 주소, 연락처(안심번호 적용 시 연락처는 제외), 개인통관고유부호(선택시)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="tit">2. 개인정보 수집 및 이용에 동의</span>
+                                <div class="tbl-basic-type1">
+                                    <table>
+                                        <caption>개인정보 수집 및 이용정보</caption>
+                                        <colgroup>
+                                            <col width="">
+                                            <col width="160px">
+                                            <col width="140px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">수집이용목적</th> 
+                                                <th scope="col">수집 항목</th>
+                                                <th scope="col">보유기간</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>상품 및 경품 배송(반품/환불/취소 등),<br>배송지 확인, 최초 입력 후 불러오기 기능 제공</td>
+                                                <td>배송지 주소</td>
+                                                <td>배송완료 후 5년 보관</td>
+                                            </tr>
+                                            <tr>
+                                                <td>대금 결제 서비스 제공</td>
+                                                <td>신용카드 정보, 계좌 정보</td>
+                                                <td>결제완료 후 5년 보관</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //개인정보 판매자 제공에 동의 -->
+        </div>
+        <!-- //.popup-wrap -->
+        
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

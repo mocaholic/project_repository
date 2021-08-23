@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="../../css/theme/theme1.css">
+    <link rel="stylesheet" href="../../css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="../../css/slick.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/selectric.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(3) > ul > li:eq(0) > a').addClass('on');
+            }, 100);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">
+                    <div class="content-hd">
+                        <h3 class="tit">비밀번호 확인</h3>
+                        <p class="ins">안전한 개인정보를 보호하기 위해 비밀번호 확인 후 변경할 수 있습니다.</p>
+                    </div>
+
+                    <div class="util-board">
+                        <div class="util-inner">
+                            <label for="utilPw1" class="form-ti">본인 확인을 위해 비밀번호를 입력해주세요.</label>
+                            <span class="input-box error"><!-- 필드오류: .error 추가 -->
+                                <span class="input-row">
+                                    <span class="input-cell">
+                                        <input type="text" id="utilPw1" title="아이디" value="pakbogum@naver.com">
+                                        <button class="cancel"><span class="blind">삭제</span></button>
+                                    </span>
+                                </span>
+                                <span class="input-row">
+                                    <span class="input-cell">
+                                        <input type="password" title="비밀번호" value="0000">
+                                        <button class="cancel"><span class="blind">삭제</span></button>
+                                    </span>
+                                </span>
+                                <span class="error-txt">비밀번호가 맞지 않습니다.</span>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="basic-btn-box">
+                        <button type="button" class="btn-basic1">확인</button>
+                    </div>
+                    <p class="txt-notice tc">안전한 개인정보를 위해 비밀번호는 주기적으로 변경해주시기 바랍니다.</p>
+
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

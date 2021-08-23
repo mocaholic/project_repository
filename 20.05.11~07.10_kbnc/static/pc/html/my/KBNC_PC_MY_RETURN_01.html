@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            /*setTimeout(function(){
+                $('#aside .left-menu > li:eq(0) > ul > li:eq(0) > a').addClass('on');
+            }, 100);*/
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">                    
+                    
+                    <div class="content-hd">
+                        <h3 class="tit">반품신청</h3>
+                    </div>       
+                    
+                    <!-- 반품신청할 상품 -->
+                    <div class="cart-list">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="150px">
+                                <col width="">
+                                <col width="157px">
+                                <col width="165px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">주문일자/주문번호</th>
+                                    <th scope="col">상품정보</th>
+                                    <th scope="col">주문금액</th>
+                                    <th scope="col">진행상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="order-num-area">
+                                            <span class="date">2020-05-04</span>
+                                            <a href="#" class="order-num">62004290224</a>
+                                        </span>
+                                    </td>
+                                    <td class="left bd-left">
+                                        <div class="prd-area">
+											<span class="thum"><a href="#"><img src="/pc/img/dummy/thum-cart-product1.png" alt="상품 썸네일"></a></span>
+                                            <div class="prd-info">
+												<p class="tit"><a href="#">★균일가★일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</a></p>
+                                                <span class="opt-list">
+                                                    <span>옵션 : 트루맘</span>
+                                                    <span>수량 1개</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-price">
+                                            <em class="price">
+                                                <span class="num">1,068,800</span><span class="unit">원</span>
+                                            </em>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="state-msg">배송중</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+					</div>      
+               		<!-- // 반품신청할 상품 -->  
+               		                                          
+               		<!-- 반품사유 -->
+               		<div class="tbl-write mt20">
+               			<table>
+							<caption>반품 사유 입력</caption>
+							<colgroup>
+								<col width="180px">
+								<col width="">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="pl40">반품사유</th>
+									<td>
+										<div class="input-box">
+											<span class="input-row w500">
+												<span class="input-cell">
+													<select name="" id="">
+														<option value="">반품 사유를 선택해주세요.</option>
+														<option value="">상품에 이상은 없으나, 구매의사 없음</option>
+														<option value="">색상, 사이즈 등 맞지않음</option>
+														<option value="">상품불량, 제품하자</option>
+														<option value="">더 좋은 혜택의 상품을 찾음</option>
+														<option value="">직접입력</option>
+													</select>
+												</span>
+											</span>
+											<div class="text-area-wrap h100 mt10">
+												<textarea name="" id="" placeholder="상세사유를 입력해주세요" maxlength="200"></textarea>
+												<span class="byte"><span class="byte-current">0</span>/<span class="byte-total">200</span></span><!-- .byte-current에 입력되어 있는 글자 수를 포함하여 나타냅니다. -->
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>						
+						</table>
+					</div>
+               		<!-- // 반품사유 -->
+               		
+               		<div class="basic-btn-box">
+                        <button type="button" class="btn-basic2">신청 취소</button>
+                        <button type="button" class="btn-basic1">반품신청하기</button>
+                    </div>
+                    
+                    <div class="caution-area mt50">
+						<p class="fc-222"><i class="ico-necs mr6"></i>교환/반품 접수 및 환불기준</p>
+						<ul class="list-blt-gry mt10 ml10">
+							<li>7일이내 교환/반품 가능하며, 가구/가전 등 설치 상품은 설치 후 반품이 불가합니다. 신선(냉장, 냉동)상품은 출고 후 교환/반품이 불가합니다.</li>
+							<li>상품 회수 완료 후 3일 이내, 상품에 이상이 없는 경우 교환/반품 처리를 완료 예정입니다.</li>
+							<li>환불처리는 현금, 포인트인 경우 처리완료 후 익일 내, 신용카드인 경우 처리완료 후 영업일 기준 4~5일 내 처리 예정입니다.</li>
+							<li>접수기간이 경과시 또는 자세한 문의사항은 고객센터(1544-5303) 또는 마이페이지 &gt; 고객센터 &gt; 상담 및 문의를 통해 문의해주시기 바랍니다.</li>
+						</ul>
+					</div> 
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+	<meta name="autocomplete" content="off">
+    <link rel="shortcut icon" href="">
+    <title>통합복지몰</title>
+
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/contents.css"><!-- 메인: main.css / 서브: contents.css -->
+    
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/css/jquery-ui.min.css"><!--[c] 2020.06.09 datepicker css 추가 -->
+
+     <!-- Publish Theme : CSS-->
+     <link rel="stylesheet" href="/css/theme/theme1.css">
+     <!-- <link rel="stylesheet" href="/css/theme/theme2.css"> -->
+     <!-- <link rel="stylesheet" href="/css/theme/theme3.css"> -->
+     <link rel="stylesheet" href="/css/company/ibk.css">
+     <!-- <link rel="stylesheet" href="/css/company/lg.css"> -->
+     <!--<link rel="stylesheet" href="/css/company/kb.css"> -->
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-selectify.js"></script>
+
+     <!-- Publish Common : JS-->
+     <script type="text/javascript" src="/js/action.js"></script>
+     <script type="text/javascript" src="/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+
+     <script type="text/javascript">
+        $(function(){
+            //팝업 호출 함수 ACTIONUI.layerPop.fn.open('팝업화면ID', callback1, callback2, callback3);
+            //팝업 닫기 함수 ACTIONUI.layerPop.fn.close('팝업화면ID', callback1);
+
+           //사용가능포인트 toggle 동작
+           ACTIONUI.toggle.fn('.btn-tog', pointboxON, pointboxOff);
+
+            //callback 테스트 함수(개발에서 callback필요시 함수 넘겨서 사용)
+            function pointboxON(){
+                $('.point-li-box').addClass('on');
+            }
+            function pointboxOff(){
+                $('.point-li-box').removeClass('on');
+            }
+
+
+            /* 2020-06-25 삭제 */
+            //사용가능포인트 toggle 동작
+            //ACTIONUI.chkMonth.fn('.chk-month li');
+            
+            //달력
+            ACTIONUI.datePicker.init();
+        });
+     </script>
+</head>
+<body>
+    <div id="wrap" class="sub-area">
+        <!-- #wrap class 구분  main페이지: main-area | 인트로페이지: intro-area |  sub페이지 공통: sub-area | login관련 페이지: login-area -->
+        <!-- header -->
+        <header id="header" class="sub-hd">
+           <div class="inner">
+                <h1 class="hd-tit">포인트 사용내역</h1>
+                <button type="button" class="btn-back"><span class="blind">이전으로</span></button>
+                <span class="right-btn">
+                    <a href="/html/KBNC_MO_MAIN_01.html" class="btn-home"><span class="blind">홈</span></a>
+                    <a href="/html/search/KBNC_MO_SEARCH.html" type="button" class="btn-search"><span class="blind">검색</span></a>
+                </span>
+           </div>
+        </header>
+        <!--// header -->
+
+        <!-- container -->
+        <div id="container">
+            <div id="content">
+                <div class="inner-cont">
+                    <!--  포인트 현황 -->
+                    <div class="point-box">
+                        <dl class="first">
+                            <dt>사용가능 포인트</dt>
+                            <dd>
+                                <a href="#" class="btn-tog off">
+                                    <span class="num">2,950,000</span>
+                                    <span class="unit">P</span>
+                                </a>
+                            </dd>
+                        </dl>
+                        <div class="point-li-box">
+                            <div class="tbl-basic-type1">
+                                <table>
+                                    <caption>포인트 내역</caption>
+                                    <colgroup>
+                                        <col width="">
+                                        <col width="146px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">포인트 유형</th>
+                                            <th scope="col">사용가능 포인트</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tl">2019창립기념행사이벤트</td>
+                                            <td>
+                                                <span class="num">1,000,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">근로자의 날</td>
+                                            <td>
+                                                <span class="num">950,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">아듀 2014 웰컴 2015</td>
+                                            <td>
+                                                <span class="num">1,000,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">2019창립기념행사이벤트</td>
+                                            <td>
+                                                <span class="num">1,000,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">근로자의 날</td>
+                                            <td>
+                                                <span class="num">950,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">아듀 2014 웰컴 2015</td>
+                                            <td>
+                                                <span class="num">1,000,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">2019창립기념행사이벤트</td>
+                                            <td>
+                                                <span class="num">1,000,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">근로자의 날</td>
+                                            <td>
+                                                <span class="num">950,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tl">아듀 2014 웰컴 2015</td>
+                                            <td>
+                                                <span class="num">1,000,000</span>
+                                                <span class="unit">P</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="point-list">
+                            <dl>
+                                <dt>잔여 포인트</dt>
+                                <dd>
+                                    <span class="num">5,111,110</span>
+                                    <span class="unit">P</span>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- // .point-box -->
+                    <!--  // 포인트 현황 -->
+
+                    <div class="section">
+                        <ul class="chk-month">
+                            <li class="on"><a href="#">1개월</a></li>
+                            <li><a href="#">3개월</a></li>
+                            <li><a href="#">6개월</a></li>
+                            <li><a href="#">직접입력</a></li>
+                        </ul>
+                        <div class="chk-calendar">
+                            <span class="input-box">
+                                <span class="input-row">
+                                    <span class="input-cell date-input"><input type="text" class="" value="2020.04.19" title="시작기간 조회" readonly></span>
+                                    <span class="input-cell">~</span>
+                                    <span class="input-cell date-input"><input type="text" class="" value="2020.05.18" title="종료기간 조회" readonly></span>
+                                    <span class="input-cell"><button type="button" class="btn-basic5">조회</button></span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <!-- 지급내역 -->
+                        <!-- 2020-06-05 수정 -->
+                        <div class="desc_top bd-none">
+                            <div class="tit-wrap">
+                                <span class="txt-num">총 <strong>50</strong>건</span>
+                            </div>
+                            <div class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                                <span class="input-cell">
+                                    <select name="" id="">
+                                        <option value="">전체</option>
+                                        <option value="">포인트유형1</option>
+                                        <option value="">포인트유형2</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- // 2020-06-05 수정 -->   
+                            <!-- // .desc_top -->
+                        <div class="tbl-list type2">
+                            <table>
+                                <caption>포인트 현황</caption>
+                                <colgroup>
+                                    <col width="" />
+                                    <col width="90px" />
+                                </colgroup>
+                                <tbody>
+                                    <tr class="none-data">
+                                        <td colspan="2">
+                                            <p>포인트 지급 내역이 없습니다.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="date">2019.08.19 [2020.01.01 ~ 2020.08.18]</span>
+                                            <span class="subject">2019창립기념행사이벤트</span>
+                                            <span class="order">주문번호 : <a href="#">201908198080565</a></span>
+                                        </td>
+                                        <td class="tr">
+                                            <em>
+                                                <span class="num">100,000</span>
+                                                <span class="unit">P</span>
+                                            </em>
+                                            <span class="state disabled">사용</span><!-- 사용한 쿠폰 .disabled 추가 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="date">2018.04.03 [~사용만료시]</span>
+                                            <sapn class="subject"> 기업은행 근로자 테스트 포인트 </sapn>
+                                            <span class="order">주문번호 : <a href="#">201908198080565</a></span>
+                                        </td>
+                                        <td class="tr">
+                                            <em>
+                                                <span class="num">55,000</span>
+                                                <span class="unit">P</span>
+                                            </em>
+                                            <span class="state disabled">사용</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="date">2019.08.19 [2020.01.01 ~ 2020.08.18]</span>
+                                            <span class="subject">2019창립기념행사이벤트</span>
+                                            <span class="order">주문번호 : <a href="#">201908198080565</a></span>
+                                        </td>
+                                        <td class="tr">
+                                            <em>
+                                                <span class="num">100,000</span>
+                                                <span class="unit">P</span>
+                                            </em>
+                                            <span class="state">취소</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="date">2018.04.03 [~사용만료시]</span>
+                                            <span class="subject">2019창립기념행사이벤트</span>
+                                            <span class="order">주문번호 : <a href="#">201908198080565</a></span>
+                                        </td>
+                                        <td class="tr">
+                                            <em>
+                                                <span class="num">55,000</span>
+                                                <span class="unit">P</span>
+                                            </em>
+                                            <span class="state">취소</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- // .tbl-basic-type1 -->
+                        <!-- // 지급내역 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// container -->
+
+		<!-- 퀵메뉴 -->
+        <div id="qnb-area">
+           <!--- /include/qnb.html -->
+        </div>
+        <!--// 퀵메뉴 -->
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+            <!--- /include/footer.html -->
+        </footer>
+        <!--// footer -->
+    </div>
+    <div class="sidemenu-dimmed"></div>
+    <div class="gnb-dimmed"></div>
+</body>
+</html>

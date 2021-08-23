@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>퍼블리싱 리스트</title>
+	
+	<link rel="stylesheet" href="/guide/css/html-list-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        
+    </style>
+</head>
+<body class="mobile">
+<div id="bodyWrap">
+	<div id="header">
+		<h1>통합복지몰</h1>
+	</div>
+	<div id="side">
+		<h2><i class="fa fa-mobile"></i> <i class="fa fa-desktop"></i> <span id="page_title2">Page title</span> : <span id="page_leng"></span></h2>
+		<div id="urls" class="links"></div>
+	</div>
+	<div id="frame">
+		<div class="ctrl">
+			<button type="button" id="btn_reload" class="btn_ctrl" title="새로고침"><i class="fa fa-refresh"></i></button>
+			<span class="pageurl_box">
+				<input type="text" name="" id="page_url" value="" class="pageurl" readonly>
+				<span id="page_size"></span>
+				<span id="page_title"></span>
+			</span>
+			<button type="button" id="btn_external" class="btn_ctrl" title="새창열기"><i class="fa fa-external-link"></i></button>
+			<button type="button" id="btn_mobile" class="btn_ctrl" title="모바일보기"><i class="fa fa-mobile"></i></button>
+			<button type="button" id="btn_desktop" class="btn_ctrl" title="PC보기"><i class="fa fa-desktop"></i></button>
+		</div>
+		<div style="padding-top:40px; text-align:center;">
+			<strong>디자인 확인용입니다. 스크립트 기능(슬라이드)은 새창으로 확인!!</strong>
+		</div>
+		<div class="iframe_wrap">
+			<iframe src="" frameborder="0" id="page_show"></iframe>
+			<!-- <button type="button" class="rotate">회전</button> -->
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="/js/lib/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/guide/js/html-list-function.js"></script>
+<script>
+var mobile = true;
+var page_list = { "pages":[
+	{"title":"메인페이지","url":""},
+	{"title":"메인화면", "url":"html/KBNC_MO_MAIN_01.html"},
+	{"title":"테마2-레드", "url":"html/KBNC_MO_MAIN_02.html"},
+	{"title":"테마3-옐로", "url":"html/KBNC_MO_MAIN_03.html"},
+	{"title":"이벤트배너전체보기", "url":"html/KBNC_MO_EVENT_ALL.html"},
+	
+	{"title":"로그인","url":""},
+	{"title":"접근권한", "url":"html/util/KBNC_MO_NOTICE.html"},	
+	{"title":"설정", "url":"html/util/KBNC_MO_SETTING.html"},	
+	{"title":"인트로", "url":"html/util/KBNC_MO_INTRO.html"},	
+	{"title":"사번,ID 로그인", "url":"html/util/KBNC_MO_LOGIN.html"},
+	{"title":"테마2", "url":"html/util/KBNC_MO_LOGIN_THEME02.html"},
+	{"title":"테마3", "url":"html/util/KBNC_MO_LOGIN_THEME03.html"},
+    {"title":"간편로그인","url":""},
+	{"title":"간편로그인", "url":"html/util/KBNC_MO_EASY_NOR.html"},
+	{"title":"테마2", "url":"html/util/KBNC_MO_EASY_NOR_THEME02.html"},
+	{"title":"테마3", "url":"html/util/KBNC_MO_EASY_NOR_THEME03.html"},
+    {"title":"입력", "url":"html/util/KBNC_MO_EASY_OVER.html"},
+    {"title":"미가입", "url":"html/util/KBNC_MO_EASY_NONE.html"},
+    {"title":"설정-step1", "url":"html/util/KBNC_MO_EASY_SET_01.html"},
+    {"title":"설정-step2", "url":"html/util/KBNC_MO_EASY_SET_02.html"},
+    {"title":"설정-step3", "url":"html/util/KBNC_MO_EASY_SET_03.html"},
+	{"title":"설정-step4", "url":"html/util/KBNC_MO_EASY_SET_04.html"},
+	{"title":"회원가입","url":""},
+	{"title":"가입인증","url":"html/util/KBNC_MO_JOIN_CERTIFIED_PHONE.html"},
+	{"title":"아이디,비번찾기","url":"html/util/KBNC_MO_LOGIN.html"},
+	{"title":"약관동의","url":"html/util/KBNC_MO_JOIN_AGREE.html"},
+	{"title":"정보입력","url":"html/util/KBNC_MO_JOIN_ENTRY_01.html"},
+	{"title":"가입완료","url":"html/util/KBNC_MO_JOIN_END.html	"},
+	{"title":"검색","url":""},
+	{"title":"인기검색어","url":"html/search/KBNC_MO_SEARCH.html"},
+	{"title":"검색결과 없음","url":"html/search/KBNC_MO_SEARCH_NONE.html"},
+	{"title":"리스트-타일형","url":"html/search/KBNC_MO_SEARCH_LIST_01.html"},
+	{"title":"리스트-리스트형","url":"html/search/KBNC_MO_SEARCH_LIST_02.html"},
+	{"title":"카테고리","url":""},
+	{"title":"목록(대분류)","url":"html/category/KBNC_MO_CATEGORY_LIST_01.html"},
+	{"title":"목록(중분류)","url":"html/category/KBNC_MO_CATEGORY_LIST_02.html"},
+	{"title":"상세(옵션있는경우)","url":"html/category/KBNC_MO_CATEGORY_DETAIL.html"},
+	{"title":"상세(옵션없는경우)","url":"html/category/KBNC_MO_CATEGORY_DETAIL_NONEOPTION.html"},
+	{"title":"이벤트","url":""},
+	{"title":"이벤트-목록","url":"html/event/KBNC_MO_EVENT_DETAIL.html"},
+	{"title":"Week Deal (가명)","url":"html/event/KBNC_MO_EVENT_TYPE_01.html"},
+	{"title":"기획전","url":"html/event/KBNC_MO_EVENT_TYPE_02.html"},
+	{"title":"브랜드기획전 전체보기","url":"html/event/KBNC_MO_BRAND_ALL.html"},
+	{"title":"베스트(가명)","url":"html/event/KBNC_MO_EVENT_TYPE_BEST.html"},
+	{"title":"마이페이지","url":""},
+	{"title":"서브메인","url":"html/mypage/KBNC_MO_MYPAGE.html"},
+	{"title":"나의 쇼핑 내역","url":""},
+	{"title":"장바구니","url":"html/mypage/KBNC_MO_MY_BASKET_01_T.html"},
+	{"title":"주문/결제","url":"html/mypage/KBNC_MO_MY_PAY.html"},
+	{"title":"주문완료1","url":"html/mypage/KBNC_MO_CONFIRM_01.html"},
+	{"title":"주문완료2","url":"html/mypage/KBNC_MO_CONFIRM_02.html"},
+	{"title":"주문 상세 내역1","url":"html/mypage/KBNC_MO_MY_ORDERDETAIL_01.html"},
+	{"title":"주문 상세 내역2","url":"html/mypage/KBNC_MO_MY_ORDERDETAIL_02.html"},
+	{"title":"주문/배송조회","url":""},
+	{"title":"배송조회","url":"html/mypage/KBNC_MO_MY_ORDERCHECK.html"},
+	{"title":"주문취소-신청","url":"html/mypage/KBNC_MO_MY_CANCEL_01.html"},
+	{"title":"주문취소-신청완료","url":"/mobile/html/mypage/KBNC_MO_MY_CANCEL_02.html"},
+	{"title":"교환신청-신청","url":"html/mypage/KBNC_MO_MY_EXCHANGE_01.html"},
+	{"title":"교환신청-신청완료","url":"/mobile/html/mypage/KBNC_MO_MY_EXCHANGE_02.html"},
+	{"title":"반품신청-신청","url":"html/mypage/KBNC_MO_MY_RETURN_01.html"},
+	{"title":"반품신청-신청완료","url":"/mobile/html/mypage/KBNC_MO_MY_RETURN_02.html"},
+	{"title":"나의혜택정보","url":""},
+	{"title":"포인트현황","url":"html/mypage/KBNC_MO_MY_POINTSTATUS.html"},
+	{"title":"포인트사용내역","url":"html/mypage/KBNC_MO_MY_POINTHISTORY.html"},
+	{"title":"나의관심상품정보","url":""},
+	{"title":"최근 본 상품","url":"html/mypage/KBNC_MO_RECENTLY.html"},
+	{"title":"찜목록","url":"html/mypage/KBNC_MO_MY_GOODS.html"},
+	{"title":"회원정보","url":""},
+	{"title":"비밀번호 확인","url":"html/membership/KBNC_MO_MEMBERSHIP_01.html"},
+	{"title":"회원정보 변경","url":"html/membership/KBNC_MO_MEMBERSHIP_02.html"},
+	{"title":"고객센터","url":""},
+	{"title":"상담/문의","url":"html/customer/KBNC_MO_CUSTOMER_01.html"},
+	{"title":"공지사항","url":"html/customer/KBNC_MO_CUSTOMER_02.html"},
+	{"title":"공지사항-상세","url":"html/customer/KBNC_MO_CUSTOMER_02_01.html"},
+	{"title":"중소기업입점신청","url":"html/customer/KBNC_MO_CUSTOMER_03.html"},
+	{"title":"푸터","url":""},
+	{"title":"이용약관","url":"html/bottom/KBNC_MO_BOTTOM_01.html"},
+	{"title":"개인정보처리방침_ver1","url":"html/bottom/KBNC_MO_BOTTOM_02_VER1.html"},
+	{"title":"개인정보처리방침","url":"html/bottom/KBNC_MO_BOTTOM_02.html"},
+	{"title":"오류","url":""},
+	{"title":"페이지오류","url":"html/emergency/KBNC_MO_EMERGENCY_01.html"},
+	{"title":"As-is","url":"https://www.ibkshmall.co.kr/ibk_mobile/malls/index.asp"},
+]};
+</script>
+
+</body>
+</html>

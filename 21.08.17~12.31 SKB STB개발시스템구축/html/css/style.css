@@ -22,6 +22,7 @@
 
 .util_menu {display:flex; align-items:stretch; height:108px; border-top:1px solid #dedede; border-bottom:1px solid #dedede; background:#f0ebe8;}
 .util_menu a {flex:1; text-align:center; border-left:1px solid #fff; border-right:1px solid #dedede; color:#333; font-weight:700;}
+.util_menu a:hover {}
 .util_menu a:first-of-type {border-left:none;}
 .util_menu a:nth-of-type(3) {border-right:none;}
 .util_menu a::before {display:block; content:""; margin:24px auto 0; width:39px; height:39px;}
@@ -43,19 +44,26 @@
 .lnb_area > ul > li:nth-child(4) > a::before {background:url('../images/icon_lnb04.png') no-repeat; height:25px;}
 .lnb_area > ul > li:nth-child(5) > a::before {background:url('../images/icon_lnb05.png') no-repeat;}
 .lnb_area > ul > li:nth-child(6) > a::before {background:url('../images/icon_lnb06.png') no-repeat; height:22px;}
-.lnb_area > ul > li:first-child.on > a::before {background:url('../images/icon_lnb01_on.png') no-repeat;}
-.lnb_area > ul > li:nth-child(2).on > a::before {background:url('../images/icon_lnb02_on.png') no-repeat;}
-.lnb_area > ul > li:nth-child(3).on > a::before {background:url('../images/icon_lnb03_on.png') no-repeat;}
-.lnb_area > ul > li:nth-child(4).on > a::before {background:url('../images/icon_lnb04_on.png') no-repeat;}
-.lnb_area > ul > li:nth-child(5).on > a::before {background:url('../images/icon_lnb05_on.png') no-repeat;}
-.lnb_area > ul > li:nth-child(6).on > a::before {background:url('../images/icon_lnb06_on.png') no-repeat;}
+.lnb_area > ul > li:first-child.on > a::before, 
+.lnb_area > ul > li:first-child > a:hover::before {background:url('../images/icon_lnb01_on.png') no-repeat;}
+.lnb_area > ul > li:nth-child(2).on > a::before,
+.lnb_area > ul > li:nth-child(2) > a:hover::before {background:url('../images/icon_lnb02_on.png') no-repeat;}
+.lnb_area > ul > li:nth-child(3).on > a::before,
+.lnb_area > ul > li:nth-child(3) > a:hover::before {background:url('../images/icon_lnb03_on.png') no-repeat;}
+.lnb_area > ul > li:nth-child(4).on > a::before,
+.lnb_area > ul > li:nth-child(4) > a:hover::before {background:url('../images/icon_lnb04_on.png') no-repeat;}
+.lnb_area > ul > li:nth-child(5).on > a::before,
+.lnb_area > ul > li:nth-child(5) > a:hover::before {background:url('../images/icon_lnb05_on.png') no-repeat;}
+.lnb_area > ul > li:nth-child(6).on > a::before,
+.lnb_area > ul > li:nth-child(6) > a:hover::before {background:url('../images/icon_lnb06_on.png') no-repeat;}
 .lnb_area li li a {font-size:14px; letter-spacing:-0.03em;}
-.lnb_area li.on .depth01 {font-weight:700; color:#fff; background:#f48025;}
+.lnb_area li.on .depth01, .lnb_area li .depth01:hover  {font-weight:700; color:#fff; background:#f48025;}
 .lnb_area li .depth02 {display:none; padding:10px 0 20px; background-color:#fff; border-top:1px solid #dedede;}
 .lnb_area .on .depth02 {display:block;}
 .lnb_area li .depth02 li {height:34px; line-height:34px; padding:0 10px 0 59px;}
 .lnb_area li .depth02 li a {display:inline-block; padding:0; line-height:1.2;}
-.lnb_area li .depth02 li.on a {color:#f48025; font-weight:700; border-bottom:1px solid #f48025; }
+.lnb_area li .depth02 li.on a,
+.lnb_area li .depth02 li a:hover {color:#f48025; font-weight:700; border-bottom:1px solid #f48025; }
 
 #contents.login {width:460px; margin:0 auto; padding:68px 0 110px;}
 #contents.login h1 {width:216px; height:69px; margin:0 auto;}

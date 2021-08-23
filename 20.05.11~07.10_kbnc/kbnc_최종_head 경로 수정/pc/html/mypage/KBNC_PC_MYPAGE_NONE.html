@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="../../css/theme/theme1.css">
+    <link rel="stylesheet" href="../../css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="../../css/slick.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/selectric.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            /*setTimeout(function(){
+                $('#aside .left-menu > li:eq(0) > ul > li:eq(0) > a').addClass('on');
+            }, 100);*/
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">                    
+                    <!-- 주문/배송조회 -->
+                    <div class="desc_top mt20">
+                        <h4 class="tit">주문/배송조회</h4>
+                        <p>
+                            <a href="#" class="btn-more-page">주문/배송조회 페이지 이동</a>
+                        </p>
+                    </div>
+                        <!-- // .desc_top -->
+                    <div class="inquiry-list-box">
+                        <ul class="inquiry-step">
+                            <li>
+                                <em>주문접수</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                            <li>
+                                <em>결제완료</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                            <li>
+                                <em>배송준비중</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                            <li>
+                                <em>배송중</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                            <li>
+                                <em>배송완료</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                        </ul>
+                        <!-- 2020-05-26 삭제
+                           <ul class="return-list">
+                            <li>
+                                <em>취소</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                            <li>
+                                <em>교환</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                            <li>
+                                <em>반품</em>
+                                <a href="#" class="num">0</a>
+                            </li>
+                        </ul>-->
+                    </div>
+                        <!-- // .inquiry-list-box -->
+                    <!-- // 주문/배송조회 -->
+                    
+                    <!-- 최근 주문내역 -->
+                    <div class="desc_top mt50">
+                        <h4 class="tit">최근 주문내역<span class="ins">2019.05.05 ~ 2020.05.04<span class="ml6">주문내역 총 0건</span></span></h4>
+                        <p>
+                            <a href="#" class="btn-more-page">최근 주문내역 페이지 이동</a>
+                        </p>
+                    </div>
+                        <!-- // .desc_top -->
+                    <div class="cart-list">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="150px">
+                                <col width="">
+                                <col width="157px">
+                                <col width="165px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">주문일자/주문번호</th><!-- 2020-05-26 텍스트 수정 -->
+                                    <th scope="col">상품정보</th>
+                                    <th scope="col">주문금액</th>
+                                    <th scope="col">진행상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4">
+                                        <p class="no-prd-msg order">최근 주문 내역이 없습니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <!-- // .cart-list -->
+                    <!-- // 최근 주문내역 -->
+                    
+                    <!-- 장바구니 -->
+                    <div class="desc_top mt50">
+                        <h4 class="tit">장바구니</h4>
+                        <p>
+                            <a href="#" class="btn-more-page">장바구니 페이지 이동</a>
+                        </p>
+                    </div>
+                        <!-- // .desc_top -->                    
+                    <div class="my-prd-list">
+                        <p class="no-prd-msg cart">장바구니 상품이 없습니다.</p>
+                    </div>
+                        <!-- // .my-prd-list -->
+                    <!-- // 장바구니 -->
+                    
+                    <!-- 찜목록 -->
+                    <div class="desc_top mt50">
+                        <h4 class="tit">찜목록</h4>
+                        <p>
+                            <a href="#" class="btn-more-page">찜목록 페이지 이동</a>
+                        </p>
+                    </div>
+                        <!-- // .desc_top -->                    
+                    <div class="my-prd-list">
+                        <p class="no-prd-msg wish">찜목록 상품이 없습니다.</p>
+                    </div>
+                        <!-- // .my-prd-list -->
+                    <!-- // 찜목록 -->
+                    
+                    <!-- 최근 본 상품 -->
+                    <div class="desc_top mt50">
+                        <h4 class="tit">최근 본 상품</h4>
+                        <p>
+                            <a href="#" class="btn-more-page">최근 본 상품 페이지 이동</a>
+                        </p>
+                    </div>
+                        <!-- // .desc_top -->                    
+                    <div class="my-prd-list">
+                        <p class="no-prd-msg recent">최근 본 상품이 없습니다.</p>
+                    </div>
+                        <!-- // .my-prd-list -->
+                    <!-- // 최근 본 상품 -->
+                                
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        
+        <div class="popup-wrap"><!-- .popup-wrap > .popup-layer 복수로 띄움(.popup-wrap은 무조건 하나) -->
+            <!-- 복지비 승인 관련 안내 -->
+            <div id="MY_PAY_01_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h4 class="tit">복지비 승인 관련 안내</h4>
+                    </div>
+                    <div class="tbl-basic-type1">
+                        <table>
+                            <caption>복지비 승인 관련 안내</caption>
+                            <colgroup>
+                                <col width="50%">
+                                <col width="">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">결제수단</th> 
+                                    <th scope="col">복지비 승인</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>카드</td>
+                                    <td>O</td>
+                                </tr>
+                                <tr>
+                                    <td>무통장</td>
+                                    <td>X</td>
+                                </tr>
+                                <tr>
+                                    <td>급여공제</td>
+                                    <td>X</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="notice">
+                        <p>복지 카드시스템에서 신청등록 후 서무 담당자에게 증빙 자료를 제출하시기 바랍니다.</p>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //복지비 승인 관련 안내 -->
+            
+            <!-- 개인정보 판매자 제공에 동의 -->
+            <div id="MY_PAY_02_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h4 class="tit">개인정보 판매자 제공에 동의</h4>
+                    </div>
+                    <div class="pop-ol">
+                        <ol>
+                            <li>
+                                <span class="tit">1. 개인정보 판매자 제공에 동의</span>
+                                <div class="tbl-basic-type1 ea">
+                                    <table>
+                                        <caption>개인정보 판매자 제공정보</caption>
+                                        <colgroup>
+                                            <col width="100px">
+                                            <col width="">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">제공받는 자</th>
+                                                <td class="tl">배송공급업체</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">목적</th>
+                                                <td class="tl">주문상품의 배송, 고객상담 및 불만처리</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">항목</th>
+                                                <td class="tl">성명, 주소, 연락처(안심번호 적용 시 연락처는 제외), 개인통관고유부호(선택시)</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="tit">2. 개인정보 수집 및 이용에 동의</span>
+                                <div class="tbl-basic-type1">
+                                    <table>
+                                        <caption>개인정보 수집 및 이용정보</caption>
+                                        <colgroup>
+                                            <col width="">
+                                            <col width="160px">
+                                            <col width="140px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">수집이용목적</th> 
+                                                <th scope="col">수집 항목</th>
+                                                <th scope="col">보유기간</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>상품 및 경품 배송(반품/환불/취소 등),<br>배송지 확인, 최초 입력 후 불러오기 기능 제공</td>
+                                                <td>배송지 주소</td>
+                                                <td>배송완료 후 5년 보관</td>
+                                            </tr>
+                                            <tr>
+                                                <td>대금 결제 서비스 제공</td>
+                                                <td>신용카드 정보, 계좌 정보</td>
+                                                <td>결제완료 후 5년 보관</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //개인정보 판매자 제공에 동의 -->
+        </div>
+        <!-- //.popup-wrap -->
+        
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

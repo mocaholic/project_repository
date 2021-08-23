@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(3) > ul > li:eq(0) > a').addClass('on');
+            }, 100);
+
+
+            //로그인 연동 toggle 동작
+            ACTIONUI.toggle.fn('.social-link', testON, testOff);
+
+            //callback 테스트 함수(개발에서 callback필요시 함수 넘겨서 사용)
+            function testON(){
+                console.log('연동 완료');
+            }
+            function testOff(){
+                console.log('연동 해제');
+            }
+
+
+            //팝업 호출 함수 ACTIONUI.layerPop.fn.open('팝업화면ID', callback1, callback2, callback3);
+            //팝업 닫기 함수 ACTIONUI.layerPop.fn.close('팝업화면ID', callback1);
+
+            //비밀번호 변경 팝업 호출
+            $('.btn-change-pw').on('click', function(e){
+                e.preventDefault();
+                ACTIONUI.layerPop.fn.open('MEMBERSHIP_02_01_P');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">
+                    <div class="content-hd">
+                        <h3 class="tit">회원정보 변경</h3>
+                    </div>
+
+                    <div class="desc_top">
+                        <p><strong class="essential">*</strong> 표시는 필수 입력</p>
+                    </div>
+                    <div class="tbl-write">
+                        <table>
+                            <caption>회원정보 변경 작성</caption>
+                            <colgroup>
+                                <col width="180px" />
+                                <col width="" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">이름</th>
+                                    <td>정해인</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">사원번호</th>
+                                    <td>S_20200427_01_100</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">아이디</th>
+                                    <td>junghaein</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">비밀번호</th>
+                                    <td>
+                                        <span class="input-fake"><input type="password" value="000000" readonly></span>
+                                        <button class="btn-basic2 small btn-change-pw">변경</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">로그인 연동</th>
+                                    <td>
+                                        <ul class="social-list">
+                                            <li>
+                                                <span class="social-naver"><span class="txt">네이버아이디로 로그인</span></span>
+                                                <button class="btn-basic2 small social-link">ON</button>
+                                            </li>
+                                            <li>
+                                                <span class="social-kakao"><span class="txt">카카오아이디로 로그인</span></span>
+                                                <button class="btn-basic2 small social-link off">OFF</button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong class="essential">*</strong>휴대폰번호</th>
+                                    <td>
+                                        <div class="input-box chk-wrap phone"><!-- 영역 크기에 따라 width 조절 -->
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <select name="" id="">
+                                                        <option value="010">010</option>
+                                                        <option value="012">012</option>
+                                                        <option value="013">013</option>
+                                                    </select>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">-</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 2020-06-03 class 추가 -->
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">-</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number"><!-- 2020-06-03 class 추가 -->
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">전화번호</th>
+                                    <td>
+                                        <div class="input-box chk-wrap phone"><!-- 영역 크기에 따라 width 조절 -->
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <select name="" id="">
+                                                        <option value="02">02</option>
+                                                        <option value="031">031</option>
+                                                        <option value="032">032</option>
+                                                        <option value="033">033</option>
+                                                        <option value="041">041</option>
+                                                        <option value="042">042</option>
+                                                        <option value="043">043</option>
+                                                        <option value="044">044</option>
+                                                        <option value="051">051</option>
+                                                        <option value="052">052</option>
+                                                        <option value="053">053</option>
+                                                        <option value="054">054</option>
+                                                        <option value="055">055</option>
+                                                        <option value="061">061</option>
+                                                        <option value="062">062</option>
+                                                        <option value="063">063</option>
+                                                        <option value="064">064</option>
+                                                        <option value="070">070</option>
+                                                        <option value="0502">0502</option>
+                                                        <option value="0505">0505</option>
+                                                        <option value="0506">0506</option>
+                                                        <option value="0130">0130</option>
+                                                        <option value="010">010</option>
+                                                        <option value="011">011</option>
+                                                        <option value="016">016</option>
+                                                        <option value="017">017</option>
+                                                        <option value="018">018</option>
+                                                        <option value="019">019</option>
+                                                    </select>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">-</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 2020-06-03 class 추가 -->
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">-</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number"><!-- 2020-06-03 class 추가 -->
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><strong class="essential">*</strong>이메일</th>
+                                    <td>
+                                        <div class="input-box chk-wrap email"><!-- 영역 크기에 따라 width 조절 -->
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <input type="text" title="이메일 아이디">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">@</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" title="이메일 주소">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <select name="" id="">
+                                                        <option value="직접입력">직접입력</option>
+                                                        <option value="hanmail.com">hanmail.com</option>
+                                                        <option value="naver.comm">naver.comm</option>
+                                                        <option value="nate.com">nate.com</option>
+                                                        <option value="hotmail.com">hotmail.com</option>
+                                                        <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                                        <option value="gmail.com">gmail.com</option>
+                                                        <option value="dremwiz.com">dremwiz.com</option>
+                                                        <option value="daum.net">daum.net</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">주소</th>
+                                    <td>
+                                        <span class="input-box chk-wrap addr"><!-- 영역 크기에 따라 width 조절 -->
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <input type="text" id="formType1" title="우편번호" value="08501" readonly>
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <input type="text" title="상세 주소" value="서울특별시 금천구 가산디지털2로 184(가산동, 별산디지털밸리2차) " readonly>
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <input type="text" placeholder="상세주소를 입력해주세요." title="상세 주소" value="1002호">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                            <span class="error-txt">에러 메시지 출력 영역 입니다.</span>
+                                        </span>
+                                        <button class="btn-basic2 small">변경</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">수신동의</th>
+                                    <td>
+                                        <span class="checks">
+                                            <input type="checkbox" id="ex_chk1" checked>
+                                            <label for="ex_chk1">마케팅 수신동의</label>
+                                        </span>
+                                        <span class="checks ml70">
+                                            <input type="checkbox" id="ex_chk2">
+                                            <label for="ex_chk2">이메일</label>
+                                        </span>
+                                        <span class="checks">
+                                            <input type="checkbox" id="ex_chk3">
+                                            <label for="ex_chk3">SMS</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="basic-btn-box">
+                        <button type="button" class="btn-basic2">취소</button>
+                        <button type="button" class="btn-basic1">저장</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+
+        <div class="popup-wrap"><!-- .popup-wrap > .popup-layer 복수로 띄움(.popup-wrap은 무조건 하나) -->
+            <!-- 비밀번호 변경 -->
+            <div id="MEMBERSHIP_02_01_P" class="popup-layer"><!-- 팝업 id는 화면ID로 설정 -->
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h4 class="tit">비밀번호 변경</h4>
+                    </div>
+                    <div class="util-board">
+                        <div class="util-inner">
+                            <span class="input-box error"><!-- 필드오류: .error 추가 -->
+                                <span class="input-row">
+                                    <span class="input-cell">
+                                        <input type="password" title="비밀번호" placeholder="현재 비밀번호 입력" value="0000">
+                                        <button class="cancel"><span class="blind">삭제</span></button>
+                                    </span>
+                                </span>
+                                <span class="input-row">
+                                    <span class="input-cell">
+                                        <input type="password" title="새로운 비밀번호" placeholder="새로운 비밀번호 입력" value="">
+                                        <button class="cancel"><span class="blind">삭제</span></button>
+                                    </span>
+                                </span>
+                                <span class="input-row">
+                                    <span class="input-cell">
+                                        <input type="password" title="새로운 비밀번호 확인" placeholder="새로운 비밀번호 확인" value="">
+                                        <button class="cancel"><span class="blind">삭제</span></button>
+                                    </span>
+                                </span>
+                                <span class="error-txt">비밀번호는 영문, 숫자, 특수문자 조합 8~12자리로 입력해주세요.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="notice-box">
+                        <ul class="notice-list">
+                            <li>영문 대소문자, 숫자, 특수문자 조합 8~12자리로 설정해주세요.</li>
+                            <li>3자리 이상 연속 또는 동일한 문자, 숫자 사용이 불가능합니다.</li>
+                        </ul>
+                    </div>
+                    <div class="basic-btn-box">
+                        <button type="button" class="btn-basic2">취소</button>
+                        <button type="button" class="btn-basic1">변경</button>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //비밀번호 변경 -->
+        </div>
+        <!-- //.popup-wrap -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

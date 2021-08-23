@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/contents.css">
+    <link rel="stylesheet" href="/guide/css/guide.css">
+
+    <!-- rainbow : CSS -->
+    <link rel="stylesheet" href="/guide/css/github.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/css/jquery-ui.min.css"><!--[c] 2020.06.09 datepicker css 추가 -->
+    <link rel="stylesheet" href="/css/selectric.css">
+
+    <!-- rainbow : JS-->
+    <script src="/guide/js/rainbow.min.js"></script>
+    <script src="/guide/js/rainbow.coffeescript.js"></script>
+    <script src="/guide/js/rainbow.generic.js"></script>
+    <script src="/guide/js/rainbow.css.js"></script>
+    <script src="/guide/js/rainbow.html.js"></script>
+    <script src="/guide/js/rainbow.javascript.js"></script>
+    <script src="/guide/js/rainbow.php.js"></script>
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery-selectify.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/js/action.js"></script>
+
+    <style type="text/css">
+        .swiper-wrapper .item{float:left;}
+        .swiper-wrapper .item img{width:100%;}
+        #slider.g-content{width:100%;max-width:360px;overflow:hidden;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            var slideImg = new Swiper('#slider', {
+                slidesPerView: 1,
+                slideClass: 'item',
+                spaceBetween: 0,
+                loop: true,
+                pagination: '.paging .paging',
+                paginationCurrentClass: 'current',
+                paginationTotalClass: 'total',
+                paginationType: 'fraction',
+                setWrapperSize: true,
+            });
+
+            //달력
+            ACTIONUI.datePicker.init();
+
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="header-inner">
+                <h1><span class="type">PC</span>Guide</h1>
+                <div class="btn-area">
+                    <a href="/weblist.html">웹리스트</a>
+                    <a href="/guide/html/guide-code.html">퍼블리싱 가이드</a>
+                    <a href="/guide/html/component-lib.html" class="on">컴포넌트</a>
+                    <a href="/guide/html/widget-form.html">위젯</a>
+                </div>
+            </div>
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div id="aside">
+                <div class="aside-inner">
+                    <h2 class="aside-tit">컴포넌트(기능)</h2>
+                    <ul class="aside-list">
+                        <li class="on"><a href="/guide/html/component-lib.html">사용된 라이브러리</a></li>
+                        <li><a href="/guide/html/component-slide.html">슬라이드</a></li>
+                        <li><a href="/guide/html/component-popup.html">팝업</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //#aside -->
+            <div id="content">
+                <div class="g-container">
+                    <h1 class="g-h1">Swiper JS - jQuery</h1>
+                    <div id="slider" class="g-content">
+                        <div class="one-time swiper-wrapper">
+                            <div class="item">
+                              <img src="http://placehold.it/350x100?text=1">
+                            </div>
+                            <div class="item">
+                              <img src="http://placehold.it/350x100?text=2">
+                            </div>
+                            <div class="item">
+                              <img src="http://placehold.it/350x100?text=3">
+                            </div>
+                        </div>
+                        <div class="paging">
+                            <div class="inner">
+                                <span class="paging">
+                                    <span class="current">1</span>
+                                    <span>/</span>
+                                    <span class="total">1</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Html -->
+<h2 class="g-h2">Html</h2>
+<pre><code data-language="html">
+<div id="slider" class="g-content">
+    <div class="swiper-wrapper">
+        <div class="item">
+            <img src="http://placehold.it/350x100?text=1">
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/350x100?text=2">
+        </div>
+        <div class="item">
+            <img src="http://placehold.it/350x100?text=3">
+        </div>
+    </div>
+    <div class="paging">
+        <div class="inner">
+            <span class="paging">
+                <span class="current">1</span>
+                <span>/</span>
+                <span class="total">1</span>
+            </span>
+        </div>
+    </div>
+</div>
+</code></pre>
+                    <!-- //Html -->
+
+                    <!-- JavaScript -->
+<h2 class="g-h2">JavaScript</h2>
+<pre><code data-language="javascript">
+var slideImg = new Swiper('#slider', {
+    slidesPerView: 1,
+    slideClass: 'item',
+    spaceBetween: 0,
+    loop: true,
+    pagination: '.paging .paging',
+    paginationCurrentClass: 'current',
+    paginationTotalClass: 'total',
+    paginationType: 'fraction',
+    setWrapperSize: true,
+});
+</code></pre>
+                    <!-- //JavaScript -->
+                </div>
+                <!-- //.g-container -->
+
+                <div class="g-container">
+                    <h1 class="g-h1">Datepicker - jQuery UI</h1>
+                    <div class="g-content">
+                        <input type="text" class="datepicker">
+                    </div>
+
+                    <!-- Html -->
+<h2 class="g-h2">Html</h2>
+<pre><code data-language="html"><input type="text" class="datepicker"></code></pre>
+                    <!-- //Html -->
+       
+                    <!-- CSS -->
+<h2 class="g-h2">CSS</h2>
+<pre><code data-language="css">.datepicker{width:200px;text-align:center;cursor:pointer;}</code></pre>
+                    <!-- //CSS -->
+
+                    <!-- JavaScript -->
+<h2 class="g-h2">JavaScript</h2>
+<pre><code data-language="javascript">var datePicker = {
+    init: function(){
+        this.set();
+    },
+    set: function(target){
+        var _target = target;
+        
+        $(_target).datepicker({
+            //input을 datepicker로 선언
+            dateFormat: 'yy-mm-dd', //Input Display Format 변경
+            showOtherMonths: true, //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+            showMonthAfterYear:true, //년도 먼저 나오고, 뒤에 월 표시
+            changeYear: true, //콤보박스에서 년 선택 가능
+            changeMonth: true, //콤보박스에서 월 선택 가능
+            //showOn: "both", //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+            //buttonImage: "http://jqueryui.com/resources/demos/datepicker/images/calendar.gif", //버튼 이미지 경로
+            //buttonImageOnly: false, //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+            //buttonText: "선택", //버튼에 마우스 갖다 댔을 때 표시되는 텍스트
+            yearSuffix: "년", //달력의 년도 부분 뒤에 붙는 텍스트
+            monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'], //달력의 월 부분 텍스트
+            monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], //달력의 월 부분 Tooltip 텍스트
+            dayNamesMin: ['일','월','화','수','목','금','토'], //달력의 요일 부분 텍스트
+            dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'], //달력의 요일 부분 Tooltip 텍스트
+            //minDate: "-1M", //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+            //maxDate: "+1M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)
+        });
+
+        //From의 초기값을 오늘 날짜로 설정
+        $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+
+        //To의 초기값을 내일로 설정
+        //$('#datepicker2').datepicker('setDate', '+1D'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)
+
+        $(_target).datepicker();
+    }
+}</code></pre>
+                    <!-- //JavaScript -->
+                </div>
+                <!-- //.g-container -->
+
+                
+                <div class="g-container">
+                    <h1 class="g-h1">Selectric - jQuery</h1>
+                </div>
+                <!-- //.g-container -->
+                
+            </div>
+            <!-- //#content -->
+        </div>
+        <!-- //#container -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

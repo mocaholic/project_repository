@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(0) > ul > li:eq(0) > a').addClass('on');
+            }, 100);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">
+                    <div class="content-hd">
+                        <h3 class="tit">장바구니</h3>
+                        <ul class="step-cart">
+                            <li class="on">01. 장바구니</li>
+                            <li>02. 주문결제</li>
+                            <li>03. 주문완료</li>
+                        </ul>
+                    </div>
+                    
+                    <ul class="cart-tab-list">
+                        <li><a href="#">일반상품 (6)</a></li>
+                        <li class="on"><a href="#">복지비전용상품 (0)</a></li>
+                    </ul>
+                                        
+                    <div class="cart-list">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="58px">
+                                <col width="">
+                                <col width="150px">
+                                <col width="140px">
+                                <col width="100px">
+                                <col width="120px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <span class="checks">
+                                            <input type="checkbox" id="all_chk">
+                                            <label for="all_chk"><span class="blind">전체선택</span></label>
+                                        </span>
+                                    </th>
+                                    <th scope="col">상품정보</th>
+                                    <th scope="col">수량</th>
+                                    <th scope="col">주문금액</th>
+                                    <th scope="col">배송비</th>
+                                    <th scope="col">선택</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6">
+                                        <p class="cart-message">장바구니 상품이 없습니다.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                                        
+                    <div class="cart-bot">
+                        <ul class="list-blt-gry">
+                            <li>계속 보관을 원하시면 찜 기능을 이용해 주시기 바랍니다.</li>
+                            <li>판매 종료된 상품은 목록에서 삭제됩니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

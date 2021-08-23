@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/main.css"><!-- 메인: main.css / 서브: contents.css -->
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script type="text/javascript">
+		// 05.25 추가 : 로딩중
+		$(window).load(function() {    
+			$('#loading').hide();  
+		});
+		
+        $(function(){
+            //비쥬얼 슬라이드 - 옵션 설정 //2020-04-24 김세정: action.js로 이동
+            // $('.visual .slide-visual').slick({
+            //     dots: true,
+            //     autoplay: true,
+            //     autoplaySpeed: 3000
+            // });
+            ACTIONUI.visual.init(['으뜸가전', '삼성으뜸가전', '수납정리', '나쁜공기차단', '패션의류', '삼성갤럭시']); //비쥬얼 슬라이드바 텍스트 전달  //2020-04-29 김세정: ACTIONUI 변수에 정리
+
+            //상품 목록 똑마켓 - 옵션 설정
+            $('.box-slide-view').slick({
+                dots: true,
+                autoplay: false
+            });
+			
+        });
+    </script>
+</head>
+<body class="main">
+    <div id="wrap">
+        <div id="header">
+            <!--- /include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="visual">
+                <div class="slide-bg">
+                    <div class="current">
+                        <a href="#">
+                           	<img src="/pc/img/dummy/visual-main-txt1.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="/pc/img/dummy/visual-main-txt2.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="/pc/img/dummy/visual-main-txt3.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                        	<img src="/pc/img/dummy/visual-main-txt1.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="/pc/img/dummy/visual-main-txt1.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="/pc/img/dummy/visual-main-txt1.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="slide-visual slide">
+                    <div><div class="img" style="background-image:url('/pc/img/dummy/visual-main-img1.jpg')"></div></div>
+                    <div><div class="img" style="background-image:url('/pc/img/dummy/visual-main-img2.jpg')"></div></div>
+                    <div><div class="img" style="background-image:url('/pc/img/dummy/visual-main-img3.jpg')"></div></div>
+                    <div><div class="img" style="background-image:url('/pc/img/dummy/visual-main-img4.jpg')"></div></div>
+                    <div><div class="img" style="background-image:url('/pc/img/dummy/visual-main-img5.jpg')"></div></div>
+                    <div><div class="img" style="background-image:url('/pc/img/dummy/visual-main-img6.jpg')"></div></div>
+                </div>
+                <!-- <div class="slide-control">
+                    <button class="btn-control"><span class="blind">일시정지</span></button>
+                </div> --><!-- 2020-04-27 김세정: action.js에서 동적 생성으로 변경 -->
+                <div class="slide-product">
+                    <div class="product-area">
+                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                            <span class="img"><img src="/pc/img/dummy/thum-main-visual-product.jpg" alt=""></span>
+                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                            <span class="info">
+                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="btn-area">
+                        <div class="basic-btn-box">
+                            <!-- 2020-05-08 김세정: 버튼 위치 변경 -->
+                            <button class="btn-basic1">장바구니</button>
+                            <button class="btn-basic5">구매하기</button>
+                            <!-- //2020-05-08 김세정: 버튼 위치 변경 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //.anb -->
+            <div id="content">
+                <div class="section">
+                    <div class="section-top type1">
+                        <h2 class="tit-h2">Week Deal</h2>
+                        <ul class="hash-list">
+                            <li>#4월 2주</li>
+                            <li>#S/S 꿀잠침구</li>
+                            <li>#UP TO 74%</li>
+                        </ul>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button>
+                        </div>
+                    </div>
+                    <div class="section-box type1">
+                        <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product1.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product2.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product3.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product4.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- //.product-list -->
+                    </div>
+                </div>
+                <!-- //.section -->
+
+                <div class="section bg-gray">
+                    <div class="section-top type2">
+                        <h2 class="tit-h2">지금 제일 핫한 TOP 50</h2>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button><!-- 2020-04-24 김세정: class 수정 -->
+                        </div>
+                    </div>
+                    <div class="section-box">
+                        <div class="box-more-view">
+                            <ul class="product-list grid4">
+                              <!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                               <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product5.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product6.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product7.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product8.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product9.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="
+                                        /pc/img/dummy/thum-main-product10.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product11.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product12.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product5.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product6.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product7.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product8.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product9.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product10.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product11.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <span class="img"><img src="/pc/img/dummy/thum-main-product12.jpg" alt=""></span>
+                                        <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                        <span class="info">
+                                            <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- //.product-list -->
+                            <div class="box-bottom">
+                                <!-- 2020-04-24 김세정: 개발요청 코멘트 추가 -->
+                                <!-- [C] 더보기 호출시 실행 함수 ACTIONUI.moreView.fn.on(this); 
+                                         더보기 닫을시 실행 함수 ACTIONUI.moreView.fn.off(this); -->
+                                <button class="btn-more-view" onClick="$(this).hasClass('off')?ACTIONUI.moreView.fn.off(this):ACTIONUI.moreView.fn.on(this);"><span class="txt">더보기</span></button>
+                            </div>
+                        </div>
+                        <!-- //.box-more-view -->
+                    </div>
+                </div>
+                <!-- //.section -->
+
+                <div class="section">
+                    <div class="section-top type1">
+                        <h2 class="tit-h2">똑마켓</h2>
+                        <ul class="hash-list">
+                            <li>#똑 떨어진 살림</li>
+                            <li>#마구마구</li>
+                            <li>#켓하세요</li>
+                        </ul>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button>
+                        </div>
+                    </div>
+                    <div class="section-box">
+                        <div class="box-slide-view slide">
+                            <div>
+                                <ul class="product-list grid5"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product13.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product14.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product15.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product16.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product17.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product18.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product19.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product20.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product21.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product22.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //.product-list -->
+                            </div>
+                            <div>
+                                <ul class="product-list grid5"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product13.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product14.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product15.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product16.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product17.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product18.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product19.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product20.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product21.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product22.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                                <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //.product-list -->
+                            </div>
+                        </div>
+                        <!-- //.box-slide-view -->
+                    </div>
+                </div>
+                <!-- //.section -->
+                
+                <div class="section">
+                    <div class="section-top type3">
+                        <h2 class="tit-h2">베스트</h2>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button>
+                        </div>
+                    </div>
+                    <div class="section-box">
+                        <div class="box-tab-view">
+                            <ul class="tab-list type1">
+                                <li class="on"><a href="">가전/디지털</a></li>
+                                <li><a href="">스포츠/레저/자동차</a></li>
+                                <li><a href="">화장품/이미용</a></li>
+                                <li><a href="">패션잡화의류</a></li>
+                                <li><a href="">가구/침구</a></li>
+                                <li><a href="">헬스/건강</a></li>
+                                <li><a href="">주방/생활</a></li>
+                                <li><a href="">신선/건강식품</a></li>
+                                <li><a href="">유아동</a></li>
+                            </ul>
+                            <div class="tab-cont on"><!-- 2020-05-06 김세정: 활성화 된 박스에 .on -->
+                                <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product23.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product24.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product25.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product26.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product27.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product28.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product29.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product30.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //.product-list -->
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont"><!-- 2020-05-06 김세정: 각 탭에 대응되는 박스 추가 -->
+                                스포츠/레저/자동차
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                화장품/이미용
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                패션잡화의류
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                가구/침구
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                헬스/건강
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                주방/생활
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                신선/건강식품
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                유아동
+                            </div>
+                            <!-- //.tab-cont -->
+                        </div>
+                        <!-- //.box-slide-view -->
+                    </div>
+                </div>
+                <!-- //.section -->
+                
+                <div class="section">
+                    <div class="section-top type3">
+                        <h2 class="tit-h2">베스트2</h2>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button>
+                        </div>
+                    </div>
+                    <div class="section-box">
+                        <div class="box-tab-view">
+                            <ul class="tab-list type1">
+                                <li class="on"><a href="">가전/디지털</a></li>
+                                <li><a href="">스포츠/레저/자동차</a></li>
+                                <li><a href="">화장품/이미용</a></li>
+                                <li><a href="">패션잡화의류</a></li>
+                                <li><a href="">가구/침구</a></li>
+                                <li><a href="">헬스/건강</a></li>
+                                <li><a href="">주방/생활</a></li>
+                                <li><a href="">신선/건강식품</a></li>
+                                <li><a href="">유아동</a></li>
+                            </ul>
+                            <div class="tab-cont on">
+                                <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product23.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product24.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product25.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product26.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product27.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product28.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product29.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                            <span class="img"><img src="/pc/img/dummy/thum-main-product30.jpg" alt=""></span>
+                                            <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                            <span class="info">
+                                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- //.product-list -->
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont"><!-- 2020-05-06 김세정: 각 탭에 대응되는 박스 추가 -->
+                                스포츠/레저/자동차
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                화장품/이미용
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                패션잡화의류
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                가구/침구
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                헬스/건강
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                주방/생활
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                신선/건강식품
+                            </div>
+                            <!-- //.tab-cont -->
+                            <div class="tab-cont">
+                                유아동
+                            </div>
+                            <!-- //.tab-cont -->
+                        </div>
+                        <!-- //.box-slide-view -->
+                    </div>
+                </div>
+                <!-- //.section -->
+
+                <div class="section">
+                    <div class="section-top type2">
+                        <h2 class="tit-h2">MD's Pick 추천상품</h2>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button><!-- 2020-04-24 김세정: class 수정 -->
+                        </div>
+                    </div>
+                    <div class="section-box">
+                        <div class="product-banner">
+                            <ul class="banner-list">
+                                <li><a href=""><img src="/pc/img/dummy/img-main-banner1.jpg" alt="TANDY 크라운 다이아몬드 시계: 리얼 다이아몬드 인덱스"></a></li>
+                                <li><a href=""><img src="/pc/img/dummy/img-main-banner2.jpg" alt="Britz Hi-Fi 2.1채널 블루투스 위성 스피커: 압도적인 사운드"></a></li>
+                                <li><a href=""><img src="/pc/img/dummy/img-main-banner3.jpg" alt="BOTANICSENS 피부로 느껴지는 효과: 피부를 빛내는 향기"></a></li>
+                            </ul>
+                            <div class="banner-full">
+                                <a href=""><img src="/pc/img/dummy/img-main-banner4.jpg" alt="2020 SPRING / SUMMER: IINES 브리티시 감성 버킷백"></a>
+                            </div>
+                        </div>
+                        <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product31.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product32.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product33.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product34.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- //.product-list -->
+                    </div>
+                </div>
+                <!-- //.section -->
+
+                <div class="section">
+                    <div class="section-top type2">
+                        <h2 class="tit-h2">지금 주목! 가전아이템</h2>
+                        <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button><!-- 2020-04-24 김세정: class 수정 -->
+                        </div>
+                    </div>
+                    <div class="section-box">
+                        <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                            <li class="special">
+                                <a href=""><!-- 2020-04-24 김세정: a태그 추가 -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product35.jpg" alt=""></span>
+                                    <span class="tit">[LG전자] 65인치 UHD TV 65UK6300<br>(리퍼상품/스탠드형)</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product36.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product37.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product38.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product39.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product40.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                    <span class="img"><img src="/pc/img/dummy/thum-main-product41.jpg" alt=""></span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- //.product-list -->
+                    </div>
+                </div>
+                <!-- //.section -->
+
+                <div class="section bg-yellow">
+                    <div class="section-top type2">
+                        <h2 class="tit-h2">브랜드 기획전</h2>
+                        <!-- <div class="box-right">
+                            <button class="btn-more"><span class="blind">더보기</span></button>
+                        </div> -->
+                    </div>
+                    <div class="section-box">
+                        <div class="product-banner">
+                            <ul class="banner-list">
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <img src="/pc/img/dummy/img-main-banner5.jpg" alt="">
+                                        <span class="tit">육아는 아이템빨</span>
+                                        <span class="txt">경험해보지 못한 육아템의 신세계</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <img src="/pc/img/dummy/img-main-banner6.jpg" alt="">
+                                        <span class="tit">텀플러&amp;물병</span>
+                                        <span class="txt">텀블러 사용하고 건강한 지구 만들기</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""><!-- 2020-04-24 김세정: a태그 영역 변경(기획 요청) -->
+                                        <img src="/pc/img/dummy/img-main-banner7.jpg" alt="">
+                                        <span class="tit">BESPOKE</span>
+                                        <span class="txt">가구를 맞추듯 가전을 맞추다</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.section -->
+                
+            </div>
+            <!-- //#content -->
+        </div>
+        <!-- //#container -->
+        <div id="footer">
+            <!--- /include/footer.html -->
+        </div>
+        <div id="qnb">
+            <!--- /include/qnb.html -->
+        </div>
+    </div>
+    <!-- //#wrap -->
+    
+    <!-- 05.22 추가 : 로딩 이미지 -->
+    <div id="loading">
+        <div class="inner">
+        	<div class="loadingio-spinner">
+        	    <div class="ldio">
+        	        <div></div>
+        	        <div></div>
+        	        <div></div>
+        	    </div>
+        	</div>
+        </div>
+    </div>
+    <!--// 로딩 이미지 -->
+</body>
+</html>

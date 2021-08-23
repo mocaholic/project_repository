@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="../../css/theme/theme1.css">
+    <link rel="stylesheet" href="../../css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="../../css/slick.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/selectric.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="content">
+                    <div class="content-hd tc">
+                        <h3 class="tit">가전/디지털</h3>
+                    </div>
+                    <div class="tbl-search column3"><!-- .column3 기본 보여지는 .td-list의 열이 3줄인 타입 -->
+                        <table>
+                            <colgroup>
+                                <col width="180px">
+                                <col width="*">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        카테고리
+                                        <button class="btn-toggle"><span class="blind">열기/닫기</span></button><!-- [C] .td-list가 3개 이하일 경우 .hide 추가 -->
+                                    </th>
+                                    <td>
+                                        <div class="td-box links category"><!-- 05.20 class 추가 : 카테고리 항목에만 적용 -->
+                                            <ul class="td-list">
+                                                <li class="on"><a href="">TV</a></li>
+                                                <li><a href="">모바일기기</a></li>
+                                                <li><a href="">계절가전</a></li>
+                                                <li><a href="">영상/음행 가전</a></li>
+                                                <li><a href="">생활/소형가전</a></li>
+                                            </ul>
+                                            <ul class="td-list">
+                                                <li><a href="">주방/소형가전</a></li>
+                                                <li><a href="">컴퓨터/노트북/주변기기</a></li>
+                                                <li><a href="">냉장고/김치냉장고/냉동고</a></li>
+                                                <li><a href="">세탁기/건조기/의류관리</a></li>
+                                                <li><a href="">카메라/캠코더</a></li>
+                                            </ul>
+                                            <ul class="td-list">
+                                                <li><a href="">디지털 영상/학습/게임</a></li>
+                                                <li><a href="">자동차기기</a></li>
+                                                <li><a href="">핸드폰/스마트기기</a></li>
+                                                <li><a href="">사무기기/악세서리</a></li>
+                                                <li><a href="">이미용 가정</a></li>
+                                            </ul>
+                                            <ul class="td-list">
+                                                <li><a href="">디지털 영상/학습/게임</a></li>
+                                                <li><a href="">자동차기기</a></li>
+                                                <li><a href="">핸드폰/스마트기기</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- 05.20 항목 추가 -->
+                                <tr>
+                                    <th>
+                                        분류
+                                        <button class="btn-toggle"><span class="blind">열기/닫기</span></button><!-- [C] .td-list가 3개 이하일 경우 .hide 추가 -->
+                                    </th>
+                                    <td>
+                                        <div class="td-box links">
+                                            <ul class="td-list">
+                                                <li><a href="">분류명1</a></li>
+                                                <li><a href="">분류명2</a></li>
+                                                <li><a href="">분류명3</a></li>
+                                                <li><a href="">분류명4</a></li>
+                                                <li><a href="">분류명5</a></li>
+                                            </ul>
+                                            <ul class="td-list">
+                                                <li><a href="">분류명6</a></li>
+                                                <li><a href="">분류명7</a></li>
+                                                <li><a href="">분류명8</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- // 05.20 항목 추가 -->
+                                <tr>
+                                    <th>
+                                        브랜드
+                                        <button class="btn-toggle"><span class="blind">열기/닫기</span></button><!-- [C] .td-list가 3개 이하일 경우 .hide 추가 -->
+                                    </th>
+                                    <td>
+                                        <div class="td-box checkbox">
+                                            <ul class="td-list">
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk1" checked>
+                                                        <label for="ex_chk1">LG<span class="num">(15)</span></label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk2">
+                                                        <label for="ex_chk2">기타 브랜드<span class="num">(1)</span></label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk2">
+                                                        <label for="ex_chk2">기타 브랜드<span class="num">(2)</span></label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk2">
+                                                        <label for="ex_chk2">기타 브랜드<span class="num">(3)</span></label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk2">
+                                                        <label for="ex_chk2">기타 브랜드<span class="num">(4)</span></label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            <ul class="td-list">
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk1" checked>
+                                                        <label for="ex_chk1">LG<span class="num">(15)</span></label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="checks">
+                                                        <input type="checkbox" id="ex_chk2">
+                                                        <label for="ex_chk2">기타 브랜드<span class="num">(1)</span></label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //.tbl-search -->
+
+                    <div class="section-hd">
+                        <h4 class="tit">BEST SELLER</h4><span class="txt">판매율과 고객 평가가 높은 상품</span>
+                    </div>
+                    <!-- //.section-hd -->
+                    <div class="product-best">
+                        <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                            <li>
+                                <a href="#">
+                                    <span class="rank"><em class="badge-best">BEST<span class="num">1</span></em></span><!-- 2020-06-15 : class 중복 오류 수정 - class 변경 badge -> rank -->
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product1.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep on"><span class="blind">찜</span></button><!-- 05.22  class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="rank"><em class="badge-best">BEST<span class="num">2</span></em></span> <!-- 2020-06-15 : class 중복 오류 수정 - class 변경 badge -> rank -->
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product2.jpg" alt="">
+                                        <span class="layer"> 
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li> 
+                                <a href="#">
+                                    <span class="rank"><em class="badge-best">BEST<span class="num">3</span></em></span><!-- 2020-06-15 : class 중복 오류 수정 - class 변경 badge -> rank -->
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product3.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="rank"><em class="badge-best">BEST<span class="num">4</span></em></span>
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product4.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- //.product-list -->
+                    </div>
+                    <!-- //.product-best -->
+
+                    <div class="board-top sort"><!-- .sort 검색결과 -->
+                        <div class="info">
+                            <ul class="info-list">
+                                <li class="on"><a href="">판매인기순</a></li>
+                                <li><a href="">최근등록순</a></li>
+                                <li><a href="">낮은가격순</a></li>
+                                <li><a href="">높은가격순</a></li>
+                            </ul>
+                            <div class="right-box">
+                                <div class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                                    <span class="input-cell select-wrap">
+                                        <select name="" id="">
+                                            <option value="">20개씩 보기</option>
+                                            <option value="">40개씩 보기</option>
+                                            <option value="">60개씩 보기</option>
+                                            <option value="">100개씩 보기</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //.board-top -->
+
+                    <!-- 검색 결과 -->
+                    <div class="search-result type-thum"><!-- .type-thum: 썸네일 형태 / .type-list: 리스트 형태 -->
+                        <ul class="product-list grid4"><!-- .grid4 상품 4개씩 정렬, .grid5 상품 5개씩 정렬 -->
+                            <li>
+                                <a href="#">
+                                    <!-- 2020-06-24 삭제
+									<span class="badge">
+										<span class="blind">복지비상품</span>
+									</span>
+                                  	-->
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product5.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <!-- 2020-06-24 추가 : 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+									<span class="badge">
+										<span class="we-prd">복지비상품</span>
+									</span>
+									<!-- // 2020-06-24 추가 : 복지비상품 뱃지 -->
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product6.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product7.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product8.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product9.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product10.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product11.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product12.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product13.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product14.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product15.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product16.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product17.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product18.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product19.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="img">
+                                        <img src="/pc/img/dummy/thum-category-product20.jpg" alt="">
+                                        <span class="layer">
+                                            <!-- 05.14 수정 : 버튼 수정  -->
+                                            <button class="btn-nopen" onclick="window.open('#')"><span class="blind">새창</span></button><!-- 05.18 버튼 클래스 수정 -->
+                                            <button class="btn-keep"><span class="blind">찜</span></button><!-- 05.22 class/text 변경 -->
+                                            <!-- // 05.14 수정 : 버튼 수정  -->
+                                        </span>
+                                    </span>
+                                    <span class="tit">[알레르망] 20SS 신상 에드윈 홑겹이불커버S 3종세트</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- //.product-list -->
+                    </div>
+                    <!-- //검색 결과 -->
+
+                    <!-- 페이징 -->
+                    <div class="paging-wrap">
+                        <ul class="paging">
+                            <li><a href="#" class="arw-dir first">처음페이지</a></li>
+                            <li><a href="#" class="arw-dir prev">이전페이지</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#" class="arw-dir next">다음페이지</a></li>
+                            <li><a href="#" class="arw-dir last">마지막페이지</a></li>
+                        </ul>
+                    </div>
+                    <!--// 페이징 -->
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        <div id="qnb">
+            <!--- /include/qnb.html -->
+        </div>
+
+        <div class="popup-wrap"><!-- .popup-wrap안에서 여러개의 .popup-layer 띄움 -->
+            <div class="popup-layer">
+                <div class="popup-content">
+                    팝업 콘텐츠1
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+
+            <div class="popup-layer">
+                <div class="popup-content">
+                    팝업 콘텐츠2
+                </div>
+                <!-- //.popup-content -->
+                <button class="btn-close"><span class="blind">닫기</span></button>
+            </div>
+            <!-- //.popup-layer -->
+        </div>
+        <!-- //.popup-wrap -->
+
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

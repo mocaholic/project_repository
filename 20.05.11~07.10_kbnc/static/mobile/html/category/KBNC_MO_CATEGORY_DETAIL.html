@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+	<meta name="autocomplete" content="off">
+    <link rel="shortcut icon" href="">
+    <title>통합복지몰</title>
+
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/mobile/css/common.css">
+    <link rel="stylesheet" href="/mobile/css/layout.css">
+    <link rel="stylesheet" href="/mobile/css/contents.css"><!-- 메인: main.css / 서브: contents.css -->
+
+     <!-- Publish Theme : CSS-->
+     <link rel="stylesheet" href="/mobile/css/theme/theme1.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme2.css"> -->
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme3.css"> -->
+     <link rel="stylesheet" href="/mobile/css/company/ibk.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/company/lg.css"> -->
+     <!--<link rel="stylesheet" href="/mobile/css/company/kb.css"> -->
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/mobile/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-selectify.js"></script>
+
+     <!-- Publish Common : JS-->
+     <script type="text/javascript" src="/mobile/js/action.js"></script>
+     <script type="text/javascript" src="/mobile/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+
+     <script type="text/javascript">
+        $(function(){
+            //팝업 호출 함수 ACTIONUI.layerPop.fn.open('팝업화면ID', callback1, callback2, callback3);
+            //팝업 닫기 함수 ACTIONUI.layerPop.fn.close('팝업화면ID', callback1);
+
+            //초기 하단버튼 레이어옵션창 제어
+            $('.action-btn button').on('click', function(e){
+                e.preventDefault();
+                $('.action-bar .slide-content').addClass('active');
+                $('.action-btn').delay(1000).hide();
+            });
+
+            //레이어옵션창 닫기버튼
+            $('.btn-action-close').on('click', function(e){
+                $('.action-bar .slide-content').removeClass('active');
+                $('.action-btn').show();
+            });
+
+            // select del bind
+            $(".action-bar .combobox").find(".btn-del").off("click").on("click", function(){
+                $(this).parent().parent().parent('.combobox').remove();
+            });
+
+            // 수량 minus event bind
+            $(".action-bar .combobox:last").find(".btn-quan-minus").off("click").on("click", function(){
+            	if($(this).parent().find(":input[name='orderQty']").val() == "1") {
+            		return false;
+            	} else {
+            		$(this).parent().find(":input[name='orderQty']").val(Number($(this).parent().find(":input[name='orderQty']").val())-1);
+            		
+            		return false;
+            	}
+            });
+
+         	// 수량 plus event bind
+            $(".action-bar .combobox:last").find(".btn-quan-plus").off("click").on("click", function(){
+        		$(this).parent().find(":input[name='orderQty']").val(Number($(this).parent().find(":input[name='orderQty']").val())+1);
+        		
+        		return false;
+            });
+
+            //문의하기 팝업 호출
+            $('.btn-contact').on('click', function(e){
+                e.preventDefault();
+                ACTIONUI.layerPop.fn.open('CATEGORY_DETAIL_01_P');
+            });
+        });
+     </script>
+</head>
+<body>
+    <div id="wrap" class="sub-area">
+        <!-- #wrap class 구분  main페이지: main-area | 인트로페이지: intro-area |  sub페이지 공통: sub-area | login관련 페이지: login-area -->
+        <!-- header -->
+        <header id="header" class="sub-hd">
+           <div class="inner">
+                <h1 class="hd-tit">상품상세정보</h1>
+                <button type="button" class="btn-back"><span class="blind">이전으로</span></button>
+                <span class="right-btn">
+                    <a href="/mobile/html/KBNC_MO_MAIN_01.html" class="btn-home"><span class="blind">홈</span></a>
+                    <a href="/mobile/html/search/KBNC_MO_SEARCH.html" type="button" class="btn-search"><span class="blind">검색</span></a>
+                </span>
+           </div>
+        </header>
+        <!--// header -->
+
+        <!-- container -->
+        <div id="container">
+            <div id="content">
+                <div class="inner-cont">
+                    <div class="detail-top">
+                        <div id="product-detail" class="detail-img">
+                            <span class="badge"><span class="blind">복지비상품</span></span>
+                            <ul class="swiper-wrapper">
+                                <li class="product-item"><img src="/mobile/img/dummy/img-detail01.jpg" class="swiper-lazy" alt="" /></li>
+                                <li class="product-item"><img src="/mobile/img/dummy/img-detail01.jpg" class="swiper-lazy" alt="" /></li>
+                                <li class="product-item"><img src="/mobile/img/dummy/img-detail01.jpg" class="swiper-lazy" alt="" /></li>
+                            </ul>
+                            
+                            <div class="product-paging">
+                                <div class="inner">
+                                    <span class="paging">
+                                        <span class="product-current">1</span>
+                                        <span>/</span>
+                                        <span class="product-total">1</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+							$(function () {
+								// 상세이미지슬라이드
+								if($('.swiper-wrapper .product-item').length > 1){
+									var detailImg = new Swiper('#product-detail', {
+										slidesPerView: 1,
+										slideClass: 'product-item',
+										spaceBetween: 0,
+										loop: true,
+										pagination: '.product-paging .paging',
+										paginationCurrentClass: 'product-current',
+										paginationTotalClass: 'product-total',
+										paginationType: 'fraction',
+										setWrapperSize: true,
+									});
+								} 
+							});
+                        </script>
+                        <div class="product-info01">
+                            <span class="tit">[삼성전자] 양문형 냉장고 3도어S84T5061 M9 (846ℓ/리얼메탈)</span>
+                            <span class="info">
+                                <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                            </span>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="section"><!-- 2020-06-04 수정 div태그 추가  --->
+                        <div class="detail-mid">
+                            <div class="product-info02">
+                                <dl>
+                                    <dt>상품코드</dt>
+                                    <dd>123456789000</dd>
+                                </dl>
+                                <dl>
+                                    <dt>배송비</dt>
+                                    <dd>2,500원<br />
+                                        (결제금액 30,000원 이상 무료)</dd>
+                                </dl>
+                                <dl>
+                                    <dt>결제가능수단</dt>
+                                    <dd>
+                                        <ul>
+                                            <li>무통장</li>
+                                            <li>카드</li>
+                                            <li>포인트</li>
+                                            <li>급여</li>
+                                            <li> 계좌이체</li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>추가설명</dt>
+                                    <dd>추가설명 있을경우 노출</dd>
+                                </dl>
+    
+                                <!-- 품절된 상품 노출 -->
+                                <span class="sold-out">품절된 상품입니다.</span>
+                            </div>
+                        </div>
+                    </div><!--// 2020-06-04 수정 div태그 추가  --->
+
+                    <div class="detail-bottom">
+                        <div class="box-tab-view">
+                            <ul class="tab-list basic-tab1">
+                                <li class="on"><a nohref>상세정보</a></li>
+                                <li><a nohref>구매정보</a></li>
+                                <li><a nohref>Q&A(10)</a></li>
+                            </ul>
+                            <div class="section-box">
+                                <!-- 상세정보 -->
+                                <div class="tab-cont on">
+                                    <div class="detail-info">
+                                        <div class="info-img">
+                                            <img src="/mobile/img/dummy/img-product-detail.jpg" alt="">
+                                        </div>
+                                        <div class="info-necessary">
+                                            <p class="tit">
+                                                <span class="ico-caution3"><em class="blind">i</em></span>
+                                                구매하시기 전 꼭 확인하셔야 할 상품정보입니다.
+                                            </p>
+                                            <div class="tbl-basic-type2">
+                                                <table>
+                                                    <caption>구매 전 상품정보 확인사항</caption>
+                                                    <colgroup>
+                                                        <col width="115">
+                                                        <col width="*">
+                                                    </colgroup>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>품명 및 모델명</th>
+                                                            <td>75P8M</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>법에 의한 인증,허가 등의 사항</th>
+                                                            <td>상세페이지 참고</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>제조국 또는 원산지</th>
+                                                            <td>중국</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>제조자,수입품의 경우 수입자를 함께 표기	</th>
+                                                            <td>유이테크</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--// 상세정보 -->
+
+                                <!-- 구매정보 -->
+                                <div class="tab-cont">
+                                    <dl class="dl-type1">
+                                        <dt class="tit">배송정보</dt>
+                                        <dd>
+                                            <ul>
+                                               <li>배송지역 : 전국</li> 
+                                               <li>배송비 : 무료배송을 원칙으로 하고 있으나, 일부 유료로 배송 될 수 있습니다.</li> 
+                                               <li>배송기간 : 결제일로부터 3~7일(도서,산간지역은 4~8일),토요일 공휴일은 제외
+                                                일부 전자제품은 영업일 기준 10~20일 이상 소요 될 수 있습니다.<br />
+                                                일부 도서 산간 지역은 배송불가 또는 배송일이 추가 소요될 수 있으며 추가 배송비가 발생할 수 있습니다.
+                                                평균 배송일은 판매 상품의 평균적인 소요일로 실제 배송일과의 차이가 발생할 수 있습니다.</li> 
+                                            </ul>
+                                        </dd>
+                                        <dt class="tit">교환/반송 정보</dt>
+                                        <dd>
+                                            <ul class="num-list">
+                                                <li>1. 상품을 실제로 받으신 날로부터 7일 이내(포장을 개봉하여 사용했거나 또는 설치 완료[일부 설치 상품]가 되어 상품의 가치가 훼손된 경우에는 반품 및 교환이 불가합니다.)</li>
+                                                <li>2. 받으신 상품의 내용이 표시,광고 사항과 다른 경우, 상품을 수령하신 날로부터 3개월 이내</li>
+                                                <li>3. 전자상거래 등에서의 소비자 보호에 관한 법률에 규정되어 있는 소비자 청약철회 가능 범위에 해당되는 경우</li>
+                                                <li>4. 고객님의 단순한 변심에 의한 상품의 교환 및 반품을 요청하시는 경우에는, 택배 비용이 고객님 부담이니 이점 양해하여 주시기 바랍니다.
+                                                    <ul class="dot-list">
+                                                        <li>교환/반품비는 왕복배송비 입니다.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                        <dt class="tit">교환 및 반품이 불가능한 경우</dt>
+                                        <dd>
+                                            <ul class="num-list">
+                                                <li>1. 고객님의 책임으로 인한 상품 멸실 또는 상품이 훼손된 경우 </li>
+                                                <li>2. 고객님의 사용에 의해 상품 가치가 현저히 감소한 경우 (예:화장품,식품 등) </li>
+                                                <li>3. 시간이 경과되어 재판매가 곤란한 정도로 상품 등의 가치가 상실된 경우 (예:계절상품 등) </li>
+                                                <li>4. 복제가 가능한 상품 등의 포장을 훼손한 경우 (예:도서,DVD,CD등 복제 가능한 상품) </li>
+                                                <li>5. 전자제품의 경우 패키지 박스 개봉시 또는 테이프 개봉시에도 반품/교환 불가할 수 있습니다. </li>
+                                                <li>6. 기타,전자상거래 등에서의 소비자 보호에 관한 법률이 정하는 소비자 청약철회 제한에 해당되는 경우 
+                                                    <ul class="dot-list">
+                                                        <li>고객 변심에 의한 교환,반품인 경우 상품 반송에 드는 비용은 고객 부담입니다.</li>
+                                                        <li>전자상거래 등에서의 소비자 보호에 관한 법률에 의한 반품 규정이 상품공급업체가 지정한 반품 조건보다 우선합니다.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                        <dt class="tit">결제정보</dt>
+                                        <dd>
+                                            <ul class="dot-list">
+                                                <li>신용카드로만 결제가 가능합니다.</li>
+                                                <li>고액 결제의 경우,안전을 위해 확인 전화를 드립니다.</li>
+                                                <li>확인 과정에서 도난 카드의 사용이나 타인 명의의 주문 및 재판매를 위한 대량 주문 등 정상적인 주문이 아니라고 판단될 경우 임의로 주문을 보류 또는 취소할 수 있습니다.</li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <!--// 구매정보 -->
+
+                                <!-- Q&A -->
+                                <div class="tab-cont">
+                                    <div class="detail-qna">
+                                        <div class="qna-top">
+                                            <p>상품에 대해 궁금한 점을 물어보세요!</p>
+                                            <div class="basic-btn-box">
+                                                <button type="button" class="btn-basic5 btn-contact">문의하기</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- qna 리스트 -->
+                                        <ul class="ui-accordion">
+                                            <li class="lock"><!-- [C] 내용 비공개시 .lock 추가 -->
+                                                <div class="ac-head">
+                                                    <a href="#">
+                                                        <span class="ac-info">
+                                                            <span class="state">답변대기</span>
+                                                            <span class="subject"><span class="txt">비밀글입니다.</span></span>
+                                                            <span class="ac-right">
+                                                                <span class="user">Jun*******</span>
+                                                                <span class="date">2020.04.13</span>
+                                                            </span>
+                                                        </span>
+                                                        <!-- <span class="ac-desc">
+                                                            정말 좋은 제품입니다.<br>정말 좋은 제품입니다. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요.
+                                                        </span> -->
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="lock">
+                                                <div class="ac-head">
+                                                    <a href="#">
+                                                        <span class="ac-info">
+                                                            <span class="state complete">답변완료</span>
+                                                            <span class="subject"><span class="txt">비밀글입니다.</span></span>
+                                                             <!-- <span class="ac-desc">
+                                                                정말 좋은 제품입니다.<br>정말 좋은 제품입니다. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요.
+                                                            </span> -->
+                                                            <span class="ac-right">
+                                                                <span class="user">Jun*******</span>
+                                                                <span class="date">2020.04.13</span>
+                                                            </span>
+                                                        </span>
+                                                       
+                                                    </a>
+                                                </div>
+                                                <!-- <div class="ac-body">
+                                                    <span class="ac-desc"><em class="sign">A.</em>감사합니다. 고객님. 제품이 품절된 상태입니다. 새로운 상품으로 찾아뵙도록 하겠습니다.</span>
+                                                    <span class="ac-right">
+                                                        <span class="date">2020.04.13</span>
+                                                    </span>
+                                                </div> -->
+                                            </li>
+                                            <li>
+                                                <div class="ac-head">
+                                                    <a href="#">
+                                                        <span class="ac-info">
+                                                            <span class="state">답변대기</span>
+                                                            <span class="subject"><span class="txt">정말 좋은 제품입니다. 재구매 가능할까요?</span></span>
+                                                            <span class="ac-desc">
+                                                                정말 좋은 제품입니다.<br>정말 좋은 제품입니다. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요.
+                                                            </span>
+                                                            <span class="ac-right">
+                                                                <span class="user">Jun*******</span> 
+                                                                <span class="date">2020.04.13</span>
+                                                            </span>
+                                                        </span>
+                                                        
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="ac-head">
+                                                    <a href="#">
+                                                        <span class="ac-info">
+                                                            <span class="state complete">답변완료</span>
+                                                            <span class="subject"><span class="txt">정말 좋은 제품입니다. 재구매 가능할까요?</span></span>
+                                                            <span class="ac-desc">
+                                                                정말 좋은 제품입니다.<br>정말 좋은 제품입니다. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요. 재구매하고 싶어요.
+                                                            </span>
+                                                            <span class="ac-right">
+                                                                <span class="user">Jun*******</span>
+                                                                <span class="date">2020.04.13</span>
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="ac-body">
+                                                    <span class="ac-desc">감사합니다. 고객님. 제품이 품절된 상태입니다. 새로운 상품으로 찾아뵙도록 하겠습니다.</span>
+                                                    <!-- <span class="ac-right">
+                                                        <span class="date">2020.04.13</span>
+                                                    </span> -->
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!-- // qna 리스트 -->
+
+                                        <div class="box-bottom">
+                                            <button class="btn-more-view"><span class="txt">더보기</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--// 구매정보 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// container -->
+
+        <!-- 하단고정버튼 (레이어팝업 열어주는 기능만 제어하고 사라짐)-->
+        <div class="bottom-btn-box action-btn action-btn">
+            <ul>
+                <li> <button type="button" class="btn-bottom1">장바구니</button></li>
+                <li> <button type="button" class="btn-bottom2">바로구매</button></li>
+            </ul>
+        </div>
+        <!--// 하단고정버튼 -->
+
+        <div class="action-bar product-option-box">
+            <div class="slide-content">
+                <button type="button" class="btn-action-close"><span class="blind">화면 닫기</span></button>
+
+                <div class="slide-inner">
+                    <div class="sel-option">
+                        <select class="sel-top-option">
+                            <option value="선택해주세요.">상품을 선택해주세요.</option>
+                            <option value="상품선택1">상품선택1</option>
+                            <option value="상품선택2">상품선택2</option>
+                            <option value="상품선택3">상품선택3</option>
+                            <option value="상품선택4">상품선택4</option>
+                            <option value="상품선택5">상품선택5</option>
+                        </select>
+                    </div>
+
+                   
+                    <div class="sel-option"> <!-- [C] 활성화시 .on 추가 -->
+                        <select class="sel-top-option">
+                            <option value="선택해주세요.">옵션을 선택해주세요.</option>
+                            <option value="TYPE1">TYPE1</option>
+                            <option value="TYPE2">TYPE2</option>
+                            <option value="TYPE3">TYPE3</option>
+                            <option value="TYPE4">TYPE4</option>
+                            <option value="TYPE5">TYPE5</option>
+                        </select>
+                    </div>
+                    <!-- // 05.13 추가 : 다중 옵션 시  -->
+
+                    <div class="combobox">
+                        <div class="combobox-value"><span class="txt">[삼성전자] 양문형 냉장고 3도어 RS84T5061M9 (846ℓ리얼메탈)</span></div>
+                        <div class="combobox-quan">
+                            <div class="quan-inp">
+                                <input type="text" name="orderQty" value="1" readonly>
+                                <button class="btn-quan-minus"><span class="blind">수량감소</span></button>
+                                <button class="btn-quan-plus"><span class="blind">수량증가</span></button>
+                            </div>
+                            <div class="box-right">
+								<span class="txt-price"><span class="num">1,630,000</span><span class="unit">원</span></span>
+								<!-- 옵션 없는 경우엔 비활성화 -->
+								<button class="btn-del"><span class="blind">옵션 콤보박스 삭제</span></button>
+							</div>
+                        </div>
+                    </div>
+   
+                    <div class="combobox">
+                        <div class="combobox-value"><span class="txt">TYPE1</span></div>
+                        <div class="combobox-quan">
+                            <div class="quan-inp">
+                                <input type="text" value="1" readonly>
+                                <button class="btn-quan-minus"><span class="blind">수량감소</span></button>
+                                <button class="btn-quan-plus"><span class="blind">수량증가</span></button>
+                            </div>
+                            <div class="box-right">
+								<span class="txt-price"><span class="num">0</span><span class="unit">원</span></span>
+								<!-- 옵션 없는 경우엔 비활성화 -->
+								<button class="btn-del"><span class="blind">옵션 콤보박스 삭제</span></button>
+							</div>
+                        </div>
+                    </div>
+
+                    <div class="options-total">
+                        <span class="tit">총 합계금액</span>
+                        <span class="txt">
+                            <span class="txt-price"><span class="num">0</span><span class="unit">원</span></span>
+                        </span>
+                    </div>
+                    <!-- //.options-total -->
+                </div>
+            </div>
+            <!-- 구매버튼 -->
+            <div class="bottom-btn-box">
+                <ul>
+                    <li> <button type="button" class="btn-bottom1  btn-basket">장바구니</button></li>
+                    <li> <button type="button" class="btn-bottom2">바로구매</button></li>
+                </ul>
+            </div>
+            <!--// 구매버튼 -->
+        </div>
+
+		
+        <!-- footer -->
+        <footer id="footer" class="footer">
+            <!--- /include/footer.html -->
+        </footer>
+        <!--// footer -->
+
+        <!-- 레이어팝업 -->
+        <div class="popup-wrap">
+            <!-- 문의하기 -->
+            <div id="CATEGORY_DETAIL_01_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h2 class="tit">문의하기</h2>
+                        <button type="button" class="btn-close"><span class="blind">닫기</span></button>
+                    </div>
+                    <div class="section-box">
+                        <div class="pop-qna-cont">
+                            <div class="product-info">
+                                <span class="name">[LG전자] 65인치 UHD TV 65UK6300 (리퍼 제품/스탠드형)[LG전자] 65인치 UHD TV 65UK6300 (리퍼 제품/스탠드형)[LG전자] 65인치 UHD TV 65UK6300 (리퍼 제품/스탠드형)</span>
+                            </div>
+                            <div class="tbl-write">
+                                <table>
+                                    <caption>문의하기 게시판 쓰기</caption>
+                                    <colgroup>
+                                        <col width="" />
+                                    </colgroup>
+                                    <tbody>
+                                        <!-- 2020-05-25 추가 -->
+                                        <tr>
+                                            <th>문의유형</th>
+                                            <td>
+                                                <span class="input-box">
+                                                    <select>
+                                                        <option>문의유형을 선택해주세요</option>
+                                                        <option>회원문의</option>
+                                                        <option>이벤트/혜택문의</option>
+                                                        <option>기타문의</option>
+                                                    </select> 
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- // 2020-05-25 추가 -->
+                                        <tr>
+                                            <th>제목</th>
+                                            <td>
+                                                <span class="input-box">
+                                                    <span class="input-row">
+                                                        <span class="input-cell">
+                                                            <input type="text" id="inputOnly1" placeholder="제목을 입력해주세요." value="">
+                                                            <button class="cancel"><span class="blind">삭제</span></button>
+                                                        </span>
+                                                    </span>
+                                                    <!-- <span class="guide-txt">가이드 메시지 출력 영역 입니다.</span> -->
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>문의내용</th>
+                                            <td>
+                                                <div class="text-area-wrap">
+                                                    <textarea name="" id="" placeholder="문의내용을 입력해주세요" maxlength="2000"></textarea>
+                                                    <span class="byte"><span class="byte-current">0</span>/<span class="byte-total">2,000</span></span><!-- .byte-current에 입력되어 있는 글자 수를 포함하여 나타냅니다. -->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="input-box chk-wrap"><!-- 영역 크기에 따라 width 조절 -->
+                                                    <span class="checks">
+                                                        <input type="radio" id="ex_rd1" name="ex_rdsA">
+                                                        <label for="ex_rd1">공개</label>
+                                                    </span>
+                                                    <span class="checks">
+                                                        <input type="radio" id="ex_rd2" name="ex_rdsA" checked>
+                                                        <label for="ex_rd2">비공개</label>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="basic-btn-box">
+                                <button type="button" class="btn-basic4">취소</button>
+                                <button type="button" class="btn-basic5">등록</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //문의하기 -->
+        </div>
+        <!--// 레이어팝업 -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="../../css/theme/theme1.css">
+    <link rel="stylesheet" href="../../css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="../../css/slick.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/selectric.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            /*setTimeout(function(){
+                $('#aside .left-menu > li:eq(0) > ul > li:eq(0) > a').addClass('on');
+            }, 100);*/
+            
+			// 2020-06-03 추가 
+			ACTIONUI.datePicker.fn('.chk-calendar input'); // 2020-06-12 수정
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">                    
+                    
+                    <div class="content-hd">
+                        <h3 class="tit">주문/배송 조회</h3>
+                    </div>
+                    
+                    <!-- 주문/배송조회 -->    
+                    <div class="inquiry-list-box">
+                        <ul class="inquiry-step">
+                            <li>
+                                <em>입금대기</em>
+                                <a href="#" class="num">5</a>
+                            </li>
+                            <li>
+                                <em>결제완료</em>
+                                <a href="#" class="num">10</a>
+                            </li>
+                            <li>
+                                <em>배송준비중</em>
+                                <a href="#" class="num">1</a>
+                            </li>
+                            <li>
+                                <em>배송중</em>
+                                <a href="#" class="num">2</a>
+                            </li>
+                            <li>
+                                <em>배송완료</em>
+                                <a href="#" class="num">10</a>
+                            </li>
+                        </ul>
+                    </div>
+                        <!-- // .inquiry-list-box -->
+                    <!-- // 주문/배송조회 -->                    
+                    
+                    <!-- 검색 영역-->
+                    <div class="top-search-area">
+                    	<div class="input-box">
+                    		<div class="w310">
+								<span class="tit">기간조회</span>
+								<ul class="chk-month">
+									<li>
+										<a href="#">1개월</a>
+									</li>
+									<li class="on">
+										<a href="#">3개월</a>
+									</li>
+									<li>
+										<a href="#">6개월</a>
+									</li>
+								</ul>
+							</div>
+							<!-- 2020-06-03 마크업 수정 -->
+							<div class="w376 pl30">
+								<span class="tit">직접입력조회</span>
+								<div class="chk-calendar">
+									<input type="text" class="" value="2020-04-19" title="시작기간 조회" readonly>
+									<span class="ml3 mr3">~</span>
+									<input type="text" class="" value="2020-05-18" title="종료기간 조회" readonly>
+								</div>
+							</div>
+							<!-- // 2020-06-03 마크업 수정 -->
+							<div class="btn-area">
+								<button type="button" class="btn-basic1">조회</button>
+							</div>
+						</div>
+						<div class="input-box">
+							<div class="">
+								<span class="tit">상품명조회</span>
+								<span class="input-cell">
+									<input type="text" class="w360" title="상품명/주문번호 입력" placeholder="상품명/주문번호 입력">
+									<button class="cancel"><span class="blind">삭제</span></button>
+								</span>
+							</div>
+							<div class="btn-area">
+								<button type="button" class="btn-basic1">조회</button>
+							</div>
+						</div>
+					</div>
+                   		<!-- // .top-search-area -->
+                    <!-- // 검색 영역-->
+                    
+                    
+                    <!-- 주문내역 -->
+                    <div class="desc_top mt50">
+                        <h4 class="tit">총 0개<span class="ins">2019.04.19 ~ 2020.05.18</span></h4>
+                        <div class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+							<span class="input-cell select-wrap">
+								<select name="" id="">
+									<option value="">전체</option>
+									<option value="">포인트유형1</option>
+									<option value="">포인트유형2</option>
+								</select>
+							</span>
+						</div>
+                    </div>
+                        <!-- // .desc_top -->
+                    <div class="cart-list">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="150px">
+                                <col width="">
+                                <col width="157px">
+                                <col width="165px">
+                            </colgroup>
+                            <thead>
+                                <tr> 
+                                    <th scope="col">주문일자/주문번호</th>
+                                    <th scope="col">상품정보</th>
+                                    <th scope="col">주문금액</th>
+                                    <th scope="col">진행상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+									<td colspan="4">
+										<p class="no-prd-msg order">주문하신 상품이 없습니다.</p>
+									</td>
+								</tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <!-- // .cart-list -->
+                    <!-- // 주문내역 -->
+                                                                
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

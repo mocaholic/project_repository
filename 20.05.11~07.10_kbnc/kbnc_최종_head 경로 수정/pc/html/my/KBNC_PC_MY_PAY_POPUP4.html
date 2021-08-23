@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/layout.css">
+    <link rel="stylesheet" href="../../css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="../../css/theme/theme1.css">
+    <link rel="stylesheet" href="../../css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="../../css/slick.css">
+    <link rel="stylesheet" href="../../css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/selectric.css">
+    <link rel="stylesheet" href="../../css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+</head>
+<body>
+    <div id="SHIPPING_ADDR_P">
+        <div class="popup-content">
+        	<h1>배송지 등록</h1>
+        	<div class="cont-box input">
+        		<div class="addr-reg">
+        			<dl>
+						<dt>배송지명</dt>
+						<dd>
+							<span class="input-box w310">
+								<span class="input-row">
+									<span class="input-cell">
+										<input type="text" id="" maxlength="40" value="" placeholder="배송지명을 입력해주세요.">
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+								</span>
+							</span>
+							<span class="error-txt">배송지명을 입력해주세요.</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>받는 분</dt>
+						<dd>
+							<span class="input-box w310">
+								<span class="input-row">
+									<span class="input-cell">
+										<input type="text" id="" maxlength="40" value="" placeholder="받는 분을 입력해주세요.">
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+								</span>
+							</span>
+							<span class="error-txt">받는 분을 입력해주세요.</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>휴대폰 번호</dt>
+						<dd>
+							<div class="input-box chk-wrap phone w310"><!-- 영역 크기에 따라 width 조절 -->
+								<span class="input-row">
+									<span class="input-cell">
+										<select name="" id="">
+											<option value="010">010</option>
+											<option value="012">012</option>
+											<option value="013">013</option>
+										</select>
+									</span>
+									<span class="input-cell">
+										<span class="hyp">-</span>
+									</span>
+									<span class="input-cell">
+										<input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 05.22 class 추가 -->
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+									<span class="input-cell">
+										<span class="hyp">-</span>
+									</span>
+									<span class="input-cell">
+										<input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number"><!-- 05.22 class 추가 -->
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+								</span>
+							</div>
+							<span class="error-txt">휴대폰 번호를 입력해주세요.</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>주소</dt>
+						<dd>
+							<span class="input-box chk-wrap addr"><!-- 영역 크기에 따라 width 조절 -->
+								<span class="input-row">
+									<span class="input-cell">
+										<input type="text" id="formType1" title="우편번호" value="08501" class="number" readonly><!-- 05.22 class 추가 -->
+									</span>
+									<button class="btn-basic2 btn-zipcode">우편번호찾기</button>
+								</span>
+								<span class="input-row">
+									<span class="input-cell">
+										<input type="text" title="상세 주소" value="서울특별시 금천구 가산디지털2로 184(가산동, 별산디지털밸리2차) " readonly>
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+								</span>
+								<span class="input-row">
+									<span class="input-cell">
+										<input type="text" placeholder="상세주소를 입력해주세요." title="상세 주소" value="1002호">
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+								</span>
+							</span>
+							<span class="error-txt">주소를 입력해주세요</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>배송 메시지 (선택)</dt>
+						<dd>
+							<span class="input-box chk-wrap message">
+								<span class="input-row">
+									<span class="input-cell">
+										<select name="" id="">
+											<option value="배송메시지를 선택해주세요.">배송메시지를 선택해주세요.</option>
+											<option value="부재시 경비실에 맡겨주세요.">부재시 경비실에 맡겨주세요.</option>
+											<option value="부재시 문앞에 놓아주세요.">부재시 문앞에 놓아주세요.</option>
+											<option value="파손의 위험이 있으니, 배송시 조심해주세요.">파손의 위험이 있으니, 배송시 조심해주세요.</option>
+											<option value="배송전에 연락주세요.">배송전에 연락주세요.</option>
+											<option value="택배함에 넣어주세요.">택배함에 넣어주세요.</option>
+											<option value="직접입력">직접입력</option>
+										</select>
+									</span>            
+								</span>
+								<span class="input-row">
+									<span class="input-cell">
+										<input type="text" id="" maxlength="40" placeholder="20자 이내로 작성해주세요.">
+										<button class="cancel"><span class="blind">삭제</span></button>
+									</span>
+								</span>
+							</span>
+						</dd>
+					</dl>
+				</div>
+					<!-- // .addr-reg -->
+			</div>
+				<!-- // .cont-box-->
+		</div>
+  		<!-- // .popup-content -->
+   		<div class="fixed-bottom input">
+   			<span class="checks">
+				<input type="checkbox" id="basic_addr" checked>
+				<label for="basic_addr"><span>기본 배송지로 등록</span></label>
+			</span>
+   			<div class="btn-area case2">
+   				<button type="button" class="btn-basic2 btn-cancel">취소</button>
+				<button type="button" class="btn-basic1 btn-addr-ok">등록</button>
+			</div>
+				<!-- // .btn-area -->
+		</div>
+   		<!-- // .fixed-bottom -->
+    </div>
+    <!-- // #SHIPPING_ADDR_P -->
+</body>
+</html>
