@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+	<meta name="autocomplete" content="off">
+    <link rel="shortcut icon" href="">
+    <title>통합복지몰</title>
+
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/mobile/css/common.css">
+    <link rel="stylesheet" href="/mobile/css/layout.css">
+    <link rel="stylesheet" href="/mobile/css/contents.css"><!-- 메인: main.css / 서브: contents.css -->
+
+     <!-- Publish Theme : CSS-->
+     <link rel="stylesheet" href="/mobile/css/theme/theme1.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme2.css"> -->
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme3.css"> -->
+     <link rel="stylesheet" href="/mobile/css/company/ibk.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/company/lg.css"> -->
+     <!--<link rel="stylesheet" href="/mobile/css/company/kb.css"> -->
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/mobile/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-selectify.js"></script>
+
+     <!-- Publish Common : JS-->
+     <script type="text/javascript" src="/mobile/js/action.js"></script>
+     <script type="text/javascript" src="/mobile/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+</head>
+<body>
+    <div id="wrap" class="sub-area">
+        <!-- #wrap class 구분  main페이지: main-area | 인트로페이지: intro-area |  sub페이지 공통: sub-area | login관련 페이지: login-area -->
+        <!-- header -->
+        <header id="header" class="search-hd">
+           <div class="inner">
+               <form>
+                    <fieldset>
+                        <legend>검색영역</legend>
+                        <div class="search-top"> 
+                            <span class="input-box">
+                                <span class="input-row">
+                                    <span class="input-cell">
+                                        <input type="text" title="검색어 입력" placeholder="검색어를 입력하세요." value="스타우드">
+                                        <button class="cancel link"><span class="blind">삭제</span></button><!-- 인기 검색어 리스트로 이동 -->
+                                    </span>
+                                    <span class="input-cell">
+                                        <button class="btn-search" type="button"><span class="blind">검색</span></button><!-- 인기 검색어 리스트로 이동 -->
+                                    </span>
+                                </span>
+                            </span>
+                        </div>
+                    </fieldset>
+               </form>
+               <button type="button" class="btn-back"><span class="blind">이전으로</span></button>
+           </div>
+        </header>
+        <!--// header -->
+
+        <!-- container -->
+        <div id="container">
+            <div id="content" class="search-cont">
+                <!-- 검색 옵션 -->
+                <div class="product-option-area">
+                    <div class="inner">
+                        <span class="total"><em class="count">1,777</em>개</span>
+                        <div class="product-sort">
+                            <span class="sel">
+                                <select name="" id="">
+                                    <option value="">판매인기순</option>
+                                    <option value="">최근등록순</option>
+                                    <option value="">낮은가격순</option>
+                                    <option value="">높은가격순</option>
+                                </select>
+                            </span>
+                            <span class="sort-btn-box">
+                                <button type="button" class="ico-type"><span class="blind">리스트타입</span></button>
+                            </span>
+                            <span class="sort-btn">
+                                <button type="button" class="btn-filter" data-filter="open">상세검색<span class="ico-filter"></span></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--// 검색 옵션 -->
+
+                <!-- 검색 결과 -->
+                <div class="search-result type-thum">
+                    <ul class="product-list grid2">
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product5.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product6.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723스타우브 베이비웍 16cm 블랙 ST311723스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li class="sold-out"><!-- 매진시 sold-out class 추가 -->
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product7.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product8.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product9.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product10.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product11.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                        <li class="sold-out">
+                            <a href="#">
+                                <span class="img"><img src="/mobile/img/dummy/thum-main-product12.jpg" alt=""></span>
+                                <span class="txt-wrap">
+                                    <span class="tit">스타우브 베이비웍 16cm 블랙 ST311723</span><!-- 최대 40자 노출 -->
+                                    <span class="info">
+                                        <em class="price-discount"><span class="num">50</span><span class="unit">%</span></em>
+                                        <em class="price-before"><span class="num">380,000</span><span class="unit">원</span></em>
+                                        <em class="price-after"><span class="num">190,000</span><span class="unit">원</span></em>
+                                    </span>
+                                    <!-- 2020-06-25 수정 : .delivery 클래스 삭제 .tag-box 수정 -->
+									<span class="tag-box">
+										<!-- 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="badge"><span class="we-prd">복지비상품</span></span>
+										<!--// 복지비상품 외 다른 뱃지 추가시 badge 안에 span 추가  -->
+										<span class="txt">무료배송</span>
+									</span>
+									<!--// 2020-06-25 수정  -->
+                                </span>
+                            </a>
+                            <span class="btn-wrap">
+                                <button type="button" class="btn-keep"><span class="blind">찜하기</span></button>
+                            </span>
+                        </li>
+                    </ul>
+                    <!-- //.product-list -->
+                </div>
+                <!-- 검색 결과 -->
+            </div>
+        </div>
+        <!--// container -->
+
+        <!-- 상세검색 -->
+        <div class="detail-search">
+            <div class="detail-search-inner">
+                <div class="detail-top">
+                    <div class="title-wrap">
+                        <strong>상세검색</strong>
+                        <button type="button" class="ico-close" data-filter="close"><span class="blind">닫기</span></button>
+                    </div>
+                    <div class="btn-txt-wrap">
+                        <span class="total"><em class="count">1,777</em>개</span>
+                        <span class="btn-box">
+                            <button type="button" class="btn-reset"><span class="ico-reset"></span>초기화</button>
+                            <button type="button" class="btn-apply"><span class="ico-apply"></span>선택적용</button>
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="chk-item-wrap">
+                    <div class="chk-item">
+                        <div>
+                        	<ul class="chk-item-list">
+                        	    <li class="on"><a href="#">카테고리</a></li>
+                        	    <li><a href="#">브랜드</a></li>
+                        	    <li><a href="#">가격</a></li>
+                        	</ul>
+                            
+                            <!-- 2020.06.09 라디오버튼으로 수정-->
+                        	<div class="chk-item-cont on">
+                        	    <ul>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate01" name="rdo-cate" />
+                                            <label for="rdo-cate01">브랜드의류1</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate02" name="rdo-cate" />
+                        	                <label for="rdo-cate02">여성소호여성소호여성소호여성소호여성소호</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate03" name="rdo-cate" />
+                        	                <label for="rdo-cate03">브랜드의류2</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate04" name="rdo-cate" />
+                        	                <label for="rdo-cate04">브랜드의류3</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate05" name="rdo-cate" />
+                        	                <label for="rdo-cate05">브랜드의류4</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate06" name="rdo-cate" />
+                                            <label for="rdo-cate06">브랜드의류5</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate07" name="rdo-cate" />
+                                            <label for="rdo-cate07">브랜드의류1</label>
+                        	            </span>
+                                    </li>
+                                    <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate01" name="rdo-cate" />
+                                            <label for="rdo-cate01">브랜드의류1</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate02" name="rdo-cate" />
+                        	                <label for="rdo-cate02">여성소호</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate03" name="rdo-cate" />
+                        	                <label for="rdo-cate03">브랜드의류2</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate04" name="rdo-cate" />
+                        	                <label for="rdo-cate04">브랜드의류3</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate05" name="rdo-cate" />
+                        	                <label for="rdo-cate05">브랜드의류4</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate06" name="rdo-cate" />
+                                            <label for="rdo-cate06">브랜드의류5</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-cate07" name="rdo-cate" />
+                                            <label for="rdo-cate07">브랜드의류1</label>
+                        	            </span>
+                        	        </li>
+                        	    </ul>
+                        	</div>
+                            
+                            <!-- 2020.06.10 브랜드 체크박스로 수정-->    
+                        	<div class="chk-item-cont">
+                        	    <ul>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand01" />
+                                            <label for="chk-brand01">아이우먼</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand02" />
+                                            <label for="chk-brand02">브랜드의류</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand03" />
+                                            <label for="chk-brand03">여성소호</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand04" />
+                                            <label for="chk-brand04">브랜드의류3</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand05" />
+                                            <label for="chk-brand05">브랜드의류4</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand06" />
+                                            <label for="chk-brand06">브랜드의류5</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="checkbox" id="chk-brand07" />
+                                            <label for="chk-brand7">브랜드의류1</label>
+                        	            </span>
+                        	        </li>
+                        	    </ul>
+                            </div>
+                            <!--// 2020.06.10 브랜드 체크박스로 수정-->    
+                        
+                        	<div class="chk-item-cont price-cont">
+                        	    <ul>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-price01" name="rdo-price" />
+                                            <label for="rdo-price01">25만원 이하</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-price02" name="rdo-price" />
+                                            <label for="rdo-price02">25만원 ~ 50만원</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-price03" name="rdo-price" />
+                                            <label for="rdo-price03">50만원 ~ 75만원</label>
+                        	            </span>
+                        	        </li>
+                        	        <li>
+                        	            <span class="checks">
+                                            <input type="radio" id="rdo-price04" name="rdo-price" />
+                                            <label for="rdo-price04">75만원 이하</label>
+                        	            </span>
+                        	        </li>
+                        	        <li class="last">
+                        	            <label for="">직접입력</label>
+                        	            <span class="input-box">
+                        	                <span class="input-row">
+                        	                    <span class="input-cell">
+                        	                        <input type="tel" class="tr sm" />
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="unit">원</span>
+                                                </span>
+                                            </span>
+                                            <span>~</span>
+                        	                <span class="input-row">
+                        	                    <span class="input-cell">
+                        	                        <input type="tel" class="tr sm" />
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="unit">원</span>
+                                                </span>
+                        	                </span>
+                        	            </span>
+                        	        </li>
+                        	    </ul>
+                            </div>
+                            <!--// 2020.06.09 라디오버튼으로 수정-->    
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-dimmed"></div>
+        <!--// 상세검색 -->
+
+		<!-- 퀵메뉴 -->
+        <div id="qnb-area">
+           <!--- /include/qnb.html -->
+        </div>
+        <!--// 퀵메뉴 -->
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+            <!--- /include/footer.html -->
+        </footer>
+        <!--// footer -->
+    </div>
+   
+    <div class="sidemenu-dimmed"></div>
+    <div class="gnb-dimmed"></div>
+</body>
+</html>

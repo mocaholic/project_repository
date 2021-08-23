@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            /*setTimeout(function(){
+                $('#aside .left-menu > li:eq(0) > ul > li:eq(0) > a').addClass('on');
+            }, 100);*/
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">                    
+                    
+                    <div class="content-hd">
+                        <h3 class="tit">주문취소</h3>
+                    </div>       
+                    
+                    <!-- 주문취소할 상품 -->
+                    <div class="cart-list">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="150px">
+                                <col width="">
+                                <col width="157px">
+                                <col width="165px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">주문일자/주문번호</th>
+                                    <th scope="col">상품정보</th>
+                                    <th scope="col">주문금액</th>
+                                    <th scope="col">진행상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="order-num-area">
+                                            <span class="date">2020-05-04</span>
+                                            <a href="#" class="order-num">62004290224</a>
+                                        </span>
+                                    </td>
+                                    <td class="left bd-left">
+                                        <div class="prd-area">
+											<span class="thum"><a href="#"><img src="/pc/img/dummy/thum-cart-product1.png" alt="상품 썸네일"></a></span>
+                                            <div class="prd-info">
+												<p class="tit"><a href="#">★균일가★일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</a></p>
+                                                <span class="opt-list">
+                                                    <span>옵션 : 트루맘</span>
+                                                    <span>수량 1개</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-price">
+                                            <em class="price">
+                                                <span class="num">1,068,800</span><span class="unit">원</span>
+                                            </em>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="state-msg">입금대기</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+					</div>      
+               		<!-- // 주문취소할 상품 -->  
+               		                                          
+               		<!-- 취소사유 -->
+               		<div class="tbl-write mt20">
+               			<table>
+							<caption>주문취소 사유 입력</caption>
+							<colgroup>
+								<col width="180px">
+								<col width="">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" class="pl40">취소사유</th>
+									<td>
+										<div class="input-box">
+											<span class="input-row w500">
+												<span class="input-cell">
+													<select name="" id="">
+														<option value="">취소 사유를 선택해주세요.</option>
+														<option value="">구매의사 없어짐</option>
+														<option value="">다른 상품 잘못 주문</option>
+														<option value="">색상, 사이즈 등 변경 재구매</option>
+														<option value="">직접입력</option>
+													</select>
+												</span>
+											</span>
+											<div class="text-area-wrap h100 mt10">
+												<textarea name="" id="" placeholder="상세사유를 입력해주세요" maxlength="200"></textarea>
+												<span class="byte"><span class="byte-current">0</span>/<span class="byte-total">200</span></span><!-- .byte-current에 입력되어 있는 글자 수를 포함하여 나타냅니다. -->
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>						
+						</table>
+					</div>
+               		<!-- // 취소사유 -->
+               		
+               		<div class="basic-btn-box">
+                        <button type="button" class="btn-basic2">신청 취소</button>
+                        <button type="button" class="btn-basic1">신청하기</button>
+                    </div>
+                    
+                    <div class="caution-area mt50">
+						<p class="fc-222"><i class="ico-necs mr6"></i>주문취소안내</p>
+						<ul class="list-blt-gry mt10 ml10">
+							<li>주문취소는 '입금대기', '결제완료'에서 즉시 처리가 가능합니다.</li>
+						</ul>
+					</div> 
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

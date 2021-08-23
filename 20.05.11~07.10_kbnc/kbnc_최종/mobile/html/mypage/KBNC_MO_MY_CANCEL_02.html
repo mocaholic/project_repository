@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+	<meta name="autocomplete" content="off">
+    <link rel="shortcut icon" href="">
+    <title>통합복지몰</title>
+
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/mobile/css/common.css">
+    <link rel="stylesheet" href="/mobile/css/layout.css">
+    <link rel="stylesheet" href="/mobile/css/contents.css"><!-- 메인: main.css / 서브: contents.css -->
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/mobile/css/jquery-ui.min.css"><!--[c] 2020.06.09 datepicker css 추가 -->
+
+     <!-- Publish Theme : CSS-->
+     <link rel="stylesheet" href="/mobile/css/theme/theme1.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme2.css"> -->
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme3.css"> -->
+     <link rel="stylesheet" href="/mobile/css/company/ibk.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/company/lg.css"> -->
+     <!--<link rel="stylesheet" href="/mobile/css/company/kb.css"> -->
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/mobile/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-selectify.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/mobile/js/action.js"></script>
+    <script type="text/javascript" src="/mobile/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+
+    <script type="text/javascript">
+        $(function(){
+           //달력
+           ACTIONUI.datePicker.init();
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap" class="sub-area">
+        <!-- #wrap class 구분  main페이지: main-area | 인트로페이지: intro-area |  sub페이지 공통: sub-area | login관련 페이지: login-area -->
+        <!-- header -->
+        <header id="header" class="sub-hd">
+           <div class="inner">
+                <h1 class="hd-tit">주문취소완료</h1>
+                <button type="button" class="btn-back"><span class="blind">이전으로</span></button>
+                <span class="right-btn">
+                    <a href="/mobile/html/KBNC_MO_MAIN_01.html" class="btn-home"><span class="blind">홈</span></a>
+                    <a href="/mobile/html/search/KBNC_MO_SEARCH.html" type="button" class="btn-search"><span class="blind">검색</span></a>
+                </span>
+           </div>
+        </header>
+        <!--// header -->
+
+        <!-- container -->
+        <div id="container">
+            <div id="content" class="pay-cont">
+                <div class="inner-cont">
+                    <div class="section">
+                        <div class="order-notice">
+                            <p class="complete">주문취소가 정상적으로 완료되었습니다.</p>
+                        </div>
+                    </div>
+                    <div class="section order-check">
+                        <ul class="cart-list complete">
+                            <li>
+                                <!-- 상품리스트 -->
+                                <div class="prd-area">
+                                    <a href="#">
+                                        <span class="thum"><img src="/pc/img/dummy/thum-cart-product1.png" alt="상품 썸네일"></span>
+                                        <div class="prd-info">
+                                            <span class="tit">일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</span>
+                                            <em class="price">
+                                                <span class="num">1,068,800</span><span class="unit">원</span>
+                                            </em>
+                                            <ul class="opt-list">
+                                                <li><span>옵션 : 트루맘</span><span>수량 1개</span> </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!--// 상품리스트 -->
+                                <!-- 상품리스트 
+                                <div class="prd-area">
+                                    <a href="#">
+                                        <span class="thum"><img src="/pc/img/dummy/thum-cart-product1.png" alt="상품 썸네일"></span>
+                                        <div class="prd-info">
+                                            <span class="tit">일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</span>
+                                            <em class="price">
+                                                <span class="num">1,068,800</span><span class="unit">원</span>
+                                            </em>
+                                            <ul class="opt-list">
+                                                <li><span>옵션 : 트루맘</span><span>수량 1개</span> </li>
+                                            </ul>
+                                        </div>
+                                    </a>
+                                </div>
+                                // 상품리스트 -->
+                            </li>
+                        </ul>
+                        <div class="order-calc-area">
+                            <div class="calc-area">
+                                <dl>
+                                    <dt>취소 주문금액</dt>
+                                    <dd>
+                                        <em class="price">
+                                            <span class="num">49,500</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </dd>
+                                </dl>
+                                <dl class="discount">
+                                    <dt>총 배송비</dt>
+                                    <dd>
+                                        <em class="price">
+                                            <span class="num">0</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="total-area">
+                                <dl class="price">
+                                    <dt class="unit">환불예정금액</dt>
+                                    <dd>
+                                        <span class="num">49,500</span>
+                                        <span class="unit">원</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="ord-tit bd">
+                            <h2 class="tit">취소사유</h2>
+                        </div>
+                        <div class="ord-section pt15">
+                            <p>상품이 불량입니다. 직접입력시 입력된 내용 노출 
+                            계속 노출 계속 노출 등록된 값 전부 노출  직접 입력시 
+                            글자수 제한 없음
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="section btn-section">
+                        <div class="ord-section">
+                            <div class="basic-btn-box mt0">
+                                <button type="button" class="btn-basic4">주문/배송조회</button>
+                                <button type="button" class="btn-basic5">취소신청내역조회</button>
+                            </div>
+                            <div class="caution-txt mt20">
+                                <strong><span class="ico-caution3"></span>결제수단 환불안내</strong>
+                                <ul class="list-blt-gry">
+                                    <li>신용카드 결제취소일 경우 : 바로 환불 가능</li>
+                                    <li>계좌이체/무통장 입금일 경우 : 취소신청 후 영업일 기준 3~7일 이내에 결제금액 환불 가능</li>
+                                    <li>자세한 문의사항은 고객센터 (1544-5303) 또는 마이페이지 &gt; 고객센터 &gt; 상담 및 문의를 통해 문의해주시기 바랍니다.</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// container -->
+
+		<!-- 퀵메뉴 -->
+        <div id="qnb-area">
+           <!--- /include/qnb.html -->
+        </div>
+        <!--// 퀵메뉴 -->
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+            <!--- /include/footer.html -->
+        </footer>
+        <!--// footer -->
+    </div>
+    <div class="sidemenu-dimmed"></div>
+    <div class="gnb-dimmed"></div>
+</body>
+</html>

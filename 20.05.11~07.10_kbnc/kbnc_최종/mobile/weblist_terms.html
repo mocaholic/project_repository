@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>모바일-퍼블맵[회사별 약관]</title>
+    <link rel="stylesheet" href="/mobile/css/common.css">
+    <link rel="stylesheet" href="/mobile/guide/css/guide.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/mobile/js/lib/jquery-1.12.4.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(function(){
+            var updateList = {
+                current: 0,
+                total: 0,
+                fn: function(){
+                    $('.weblist-table tbody tr').each(function(){
+                        $(this).addClass('on');
+                    });
+
+                    //진행률: 현재 완료된 파일 갯수
+                    $('.weblist-table .td-date .comp-date').each(function(num){
+                        $(this).parents('tr').addClass('complete');
+                        num++;
+                        updateList.current = num;
+                        return updateList.current;
+                    });
+
+                    //진행률: 전체 파일 갯수
+                    $('.weblist-table .td-html').each(function(num){
+                        num++;
+                        updateList.total = num;
+                        return updateList.total;
+                    });
+
+                    //마지막 수정날짜
+                    var modifyArr = [];
+                    $('.weblist-table .td-date .modify-date').each(function(){
+                        modifyArr.push($(this).text());
+                    });
+
+                    //수정내역 selectbox sort
+                    for(var i in modifyArr){
+                        var test11 = modifyArr[i];
+                        $('#modify-date').append('<option value="'+ modifyArr[i] +'">'+ modifyArr[i] +'</option>');
+                    }
+                    $('#modify-date').on('change', function(){
+                        var selModify = $(this).val(),
+                            tdModify = null;
+                        $('.weblist-table .td-date .modify-date').each(function(){
+                            var _this = $(this);
+                            tdModify = _this.text();
+                            if(tdModify == selModify){
+                                $('.weblist-table tbody tr').removeClass('on');
+                                _this.parents('tr').addClass('on');
+                            }
+                            if(selModify == 'all'){
+                                $('.weblist-table tbody tr').addClass('on');
+                            }
+                        });
+                    });
+
+                    //마지막 수정날짜
+                    var compArr = [];
+                    $('.weblist-table .td-date .comp-date').each(function(){
+                        compArr.push($(this).text());
+                    });
+
+                    //완료내역 selectbox sort
+                    for(var i in compArr){
+                        var test11 = compArr[i];
+                        $('#comp-date').append('<option value="'+ compArr[i] +'">'+ compArr[i] +'</option>');
+                    }
+                    $('#comp-date').on('change', function(){
+                        var selComp = $(this).val(),
+                            tdComp = null;
+                        $('.weblist-table .td-date .comp-date').each(function(){
+                            var _this = $(this);
+                            tdComp = _this.text();
+                            if(tdComp == selComp){
+                                $('.weblist-table tbody tr').removeClass('on');
+                                _this.parents('tr').addClass('on');
+                            }
+                            if(selComp == 'all'){
+                                $('.weblist-table tbody tr').addClass('on');
+                            }
+                        });
+                    });
+
+                    
+
+                    $('.count .num-current').text(updateList.current);
+                    $('.count .num-total').text(updateList.total);
+                }
+            }
+
+            //실행
+            updateList.fn();
+        });
+    </script>
+</head>
+<body>
+    <!-- #wrap -->
+    <div id="wrap">
+        <div id="header">
+            <div class="header-inner">
+                <h1><span class="type">mobile</span>통합 복지몰</h1>
+                <ul class="update-list">
+                    <li>
+                        <span class="tit">진행률</span>
+                        <span class="txt"><span class="count"><em class="num-current">0</em>/<em class="num-total">0</em></span></span>
+                    </li>
+                    <li>
+                        <span class="tit">마지막 수정날짜</span>
+                        <span class="txt"><span class="date-last">2020-06-11</span></span>
+                    </li>
+                </ul>
+                <div class="btn-area">
+                    <a href="/mobile/weblist.html" class="on">웹리스트</a>
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            <table class="weblist-table" style="table-layout:auto;">
+                <colgroup>
+                    <col width="13%">
+                    <col width="*">
+                    <col width="13%">
+                    <col width="13%">
+                    <col width="13%">
+                    <col width="13%">
+                    <col width="9%">
+                    <col width="9%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>화면분류</th>
+                        <th>1D</th>
+                        <th>2D</th>
+                        <th>3D</th>
+                        <th>HTML</th>
+                        <th>비고</th>
+                        <th>완료</th>
+                        <th>수정</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>
+                            <select id="comp-date">
+                                <option value="all" selected>전체</option>
+                            </select>
+                        </th>
+                        <th>
+                            <select id="modify-date">
+                                <option value="all" selected>전체</option>
+                            </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="td-group">개인정보 처리방침</td>
+                        <td class="td-depth1">IBK기업은행 신협쇼핑몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_IBK_01.html">KBNC_MO_BOTTOM_02_IBK_01</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-03</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+                    <tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">IBK기업은행 퇴직연금 복지몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_IBK_02.html">KBNC_MO_BOTTOM_02_IBK_02</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-03</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+					<tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">SC제일은행 임직원복지몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_SC.html">KBNC_MO_BOTTOM_02_SC</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-03</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+					<tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">국민은행 신협사은품몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_KB.html">KBNC_MO_BOTTOM_02_KB</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-03</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+					<tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">샘포인트몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_SAM.html">KBNC_MO_BOTTOM_02._SAM</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-01</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+					<tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">수협중앙회 신용협동조합 사은품몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_SUNHYUP.html">KBNC_MO_BOTTOM_02_SUNHYUP</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-01</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+					<tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">신한은행 신협복지몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_SHINHAN.html">KBNC_MO_BOTTOM_02_SHINHAN</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-01</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+					<tr>
+                        <td class="td-group"></td>
+                        <td class="td-depth1">우리은행 신협복지몰</td>
+                        <td class="td-depth2"></td>
+                        <td class="td-depth3"></td>
+                        <td class="td-html"><a target="_blank" href="/mobile/html/bottom/KBNC_MO_BOTTOM_02_WOORI.html">KBNC_MO_BOTTOM_02_WOORI</a></td>
+                        <td class="td-remark"></td>
+                        <td class="td-date"><span class="comp-date">2020-07-01</span></td>
+                        <td class="td-date"><!-- <span class="modify-date"></span> --></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

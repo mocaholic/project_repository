@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(1) > ul > li:eq(0) > a').addClass('on');
+            }, 100);
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">        
+                   	<div class="content-hd">
+                        <h3 class="tit">포인트 현황</h3>
+                    </div>
+                    	<!-- // .content-hd -->
+                    <!--  포인트 현황 -->
+                    <div class="point-box">
+                        <div class="col-3">
+                        	<dl>
+								<dt>사용가능 포인트</dt>
+								<dd>
+									<span class="num">2,950,000</span>
+									<span class="unit">P</span>
+								</dd>
+							</dl>
+							<div class="point-list">
+								<dl>
+									<dt>총지급 포인트</dt>
+									<dd>
+										<span class="num">5,111,110</span>
+										<span class="unit">P</span>
+									</dd>
+								</dl>
+								<dl>
+									<dt>총사용포인트</dt>
+									<dd>
+										<span class="num">0</span>
+										<span class="unit">P</span>
+									</dd>
+								</dl>
+								<dl>
+									<dt>잔여포인트</dt>
+									<dd>
+										<span class="num">0</span>
+										<span class="unit">P</span>
+									</dd>
+								</dl>
+								<dl>
+									<dt>소멸포인트</dt>
+									<dd>
+										<span class="num">0</span>
+										<span class="unit">P</span>
+									</dd>
+								</dl>
+							</div>
+						</div>
+                    </div>
+                        <!-- // .point-box -->
+                    <!--  // 포인트 현황 -->
+                    
+                    <!-- 지급내역 -->
+                    <!-- 2020-06-05 수정 -->
+                    <div class="desc_top mt40">
+						<h4 class="tit">지급내역 <span class="line">총 50건</span></h4><!-- 20200-06-08 수정 -->
+                       	<div class="input-box w200"><!-- 2020-07-07 class="w200" 추가 --><!-- 영역 크기에 따라 width 조절 -->
+							<span class="input-cell select-wrap">
+								<select name="" id="">
+									<option value="">전체</option>
+									<option value="">포인트유형1</option>
+									<option value="">포인트유형2</option>
+								</select>
+							</span>
+						</div>
+                    </div>
+                    <!-- // 2020-06-05 수정 -->   
+                        <!-- // .desc_top -->
+                    <div class="tbl-basic-type1 wt">
+                        <table>
+                            <caption></caption>
+                            <colgroup>
+                                <col width="100px">
+                                <col width="180px">
+                                <col width="">
+                                <col width="130px">
+                                <col width="112px">
+                                <col width="113px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">지급일자</th>
+                                    <th scope="col">유형</th>
+                                    <th scope="col">상세내용</th>
+                                    <th scope="col">유효기간</th>
+                                    <th scope="col">지급포인트</th>
+                                    <th scope="col">잔여포인트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+									<td>2019.08.19</td>
+									<td class="tl">2019창립기념행사이벤트</td>
+									<td class="tl"></td>
+									<td>2020.08.18</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>
+                           		<tr>
+									<td>2018.04.03</td>
+									<td class="tl">행우회잔여포인트</td>
+									<td class="tl">기업은행 근로자 테스트 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">55,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>
+                           		<tr>
+									<td>2016.04.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">사용만료 모바일 쿠폰만 구매 가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">971,760</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>
+                           		<tr>
+									<td>2016.04.08</td>
+									<td class="tl">근로자의 날</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>2020.04.14 ~ <br>2020.05.31</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>  
+                           		<tr>
+									<td>2016.01.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>       
+                           		<tr>
+									<td>2016.01.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>      
+                            	<tr>
+									<td>2016.01.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>      
+                           		<tr>
+									<td>2016.01.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>
+                           		<tr>
+									<td>2016.01.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>
+                           		<tr>
+									<td>2016.01.08</td>
+									<td class="tl">아듀 2014 웰컴 2015</td>
+									<td class="tl">에듀팡 시범운영 스타벅스 기프트콘 사용만료 모바일 쿠폰만 구매가능한 포인트</td>
+									<td>사용만료시</td>
+									<td class="tr">
+										<em>
+											<span class="num">100,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+									<td class="tr">
+										<em>
+											<span class="num">50,000</span>
+											<span class="unit">P</span>
+										</em>
+									</td>
+								</tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <!-- // .tbl-basic-type1 -->
+                    <!-- // 지급내역 -->
+                               
+                    <!-- 페이징 -->
+                    <div class="paging-wrap">
+                        <ul class="paging">
+                            <li><a href="#" class="arw-dir first">처음페이지</a></li>
+                            <li><a href="#" class="arw-dir prev">이전페이지</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#" class="arw-dir next">다음페이지</a></li>
+                            <li><a href="#" class="arw-dir last">마지막페이지</a></li>
+                        </ul>
+                    </div>
+                    <!--// 페이징 -->
+                                
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+        
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta property="og:title" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:description" content="">
+	<meta name="autocomplete" content="off">
+    <link rel="shortcut icon" href="">
+    <title>통합복지몰</title>
+
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/mobile/css/common.css">
+    <link rel="stylesheet" href="/mobile/css/layout.css">
+    <link rel="stylesheet" href="/mobile/css/contents.css"><!-- 메인: main.css / 서브: contents.css -->
+
+     <!-- Publish Theme : CSS-->
+     <link rel="stylesheet" href="/mobile/css/theme/theme1.css">
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme2.css"> -->
+     <!-- <link rel="stylesheet" href="/mobile/css/theme/theme3.css"> -->
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/mobile/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/swiper.min.js"></script>
+    <script type="text/javascript" src="/mobile/js/lib/jquery-selectify.js"></script>
+
+     <!-- Publish Common : JS-->
+     <script type="text/javascript" src="/mobile/js/action.js"></script>
+     <script type="text/javascript" src="/mobile/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+
+     <script type="text/javascript">
+        $(function(){
+            //팝업 호출 함수 ACTIONUI.layerPop.fn.open('팝업화면ID', callback1, callback2, callback3);
+            //팝업 닫기 함수 ACTIONUI.layerPop.fn.close('팝업화면ID', callback1);
+
+
+            //개인정보동의 약관 자세히보기
+            $('.btn-layer').on('click', function(e){
+                e.preventDefault();
+                ACTIONUI.layerPop.fn.open('MY_PAY_02_P');
+            });
+
+
+            // 결제하기 tooltip
+            $(".btn-tooltip").click(function(){
+                $(".tool-tip-box").show();
+            });
+            
+            $(".btn-close-tooltip").click(function(){
+                $(".tool-tip-box").hide();
+            });
+            
+            // 결제수단 입력항목
+            $(".payment-method li input").click(function(){
+                var inp_ID = $(this).parent().attr("id");
+                $(".pay-info-input").hide();
+                $(".payment-input-area ." + inp_ID).show();
+            });
+
+            // 2020-05-25 추가 : 추가연락처 none/block 
+			$(':checkbox[id="phone_add"]').on({
+				change: function(e) {
+					$('.add-phn').toggleClass('on');
+				}
+			});
+
+            /* 2020-05-27 추가 : 결제하기-현금영수증 신청 */
+			$(".cash-bill .checks input").click(function(){
+                var inp_idx = $(this).parent().index();
+                $(".cash-bill-way").hide();
+                $(".cash-bill-way").eq(inp_idx).css("display","block");
+            });
+
+            // 이용약관 toggle
+            $(".agree-area .btn-arw").click(function(){
+                if($(this).hasClass("on") == true){
+                    $(this).removeClass("on");
+                    $(".toggle-box").removeClass("on");
+                }else {
+                    $(this).addClass("on");
+                    $(".toggle-box").addClass("on");
+                }
+                return;
+            });
+        });
+     </script>
+</head>
+<body>
+    <div id="wrap" class="sub-area">
+        <!-- #wrap class 구분  main페이지: main-area | 인트로페이지: intro-area |  sub페이지 공통: sub-area | login관련 페이지: login-area -->
+        <!-- header -->
+        <header id="header" class="sub-hd">
+           <div class="inner">
+                <h1 class="hd-tit">주문/결제</h1>
+                <button type="button" class="btn-back"><span class="blind">이전으로</span></button>
+                <span class="right-btn">
+                    <a href="/mobile/html/KBNC_MO_MAIN_01.html" class="btn-home"><span class="blind">홈</span></a>
+                    <a href="/mobile/html/search/KBNC_MO_SEARCH.html" type="button" class="btn-search"><span class="blind">검색</span></a>
+                </span>
+           </div>
+        </header>
+        <!--// header -->
+
+        <!-- container -->
+        <div id="container">
+            <div id="content" class="pay-cont">
+                <div class="inner-cont">
+					<!-- 주문하실 상품 -->
+                    <div class="section ord-item close">
+                        <div class="ord-tit">
+                            <h2 class="tit link"><a href="#">주문하실 상품</a></h2>
+                        </div>
+                        <div>
+                            <div class="ord-item-count">외<strong>3</strong>개 </div>
+                        </div>
+                        <div class="ord-section">
+                            <!-- 장바구니 리스트 -->
+                            <ul class="cart-list">
+                                <li>
+                                    <div class="prd-area">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product1.png" alt="상품 썸네일"></span>
+                                            <div class="prd-info">
+                                                <span class="tit">일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</span>
+                                                <em class="price">
+                                                    <span class="num">1,068,800</span><span class="unit">원</span>
+                                                    <span class="delivery">배송비 2,500원</span>
+                                                </em>
+                                                <ul class="opt-list">
+                                                    <li><span>옵션 : 트루맘</span><span>수량 1개</span> </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prd-area">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product2.png" alt="상품 썸네일"></span>
+                                            <div class="prd-info">
+                                                <span class="tit">일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</span>
+                                                <em class="price">
+                                                    <span class="num">1,068,800</span><span class="unit">원</span>
+                                                    <span class="delivery">배송비 2,500원</span>
+                                                </em>
+                                                <ul class="opt-list">
+                                                    <li><span>옵션 : 트루맘</span><span>수량 1개</span> </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="prd-area">
+                                        <a href="#">
+                                            <span class="thum"><img src="/pc/img/dummy/thum-cart-product3.png" alt="상품 썸네일"></span>
+                                            <div class="prd-info">
+                                                <span class="tit">일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔일동 후디스 트루맘 프리미엄 1~4단계 800g*3캔</span>
+                                                <em class="price">
+                                                    <span class="num">1,068,800</span><span class="unit">원</span>
+                                                    <span class="delivery">배송비 2,500원</span>
+                                                </em>
+                                                <ul class="opt-list">
+                                                    <li><span>옵션 : 트루맘</span><span>수량 1개</span> </li>
+                                                </ul>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--// 장바구니 리스트 -->
+                        </div>
+                    </div>
+					<!--// 주문하실 상품 -->
+					
+					<!-- 2020-06-29 주문자 정보 추가 -->
+					<div class="section ord-user-info close">
+                        <div class="ord-tit">
+                            <h2 class="tit  link"><a href="#">주문자 정보</a></h2>
+                        </div>
+                        <div class="ord-section">
+                            <div class="tbl-write type2">
+								<table>
+									<caption>배송지 정보 작성</caption>
+									<colgroup>
+										<col width="80px" />
+										<col width="" />
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">주문고객</th>
+											<td>
+												<span class="input-box w150">
+													<span class="input-row">
+														<span class="input-cell">
+															<input type="text" id="" maxlength="40" value="정해인">
+														</span>
+													</span>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">휴대폰번호</th>
+											<td>
+												<div class="input-box phone"><!-- 영역 크기에 따라 width 조절 -->
+													<span class="input-row">
+														<span class="input-cell">
+															<select name="" id="">
+																<option value="010">010</option>
+																<option value="012">012</option>
+																<option value="013">013</option>
+															</select>
+														</span>
+														<span class="input-cell">
+															<span class="hyp">-</span>
+														</span>
+														<span class="input-cell">
+															<input type="tel" maxlength="4" title="휴대폰 중간자리 입력" class="number" value="0000" />
+														</span>
+														<span class="input-cell">
+															<span class="hyp">-</span>
+														</span>
+														<span class="input-cell">
+															<input type="tel" maxlength="4" title="휴대폰 끝자리 입력" class="number" value="0000" />
+														</span>
+													</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" class="va-top">이메일</th>
+											<td>
+												<div class="input-box email">
+													<span class="input-row">
+														<span class="input-cell">
+															<input type="text" title="이메일 아이디" value="test">
+															<button class="cancel"><span class="blind">삭제</span></button>
+														</span>
+														<span class="input-cell">
+															<span class="hyp">@</span>
+														</span>
+														<span class="input-cell" style="width:45%;">
+															<select name="" id="">
+																<option value="직접입력">직접입력</option>
+																<option value="hanmail.com">hanmail.com</option>
+																<option value="naver.comm">naver.comm</option>
+																<option value="nate.com">nate.com</option>
+																<option value="hotmail.com">hotmail.com</option>
+																<option value="yahoo.co.kr">yahoo.co.kr</option>
+																<option value="gmail.com">gmail.com</option>
+																<option value="dremwiz.com">dremwiz.com</option>
+																<option value="daum.net">daum.net</option>
+															</select>
+														</span>
+													</span>
+													<span class="input-row">
+														<span class="input-cell">
+															<input type="text" title="이메일 주소" value="naver.com">
+															<button class="cancel"><span class="blind">삭제</span></button>
+														</span>
+													</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+                        </div>
+                    </div>
+					<!--// 2020-06-29 주문자 정보 추가 -->
+					
+					<!-- 배송지 정보 -->
+                    <div class="section delivery-info close">
+                        <div class="ord-tit">
+                            <h2 class="tit  link"><a href="#">배송지 정보</a></h2>
+                        </div>
+                        <div class="ord-section">
+                            <div class="info-view">
+                                <dl>
+                                    <dt>정해인</dt>
+                                    <dd>서울시 금천구 가산디지털 2로 184 벽산디지털밸리2차 212~1214호 2줄일 경우 노출</dd>
+                                    <dd><em>010-0000-0000 / 02-0000-0000</em></dd>
+                                </dl>
+                            </div>
+
+                            <div class="box-tab-view">                               
+                                <ul class="tab-list basic-tab2">
+                                    <li class="on"><a href="#">기본배송지</a></li>
+                                    <li><a href="#">새로운배송지</a></li>
+                                </ul>
+                                <div class="tab-cont on">
+                                    <div class="tbl-write type2">
+                                        <table>
+                                            <caption>배송지 정보 작성</caption>
+                                            <colgroup>
+                                                <col width="80px" />
+                                                <col width="" />
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">받으시는 분</th>
+                                                    <td>
+                                                        <p>정해인</p>
+                                                        <a href="/mobile/html/mypage/KBNC_MO_MY_PAY_POPUP_D.html" class="btn-basic8 xsmall btn-delivery">배송지 관리</a>
+                                                    </td>
+                                                </tr>                                
+                                                <tr>
+                                                    <th scope="row" class="va-top">배송지주소</th>
+                                                    <td>
+                                                       <p>서울시 금천구 가산디지털 2로 184 벽산디지털밸리2차 1212~1214호 주소는 3줄까지 가능</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">연락처</th>
+                                                    <td>
+                                                       <p>010-0000-0000</p> 
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- // .tbl-write -->
+                                </div>
+                                <div class="tab-cont">
+                                    <div class="tbl-write type2">
+                                        <table>
+                                            <caption>배송지 정보 작성</caption>
+                                            <colgroup>
+                                                <col width="80px" />
+                                                <col width="" />
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">받으시는 분</th>
+                                                    <td>
+                                                        <span class="input-box w150">
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <input type="text" id="" maxlength="40" >
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                        <a href="/mobile/html/mypage/KBNC_MO_MY_PAY_POPUP_D.html" class="btn-basic8 xsmall btn-delivery">배송지 관리</a>
+                                                    </td>
+                                                </tr>                                
+                                                <tr>
+                                                    <th scope="row" class="va-top">배송지주소</th>
+                                                    <td>
+                                                        <span class="input-box">
+                                                            <span class="input-row">
+                                                                <span class="input-cell"><!-- 2020-06-29 사이즈 수정-->
+                                                                    <input type="text" id="formType1" title="우편번호" class="number"><!-- 05.22 class 추가 -->
+                                                                </span>
+                                                                <span class="input-cell" style="width:107px;"><button class="btn-basic8 btn-zipcode" onclick="sample2_execDaumPostcode()">우편번호찾기</button></span>
+                                                            </span>
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <input type="text" title="상세 주소" >
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                            </span>
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <input type="text" placeholder="상세주소를 입력해주세요." title="상세 주소" >
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                            </span>
+                                                            <span class="error-txt">에러 메시지 출력 영역 입니다.</span>
+                                                        </span>
+                                                        <span class="checks mt5">
+                                                            <input type="checkbox" id="basic_addr">
+                                                            <label for="basic_addr"><span>기본배송지로 설정</span></label>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="va-top">연락처</th>
+                                                    <td>
+                                                        <div class="input-box chk-wrap phone"><!-- 영역 크기에 따라 width 조절 -->
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="010">010</option>
+                                                                        <option value="012">012</option>
+                                                                        <option value="013">013</option>
+                                                                    </select>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <span class="hyp">-</span>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 05.22 class 추가 -->
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <span class="hyp">-</span>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number"><!-- 05.22 class 추가 -->
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                            </span>
+                                                            <span class="checks mt5">
+                                                                <input type="checkbox" id="phone_add">
+                                                                <label for="phone_add"><span>연락처 추가 입력</span></label>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="add-phn"><!-- 2020-05-25 class 추가 -->
+                                                    <th scope="row">추가연락처</th>
+                                                    <td>
+                                                        <div class="input-box chk-wrap phone"><!-- 영역 크기에 따라 width 조절 -->
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="010">010</option>
+                                                                        <option value="012">012</option>
+                                                                        <option value="013">013</option>
+                                                                    </select>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <span class="hyp">-</span>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 05.22 class 추가 -->
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <span class="hyp">-</span>
+                                                                </span>
+                                                                <span class="input-cell">
+                                                                    <input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number"><!-- 05.22 class 추가 -->
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- // .tbl-write -->
+                                </div>
+                            </div>
+
+                            <!-- 2020-06-30 배송메시지 수정 -->
+                            <div class="tbl-write type2">
+                                <table>
+                                    <caption>배송지 정보 작성</caption>
+                                    <colgroup>
+                                        <col width="80px" />
+                                        <col width="" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">배송 메시지</th>
+                                            <td>
+                                                <div class="input-box">
+                                                    <span class="input-row">
+                                                        <span class="input-cell">
+                                                            <select name="" id="">
+                                                                <option value="">배송메세지를 선택해주세요.</option>
+                                                                <option value="">부재시 경비실에 맡겨주세요.</option>
+                                                                <option value="">부재시 문앞에 높아주세요.</option>
+                                                                <option value="">파손의 위험이 있으니, 배송시 조심해주세요.</option>
+                                                                <option value="">배송전에 연락주세요.</option>
+                                                                <option value="">택배함에 넣어주세요.</option>
+                                                                <option value="">직접입력</option>
+                                                            </select>
+                                                        </span>
+                                                    </span>
+                                                    <span class="input-row">
+                                                        <span class="input-cell">
+                                                            <input type="text" placeholder="20자 이내로 작성해주세요." />
+                                                            <button class="cancel"><span class="blind">삭제</span></button>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--// 2020-06-30 배송메시지 수정 -->
+                        </div>
+                    </div>
+					<!--// 배송지 정보 -->
+					
+					<!-- 쿠폰/이벤트/포인트 -->
+                    <div class="section discount-list">
+                        <div class="ord-tit">
+                            <h2 class="tit">쿠폰/이벤트/포인트 사용</h2>
+                        </div>
+                        <!-- 2020-06-30 체크박스 2줄처리 -->
+                        <div class="discount-chk-wrap">
+                           <dl class="discount-chk">
+                                <dt>
+                                    <span class="checks">
+                                        <input type="checkbox" id="coupon">
+                                        <label for="coupon">
+                                            <span class="name">쿠폰할인</span>
+                                            <span>(0)</span>
+                                        </label>
+                                    </span>
+                                    <button type="button" class="btn-basic8 xsmall">적용</button>
+                                </dt>
+                                <dd>
+                                    <span class="input-box w100">
+                                        <span class="input-cell">
+                                            <input type="text" id="" >
+                                            <em class="unit">원</em>
+                                        </span>
+                                    </span>
+                                </dd>
+                           </dl>
+						   
+                           <dl class="discount-chk">
+                                <dt>
+                                    <span class="checks">
+                                        <input type="checkbox" id="point1">
+                                        <label for="point1">
+											<span class="name">개인포인트개인포인트개인포인트개인포인트</span>
+											<span>(74,360P)</span>
+										</label>
+                                    </span>
+                                </dt>
+                                <dd>
+                                    <span class="input-box w100">
+                                        <span class="input-cell">
+                                            <input type="text" id="" value="74,360">
+                                            <em class="unit">원</em>
+                                        </span>
+                                    </span>
+                                </dd>
+                           </dl>
+
+                           <dl class="discount-chk">
+                                <dt>
+                                    <span class="checks">
+                                        <input type="checkbox" id="point2">
+                                        <label for="point2">
+											<span class="name">행우회잔여포인트</span>
+											<span>(55,000P)</span>
+										</label>
+                                    </span>                                  
+                                </dt>
+                                <dd>
+                                    <span class="input-box w100">
+                                        <span class="input-cell">
+                                            <input type="text" id="" value="0">
+                                            <em class="unit">원</em>
+                                        </span>
+                                    </span>
+                                </dd>
+                            </dl>
+
+                            <dl class="discount-chk">
+                                <dt>
+                                    <span class="checks">
+                                        <input type="checkbox" id="point3">
+                                        <label for="point3">
+											<span class="name">2019창립기념행사이벤트</span>
+											<span>(155,000P)</span>
+										</label>
+                                    </span>
+                                </dt>
+                                <dd>
+                                    <span class="input-box w100">
+                                        <span class="input-cell">
+                                            <input type="text" id="" value="0">
+                                            <em class="unit">원</em>
+                                        </span>
+                                    </span>
+                                </dd>
+                            </dl>    
+                        </div>
+                        <!--// 2020-06-30 체크박스 2줄처리 -->
+                    </div>
+					<!--// 쿠폰/이벤트/포인트 -->
+
+                    <!-- 2020-06-22 수정 배송비선택 추가 -->
+                    <div class="section">
+                        <div class="ord-tit">
+                            <h2 class="tit">배송비 선택</h2>
+                        </div>
+                        <div class="ord-section">
+                            <span class="checks">
+                                <input type="radio" id="delivery_chk1" name="delivery" checked="">
+                                <label for="delivery_chk1">결제시 포함</label>
+                            </span>
+                            <span class="checks">
+                                <input type="radio" id="delivery_chk2" name="delivery"> 
+                                <label for="delivery_chk2">착불 (도착시 지급)</label>
+                            </span>
+                        </div>
+                    </div>
+                    <!--// 2020-06-22 수정 배송비선택 추가 -->
+
+                    <div class="section payment-area">
+                        <div class="ord-tit">
+                            <h2 class="tit">결제하기</h2>
+                            <p class="info-txt"><a href="javascript:void(0);" class="btn-tooltip">결제카드 안내<span class="ico-caution3"></span></a></p>
+                            <div class="tool-tip-box">
+                                <div class="inner">
+                                    <ul class="list-blt-gry">
+                                        <li>복지비 전용카드로 결제하실 경우 신용카드(BC)를 선택해주세요!</li>
+                                        <li>카드결제 오류인 경우 수기결제를 선택해주세요.</li>
+                                    </ul>
+                                    <a href="javascript:void(0)" class="btn-close-tooltip"><span class="blind">닫기</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-list">
+                            <div class="payment-method">
+                                <ul>
+                                    <li><input type="radio" id="pay_chk1" name="payment" checked /><label for="pay_chk1">신용카드</label></li>
+                                    <li><input type="radio" id="pay_chk2" name="payment"  /><label for="pay_chk2">신용카드(BC)</label></li>
+                                    <li><input type="radio" id="pay_chk3" name="payment" /><label for="pay_chk3">가상계좌</label></li>
+                                    <li id="deposit"><input type="radio" id="pay_chk4" name="payment" /><label for="pay_chk4">무통장입금</label></li>
+                                    <li><input type="radio" id="pay_chk5" name="payment" /><label for="pay_chk5">급여공제</label></li>
+                                    <li id="handwrite"><input type="radio" id="pay_chk6" name="payment" /><label for="pay_chk6">수기결제</label></li>
+                                </ul>
+                            </div>
+                            <div class="payment-input-area">
+                                <div class="pay-info-input deposit">
+                                    <div class="tbl-write type2">
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col width="80px" />
+                                                <col width="" />
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="va-top">무통장 입금</th>
+                                                    <td>
+                                                        <p>기업은행 642-006390-04-012<br />예금주 : ㈜케이비엔시</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">입금자명</th>
+                                                    <td>
+                                                        <span class="input-box w150">
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <input type="text" id="" value="정해인" >
+                                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                                </span>
+                                                            </span>
+                                                            <span class="guide-txt">실제 입금자명을 입력해주세요.</span>
+                                                        </span>
+                                                    </td>
+                                                </tr>                                
+                                                <tr>
+                                                    <th scope="row" class="va-top">입금기한</th>
+                                                    <td>
+                                                        <span class="input-box">
+                                                            <span class="input-row">
+                                                                <p>2020.07.09</p>
+                                                            </span>
+                                                            <span class="guide-txt">주문일 기준 다음날(24시간 이내)까지 <br /> 입금이 되지 않으면 주문이 취소됩니다. </span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">현금영수증</th>
+                                                    <td>
+                                                        <div class="cash-bill">
+                                                            <span class="checks">
+                                                                <input type="radio" id="cash_bill1" name="cash_bill" checked>
+                                                                <label for="cash_bill1">소득공제</label>
+                                                            </span>
+                                                            <span class="checks">
+                                                                <input type="radio" id="cash_bill2" name="cash_bill">
+                                                                <label for="cash_bill2">지출증빙</label>
+                                                            </span>
+                                                            <span class="checks">
+                                                                <input type="radio" id="cash_bill3" name="cash_bill">
+                                                                <label for="cash_bill3">발행안함</label>
+                                                            </span>
+                                                        </divc>
+                                                    </td>
+                                                </tr>
+                                                <tr class="cash-bill-wrap">
+                                                    <td colspan="2">
+                                                        <dl class="cash-bill-way">
+                                                            <dt>발급방식</dt> 
+                                                            <dd>
+                                                                <span class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                                                                    <span class="input-row">
+                                                                        <select name="" id="">
+                                                                            <option value="휴대폰번호">휴대폰번호</option>
+                                                                            <option value="현금영수증 카드번호">현금영수증 카드번호</option>
+                                                                        </select>
+                                                                    </span>
+                                                                    <span class="input-row">
+                                                                        <span class="input-cell w90">
+                                                                            <select name="" id="">
+                                                                                <option value="010">010</option>
+                                                                                <option value="012">012</option>
+                                                                                <option value="013">013</option>
+                                                                            </select>
+                                                                        </span>
+                                                                        <span class="input-cell">
+                                                                            <span class="hyp">-</span>
+                                                                        </span>
+                                                                        <span class="input-cell">
+                                                                            <input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 2020-06-03 class 추가 -->
+                                                                            <button class="cancel"><span class="blind">삭제</span></button>
+                                                                        </span>
+                                                                        <span class="input-cell">
+                                                                            <span class="hyp">-</span>
+                                                                        </span>
+                                                                        <span class="input-cell">
+                                                                            <input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number"><!-- 2020-06-03 class 추가 -->
+                                                                            <button class="cancel"><span class="blind">삭제</span></button>
+                                                                        </span>
+                                                                    </span>
+                                                                </span>
+                                                            </dd>
+                                                        </dl>
+                                                        <dl class="cash-bill-way">
+                                                            <dt class="va-top">사업자등록번호</dt> 
+                                                            <dd>
+                                                                <span class="input-box chk-wrap w310"><!-- 영역 크기에 따라 width 조절 -->
+                                                                    <span class="input-row">
+                                                                        <span class="input-cell">
+                                                                            <input type="text" title="카드번호 입력" placeholder="-없이 입력해주세요.">
+                                                                            <button class="cancel"><span class="blind">삭제</span></button>
+                                                                        </span>
+                                                                    </span>
+                                                                </span>
+                                                            </dd>
+                                                        </dl>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- // .tbl-write -->
+                                </div>
+                                <div class="pay-info-input handwrite">
+                                    <div class="tbl-write type2">
+                                        <table>
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col width="80px" />
+                                                <col width="" />
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">카드번호</th>
+                                                    <td>
+														<!-- 2020-06-30  수기결제 카드번호 인풋박스 수정-->
+                                                        <span class="input-box">
+															<span class="input-row re-pd">
+																<span class="input-cell">
+																	<input type="text" maxlength="4" title="카드번호 앞자리 입력">
+																</span>
+																<span class="input-cell" >
+																	<span class="hyp">-</span>
+																</span>
+																<span class="input-cell">
+																	<input type="text" maxlength="4" title="카드번호 중간자리 입력">
+																</span>
+																<span class="input-cell">
+																	<span class="hyp">-</span>
+																</span>
+																<span class="input-cell">
+																	<input type="text" maxlength="4" title="카드번호 중간자리 입력">
+																</span>
+																<span class="input-cell">
+																	<span class="hyp">-</span>
+																</span>
+																<span class="input-cell">
+																	<input type="text" maxlength="4" title="카드번호 끝자리 입력">
+																</span>
+															</span>
+														</span>
+														<!--// 2020-06-30  수기결제 카드번호 인풋박스 수정-->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">할부종류</th>
+                                                    <td>
+                                                        <span class="input-box">
+                                                            <span class="input-row">
+                                                                <span class="input-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="일시불">일시불</option>
+                                                                        <option value="2개월">2개월</option>
+                                                                        <option value="3개월">3개월</option>
+                                                                    </select>
+                                                                </span>
+                                                            </span>
+                                                        </span>
+                                                    </td>
+                                                </tr>                                
+                                                <tr>
+                                                    <th scope="row">유효기간</th>
+                                                    <td>
+                                                        <span class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                                                            <span class="input-row">
+                                                                <span class="input-cell w90">
+                                                                    <select name="" id="">
+                                                                        <option value="월">월</option>
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                        <option value="6">6</option>
+                                                                        <option value="7">7</option>
+                                                                        <option value="8">8</option>
+                                                                        <option value="9">9</option>
+                                                                        <option value="10">10</option>
+                                                                        <option value="11">11</option>
+                                                                        <option value="12">12</option>
+                                                                    </select>
+                                                                </span>
+                                                                <span class="unit">월</span>
+                                                                <span class="input-cell">
+                                                                    <select name="" id="">
+                                                                        <option value="년도">년도</option>
+                                                                        <option value="2020">2020</option>
+                                                                        <option value="2021">2021</option>
+                                                                        <option value="2022">2022</option>
+                                                                        <option value="2023">2023</option>
+                                                                        <option value="2024">2024</option>
+                                                                        <option value="2025">2025</option>
+                                                                        <option value="2026">2026</option>
+                                                                        <option value="2027">2027</option>
+                                                                        <option value="2028">2028</option>
+                                                                        <option value="2029">2029</option>
+                                                                        <option value="2030">2030</option>
+                                                                    </select>
+                                                                </span>
+                                                                <span class="unit">년</span>
+                                                            </span>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- // .tbl-write -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // .payment-list -->
+
+                        <div class="order-calc-area">
+                            <div class="calc-area">
+                                <dl>
+                                    <dt>상품금액</dt>
+                                    <dd>
+                                        <em class="price">
+                                            <span class="num">1,500,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </dd>
+                                </dl>
+                                <dl class="discount">
+                                    <dt>할인금액</dt>
+                                    <dd>
+                                        <em class="price">
+                                            <span class="num">(-)150,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </dd>
+                                </dl>
+                                <dl class="add-price">
+                                    <dt>배송비</dt>
+                                    <dd>
+                                        <em class="price">
+                                            <span class="num">+5,000</span>
+                                            <span class="unit">원</span>
+                                        </em>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="total-area">
+                                <dl class="price">
+                                    <dt class="unit">총 주문금액</dt>
+                                    <dd>
+                                        <span class="num">1,355,000</span>
+                                        <span class="unit">원</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="agree-area">
+                        <p class="all-agr">
+                            <span class="checks">
+                                <input type="checkbox" id="pay-agree" name="pay-agree">
+                                <label for="pay-agree">이용약관에 모두 동의함</label>
+                            </span>
+                            <span class="btn"><a href="javascript:void(0);" class="btn-arw"><span class="blind">열기</span></a></span>
+                        </p>
+                        <div class="toggle-box">
+                            <ul class="list-checks">
+                                <li>
+                                    <span class="checks type2">
+                                        <input type="checkbox" id="pay-agree1" name="pay-agree">
+                                        <label for="pay-agree1">위 주문의 상품, 가격, 할인, 배송정보에 동의함</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="checks type2">
+                                        <input type="checkbox" id="pay-agree2" name="pay-agree">
+                                        <label for="pay-agree2">개인정보 수집 이용 및 제3자 정보 제공에 동의</label>
+                                    </span>
+                                </li>
+                            </ul>
+                            <div class="btn-area">
+                                <a href="javascript:void(0);" class="btn-layer">자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="caution-txt-wrap">
+                        <p class="caution-txt"><span class="ico-caution3"></span>전자제품의 경우 박스를 개봉하거나, 제품을 설치한 경우에는 전자상거래 등에서의 소비자보호에 관한 법률 제17조 2항에 의거 "반품이 불가"합니다.</p>
+                    </div>
+
+                    <div class="bottom-btn-box">
+                        <button type="button" class="btn-bottom2">결제하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// container -->
+
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+            <!--- /include/footer.html -->
+        </footer>
+        <!--// footer -->
+
+        <!-- 레이어팝업 -->
+        <div class="popup-wrap">
+            <!-- 복지비 승인 관련 안내 -->
+            <div id="MY_PAY_01_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h2 class="tit">복지비 승인 관련 안내</h2>
+                        <button type="button" class="btn-close"><span class="blind">닫기</span></button>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="tbl-basic-type1">
+                            <table>
+                                <caption>복지비 승인 관련 안내</caption>
+                                <colgroup>
+                                    <col width="50%">
+                                    <col width="">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">결제수단</th> 
+                                        <th scope="col">복지비 승인</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>카드</td>
+                                        <td>O</td>
+                                    </tr>
+                                    <tr>
+                                        <td>무통장</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>급여공제</td>
+                                        <td>X</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="notice">
+                            <p class="txt-notice"><span class="ico-caution3"></span>복지 카드시스템에서 신청등록 후 서무 담당자에게 증빙 자료를 제출하시기 바랍니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //복지비 승인 관련 안내 -->
+
+            <!-- 개인정보 판매자 제공에 동의-->
+            <div id="MY_PAY_02_P" class="popup-layer">
+                <div class="popup-content">
+                    <div class="desc_top">
+                        <h2 class="tit">개인정보 수집 이용 및 제3자 정보 제공에 대한 안내</h2>
+                        <button type="button" class="btn-close"><span class="blind">닫기</span></button>
+                    </div>
+
+                    <div class="section-box">
+                        <div class="pop-ol">
+                            <ol>
+								<li>
+                                    <span class="tit">1. 개인정보의 수집·이용 목적 및 수집하는 개인정보의 항목</span>
+                                    <div class="tbl-basic-type1">
+										<table>
+											<colgroup>
+												<col width="18%" /><col width="24%" /><col  /><col width="15%" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">구분</th>
+													<th scope="col">수집·이용 목적</th>
+													<th scope="col">수집 항목</th>
+													<th scope="col">수집 방법</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>회원가입</td>
+													<td>회원가입 정보입력</td>
+													<td>필수 : 아이디, 비밀번 호, 퇴직연금 가입유형, 회사명, 사업자등록번호<br />선택 : 전화번호, 이메일</td>
+													<td>온라인(웹페이지) 입력</td>						
+												</tr>
+												<tr>
+													<td rowspan="2" class="bd-none">회원가입<br /><strong>본인인증</strong></td>
+													<td><strong>회원가입 본인인증</strong></td>
+													<td>필수 : 이름, 성별, 생년월일, 휴대폰번호, 통신사업자, 내/외국 인 여부, 암호화된 이용자 확인값(CI), 중복 가입확인정보(DI)
+													<br />※ 본 몰은 나이스정보 통신에서 인증받은 휴대폰 번호와 통신사정보를 사용하고 있습니다.</td>
+													<td>온라인(웹페이지) 입력</td>
+												</tr>
+												<tr>
+													<td class="bd"><strong>아이디/비밀번호 찾기</strong></td>
+													<td>필수 : 이름, 성별, 생년월일, 휴대폰번호, 통신사업자, 내/외국 인 여부, 암호화된 이용자 확인값(CI), 중복 가입확인정보(DI)<br />
+													※ 본 몰은 나이스정보 통신에서 인증받은 휴대폰 번호와 통신사정보를 사용하고 있습니다.<br />
+													필수 : 수취인 이름, 수취인 휴대폰번호, 수취인 주소<br />
+													선택 : 수취인 전화번호
+													</td>
+													<td>온라인(웹페이지) 입력</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+                                </li>
+                                <li>
+                                    <span class="tit">2. 제 3자에 제공 및 수집하는 개인정보의 항목</span>
+                                    <div class="tbl-basic-type1 ea">
+                                        <table>
+                                            <caption>제 3자에 제공 및 수집하는 개인정보의 항목</caption>
+                                            <colgroup>
+                                                <col width="75px">
+                                                <col width="">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">개인정보를 제공받는자</th>
+                                                    <th scope="col">제공받는 자의 이용 목적</th>
+													<th scope="col">제공하는 개인정보의 항목</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>협력사<br />(판매자)</td>
+													<td class="tl">
+														<dl>
+															<dt>[주문자 정보]</dt>
+															<dd>필수 : 이름, 주문/결제정보</dd>
+															<dd>선택 : 휴대폰번호, 전화번호, 이메일</dd>
+															<dt>[수취인 정보]</dt>
+															<dd>필수 : 수취인 이름, 수취인 휴대폰번호, 수취인 주소</dd>
+															<dd>선택 : 수취인 전화번호</dd>
+														</dl>
+													</td>
+                                                    <td class="tl">
+														<ul>
+															<li>- 상품 및 경품(서비스) 배송(전송), 제품 설치</li>
+															<li>- 반품, 환불, 고객상담</li>
+															<li>- 정보통신 서비스제공 계약 및 전자상거래(통신판매)계약의 이행을 위해 필요한 업무의 처리</li>
+														</ul>
+													</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="tit">2. 개인정보의 보유·이용 기간</span>
+                                    ① "쇼핑몰"은 회원의 개인정보를 동의 받은 기간 동안 보유하며, 이용목적 및 보유기간이 경과하면 지체 없이 파기합니다. 단, "전자상거래 등에서의 소비자보호에 관한 법률" 등 관련 법령에서 개인정보의 보유를 명시하고 있는 경우에는, 다음과 같이 회원의 개인정보를 보유하고 있습니다.
+									<ol>
+										<li>1. 계약 또는 청약 철회 등에 관한 기록 : 5년</li>
+										<li>2. 대금결제 및 재화 등의 공급에 관한 기록 : 5년</li>
+										<li>3. 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년</li>
+										<li>4. 표시·광고에 관한 기록 : 6개월</li>
+									</ol>
+                                </li>
+								<li>
+									<span class="tit">3. 동의 거부에 대한 권리 및 거부에 따른 불이익</span>
+									<p>회원님께서는 "쇼핑몰"이 회원님의 개인정보를 수집하는 것을 동의하지 않을 수 있으며, 동의하지 않을 경우 쇼핑몰 이용이 제한됩니다.</p>
+								</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- //.popup-content -->
+            </div>
+            <!-- //.popup-layer -->
+            <!-- //개인정보 판매자 제공에 동의 -->
+        </div>
+        <!--// 레이어팝업 -->
+
+        <!-- 우편번호 레이어팝업 -->
+        <div id="layer-post" class="layer-post" style="display:none;">
+            <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+        </div>
+        <!--// 우편번호 레이어팝업 -->
+    </div>
+    <div class="sidemenu-dimmed"></div>
+    <div class="gnb-dimmed"></div>
+
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+    // 우편번호 찾기 화면을 넣을 element
+    var element_layer = document.getElementById('layer-post');
+
+    function closeDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_layer.style.display = 'none';
+        $('.sidemenu-dimmed').hide();
+        $('html').removeClass('scroll_off');
+    }
+
+    function sample2_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample2_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample2_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample2_postcode').value = data.zonecode;
+                document.getElementById("sample2_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample2_detailAddress").focus();
+
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                element_layer.style.display = 'none';
+            },
+            width : '100%',
+            height : '100%',
+            maxSuggestItems : 5
+        }).embed(element_layer);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_layer.style.display = 'block';
+        $('.sidemenu-dimmed').show();
+        $('html').addClass('scroll_off');
+
+        // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+        initLayerPosition();
+    }
+
+    // 브라우저의 크기 변경에 따라 레이어를 가운데로 이동시키고자 하실때에는
+    // resize이벤트나, orientationchange이벤트를 이용하여 값이 변경될때마다 아래 함수를 실행 시켜 주시거나,
+    // 직접 element_layer의 top,left값을 수정해 주시면 됩니다.
+    function initLayerPosition(){
+        var width = 300; //우편번호서비스가 들어갈 element의 width
+        var height = 400; //우편번호서비스가 들어갈 element의 height
+        var borderWidth = 0; //샘플에서 사용하는 border의 두께
+
+        // 위에서 선언한 값들을 실제 element에 넣는다.
+        element_layer.style.width = width + 'px';
+        element_layer.style.height = height + 'px';
+        element_layer.style.border = borderWidth + 'px solid';
+        // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+    }
+
+    </script>
+</body>
+</html>

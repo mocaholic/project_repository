@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(4) > ul > li:eq(1) > a').addClass('on');
+            }, 100);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">
+                    <div class="content-hd">
+                        <h3 class="tit">공지사항</h3>
+                        <p class="ins">주요소식을 알려드립니다.</p>
+                    </div>
+
+                   <div class="tbl-list">
+                       <table>
+                           <caption>공지사항 목록</caption>
+                           <colgroup>
+                                <col width="100px" />
+                                <col />
+                                <col width="150px" />
+                           </colgroup>
+                           <thead>
+                               <tr>
+                                   <th scope="col">번호</th>
+                                   <th scope="col">제목</th>
+                                   <th scope="col">등록일</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td colspan="3" class="none-data">
+                                       <p>문의하신 내용이 없습니다.</p>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td>300</td>
+                                   <td class="tl"><strong class="sort">공지</strong><a href="#" class="tover">서비스 변경 사항 안내서비스 변경 사항 안내서비스 변경 사항 안내서비스 변경 사항 안내서비스 변경 사항 안내서비스 변경 사항 안내서비스 변경 사항 안내</a></td>
+                                   <td>2020.04.13</td>
+                               </tr>
+                               <tr>
+                                    <td>300</td>
+                                    <td class="tl"><strong class="sort">공지</strong><a href="#">서비스 변경 사항 안내</a></td>
+                                    <td>2020.04.13</td>
+                                </tr>
+                                <tr>
+                                    <td>300</td>
+                                    <td class="tl"><a href="#">서비스 변경 사항 안내</a></td>
+                                    <td>2020.04.13</td>
+                                </tr>
+                                <tr>
+                                    <td>300</td>
+                                    <td class="tl"><a href="#">서비스 변경 사항 안내</a></td>
+                                    <td>2020.04.13</td>
+                                </tr>
+                                <tr>
+                                    <td>300</td>
+                                    <td class="tl"><a href="#">서비스 변경 사항 안내</a></td>
+                                    <td>2020.04.13</td>
+                                </tr>
+                                <tr>
+                                    <td>300</td>
+                                    <td class="tl"><a href="#">서비스 변경 사항 안내</a></td>
+                                    <td>2020.04.13</td>
+                                </tr>
+                           </tbody>
+                       </table>
+                   </div>
+
+                    <!-- 페이징 -->
+                    <div class="paging-wrap">
+                        <ul class="paging">
+                            <li><a href="#" class="arw-dir first">처음페이지</a></li>
+                            <li><a href="#" class="arw-dir prev">이전페이지</a></li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#" class="arw-dir next">다음페이지</a></li>
+                            <li><a href="#" class="arw-dir last">마지막페이지</a></li>
+                        </ul>
+                    </div>
+                    <!--// 페이징 -->
+
+                    <!-- 검색 -->
+                    <form action="">
+                        <fieldset>
+                            <legend>게시판 검색</legend>
+                            <div class="board-search">
+                                <div class="input-box"><!-- 영역 크기에 따라 width 조절 -->
+                                    <span class="input-cell select-wrap">
+                                        <select name="" id="">
+                                            <option value="">제목+내용</option>
+                                            <option value="">제목</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </span>
+                                    <span class="input-cell input-wrap">
+                                        <input type="text" id="" placeholder="검색어를 입력해주세요." value="">
+                                        <button type="button" class="btn-search"><span class="blind">검색</span></button>
+                                    </span>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                    <!--// 검색 -->
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>

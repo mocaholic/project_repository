@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>통합 복지몰</title>
+    <!-- Publish Common : CSS-->
+    <link rel="stylesheet" href="/pc/css/common.css">
+    <link rel="stylesheet" href="/pc/css/layout.css">
+    <link rel="stylesheet" href="/pc/css/contents.css">
+
+    <!-- Publish Theme : CSS-->
+    <link rel="stylesheet" href="/pc/css/theme/theme1.css">
+    <link rel="stylesheet" href="/pc/css/bank/ibk.css">
+
+    <!-- Publish API : CSS-->
+    <link rel="stylesheet" href="/pc/css/slick.css">
+    <link rel="stylesheet" href="/pc/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/pc/css/selectric.css">
+    <link rel="stylesheet" href="/pc/css/jquery.mCustomScrollbar.css">
+
+    <!-- Publish API : JS-->
+    <script type="text/javascript" src="/pc/js/lib/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/slick.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.selectric.min.js"></script>
+    <script type="text/javascript" src="/pc/js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Publish Common : JS-->
+    <script type="text/javascript" src="/pc/js/action.js"></script>
+    <script type="text/javascript" src="/pc/js/include.js"></script><!-- 인클루드 개발시 삭제 예정 -->
+    <script>
+        $(function(){
+            //퍼블 확인용(개발시 삭제 예정)
+            setTimeout(function(){
+                $('#aside .left-menu > li:eq(4) > ul > li:eq(0) > a').addClass('on');
+            }, 100);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <!--- /pc/html/include/header.html -->
+        </div>
+        <!-- //#header -->
+        <div id="container">
+            <div class="content-wrap">
+                <div id="aside">
+                    <!--- /pc/html/include/aside.html -->
+                </div>
+                <div id="content" class="right-cont">
+                    <div class="content-hd">
+                        <h3 class="tit">문의하기</h3>
+                    </div>
+                    
+                    <div class="tbl-write">
+                        <table>
+                            <caption>문의하기 게시판 쓰기</caption>
+                            <colgroup>
+                                <col width="200px" />
+                                <col width="" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">문의유형</th>
+                                    <td>
+                                        <select>
+                                            <option>유형을 선택해주세요</option>
+                                            <option>회원문의</option>
+                                            <option>이벤트/혜택문의</option>
+                                            <option>기타문의</option>
+                                        </select> 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">문의제목</th>
+                                    <td>
+                                        <span class="input-box">
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <input type="text" id="inputOnly1" placeholder="제목을 입력해주세요." value="">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                            <!-- <span class="guide-txt">가이드 메시지 출력 영역 입니다.</span> -->
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">문의내용</th>
+                                    <td>
+                                        <div class="text-area-wrap">
+                                            <textarea name="" id="" placeholder="문의내용을 입력해주세요" maxlength="2000"></textarea>
+                                            <span class="byte"><span class="byte-current">58</span>/<span class="byte-total">2,000</span></span><!-- .byte-current에 입력되어 있는 글자 수를 포함하여 나타냅니다. -->
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">답변알림 (선택)</th>
+                                    <td>
+                                        <div class="input-box chk-wrap phone"><!-- 영역 크기에 따라 width 조절 -->
+                                            <span class="checks">
+                                                <input type="checkbox" id="ex_chk1">
+                                                <label for="ex_chk1">SMS</label>
+                                            </span>
+                                            <span class="input-row">
+                                                <span class="input-cell">
+                                                    <select name="" id="">
+                                                        <option value="010">010</option>
+                                                        <option value="012">012</option>
+                                                        <option value="013">013</option>
+                                                    </select>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">-</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="휴대폰 중간자리 입력" class="number"><!-- 05.22 class 추가 -->
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">-</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="휴대폰 끝자리 입력" class="number">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="input-box chk-wrap"><!-- 영역 크기에 따라 width 조절 -->
+                                            <span class="checks">
+                                                <input type="checkbox" id="ex_chk2">
+                                                <label for="ex_chk2">E-mail</label>
+                                            </span>
+                                            <span class="input-row email-area">
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="이메일 아이디 입력">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <span class="hyp">@</span>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <input type="text" maxlength="4" title="이메일 주소 입력">
+                                                    <button class="cancel"><span class="blind">삭제</span></button>
+                                                </span>
+                                                <span class="input-cell">
+                                                    <select name="" id="">
+                                                        <option value="">naver.com</option>
+                                                    </select>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="basic-btn-box">
+                        <button type="button" class="btn-basic2">취소</button>
+                        <button type="button" class="btn-basic1">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //#container -->
+
+        <div id="footer">
+            <!--- /pc/html/include/footer.html -->
+        </div>
+        <!-- //#footer -->
+    </div>
+    <!-- //#wrap -->
+</body>
+</html>
