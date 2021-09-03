@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded",domload);
 function domload(e){
 	lnbControl.init();
 	tabControl.init();
+	accordion.init();
 }
 
 // lnb 컨트롤 
@@ -64,4 +65,101 @@ var tabControl = {
 
 function getChildNumber(node) {
     return Math.ceil(Array.prototype.indexOf.call(node.parentNode.childNodes, node)/2);
+}
+
+// 아코디언 컨트롤
+var accordion = {
+    init: function(){
+        var acc = document.getElementsByClassName("acd_title");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            var btn = acc[i].querySelectorAll(':scope > button')[0]
+            var accordionPnnel = acc[i].nextElementSibling;
+            if(btn){
+                if(accordionPnnel){
+                    if(acc[i].classList.contains('open')){
+                        accordionPnnel.style.height = 'auto'
+                    }else{
+                        accordionPnnel.style.height = '0px'
+                    }
+                }
+                
+                btn.addEventListener("click", function() {
+                    var acc_title = this.parentNode;
+                    var accordionPnnel = acc_title.nextElementSibling;
+
+                    if(this.closest('.accordion-wrap')){//아코디언 한개만 열리게 컨트롤하는거 (accordion-wrap 로 감싸져있고 oneActive 클래스가 있을경우)
+                        if(this.closest('.acd_wrap').classList.contains('oneActive')){
+                            var root = this.closest('.acd_wrap');
+                            var root_acc_title = root.getElementsByClassName('acd_title');
+                            var this_acc_title = this.closest('.acd_title');
+                            
+                            if(root.classList.contains('oneActive')){
+                                for (var index = 0; index < root_acc_title.length; index++) {
+                                    var elem = root_acc_title[index];
+                                    var accordionPnnel = elem.nextElementSibling;
+                                    
+                                    if(accordionPnnel){
+                                        if(this_acc_title == elem){
+                                            elem.classList.toggle('open');
+                                            if(acc_title.classList.contains('open')){
+                                                accordionPnnel.style.height = accordionPnnel.scrollHeight + 'px'
+                                                this.innerText = '닫힘'
+                                            }else{
+                                                accordionPnnel.style.height = '0px'
+                                                this.innerText = '열림'
+                                            }
+                                        }else{
+                                            elem.classList.remove('open');
+                                            accordionPnnel.style.height = '0px'
+                                            this.innerText = '열림'
+                                        }
+
+                                        var accordionPnnel_parent = accordionPnnel.parentElement.closest('.accordion-panel');
+                                        
+                                    }
+                                }
+                            }
+                        }    
+                    }else{
+                        acc_title.classList.toggle("open");
+                        if(accordionPnnel){
+                            var accordionPnnel_parent = accordionPnnel.parentElement.closest('.acd_panel');
+                            if(acc_title.classList.contains('open')){
+                                accordionPnnel.style.height = accordionPnnel.scrollHeight+1 + 'px'
+                                this.innerText = '닫힘'
+                            }else{
+                                accordionPnnel.style.height = accordionPnnel.scrollHeight+1 + 'px'
+                                setTimeout(function(){
+                                    accordionPnnel.style.height = '0px'
+                                    this.innerText = '열림'
+                                },30)
+                            }
+                        }
+                    }
+                    
+                    return false;
+                });
+            }
+        }
+    }
+}
+
+// 팝업
+function popup(obj){
+	var popupObj = document.getElementsByClassName(obj);
+	popupObj[0].style.opacity = "0";
+	popupObj[0].style.display = 'block';
+	
+	setTimeout(function() {
+	popupObj[0].style.opacity = "1";
+	}, 100);
+}
+
+function popupClose(obj){
+	var popupObj = document.getElementsByClassName(obj);
+	setTimeout(function() {
+		popupObj[0].removeAttribute("style");
+	}, 10);
 }

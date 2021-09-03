@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>SKB STB SW 개발 시스템</title>
+	<link type="text/css" rel="stylesheet" href="css/common.css" />
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+</head>
+<body id="body">
+	<!-- wrap -->
+	<div id="wrapper">
+        <!-- left section -->
+        <div id="left_wrap">
+            <h1>
+                SK broadband
+                <span>STB SW 개발 시스템</span>
+            </h1>
+            <div class="util_menu">
+                <a href="javascript:void(0);"><span>시스템관리</span></a>
+                <a href="javascript:void(0);"><span>정보수정</span></a>
+                <a href="javascript:void(0);"><span>Logout</span></a>
+            </div>
+
+            <nav class="lnb_area">
+                <ul id="lnb">
+                    <li>
+                        <a href="#" class="depth01">Dashboard</a>
+                    </li>
+                    <li class="on">
+                        <a href="#" class="depth01">PLAN</a>
+                        <ul class="depth02">
+                            <li><a href="#">프로젝트 관리</a></li>
+                            <li class="on"><a href="#">Source</a></li>
+                            <li><a href="#">3rd Party</a></li>
+                            <li><a href="#">펌웨어</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Code 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Commit 요청</a></li>
+                            <li><a href="#">Tagging 요청</a></li>
+                            <li><a href="#">Code review 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Build 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Build 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Test 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Test 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Release 전송</a>
+                        <ul class="depth02">
+                            <li><a href="#">Release 전송</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- // left section -->
+        	
+		<!-- container -->
+		<div id="container">  
+            <!-- contents -->
+            <div id="contents">
+                <h2 class="page_title">Source 브렌치</h2>
+
+                <!-- cont_inner -->
+                <div class="cont_inner">
+
+                    <div class="board_top">
+                        <p class="rst_txt">총 <strong class="fc_red">30</strong>건이 검색되었습니다.</p>
+                        <div class="r_area">
+                            <div class="sch_box">
+                                <input type="text" placeholder="검색어를 입력하세요" />
+                                <button type="button" class="btn_sch">검색</button>
+                            </div>
+                            <div class="btn_area">
+                                <button type="button" class="btn" onclick="popup('clone_add')">Clone 생성</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <table class="tbl_list">
+                        <colgroup>
+                            <col style="width:150px;" />
+                            <col style="width:150px;" />
+                            <col style="width:130px;" />
+                            <col style="width:390px;" />
+                            <col style="width:105px;" />
+                            <col style="width:120px;" />
+                            <col style="width:120px;" />
+                            <col style="width:100px;" />
+                            <col style="width:100px;" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">프로젝트</th>
+                                <th scope="col">STB Model</th>
+                                <th scope="col">브렌치 명</th>
+                                <th scope="col">Repo Manifest</th>
+                                <th scope="col">생성자</th>
+                                <th scope="col">생성일</th>
+                                <th scope="col">생성여부</th>
+                                <th scope="col">메일발송여부</th>
+                                <th scope="col">메일발송</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">미생성</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">오류</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class="fc_blue">발송완료</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class=""></span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">미생성</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">오류</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class="fc_blue">발송완료</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class=""></span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">미생성</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">오류</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class="fc_blue">발송완료</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class=""></span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">미생성</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">오류</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class="fc_blue">발송완료</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class=""></span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">미생성</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_red">오류</span></td>
+                                <td><span class="fc_red">미발송</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class="fc_blue">발송완료</span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                            <tr>
+                                <td>UI531</td>
+                                <td>BIP-AI100</td>
+                                <td>TAT_BIP-AI100_5.1.3</td>
+                                <td class="left">BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628, BIP-AL100_TESTAUTO_20200627, BIP-AL100_TESTAUTO_20200628</td>
+                                <td>홍길동(admin)</td>
+                                <td>2020.06.27</td>
+                                <td><span class="fc_blue">생성완료</span></td>
+                                <td><span class=""></span></td>
+                                <td><button type="button" class="btn txt" onclick="popup('mail_send')">메일발송</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="paging">
+                        <a href="#" class="prev_more">
+                            <span>처음</span>
+                        </a>
+                        <a href="#" class="prev">
+                            <span>이전</span>
+                        </a>
+                        <a href="#" class="on">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#" class="next">
+                            <span>다음</span>
+                        </a>
+                        <a href="#" class="next_more">
+                            <span>마지막</span>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- // cont_inner -->
+
+            </div>
+            <!-- // contents -->
+            <!-- footer -->
+            <footer id="footer">
+                <div class="footer_info">
+                    <p class="copy">Copyright © Device Development Squad, SK Boradband 2021.</p>
+                </div>
+            </footer>
+            <!-- //footer -->
+		</div>
+		<!-- //container -->
+		
+	</div>
+	<!-- //wrap -->
+
+    <!-- popup -->
+    <!-- Clone 생성 -->
+    <div class="layer_popup clone_add">
+        <div class="popup">
+            <h1>Clone 브렌치 생성</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="form_area">
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">프로젝트</label>
+                            <select>
+                                <option>선택</option>
+                                <option>프로젝트 명</option>
+                            </select>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">STB Model</label>
+                            <select>
+                                <option>선택</option>
+                                <option>BHX-UH200</option>
+                                <option>BHX-UH400</option>
+                            </select>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">이전 브렌치</label>
+                            <select>
+                                <option>선택</option>
+                                <option>브렌치</option>
+                            </select>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">브렌치 명</label>
+                            <input type="text" class="w_300" placeholder="브렌치 명을 입력하세요." />
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">Repo Manifest</label>
+                            <div class="file">
+                                <input type="file" />
+                                <button type="button">파일찾기</button>
+                            </div>
+                        </div>
+                        <div class="file_list">
+                            <ul>
+                                <li>
+                                    BIP-AL100_TESTAUTO_20200627.xml
+                                    <button type="button" class="btn_del">삭제</button>
+                                </li>
+                                <li>
+                                    BIP-AL100_TESTAUTO_20200627.xml
+                                    <button type="button" class="btn_del">삭제</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">Clone 브렌치 생성</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('clone_add')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('clone_add')">×</button>
+        </div>
+    </div>
+    <!-- // Clone 생성 -->
+    <!-- 메일 발송 -->
+    <div class="layer_popup mail_send">
+        <div class="popup">
+            <h1>메일 발송</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <table class="tbl_list bdt">
+                        <colgroup>
+                            <col style="width:130px;" />
+                            <col style="width:150px;" />
+                            <col style="width:130px;" />
+                            <col style="width:150px;" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">프로젝트 명</th>
+                                <td>UI531</td>
+                                <th scope="row">STB Model</th>
+                                <td>5.3.1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">브렌치 명</th>
+                                <td>5.3.1</td>
+                                <th scope="row">생성여부</th>
+                                <td><span class="fc_red">미생성</span></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <span class="asterisk">메일 수신처</span><br>
+                                    <button type="button" class="btn sm black mt5" onclick="popup('find_recipients');">대상찾기</button>
+                                </th>
+                                <td colspan="3" class="valign_t">
+                                    <div class="mail_reception">
+                                        <div class="m_tag">
+                                            홍길동(SKP)
+                                            <button type="button" class="btn_del">삭제</button>
+                                        </div>
+                                        <div class="m_tag">
+                                            Anyway.app
+                                            <button type="button" class="btn_del">삭제</button>
+                                        </div>
+                                        <div class="m_tag">
+                                            홍길동(SK Broadband)
+                                            <button type="button" class="btn_del">삭제</button>
+                                        </div>
+                                        <textarea rows="1"></textarea>
+                                    </div>
+                                    <!-- 입력 시 노출되는 리스트 -->
+                                    <div class="mail_list">
+                                        <div class="ml">
+                                            <b>A</b>
+                                            홍길동(SKP)
+                                        </div>
+                                        <div class="ml">
+                                            <b>A</b>
+                                            홍만덕(SK Broadband)
+                                        </div>
+                                        <div class="ml">
+                                            <b>A</b>
+                                            홍칠이(가비아 주식회사)
+                                        </div>
+                                        <div class="ml">
+                                            <b>A</b>
+                                            nyway.app
+                                        </div>
+                                    </div>
+                                    <!-- // 입력 시 노출되는 리스트 -->
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">메일 발송</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('mail_send')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('mail_send')">×</button>
+        </div>
+    </div>
+
+    <script>
+        // 화면 확인용 script
+        $('.mail_reception').click(function(e){
+            if(!$(e.target).is(".m_tag, .btn_del")) { 
+                $(this).find('textarea').focus();
+                console.log('d');
+            }
+        });
+
+        $('.mail_reception textarea').each(function(){
+            $(this).focusin(function(){
+                $('.mail_list').show();
+            });
+            $(this).focusout(function(){
+                $('.mail_list').hide();
+            });
+        });
+    </script>
+    <!-- // 메일 발송 -->
+    <!-- 메일 수신처 찾기 -->
+    <div class="layer_popup find_recipients">
+        <div class="popup">
+            <h1>메일 수신처 찾기</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="board_top">
+                        <p class="rst_txt">총 <strong class="fc_red">30</strong>건이 검색되었습니다.</p>
+                        <div class="r_area">
+                            <select>
+                                <option>선택</option>
+                                <option>구분</option>
+                                <option>Modules</option>
+                            </select>
+                            <div class="sch_box">
+                                <input type="text" placeholder="검색어를 입력하세요" />
+                                <button type="button" class="btn_sch">검색</button>
+                            </div>
+                            <div class="btn_area">
+                                <button type="button" class="btn sm">선택 추가</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scroll_y">
+                        <table class="tbl_list">
+                            <colgroup>
+                                <col style="width:31px;" />
+                                <col style="width:80px;" />
+                                <col style="width:200px;" />
+                                <col style="width:80px;" />
+                                <col style="width:80px;" />
+                                <col style="width:80px;" />
+                                <col style="width:80px;" />
+                                <col style="width:150px;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk_all" name="chk" />
+                                            <label for="chk_all"></label>
+                                        </div>
+                                    </th>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">Modules</th>
+                                    <th scope="col">POC</th>
+                                    <th scope="col">SKB담당자</th>
+                                    <th scope="col">개발사</th>
+                                    <th scope="col">개발 담당자</th>
+                                    <th scope="col">이메일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>3rd Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>3rd Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>3rd Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>3rd Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>3rd Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="paging">
+                            <a href="#" class="prev_more">
+                                <span>처음</span>
+                            </a>
+                            <a href="#" class="prev">
+                                <span>이전</span>
+                            </a>
+                            <a href="#" class="on">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#" class="next">
+                                <span>다음</span>
+                            </a>
+                            <a href="#" class="next_more">
+                                <span>마지막</span>
+                            </a>
+                        </div>
+                    </div>
+                    <h2 class="tit mt20">선택 수신처</h2>                
+                    <div class="mt10">
+                        <div class="m_tag">
+                            강민경(SKB)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="m_tag">
+                            홍길동(SKB)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="m_tag">
+                            홍길동(SKP)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="m_tag">
+                            홍길동(SKP)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">적용</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('find_recipients')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('find_recipients')">×</button>
+        </div>
+    </div>
+    <!-- // 메일 수신처 찾기 -->
+    <!-- // popup -->
+
+
+</body>
+</html>

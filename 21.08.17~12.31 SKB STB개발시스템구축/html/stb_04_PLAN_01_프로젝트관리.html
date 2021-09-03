@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>SKB STB SW 개발 시스템</title>
+	<link type="text/css" rel="stylesheet" href="css/common.css" />
+	<script type="text/javascript" src="js/ui.js"></script>
+</head>
+<body id="body">
+	<!-- wrap -->
+	<div id="wrapper">
+        <!-- left section -->
+        <div id="left_wrap">
+            <h1>
+                SK broadband
+                <span>STB SW 개발 시스템</span>
+            </h1>
+            <div class="util_menu">
+                <a href="javascript:void(0);"><span>시스템관리</span></a>
+                <a href="javascript:void(0);"><span>정보수정</span></a>
+                <a href="javascript:void(0);"><span>Logout</span></a>
+            </div>
+
+            <nav class="lnb_area">
+                <ul id="lnb">
+                    <li>
+                        <a href="#" class="depth01">Dashboard</a>
+                    </li>
+                    <li class="on">
+                        <a href="#" class="depth01">PLAN</a>
+                        <ul class="depth02">
+                            <li class="on"><a href="#">프로젝트 관리</a></li>
+                            <li><a href="#">Source</a></li>
+                            <li><a href="#">3rd Party</a></li>
+                            <li><a href="#">펌웨어</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Code 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Commit 요청</a></li>
+                            <li><a href="#">Tagging 요청</a></li>
+                            <li><a href="#">Code review 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Build 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Build 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Test 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Test 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Release 전송</a>
+                        <ul class="depth02">
+                            <li><a href="#">Release 전송</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- // left section -->
+        	
+		<!-- container -->
+		<div id="container">  
+            <!-- contents -->
+            <div id="contents">
+                <h2 class="page_title">프로젝트 관리</h2>
+
+                <!-- cont_inner -->
+                <div class="cont_inner">
+
+                    <div class="board_top">
+                        <div class="r_area">
+                            <div class="btn_area">
+                                <button type="button" class="btn" onclick="popup('project_add')">프로젝트 생성</button>
+                                <button type="button" class="btn lgray">프로젝트 삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <table class="tbl_list">
+                        <colgroup>
+                            <col style="width:150px;" />
+                            <col style="width:150px;" />
+                            <col style="width:130px;" />
+                            <col style="width:105px;" />
+                            <col style="width:105px;" />
+                            <col style="width:180px;" />
+                            <col style="width:180px;" />
+                            <col style="width:100px;" />
+                            <col style="width:;" />
+                            <col style="width:60px;" />
+                        </colgroup>
+                        <thead>
+                            <tr class="sticky">
+                                <th scope="col">프로젝트 명</th>
+                                <th scope="col">STB Model</th>
+                                <th scope="col">생성자</th>
+                                <th scope="col">생성일</th>
+                                <th scope="col">마지막변경일</th>
+                                <th scope="col">QA일정</th>
+                                <th scope="col">BMT일정</th>
+                                <th scope="col">배포계획일정</th>
+                                <th scope="col">비고</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="left" rowspan="7">UI531</td><!-- 행 추가 시 rowspan 값 수정 필요 -->
+                                <td class="left"></td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td> ~ </td>
+                                <td> ~ </td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH200</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left">일정준수</td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left" rowspan="13">Ui530_Partial</td><!-- 행 추가 시 rowspan 값 수정 필요 -->
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BHX-UH400</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">BKO-UH600</td>
+                                <td>홍길동(admin)</td>
+                                <td>2021.08.21</td>
+                                <td>2021.08.23</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.08.29 ~ 2021.09.12</td>
+                                <td>2021.09.30</td>
+                                <td class="left"></td>
+                                <td>
+                                    <button type="button" class="btn txt" onclick="popup('modify_cal')">수정</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="mt20 tc">
+                        <button type="button" class="btn more">+ 더보기</button>
+                    </div>
+
+                </div>
+                <!-- // cont_inner -->
+
+            </div>
+            <!-- // contents -->
+            <!-- footer -->
+            <footer id="footer">
+                <div class="footer_info">
+                    <p class="copy">Copyright © Device Development Squad, SK Boradband 2021.</p>
+                </div>
+            </footer>
+            <!-- //footer -->
+		</div>
+		<!-- //container -->
+		
+	</div>
+	<!-- //wrap -->
+
+    <!-- popup -->
+    <!-- 프로젝트 생성 -->
+    <div class="layer_popup project_add">
+        <div class="popup">
+            <h1>프로젝트 생성</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="form_area">
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">프로젝트 명</label>
+                            <input type="text" placeholder="프로젝트 명을 입력하세요." />
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">생성</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('project_add')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('project_add')">×</button>
+        </div>
+    </div>
+    <!-- // 프로젝트 생성 -->
+    <!-- 일정 수정 -->
+    <div class="layer_popup modify_cal">
+        <div class="popup">
+            <h1>일정</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="form_area">
+                        <div class="form_row">
+                            <label for="" class="tit">프로젝트 명</label>
+                            <input type="text" class="w_300" value="UI531" readonly />
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">STB Model</label>
+                            <select>
+                                <option>BHX-UH200</option>
+                                <option>BHX-UH400</option>
+                            </select>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">QA 일정</label>
+                            <div class="period">
+                                <div class="datepicker">
+                                    <input type="text" readonly />
+                                    <button type="button" class="btn_calendar">달력</button>
+                                </div>
+                                <span class="tx_mid">~</span>
+                                <div class="datepicker">
+                                    <input type="text" readonly />
+                                    <button type="button" class="btn_calendar">달력</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">BMT 일정</label>
+                            <div class="period">
+                                <div class="datepicker">
+                                    <input type="text" readonly />
+                                    <button type="button" class="btn_calendar">달력</button>
+                                </div>
+                                <span class="tx_mid">~</span>
+                                <div class="datepicker">
+                                    <input type="text" readonly />
+                                    <button type="button" class="btn_calendar">달력</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">배포계획 일정</label>
+                            <div class="period">
+                                <div class="datepicker">
+                                    <input type="text" readonly />
+                                    <button type="button" class="btn_calendar">달력</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">비고</label>
+                            <textarea class="w_300"></textarea>
+                        </div>
+                    </div>                
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">저장</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('modify_cal')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('modify_cal')">×</button>
+        </div>
+    </div>
+    <!-- // 일정 수정 -->
+    <!-- // popup -->
+
+
+</body>
+</html>
