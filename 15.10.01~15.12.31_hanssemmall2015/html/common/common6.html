@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 간편보기</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<div id="" class="layer_popup easy_show_popup">
+		<div class="layer_pop_head">
+			<div class="detail_tit">						
+				<div class="select_area">
+					<a href="#" class="select" style="width:127px;">한샘 페이지</a>
+				</div>
+				
+				<h2>도피오 가죽소파 3인용 
+					<span class="ico_rud hit">HIT</span>
+					<span class="ico_rud new">NEW</span>
+					<span class="ico_rud best">BEST</span>
+				</h2>
+			</div>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>		
+		<div class="layer_pop_cont">
+			<div class="detail_wrap">
+				<div class="detail_opt">
+					<div>
+						<div class="detatil_opt_img">
+							<h3 class="dp_none">제품 상세 이미지</h3>
+							<div class="detatil_opt_thum">
+								<img src="../../common/images/detail/detail_thumbnail.jpg" alt="도피오 가죽소파 3인용"> <!-- alt값 제품이름 삽입 -->
+							</div>
+							<div class="detatil_opt_qr">
+								<p>
+									<img src="../../common/images/detail/detail_qr.gif" alt="qr코드"> <!-- QR코드 이미지없을경우  : img태그 삭제시, p태그는 유지 -->
+								</p>
+								<div>
+									<button>URL복사</button>
+									<button class="ui-layer-close">이미지보기</button>
+								</div>
+							</div>
+						</div>
+						<div class="detatil_opt_info">
+							<h3 class="dp_none">제품 구매정보 및 선택사항</h3>
+							<div class="detatil_opt_info_top">
+								<div class="detatil_opt_info_left">
+									<ul class="opt_list">
+										<li>
+											<strong>판매가</strong>
+											<div>330,000</div>
+										</li>
+										<li>
+											<strong>할인가</strong>
+											<div>300,000</div>
+										</li>
+										<li>
+											<strong>쿠폰적용가</strong>
+											<div class="t_price"><strong>280,000</strong>
+												<span class="tooltip_wrap"></span>
+												<button type="button" class="botton_st_02 white_red" onclick="$('.pop_coupon.coup').openLayer();">쿠폰</button>
+												<!-- 쿠폰레이어 팝업 -->
+												<div class="pop_bubble pop_coupon coup">
+													<span class="arr"></span>
+													<h3 class="pop_bubble_tit ui-layer-title">쿠폰</h3>
+													<div class="pop_bubble_cont">
+														<ul class="pop_coupon_list">
+															<li>
+																<strong>쿠폰할인금액</strong>
+																<div>-20,000원</div>
+															</li>
+															<li class="last">
+																<strong>최종금액</strong>
+																<div>280,000원</div>
+															</li>
+														</ul>
+														<hr class="dashed_hr">
+														<dl class="coupon_list">
+															<dt>
+																<span class="icon_coupon">5%쿠폰</span>
+															</dt>
+															<dd>
+																<p>사용기간 : 2015.01.01~2015.09.30</p>
+																<p>남은수량 : 200장</p>
+																<p>사용가능수량 : 50장</p>
+															</dd>
+														</dl>
+														<dl class="coupon_list">
+															<dt>
+																<span class="icon_coupon">더블쿠폰</span>
+															</dt>
+															<dd>
+																<p>사용기간 : 2015.01.01~2015.09.30</p>
+																<p>남은수량 : 200장</p>
+																<p>사용가능수량 : 50장</p>
+															</dd>
+														</dl>
+														<hr class="dashed_hr">
+														<ul class="txt_star">
+															<li>*쿠폰 사용기간은 변경될 수 있습니다.</li>
+															<li>*현재 쿠폰적용가의 기준은 쿠폰이 적용된 금액이며 회원에 한해 적용됩니다.</li> <!-- ie8수정 -->
+														</ul>
+													<button class="pop_bubble_close ui-layer-close">팝업닫기</button>
+												</div>
+												<!-- //쿠폰레이어 팝업 -->
+											</div>
+											</div>
+										</li>
+										<li>
+											<strong>수량</strong>
+											<div>
+												<span class="opt_spinner ui-number-counter">
+													<button class="opt_down ui-decrease" disabled="disabled">수량 줄이기</button>
+													<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="20" readonly="readonly" />
+													<button class="opt_up ui-increase" disabled="disabled">수량 더하기</button>
+												</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="detatil_opt_info_right">
+									<div class="detatil_opt_delivery">
+										<strong>배송</strong>
+										<div>
+											<p>무료배송/전국(도서산간 제외)</p>
+											<span class="t_red">
+												※ 이 상품은 권역별 배송비가 있습니다.
+												<button class="ic_question" type="button">권역별 배송비란?</button>
+											</span>
+										</div>
+										<p>
+											<span class="ico_txt">설치기사 직접시공</span>
+											<span class="ico_txt">제주배송 가능</span>
+											<span class="ico_txt">택배배송</span>
+											<span class="ico_txt">입점업체 직접배송</span>
+											<span class="ico_txt">택배배송</span>
+											<span class="ico_txt">한샘 직접배송</span>
+										</p>										
+									</div>
+								</div>
+							</div>
+							<!-- 옵션 + 가격 오른쪽 정렬 -->
+							<div class="detatil_opt_info_bottom">
+								<div class="detatil_opt_txt">
+									<p>[이벤트]</p>
+									<div>거실 단품을 리클라이너와 함께 사면 최대 50% 할인</div>
+								</div>
+								<div class="detatil_opt_price">
+									<span>총구매가</span>
+									<strong>330,000<sub>원</sub></strong>
+								</div>	
+								
+					<!-- button -->
+					<div class="detatil_opt_btn">
+						<button type="button" class="botton_st_05 purple details">상세보기</button>
+						<button type="button" class="botton_st_05 purple3">관심상품</button>
+						<button type="button" class="botton_st_05 purple">장바구니</button>
+						<button type="button" class="botton_st_05 red">구매하기</button>
+					</div>
+					<!--// button -->
+							</div>
+							<!--// 옵션 + 가격 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.order-page.js"></script>
+</body>
+</html>

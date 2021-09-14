@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 주문취소 팝업</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+	<style type="text/css">
+		body {padding:50px;}
+	</style>
+</head>
+<body>
+	<div id="layer_popup" class="layer_popup pop_ord_cancel">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">안내</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<div class="btm_line">신청하신 주문취소 건은 아래의 사유로 바로 취소처리 되지 않습니다.</div>
+			<div class="mb20">
+				취소하시려는 상품이 &lt;사은품 증정행사&gt;에 적용되어 있습니다. <br>
+				구입상품과 증정사은품은 함께 취소되어야 하나, 이미 배송중이거나 배송완료된 상품이 있어 취소 불가한 상태입니다.<br>
+				(취소는 결제완료 상태에서만 가능하고 배송이 출발한 이후는 반품만 가능합니다. <br>상품별 주문상태를 확인하세요)
+			</div>
+			<table class="tbl txt_c" summary="">
+				<caption></caption>
+				<colgroup>
+					<col width="366px" />
+					<col width="*" />
+				</colgroup>
+				<thead>
+					<tr class="bg">
+						<th scope="col">상품명</th>
+						<th scope="col">주문상태</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="bg_st02"> <!-- bg_st02 클래스 추가시 배경색 추가 -->
+						<td class="prd txt_left">한샘 원목침대  (색상:화이트/사이즈:Q)</td>
+						<td>결제완료</td>
+					</tr>
+					<tr>
+						<td class="prd txt_left">한샘 라임 화장대</td>
+						<td>배송중</td>
+					</tr>
+				</tbody>
+			</table>
+			<ul class="btm_explain">
+				<li>이미 배송중, 배송완료된 상품은 '반품’처리하신 후 주문취소를 재시도 해주세요. <br>문의사항은 <span class="ft_size14 ft_black">고객센터(1688-4945)</span>로 주시기 바랍니다. (일요일, 공휴일 휴무)</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 로그인</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/mypage.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- layer_popup -->
+	<div class="layer_popup login"> <!-- 로그인 -->
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">한샘몰 로그인</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<!-- tab -->
+			<div class="tab_area ui-tab-area st_small">
+				<ul class="ui-tabs tab_tit">
+					<li class="ui-tab-item active"><a href="#">회원</a></li>
+					<li class="ui-tab-item"><a href="#">비회원(주문조회)</a></li>
+				</ul>
+				<div class="ui-tab-contents tab_body">
+					<div class="ui-tab-contents-item tab_cont" style="display:block;">
+						<!-- 회원 -->
+						<div class="login_fieldset">
+							<dl class="login_form">
+								<dt>아이디(이메일)</dt>
+								<dd>
+									<input type="text" placeholder="ID 또는 이메일ID" />
+									<p class="tip_txt ft_red">아이디를 입력해 주세요.</p> <!-- 기본 display:none -->
+								</dd>
+								<dt>비밀번호</dt>
+								<dd>
+									<input type="password" placeholder="비밀번호" />
+									<p class="tip_txt ft_red">비밀번호를 입력해 주세요.</p> <!-- 기본 display:none -->
+								</dd>
+							</dl>
+							<div class="caption_txt">
+								<p><div class="checkbox_area"><input type="checkbox" id="check1"><label for="check1">아이디저장</label></div></p><!-- check box 태그 추가 -->
+								<p>(개인정보 보호를 위해 개인PC에서만 이용해 주세요)</p>
+								<p class="tip_txt ft_red">아이디 또는 비밀번호가 일치하지 않습니다.<br />다시 입력해 주세요</p> <!-- 기본 display:none -->
+							</div>
+							<div class="button_area">
+								<p class="inquiry_btn"><button type="button" class="botton_st_04 red">로그인</button></p>
+								<p class="user_gate">
+									<button type="button" class="botton_st_04">아이디/비밀번호 찾기</button>
+									<button type="button" class="botton_st_04">회원가입</button>
+								</p>
+							</div>
+						</div>
+						<!--// 회원 -->
+					</div>
+					<div class="ui-tab-contents-item tab_cont">
+						<!-- 비회원 -->
+						<div class="login_fieldset">
+							<dl class="login_form">
+								<dt>이름</dt>
+								<dd>
+									<input type="text" placeholder="주문 시 입력한 주문자 이름" />
+									<p class="tip_txt ft_red">주문 시 입력하신 이름을 입력해 주세요.</p> <!-- 기본 display:none -->
+								</dd>
+								<dt><!-- 주문번호 휴대폰 번호 선택 추가 -->
+									<input type="radio" id="radio1" name="radio"><label for="radio1">주문번호</label>
+									<input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">휴대폰번호</label>
+									<!-- //주문번호 휴대폰 번호 선택 추가 -->
+								</dt>
+								<dd><!-- 주문번호 / 휴대폰 선택시 변경되는 부분 -->
+									<!-- 주문번호 -->
+									<div class="ordernum" style="display:">
+										<input type="text" placeholder="주문 시 문자 발송된 주문번호" />
+										<p class="tip_txt ft_red">주문번호를 입력해 주세요</p> <!-- 기본 display:none -->
+									</div>
+									<!--// 주문번호 -->
+									<!-- 휴대폰 번호 -->
+									<div class="orderphone" style="display:">
+										<div class="num_input">
+											<input type="text" placeholder="주문 시 입력한 휴대폰번호 (-없이 입력)" />
+											<button type="button" class="botton_st_03 gray">휴대폰 인증</button>
+											<p class="tip_txt ft_red">휴대폰번호를 입력해 주세요 <!-- 기본 display:none -->
+										</div>
+										<div class="graybox">
+											<div class="check_phone">
+												<p>입력하신 휴대폰번호로 인증번호가 재전송 되었습니다.</p>
+												<div class="check_number">
+													<input type="text" placeholder="인증번호 입력">
+													<button type="button" class="botton_st_03 gray">확인</button>
+													<button type="button" class="botton_st_03">재전송</button>
+												</div>
+												<p class="tip_txt ft_red">인증번호를 정확히 입력해 주세요.</p>
+												<p class="time_ing">
+													남은 시간 <span class="ft_red">
+													<span>1</span>분 <span>30</span>초</span>
+												</p>
+											</div>
+										</div>
+									</div>
+									<!--// 휴대폰 번호 -->
+								</dd>
+							</dl>
+							<div class="caption_txt">
+								<p>주문번호를 잊으신 경우, <br />한샘몰 고객센터 1688-4945로 문의하여 주시기 바랍니다.</p>
+								<p class="tip_txt ft_red">입력하신 정보를 찾을 수 없습니다.<br />주문 시 입력한 이름, 주문번호를 다시 확인해주세요</p> <!-- 기본 display:none -->
+							</div>
+							<div class="button_area">
+								<p class="inquiry_btn"><button type="button" class="botton_st_04 purple">조회</button></p>
+							</div>
+						</div>
+						<!--// 비회원 -->
+					</div>
+				</div>
+			</div>
+			<!--// tab -->
+		</div>
+	</div>
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<!-- //layer_popup -->
+</body>
+</html>

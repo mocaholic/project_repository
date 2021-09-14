@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 교환/반품/취소 팝업</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/mypage.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+	<script type="text/javascript" src="jquery.word-break-keep-all.min.js"></script>
+	<style type="text/css">
+		body {padding:50px;}
+	</style>
+</head>
+<body>
+	<!-- layer popup -->
+	<div class="layer_popup delivery_popup" style="display:block;">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">배송지 관리</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<div class="member_input_form">
+			<fieldset>
+				<legend>배송지관리</legend>
+				<div class="need_tip">
+					<h3 class="title">배송지 추가/수정</h3>
+					<span class="need_txt">필수입력사항</span>
+				</div>
+				<div class="table_area">
+				<!-- 1차수정 : 테이블 내용 변경 -->
+					<table class="tbl_style_01" summary="회원가입에 필요한 개인정보를 입력함">
+						<caption>배송지관리</caption>
+						<colgroup>
+							<col width="120px">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="need"><label for="user_id">배송지</label></th>
+								<td>
+									<div class="basic_address">
+										<input type="text" id="user_id" placeholder="" style="width:220px;">
+										<div class="checkbox_area">
+										    <input type="checkbox" id="check1" /><label for="check1">기본배송지</label>
+										</div>
+									</div>
+									<p class="error_msg">배송지를 입력해 주세요</p> <!-- DEV. dp_none 클래스 추가시 해당 부분 hide --> 
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="need"><label for="send_man">받는사람</label></th>
+								<td>
+									<div class="cell">
+										<input type="text" id="send_man" placeholder=""  style="width:220px;"><!-- 4차 수정 -->
+									</div>
+									<p class="error_msg">받는 사람를 입력해 주세요</p> <!-- DEV. dp_none 클래스 추가시 해당 부분 hide --> 
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="need"><label for="send_tel">휴대폰 번호</label></th>
+								<td>
+									<div class="cell">
+										<input type="text" id="send_tel" placeholder="‘‘-’ 없이 숫자만 입력해 주세요" style="width:220px;"><!-- 4차 수정 -->
+									</div>
+									<p class="error_msg">휴대폰 번호를 입력해 주세요</p> <!-- DEV. dp_none 클래스 추가시 해당 부분 hide --> 
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="vam"><span class="need">필수</span>주소</th>
+								<td>
+									<ul class="address_box">	
+										<li>
+											<input type="text" />
+											<button type="button" class="botton_st_03 gray">우편번호찾기</button>
+										</li>
+										<li><input type="text" /></li>
+										<li><input type="text" /></li>
+									</ul>
+									<p class="error_msg">주소를 입력해 주세요</p> <!-- DEV. dp_none 클래스 추가시 해당 부분 hide --> 
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="button_area address_btn">
+					<button type="button" class="botton_st_04 purple">확인</button>
+					<button type="button" class="botton_st_04">취소</button>
+				</div>
+			</fieldset>
+			</div>
+		</div>
+	</div>
+	<!--// layer popup -->
+	
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+</body>
+</html> 

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 우편번호 검색</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- layer popup -->
+	<div class="layer_popup zip_code_popup" style="display:block;left:20%;"> <!-- 개발시 인라인 스타일 제거 해주세요 -->
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">우편번호 검색</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<p class="ft_size14">지번주소(동/입/면/리), 도로명 또는 건물명(아파트)을 입력해주세요.</p>
+			<div class="search_zipcode">
+				<input type="text">
+				<button type="button" class="botton_st_03 gray">검색</button>
+			</div>
+			<div class="tab_area st_small ui-tab-area zipcode">
+				<ul class="ui-tabs tab_tit">
+					<li class="ui-tab-item active"><a href="#">지번주소</a></li>
+					<li class="ui-tab-item"><a href="#">도로명주소</a></li>
+				</ul>
+				<div class="ui-tab-contents tab_body st_border" style="display:none;"> <!-- 초기 화면시 display:none; -->
+					<div class="ui-tab-contents-item tab_cont" style="display: block;">
+						<ul class="zipcode_list">
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-contents-item tab_cont" style="display: none;">
+						<ul class="local_select">
+							<li>
+								<p>시/도</p>
+								<div class="select_area ui-select-box">
+									<select class="ui-input-select" title="옵션 선택">
+										<option value="" selected="selected">선택</option>
+										<option value="value2">옵션 Label 1</option>
+										<option value="value3">옵션 Label 2</option>
+										<option value="value4">옵션 Label 3</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<p>시/군/구</p>
+								<div class="select_area ui-select-box">
+									<select class="ui-input-select" title="옵션 선택">
+										<option value="" selected="selected">선택</option>
+										<option value="value2">옵션 Label 1</option>
+										<option value="value3">옵션 Label 2</option>
+										<option value="value4">옵션 Label 3</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+						<ul class="zipcode_list">
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- paging -->
+			<div class="paging" style="display:none;"> <!-- 초기 화면시 display:none; -->
+			    <span class="arrow prev">
+			        <a href="#none">처음 페이지</a>
+			        <a href="#none">이전 페이지</a>
+			    </span>
+			    <span class="list">
+			    	<span class="now">1</span>
+			        <a href="#none">2</a>
+			        <a href="#none">3</a>
+			        <a href="#none">4</a>
+			        <a href="#none">5</a>
+			    </span>
+			    <span class="arrow next">
+			        <a href="#none">다음 페이지</a>
+			        <a href="#none">마지막 페이지</a>
+			    </span>
+			</div>
+			<!--// paging -->
+		</div>
+	</div>
+	<!--// layer popup -->
+	
+	<!-- layer popup -->
+	<div class="layer_popup zip_code_popup" style="display:block;"> <!-- 개발시 인라인 스타일 제거 해주세요 -->
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">우편번호 검색</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<p class="ft_size14">지번주소(동/입/면/리), 도로명 또는 건물명(아파트)을 입력해주세요.</p>
+			<div class="search_zipcode">
+				<input type="text">
+				<button type="button" class="botton_st_03 gray">검색</button>
+			</div>
+			<div class="tab_area st_small ui-tab-area zipcode">
+				<ul class="ui-tabs tab_tit">
+					<li class="ui-tab-item active"><a href="#">지번주소(12)</a></li>
+					<li class="ui-tab-item"><a href="#">도로명주소(12)</a></li>
+				</ul>
+				<div class="ui-tab-contents tab_body st_border" style="display:block;"> <!-- 초기 화면시 display:none; -->
+					<div class="ui-tab-contents-item tab_cont" style="display: block;">
+						<ul class="zipcode_list">
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									경기도 고양시 덕양구 행신 2동
+									<span>412-222</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ui-tab-contents-item tab_cont" style="display: none;">
+						<ul class="local_select">
+							<li>
+								<p>시/도</p>
+								<div class="select_area ui-select-box">
+									<select class="ui-input-select" title="옵션 선택">
+										<option value="" selected="selected">선택</option>
+										<option value="value2">옵션 Label 1</option>
+										<option value="value3">옵션 Label 2</option>
+										<option value="value4">옵션 Label 3</option>
+									</select>
+								</div>
+							</li>
+							<li>
+								<p>시/군/구</p>
+								<div class="select_area ui-select-box">
+									<select class="ui-input-select" title="옵션 선택">
+										<option value="" selected="selected">선택</option>
+										<option value="value2">옵션 Label 1</option>
+										<option value="value3">옵션 Label 2</option>
+										<option value="value4">옵션 Label 3</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+						<ul class="zipcode_list">
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none">
+									서울 구로구 디지털로 288
+									<span>152-790</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- paging -->
+			<div class="paging" style="display:block;"> <!-- 초기 화면시 display:none; -->
+			    <span class="arrow prev">
+			        <a href="#none">처음 페이지</a>
+			        <a href="#none">이전 페이지</a>
+			    </span>
+			    <span class="list">
+			    	<span class="now">1</span>
+			        <a href="#none">2</a>
+			        <a href="#none">3</a>
+			        <a href="#none">4</a>
+			        <a href="#none">5</a>
+			    </span>
+			    <span class="arrow next">
+			        <a href="#none">다음 페이지</a>
+			        <a href="#none">마지막 페이지</a>
+			    </span>
+			</div>
+			<!--// paging -->
+			<!-- 버튼 두개일때 -->
+			<!-- div class="button_area both_btn">
+				<button type="button" class="botton_st_04 purple">확인</button>
+				<button type="button" class="botton_st_04">취소</button>
+			</div -->
+			<!--// 버튼 두개일때 -->
+		</div>
+	</div>
+	<!--// layer popup -->
+	
+	<!-- layer popup -->
+	<div class="layer_popup zip_code_popup" style="display:block;left:80%;"> <!-- 개발시 인라인 스타일 제거 해주세요 -->
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">우편번호 검색</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<h2>상세주소</h2>
+			<p class="ft_size14 mb20">지번주소(동/입/면/리), 도로명 또는 건물명(아파트)을 입력해주세요.</p>
+			<table class="tbl pd15" summary="">
+				<caption></caption>
+				<colgroup>
+					<col width="100px">
+					<col width="*">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th class="bg">우편번호</th>
+						<td>10439</td>
+					</tr>
+					<tr>
+						<th class="bg">기본주소</th>
+						<td>서울시 마포구 동교동 232</td>
+					</tr>
+					<tr>
+					<th class="bg">상세주소</th>
+						<td>
+							<div class="detail_address">
+								<input type="text">
+								<button type="button" class="botton_st_03 red">상세주소입력</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- button -->
+			<div class="button_area both_btn">
+				<button type="button" class="botton_st_04 purple">다시검색</button>
+				<button type="button" class="botton_st_04">취소</button>
+			</div>
+			<!--// button -->
+			<p class="tip_txt mt20">· 정확한 배송을 위해 변환된 주소 정보를 확인해 주세요.</p>
+		</div>
+	</div>
+	<!--// layer popup -->
+	
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 간편보기</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<div id="layer_popup" class="layer_popup easy_show_popup">
+		<div class="layer_pop_head">
+			<div class="detail_tit">						
+				<div class="select_area">
+					<a href="#" class="select" style="width:127px;">한샘 페이지</a>
+				</div>
+				
+				<h2>도피오 가죽소파 3인용 
+					<span class="ico_rud hit">HIT</span>
+					<span class="ico_rud new">NEW</span>
+					<span class="ico_rud best">BEST</span>
+				</h2>
+			</div>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>		
+		<div class="layer_pop_cont">
+			<div class="detail_wrap">
+				<div class="detail_opt">
+					<!-- scroll -->
+					<div class="scroll_ht">
+					<div>
+						<div class="detatil_opt_img">
+							<h3 class="dp_none">제품 상세 이미지</h3>
+							<div class="detatil_opt_thum">
+								<img src="../../common/images/detail/detail_thumbnail.jpg" alt="도피오 가죽소파 3인용"> <!-- alt값 제품이름 삽입 -->
+							</div>
+							<div class="detatil_opt_qr">
+								<p>
+									<img src="../../common/images/detail/detail_qr.gif" alt="qr코드"> <!-- QR코드 이미지없을경우  : img태그 삭제시, p태그는 유지 -->
+								</p>
+								<div>
+									<button>URL복사</button>
+									<button class="ui-layer-close">이미지보기</button>
+								</div>
+							</div>
+						</div>
+						<div class="detatil_opt_info">
+							<h3 class="dp_none">제품 구매정보 및 선택사항</h3>
+							<div class="detatil_opt_info_top">
+								<div class="detatil_opt_info_left">
+									<ul class="opt_list">
+										<li>
+											<strong>판매가</strong>
+											<div>330,000</div>
+										</li>
+										<li>
+											<strong>할인가</strong>
+											<div>300,000</div>
+										</li>
+										<li>
+											<strong>쿠폰적용가</strong>
+											<div class="t_price"><strong>280,000</strong>
+												<span class="tooltip_wrap"></span>
+												<button type="button" class="botton_st_02 white_red" onclick="$('.pop_coupon.sale').openLayer();">할인내역</button>
+												<!-- 할인내역 레이어 팝업 -->
+												<div class="pop_bubble pop_coupon sale" style="display:none;">
+													<span class="arr"></span>
+													<h3 class="pop_bubble_tit ui-layer-title">할인내역</h3>
+													<div class="pop_bubble_cont">
+														<ul class="pop_coupon_list">
+															<li>
+																<strong>쿠폰할인금액</strong>
+																<div>-20,000원</div>
+															</li>
+															<li class="last">
+																<strong>최종금액</strong>
+																<div>280,000원</div>
+															</li>
+														</ul>
+														<hr class="dashed_hr">
+														<dl class="coupon_list">
+															<dt>
+																<span class="icon_coupon">5%쿠폰</span>
+															</dt>
+															<dd>
+																<p>사용기간 : 2015.01.01~2015.09.30</p>
+																<p>남은수량 : 200장</p>
+																<p>사용가능수량 : 50장</p>
+															</dd>
+														</dl>
+														<dl class="coupon_list">
+															<dt>
+																<span class="icon_coupon">더블쿠폰</span>
+															</dt>
+															<dd>
+																<p>사용기간 : 2015.01.01~2015.09.30</p>
+																<p>남은수량 : 200장</p>
+																<p>사용가능수량 : 50장</p>
+															</dd>
+														</dl>
+														<hr class="dashed_hr">
+														<ul class="txt_star">
+															<li>*쿠폰 사용기간은 변경될 수 있습니다.</li>
+															<li>*현재 쿠폰적용가의 기준은 쿠폰이 적용된 금액이며 회원에 한해 적용됩니다.</li> <!-- ie8수정 -->
+														</ul>
+													</div>
+													<button class="pop_bubble_close ui-layer-close">팝업닫기</button>
+												</div>
+												<!-- //할인내역 레이어 팝업 -->
+											</div>
+										</li>
+										<li class="opt_coupon">
+											<strong>쿠폰</strong>
+											<div>
+												<span class="botton_st_02 white_red">5%쿠폰</span>
+												<span class="botton_st_02 white_red">더블쿠폰</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="detatil_opt_info_right">
+									<div class="detatil_opt_delivery">
+										<strong>배송</strong>
+										<div>
+											<p>무료배송/전국(도서산간 제외)</p>
+											<span class="t_red">
+												※ 이 상품은 권역별 배송비가 있습니다.
+												<button class="ic_question" type="button">권역별 배송비란?</button>
+											</span>
+										</div>
+										<p class="mb5">
+											<span class="ico_txt">설치기사 직접시공</span>
+											<span class="ico_txt">제주배송 가능</span>
+											<span class="ico_txt">택배배송</span>
+											<span class="ico_txt">입점업체 직접배송</span>
+											<span class="ico_txt">택배배송</span>
+											<span class="ico_txt">한샘 직접배송</span>
+										</p>										
+									</div>
+								</div>
+							</div>
+							<!-- 패키지 상품 -->
+							<div class="detatil_opt_info_bottom">
+								<div class="detatil_opt_txt">
+									<p>[이벤트]</p>
+									<div>거실 단품을 리클라이너와 함께 사면 최대 50% 할인</div>
+								</div>
+								<div class="detail_opt_select">
+									<strong>상품옵션선택</strong>
+									<div>
+										<ul>
+											<li>
+												<span>선택1</span>
+												<div class="select_area ui-select-box">
+													<select class="ui-input-select" title="옵션 선택">
+														<option value="" selected="selected">선택</option>
+														<option value="value2">옵션 Label 1</option>
+														<option value="value3">옵션 Label 2</option>
+														<option value="value4">옵션 Label 3</option>
+													</select>
+												</div>
+											</li>
+											<li>
+												<span>선택2</span>
+												<div class="select_area ui-select-box">
+													<select class="ui-input-select" title="옵션 선택">
+														<option value="" selected="selected">선택</option>
+														<option value="value2">옵션 Label 1</option>
+														<option value="value3">옵션 Label 2</option>
+														<option value="value4">옵션 Label 3</option>
+													</select>
+												</div>
+											</li>
+											<li>
+												<span>선택3</span>
+												<div class="select_area ui-select-box">
+													<select class="ui-input-select" title="옵션 선택">
+														<option value="" selected="selected">선택</option>
+														<option value="value2">옵션 Label 1</option>
+														<option value="value3">옵션 Label 2</option>
+														<option value="value4">옵션 Label 3</option>
+													</select>
+												</div>
+											</li>
+											<li>
+												<span>선택4</span>
+												<div class="select_area ui-select-box">
+													<select class="ui-input-select" title="옵션 선택">
+														<option value="" selected="selected">선택</option>
+														<option value="value2">옵션 Label 1</option>
+														<option value="value3">옵션 Label 2</option>
+														<option value="value4">옵션 Label 3</option>
+													</select>
+												</div>
+											</li>
+											<li>
+												<span>선택5</span>
+												<div class="select_area ui-select-box">
+													<select class="ui-input-select" title="옵션 선택">
+														<option value="" selected="selected">선택</option>
+														<option value="value2">옵션 Label 1</option>
+														<option value="value3">옵션 Label 2</option>
+														<option value="value4">옵션 Label 3</option>
+													</select>
+												</div>
+											</li>
+											<li>
+												<span>선택6</span>
+												<div class="select_area ui-select-box">
+													<select class="ui-input-select" title="옵션 선택">
+														<option value="" selected="selected">선택</option>
+														<option value="value2">옵션 Label 1</option>
+														<option value="value3">옵션 Label 2</option>
+														<option value="value4">옵션 Label 3</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>						
+								<div class="detail_opt_select">
+									<strong>사은품선택</strong>
+									<div>
+										<ul>
+											<li class="li_alone">
+												<span>사은품</span>
+												<div class="select_area ui-design-select-box">
+													<a href="#" class="select ui-select-box-face">선택</a>
+													<select title="옵션 선택" class="ui-input-select">
+														<option value="" selected="selected">선택</option>
+														<option value="옵션코드1">배게커버</option>
+														<option value="옵션코드2">배게솜</option>
+													</select>
+													<ul class="option_box option_tbl ui-select-options"> <!-- active 열림, option_tbl 클래스 추가 -->
+														<li class="ui-select-option">
+															<a href="#" class="none">사은품 받지 않음</a>
+														</li>
+														<li class="ui-select-option">
+															<a href="#">
+																<span>
+																	<span class="img"><img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용"></span>
+																	<span class="prd">배게커버</span>
+																</span>
+															</a>
+														</li>
+														<li class="ui-select-option">
+															<a href="#">
+																<span>
+																	<span class="img"><img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용"></span>
+																	<span class="prd">배게솜</span>
+																</span>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+										<!-- 사은품 레이어팝업 -->
+										<div class="layer_popup pop_freegift" style="display:none;">
+											<div class="layer_pop_head">
+												<h1 class="ui-layer-title layer_title">사은품</h1>
+												<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+											</div>
+											<div class="layer_pop_cont">
+												<table class="addProduct_info">
+													<tr>
+														<td class="img"><img src="../../common/images/detail/img_review_01.jpg" alt="도피오 가죽소파"></td>
+														<td class="txt">도피오 가죽소파 3인용</td>
+													</tr>
+												</table>
+												<div class="addProduct_opt">
+													<p>옵션</p>
+													<div>
+														<ul>
+															<li>
+																<span>선택1</span>
+																<div class="select_area ui-select-box">
+																	<select class="ui-input-select" title="옵션 선택">
+																		<option value="" selected="selected">선택</option>
+																		<option value="value2">옵션 Label 1</option>
+																		<option value="value3">옵션 Label 2</option>
+																		<option value="value4">옵션 Label 3</option>
+																	</select>
+																</div>
+															</li>
+															<li>
+																<span>선택2</span>
+																<div class="select_area ui-select-box">
+																	<select class="ui-input-select" title="옵션 선택">
+																		<option value="" selected="selected">선택</option>
+																		<option value="value2">옵션 Label 1</option>
+																		<option value="value3">옵션 Label 2</option>
+																		<option value="value4">옵션 Label 3</option>
+																	</select>
+																</div>
+															</li>
+															<li>
+																<span>선택3</span>
+																<div class="select_area ui-select-box">
+																	<select class="ui-input-select" title="옵션 선택">
+																		<option value="" selected="selected">선택</option>
+																		<option value="value2">옵션 Label 1</option>
+																		<option value="value3">옵션 Label 2</option>
+																		<option value="value4">옵션 Label 3</option>
+																	</select>
+																</div>
+															</li>
+														</ul>															
+													</div>
+												</div>
+												<p class="pop_btn_area">
+													<button type="button" class="botton_st_04 red">선택하기</button>
+													<button type="button" class="botton_st_04 purple">닫기</button>
+												</p>
+											</div>
+										</div>
+										<!-- //사은품 레이어팝업 -->
+									</div>
+								</div>
+							</div>
+							<!--// 패키지상품 -->
+							<div class="detatil_opt_info_bottom">
+								<div class="detatil_opt_txt">
+									<div class="ft_blue indent_txt">
+										※ 선택하신 상품은 기본옵션 외로 추가적인 정보 (추가구성상품/패키지상품) 를 선택해야 되는 상품입니다.<br />
+										추가정보를 확인하시려면 상세보기로 이동하시기 바랍니다.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 하단 패키지 상품 -->
+					<table class="detail_opt_list_table">
+						<caption></caption>
+						<colgroup>
+							<col width="20px">
+							<col width="52px">
+							<col width="*">
+							<col width="150px">
+							<col width="190px">
+							<col width="20px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td colspan="2" class="thum">
+									<img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용">
+								</td>
+								<td class="prd">
+									<p>세이지 침대 Q/S 전용</p>
+									<div>
+										<span>색상 : 블랙</span>
+										<span>사이즈 : Q</span>
+										<span>색상 : 화이트</span>
+										<span>재질 : 면 100%</span>
+										<span>사은품 : 배게커버/블랙</span>
+									</div> 
+								</td>
+								<td class="num">
+									<span class="opt_spinner ui-number-counter">
+										<button class="opt_down ui-decrease" disabled="disabled">수량 줄이기</button>
+										<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="20" readonly="readonly" />
+										<button class="opt_up ui-increase" disabled="disabled">수량 더하기</button>
+									</span>
+								</td>
+								<td class="price">
+									<strong>88,480,000<sub>원</sub></strong>
+								</td>
+								<td class="btn">
+									<button class="btn_delete">삭제</button>
+								</td>
+							</tr>
+							<!-- '입고알림신청' 버튼추가 --> 
+							<tr>
+								<td colspan="2" class="thum">
+									<img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용">
+								</td>
+								<td class="prd">
+									<p>세이지 침대 Q/S 전용</p>
+									<div>
+										<span>색상 : 블랙</span>
+										<span>사이즈 : Q</span>
+										<span>색상 : 화이트</span>
+										<span>재질 : 면 100%</span>
+										<span>사은품 : 배게커버/블랙</span>
+									</div> 
+								</td>
+								<td class="num">
+									<button type="button" class="botton_st_02">입고알림 신청</button>
+								</td>
+								<td class="price">
+									<strong> <strike>88,480,000</strike><sub>원</sub><sub class="ft_red">(품절)</sub></strong>
+								</td>
+								<td class="btn">
+									<button class="btn_delete">삭제</button>
+								</td>
+							</tr>
+							<!-- //'입고알림신청' 버튼추가 -->
+							<!-- 추가  -->
+							<tr class="added_prd">
+								<td class="icon">
+									<span class="icon_vertical"><span>추가</span></span>
+								</td>
+								<td class="thum">
+									<img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용">
+								</td>
+								<td class="prd">
+									<p>세이지 침대 Q/S 전용</p>
+									<div>
+										<span>색상 : 블랙</span>
+										<span>사이즈 : Q</span>
+										<span>색상 : 화이트</span>
+										<span>재질 : 면 100%</span>
+										<span>사은품 : 배게커버/블랙</span>
+									</div> 
+								</td>
+								<td class="num">
+									<span class="opt_spinner ui-number-counter">
+										<button class="opt_down ui-decrease" disabled="disabled">수량 줄이기</button>
+										<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="20" readonly="readonly" />
+										<button class="opt_up ui-increase" disabled="disabled">수량 더하기</button>
+									</span>
+								</td>
+								<td class="price">
+									<strong>480,000<sub>원</sub></strong>
+								</td>
+								<td class="btn">
+									<button class="btn_delete">삭제</button>
+								</td>
+							</tr>
+							<!--// 추가 -->
+							<!-- 패키지 갯수에 rowspan 따라 한다 -->
+							<tr class="added_prd">
+								<td rowspan="3" class="icon">
+									<span class="icon_vertical"><span>패키지</span></span>
+								</td>
+								<td class="thum">
+									<img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용">
+								</td>
+								<td class="prd">
+									<p>세이지 침대 Q/S 전용</p>
+									<div>
+										<span>색상 : 블랙</span>
+										<span>사이즈 : Q</span>
+										<span>색상 : 화이트</span>
+										<span>재질 : 면 100%</span>
+										<span>사은품 : 배게커버/블랙</span>
+									</div> 
+								</td>
+								<td class="num">
+									<span class="opt_spinner ui-number-counter">
+										<button class="opt_down ui-decrease" disabled="disabled">수량 줄이기</button>
+										<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="20" readonly="readonly" />
+										<button class="opt_up ui-increase" disabled="disabled">수량 더하기</button>
+									</span>
+								</td>
+								<td class="price">
+									<strong>480,000<sub>원</sub></strong>
+								</td>
+								<td class="btn">
+									<button class="btn_delete">삭제</button>
+								</td>
+							</tr>
+							<tr class="added_prd">
+								<td class="thum">
+									<img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용">
+								</td>
+								<td class="prd">
+									<p>세이지 침대 Q/S 전용</p>
+									<div>
+										<span>색상 : 블랙</span>
+										<span>사이즈 : Q</span>
+										<span>색상 : 화이트</span>
+										<span>재질 : 면 100%</span>
+										<span>사은품 : 배게커버/블랙</span>
+									</div> 
+								</td>
+								<td class="num">
+									<span class="opt_spinner ui-number-counter">
+										<button class="opt_down ui-decrease" disabled="disabled">수량 줄이기</button>
+										<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="20" readonly="readonly" />
+										<button class="opt_up ui-increase" disabled="disabled">수량 더하기</button>
+									</span>
+								</td>
+								<td class="price">
+									<strong>480,000<sub>원</sub></strong>
+								</td>
+								<td class="btn">
+									<button class="btn_delete">삭제</button>
+								</td>
+							</tr>
+							<tr class="added_prd">
+								<td class="thum">
+									<img src="../../common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용">
+								</td>
+								<td class="prd">
+									<p>세이지 침대 Q/S 전용</p>
+									<div>
+										<span>색상 : 블랙</span>
+										<span>사이즈 : Q</span>
+										<span>색상 : 화이트</span>
+										<span>재질 : 면 100%</span>
+										<span>사은품 : 배게커버/블랙</span>
+									</div> 
+								</td>
+								<td class="num">
+									<span class="opt_spinner ui-number-counter">
+										<button class="opt_down ui-decrease" disabled="disabled">수량 줄이기</button>
+										<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="20" readonly="readonly" />
+										<button class="opt_up ui-increase" disabled="disabled">수량 더하기</button>
+									</span>
+								</td>
+								<td class="price">
+									<strong>480,000<sub>원</sub></strong>
+								</td>
+								<td class="btn">
+									<button class="btn_delete">삭제</button>
+								</td>
+							</tr>
+							<!--// 패키지 갯수에  rowspan 따라 한다 -->
+						</tbody>
+					</table>
+					<div class="detatil_opt_price">
+						<span>총구매가</span>
+						<strong>330,000<sub>원</sub></strong>
+					</div>
+					</div>
+					<!-- scroll -->
+					<!-- button -->
+					<div class="detatil_opt_btn">
+						<button type="button" class="botton_st_05 purple details">상세보기</button>
+						<button type="button" class="botton_st_05 purple3">관심상품</button>
+						<button type="button" class="botton_st_05 purple">장바구니</button>
+						<button type="button" class="botton_st_05 red">구매하기</button>
+					</div>
+					<div class="detatil_opt_btn"> <!-- prd5 품절상품 상세 상단 add -->
+						<button type="button" class="botton_st_05 purple3">관심상품</button>
+						<button type="button" class="botton_st_06 purple">입고 알림신청</button>
+						<button type="button" class="botton_st_06">일시품절</button>
+					</div>
+					<!--// button -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.order-page.js"></script>
+</body>
+</html>

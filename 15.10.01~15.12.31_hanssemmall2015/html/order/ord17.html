@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 쿠폰 적용하기</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css"/><!-- popup css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- layer popup -->
+	<div id="layer_popup" class="layer_popup coupon_popup2" style="display:block;">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">쿠폰 적용하기</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<!-- 스크롤 생기는 팝업컨텐츠 -->
+		<div class="scroll_ht"> <!-- 2차수정 클래스 scroll_ht 추가 -->
+			<div class="layer_pop_cont"> 
+			
+				<h2 class="h2_tit">현재 상품에 사용 가능한  할인쿠폰</h2>
+				<!-- table -->
+			<!-- 2차수정 contents변경 및 추가로 테이블 다시 적용-->
+				<table class="tbl pd15" summary="">
+					<caption></caption>
+					<colgroup>
+						<col width="*">
+						<col width="110px">
+						<col width="88px">
+						<col width="150px">
+						<col width="150px">
+					</colgroup>
+					<thead>
+						<tr class="bg">
+							<th class="txt_center">상품명/선택사항</th>
+							<th class="txt_center">주문금액</th>
+							<th class="txt_center">쿠폰종류</th>
+							<th class="txt_center">할인쿠폰</th>
+							<th class="txt_center">추가할인쿠폰</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr class="bg">
+							<td class="txt_right" colspan="5">
+								<ul class="discount_total">
+									<li>쿠폰할인 총액</li>
+									<li><span class="amount_num">1,000,000</span>원</li>
+								</ul>
+							</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td rowspan="2">
+								<p class="pd_tit">더블린 붙박이장 베이지 고급형</p>
+								<p class="tip_txt ft_blue">컬러: 블랙, 사이즈: W1800*D600*H1200</p>
+							</td>
+							<td rowspan="2" class="txt_center"><span class="prd_price">1,129,900</span>원</td>
+							<td>일반쿠폰</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio1" name="radio">
+										<label for="radio1">신규회원가입 할인쿠폰신규회원가입 할인쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">5,000원 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio2" name="radio">
+										<label for="radio2">첫구매 감사 쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">5,000원 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio10" name="radio">
+										<label for="radio10">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio3" name="radio3">
+										<label for="radio3">패키지쿠폰 전품목 할인</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">10% 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio11" name="radio3">
+										<label for="radio11">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td class="bdl">패키지<br>쿠폰</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio11" name="radio111">
+										<label for="radio11">신규회원가입 할인쿠폰신규회원가입 할인쿠폰</label>
+										
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">5,000원 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio22" name="radio111">
+										<label for="radio22">첫구매 감사 쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">5,000원 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio102" name="radio111">
+										<label for="radio102">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio3" name="radio3">
+										<label for="radio3">패키지쿠폰 전품목 할인</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">10% 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio11" name="radio3">
+										<label for="radio11">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td rowspan="2">
+								<p class="pd_tit">더블린 붙박이장 베이지 고급형</p>
+								<p class="tip_txt ft_blue">컬러: 블랙, 사이즈: W1800*D600*H1200</p>
+							</td>
+							<td rowspan="2" class="txt_center"><span class="prd_price">1,129,900</span>원</td>
+							<td>일반쿠폰</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio4" name="radio4">
+										<label for="radio4">침대 + 협탁 + 매트리스 패키지</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">5,000원 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio11" name="radio3">
+										<label for="radio11">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio5" name="radio5">
+										<label for="radio5">한샘몰 오픈 기념 전품목 할인</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">10% 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio11" name="radio3">
+										<label for="radio11">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td class="bdl">패키지<br>쿠폰</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio4" name="radio4">
+										<label for="radio4">침대 + 협탁 + 매트리스 패키지</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">5,000원 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio11" name="radio3">
+										<label for="radio11">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio5" name="radio5">
+										<label for="radio5">한샘몰 오픈 기념 전품목 할인</label>
+									</dt>
+									<dd class="day_disc">
+										<span class="ft_black">10% 할인</span>
+										<span>2015.12.30 마감</span>
+									</dd>
+								</dl>
+								<dl class="discount_cp"> <!-- 기획요청수정 -->
+									<dt>
+										<input type="radio" id="radio11" name="radio3">
+										<label for="radio11">적용안함</label>
+									</dt>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			<!-- //2차수정 contents변경 및 추가로 테이블 다시 적용-->
+				<!--// table -->
+				<ul class="btm_tip">
+					<li>※ 추가할인쿠폰은 할인쿠폰이 적용된 할인금액에 할인률이 적용됩니다.</li>
+					<li>※ 패키지쿠폰은 패키지상품 조건으로 담은 상품에 대한 할인 혜택입니다.</li>
+				</ul>
+				<!-- button -->
+				<div class="button_area both_btn type3 mb30">
+					<button type="button" class="botton_st_04 purple">적용하기</button>
+					<button type="button" class="botton_st_04">취소</button>
+				</div>
+				<!--// button -->
+				<ul class="ps_list lineh24">
+					<li>결제 시 쿠폰을 적용하지 않으면 할인 금액이 적용되지 않습니다.</li>
+					<li>동일 유형의 다수 쿠폰 중 1개만 사용 가능합니다.</li>
+					<li>사용기간이 종료된 쿠폰은 발급되지 않습니다.</li>
+					<li>패키지쿠폰은 패키지상품 조건으로 담은 상품에 대한 할인 혜택입니다.</li>
+				</ul>
+			</div>
+			<!--// 스크롤 생기는 팝업컨텐츠 -->
+		</div>
+	</div>
+	<!--// layer popup -->
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.order-page.js"></script>
+</body>
+</html>

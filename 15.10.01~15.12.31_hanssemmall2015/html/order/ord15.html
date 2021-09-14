@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 배송일자 선택(희망 배송일자 선택)</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css"/><!-- popup css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- layer popup -->
+	<div id="layer_popup" class="layer_popup calendar_popup">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">배송일자 선택<span class="light">(희망 배송일자 선택)</span></h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont"> 
+			<!-- 달력 -->
+			<div class="calendar_area">
+				<div class="left_area">
+					<div class="calendar_click">
+						<div class="date">
+							<button type="button" class="prev" title="이전">이전</button>
+							<span>2015. 10</span>
+							<button type="button" class="next" title="다음">다음</button>
+						</div>
+						<table class="table_calendar">
+							<colgroup>
+								<col width="14.28%">
+								<col width="14.28%">
+								<col width="14.28%">
+								<col width="14.28%">
+								<col width="14.28%">
+								<col width="14.28%">
+								<col width="14.28%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>일</th>
+									<th>월</th>
+									<th>화</th>
+									<th>수</th>
+									<th>목</th>
+									<th>금</th>
+									<th>토</th>
+								</tr>
+							</thead>
+							<tr>
+								<td class="outside"><button type="button" disabled="disabled">26</button></td>
+								<td class="outside"><button type="button" disabled="disabled">27</button></td>
+								<td class="outside"><button type="button" disabled="disabled">28</button></td>
+								<td class="outside"><button type="button" disabled="disabled">29</button></td>
+								<td class="outside"><button type="button" disabled="disabled">30</button></td>
+								<td class="outside"><button type="button" disabled="disabled">31</button></td>
+								<td><button type="button">1</button></td>
+							</tr>
+							<tr>
+								<td><button type="button">2</button></td>
+								<td><button type="button">3</button></td>
+								<td><button type="button">4</button></td>
+								<td><button type="button">5</button></td>
+								<td><button type="button">6</button></td>
+								<td><button type="button">7</button></td>
+								<td><button type="button">8</button></td>
+							</tr>
+							<tr>
+								<td><button type="button">9</button></td>
+								<td><button type="button">10</button></td>
+								<td><button type="button">11</button></td>
+								<td><button type="button">12</button></td>
+								<td><button type="button">13</button></td>
+								<td><button type="button">14</button></td>
+								<td><button type="button">15</button></td>
+							</tr>
+							<tr>
+								<td><button type="button">16</button></td>
+								<td><button type="button">17</button></td>
+								<td><button type="button">18</button></td>
+								<td><button type="button">19</button></td>
+								<td><button type="button">20</button></td>
+								<td><button type="button">21</button></td>
+								<td><button type="button">22</button></td>
+							</tr>
+							<tr>
+								<td><button type="button">23</button></td>
+								<td class="today"><button type="button">24</button></td>
+								<td class="reserve"><button type="button">25</button></td>
+								<td class="reserve"><button type="button">26</button></td>
+								<td class="reserve"><button type="button">27</button></td>
+								<td class="reserve"><button type="button">28</button></td>
+								<td class="reserve"><button type="button">29</button></td>
+							</tr>
+							<tr class="last"> <!-- last -->
+								<td><button type="button" class="">30</button></td>
+								<td class="reserve"><button type="button">31</button></td>
+								<td class="outside"><button type="button" disabled="disabled">1</button></td>
+								<td class="outside"><button type="button" disabled="disabled">2</button></td>
+								<td class="outside"><button type="button" disabled="disabled">3</button></td>
+								<td class="outside"><button type="button" disabled="disabled">4</button></td>
+								<td class="outside"><button type="button" disabled="disabled">5</button></td>
+							</tr>
+						</table>
+					</div>
+					<div class="tip_txt"><span>배송예약 가능일</span></div>
+					<!-- 배송 예정일 적용상품 -->
+					<div>
+						<h2>배송 예정일 적용상품</h2>
+						<div class="prd_info_wrap">
+							<!-- loop -->
+							<div class="prd_info_area">
+								<button class="btn_close">팝업닫기</button>
+								<p class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></p>
+								<ul class="prd_info">
+									<li class="prd_seller">[한샘몰]</li>
+									<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형</li>
+									<li class="pd_option">컬러: 화이트, 사이즈: W1800*D600*H1200</li>
+								</ul>
+							</div>
+							<!--// loop -->
+							<div class="prd_info_area">
+								<button class="btn_close">팝업닫기</button>
+								<p class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></p>
+								<ul class="prd_info">
+									<li class="prd_seller">[한샘몰]</li>
+									<li class="prd_name">빅 수납침대ss 블랙 협탁형</li>
+									<li class="pd_option">컬러: 블랙, 사이즈: W1800*D600*H1200</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--// 배송 예정일 적용상품 -->
+				</div>
+				<div class="right_area">
+					<h2>구매 전 꼭 읽어주세요</h2>
+					<ul class="blt_list12">
+						<li>달력에 보이는 <span class="ft_red">"배송예약가능일”</span>이 가장 빠른 배송일 입니다.</li>
+						<li>배송희망일 예약은 <span class="ft_red">최대 1달</span>까지 가능합니다.</li>
+						<li>일요일, 국,공휴일은 배송이 불가능합니다.</li>
+						<li>정확한 배송시간은 <span class="ft_red">배송당일 기사가 안내</span>해  드립니다.<br /><span class="ft_red">(사전확인 불가능)</span></li>
+						<li>배송일 변경을 원하실 경우 배송 받기 3일전까지 (토,일,국,공휴일 제외)변경요청하시면 4~5일 뒤로 배송가능합니다.</li>
+						<li>배송시간을 변경하실 경우 배송예약일도 변경될 수 있습니다.</li>
+						<li>수도권은 <span class="ft_red">매월 첫날</span>, 지방은 <span class="ft_red">매월 둘째 날</span> 기사님 휴무로 배송이 불가능합니다.</li>
+						<li>옵션변경을 원하실 경우 취소 후 재주문 하셔야 합니다.</li>
+						<li><span class="ft_red">소품은 날짜지정이 불가하고, 가구와 따로 배송이 됩니다.</span></li>
+						<li>단순 변심으로 인한 교환, 반품 시 발생하는 비용은 고객님 부담입니다.</li>
+						<li><span class="ft_red">가구 배송시간은 배송당일(오전) 기사가 안내해 드립니다.</span></li>
+						<li>주문서의 수령자 연락처로 연락 드리오니 반드시 배송당일 연락 가능한 연락처로 기입 부탁 드립니다.</li>
+						<li>배송시간은 당일 오전에 확인되므로 사전 확인이 불가한 점양해 부탁 드립니다.</li>
+						<li>배송일 변경이 어려울 수 있으니 신중한 선택 부탁 드립니다.</li>
+					</ul>	
+				</div>		
+			</div>
+			<!--// 달력 -->
+			<div class="blackbd_box">
+				<div class="time_info">
+					<p class="day">
+						<span class="tit">가구배송예정일 : </span>
+						<span>
+							<span class="ft_black">2015</span>년 <span class="ft_black">10</span>월 <span class="ft_black">15</span>일 (목)
+						</span>
+					</p>
+					<p class="time">
+						<span class="tit">남은 시간 :</span>
+						<span class="ft_red">20</span>분 <span class="ft_red">00</span>초
+					</p>
+				</div>
+				<div class="btn_area">
+					<button type="button">배송일자 예약</button>
+					<button type="button">취소</button>
+				</div>
+			</div>
+			<p class="tip_txt">※ 배송일자를 선택하시고 20분 동안 주문 및 결제완료가 되지 않으면 초기화되어 다시 선택해야 됩니다.</p>
+		</div>
+	</div>
+	<!--// layer popup -->
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.order-page.js"></script>
+</body>
+</html>

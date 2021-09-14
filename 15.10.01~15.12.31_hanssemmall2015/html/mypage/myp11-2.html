@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 상품후기 등록 팝업</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+	<style type="text/css">
+		body {padding:50px;}
+	</style>
+</head>
+<body>
+	<div id="layer_popup" class="layer_popup epilogue_pop">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">상품후기 등록</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<!-- 2차수정 클래스 scroll_ht 추가-->
+		<div class="scroll_ht">		
+			<div class="layer_pop_cont scroll">
+				<p class="explain">상품후기를 올리면 한샘몰에서 <span class="ft_red">현금처럼 사용 가능한 한샘 통합 포인트</span>를 드립니다.<br>베스트 상품평에 선정된 고객에게는 한샘몰 체험단, 서포터즈의 기회를 드립니다!</p>
+				<div class="point_box">
+					<h2>포인트</h2>
+					<dl>
+						<dt>상품후기 초기 등록시(최초 5개)</dt>
+						<dd>
+							<div class="fl">
+								<span class="bar_point"><span style="width:100%"></span></span>
+							</div>
+							<span class="fr">900포인트</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>포토/동영상 상품후기</dt>
+						<dd>
+							<div class="fl">
+								<span class="bar_point"><span style="width:65%"></span></span>
+							</div>
+							<span class="fr">600포인트</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>텍스트 상품후기</dt>
+						<dd>
+							<div class="fl">
+								<span class="bar_point"><span style="width:20%"></span></span>
+							</div>
+							<span class="fr">300포인트</span>
+						</dd>
+					</dl>
+				</div>
+				<div class="sel_radio">
+					<input type="radio" id="rdo_phto" name="radio" checked="checked" /><label for="rdo_phto">포토</label>
+					<input type="radio" id="rdo_txt" name="radio" /><label for="rdo_txt">텍스트</label>
+					<input type="radio" id="rdo_movie" name="radio" /><label for="rdo_movie">동영상</label>
+				</div>
+				<table class="tbl" summary="품질, 시공/배공, 가격, 디자인, 제목, 내용, 첨부파일을 제공함">
+					<caption></caption>
+					<colgroup>
+						<col width="103px">
+						<col width="190px">
+						<col width="103px">
+						<col width="190px">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th class="bg" scope="row">품질</th>
+							<td>													
+								<div class="select_area ui-design-value-select-box" style="width:170px;">
+									<a href="#" class="select ui-select-box-face"></a>
+									<select title="옵션 선택" class="ui-input-select">
+										<!-- <option value="" selected="selected">별점을 선택하세요</option> -->
+										<option value="100" selected="selected">100</option>
+										<option value="90">90</option>
+										<option value="80">80</option>
+										<option value="70">70</option>
+										<option value="60">60</option>
+										<option value="50">50</option>
+										<option value="40">40</option>
+										<option value="30">30</option>
+										<option value="20">20</option>
+										<option value="10">10</option>
+										<option value="0">0</option>
+									</select>
+									<ul class="option_box option_tbl ui-select-options"> <!-- active 열림, option_tbl 클래스 추가 -->
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:100%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:90%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:80%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:70%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:60%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:50%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:40%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:30%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:20%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:10%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:0%"></span></span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+							<th class="bg" scope="row">시공/배공</th>
+							<td>													
+								<div class="select_area ui-design-value-select-box" style="width:170px;">
+									<a href="#" class="select ui-select-box-face"></a>
+									<select title="옵션 선택" class="ui-input-select">
+										<!-- <option value="" selected="selected">별점을 선택하세요</option> -->
+										<option value="100" selected="selected">100</option>
+										<option value="90">90</option>
+										<option value="80">80</option>
+										<option value="70">70</option>
+										<option value="60">60</option>
+										<option value="50">50</option>
+										<option value="40">40</option>
+										<option value="30">30</option>
+										<option value="20">20</option>
+										<option value="10">10</option>
+										<option value="0">0</option>
+									</select>
+									<ul class="option_box option_tbl ui-select-options"> <!-- active 열림, option_tbl 클래스 추가 -->
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:100%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:90%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:80%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:70%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:60%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:50%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:40%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:30%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:20%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:10%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:0%"></span></span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row">가격</th>
+							<td>													
+								<div class="select_area ui-design-value-select-box" style="width:170px;">
+									<a href="#" class="select ui-select-box-face"></a>
+									<select title="옵션 선택" class="ui-input-select">
+										<!-- <option value="" selected="selected">별점을 선택하세요</option> -->
+										<option value="100" selected="selected">100</option>
+										<option value="90">90</option>
+										<option value="80">80</option>
+										<option value="70">70</option>
+										<option value="60">60</option>
+										<option value="50">50</option>
+										<option value="40">40</option>
+										<option value="30">30</option>
+										<option value="20">20</option>
+										<option value="10">10</option>
+										<option value="0">0</option>
+									</select>
+									<ul class="option_box option_tbl ui-select-options"> <!-- active 열림, option_tbl 클래스 추가 -->
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:100%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:90%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:80%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:70%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:60%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:50%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:40%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:30%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:20%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:10%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:0%"></span></span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+							<th class="bg" scope="row">디자인</th>
+							<td>													
+								<div class="select_area ui-design-value-select-box" style="width:170px;">
+									<a href="#" class="select ui-select-box-face"></a>
+									<select title="옵션 선택" class="ui-input-select">
+										<!-- <option value="" selected="selected">별점을 선택하세요</option> -->
+										<option value="100" selected="selected">100</option>
+										<option value="90">90</option>
+										<option value="80">80</option>
+										<option value="70">70</option>
+										<option value="60">60</option>
+										<option value="50">50</option>
+										<option value="40">40</option>
+										<option value="30">30</option>
+										<option value="20">20</option>
+										<option value="10">10</option>
+										<option value="0">0</option>
+									</select>
+									<ul class="option_box option_tbl ui-select-options"> <!-- active 열림, option_tbl 클래스 추가 -->
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:100%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:90%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:80%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:70%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:60%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:50%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:40%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:30%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:20%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:10%"></span></span>
+												</span>
+											</a>
+										</li>
+										<li class="ui-select-option">
+											<a href="#">
+												<span>
+													<span class="star_points"><span style="width:0%"></span></span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row">쿠션감</th>
+							<td colspan="3">
+								<div class="slider ui-rating-slider">
+									<div class="slider_bar">
+										<div class="bar_inner ui-slider-bar">
+											<p class="ui-slider-progress"></p>
+											<a class="fin ui-slider-thumb ui-slider-value" href="#none">2</a>
+										</div>
+									</div>
+									<div class="chair_txt">
+										<span class="first">부드럽다</span>
+										<span class="mid">보통</span>
+										<span class="last">단단하다</span>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row">의자좌판</th>
+							<td colspan="3">
+								<div class="slider ui-rating-slider">
+									<div class="slider_bar">
+										<div class="bar_inner ui-slider-bar">
+											<p class="ui-slider-progress"></p>
+											<a class="fin ui-slider-thumb ui-slider-value" href="#">2</a>
+										</div>
+									</div>
+									<div class="cushion_txt">
+										<span class="first">좁다</span>
+										<span class="mid">보통</span>
+										<span class="last">넓다</span>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row"><span class="need"><span>필수</span></span><label for="epio_title">제목</label></th>
+							<td colspan="3">
+								<input type="text" id="epio_title" class="type1">
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row"><span class="need"><span>필수</span></span><label for="epil_cont">내용</label></th>
+							<td colspan="3">
+								<textarea id="epil_cont" rows="" cols=""></textarea>
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row"><span class="need"><span>필수</span></span>첨부파일</th>
+							<td colspan="3">
+								<div class="input_file_form">
+									<div class="input_file_div"> 
+										<input id="productFile" type="file" class="input_file_hide" onchange="javascript:document.getElementById('extra_file').value=this.value;this.blur();"> 
+									</div> 
+									<input name="extra_file" type="text" id="extra_file" class="input_file_show">
+									<button class="btn_reset">첨부파일삭제</button>
+									<span><img src="../../common/images/common/bg_input_file.gif"></span> 
+								</div>
+								<p class="tip_txt ft_size13 ft_demi">jpg, gif, png파일, 파일사이즈 5MB까지 업로드 가능합니다.</p>
+								<div class="preview_box">
+									<div class="image_area">
+										<div class="view_rotation">
+											<!-- 회전시 left:50%;margin-left:-125px; : width기준의 반을 마진값으로 빼면 좌표가 가운데에서 회전함, 이미지회전시 .view_rotation : 리사이즈-->
+										</div>
+									</div>
+									<div class="image_rotation">
+										<a href="#none">반시계 방향<br />90º 회전</a>
+										<a href="#none">시계 방향<br />90º 회전</a>
+									</div>
+								</div>	
+							</td>
+						</tr>
+						<tr>
+							<th class="bg" scope="row"><span class="need"><span>필수</span></span><label for="epio_title">동영상<br />URL입력</label></th>
+							<td colspan="3">
+								<input type="text" id="epio_title" class="type1">
+								<p class="tip_txt ft_size13 ft_demi">YouTube, 네이버(블로그/카페)동영상, 네이버 TV 캐스트/avi, mov, mpg, wmv 등의 파일 경로 URL 주소를 입력하세요.</p>
+								<div class="player_view">
+									<!-- player -->
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="button_area ebtn"><button type="button" class="botton_st_04 red ebtn">등록</button><button type="button" class="fr botton_st_04 ebtn">취소</button></div>
+			</div>
+		</div>
+	</div>
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.mypage.js"></script>
+</body>
+</html>

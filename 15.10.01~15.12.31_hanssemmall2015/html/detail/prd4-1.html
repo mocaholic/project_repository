@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 상담신청하기</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+	<script type="text/javascript" src="jquery.word-break-keep-all.min.js"></script>
+	<style type="text/css">
+		body {padding:50px;}
+	</style>
+</head>
+<body>
+	<!-- layer popup -->
+	<div class="layer_popup counsel_popup" style="display:block;">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">상담신청하기</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="scroll_ht"><!-- scroll -->
+		<div class="layer_pop_cont">
+			<div class="need_tip">
+				<p>상담신청을 남겨주시면 담당자가 확인 후 상담을 진행해 드립니다.</p>
+				<span class="need_txt">필수입력사항</span>
+			</div>
+			<table class="tbl need_tb" summary="">
+				<caption></caption>
+				<colgroup>
+					<col width="110px">
+					<col width="*">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th class="bg"><span class="need_tit">이름</span></th>
+						<td>
+							<input type="text" style="width:208px;" />
+							<p class="tip_txt ft_red">신청하시는 분 성함을 입력해 주세요.</p><!-- 기본 display:none -->
+						</td>
+					</tr>
+					<tr>
+						<th class="bg"><span class="need_tit">휴대폰 번호</span></th>
+						<td>
+							<input type="text" style="width:158px;" />
+							<span class="info_txt">01012341234 형태로 입력해 주세요</span>
+							<p class="tip_txt ft_red">휴대폰 번호를 입력해주세요.</p><!-- 기본 display:none -->
+						</td>
+					</tr>
+					<tr>
+						<th class="bg"><span class="need_tit">이메일</span></th>
+						<td>
+							<input type="text" style="width:158px;" />
+							<p class="tip_txt ft_red">이메일를 입력해 주세요.</p><!-- 기본 display:none -->
+						</td>
+					</tr>
+					<tr>
+						<th class="bg"><span class="need_tit">시공현장주소</span></th>
+						<td>
+							<ul class="address_box">	
+								<li>
+									<input type="text">
+									<button type="button" class="botton_st_03 gray">우편번호찾기</button>
+								</li>
+								<li><input type="text"></li>
+								<li><input type="text"></li>
+							</ul>
+							<p class="tip_txt ft_red">주소를 입력해 주세요.</p><!-- 기본 display:none -->
+						</td>
+					</tr>
+					<tr>
+						<th class="bg"><span class="need_tit">상담내용</span></th>
+						<td>
+							<div class="textarea_box counsel">
+								<textarea rows="" cols=""></textarea>
+								<p class="limit_txt">(0/500)</p>
+							</div>
+							<p class="tip_txt ft_red">상담내용을 입력해 주세요.</p><!-- 기본 display:none -->
+						</td>
+					</tr>
+					<tr>
+						<th class="bg"><span class="need_tit">정보 수집 및 활용 동의</span></th>
+						<td>
+							<div class="assent_info_box">
+								<p class="tit">[개인정보의 수집, 이용 목적 및 보유, 이용기간]</p>
+								<p>
+									'한샘ik 홈페이지'를 이용해 주셔서 감사합니다.<br />주식회사 한샘은 고객님의 개인정보를 소중히 생각하고,
+									보호하기 위하여 노력하고 있습니다. 본 동의
+								</p>
+							</div>
+							<div class="checkbox_area ml0">
+								<input type="checkbox" id="check1"><label for="check1" class="ft_size14">개인정보 수집/활용에 동의합니다.</label>
+							</div>
+							<p class="tip_txt ft_red"> 개인정보 수집/활용에 동의해주세요.</p><!-- 기본 display:none -->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="button_area mt30">
+				<button type="button" class="botton_st_04 purple">신청</button>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!--// layer popup -->
+	
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+</body>
+</html> 

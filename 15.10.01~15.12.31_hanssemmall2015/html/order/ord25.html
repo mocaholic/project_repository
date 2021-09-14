@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 배송비 쿠폰 적용하기</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css"/><!-- popup css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- layer popup -->
+	<div id="layer_popup" class="layer_popup coupon_popup2" style="display:block;">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">배송비 쿠폰 적용하기</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="scroll_ht"><!-- 11.24 class=scroll_ht 추가 -->
+			<div class="layer_pop_cont"> 
+				<h2 class="h2_tit">현재 상품에 사용 가능한 배송비쿠폰</h2>
+				<!-- table -->
+				<table class="tbl pd15 mb20" summary="">
+					<caption></caption>
+					<colgroup>
+						<col width="230px">
+						<col width="55px">
+						<col width="110px">
+						<col width="110px">
+						<col width="*">
+					</colgroup>
+					<thead>
+						<tr class="bg">
+							<th class="txt_center">상품명/선택사항</th>
+							<th class="txt_center">수량</th>
+							<th class="txt_center">주문금액</th>
+							<th class="txt_center">배송비</th>
+							<th class="txt_center">배송비 쿠폰</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr class="bg">
+							<td class="txt_right" colspan="5">
+								<ul class="discount_total">
+									<li>쿠폰할인 총액</li>
+									<li><span class="amount_num">1,000,000</span>원</li>
+								</ul>
+							</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>
+								<p class="pd_tit">더블린 붙박이장 베이지 고급형</p>
+								<p class="tip_txt ft_blue">컬러: 블랙, 사이즈: W1800*D600*H1200</p>
+							</td>
+							<td class="txt_center">1</td>
+							<td class="txt_center"><span class="prd_price">29,900</span>원</td>
+							<td class="txt_center"><span class="prd_price">3,000</span>원</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio3-1" name="radio3">
+										<label for="radio3">무료배송쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span>(2015.12.30마감)</span>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="pd_tit">신 유턴 고급형 식탁 4~8인용<br />고급형 상품 외 2개</p>
+							</td>
+							<td class="txt_center">1</td>
+							<td class="txt_center"><span class="prd_price">29,900</span>원</td>
+							<td class="txt_center"><span class="prd_price">3,000</span>원</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio3-2" name="radio3">
+										<label for="radio3">무료배송쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span>(2015.12.30마감)</span>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="pd_tit">더블린 붙박이장 베이지 고급형</p>
+								<p class="tip_txt ft_blue">컬러: 블랙, 사이즈: W1800*D600*H1200</p>
+							</td>
+							<td class="txt_center">1</td>
+							<td class="txt_center"><span class="prd_price">29,900</span>원</td>
+							<td class="txt_center"><span class="prd_price">3,000</span>원</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio3-1" name="radio3">
+										<label for="radio3">무료배송쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span>(2015.12.30마감)</span>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="pd_tit">신 유턴 고급형 식탁 4~8인용<br />고급형 상품 외 2개</p>
+							</td>
+							<td class="txt_center">1</td>
+							<td class="txt_center"><span class="prd_price">29,900</span>원</td>
+							<td class="txt_center"><span class="prd_price">3,000</span>원</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio3-2" name="radio3">
+										<label for="radio3">무료배송쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span>(2015.12.30마감)</span>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="tbl pd15" summary="">
+					<caption></caption>
+					<colgroup>
+						<col width="230px">
+						<col width="55px">
+						<col width="110px">
+						<col width="110px">
+						<col width="*">
+					</colgroup>
+					<thead>
+						<tr class="bg">
+							<th class="txt_center">상품명/선택사항</th>
+							<th class="txt_center">수량</th>
+							<th class="txt_center">주문금액</th>
+							<th class="txt_center">배송비</th>
+							<th class="txt_center">배송비 쿠폰</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr class="bg">
+							<td class="txt_right" colspan="5">
+								<ul class="discount_total">
+									<li>쿠폰할인 총액</li>
+									<li><span class="amount_num">1,000,000</span>원</li>
+								</ul>
+							</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<td>
+								<p class="pd_tit">다른상품 고급형</p>
+								<p class="tip_txt ft_blue">B형: 2500~2600(8.5자)(+60000원)</p>
+							</td>
+							<td class="txt_center">1</td>
+							<td class="txt_center"><span class="prd_price">29,900</span>원</td>
+							<td class="txt_center"><span class="prd_price">3,000</span>원</td>
+							<td class="vat">
+								<dl class="discount_cp">
+									<dt>
+										<input type="radio" id="radio4" name="radio4">
+										<label for="radio4">무료배송쿠폰</label>
+									</dt>
+									<dd class="day_disc">
+										<span>(2015.12.30마감)</span>
+									</dd>
+								</dl>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<!--// table -->
+				<!-- button -->
+				<div class="button_area both_btn type3 mb30">
+					<button type="button" class="botton_st_04 purple">적용하기</button>
+					<button type="button" class="botton_st_04">닫기</button>
+				</div>
+				<!--// button -->
+			</div>
+		</div>
+	</div>
+	<!--// layer popup -->
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+</body>
+</html>

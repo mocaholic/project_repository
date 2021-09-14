@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 주문서작성</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/order.css" /><!-- 각 카테고리별 css -->
+
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- skip navi -->
+	<div id="skipArea">
+		<a href="#gnb_area">메인메뉴 바로가기</a>
+		<a href="#container">본문으로 바로가기</a>
+	</div>
+	<!-- skip navi -->
+	<div id="wrap">
+		<!-- header area -->
+		<div id="header">
+			<!-- top_01 -->
+			<div class="header_top_area">
+				<div class="util_area">
+					<ul class="family_site"><!-- 11.20 이미지명 및 확장자 변경 -->
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_01_on.png" alt="한샘몰" ></a></li>
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_02.png" alt="한샘인테리어" ></a></li>
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_03.png" alt="한샘ik" ></a></li>
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_04.png" alt="한샘키친&바스" ></a></li>
+					</ul>
+					<div class="util_info">
+						<ul class="info_01">
+							<li><a href="javascript:$('.layer_popup.login').openLayer();" >Login</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">주문/배송</a></li>
+							<li><a href="#">고객센터</a></li>
+						</ul>
+						<ul class="info_02">
+							<li><a href="#">My한샘</a></li>
+							<li><a href="#">장바구니( <span>2</span> )</a><!--<img src="../../common/images/common/top_banner_open.gif" alt="장바구니 정보 열기" > 11.17 디자인 삭제? --></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //top_01 -->
+			<!-- top_02 -->
+			<div class="header_middle_area">
+				<h1 class="ci">
+					<span class="ci"><a href="#"><img src="../../common/images/common/ci_01.gif" alt="HANSSEM" ></a></span>
+					<span class="ci_sub"><a href="#"><img src="../../common/images/common/ci_02.gif" alt="한샘몰" ></a></span>
+				</h1>
+				<div class="search">
+					<form action="" method="">
+					<fieldset>
+						<legend>header search</legend>
+						<span  class="search_area">
+						<input type="search" id="my_search" name="my_searchl" title="검색어 입력" placeholder="22일까지만! 한샘 천연가죽소파  파격 할인" >
+						</span>
+						<button type="button" class="search">검색</button>
+						<ul class="search_link">
+							<li><a href="">시즌오프 55%</a></li>
+							<li><a href="">한샘 샘베딩 시리즈</a></li>
+							<li><a href="">시즌오프 55%</a></li>
+						</ul>
+					</fieldset>
+					</form>
+				</div>
+				<!-- 검색 레이어팝업 -->
+				<div class="sch_layer_popup" style="display:none;">
+					<!-- 검색어 -->
+					<div class="sch_left_word">
+						<div class="tab_area st_small ui-tab-area">
+							<ul class="ui-tabs tab_tit">
+								<li class="ui-tab-item active"><a href="#">최근 검색어</a></li>
+								<li class="ui-tab-item"><a href="#">추천 검색어</a></li>
+							</ul>
+							<div class="ui-tab-contents tab_body">
+								<div class="ui-tab-contents-item tab_cont" style="display:block;">
+									<ul class="sches">
+										<li><a href="">분위기 있는 거실</a></li>
+										<li><a href="">식탁보</a></li>
+										<li><a href="">전등</a></li>
+										<li class="on"><a href="">거실 인테리어</a></li>
+										<li><a href="">천연가죽</a></li>
+										<li><a href="">원목</a></li>
+										<li><a href="">거실 인테리어</a></li>
+										<li><a href="">천연가죽</a></li>
+										<li><a href="">원목</a></li>
+									</ul>
+								</div>
+								<div class="ui-tab-contents-item tab_cont">
+									추천 검색어
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //검색어 -->
+					<!-- 자동완성 -->
+					<div class="sch_left_auto" style="display:none;">
+						<p class="title">자동완성</p>
+						<ul>
+							<li><a href=""><span class="ft_blue">가</span>구</a>
+								<ul class="">
+									<li><a href="">침실 &gt; 프리미엄 가구관</a></li>
+									<li><a href="">자녀방/서재 &gt; 한샘가구 전용수납</a></li>
+								</ul>
+							</li>
+							<li><a href=""><span class="ft_blue">가</span>구세트</a></li>
+							<li><a href=""><span class="ft_blue">가</span>방</a></li>
+							<li><a href=""><span class="ft_blue">가</span>스렌지</a></li>
+							<li><a href=""><span class="ft_blue">가</span>을 침구</a></li>
+						</ul>
+					</div>
+					<!-- //자동완성 -->
+					<!-- 기획전 상품 롤링 5개 -->
+					<div class="sch_right_rolling">
+						<p class="poptit">기획전</p>
+						<div class="roll_list">
+							<ul class="rolling ui-list-items">
+								<li class="ui-list-item">
+									<a href="#">
+										<div class="list">
+											<img src="../../common/images/common/img_item_01.jpg" alt="기획전 상품 1" />
+											<p class="title">아임 빅 수납침대SS 화이트 협탁형</p>
+											<p class="red"><strong>129,900</strong>원</p>
+										</div>
+									</a>
+								</li>
+								<li class="ui-list-item">
+									<a href="#">
+										<div class="list">
+											<img src="../../common/images/common/img_item_01.jpg" alt="기획전 상품 1" />
+											<p class="title">상품명상품명상품명상품명</p>
+											<p class="red"><strong>129,900</strong>원</p>
+										</div>
+									</a>
+								</li>
+								<li class="ui-list-item">
+									<a href="#">
+										<div class="list">
+											<img src="../../common/images/common/img_item_01.jpg" alt="기획전 상품 1" />
+											<p class="title">상품명2상품명2상품명2상품명2상품명</p>
+											<p class="red"><strong>129,900</strong>원</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="ui-controller">
+							<a href="javascript:;" class="prev ui-controller-prev"><img src="../../common/images/common/btn_pg_left.gif" alt="이전"></a>
+							<a href="javascript:;" class="next ui-controller-next"><img src="../../common/images/common/btn_pg_right.gif" alt="다음"></a>
+						</div>
+					</div>
+					<!-- //기획전 상품 롤링 5개 -->
+					<a href="#" class="layer_close_btn ui-layer-close"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+				</div>
+				<!-- //검색 레이어팝업 -->
+				<div class="header_banner">
+					<div class="ui-controller btn">
+						<a class="ui-controller-left" href="#"><img src="../../common/images/common/banner_arrow_left.gif" alt="이전" ></a><a class="ui-controller-right" href="#"><img src="../../common/images/common/banner_arrow_right.gif" alt="다음" ></a>
+					</div>
+					<p><!-- banner size : 175 * 52 -->
+						<img src="../../common/images/common/header_banner_01.jpg" alt="리클라이너 소파로 품격을 더하다." >
+						<img src="../../common/images/common/header_banner_02.jpg" alt="리클라이너 소파로 품격을 더하다." >
+					</P>
+				</div>
+				<!-- layer_popup -->
+				<div class="layer_popup login" style="display:none">
+					<div class="layer_pop_head">
+						<h1 class="ui-layer-title layer_title">한샘몰 로그인</h1>
+						<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+					</div>
+					<div class="layer_pop_cont">
+						<!-- tab -->
+						<div class="tab_area ui-tab-area st_small">
+							<ul class="ui-tabs tab_tit">
+								<li class="ui-tab-item active"><a href="#">회원</a></li>
+								<li class="ui-tab-item"><a href="#">비회원(주문조회)</a></li>
+							</ul>
+							<div class="ui-tab-contents tab_body">
+								<div class="ui-tab-contents-item tab_cont" style="display:block;">
+									<!-- 회원 -->
+									<div class="login_fieldset">
+										<dl class="login_form">
+											<dt>아이디(이메일)</dt>
+											<dd>
+												<input type="text" placeholder="ID 또는 이메일ID" />
+												<p class="tip_txt ft_red">아이디를 입력해 주세요.</p> <!-- 기본 display:none -->
+											</dd>
+											<dt>비밀번호</dt>
+											<dd>
+												<input type="password" placeholder="비밀번호" />
+												<p class="tip_txt ft_red">비밀번호를 입력해 주세요.</p> <!-- 기본 display:none -->
+											</dd>
+										</dl>
+										<div class="caption_txt">
+											<p><div class="checkbox_area"><input type="checkbox" id="check1"><label for="check1">아이디저장</label></div></p><!-- check box 태그 추가 -->
+											<p>(개인정보 보호를 위해 개인PC에서만 이용해 주세요)</p>
+											<p class="tip_txt ft_red">아이디 또는 비밀번호가 일치하지 않습니다.<br />다시 입력해 주세요</p> <!-- 기본 display:none -->
+										</div>
+										<div class="button_area">
+											<p class="inquiry_btn"><button type="button" class="botton_st_04 red">로그인</button></p>
+											<p class="user_gate">
+												<button type="button" class="botton_st_04">아이디/비밀번호 찾기</button>
+												<button type="button" class="botton_st_04">회원가입</button>
+											</p>
+										</div>
+									</div>
+									<!--// 회원 -->
+								</div>
+								<div class="ui-tab-contents-item tab_cont">
+									<!-- 비회원 -->
+									<div class="login_fieldset">
+										<dl class="login_form">
+											<dt>이름</dt>
+											<dd>
+												<input type="text" placeholder="주문 시 입력한 주문자 이름" />
+												<p class="tip_txt ft_red">주문 시 입력하신 이름을 입력해 주세요.</p> <!-- 기본 display:none -->
+											</dd>
+											<dt><!-- 주문번호 / 휴대폰 번호 선택 추가 -->
+												<input type="radio" id="radio1" name="radio"><label for="radio1">주문번호</label>
+												<input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">휴대폰번호</label></dt>
+												<!-- //주문번호 / 휴대폰 번호 선택 추가 -->
+											</dt>
+											<dd><!-- 주문번호 / 휴대폰 선택시 변경되는 부분 -->
+												<!-- 주문번호 -->
+												<div class="ordernum" style="display:">
+													<input type="text" placeholder="주문 시 문자 발송된 주문번호" />
+													<p class="tip_txt ft_red">주문번호를 입력해 주세요</p> <!-- 기본 display:none -->
+												</div>
+												<!--// 주문번호 -->
+												<!-- 휴대폰 번호 -->
+												<div class="orderphone" style="display:">
+													<div class="num_input">
+														<input type="text" placeholder="주문 시 입력한 휴대폰번호 (-없이 입력)" />
+														<button type="button" class="botton_st_03 gray">휴대폰 인증</button>
+														<p class="tip_txt ft_red">휴대폰번호를 입력해 주세요 <!-- 기본 display:none -->
+													</div>
+													<div class="graybox">
+														<div class="check_phone">
+															<p>입력하신 휴대폰번호로 인증번호가 재전송 되었습니다.</p>
+															<div class="check_number">
+																<input type="text" placeholder="인증번호 입력">
+																<button type="button" class="botton_st_03 gray">확인</button>
+																<button type="button" class="botton_st_03">재전송</button>
+															</div>
+															<p class="tip_txt ft_red">인증번호를 정확히 입력해 주세요.</p>
+															<p class="time_ing">
+																남은 시간 <span class="ft_red">
+																<span>1</span>분 <span>30</span>초</span>
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--// 휴대폰 번호 -->
+											</dd>
+										</dl>
+										<div class="caption_txt">
+											<p>주문번호를 잊으신 경우, <br />한샘몰 고객센터 1688-4945로 문의하여 주시기 바랍니다.</p>
+											<p class="tip_txt ft_red">입력하신 정보를 찾을 수 없습니다.<br />주문 시 입력한 이름, 주문번호를 다시 확인해주세요</p> <!-- 기본 display:none -->
+										</div>
+										<div class="button_area">
+											<p class="inquiry_btn"><button type="button" class="botton_st_04 purple">조회</button></p>
+										</div>
+									</div>
+									<!--// 비회원 -->
+								</div>
+							</div>
+						</div>
+						<!--// tab -->
+					</div>
+				</div>
+				<!-- //layer_popup -->
+			</div>
+			<!-- //top_02 -->
+			<!-- gnb -->
+			<div id="gnb_area">
+				<div class="gnb">
+					<div class="category_list">
+						<span class="category"><a href="#">전체 카테고리<img src="../../common/images/common/gnb_category_open.gif" alt="카테고리 열기" ></a></span><!-- <img src="../../common/images/common/gnb_category_close.gif" alt="카테고리 닫기" > -->
+					</div>
+					<ul class="gnb_list">
+						<li><a href="#">인테리어쉐어</a></li>
+						<li><a href="#">on세일존</a></li>
+						<li><a href="#">릴레이특가</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">기획전</a></li>
+						<li><a href="#">브랜드</a></li>
+					</ul>
+					<ul class="util_list">
+						<li><a class="app" href="#">앱다운로드</a></li>
+						<li><a class="favorites" href="#">즐겨찾기</a></li>
+					</ul>
+					<!-- 전체 카테고리 레이어팝업 11.19 팝업 위치 수정 -->
+					<div class="all_category dp_none">
+						<div class="ac_left">
+							<ul class="clear">
+								<li class="dep1">
+									침실
+									<ul class="dep2">
+										<li><a href="#">퀸/킹침대_매트별도</a></li>
+										<li><a href="#">퀸/킹침대_매트포함</a></li>
+										<li><a href="#">슈퍼/싱글침대_매트별도</a></li>
+										<li><a href="#">슈퍼/싱글침대_매트포함</a></li>
+										<li><a href="#">기능성 침대</a></li>
+										<li><a href="#">매트리스</a></li>
+										<li><a href="#">서랍장/협탁</a></li>
+										<li><a href="#">화장대</a></li>
+										<li><a href="#">선반장/행거/거울</a></li>
+										<li><a href="#">프리미엄 가구관</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									옷장/수납
+									<ul class="dep2">
+										<li class="on"><a href="#">신제품코너</a></li>
+										<li class="on"><a href="#">샘베딩 시리즈 </a></li>
+										<li><a href="#">붙박이장</a></li>
+										<li><a href="#">옷장세트(장롱)</a></li>
+										<li><a href="#">옷장드레스룸(단품)</a></li>
+										<li><a href="#">드레스룸(세트)</a></li>
+										<li><a href="#">다용도 수납장</a></li>
+										<li><a href="#">서랍장</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									소파/거실
+									<ul class="dep2">
+										<li><a href="#">소파(코너형)</a></li>
+										<li><a href="#">소파(5인이상)</a></li>
+										<li><a href="#">소파(4인용)</a></li>
+										<li><a href="#">소파(3+1인용)</a></li>
+										<li><a href="#">소파(2-3인용)</a></li>
+										<li><a href="#">소파(리클라이너형)</a></li>
+										<li><a href="#">안마의자</a></li>
+										<li><a href="#">암체어/1인소파</a></li>
+										<li><a href="#">소파베드/빈백소파</a></li>
+										<li><a href="#">소파스툴/헤드레스트</a></li>
+										<li><a href="#">소파테이블</a></li>
+										<li><a href="#">사이드테이블</a></li>
+										<li><a href="#">거실장(TV장)</a></li>
+										<li><a href="#">거실장세트</a></li>
+										<li><a href="#">월시스템</a></li>
+										<li><a href="#">거실수납장</a></li>
+										<li><a href="#">장식장</a></li>
+										<li><a href="#">다용도 수납장/테이블</a></li>
+									</ul>
+								</li> 
+								<li class="dep1">
+									자녀방/서재
+									<ul class="dep2">
+										<li class="on"><a href="#">샘스틸 책장</a></li>
+										<li class="on"><a href="#">책장</a></li>
+										<li><a href="#">맞춤 책장</a></li>
+										<li><a href="#">책상</a></li>
+										<li><a href="#">의자</a></li>
+										<li><a href="#">침대[슈퍼싱글/싱글]</a></li>
+										<li><a href="#">옷장/서랍장/수납장</a></li>
+										<li><a href="#">조립식[DIY]</a></li>
+										<li><a href="#">한샘 책장 샘</a></li>
+										<li><a href="#">샘키즈</a></li>
+										<li><a href="#">모모로</a></li>
+										<li><a href="#">한샘가구 전용수납</a></li>
+										<li><a href="#">책상 악세서리</a></li>
+										<li><a href="#">사무용가구</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									식탁/소가구
+									<ul class="dep2">
+										<li><a href="#">식탁세트</a></li>
+										<li><a href="#">식탁</a></li>
+										<li><a href="#">식탁의자</a></li>
+										<li><a href="#">컴팩트소파/소파베드</a></li>
+										<li><a href="#">인테리어 의자</a></li>
+										<li><a href="#">아일랜드/렌지대 식탁</a></li>
+										<li><a href="#">테이블</a></li>
+										<li><a href="#">책상</a></li>
+										<li><a href="#">주방수납</a></li>
+										<li><a href="#">거실/기타수납</a></li>
+										<li><a href="#">침실/드레스룸 소가구</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									키즈
+									<ul class="dep2">
+										<li><a href="#">가구</a></li>
+										<li><a href="#">원목가구</a></li>
+										<li><a href="#">놀이매트/소파</a></li>
+										<li><a href="#">키즈 침구</a></li>
+										<li><a href="#">완구/교구</a></li>
+										<li><a href="#">출산/수유 용품</a></li>
+										<li><a href="#">키즈 데코</a></li>
+										<li><a href="#">샘키즈</a></li>
+										<li><a href="#">모모로</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									데코/생활
+									<ul class="dep2">
+										<li><a href="#">조명/액자</a></li>
+										<li><a href="#">데코소품</a></li>
+										<li><a href="#">청소용품</a></li>
+										<li><a href="#">생활/계절가전</a></li>
+										<li><a href="#">디자인문구</a></li>
+										<li><a href="#">캠핑/계절용품</a></li>
+										<li><a href="#">세제/방향/제습제</a></li>
+										<li><a href="#">DIY자재/용품</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									수납용품
+									<ul class="dep2">
+										<li><a href="#">한샘가구 전용수납</a></li>
+										<li><a href="#">수납박스/바스켓</a></li>
+										<li><a href="#">행거/선반</a></li>
+										<li><a href="#">옷장 수납용품</a></li>
+										<li><a href="#">욕실용품</a></li>
+										<li><a href="#">세탁용품/휴지통</a></li>
+										<li><a href="#">데스크 용품</a></li>
+										<li><a href="#">주방 수납용품</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									주방용품
+									<ul class="dep2">
+										<li class="on"><a href="#">한샘주방용품</a></li>
+										<li class="on"><a href="#">냄비/솥</a></li>
+										<li><a href="#">후라이팬류</a></li>
+										<li><a href="#">식기/수저/컵</a></li>
+										<li><a href="#">보관/밀폐용기</a></li>
+										<li><a href="#">식기건조대</a></li>
+										<li><a href="#">주방수납</a></li>
+										<li><a href="#">도마/칼/조리도구</a></li>
+										<li><a href="#">교자상/제수용품</a></li>
+										<li><a href="#">주방잡화/선반</a></li>
+										<li><a href="#">푸드</a></li>
+										<li><a href="#">주방가전</a></li>
+										<li><a href="#">생활/계절가전</a></li>
+										<li><a href="#">주방패브릭소품</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									침구/커튼
+									<ul class="dep2">
+										<li class="on"><a href="#">한샘패브릭</a></li>
+										<li><a href="#">침구세트</a></li>
+										<li><a href="#">침구단품/커버</a></li>
+										<li><a href="#">솜류</a></li>
+										<li><a href="#">커튼/블라인드</a></li>
+										<li><a href="#">카페트/러그</a></li>
+										<li><a href="#">계절침구</a></li>
+										<li><a href="#">기능성침구</a></li>
+										<li><a href="#">홈패브릭소품</a></li>
+										<li><a href="#">예단침구</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="ac_right">
+							<div class="box">
+								<ul class="link">
+									<li><a href="#">인테리어쉐어</a></li>
+									<li><a href="#">on세일</a></li>
+									<li><a href="#">릴레이특가</a></li>
+									<li><a href="#">베스트</a></li>
+									<li><a href="#">기획전</a></li>
+									<li><a href="#">브랜드SHOP</a></li>
+								</ul>
+								<div class="banner">
+									<p>인기 기획전</p>
+									<a href="#"><img src="../../common/images/common/img_banner.jpg" alt="한샘이 낳은 최고의 편안함 - 스타일리쉬한 리클라이너" /></a>
+								</div>
+							</div>
+						</div>			
+						<a href="#" class="ui-layer-close close_btn"><img src="../../common/images/common/bg_pop_close.png" alt="닫기"></a>
+					</div>
+					<!-- //전체 카테고리 레이어팝업-->
+				</div>
+			</div>
+			<!-- //gnb -->
+		</div>
+		<!-- //header area -->
+		<hr>
+		<!-- container area -->
+		<div id="container">
+			<div id="order" class="content_sub"> <!-- order로 id명 변경 -->
+				<div class="location">
+					<ul>
+						<li><a href="#"><img src="../../common/images/common/icon_home.gif" alt="home" ></a></li>
+						<li>주문서작성</li>
+					</ul>
+				</div>
+				<!-- contents area -->
+				<div class="contents_area" id="ord28">
+					<!-- 주문서 작성 -->
+					<div class="order_write">
+						<div class="order_box_area">
+							<h2 class="fl tit">주문서작성</h2>
+							<div class="fl">
+								<h3 class="tit"><span>'홍길동'</span>회원님 혜택정보</h3>
+								<div class="my_coupon_area"> <!-- 2차수정 : 쿠폰 텍스트로 변경 -->
+									<!-- 레이어팝업 : 나의 쿠폰 -->
+									<button type="button" class="botton_st_03 arrow_03" onclick="$('.pop_mycoupon').openLayer();">할인쿠폰(2)장</button>
+									<div class="pop_bubble pop_mycoupon" style="display: none;">
+										<span class="arr"></span>
+										<h3 class="pop_bubble_tit ui-layer-title">나의 쿠폰<span>(2)</span></h3>
+										<div class="pop_bubble_cont">
+											<span class="detail_navi ui-controller">
+												<button class="prev ui-controller-prev">이전목록</button><button class="next ui-controller-next">다음목록</button>
+											</span>													
+											<ul class="ui-list-items">
+												<li class="ui-list-item active">
+													<h4>1신규회원가입 할인쿠폰</h4>
+													<a href="#" class="bg_coupon">
+														<span>
+															5만원 이상 구매시<br><span class="num">10%할인</span>
+														</span>
+													</a>
+													<h4>첫 구매 감사 쿠폰</h4>
+													<a href="#" class="bg_coupon">
+														<span>
+															5만원 이상 구매시<br><span class="num">10%할인</span>
+														</span>
+													</a>
+												</li>
+												<li class="ui-list-item">
+													<h4>2신규회원가입 할인쿠폰</h4>
+													<a href="#" class="bg_coupon">
+														<span>
+															5만원 이상 구매시<br><span class="num">10%할인</span>
+														</span>
+													</a>
+													<h4>첫 구매 감사 쿠폰</h4>
+													<a href="#" class="bg_coupon">
+														<span>
+															5만원 이상 구매시<br><span class="num">10%할인</span>
+														</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<button class="pop_bubble_close ui-layer-close">팝업닫기</button>
+									</div>
+									<!-- 레이어팝업 : 나의 포인트 -->
+									<button type="button" class="btn_point botton_st_03 arrow_03" onclick="$('.pop_mypoint').openLayer();">포인트(10)p</button>
+									<div class="pop_bubble pop_mypoint" style="display: none;">
+										<span class="arr"></span>
+										<h3 class="pop_bubble_tit ui-layer-title">나의 포인트</h3>
+										<div class="pop_bubble_cont pop_mypoint_cont">
+											<a href="#" class="bg_point">
+												<span>10P</span>
+											</a>
+											<div>최근 사용일<br>2015.05.30 <span class="ft_blue">20P</span></div>
+										</div>
+										<button class="pop_bubble_close ui-layer-close">팝업닫기</button>
+									</div>
+								</div> <!-- //my_coupon_area -->
+							</div>
+							<p><img src="../../common/images/order/order_step_02.gif" alt=""></p>
+						</div> <!-- //order_box_area -->
+						<div class="table_area">
+							<div class="tbl_top">
+								<div class="fl">
+									<h3>주문상품 내역</h3>
+									<button type="button" class="botton_st_02 arrow">장바구니가기</button>
+								</div>
+								<button type="button" class="fr botton_st_03" onclick="$('.cancel_info_popup').openLayer();">취소교환반품안내</button>
+							</div>
+							<table class="tbl_order tred" summary="상품명/선택사항, 수량, 상품금액, 할인금액, 할인금액적용, 배송정보 정보를 제공함">
+								<caption>주문상품 내역</caption>
+								<colgroup>
+									<col width="34%"> <!-- 상품명 -->
+									<col width="8%"> <!-- 수량 -->
+									<col width="16%"> <!-- 금액 -->
+									<col width="12%"> <!-- 할인금액 -->
+									<col width="16%"> <!-- 할인금액적용 -->
+									<col width="14%"> <!-- 배송정보 -->
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">상품명/선택사항</th>
+										<th scope="col">수량</th>
+										<th scope="col">상품금액</th>
+										<th scope="col">할인금액</th>
+										<th scope="col">할인금액적용</th>
+										<th scope="col">배송정보</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="verti_top">
+											<div class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></div>
+											<div class="prd_info_area">
+												<ul class="prd_info">
+													<li class="prd_seller">[한샘몰] 
+														<span class="ico_txt">소파기사</span><span class="ico_txt">설치기사</span><span class="ico_txt">제주배송가능</span><span class="ico_txt">택배배송</span>
+													</li>
+													<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형 (3종/택1)<span class="ico_square hit">HIT</span></li>
+													<li class="prd_option">
+														<ul>
+															<li><span>B형: 2500~2600(8.5자)(+60000원)</span></li>
+															<li><span>사은품 : 침대협탁</span></li>
+														</ul>
+														<!-- 옵션변경 레리어팝업 생성 ord2.html -->
+														<p><a href="javascript:$('.option_chg_popup').openLayer();">옵션변경</a></p>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											<span class="size_value">15</span>
+										</td>
+										<td>
+											<div class="prd_price"><strong>1,129,900</strong><span>원</span><p class="ft_gray ">( 무이자 / 청구할인 )</p></div>
+										</td>
+										<td>
+											<div class="coupon_discount_amount">
+												<strong class="ft_blue">-5,000</strong><span>원</span>
+											</div>
+										</td>
+										<td>
+											<div class="price_discount">
+												<strong>1,129,900</strong><span>원</span>
+											</div>
+										</td>
+										<td rowspan="3" class="bg_gray">
+											<div class="delivery_info_area">
+												<span class="seller">[한샘몰]</span>
+												<div class="delivery_info">
+													<span>전국</span>
+													<span>(제주배송가능)</span>
+													<div class="layer_pop_dir">
+														<span class="btntxt pop_dir">
+															<a href="javascript:$('.pop_fix_amount').openLayer();" class="btntxt_err ft_blue">고정배송비부과</a>
+														</span>
+														<span class="ft_blue">(5000원/착불)</span>
+														
+														<!-- 레이어팝업 : 고정배송비부과 -->
+														<div class="pop_bubble pop_fix_amount" style="display: none;">
+															<span class="arr"></span>
+															<h3 class="pop_bubble_tit ui-layer-title">고정배송비부과</h3>
+															<div class="pop_bubble_cont">
+																<p>금액, 수량과 상관없이 고정적으로 <br><span class="ft_blue">5,000</span>원 부과</p>
+															</div>
+															<button class="pop_bubble_close ui-layer-close">팝업닫기</button>
+														</div>
+														<!-- //레이어팝업 : 고정배송비부과 -->
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="verti_top">
+											<div class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></div>
+											<div class="prd_info_area">
+												<ul class="prd_info">
+													<li class="prd_seller">[한샘몰]<span class="ico_square new">NEW</span></li>
+													<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형 (3종/택1)</li>
+													<li class="prd_option">
+														<ul>
+															<li><span>B형: 2500~2600(8.5자)(+60000원)</span></li>
+														</ul>
+														<!-- 옵션변경 레리어팝업 생성 ord2.html -->
+														<p><a href="javascript:$('.option_chg_popup').openLayer();">옵션변경</a></p>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											<span class="size_value">15</span>
+										</td>
+										<td>
+											<div class="prd_price"><strong>1,129,900</strong><span>원</span></div>
+										</td>
+										<td>
+											<div class="coupon_discount_amount">
+												<strong class="ft_blue">-5,000</strong><span>원</span>
+											</div>
+										</td>
+										<td>
+											<div class="price_discount">
+												<strong>200,000</strong><span>원</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="verti_top">
+											<div class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></div>
+											<div class="prd_info_area">
+												<ul class="prd_info">
+													<li class="prd_seller">[한샘몰]<span class="ico_square new">NEW</span></li>
+													<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형 (3종/택1)</li>
+													<li class="prd_option">
+														<ul>
+															<li><span>B형: 2500~2600(8.5자)(+60000원)</span></li>
+														</ul>
+														<!-- 옵션변경 레리어팝업 생성 ord2.html -->
+														<p><a href="javascript:$('.option_chg_popup').openLayer();">옵션변경</a></p>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											<span class="size_value">15</span>
+										</td>
+										<td>
+											<div class="prd_price"><strong>1,129,900</strong><span>원</span><p class="ft_gray ">( 무이자 / 청구할인 )</p></div>
+										</td>
+										<td>
+											<div class="coupon_discount_amount">
+												<strong class="ft_blue">-</strong><span></span>
+											</div>
+										</td>
+										<td>
+											<div class="price_discount">
+												<strong>200,000</strong><span>원</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td class="verti_top">
+											<div class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></div>
+											<div class="prd_info_area">
+												<ul class="prd_info">
+													<li class="prd_seller">[한샘몰]
+														<span class="btntxt_02 pop_dir">
+																<a href="javascript:$('.pop_local_fee').openLayer();" class="btntxt">지역별 배송비</a>
+															</span>
+															
+															<!-- 레이어팝업 : 지역별 배송비 -->
+															<div class="pop_bubble pop_local_fee" style="display: none;">
+																<span class="arr"></span>
+																<h3 class="pop_bubble_tit ui-layer-title">지역별 추가 배송비</h3>
+																<div class="pop_bubble_cont">
+																	<ul class="list">
+																		<li><span class="ft_bold ft_black">제주도</span> : <span class="ft_blue">5,000</span><span class="won">원</span></li>
+																		<li><span class="ft_bold ft_black">경기도 고양시</span> : <span class="ft_blue">2,500</span><span class="won">원</span></li>
+																	</ul>
+																	<p>(지역별 추가 배송비는 해당 지역은 배송료가 추가적으로 부과됩니다.)</p>
+																</div>
+																<button class="pop_bubble_close ui-layer-close">팝업닫기</button>
+															</div>
+															<!-- //레이어팝업 : 지역별 배송비 -->
+													</li>
+													<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형 (3종/택1)<span class="ico_square hit">HIT</span></li>
+													<li class="prd_option">
+														<ul>
+															<li><span>B형: 2500~2600(8.5자)(+60000원)</span></li>
+														</ul>
+														<!-- 옵션변경 레리어팝업 생성 ord2.html -->
+														<p><a href="javascript:$('.option_chg_popup').openLayer();">옵션변경</a></p>
+													</li>
+													<li>
+														<!-- 패키지 할인상품 레이어팝업 생성 -->
+														<a href="javascript:$('.package_popup').openLayer();"><span class="ico_txt_arr gold">패키지 할인상품</span></a>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											<span class="size_value">15</span>
+										</td>
+										<td>
+											<div class="prd_price"><strong>1,129,900</strong><span>원</span><p class="ft_gray "></p></div>
+										</td>
+										<td>
+											<div class="coupon_discount_amount">
+												<strong class="ft_blue">-</strong><span></span>
+											</div>
+										</td>
+										<td>
+											<div class="price_discount">
+												<strong>200,000</strong><span>원</span>
+											</div>
+										</td>
+										<td class="bg_gray">
+											<div class="delivery_info_area">
+												<div class="delivery_info">
+													<span>전국</span>
+													<span>택배배송</span>
+													<span class="delivery">유료배송<br>(3,000원/선불)</span>
+												</div>
+											</div>
+										</td>
+										
+									</tr>
+									<!-- //수량별배송비부과 -->
+								</tbody>
+							</table>
+							<div class="prd_notice">
+								<ul>
+									<li>※ 배송일자 선택(배송일 예약) 가능 상품만 배송일 지정이 가능합니다. 단, 제주지역과 무통장입금의 경우에는 해당되지 않습니다.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="expect_amount ">
+							<ul class="top_amount">
+								<li>
+									<h3>총 상품금액 </h3>
+									<p>100,655,000<span>원</span></p>
+									<span class="icon_minus"><img src="../../common/images/order/icon_minus.png" alt=""></span>
+								</li>
+								<li>
+									<h3>총 할인금액 </h3>
+									<p class="ft_blue">10,000<span class="">원</span></p>
+									<span class="icon_plus"><img src="../../common/images/order/icon_plus.png" alt=""></span>
+								</li>
+								<li>
+									<h3>총 배송비 </h3>
+									<p>3,000<span>원</span></p>
+									<span class="icon_equal"><img src="../../common/images/order/icon_equal.png" alt=""></span>
+								</li>
+								<li class="last">
+									<h3>결제예정금액 </h3>
+									<p><span class="ft_red">145,655,000</span><span>원</span></p>
+								</li>
+							</ul>
+							<ul class="bg_gray">
+								<li>
+									<h3>상품금액</h3>
+									<p>100,655,000<span>원</span></p>
+								</li>
+								<li>
+									<h3>한샘몰쿠폰</h3>
+									<p>-10,000<span>원</span></p>	
+								</li>
+								<li>
+									<div>
+										<h3>배송비</h3>
+										<p>3,000<span>원(선불)</span></p>
+									</div>
+									<div>
+										<h3>지역별 추가 배송비</h3>
+										<p>5,000<span>원(선불)</span></p>
+									</div>
+								</li>
+								<li class="last">
+									<h3>포인트</h3>
+									<p>560<span>원</span></p>
+								</li>
+							</ul>
+						</div>
+						<div class="prd_notice">
+							<ul>
+								<li>※ 배송비가 착불인 경우 결제금액에 포함되어 결제되지 않습니다.</li>
+								<li>※ 할인금액은 상품할인 또는 쿠폰이 적용되었을 경우 가격이므로 실제 주문시의 주문가격과 다를 수도 있습니다.</li>
+							</ul>
+						</div>
+						<div class="prd_delivery_info">
+							<h4>주문상품 배송정보</h4>
+							<button type="button" class="botton_st_03" onclick="$('.order_note_popup').openLayer();">구매전 유의사항</button>
+							<ul>
+								<li>선택하신 상품은 <span class="ft_red">입점업체(판매자) 제품으로 입점업체가 배송</span>을 해드리는 상품입니다.</li>
+								<li>배송방법이 다른 여러 개의 상품을 주문하는 경우 상품은 별도로 배송됩니다. </li>
+								<li>입점업체(판매자) 배송정책에 따라 일부 지역에 한해 배송비가 부과될 수 있습니다.</li>								
+							</ul>
+						</div>
+						
+						<!-- case1. 최초 주문시 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>주문자/배송정보</h3>
+									<p>※ 최초 주문자는 주문하시는 배송지 주소가 기본배송지로 설정되며 회원정보로 저장됩니다.</p>
+								</div>
+							</div>
+							<table class="tbl_style_01" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="150px" />
+									<col width="365px" />
+									<col width="150px" />
+									<col width="305px" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="need nocheck">주문하시는 분</th>
+										<td colspan="3" class="tip_txt13">홍길동</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need">배송지선택</th>
+										<td colspan="3">
+											<button type="button" class="botton_st_02 gray">신규주소지</button>
+											<button type="button" class="botton_st_02">기본주소</button>
+											<button type="button" class="botton_st_02" onclick="$('.my_address_book_popup').openLayer();">나의주소록</button>
+											<button type="button" class="botton_st_02 mr20">최근배송지</button>
+											<span class="recent_addr">최근 배송지 : 서울시 마포구 서교동 380 5F (2015.01.01)</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need">받으시는 분</th>
+										<td colspan="3">
+											<input type="text" name="" class="send_name" value="홍길동">
+											<div class="checkbox_area"><input type="checkbox" id="addr_info"><label for="addr_info">기본배송지 정보를 수정합니다.</label></div><!-- check box 태그 변경 -->
+										</td>
+									</tr>
+									<!-- 2015.10.27 배송지 주소지 입력 폼 변경 -->
+									<tr>
+										<th scope="row" class="need">배송지 주소</th>
+										<td colspan="3">
+											<div class="delivery_addr">
+												<input type="text" id="find_postnum" name="find_postnum" readonly="readonly" value="432213" title="우편번호">
+												<label for="find_postnum">
+													<button type="button" class="botton_st_02 gray">우편번호찾기</button></label>
+												</label>
+											</div>
+											<div class="delivery_addr_txt">
+												<label>
+													<input type="text" readonly="readonly" value="서울시 마포구 서교동 568" title="지역 주소">
+												</label>
+												<label>
+													<input type="text" readonly="readonly" value="101" title="주소 상세">
+												</label>
+											</div>
+											<div class="ft_blue add_msg">
+												(추가 배송비 부과 지역입니다   * 경기도 고양시 :  2,500원)
+											</div>
+										</td>
+									</tr>
+									<!-- //2015.10.27 배송지 주소지 입력 폼 변경 -->
+									<tr>
+										<th scope="row" class="need"><label for="addr_hp">휴대폰 번호</label></th>
+										<td>
+											<input type="text" id="addr_hp" placeholder="‘-’ 없이 숫자만 입력해 주세요">
+										</td>
+										<th class="l_line"><label for="addr_tel">전화번호</label></th>
+										<td>
+											<input type="text" id="addr_tel" placeholder="‘-’ 없이 숫자만 입력해 주세요">
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need nocheck"><label for="delivery_request">배송시 요청사항</label></th>
+										<td colspan="3" class="delivery_request">
+											<input type="text" id="delivery_request" style="">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- case2. 법인회원 주문시 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>주문자/배송정보</h3>
+									<p>※ 최초 주문자는 주문하시는 배송지 주소가 기본배송지로 설정되며 회원정보로 저장됩니다.</p>
+								</div>
+							</div>
+							<table class="tbl_style_01" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="150px" />
+									<col width="365px" />
+									<col width="150px" />
+									<col width="305px" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="need nocheck">주문하시는 분</th>
+										<td colspan="3" class="tip_txt13">법인상호명</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need">배송지선택</th>
+										<td colspan="3">
+											<button type="button" class="botton_st_02 gray">신규주소지</button>
+											<button type="button" class="botton_st_02">기본주소</button>
+											<button type="button" class="botton_st_02" onclick="$('.my_address_book_popup').openLayer();">나의주소록</button>
+											<button type="button" class="botton_st_02 mr20">최근배송지</button>
+											<span class="recent_addr">최근 배송지 : 서울시 마포구 서교동 380 5F (2015.01.01)</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need">받으시는 분</th>
+										<td colspan="3">
+											<input type="text" name="" class="send_name" value="법인상호명">
+											<p class="tip_txt"><input type="checkbox" id="addr_info2"><label for="addr_info2">기본배송지 정보를 수정합니다.</label></p>
+										</td>
+									</tr>
+									<!-- 2015.10.27 배송지 주소지 입력 폼 변경 -->
+									<tr>
+										<th scope="row" class="need">배송지 주소</th>
+										<td colspan="3">
+											<div class="delivery_addr">
+												<input type="text" id="find_postnum_02" name="find_postnum_02" readonly="readonly" value="432213" title="우편번호">
+												<label for="find_postnum_02">
+													<button type="button" class="botton_st_02 gray">우편번호찾기</button></label>
+												</label>
+											</div>
+											<div class="delivery_addr_txt">
+												<label>
+													<input type="text" readonly="readonly" value="서울시 마포구 서교동 568" title="지역 주소">
+												</label>
+												<label>
+													<input type="text" readonly="readonly" value="101" title="주소 상세">
+												</label>
+											</div>
+											<div class="ft_blue add_msg">
+												(추가 배송비 부과 지역입니다   * 경기도 고양시 :  2,500원)
+											</div>
+										</td>
+									</tr>
+									<!-- //2015.10.27 배송지 주소지 입력 폼 변경 -->
+									<tr>
+										<th scope="row" class="need"><label for="addr_hp">휴대폰 번호</label></th>
+										<td>
+											<input type="text" id="addr_hp" placeholder="‘-’ 없이 숫자만 입력해 주세요">
+										</td>
+										<th class="l_line"><label for="addr_tel">전화번호</label></th>
+										<td>
+											<input type="text" id="addr_tel" placeholder="‘-’ 없이 숫자만 입력해 주세요">
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need nocheck"><label for="delivery_request">배송시 요청사항</label></th>
+										<td colspan="3" class="delivery_request">
+											<input type="text" id="delivery_request" style="">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- case3. 비회원 주문시 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div class="pb10">
+									<h3>주문자/배송정보</h3>
+									<p>※ 회원으로 구매하시면 각종 쿠폰 및 포인트 혜택을 받으실 수 있습니다.</p>
+									<span class="btn_mem fr"><button type="button" class="botton_st_03 ">회원가입하기</button></span>
+								</div>
+							</div>
+							<table class="tbl_style_01" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="150px" />
+									<col width="365px" />
+									<col width="150px" />
+									<col width="305px" />
+								</colgroup>
+								<tbody>
+									<!-- 2015.10.27 주문자 정보 폼 변경 -->
+									<tr>
+										<th scope="row" class="need nocheck">주문하시는 분</th>
+										<td colspan="3" class="tip_txt13"><input type="text" name="" class="send_name" style=""></td>
+									</tr>
+									<tr>
+										<th scope="row" class="need">받으시는 분</th>
+										<td colspan="3">
+											<input type="text" name="" class="send_name" value="">
+											<div class="checkbox_area"><input type="checkbox" id="addr_info3"><label for="addr_info3">주문자와 같음</label></div><!-- check box 태그 변경 -->
+										</td>
+									</tr>
+									<!-- //2015.10.27 주문자 정보 폼 변경 -->
+									<!-- 2015.10.27 배송지 주소지 입력 폼 변경 -->
+									<tr>
+										<th scope="row" class="need">배송지 주소</th>
+										<td colspan="3">
+											<div class="delivery_addr">
+												<input type="text" id="find_postnum_03" name="find_postnum_03" readonly="readonly" value="432213" title="우편번호">
+												<label for="find_postnum_03">
+													<button type="button" class="botton_st_02 gray">우편번호찾기</button></label>
+												</label>
+											</div>
+											<div class="delivery_addr_txt">
+												<label>
+													<input type="text" readonly="readonly" value="서울시 마포구 서교동 568" title="지역 주소">
+												</label>
+												<label>
+													<input type="text" readonly="readonly" value="101" title="주소 상세">
+												</label>
+											</div>
+											<div class="ft_blue add_msg">
+												(추가 배송비 부과 지역입니다   * 경기도 고양시 :  2,500원)
+											</div>
+										</td>
+									</tr>
+									<!-- //2015.10.27 배송지 주소지 입력 폼 변경 -->
+									<tr>
+										<th scope="row" class="need"><label for="addr_hp">휴대폰 번호</label></th>
+										<td>
+											<input type="text" id="addr_hp" placeholder="‘-’ 없이 숫자만 입력해 주세요">
+										</td>
+										<th class="l_line"><label for="addr_tel">전화번호</label></th>
+										<td>
+											<input type="text" id="addr_tel" placeholder="‘-’ 없이 숫자만 입력해 주세요">
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="need nocheck"><label for="delivery_request">배송시 요청사항</label></th>
+										<td colspan="3" class="delivery_request">
+											<input type="text" id="delivery_request" style="">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="plusapply_area">
+							<div class="fl">
+								<div class="table_area_02 mb60 ">
+									<!--div class="tbl_top">
+										<h3>할인/혜택 적용</h3>
+									</div-->
+									<table class="tbl_style_03" summary="총 주문금액, 총배송비, 쿠폰할인, 포인트, 결제하실금액의 정보를 제공함">
+										<caption></caption>
+										<colgroup>
+											<col width="110px" />
+											<col width="670px" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">총 주문금액</th>
+												<td>
+													<span class="fl tot_amount">97,500 <span>원</span></span>
+													<span class="fr tip_txt13">(총 주문금액=판매가+배송비)</span>
+												</td>
+											</tr>
+											<tr>
+												<th colspan="2">
+													<dl class="discount_benefit">
+														<dt class="vert">총 배송비(선불)</dt>
+														<dd class="vert"><input type="text" name="" class=""><span class="won">원</span><button type="button" class="botton_st_02 white" style="width:109px">배송비쿠폰  <span class="ft_red">(3)</span></button></dd>
+														<dt>쿠폰할인</dt>
+														<dd>
+															<input type="text" name="" class=""><span class="won">원</span><button type="button" class="botton_st_02 white" onclick="$('.coupon_popup2').openLayer();"  style="width:109px">적용가능쿠폰 <span class="ft_red">(3)</span></button>
+														</dd>
+														<dt class="point">포인트</dt>
+														<dd><input type="text" name="" class=""><span class="won">원</span> (1,000원 보유) <button type="button" class="botton_st_02 white">전체사용</button><p>※ 한샘포인트는 받으신 후 2년 이내에 사용하지 않을 시 소멸됩니다.</p></dd>
+													</dl>
+												</th>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">결제하실 금액</th>
+												<td class="bg_gray"><strong class="ft_red">1,787,500</strong><span class="won">원</span> <!-- <span>(배송비 포함)</span> --></td>
+											</tr>
+										</tbody>							
+									</table>
+									<!--p class="noti">※ 결제금액은 배송비 포함 금액이며 배송비가 착불인 경우 결제금액에 포함되어 결제되지 않습니다.</p-->
+								</div>
+								<div class="table_area_02 buy_pay">
+									<div class="tbl_top">
+										<h3>결제하기</h3>
+										<p>※ 무통장입금의 경우 입금확인을 실시간으로 확인할 수 없기 때문에 배송 예정일(배송일자 예약) 선택이 불가능합니다.</p>
+									</div>
+									<table class="tbl_style_03" summary="결제수단 정보를 제공함">
+										<caption></caption>
+										<colgroup>
+											<col width="110px" />
+											<col width="670px" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg_gray">결제수단</th>
+												<td class="bg_gray">
+													<p class="rdo_st01">
+														<input type="radio" id="pay_how1" name="radio" checked="checked"><label for="pay_how1">신용카드(일반)</label>
+														<input type="radio" id="pay_how2" name="radio" checked="checked"><label for="pay_how2">신용카드(법인)</label>
+														<input type="radio" id="pay_how3" name="radio"><label for="pay_how3">실시간계좌이체</label>
+														<input type="radio" id="pay_how4" name="radio"><label for="pay_how4">무통장입금</label>
+														<input type="radio" id="pay_how5" name="radio"><label for="pay_how5">Paynow(간편결제)</label>
+														<input type="radio" id="pay_how6" name="radio"><label for="pay_how6">카카오페이</label>
+													</p>	
+													<div>
+														<div class="select_area ui-select-box">
+															<select class="ui-input-select">
+																<option value="" selected="selected">신용카드선택</option>
+																<option value="value2">옵션 Label 1</option>
+																<option value="value3">옵션 Label 2</option>
+																<option value="value4">옵션 Label 3</option>
+																<option value="value5" disabled="disabled">옵션 Label 5</option>
+															</select>
+														</div>
+														<div class="select_area ui-select-box">
+															<select class="ui-input-select">
+																<option value="" selected="selected">일시불</option>
+																<option value="value2">옵션 Label 1</option>
+																<option value="value3">옵션 Label 2</option>
+																<option value="value4">옵션 Label 3</option>
+																<option value="value5" disabled="disabled">옵션 Label 5</option>
+															</select>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th colspan="2">
+													<ul class="list_02">
+														<li>신용카드, 실시간 계좌이체는 안전거래 서비스 LGU+를 통해 결제 됩니다.</li>
+														<li>한샘 가구와 생활용품(소품/패브릭)의 배송은 제품별로 설치, 택배 상품으로 각각 나뉘어 배송됩니다.</li>
+														<li>한샘배송 상품과 업체 배송 상품을 같이 구매하실 경우, 각각의 배송비가 적용되며 각각 배송됩니다.</li>
+														<li>한샘 브랜드의 가구 제품만 시공일 지정이 가능합니다.</li>
+														<li>Paynow(간편결제)는 어플리케이션 설치후 자주 사용하는 결제수단을 최초1회 등록하면, 카드,지갑 없이도 바로 결제 할 수 있는 결제 서비스입니다.<br>
+														(PC에서 주문시 간편결제>핸드폰수단이 제공되지 않습니다.)</li>
+													</ul>	
+													<button type="button" class="botton_st_03" onclick="$('.paypop_01').openLayer();">안심클릭서비스</button>
+													<button type="button" class="botton_st_03" onclick="$('.paypop_02').openLayer();">안전결제(ISP)서비스안내</button>
+													<button type="button" class="botton_st_03" onclick="$('.paypop_03').openLayer();">공인인증서 발급방법안내</button>
+												</th>
+											</tr>
+										</tbody>							
+									</table>
+								</div>
+								<div class="how_guide">
+									<h5>현금영수증 지출증빙용 (세금계산서 대용)</h5>
+									<ul>
+										<li>주문/결제 시 현금영수증 '지출증빙용' 발급을 선택하시면 됩니다. (결제수단 '신용카드' 제외)</li>
+										<li>지출증빙용 현금영수증은 세금계산서 대용으로 가능합니다. (중복발행 불가)</li>
+										<li>주문/결제 시, 지출증빙용 아닌 수단을 선택하였거나 발급신청을 하지 못한 경우 고객센터1688-4945 혹은 Q&amp;A로 문의 주시면 결제정보 확인 후 발급받으실 수 있습니다.</li>
+									</ul>
+									<h5>무이자할부 이용 안내</h5>
+									<p>무이자 할부 개월 수가 다른 상품을 한번에 주문하시는 경우, 가장 낮은 할부 개월 수가 적용됩니다. 원치 않으시면 각각 주문해주세요.<br>
+									(예:6개월, 3개월 무이자 상품 동시 결제 시 3개월 무이자로 결제)</p>
+									<h5>묶음배송 이용 안내</h5>
+									<p>동일한 판매자의 상품을 함께 구매하시면 배송비를 절약하실 수 있습니다.</p>
+								</div>
+								<!-- 장바구니 무이자 할부 헤택 안내 -->
+								<div class="free_installment_area substy"> <!-- 2차수정 -->
+									<h4>무이자 할부 혜택 안내</h4>
+									<table summary="카드사, 혜택기간, 무이자할부 개월, 고객부담회차, 조건을 제공함">
+										<caption></caption>
+										<colgroup>
+											<col width="141px"> 
+											<col width="110px">
+											<col width="120px">
+											<col width="120px">
+											<col width="*">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">카드사</th>
+												<th scope="col">혜택기간</th>
+												<th scope="col">무이자할부 개월</th>
+												<th scope="col">고객부담회차</th>
+												<th scope="col">조건</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td rowspan="4" class="fst"><img src="../../common/images/order/card_samsung.gif" alt="삼성카드"></td>
+												<td rowspan="4">10/1~10/31</td>
+												<td>2,3,4,5</td>
+												<td></td>
+												<td class="txt_l"></td>
+											</tr>
+											<tr>
+												<td>6</td>
+												<td>1회차</td>
+												<td class="txt_l">5만원 이상</td>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>1~2회차</td>
+												<td class="txt_l">10만원 이상</td>
+											</tr>
+											<tr>
+												<td>12</td>
+												<td>1~3회차</td>
+												<td class="txt_l">15만원 이상</td>
+											</tr>
+											<tr>
+												<td rowspan="3" class="fst bd"><img src="../../common/images/order/card_lotte.gif" alt="롯데카드"></td>
+												<td class="bd">10/1~10/14</td>
+												<td class="bd">2,3</td>
+												<td class="bd"></td>
+												<td class="txt_l bd">5만원 이상</td>
+											</tr>
+											<tr>
+												<td rowspan="2">10/1~10/31</td>
+												<td>4,5,6,7,8,9,10</td>
+												<td>1회차</td>
+												<td rowspan="2" class="txt_l"></td>
+											</tr>
+											<tr>
+												<td>11,12</td>
+												<td>1~2회차</td>
+											</tr>
+											<tr>
+												<td rowspan="4" class="fst bd"><img src="../../common/images/order/bank_nh.gif" alt="농협은행"></td>
+												<td class="bd">10/1~10/31</td>
+												<td class="bd">2,3</td>
+												<td class="bd"></td>
+												<td class="txt_l bd">5만원 이상</td>
+											</tr>
+											<tr>
+												<td rowspan="3"></td>
+												<td>4,5,6</td>
+												<td>1회차</td>
+												<td rowspan="3" class="txt_l">5만원 이상<br> ARS 사전 등록한 고객에 한함(분기별)<br>
+												 - 신청방법 : ARS(1644-1234)<br>
+												 - NH채움카드 적용, 농협BC카드제외<br>
+												 - 제세공과금,대학등록금,상품권,기프트카드가맹점제외</td>
+											</tr>
+											<tr>
+												<td>7,8,9,10</td>
+												<td>1~2회차</td>
+											</tr>
+											<tr>
+												<td>11,12</td>
+												<td>1~3회차</td>
+											</tr>
+											<tr>
+												<td class="fst bd"><img src="../../common/images/order/card_hyundai2.gif" alt="현대카드"></td>
+												<td class="bd">10/1~10/14</td>
+												<td class="bd">2,3</td>
+												<td class="bd"></td>
+												<td class="txt_l bd">5만원 이상</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5>무이자 할부 참고사항</h5>
+									<ul class="notice mb60">
+										<li>공공기관 및 오프라인 제외, 카드사 사정에 따라 일부 변경될 수 있습니다.</li>
+										<li>직가맹, 상점부담 무이자 가맹점, 전용가맹점, 특별제휴 가맹점은 제외됩니다.</li>
+										<li>은행계열 카드, 체크카드, 법인카드, 기프트카드, 선불카드, 하이브리드카드는 제외됩니다.</li>
+										<li>무이자건은 포인트 / 할인서비스 등 다른 혜택과 중복 적용되지 않습니다.</li>
+									</ul>
+									<h4>즉시할인 혜택</h4>
+									<table summary="카드사, 혜택기간, 즉시할인, 대상, 조건을 제공함">
+										<caption></caption>
+										<colgroup>
+											<col width="141px"> 
+											<col width="110px">
+											<col width="120px">
+											<col width="120px">
+											<col width="*">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">카드사</th>
+												<th scope="col">혜택기간</th>
+												<th scope="col">즉시할인</th>
+												<th scope="col">대상</th>
+												<th scope="col">조건</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="fst"><img src="../../common/images/order/paynow_hanask.gif" alt="Paynow 하나SK카드"></td>
+												<td>10/1~10/31</td>
+												<td>페이나우<br>첫결제시<br>3,000원할인</td>
+												<td>페이나우  전상점</td>
+												<td class="txt_l">
+													2만원 이상 첫 결제시에만 적용,  1인 1회 비용소진시 행사 자동종료
+													<br>LG유플러스 온라인 결제창에서만 적용가능
+												</td>
+											</tr>
+											<tr>
+												<td class="fst"><img src="../../common/images/order/paynow_shinhan.gif" alt="Paynow신한카드"></td>
+												<td>10/1~10/31</td>
+												<td>페이나우<br>첫결제시<br>3,000원할인</td>
+												<td>페이나우  전상점</td>
+												<td class="txt_l">
+													2만원 이상 첫 결제시에만 적용,  1인 1회 비용소진시 행사 자동종료
+													<br>LG유플러스 온라인 결제창에서만 적용가능
+												</td>
+											</tr>
+										</tbody>									
+									</table>
+									<h5>즉시할인 참고사항</h5>
+									<ul class="notice mb60">
+										<li>전 상점 대상 즉시할인 행사는 개별 상점 별로 즉시할인율 진행할 경우 중복 적용되지 않습니다.</li>
+										<li>개별 상점 비용이 모두 소진되면, 전 상점 행사로 자동 변경되어 혜택을 받으실 수 있습니다.</li>
+									</ul>
+									<h4>청구할인 혜택</h4>
+									<table summary="카드사, 혜택기간, 즉시할인, 대상, 조건을 제공함">
+										<caption></caption>
+										<colgroup>
+											<col width="160px"> 
+											<col width="160px">
+											<col width="160px">
+											<col width="*">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">카드사</th>
+												<th scope="col">혜택기간</th>
+												<th scope="col">청구할인</th>
+												<th scope="col">조건</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="fst"><img src="../../common/images/order/card_samsung.gif" alt="삼성카드"></td>
+												<td>10/1~10/15</td>
+												<td>5% 청구할인</td>
+												<td class="txt_l">7만원 이상,  최대 2만원</td>
+											</tr>
+											<tr>
+												<td class="fst"><img src="../../common/images/order/card_hyundai2.gif" alt="Hyundai Card"></td>
+												<td>10/1~10/29</td>
+												<td>5% 청구할인</td>
+												<td class="txt_l">15만원 이상,  최대 2만원(인당 매월 1회 한)</td>
+											</tr>
+										</tbody>									
+									</table>
+									<h5>청구할인 참고사항</h5>
+									<ul class="notice mb60">
+										<li>전 상점 대상 즉시할인 행사는 개별 상점 별로 즉시할인율 진행할 경우 중복 적용되지 않습니다.</li>
+										<li>개별 상점 비용이 모두 소진되면, 전 상점 행사로 자동 변경되어 혜택을 받으실 수 있습니다.</li>
+									</ul>
+								</div>
+							</div>
+							<div class="fr">
+								<div class="payment shipping_charge">
+									<ul>
+										<li class="bg"><h3 class="tit">최종 결제금액</h3></li>
+										<li>
+											<dl>
+												<dt>총 주문금액</dt>
+												<dd><span class="tot_sum">1,800,500</span><span class="won">원</span></dd>
+												<dt>총 배송비</dt>
+												<dd><span class="tot_sum">8,000</span><span class="won">원</span>
+												<p class="scharge_con">(배송비 3,000원, 지역별배송비 5,000원)</p>
+												</dd>
+												<dt>총 배송비 할인금액</dt>
+												<dd>무료배송(쿠폰)</dd>
+												<dt>총 할인금액</dt>
+												<dd><span class="ft_blue tot_sum">-15,000</span><span class="won">원</span></dd>
+												<dt>포인트 사용금액</dt>
+												<dd><span class="ft_blue tot_sum">-0</span><span class="won">원</span></dd>
+											</dl>
+										</li>
+										<li class="btm_dotline">
+											<div>
+												<h4>최종결제금액</h4>
+												<p><strong class="ft_red">120,970,500</strong><span class="won">원</span></p>
+											</div>
+											<div class="pay_in">
+												<h5>구매동의</h5>
+												<div>주문 상품의 상품명, 상품가격, 배송정보를 확인하였으며, 구매에 동의 하시겠습니까? (근거 전자상거래법 8조 2항)</div>
+												<div class="checkbox_area"><input type="checkbox" id="pay_agree"><label for="pay_agree">동의합니다.</label></div><!-- check box 태그 추가 -->
+												<div class="btn_area ">
+													<button type="button" class="botton_st_07 red">결제하기</button>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						
+
+						
+					</div>
+					<!-- //주문서 작성 -->
+
+				</div>
+
+				<!-- //contents area -->
+			</div> <!-- //content_sub -->
+		</div>
+		<!-- //container area -->
+		<hr>
+		<!-- footer area -->
+		<div id="footer">
+			<div class="footer_area">
+				<div class="link_info">
+					<ul class="link_list">
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#">개인정보취급방침</a></li>
+						<li><a href="#">이메일무단수집거부</a></li>
+						<li><a href="#">입점문의</a></li>
+					</ul>
+					<p class="family_site">
+						<select class="select_st_01">
+							<option value="">FAMILY SITE</option>
+							<option value="">한샘닷컴</option>
+							<option value="">한샘키친</option>
+							<option value="">한샘인테리어</option>
+							<option value="">한샘ik</option>
+							<option value="">한샘서비스센터</option>
+						</select>
+					</p>
+				</div>
+				<div class="hanssem_info">
+					<div class="ci">
+						<a href="#"><img src="../../common/images/common/ci_footer.gif" alt="HANSSEM" ></a>
+					</div>
+					<div class="address">
+						<ul>
+							<li>경기도 안산시 단원구 번영2로 144(성곡동) ㈜한샘<span class="line">대표자 : 최양하</span></li>
+							<li>사업자등록번호 : 133-61-22865<span class="line">통신판매업신고 : 안산 제512호</span><button type="button" class="botton_st_01">사업자정보확인</button></li>
+							<li>개인정보보호책임자 : 노태권</li>
+							<li>대표번호 : (02)6908-3114<span class="line">고객센터 : 1688-4945</span><span class="line">A/S센터 : as.hanssem.com</span></li>
+							<!--<li>한샘플래그샵<button type="button" class="botton_st_01">위치보기</button></li>-->
+							<li class="mt11">Copyright © 2016 HANSSEM Co. Ltd.  All rights reserved</li>
+						</ul>
+					</div>
+					<div class="exsp">
+						<dl>
+							<dt>외환은행 구매안전서비스(채무지급보증)<button type="button" class="botton_st_01">서비스 가입사실 확인</button></dt>
+							<dd>고객님은 안전거래를 위해 현금결제 시 저희 쇼핑몰에서 가입한 <br />외환은행으로 구매안전서비스(채무지급보증)를 이용하실 수 있습니다.</dd>
+						</dl>
+					</div>
+					<div class="awarded">
+						<ul>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_01.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_02.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_03.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_04.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_05.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_06.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_07.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_08.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_09.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_10.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_11.gif" alt="" ></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //footer area -->
+	</div>
+
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.order-page.js"></script>
+</body>
+</html>

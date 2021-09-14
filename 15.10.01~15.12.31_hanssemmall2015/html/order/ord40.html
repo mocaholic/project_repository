@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 주문서작성</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/order.css" /><!-- 각 카테고리별 css -->
+
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+</head>
+<body>
+	<!-- skip navi -->
+	<div id="skipArea">
+		<a href="#gnb_area">메인메뉴 바로가기</a>
+		<a href="#container">본문으로 바로가기</a>
+	</div>
+	<!-- skip navi -->
+	<div id="wrap">
+		<!-- header area -->
+		<div id="header">
+			<!-- top_01 -->
+			<div class="header_top_area">
+				<div class="util_area">
+					<ul class="family_site"><!-- 11.20 이미지명 및 확장자 변경 -->
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_01_on.png" alt="한샘몰" ></a></li>
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_02.png" alt="한샘인테리어" ></a></li>
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_03.png" alt="한샘ik" ></a></li>
+						<li><a href="#"><img src="../../common/images/common/top_util_ci_04.png" alt="한샘키친&바스" ></a></li>
+					</ul>
+					<div class="util_info">
+						<ul class="info_01">
+							<li><a href="javascript:$('.layer_popup.login').openLayer();" >Login</a></li>
+							<li><a href="#">회원가입</a></li>
+							<li><a href="#">주문/배송</a></li>
+							<li><a href="#">고객센터</a></li>
+						</ul>
+						<ul class="info_02">
+							<li><a href="#">My한샘</a></li>
+							<li><a href="#">장바구니( <span>2</span> )</a><!--<img src="../../common/images/common/top_banner_open.gif" alt="장바구니 정보 열기" > 11.17 디자인 삭제? --></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- //top_01 -->
+			<!-- top_02 -->
+			<div class="header_middle_area">
+				<h1 class="ci">
+					<span class="ci"><a href="#"><img src="../../common/images/common/ci_01.gif" alt="HANSSEM" ></a></span>
+					<span class="ci_sub"><a href="#"><img src="../../common/images/common/ci_02.gif" alt="한샘몰" ></a></span>
+				</h1>
+				<div class="search">
+					<form action="" method="">
+					<fieldset>
+						<legend>header search</legend>
+						<span  class="search_area">
+						<input type="search" id="my_search" name="my_searchl" title="검색어 입력" placeholder="22일까지만! 한샘 천연가죽소파  파격 할인" >
+						</span>
+						<button type="button" class="search">검색</button>
+						<ul class="search_link">
+							<li><a href="">시즌오프 55%</a></li>
+							<li><a href="">한샘 샘베딩 시리즈</a></li>
+							<li><a href="">시즌오프 55%</a></li>
+						</ul>
+					</fieldset>
+					</form>
+				</div>
+				<!-- 검색 레이어팝업 -->
+				<div class="sch_layer_popup" style="display:none;">
+					<!-- 검색어 -->
+					<div class="sch_left_word">
+						<div class="tab_area st_small ui-tab-area">
+							<ul class="ui-tabs tab_tit">
+								<li class="ui-tab-item active"><a href="#">최근 검색어</a></li>
+								<li class="ui-tab-item"><a href="#">추천 검색어</a></li>
+							</ul>
+							<div class="ui-tab-contents tab_body">
+								<div class="ui-tab-contents-item tab_cont" style="display:block;">
+									<ul class="sches">
+										<li><a href="">분위기 있는 거실</a></li>
+										<li><a href="">식탁보</a></li>
+										<li><a href="">전등</a></li>
+										<li class="on"><a href="">거실 인테리어</a></li>
+										<li><a href="">천연가죽</a></li>
+										<li><a href="">원목</a></li>
+										<li><a href="">거실 인테리어</a></li>
+										<li><a href="">천연가죽</a></li>
+										<li><a href="">원목</a></li>
+									</ul>
+								</div>
+								<div class="ui-tab-contents-item tab_cont">
+									추천 검색어
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //검색어 -->
+					<!-- 자동완성 -->
+					<div class="sch_left_auto" style="display:none;">
+						<p class="title">자동완성</p>
+						<ul>
+							<li><a href=""><span class="ft_blue">가</span>구</a>
+								<ul class="">
+									<li><a href="">침실 &gt; 프리미엄 가구관</a></li>
+									<li><a href="">자녀방/서재 &gt; 한샘가구 전용수납</a></li>
+								</ul>
+							</li>
+							<li><a href=""><span class="ft_blue">가</span>구세트</a></li>
+							<li><a href=""><span class="ft_blue">가</span>방</a></li>
+							<li><a href=""><span class="ft_blue">가</span>스렌지</a></li>
+							<li><a href=""><span class="ft_blue">가</span>을 침구</a></li>
+						</ul>
+					</div>
+					<!-- //자동완성 -->
+					<!-- 기획전 상품 롤링 5개 -->
+					<div class="sch_right_rolling">
+						<p class="poptit">기획전</p>
+						<div class="roll_list">
+							<ul class="rolling ui-list-items">
+								<li class="ui-list-item">
+									<a href="#">
+										<div class="list">
+											<img src="../../common/images/common/img_item_01.jpg" alt="기획전 상품 1" />
+											<p class="title">아임 빅 수납침대SS 화이트 협탁형</p>
+											<p class="red"><strong>129,900</strong>원</p>
+										</div>
+									</a>
+								</li>
+								<li class="ui-list-item">
+									<a href="#">
+										<div class="list">
+											<img src="../../common/images/common/img_item_01.jpg" alt="기획전 상품 1" />
+											<p class="title">상품명상품명상품명상품명</p>
+											<p class="red"><strong>129,900</strong>원</p>
+										</div>
+									</a>
+								</li>
+								<li class="ui-list-item">
+									<a href="#">
+										<div class="list">
+											<img src="../../common/images/common/img_item_01.jpg" alt="기획전 상품 1" />
+											<p class="title">상품명2상품명2상품명2상품명2상품명</p>
+											<p class="red"><strong>129,900</strong>원</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="ui-controller">
+							<a href="javascript:;" class="prev ui-controller-prev"><img src="../../common/images/common/btn_pg_left.gif" alt="이전"></a>
+							<a href="javascript:;" class="next ui-controller-next"><img src="../../common/images/common/btn_pg_right.gif" alt="다음"></a>
+						</div>
+					</div>
+					<!-- //기획전 상품 롤링 5개 -->
+					<a href="#" class="layer_close_btn ui-layer-close"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+				</div>
+				<!-- //검색 레이어팝업 -->
+				<div class="header_banner">
+					<div class="ui-controller btn">
+						<a class="ui-controller-left" href="#"><img src="../../common/images/common/banner_arrow_left.gif" alt="이전" ></a><a class="ui-controller-right" href="#"><img src="../../common/images/common/banner_arrow_right.gif" alt="다음" ></a>
+					</div>
+					<p><!-- banner size : 175 * 52 -->
+						<img src="../../common/images/common/header_banner_01.jpg" alt="리클라이너 소파로 품격을 더하다." >
+						<img src="../../common/images/common/header_banner_02.jpg" alt="리클라이너 소파로 품격을 더하다." >
+					</P>
+				</div>
+				<!-- layer_popup -->
+				<div class="layer_popup login" style="display:none">
+					<div class="layer_pop_head">
+						<h1 class="ui-layer-title layer_title">한샘몰 로그인</h1>
+						<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+					</div>
+					<div class="layer_pop_cont">
+						<!-- tab -->
+						<div class="tab_area ui-tab-area st_small">
+							<ul class="ui-tabs tab_tit">
+								<li class="ui-tab-item active"><a href="#">회원</a></li>
+								<li class="ui-tab-item"><a href="#">비회원(주문조회)</a></li>
+							</ul>
+							<div class="ui-tab-contents tab_body">
+								<div class="ui-tab-contents-item tab_cont" style="display:block;">
+									<!-- 회원 -->
+									<div class="login_fieldset">
+										<dl class="login_form">
+											<dt>아이디(이메일)</dt>
+											<dd>
+												<input type="text" placeholder="ID 또는 이메일ID" />
+												<p class="tip_txt ft_red">아이디를 입력해 주세요.</p> <!-- 기본 display:none -->
+											</dd>
+											<dt>비밀번호</dt>
+											<dd>
+												<input type="password" placeholder="비밀번호" />
+												<p class="tip_txt ft_red">비밀번호를 입력해 주세요.</p> <!-- 기본 display:none -->
+											</dd>
+										</dl>
+										<div class="caption_txt">
+											<p><div class="checkbox_area"><input type="checkbox" id="check1"><label for="check1">아이디저장</label></div></p><!-- check box 태그 추가 -->
+											<p>(개인정보 보호를 위해 개인PC에서만 이용해 주세요)</p>
+											<p class="tip_txt ft_red">아이디 또는 비밀번호가 일치하지 않습니다.<br />다시 입력해 주세요</p> <!-- 기본 display:none -->
+										</div>
+										<div class="button_area">
+											<p class="inquiry_btn"><button type="button" class="botton_st_04 red">로그인</button></p>
+											<p class="user_gate">
+												<button type="button" class="botton_st_04">아이디/비밀번호 찾기</button>
+												<button type="button" class="botton_st_04">회원가입</button>
+											</p>
+										</div>
+									</div>
+									<!--// 회원 -->
+								</div>
+								<div class="ui-tab-contents-item tab_cont">
+									<!-- 비회원 -->
+									<div class="login_fieldset">
+										<dl class="login_form">
+											<dt>이름</dt>
+											<dd>
+												<input type="text" placeholder="주문 시 입력한 주문자 이름" />
+												<p class="tip_txt ft_red">주문 시 입력하신 이름을 입력해 주세요.</p> <!-- 기본 display:none -->
+											</dd>
+											<dt><!-- 주문번호 / 휴대폰 번호 선택 추가 -->
+												<input type="radio" id="radio1" name="radio"><label for="radio1">주문번호</label>
+												<input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">휴대폰번호</label></dt>
+												<!-- //주문번호 / 휴대폰 번호 선택 추가 -->
+											</dt>
+											<dd><!-- 주문번호 / 휴대폰 선택시 변경되는 부분 -->
+												<!-- 주문번호 -->
+												<div class="ordernum" style="display:">
+													<input type="text" placeholder="주문 시 문자 발송된 주문번호" />
+													<p class="tip_txt ft_red">주문번호를 입력해 주세요</p> <!-- 기본 display:none -->
+												</div>
+												<!--// 주문번호 -->
+												<!-- 휴대폰 번호 -->
+												<div class="orderphone" style="display:">
+													<div class="num_input">
+														<input type="text" placeholder="주문 시 입력한 휴대폰번호 (-없이 입력)" />
+														<button type="button" class="botton_st_03 gray">휴대폰 인증</button>
+														<p class="tip_txt ft_red">휴대폰번호를 입력해 주세요 <!-- 기본 display:none -->
+													</div>
+													<div class="graybox">
+														<div class="check_phone">
+															<p>입력하신 휴대폰번호로 인증번호가 재전송 되었습니다.</p>
+															<div class="check_number">
+																<input type="text" placeholder="인증번호 입력">
+																<button type="button" class="botton_st_03 gray">확인</button>
+																<button type="button" class="botton_st_03">재전송</button>
+															</div>
+															<p class="tip_txt ft_red">인증번호를 정확히 입력해 주세요.</p>
+															<p class="time_ing">
+																남은 시간 <span class="ft_red">
+																<span>1</span>분 <span>30</span>초</span>
+															</p>
+														</div>
+													</div>
+												</div>
+												<!--// 휴대폰 번호 -->
+											</dd>
+										</dl>
+										<div class="caption_txt">
+											<p>주문번호를 잊으신 경우, <br />한샘몰 고객센터 1688-4945로 문의하여 주시기 바랍니다.</p>
+											<p class="tip_txt ft_red">입력하신 정보를 찾을 수 없습니다.<br />주문 시 입력한 이름, 주문번호를 다시 확인해주세요</p> <!-- 기본 display:none -->
+										</div>
+										<div class="button_area">
+											<p class="inquiry_btn"><button type="button" class="botton_st_04 purple">조회</button></p>
+										</div>
+									</div>
+									<!--// 비회원 -->
+								</div>
+							</div>
+						</div>
+						<!--// tab -->
+					</div>
+				</div>
+				<!-- //layer_popup -->
+			</div>
+			<!-- //top_02 -->
+			<!-- gnb -->
+			<div id="gnb_area">
+				<div class="gnb">
+					<div class="category_list">
+						<span class="category"><a href="#">전체 카테고리<img src="../../common/images/common/gnb_category_open.gif" alt="카테고리 열기" ></a></span><!-- <img src="../../common/images/common/gnb_category_close.gif" alt="카테고리 닫기" > -->
+					</div>
+					<ul class="gnb_list">
+						<li><a href="#">인테리어쉐어</a></li>
+						<li><a href="#">on세일존</a></li>
+						<li><a href="#">릴레이특가</a></li>
+						<li><a href="#">베스트</a></li>
+						<li><a href="#">기획전</a></li>
+						<li><a href="#">브랜드</a></li>
+					</ul>
+					<ul class="util_list">
+						<li><a class="app" href="#">앱다운로드</a></li>
+						<li><a class="favorites" href="#">즐겨찾기</a></li>
+					</ul>
+					<!-- 전체 카테고리 레이어팝업 11.19 팝업 위치 수정 -->
+					<div class="all_category dp_none">
+						<div class="ac_left">
+							<ul class="clear">
+								<li class="dep1">
+									침실
+									<ul class="dep2">
+										<li><a href="#">퀸/킹침대_매트별도</a></li>
+										<li><a href="#">퀸/킹침대_매트포함</a></li>
+										<li><a href="#">슈퍼/싱글침대_매트별도</a></li>
+										<li><a href="#">슈퍼/싱글침대_매트포함</a></li>
+										<li><a href="#">기능성 침대</a></li>
+										<li><a href="#">매트리스</a></li>
+										<li><a href="#">서랍장/협탁</a></li>
+										<li><a href="#">화장대</a></li>
+										<li><a href="#">선반장/행거/거울</a></li>
+										<li><a href="#">프리미엄 가구관</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									옷장/수납
+									<ul class="dep2">
+										<li class="on"><a href="#">신제품코너</a></li>
+										<li class="on"><a href="#">샘베딩 시리즈 </a></li>
+										<li><a href="#">붙박이장</a></li>
+										<li><a href="#">옷장세트(장롱)</a></li>
+										<li><a href="#">옷장드레스룸(단품)</a></li>
+										<li><a href="#">드레스룸(세트)</a></li>
+										<li><a href="#">다용도 수납장</a></li>
+										<li><a href="#">서랍장</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									소파/거실
+									<ul class="dep2">
+										<li><a href="#">소파(코너형)</a></li>
+										<li><a href="#">소파(5인이상)</a></li>
+										<li><a href="#">소파(4인용)</a></li>
+										<li><a href="#">소파(3+1인용)</a></li>
+										<li><a href="#">소파(2-3인용)</a></li>
+										<li><a href="#">소파(리클라이너형)</a></li>
+										<li><a href="#">안마의자</a></li>
+										<li><a href="#">암체어/1인소파</a></li>
+										<li><a href="#">소파베드/빈백소파</a></li>
+										<li><a href="#">소파스툴/헤드레스트</a></li>
+										<li><a href="#">소파테이블</a></li>
+										<li><a href="#">사이드테이블</a></li>
+										<li><a href="#">거실장(TV장)</a></li>
+										<li><a href="#">거실장세트</a></li>
+										<li><a href="#">월시스템</a></li>
+										<li><a href="#">거실수납장</a></li>
+										<li><a href="#">장식장</a></li>
+										<li><a href="#">다용도 수납장/테이블</a></li>
+									</ul>
+								</li> 
+								<li class="dep1">
+									자녀방/서재
+									<ul class="dep2">
+										<li class="on"><a href="#">샘스틸 책장</a></li>
+										<li class="on"><a href="#">책장</a></li>
+										<li><a href="#">맞춤 책장</a></li>
+										<li><a href="#">책상</a></li>
+										<li><a href="#">의자</a></li>
+										<li><a href="#">침대[슈퍼싱글/싱글]</a></li>
+										<li><a href="#">옷장/서랍장/수납장</a></li>
+										<li><a href="#">조립식[DIY]</a></li>
+										<li><a href="#">한샘 책장 샘</a></li>
+										<li><a href="#">샘키즈</a></li>
+										<li><a href="#">모모로</a></li>
+										<li><a href="#">한샘가구 전용수납</a></li>
+										<li><a href="#">책상 악세서리</a></li>
+										<li><a href="#">사무용가구</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									식탁/소가구
+									<ul class="dep2">
+										<li><a href="#">식탁세트</a></li>
+										<li><a href="#">식탁</a></li>
+										<li><a href="#">식탁의자</a></li>
+										<li><a href="#">컴팩트소파/소파베드</a></li>
+										<li><a href="#">인테리어 의자</a></li>
+										<li><a href="#">아일랜드/렌지대 식탁</a></li>
+										<li><a href="#">테이블</a></li>
+										<li><a href="#">책상</a></li>
+										<li><a href="#">주방수납</a></li>
+										<li><a href="#">거실/기타수납</a></li>
+										<li><a href="#">침실/드레스룸 소가구</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									키즈
+									<ul class="dep2">
+										<li><a href="#">가구</a></li>
+										<li><a href="#">원목가구</a></li>
+										<li><a href="#">놀이매트/소파</a></li>
+										<li><a href="#">키즈 침구</a></li>
+										<li><a href="#">완구/교구</a></li>
+										<li><a href="#">출산/수유 용품</a></li>
+										<li><a href="#">키즈 데코</a></li>
+										<li><a href="#">샘키즈</a></li>
+										<li><a href="#">모모로</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									데코/생활
+									<ul class="dep2">
+										<li><a href="#">조명/액자</a></li>
+										<li><a href="#">데코소품</a></li>
+										<li><a href="#">청소용품</a></li>
+										<li><a href="#">생활/계절가전</a></li>
+										<li><a href="#">디자인문구</a></li>
+										<li><a href="#">캠핑/계절용품</a></li>
+										<li><a href="#">세제/방향/제습제</a></li>
+										<li><a href="#">DIY자재/용품</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									수납용품
+									<ul class="dep2">
+										<li><a href="#">한샘가구 전용수납</a></li>
+										<li><a href="#">수납박스/바스켓</a></li>
+										<li><a href="#">행거/선반</a></li>
+										<li><a href="#">옷장 수납용품</a></li>
+										<li><a href="#">욕실용품</a></li>
+										<li><a href="#">세탁용품/휴지통</a></li>
+										<li><a href="#">데스크 용품</a></li>
+										<li><a href="#">주방 수납용품</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									주방용품
+									<ul class="dep2">
+										<li class="on"><a href="#">한샘주방용품</a></li>
+										<li class="on"><a href="#">냄비/솥</a></li>
+										<li><a href="#">후라이팬류</a></li>
+										<li><a href="#">식기/수저/컵</a></li>
+										<li><a href="#">보관/밀폐용기</a></li>
+										<li><a href="#">식기건조대</a></li>
+										<li><a href="#">주방수납</a></li>
+										<li><a href="#">도마/칼/조리도구</a></li>
+										<li><a href="#">교자상/제수용품</a></li>
+										<li><a href="#">주방잡화/선반</a></li>
+										<li><a href="#">푸드</a></li>
+										<li><a href="#">주방가전</a></li>
+										<li><a href="#">생활/계절가전</a></li>
+										<li><a href="#">주방패브릭소품</a></li>
+									</ul>
+								</li>
+								<li class="dep1">
+									침구/커튼
+									<ul class="dep2">
+										<li class="on"><a href="#">한샘패브릭</a></li>
+										<li><a href="#">침구세트</a></li>
+										<li><a href="#">침구단품/커버</a></li>
+										<li><a href="#">솜류</a></li>
+										<li><a href="#">커튼/블라인드</a></li>
+										<li><a href="#">카페트/러그</a></li>
+										<li><a href="#">계절침구</a></li>
+										<li><a href="#">기능성침구</a></li>
+										<li><a href="#">홈패브릭소품</a></li>
+										<li><a href="#">예단침구</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="ac_right">
+							<div class="box">
+								<ul class="link">
+									<li><a href="#">인테리어쉐어</a></li>
+									<li><a href="#">on세일</a></li>
+									<li><a href="#">릴레이특가</a></li>
+									<li><a href="#">베스트</a></li>
+									<li><a href="#">기획전</a></li>
+									<li><a href="#">브랜드SHOP</a></li>
+								</ul>
+								<div class="banner">
+									<p>인기 기획전</p>
+									<a href="#"><img src="../../common/images/common/img_banner.jpg" alt="한샘이 낳은 최고의 편안함 - 스타일리쉬한 리클라이너" /></a>
+								</div>
+							</div>
+						</div>			
+						<a href="#" class="ui-layer-close close_btn"><img src="../../common/images/common/bg_pop_close.png" alt="닫기"></a>
+					</div>
+					<!-- //전체 카테고리 레이어팝업-->
+				</div>
+			</div>
+			<!-- //gnb -->
+		</div>
+		<!-- //header area -->
+		<hr>
+		<!-- container area -->
+		<div id="container">
+			<div id="order" class="content_sub"> <!-- order로 id명 변경 -->
+				<div class="location">
+					<ul>
+						<li><a href="#"><img src="../../common/images/common/icon_home.gif" alt="home" ></a></li>
+						<li>결제/주문완료</li>
+					</ul>
+				</div>
+				<!-- contents area -->
+				<div class="contents_area">
+					<!-- 주문서 작성 -->
+					<div class="order_write end_area">
+						<div class="order_box_area">
+							<h2 class="fl tit">결제/주문완료</h2>
+							<p><img src="../../common/images/order/order_step_03.gif" alt="step3 결제/주문완료"></p>
+						</div> <!-- //order_box_area -->
+						<div class="order_end_msg">
+							<h3>한샘몰을 이용해 주셔서 감사합니다.</h3>
+							<p>고객님의 주문이 정상적으로 완료 되었습니다.</p>
+						</div>
+						<div class="order_num_notice mb60">
+							<h3><span class="ft_blue">홍길동</span> 고객님 주문번호는 <span class="ft_red">124354453544234</span> 입니다.</h3>
+							<ul>
+								<li>결제수단으로 무통장입금(전용계좌)결제를 선택하셨다면 입금을 완료하셔야 최종적으로 주문이 처리됩니다.</li>
+								<li>배송 예정일 수정은 입금확인완료 상태에서만 가능합니다. (변경이 어려우시거나 도움이 필요하실 경우 한샘몰 고객센터 1688-4945로 문의해주세요.)</li>
+								<li>주문/배송과 관련하여 궁금하신 점이 있다면 마이페이지의 <span class="btm_line">“1:1문의”</span>를 이용해 주십시오.</li>
+								<li>비회원으로 주문하셨으면 주문 내역은 비회원주문조회를 통해 확인하실 수 있습니다.<br>본 주문 내용은 이메일을 통해 발송되었으며, <span class="ft_red">MY한샘 &gt; 구매내역 &gt; 주문/배송조회</span>에서 확인하실 수 있습니다.</li>
+							</ul>
+						</div>
+						<!-- 결제방식 : 신용카드 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<h3>정보입력</h3>
+							</div>
+							<table class="tblk tbl_order txt_left" summary="경제방식, 총결제금액, 입금액, 입금기한, 입금계좌, 입금자의 정보를 제공함">
+								<caption>정보입력 내역</caption>
+								<colgroup>
+									<col width="15%"> 
+									<col width="35%"> 
+									<col width="15%"> 
+									<col width="35%"> 
+								</colgroup>
+								<tbody>
+									<tr>
+										<th class="bg_gray" scope="row">결제방식</th>
+										<td>신용카드</td>
+										<th class="bg_gray" scope="row">총결제금액</th>
+										<td>
+											<span class="ft_red">1,785,000</span><span class="won">원</span>
+											<span class="tip_point">(포인트 1,000 원 사용)</span>
+										</td>
+									</tr>
+									<tr>
+										<th class="bg_gray" scope="row">카드사명</th>
+										<td>신한VISA</td>
+										<th class="bg_gray" scope="row">매출전표</th>
+										<td>
+											<button type="button" class="botton_st_02">매출전표출력</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- 결제방식 : 실시간 계ㅒ좌이체 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<h3>정보입력</h3>
+							</div>
+							<table class="tblk tbl_order txt_left" summary="경제방식, 총결제금액, 입금액, 입금기한, 입금계좌, 입금자의 정보를 제공함">
+								<caption>정보입력 내역</caption>
+								<colgroup>
+									<col width="15%"> 
+									<col width="35%"> 
+									<col width="15%"> 
+									<col width="35%"> 
+								</colgroup>
+								<tbody>
+									<tr>
+										<th class="bg_gray" scope="row">결제방식</th>
+										<td>실시간 계좌이체</td>
+										<th class="bg_gray" scope="row">총결제금액</th>
+										<td>
+											<span class="ft_red">1,785,000</span><span class="won">원</span>
+											<span class="tip_point">(포인트 1,000 원 사용)</span>
+										</td>
+									</tr>
+									<tr>
+										<th class="bg_gray" scope="row">은행명</th>
+										<td>기업은행</td>
+										<th class="bg_gray" scope="row">입금일자</th>
+										<td>2015.10.10 10:50</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<!-- 결제방식 : 무통장입금 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<h3>정보입력</h3>
+							</div>
+							<table class="tblk tbl_order txt_left" summary="경제방식, 총결제금액, 입금액, 입금기한, 입금계좌, 입금자의 정보를 제공함">
+								<caption>정보입력 내역</caption>
+								<colgroup>
+									<col width="15%"> 
+									<col width="35%"> 
+									<col width="15%"> 
+									<col width="35%"> 
+								</colgroup>
+								<tbody>
+									<tr>
+										<th class="bg_gray" scope="row">결제방식</th>
+										<td>무통장입금</td>
+										<th class="bg_gray" scope="row">총결제금액</th>
+										<td>
+											<span class="ft_red">1,785,000</span><span class="won">원</span>
+											<span class="tip_point">(포인트 1,000 원 사용)</span>
+										</td>
+									</tr>
+									<tr>
+										<th class="bg_gray" scope="row">입금액</th>
+										<td><i>1,785,000</i>원</td>
+										<th class="bg_gray" scope="row">입금기한</th>
+										<td>2015-09-06 23:59</td>
+									</tr>
+									<tr>
+										<th class="bg_gray" scope="row">입금계좌</th>
+										<td>국민 X8026011543160  (주)한샘</td>
+										<th class="bg_gray" scope="row">입금자</th>
+										<td>홍길동</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="info_write_list">
+								<ul>
+									<li>입금계좌번호와 입금예정금액이 주문내역과 일치하지 않을 경우 입금확인이 지연되며, 주문일 기준으로 2일 자정까지 입금확인이 되지 않은 경우 주문은 자동으로 취소됩니다.  일부 한정 상품 주문 시 유의하여     주시기 바랍니다.</li>
+									<li>
+										<i>가상계좌 안내</i>
+										<ul>
+											<li>- 무통장 입금 시 사용되는 가상계좌는 매 주문 시마다 새로운 계좌번호(개인전용)가 부여되며 해당 주문에만 유효합니다.</li>
+    										<li>- 다른 주문 건에 대해 가상계좌로 입금하시거나 잘못된 계좌로 입금하시면 자동 입금 확인이 되지 않으며, 다른 계좌번호로 잘못 입금하신 경우에는  고객센터로 문의 주시기 바랍니다. </li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div class="fl">
+									<h3>주문상품 내역</h3>
+								</div>
+								<!-- 상품배송안내 버튼 클릭 시 ORD41.HTML 레이어팝업 생성 -->
+								<button type="button" class="fr botton_st_03" onclick="$('.directly_deliver_popup').openLayer();">상품배송안내</button>
+							</div>
+							<table class="tblk tbl_order mt0" summary="상품명/선택사항, 수량, 상품금액, 할인금액, 할인금액적용, 배송정보 정보를 제공함">
+								<caption>주문상품 내역</caption>
+								<colgroup>
+									<col width="38%"> <!-- 상품명 -->
+									<col width="8%"> <!-- 수량 -->
+									<col width="14%"> <!-- 금액 -->
+									<col width="12%"> <!-- 할인금액 -->
+									<col width="14%"> <!-- 할인금액적용 -->
+									<col width="14%"> <!-- 배송정보 -->
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">상품명/선택사항</th>
+										<th scope="col">수량</th>
+										<th scope="col">주문금액</th>
+										<th scope="col">할인금액</th>
+										<th scope="col">할인금액적용</th>
+										<th scope="col">배송정보</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="verti_top">
+											<div class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></div>
+											<div class="prd_info_area">
+												<ul class="prd_info">
+													<li class="prd_seller">[판매자 한샘몰]
+														<span class="ico_txt">설치기사</span>
+														<span class="ico_txt">제주배송가능</span>
+														<a href="#none" class="blueunderline free">무료배송</a> <!--// 4차수정 //-->
+													</li>
+													<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형 (3종/택1)</li>
+													<li class="prd_option">
+														<ul>
+															<li><span>B형: 2500~2600(8.5자)(+60000원)</span></li>
+															<li><span>사은품 : 침대협탁</span></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											<span class="size_value">1</span>
+										</td>
+										<td>
+											<div class="prd_price"><strong>1,500,000</strong><span>원</span></div>
+										</td>
+										<td>
+											<div class="coupon_discount_amount"><strong>10,000</strong><span>원</span></div>
+										</td>
+										<td>
+											<div class="price_discount">
+												<strong>1,500,000</strong><span>원</span>
+											</div>
+										</td>
+										<td>
+											<p class="ft_size13 ft_blue">무료배송</p> <!--// 4차수정 //-->
+										</td>
+									</tr>
+									<tr>
+										<td class="verti_top">
+											<div class="thumb"><img src="../../common/images/order/img_product.gif" alt=""></div>
+											<div class="prd_info_area">
+												<ul class="prd_info">
+													<li class="prd_seller">[판매자 한샘몰]
+														<span class="ico_txt">설치기사</span>
+														<span class="ico_txt">제주배송가능</span>
+														<a href="#none" class="blueunderline free">무료배송</a> <!--// 4차수정 //-->
+													</li>
+													<li class="prd_name">아임 빅 수납침대SS 화이트 협탁형 (3종/택1)</li>
+													<li class="prd_option">
+														<ul>
+															<li><span>B형: 2500~2600(8.5자)(+60000원)</span></li>
+															<li><span>사은품 : 침대협탁</span></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											<span class="size_value">1</span>
+										</td>
+										<td>
+											<div class="prd_price"><strong>1,500,000</strong><span>원</span></div>
+										</td>
+										<td>
+											<div class="coupon_discount_amount"><strong>10,000</strong><span>원</span></div>
+										</td>
+										<td>
+											<div class="price_discount">
+												<strong>1,500,000</strong><span>원</span>
+											</div>
+										</td>
+										<td>
+											<p class="ft_size13 ft_blue">무료배송</p> <!--// 4차수정 //-->
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					
+					<!-- CASE1 : 기본배송 상품의 경우 -->	
+						<div class="default_delivery">
+							<div class="fl">
+								<div class="table_area mb60">
+									<div class="tbl_top">
+										<div>
+											<h3>주문자/배송정보</h3>
+										</div>
+									</div>
+									<table class="tbl_style_04 etc_case" summary="">
+										<caption></caption>
+										<colgroup>
+											<col width="30%" />
+											<col width="70%" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg_gray">주문하시는 분</th>
+												<td>홍길동</td>
+											</tr>
+											<tr>
+												<th scope="row" class=" bg_gray">받으시는 분</th>
+												<td>홍길동 (주문자)</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">배송지 주소</th>
+												<td>
+													<div class="delivery_addr_txt">
+														(43221) 서울시 마포구 서교동 568
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">휴대폰 번호</th>
+												<td>010-9999-9999</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">전화번호</th>
+												<td>02-000-0000</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">배송시 요청사항</th>
+												<td colspan="3" class="delivery_request">부재시 경비실에 부탁드려요</td>
+											</tr>
+										</tbody>
+									</table>
+									<p class="mt20">※ 받으시는 고객의 배송지 정보를 꼭 확인해 주세요.</p>
+								</div>
+							</div>
+							<div class="fr">
+								<div class="table_area mb60">
+									<div class="tbl_top">
+										<div>
+											<h3>가구 배송정보</h3>
+											<!-- <div class="select_area ui-select-box">
+												<select class="ui-input-select">
+													<option value="" selected="selected"></option>
+													<option value="value2">옵션 Label 1</option>
+													<option value="value3">옵션 Label 2</option>
+													<option value="value4">옵션 Label 3</option>
+													<option value="value5" disabled="disabled">옵션 Label 5</option>
+												</select>
+											</div> -->
+											<button type="button" class="botton_st_03 arrow_03">적용상품보기</button>
+										</div>
+									</div>
+									<table class="tbl_style_04 mt0" summary="">
+										<caption></caption>
+										<colgroup>
+											<col width="70%" />
+											<col width="30%" />
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row" class="bg_gray">주거 층수</th>
+												<td>1~2층 이상</td>
+											</tr>
+											<tr>
+												<th scope="row" class=" bg_gray">계단폭</th>
+												<td>홍길동 (주문자)2M 이상</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">엘리베이터</th>
+												<td>1~7인승</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">제품 설치 할 공간을 미리 확보 하셨습니까?</th>
+												<td>예</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">(제품에 따라)3층 이상 또는 계단 폭 2m 미만, 엘리베이터가 없거나 <br> 8인 이상이 아닌경우 사다리차가 필요합니다.</th>
+												<td>예</td>
+											</tr>
+											<tr>
+												<th scope="row" class="bg_gray">사다리차 이용이 필요한 경우 고객님 부담입니다. <br>이에 동의 하십니까?</th>
+												<td>예</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>배송예정일</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">결제방식</th>
+										<td>2015년 10월 23일 (금) 항시가능</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>할인/주문금액 정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">총 주문금액</th>
+										<td><span class="in_tot_sum">1,800,000</span><span class="won">원</span>(배송비: <span class="ft_size14">무료배송</span>)</td>
+									</tr>
+									<!-- 기획수정요청 -->
+									<tr>
+										<th scope="row" class="bg_gray" rowspan="3">할인혜택</th>
+										<td>
+											가격할인 <span class="ft_black">-10,000</span>원 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											쿠폰할인 <span class="ft_black">-1,800,000</span>원 
+										</td>
+									</tr>
+									<!--// 기획수정요청 -->
+									<tr>
+										<td class="tip_txt13">포인트   0원  사용</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">최종결제금액</th>
+										<td><span class="ft_red">1,785,000</span><span class="won">원</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					<!-- //CASE1 : 기본배송 상품의 경우 -->	
+					<!-- CASE2 : 직접배송 상품의 경우 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>주문자/배송정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">주문하시는 분</th>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<th scope="row" class=" bg_gray">받으시는 분</th>
+										<td>홍길동 (주문자)</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">배송지 주소</th>
+										<td>
+											<div class="delivery_addr_txt">
+												(43221) 서울시 마포구 서교동 568
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">휴대폰 번호</th>
+										<td>010-9999-9999</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">전화번호</th>
+										<td>02-000-0000</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">배송시 요청사항</th>
+										<td colspan="3" class="delivery_request">부재시 경비실에 부탁드려요</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="mt20">※ 받으시는 고객의 배송지 정보를 꼭 확인해 주세요.</p>
+						</div>
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>배송예정일</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">결제방식</th>
+										<td>2015년 10월 23일 (금) 항시가능</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>할인/주문금액 정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<!-- 기획수정요청 -->
+									<tr>
+										<th scope="row" class="bg_gray" rowspan="3">할인혜택</th>
+										<td>
+											가격할인 <span class="ft_black">-10,000</span>원 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											쿠폰할인 <span class="ft_black">-1,800,000</span>원 
+										</td>
+									</tr>
+									<!--// 기획수정요청 -->
+									<tr>
+										<td class="tip_txt13">포인트   0원  사용</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">최종결제금액</th>
+										<td><span class="ft_red">1,785,000</span><span class="won">원</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					<!-- //CASE2 : 직접배송 상품의 경우 -->
+					<!-- CASE3 : 택배배송 상품의 경우 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>주문자/배송정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">주문하시는 분</th>
+										<td>홍길동</td>
+									</tr>
+									<tr>
+										<th scope="row" class=" bg_gray">받으시는 분</th>
+										<td>홍길동 (주문자)</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">배송지 주소</th>
+										<td>
+											<div class="delivery_addr_txt">
+												(43221) 서울시 마포구 서교동 568
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">휴대폰 번호</th>
+										<td>010-9999-9999</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">전화번호</th>
+										<td>02-000-0000</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">배송시 요청사항</th>
+										<td colspan="3" class="delivery_request">부재시 경비실에 부탁드려요</td>
+									</tr>
+								</tbody>
+							</table>
+							<p class="mt20">※ 받으시는 고객의 배송지 정보를 꼭 확인해 주세요.</p>
+						</div>
+						<!-- 배송비 존재 시 해당 내역 출력 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>할인/주문금액 정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<!-- 기획수정요청 -->
+									<tr>
+										<th scope="row" class="bg_gray" rowspan="3">할인혜택</th>
+										<td>
+											가격할인 <span class="ft_black">-10,000</span>원 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											쿠폰할인 <span class="ft_black">-1,800,000</span>원 
+										</td>
+									</tr>
+									<!--// 기획수정요청 -->
+									<tr>
+										<td class="tip_txt13">포인트   0원  사용</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">최종결제금액</th>
+										<td><span class="ft_red">1,785,000</span><span class="won">원</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- //배송비 존재 시 해당 내역 출력 -->
+						<!-- 기본 배송비 외로 지역별 배송비가 존재하는 경우 내역 출력 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>할인/주문금액 정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">총 주문금액</th>
+										<td><span class="in_tot_sum">1,800,000</span><span class="won">원</span>
+										(배송비: <span class="ft_size14">8,000원</span> <span class="ft_size14">착불</span> (배송비 3,000원 + 지역별 배송비 5,000원))</td>
+									</tr>
+									<!-- 기획수정요청 -->
+									<tr>
+										<th scope="row" class="bg_gray" rowspan="3">할인혜택</th>
+										<td>
+											가격할인 <span class="ft_black">-10,000</span>원 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											쿠폰할인 <span class="ft_black">-1,800,000</span>원 
+										</td>
+									</tr>
+									<!--// 기획수정요청 -->
+									<tr>
+										<td class="tip_txt13">포인트   0원  사용</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">최종결제금액</th>
+										<td><span class="ft_red">1,785,000</span><span class="won">원</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- //기본 배송비 외로 지역별 배송비가 존재하는 경우 내역 출력 -->
+						<!-- 선불 및 착불 배송료가 각기 존재하는 경우 -->
+						<div class="table_area mb60">
+							<div class="tbl_top">
+								<div>
+									<h3>할인/주문금액 정보</h3>
+								</div>
+							</div>
+							<table class="tbl_style_04" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="20%" />
+									<col width="80%" />
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row" class="bg_gray">총 주문금액</th>
+										<td><span class="in_tot_sum">1,800,000</span><span class="won">원</span>
+										(배송비: <span class="ft_size">8,000원</span> <span class="ft_size">선불/착불</span> (배송비 3,000원(착불) + 지역별 배송비 5,000원(선불))</td>
+									</tr>
+									<!-- 기획수정요청 -->
+									<tr>
+										<th scope="row" class="bg_gray" rowspan="3">할인혜택</th>
+										<td>
+											가격할인 <span class="ft_black">-10,000</span>원 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											쿠폰할인 <span class="ft_black">-1,800,000</span>원 
+										</td>
+									</tr>
+									<!--// 기획수정요청 -->
+									<tr>
+										<td class="tip_txt13">포인트   0원  사용</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bg_gray">최종결제금액</th>
+										<td><span class="ft_red">1,785,000</span><span class="won">원</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- //선불 및 착불 배송료가 각기 존재하는 경우 -->
+
+					<!-- //CASE3 : 택배배송 상품의 경우 -->
+
+
+						<!-- 버튼영역 : 쇼핑계속하기, 주문내역보기 -->
+						<div class="button_area ar mb60">
+							<button type="button" class="botton_st_06 purple">쇼핑계속하기</button>
+							<button type="button" class="botton_st_06 red">주문내역보기</button>
+						</div>
+						<!-- //버튼영역 : 쇼핑계속하기, 주문내역보기 -->
+						
+						<!-- tab -->
+						<div class="tab_area red ui-tab-area">
+							<ul class="ui-tabs tab_tit">
+								<li class="ui-tab-item active"><a href="#">주문완료(2)</a></li>
+								<li class="ui-tab-item"><a href="#">장바구니(2)</a></li>
+								<li class="ui-tab-item"><a href="#">위시리스트(2)</a></li>
+							</ul>
+							<div class="ui-tab-contents tab_body bdt1">
+								<div class="ui-tab-contents-item tab_cont" style="display:block;">
+									<!-- 컨텐츠1 -->
+									<div class="prd_group_02">
+										<div class="shopping_basket_area">
+											<h3>주문완료</h3>
+											<div class="shop_basket_list ui-banner-single">
+												<div class="shop_basket_inner ui-list-viewport">
+													<ul class="list ui-list-items">
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>1 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>2 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+													</ul>
+												</div>
+												<div class="ui-controller controll">
+													<span class="btn_left"><a class="ui-controller-prev" href="#"><img src="../../common/images/main/btn_banner_rolling_left_02.gif" alt="좌측이동"></a></span>
+													<span class="btn_right"><a class="ui-controller-next" href="#"><img src="../../common/images/main/btn_banner_rolling_right_02.gif" alt="우측이동"></a></span>
+												</div>
+											</div>
+										</div>
+										<div class="other_buy_area">
+											<h3>다른 고객이 현재상품과 같이 구매한 상품</h3>
+											<div class="shop_basket_list ui-tab-inner-banner">
+												<div class="shop_basket_inner ui-list-viewport">
+													<ul class="list ui-list-items">
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>1 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>2 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>3 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>4 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>5 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>6 아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+													</ul>
+												</div>
+												<div class="ui-controller controll">
+													<span class="btn_left"><a class="ui-controller-prev" href="#"><img src="../../common/images/main/btn_banner_rolling_left_02.gif" alt="좌측이동"></a></span>
+													<span class="btn_right"><a class="ui-controller-next" href="#"><img src="../../common/images/main/btn_banner_rolling_right_02.gif" alt="우측이동"></a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="ui-tab-contents-item tab_cont">
+									<!-- 컨텐츠2 -->
+									<div class="prd_group_02">
+										<div class="shopping_basket_area">
+											<h3>주문완료</h3>
+											<div class="shop_basket_list ui-banner-single">
+												<div class="shop_basket_inner ui-list-viewport">
+													<ul class="list ui-list-items">
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+													</ul>
+												</div>
+												<div class="ui-controller controll">
+													<span class="btn_left"><a class="ui-controller-prev" href="#"><img src="../../common/images/main/btn_banner_rolling_left_02.gif" alt="좌측이동"></a></span>
+													<span class="btn_right"><a class="ui-controller-next" href="#"><img src="../../common/images/main/btn_banner_rolling_right_02.gif" alt="우측이동"></a></span>
+												</div>
+											</div>
+										</div>
+										<div class="other_buy_area">
+											<h3>다른 고객이 현재상품과 같이 구매한 상품</h3>
+											<div class="shop_basket_list ui-tab-inner-banner">
+												<div class="shop_basket_inner ui-list-viewport">
+													<ul class="list ui-list-items">
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+													</ul>
+												</div>
+												<div class="ui-controller controll">
+													<span class="btn_left"><a class="ui-controller-prev" href="#"><img src="../../common/images/main/btn_banner_rolling_left_02.gif" alt="좌측이동"></a></span>
+													<span class="btn_right"><a class="ui-controller-next" href="#"><img src="../../common/images/main/btn_banner_rolling_right_02.gif" alt="우측이동"></a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="ui-tab-contents-item tab_cont" style="display:block;">
+									<!-- 컨텐츠3 -->
+									<div class="prd_group_02">
+										<div class="shopping_basket_area">
+											<h3>주문완료</h3>
+											<div class="shop_basket_list ui-banner-single">
+												<div class="shop_basket_inner ui-list-viewport">
+													<ul class="list ui-list-items">
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+													</ul>
+												</div>
+												<div class="ui-controller controll">
+													<span class="btn_left"><a class="ui-controller-prev" href="#"><img src="../../common/images/main/btn_banner_rolling_left_02.gif" alt="좌측이동"></a></span>
+													<span class="btn_right"><a class="ui-controller-next" href="#"><img src="../../common/images/main/btn_banner_rolling_right_02.gif" alt="우측이동"></a></span>
+												</div>
+											</div>
+										</div>
+										<div class="other_buy_area">
+											<h3>다른 고객이 현재상품과 같이 구매한 상품</h3>
+											<div class="shop_basket_list ui-tab-inner-banner">
+												<div class="shop_basket_inner ui-list-viewport">
+													<ul class="list ui-list-items">
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+														<li class="ui-list-item">
+															<a href="#"><img src="../../common/images/order/img_product_2.gif" alt=""><span></span></a>
+															<dl>
+																<dt>아임 빅 수납침대SS 화이트 협탁형</dt>
+																<dd>15,500원</dd>
+															</dl>
+														</li>
+													</ul>
+												</div>
+												<div class="ui-controller controll">
+													<span class="btn_left"><a class="ui-controller-prev" href="#"><img src="../../common/images/main/btn_banner_rolling_left_02.gif" alt="좌측이동"></a></span>
+													<span class="btn_right"><a class="ui-controller-next" href="#"><img src="../../common/images/main/btn_banner_rolling_right_02.gif" alt="우측이동"></a></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<!--// tab -->
+						
+
+						
+					</div>
+					<!-- //주문서 작성 -->
+
+				</div>
+
+				<!-- //contents area -->
+			</div> <!-- //content_sub -->
+		</div>
+		<!-- //container area -->
+		<hr>
+		<!-- footer area -->
+		<div id="footer">
+			<div class="footer_area">
+				<div class="link_info">
+					<ul class="link_list">
+						<li><a href="#">회사소개</a></li>
+						<li><a href="#">이용약관</a></li>
+						<li><a href="#">개인정보취급방침</a></li>
+						<li><a href="#">이메일무단수집거부</a></li>
+						<li><a href="#">입점문의</a></li>
+					</ul>
+					<p class="family_site">
+						<select class="select_st_01">
+							<option value="">FAMILY SITE</option>
+							<option value="">한샘닷컴</option>
+							<option value="">한샘키친</option>
+							<option value="">한샘인테리어</option>
+							<option value="">한샘ik</option>
+							<option value="">한샘서비스센터</option>
+						</select>
+					</p>
+				</div>
+				<div class="hanssem_info">
+					<div class="ci">
+						<a href="#"><img src="../../common/images/common/ci_footer.gif" alt="HANSSEM" ></a>
+					</div>
+					<div class="address">
+						<ul>
+							<li>경기도 안산시 단원구 번영2로 144(성곡동) ㈜한샘<span class="line">대표자 : 최양하</span></li>
+							<li>사업자등록번호 : 133-61-22865<span class="line">통신판매업신고 : 안산 제512호</span><button type="button" class="botton_st_01">사업자정보확인</button></li>
+							<li>개인정보보호책임자 : 노태권</li>
+							<li>대표번호 : (02)6908-3114<span class="line">고객센터 : 1688-4945</span><span class="line">A/S센터 : as.hanssem.com</span></li>
+							<!--<li>한샘플래그샵<button type="button" class="botton_st_01">위치보기</button></li>-->
+							<li class="mt11">Copyright © 2016 HANSSEM Co. Ltd.  All rights reserved</li>
+						</ul>
+					</div>
+					<div class="exsp">
+						<dl>
+							<dt>외환은행 구매안전서비스(채무지급보증)<button type="button" class="botton_st_01">서비스 가입사실 확인</button></dt>
+							<dd>고객님은 안전거래를 위해 현금결제 시 저희 쇼핑몰에서 가입한 <br />외환은행으로 구매안전서비스(채무지급보증)를 이용하실 수 있습니다.</dd>
+						</dl>
+					</div>
+					<div class="awarded">
+						<ul>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_01.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_02.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_03.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_04.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_05.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_06.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_07.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_08.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_09.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_10.gif" alt="" ></a></li>
+							<li><a href="#"><img src="../../common/images/common/footer_emblem_11.gif" alt="" ></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //footer area -->
+	</div>
+
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.order-page.js"></script>
+</body>
+</html>

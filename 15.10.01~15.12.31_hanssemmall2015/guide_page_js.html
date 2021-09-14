@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - JS Guide Page</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="common/css/common.css" /><!-- common css -->
+	<style type="text/css">
+		button, a {margin-left:0 !important;}
+
+		#wrap {padding:20px;}
+		h1 {font-size:20px;color:#333;font-weight:bold; padding:20px 0;}
+		h2 {font-size:17px;color:#333;font-weight:bold; padding:30px 0 20px 0;}
+		h3 {font-size:13px;color:#333;font-weight:bold; padding:10px 0 3px 0; border-bottom:1px dotted gainsboro;}
+
+		.cont {margin:10px 0;padding-bottom:20px;}
+		.cont > div {margin-bottom:5px;}
+		p {margin:10px 0 5px;font-size:16px;}
+		p > span {font-size:12px;vertical-align:bottom;}
+		button, a {display:inline-block;margin-left:5px;}
+		button:first-child, a:first-child {margin-left:0;}
+		xmp {margin:0;padding:0;display:inline-block;white-space:pre-line;}
+
+		.guide {margin:10px 0; padding:0 14px 14px 14px; border:2px dotted orangered;}
+		.info > pre {padding:10px; font-size:12px !important;}
+		.info > span {font-size:12px !important;}
+		
+		/* 범위설정 슬라이더 */
+		.slider {margin-bottom:10px;margin-left:10px;}	
+		.slider input {width:78px;text-align:right;float:left;vertical-align:0;}
+		.slider_bar {background:url("common/images/search/bg_bar.gif") repeat-x left top;width:578px;height:18px;float:left;margin:15px 15px 0;position:relative;}
+		.slider_bar p {position:absolute;top:-18px;background:url("common/images/search/bg_bar_select.gif") repeat-x left 8px;height:21px;left:0;overflow:hidden;}
+		.slider_bar a {display:inline-block;top:-8px;position:absolute;}
+		.slider_bar a.fir {left:0;}
+		.slider_bar a.fin {right:0;}
+
+		.ui-remain-timer span {font-size: 20px; font-weight:bold; color:orangered;}
+		
+		/* 10.슬라이드 */
+		.slider.ui-rating-slider {height:55px;position:relative;}
+		.slider.ui-rating-slider .slider_bar {background:url("common//images/common/bg_slide_bar.png") no-repeat left 8px;width:466px;height:35px;position:relative;overflow:hidden;}
+		.slider.ui-rating-slider .bar_inner {width:439px;position:relative;left:13px;top:8px;height:27px;} 
+		.slider.ui-rating-slider .slider_bar p {position:absolute;top:0;left:0;background:url("common/images/common/bg_slide_red.png") repeat-x left 0;height:10px;overflow:hidden;margin:0;}
+		.slider.ui-rating-slider .slider_bar a.fin {position:absolute;top:-8px;width:27px;height:27px;background:url(common/images/common/bg_slide_dot.png) no-repeat 0 0;display:inline-block;font-size:15px;font-weight:500;color:#fff;text-align:center;line-height:27px;margin-left:-13px !important;right:none;}
+				
+	</style>
+
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="common/js/ui/ui.plugins.js"></script>
+
+</head>
+<body>
+<div id="wrap" style="overflow:hidden;">
+	<h1>공통 JS적용 가이드 (2015.12.07)</h1>
+	<div>
+		"ui.plugins.js" 의 구현된 기능들 입니다. 실행되는 시점은 하단의 "ui.common.js" 에서 실행 된다.<br>
+		해당 Plug-in 들의 세부 기능들을 사용하기 위해서는, 하단의 "ui.common.js" 다음에 실행하거나 "$(document).ready()" 시점에 실행하면 된다.<br><br>
+		<span style="font-weight:bold">UI.resetCommonJS()</span> : 공통 UI요소 들의 적용된 스크립트를 다시 실행하여 적용, (이미 적용된 대상은 적용되지 않는다.)<br>
+		<span style="font-weight:bold">UI.resetPageJS()</span> : 페이지의 적용된 UI요소 스크립트를 다시 실행하여 적용, <span style="font-weight:bold">UI.resetCommonJS()</span>도 같이 실행된다. (이미 적용된 대상은 적용되지 않는다.)
+	</div>
+	<div>
+		<div class="cont">
+			<div>
+				<h2>1. SelectBox</h2>
+				<div class="select_area ui-select-box">
+					<select class="ui-input-select">
+						<option value="" selected="selected">옵션을 선택하세요</option>
+						<option value="value2">옵션 Label 1</option>
+						<option value="value3">옵션 Label 2</option>
+						<option value="value4">옵션 Label 3</option>
+						<option value="value5" disabled="disabled">옵션 Label 5</option>
+					</select>
+				</div>
+				<div class="select_area ui-select-box">
+					<select class="ui-input-select" disabled="disabled">
+						<option value="">옵션을 선택하세요</option>
+						<option value="value2" selected="selected">옵션 Label 1</option>
+						<option value="value3">옵션 Label 2</option>
+						<option value="value4">옵션 Label 3</option>
+						<option value="value5" disabled="disabled">옵션 Label 5</option>
+					</select>
+				</div>
+				<div class="guide">
+					<h3>> html</h3>
+					<div class="info">
+						<!-- guide -->
+						<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-select-box&quot; 공통 적용시 필수 클래스, width값을 변경하려면 !important; 로 width를 고정시킨다. --&gt;
+</span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;select_area </span><span style="color:#40E0D0;">ui-select-box</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-input-select&quot; 필수 클래스 (select 자체를 비활성화 하기 위해서는 select에 disabled="disabled") --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;select </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-input-select</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;&quot; </span><span style="color:#bababa;">selected=</span><span style="color:#a5c261;">&quot;selected&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션을 선택하세요<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;value2&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션 Label 1<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;value3&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션 Label 2<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;value4&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션 Label 3<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;value5&quot; </span><span style="color:#bababa;">disabled=</span><span style="color:#a5c261;">&quot;disabled&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션 Label 5<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">   &lt;/select&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+						<!-- //guide -->
+					</div>
+					<h3>> Javascript</h3>
+					<div class="info">
+						<!-- guide -->
+						<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//기본적용 (ui.common.js 에서 실행해 주고 있다. 동적으로 생성한 selectbox 에 스킨을 적용하기 위해서 실행해주면 된다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">selectBox</span>()<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//option을 동적으로 추가해 주거나, selected, disabled 속성을 강제로 변경시 상태를 스킨에 반영하기 위해서 아래 방법을 사용한다.
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;selectbox:updated&#39; </span>)<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//change 이벤트 등록 (대상 select 태그에 이벤트를 등록한다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#FF0000;">selectbox</span> ).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#808080;">//
+</span>})<span style="color:#cc7832;">;</span></pre>
+						<!-- //guide -->
+					</div>
+				</div>
+
+				<h2>2. Design SelectBox</h2>
+				<!-- "ui-design-select-box" 공통 적용시 필수 클래스 -->
+				<div class="select_area ui-design-select-box" style="width:600px;">
+					<!-- "ui-select-box-face" 필수 클래스 -->
+					<a href="#" class="select ui-select-box-face">선택</a>
+					<!-- "ui-input-select" 필수 클래스 (모든 설정과 이벤트는 select 기준으로 동작한다, select 자체를 비활성화 하기 위해서는 select에 disabled="disabled") -->
+					<select title="옵션 선택" class="ui-input-select">
+						<option value="" selected="selected">옵션을 선택하세요</option>
+						<option value="옵션코드1">상품명 - 1</option>
+						<option value="옵션코드2">상품명 - 2</option>
+						<!-- 동적으로 option 추가시 아래의 li.ui-select-option 도 같이 추가해 줘야 한다. 1set -->
+					</select>
+					<!-- "ui-select-options" 필수 클래스 -->
+					<ul class="option_box option_tbl ui-select-options">
+						<!-- "ui-select-option" 필수 클래스 -->
+						<li class="ui-select-option">
+							<a href="#">옵션을 선택하세요</a>
+						</li>
+						<li class="ui-select-option">
+							<a href="#">
+									<span>
+										<span class="img"><img src="./common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용"></span>
+										<span class="prd">상품명 - 1</span>
+										<span class="price_line">330,000</span>
+										<span class="price"><span>230,000</span>원</span>
+									</span>
+							</a>
+						</li>
+						<li class="ui-select-option">
+							<a href="#">
+									<span>
+										<span class="img"><img src="./common/images/detail/thum_detail_opt.jpg" alt="세이지 침대 Q/S 전용"></span>
+										<span class="prd">상품명 - 2</span>
+										<span class="price_line"></span>
+										<span class="price"><span>230,000</span>원</span>
+									</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="guide">
+					<h3>> html</h3>
+					<div class="info">
+						<!-- guide -->
+						<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-design-select-box&quot; 공통 적용시 필수 클래스 --&gt;
+</span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;select_area </span><span style="color:#40E0D0;">ui-design-select-box</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-select-box-face&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;select </span><span style="color:#FF0000;">ui-select-box-face</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>선택<span style="color:#e8bf6a;">&lt;/a&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-input-select&quot; 필수 클래스 (모든 설정과 이벤트는 select 기준으로 동작한다, select 자체를 비활성화 하기 위해서는 select에 disabled=&quot;disabled&quot;) --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;select </span><span style="color:#bababa;">title=</span><span style="color:#a5c261;">&quot;옵션 선택&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-input-select</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;&quot; </span><span style="color:#bababa;">selected=</span><span style="color:#a5c261;">&quot;selected&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션을 선택하세요<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;옵션코드1&quot;</span><span style="color:#e8bf6a;">&gt;</span>상품명 - 1<span style="color:#e8bf6a;">&lt;/option&gt;</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">      </span><span style="color:#FF0000;"><span style="font-style: italic;">&lt;!-- 동적으로 option 추가시 아래의 li.ui-select-option 도 같이 추가해 줘야 한다. 1set --&gt;</span></span><span style="color:#808080;font-style:italic;">
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;/select&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-select-options&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;ul </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;option_box option_tbl  </span><span style="color:#FF0000;">ui-select-options</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-select-option&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">      </span><span style="color:#e8bf6a;">&lt;li </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-select-option</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         &lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;</span>옵션을 선택하세요<span style="color:#e8bf6a;">&lt;/a&gt;
+</span><span style="color:#e8bf6a;">      &lt;/li&gt;
+</span><span style="color:#e8bf6a;">      &lt;li </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-select-option</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#808080;font-style:italic;">      &lt;!-- designValue옵션이 true일때 a태그 자식요소를 복재하여 "ui-select-box-face"에 넣어준다. --&gt;</span><span style="color:#e8bf6a;">
+         &lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">               &lt;span&gt;
+</span><span style="color:#e8bf6a;">                  &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;img&quot;</span><span style="color:#e8bf6a;">&gt;&lt;img </span><span style="color:#bababa;">src=</span><span style="color:#a5c261;">&quot;thum_detail_opt.jpg&quot; </span><span style="color:#bababa;">alt=</span><span style="color:#a5c261;">&quot;세이지 침대 Q/S 전용&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/span&gt;
+</span><span style="color:#e8bf6a;">                  &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;prd&quot;</span><span style="color:#e8bf6a;">&gt;</span>상품명 - 1<span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">                  &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;price_line&quot;</span><span style="color:#e8bf6a;">&gt;</span>330,000<span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">                  &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;price&quot;</span><span style="color:#e8bf6a;">&gt;&lt;span&gt;</span>230,000<span style="color:#e8bf6a;">&lt;/span&gt;</span>원<span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">               &lt;/span&gt;
+</span><span style="color:#e8bf6a;">         &lt;/a&gt;
+</span><span style="color:#e8bf6a;">      &lt;/li&gt;</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">   &lt;/ul&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+						<!-- //guide -->
+					</div>
+					<h3>> Javascript</h3>
+					<div class="info">
+						<!-- guide -->
+						<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//기본적용 (ui.common.js 에서 실행해 주고 있다. 동적으로 생성한 selectbox 에 스킨을 적용하기 위해서 실행해주면 된다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">selectBox</span>({
+    <span style="color:#9876aa;">designOption</span>: <span style="color:#cc7832;font-weight:bold;">true,
+</span>    <span style="color:#9876aa;">designValue</span>: <span style="color:#cc7832;font-weight:bold;">true </span><span style="color:#808080;">//"ui-select-option > a" 태그 자식요소를 복재하여 "ui-select-box-face"에 넣어준다.</span><span style="color:#cc7832;font-weight:bold;">
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//option을 동적으로 추가해 주거나, selected, disabled 속성을 강제로 변경시 상태를 스킨에 반영하기 위해서 아래 방법을 사용한다.
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;selectbox:updated&#39; </span>)<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//change 이벤트 등록 (대상 select 태그에 이벤트를 등록한다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#FF0000;">selectbox</span> ).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#808080;">//
+</span>})<span style="color:#cc7832;">;</span></pre>
+						<!-- //guide -->
+					</div>
+				</div>
+			</div>
+			<h2>3. NumberCounter</h2>
+			<div>
+				<!-- "ui-number-counter" 필수 클래스 -->
+				<span class="opt_spinner ui-number-counter">
+					<!-- "ui-decrease" 필수 클래스 -->
+					<button class="opt_down ui-decrease">수량 줄이기</button>
+					<!-- "ui-number-input" 필수 클래스 (min=최소값 max=최대값, value=현재값), input에만 disabled="disabled" 을 적용하면 버튼까지 disabled 속성이 적용된다.-->
+					<input class="ui-number-input" type="text" title="수량입력" value="9" min="1" max="99" readonly="readonly" />
+					<!-- "ui-increase" 필수 클래스 -->
+					<button class="opt_up ui-increase">수량 더하기</button>
+				</span>
+
+				<span class="opt_spinner ui-number-counter">
+					<button class="opt_down ui-decrease">수량 줄이기</button>
+					<input class="ui-number-input" type="text" title="수량입력" value="1" min="1" max="5" readonly="readonly" disabled="disabled"/>
+					<button class="opt_up ui-increase">수량 더하기</button>
+				</span>
+			</div>
+			<div class="guide">
+				<h3>> html</h3>
+				<div class="info">
+					<!-- guide -->
+					<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-number-counter&quot; 필수 클래스 --&gt;
+</span><span style="color:#e8bf6a;">&lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;opt_spinner </span><span style="color:#40E0D0;">ui-number-counter</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-decrease&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;button </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;opt_down </span><span style="color:#FF0000;">ui-decrease</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>수량 줄이기<span style="color:#e8bf6a;">&lt;/button&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-number-input&quot; 필수 클래스 (min=최소값 max=최대값, value=현재값), input에만 disabled=&quot;disabled&quot; 을 적용하면 버튼까지 disabled 속성이 적용된다.--&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;input </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-number-input</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">type=</span><span style="color:#a5c261;">&quot;text&quot; </span><span style="color:#bababa;">title=</span><span style="color:#a5c261;">&quot;수량입력&quot; </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;1&quot; </span><span style="color:#bababa;">min=</span><span style="color:#a5c261;">&quot;1&quot; </span><span style="color:#bababa;">max=</span><span style="color:#a5c261;">&quot;20&quot; </span><span style="color:#bababa;">readonly=</span><span style="color:#a5c261;">&quot;readonly&quot; </span><span style="color:#e8bf6a;">/&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-increase&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;button </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;opt_up </span><span style="color:#FF0000;">ui-increase</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>수량 더하기<span style="color:#e8bf6a;">&lt;/button&gt;
+</span><span style="color:#e8bf6a;">&lt;/span&gt;</span></pre>
+					<!-- //guide -->
+				</div>
+				<h3>> Javascript</h3>
+				<div class="info">
+					<!-- guide -->
+					<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//기본적용 (ui.common.js 에서 실행해 주고 있다. 동적으로 생성한 numberCounter 에 기능을 적용하기 위해서 실행해주면 된다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">numberCounter</span>()<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//value의 값을 강제로 변경할때 사용한다. (value가 min, max 영역을 벗어나면 value 최대 최소치 구간으로 변경한다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;numbercounter:change_value&#39;</span><span style="color:#cc7832;">, </span><span style="color:#9876aa;">value </span>)<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//change 이벤트 등록 (대상 input 태그에 이벤트를 등록한다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#FF0000;">input</span> ).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#808080;">//e.currentTarget.value
+</span>})<span style="color:#cc7832;">;</span></pre>
+					<!-- //guide -->
+				</div>
+			</div>
+		</div>
+		<h2>4. TAB</h2>
+		<div class="cont">
+			<!-- tab -->
+			<!-- "ui-tab-area" 필수 클래스 -->
+			<div class="tab_area ui-tab-area">
+				<!-- "ui-tabs" 필수 클래스 -->
+				<ul class="ui-tabs tab_tit">
+					<!-- "ui-tab-item" 필수 클래스 -->
+					<li class="ui-tab-item"><a href="#">tab1</a></li>
+					<li class="ui-tab-item"><a href="#">tab2</a></li>
+				</ul>
+				<!-- "ui-tab-contents" 필수 클래스 -->
+				<div class="ui-tab-contents tab_body">
+					<!-- "ui-tab-contents-item" 필수 클래스 -->
+					<div class="ui-tab-contents-item tab_cont">
+						컨텐츠1
+					</div>
+					<div class="ui-tab-contents-item tab-con">
+						컨텐츠2
+					</div>
+				</div>
+			</div>
+			<!--// tab -->
+		</div>
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-tab-area&quot; 필수 클래스 --&gt;
+</span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;tab_area </span><span style="color:#40E0D0;">ui-tab-area</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-tabs&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;ul </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-tabs</span><span style="color:#a5c261;"> tab_tit&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-tab-item&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">      </span><span style="color:#e8bf6a;">&lt;li </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-tab-item</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;</span>tab1<span style="color:#e8bf6a;">&lt;/a&gt;&lt;/li&gt;
+</span><span style="color:#e8bf6a;">      &lt;li </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-tab-item</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;</span>tab2<span style="color:#e8bf6a;">&lt;/a&gt;&lt;/li&gt;
+</span><span style="color:#e8bf6a;">   &lt;/ul&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-tab-contents&quot; 필수 클래스 (탭을 클릭시 콘텐츠 영역 동기화를 시키지 않으려면 "ui-tab-contents" class를 넣지 않으면 된다) --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-tab-contents</span><span style="color:#a5c261;"> tab_body&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-tab-contents-item&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">      </span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-tab-contents-item</span><span style="color:#a5c261;"> tab-cont&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         </span>컨텐츠1
+      <span style="color:#e8bf6a;">&lt;/div&gt;
+</span><span style="color:#e8bf6a;">      &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-tab-contents-item</span><span style="color:#a5c261;"> tab-con&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         </span>컨텐츠2
+      <span style="color:#e8bf6a;">&lt;/div&gt;
+</span><span style="color:#e8bf6a;">   &lt;/div&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//기본적용 (ui.common.js 에서 실행해 주고 있다. 동적으로 생성한 tab 에 기능을 적용하기 위해서 실행해주면 된다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#9876aa;">tabs</span>({
+   <span style="color:#9876aa;">eventBlock</span>: <span style="color:#cc7832;font-weight:bold;">false</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//true를 설정하면 클릭이벤트 전달을 막는다. (a href=의 동작을 막는다), 기본설정=true
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">autoPlay</span>: <span style="color:#cc7832;font-weight:bold;">false</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//자동 플레이 설정, 기본설정=false
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">delayTime</span>: <span style="color:#6897bb;">3000 </span><span style="color:#808080;">//autoPlay 지연시간 (1000/1초), 기본설정=4000
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//현재 선택된 Tab 변경 (탭의 갯수보다 큰 index를 설정하면 동작하지 않는다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;tabs:change_index&#39;</span><span style="color:#cc7832;">, </span><span style="color:#6897bb;">2 </span>)<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//이벤트 등록
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;tabs:change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>( e<span style="color:#cc7832;">, </span>index ) {
+   <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( index )<span style="color:#cc7832;">; </span><span style="color:#808080;">// 현재 선택된 탭의 index
+</span>})<span style="color:#cc7832;">;</span></pre>
+				<!-- //guide -->
+			</div>
+		</div>
+
+		<h2 style="margin-bottom:20px;">5. 레이어팝업</h2>
+		<div>
+			<!-- a 태그에서 실행 -->
+			<a href="javascript:$('.test_layer_popup').openLayer();">LayerPopup 띄우기</a>
+			<!-- button 에서 실행 -->
+			<button type="button" class="botton_st_03 purple" onclick="$('.test_layer_popup').openLayer();">LayerPopup 띄우기</button>
+			<button type="button" class="botton_st_03 purple" onclick="$('.test_layer_popup').openLayer({modal:true});">LayerPopup 띄우기 (모달)</button>
+		</div>
+		<!-- layer_popup -->
+		<div class="layer_popup test_layer_popup" style="display:none;">
+			<div class="layer_pop_head">
+				<h1 class="ui-layer-title layer_title"><span class="point">개인</span>구매회원 혜택</h1>
+				<!-- "ui-layer-close" 필수 클래스 -->
+				<a href="#" class="ui-layer-close layer_close_btn"><img src="common/images/common/btn_pop_close.png" alt="닫기"></a>
+			</div>
+			<div class="layer_pop_cont">
+				팝업 컨텐츠
+			</div>
+		</div>
+		<!-- //layer_popup -->
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#e8bf6a;">&lt;div&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- a 태그에서 실행 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;javascript:</span><span style="color:#9876aa;">$</span><span style="color:#a5c261;">(&#39;.layer_popup&#39;).</span><span style="color:#ffc66d;">openLayer</span><span style="color:#a5c261;">();&quot;</span><span style="color:#e8bf6a;">&gt;</span>LayerPopup 띄우기<span style="color:#e8bf6a;">&lt;/a&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- button 에서 실행 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;button </span><span style="color:#bababa;">type=</span><span style="color:#a5c261;">&quot;button&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;botton_st_03 purple&quot; </span><span style="color:#bababa;">onclick=</span><span style="color:#a5c261;">&quot;</span><span style="color:#9876aa;">$</span>(<span style="color:#6a8759;">&#39;.layer_popup&#39;</span>).<span style="color:#ffc66d;">openLayer</span>()<span style="color:#cc7832;">;</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>LayerPopup 띄우기<span style="color:#e8bf6a;">&lt;/button&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;
+</span><span style="color:#808080;font-style:italic;">&lt;!-- layer_popup --&gt;
+</span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;layer_popup&quot; </span><span style="color:#bababa;">style=</span><span style="color:#a5c261;">&quot;</span><span style="color:#9876aa;">display</span>:none<span style="color:#cc7832;">;</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;layer_pop_head&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      &lt;h1 </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-layer-title</span><span style="color:#a5c261;"> layer_title&quot;</span><span style="color:#e8bf6a;">&gt;&lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;point&quot;</span><span style="color:#e8bf6a;">&gt;</span>개인<span style="color:#e8bf6a;">&lt;/span&gt;</span>구매회원 혜택<span style="color:#e8bf6a;">&lt;/h1&gt;
+</span><span style="color:#e8bf6a;">      </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-layer-close&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">      </span><span style="color:#e8bf6a;">&lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-layer-close</span><span style="color:#a5c261;"> layer_close_btn&quot;</span><span style="color:#e8bf6a;">&gt;&lt;img </span><span style="color:#bababa;">src=</span><span style="color:#a5c261;">&quot;common/images/common/btn_pop_close.png&quot; </span><span style="color:#bababa;">alt=</span><span style="color:#a5c261;">&quot;닫기&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/a&gt;
+</span><span style="color:#e8bf6a;">   &lt;/div&gt;
+</span><span style="color:#e8bf6a;">   &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;layer_pop_cont&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      </span>팝업 컨텐츠
+   <span style="color:#e8bf6a;">&lt;/div&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//Layer Popup 열기 (&quot;X&quot; 닫기 버튼의 닫기 이벤트는 자동 적용 된다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#9876aa;">target </span>).<span style="color:#ffc66d;">openLayer</span>()<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//Modal 형식으로 띄울때, (&quot;.ui-modal-dim&quot; 을 찾아 배경에 띄운다)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">openLayer</span>({
+    <span style="color:#9876aa;">modal</span>: <span style="color:#cc7832;font-weight:bold;">true
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//Layer Popup 닫기
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">closeLayer</span>()<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//open, close 이벤트 등록
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;layer:open layer:close&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#808080;">//e.type - layer:open or layer:close
+</span>})<span style="color:#cc7832;">;</span></pre>
+				<!-- //guide -->
+			</div>
+		</div>
+
+		<h2>6. 디자인 라디오박스</h2>
+		<!-- "ui-radio-select" 필수 클래스 -->
+		<div class="rd_st ui-radio-select">
+			<!-- "ui-radio-select-input" 필수 클래스 -->
+			<select class="ui-radio-select-input">
+				<option value="man">남</option>
+				<option value="woman" selected="selected">여</option>
+			</select>
+		</div>
+		<div class="rd_st ui-radio-select">
+			<!-- "ui-radio-select-input" 필수 클래스 -->
+			<select class="ui-radio-select-input" disabled="disabled">
+				<option value="man">남</option>
+				<option value="woman" selected="selected">여</option>
+			</select>
+		</div>
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-radio-select&quot; 필수 클래스 --&gt;
+</span><span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;rd_st </span><span style="color:#40E0D0;">ui-radio-select</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-radio-select-input&quot; 필수 클래스 (기본 select와 사용방법 동일) --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;select </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-radio-select-input</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;man&quot;</span><span style="color:#e8bf6a;">&gt;</span>남<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">      &lt;option </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;woman&quot; </span><span style="color:#bababa;">selected=</span><span style="color:#a5c261;">&quot;selected&quot;</span><span style="color:#e8bf6a;">&gt;</span>여<span style="color:#e8bf6a;">&lt;/option&gt;
+</span><span style="color:#e8bf6a;">   &lt;/select&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//기본적용 (ui.common.js 에서 실행해 주고 있다. 동적으로 생성한 selectbox 에 스킨을 적용하기 위해서 실행해주면 된다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#9876aa;">radioSelect</span>()<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//option을 동적으로 추가해 주거나, selected, disabled 속성을 강제로 변경시 상태를 스킨에 반영하기 위해서 아래 방법을 사용한다.
+</span><span style="color:#9876aa;">$</span>( <span style="color:#40E0D0;">target </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;radioselect:updated&#39; </span>)<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//change 이벤트 등록 (대상 select 태그에 이벤트를 등록한다.)
+</span><span style="color:#9876aa;">$</span>( <span style="color:#FF0000;">selectbox</span> ).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#808080;">//
+</span>})<span style="color:#cc7832;">;</span></pre>
+				<!-- //guide -->
+			</div>
+		</div>
+
+		<h2>7. 범위설정 슬라이더</h2>
+		<div class="slider ui-range-slider clear">
+			<!-- "ui-slider-min-input" 필수 클래스, value 속성의 값이 최소값으로 설정 된다 -->
+			<input class="ui-range-slider-min-input" type="text" value="50000" />
+			<div class="slider_bar ui-range-slider-bar">
+				<!-- "ui-slider-progress" 필수 클래스 -->
+				<p class="ui-range-slider-progress"></p>
+				<!-- "ui-slider-min-icon, ui-slider-max-icon" 필수 클래스 -->
+				<a class="fir ui-range-slider-min-icon" href="#"><img src="common/images/search/bar_point.gif" alt="최소값" /></a>
+				<a class="fin ui-range-slider-max-icon" href="#"><img src="common/images/search/bar_point.gif" alt="최대값" /></a>
+			</div>
+			<!-- "ui-slider-max-input" 필수 클래스, value 속성의 값이 최대값으로 설정 된다 -->
+			<input class="ui-range-slider-max-input" type="text" value="5000000" /><span class="won">원</span>
+		</div>
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;slider </span><span style="color:#00FFFF;">ui-range-slider</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-range-slider-min-input&quot; 필수 클래스, value 속성의 값이 최소값으로 설정 된다 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;input </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-range-slider-min-input</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">type=</span><span style="color:#a5c261;">&quot;text&quot; </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;50000&quot; </span><span style="color:#e8bf6a;">/&gt;
+</span><span style="color:#e8bf6a;">   &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;slider_bar </span><span style="color:#FF0000;">ui-range-slider-bar</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-range-slider-progress&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">      </span><span style="color:#e8bf6a;">&lt;p </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-range-slider-progress</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/p&gt;
+</span><span style="color:#e8bf6a;">      </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-range-slider-min-icon, ui-range-slider-max-icon&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">      </span><span style="color:#e8bf6a;">&lt;a </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;fir </span><span style="color:#FF0000;">ui-range-slider-min-icon</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;&lt;img </span><span style="color:#bababa;">src=</span><span style="color:#a5c261;">&quot;../../common/images/search/bar_point.gif&quot; </span><span style="color:#bababa;">alt=</span><span style="color:#a5c261;">&quot;최소값&quot; </span><span style="color:#e8bf6a;">/&gt;&lt;/a&gt;
+</span><span style="color:#e8bf6a;">      &lt;a </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;fin </span><span style="color:#FF0000;">ui-range-slider-max-icon</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;&lt;img </span><span style="color:#bababa;">src=</span><span style="color:#a5c261;">&quot;../../common/images/search/bar_point.gif&quot; </span><span style="color:#bababa;">alt=</span><span style="color:#a5c261;">&quot;최대값&quot; </span><span style="color:#e8bf6a;">/&gt;&lt;/a&gt;
+</span><span style="color:#e8bf6a;">   &lt;/div&gt;
+</span><span style="color:#e8bf6a;">   </span><span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-range-slider-max-input&quot; 필수 클래스, value 속성의 값이 최대값으로 설정 된다 --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;input </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-range-slider-max-input</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">type=</span><span style="color:#a5c261;">&quot;text&quot; </span><span style="color:#bababa;">value=</span><span style="color:#a5c261;">&quot;5000000&quot; </span><span style="color:#e8bf6a;">/&gt;&lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;won&quot;</span><span style="color:#e8bf6a;">&gt;</span>원<span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//슬라이더 적용하기
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">rangeSlider</span>({
+   <span style="color:#9876aa;">values</span>: [<span style="color:#6897bb;">0</span><span style="color:#cc7832;">, </span><span style="color:#6897bb;">200</span>]<span style="color:#cc7832;">, </span><span style="color:#808080;">// 설정값, [시작값, 끝값], 기본값=[min, max]
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">range</span>: <span style="color:#6897bb;">5</span><span style="color:#cc7832;">, </span><span style="color:#808080;">// 슬라이드가 움딕일때 한번 반환될 수치의 범위, 기본값=1
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">numberFormat</span>: <span style="color:#cc7832;font-weight:bold;">true </span><span style="color:#808080;">// &quot;10,000&quot; 형식으로 input 의 노출하기
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//input이나 슬라이드를 통해서 값이 변경되는 이벤트 등록
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;rangeslider:change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>(e<span style="color:#cc7832;">, </span>min<span style="color:#cc7832;">, </span>max) {
+   <span style="color:#808080;">//
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//values 강제로 변경하기
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;rangeslider:reset&#39;</span><span style="color:#cc7832;">, </span>[시작값<span style="color:#cc7832;">, </span>끝값] )<span style="color:#cc7832;">;</span></pre>
+				<!-- //guide -->
+			</div>
+		</div>
+
+		<h2>8. 남은 시간 보여주는 역타이머</h2>
+		<div class="ui-remain-timer">
+			남은시간:
+			<!-- "ui-remain-timer-day, ui-remain-timer-hour, ui-remain-timer-minute, ui-remain-timer-second" 필수 클래스 -->
+			<!-- 일,시,분,초 중 사용하지 않는 class 는 삭제하면 된다. -->
+			<span class="ui-remain-timer-day">0</span><span>일 </span>
+			<span class="ui-remain-timer-hour">00</span><span>시 </span>
+			<span class="ui-remain-timer-minute">20</span><span>분 </span>
+			<span class="ui-remain-timer-second">00</span><span>초 </span>
+		</div>
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#00FFFF;">ui-remain-timer</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   </span>남은시간:
+   <span style="color:#808080;font-style:italic;">&lt;!-- &quot;ui-remain-timer-day, ui-remain-timer-hour, ui-remain-timer-minute, ui-remain-timer-second&quot; 필수 클래스 --&gt;
+</span><span style="color:#808080;font-style:italic;">   &lt;!-- 일,시,분,초 중 사용하지 않는 class 는 삭제하면 된다. --&gt;
+</span><span style="color:#808080;font-style:italic;">   </span><span style="color:#e8bf6a;">&lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-remain-timer-day</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>0<span style="color:#e8bf6a;">&lt;/span&gt;&lt;span&gt;</span>일 <span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">   &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-remain-timer-hour</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>00<span style="color:#e8bf6a;">&lt;/span&gt;&lt;span&gt;</span>시 <span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">   &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-remain-timer-minute</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>20<span style="color:#e8bf6a;">&lt;/span&gt;&lt;span&gt;</span>분 <span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">   &lt;span </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-remain-timer-second</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;</span>00<span style="color:#e8bf6a;">&lt;/span&gt;&lt;span&gt;</span>초 <span style="color:#e8bf6a;">&lt;/span&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//역 타이머 적용하기
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">remainTimer</span>({
+   <span style="color:#9876aa;">startTime</span>: <span style="color:#6897bb;">0</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">   </span><span style="color:#9876aa;">finishTime</span>: <span style="color:#6897bb;">20 </span>* ( <span style="color:#6897bb;">60 </span>* <span style="color:#6897bb;">1000 </span>)<span style="color:#808080;">//20분 설정
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//역타이머의 이벤트 받기
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;remaintimer:timer  remaintimer:complete&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>( e<span style="color:#cc7832;">, </span>date ) {
+   <span style="color:#cc7832;font-weight:bold;">if </span>( e.<span style="color:#9876aa;">type </span>=== <span style="color:#6a8759;">&#39;remaintimer:complete&#39; </span>) {
+      <span style="color:#808080;">//타이머 종료
+</span><span style="color:#808080;">   </span>} <span style="color:#cc7832;font-weight:bold;">else </span>{
+      <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( date.<span style="color:#9876aa;">day </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">      </span><span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( date.<span style="color:#9876aa;">hour </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">      </span><span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( date.<span style="color:#9876aa;">minute </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">      </span><span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( date.<span style="color:#9876aa;">second </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">   </span>}
+})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//타이머 시간 재설정
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;remaintimer:reset&#39;</span><span style="color:#cc7832;">, </span>{
+   <span style="color:#9876aa;">startTime</span>: <span style="color:#6897bb;">0</span><span style="color:#cc7832;">,
+</span><span style="color:#cc7832;">   </span><span style="color:#9876aa;">finishTime</span>: <span style="color:#6897bb;">1000 </span>* <span style="color:#6897bb;">60 </span><span style="color:#808080;">//60초 설정
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//타이머 정지
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">trigger</span>( <span style="color:#6a8759;">&#39;remaintimer:stop&#39; </span>)<span style="color:#cc7832;">;</span></pre>
+				<!-- //guide -->
+			</div>
+		</div>
+		<h2>9. Modal alert(), confirm()</h2>
+		<div>
+			<button type="button" class="botton_st_03 purple btn-alert-open">UI.alert('Alert 띄우기')</button>
+			<button type="button" class="botton_st_03 purple btn-confirm-open">UI.confirm('Confirm 띄우기')</button>
+		</div>
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">id=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-modal-area</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">style=</span><span style="color:#a5c261;">&quot;</span><span style="color:#9876aa;">display</span>:none<span style="color:#cc7832;">;</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-modal-dim</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/div&gt;
+</span><span style="color:#e8bf6a;">   &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;layer_popup com_layer_popup </span><span style="color:#FF0000;">ui-modal-default-layer</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">style=</span><span style="color:#a5c261;">&quot;</span><span style="color:#9876aa;">display</span>:none<span style="color:#cc7832;">;</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;layer_pop_head&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         &lt;h1 </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-modal-title</span><span style="color:#a5c261;"> layer_title&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/h1&gt;
+</span><span style="color:#e8bf6a;">         &lt;a </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;ui-modal-btn-close layer_close_btn&quot;</span><span style="color:#e8bf6a;">&gt;&lt;img </span><span style="color:#bababa;">src=</span><span style="color:#a5c261;">&quot;common/images/common/btn_pop_close.png&quot; </span><span style="color:#bababa;">alt=</span><span style="color:#a5c261;">&quot;닫기&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/a&gt;
+</span><span style="color:#e8bf6a;">      &lt;/div&gt;
+</span><span style="color:#e8bf6a;">      &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;layer_pop_cont&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-modal-contents-area</span><span style="color:#a5c261;"> alert_cont&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         &lt;/div&gt;
+</span><span style="color:#e8bf6a;">         &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-modal-btn-area button_area</span><span style="color:#a5c261;"> both_btn&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">            &lt;button </span><span style="color:#bababa;">type=</span><span style="color:#a5c261;">&quot;button&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;botton_st_04 purple </span><span style="color:#FF0000;">ui-modal-btn-confirm</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/button&gt;
+</span><span style="color:#e8bf6a;">            &lt;button </span><span style="color:#bababa;">type=</span><span style="color:#a5c261;">&quot;button&quot; </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;botton_st_04 </span><span style="color:#FF0000;">ui-modal-btn-cancel</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/button&gt;
+</span><span style="color:#e8bf6a;">         &lt;/div&gt;
+</span><span style="color:#e8bf6a;">      &lt;/div&gt;
+</span><span style="color:#e8bf6a;">   &lt;/div&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#FFFF00;">//Alert</span><span style="color:#808080;">
+</span><span style="color:#9876aa;">$</span>( <span style="color:#9876aa;">target </span>).<span style="color:#ffc66d;">click</span>( <span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#FFFF00;">//기본 Alert</span><span style="color:#808080;">
+</span><span style="color:#808080;">    </span><span style="color:#9876aa;">UI</span>.<span style="color:#ffc66d;">alert</span>( <span style="color:#6a8759;">&#39;Alert 띄우기&#39; </span>).done( <span style="color:#cc7832;font-weight:bold;">function </span>() {
+        <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( <span style="color:#6a8759;">&#39;확인 버튼 클릭&#39; </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>})<span style="color:#cc7832;">;
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#FFFF00;">//Confirm</span><span style="color:#808080;">
+</span><span style="color:#9876aa;">$</span>( <span style="color:#9876aa;">target </span>).<span style="color:#ffc66d;">click</span>( <span style="color:#cc7832;font-weight:bold;">function </span>(e) {
+    <span style="color:#FFFF00;">//기본 Confirm</span><span style="color:#808080;">
+</span><span style="color:#808080;">    </span><span style="color:#9876aa;">UI</span>.<span style="color:#ffc66d;">confirm</span>( <span style="color:#6a8759;">&#39;Confirm 띄우기&#39; </span>)
+        .done( <span style="color:#cc7832;font-weight:bold;">function </span>() {
+            <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( <span style="color:#6a8759;">&#39;확인 버튼 클릭&#39; </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}).fail( <span style="color:#cc7832;font-weight:bold;">function </span>() {
+            <span style="color:#9876aa;">console</span>.<span style="color:#ffc66d;">log</span>( <span style="color:#6a8759;">&#39;취소나 &quot;X&quot;버튼 클릭&#39; </span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#cc7832;">    </span><span style="color:#FFFF00;">//각 옵션 설정, 옵션 설정은 alert도 동일</span><span style="color:#808080;">
+</span><span style="color:#808080;">    </span><span style="color:#9876aa;">UI</span>.<span style="color:#ffc66d;">confirm</span>( <span style="color:#6a8759;">&#39;Confirm 띄우기&#39;</span><span style="color:#cc7832;">, </span>{
+        <span style="color:#9876aa;">textAlignCenter</span>: <span style="color:#cc7832;font-weight:bold;">true</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//메세지 내용 가운데 정렬
+</span><span style="color:#808080;">        </span><span style="color:#9876aa;">title</span>: <span style="color:#6a8759;">&#39;팝업의 제목&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//팝업 제목 변경
+</span><span style="color:#808080;">        </span><span style="color:#9876aa;">confirmLabel</span>: <span style="color:#6a8759;">&#39;적용&#39;</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//&quot;확인&quot; 버튼 Label변경
+</span><span style="color:#808080;">        </span><span style="color:#9876aa;">cancelLabel</span>: <span style="color:#6a8759;">&#39;미적용&#39; </span><span style="color:#808080;">//&quot;취소&quot; 버튼 Label변경
+</span><span style="color:#808080;">    </span>})<span style="color:#cc7832;">;
+</span>})<span style="color:#cc7832;">;</span></pre>
+				<!-- //guide -->
+			</div>
+		</div>
+
+		<h2>10. 슬라이더</h2>
+		<div class="slider ui-rating-slider">
+			<div class="slider_bar">
+				<div class="bar_inner ui-slider-bar">
+					<p class="ui-slider-progress"></p>
+					<a class="fin ui-slider-thumb ui-slider-value" href="#none">2</a>
+				</div>
+			</div>
+		</div>
+		<div class="guide">
+			<h3>> html</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//&quot;data-value&quot; 속성의 값을 설정하면 해당값이 우선으로 적용된다.</span>
+<span style="color:#e8bf6a;">&lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;slider </span><span style="color:#00FFFF;">ui-rating-slider</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">data-value=</span><span style="color:#a5c261;">&quot;5&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">   &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;slider_bar&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">      &lt;div </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;bar_inner </span><span style="color:#FF0000;">ui-slider-bar</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">         &lt;p </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;</span><span style="color:#FF0000;">ui-slider-progress</span><span style="color:#a5c261;">&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/p&gt;
+</span><span style="color:#e8bf6a;">         &lt;a </span><span style="color:#bababa;">class=</span><span style="color:#a5c261;">&quot;fin </span><span style="color:#FF0000;">ui-slider-thumb ui-slider-value</span><span style="color:#a5c261;">&quot; </span><span style="color:#bababa;">href=</span><span style="color:#a5c261;">&quot;#&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/a&gt;
+</span><span style="color:#e8bf6a;">      &lt;/div&gt;
+</span><span style="color:#e8bf6a;">   &lt;/div&gt;
+</span><span style="color:#e8bf6a;">&lt;/div&gt;</span></pre>
+				<!-- //guide -->
+			</div>
+			<h3>> Javascript</h3>
+			<div class="info">
+				<!-- guide -->
+				<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:12.0pt;">
+<span style="color:#808080;">//슬라이더 적용하기
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">slider</span>({
+   <span style="color:#9876aa;">range</span>: <span style="color:#6897bb;">1</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//슬라이드가 움딕일때 한번 반환될 수치의 범위
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">baseWidth</span>: <span style="color:#6897bb;">439</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//슬라이드의 가로폭, 실행시점에 사이즈를 구할수 없을때 설정
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">min</span>: <span style="color:#6897bb;">1</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//최소값
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">max</span>: <span style="color:#6897bb;">5</span><span style="color:#cc7832;">, </span><span style="color:#808080;">//최대값
+</span><span style="color:#808080;">   </span><span style="color:#9876aa;">value</span>: <span style="color:#6897bb;">3</span><span style="color:#cc7832;">,</span><span style="color:#6897bb;"> </span><span style="color:#808080;">//기본 선택값
+</span><span style="color:#9876aa;">   readonly</span>: <span style="color:#6897bb;">true </span><span style="color:#808080;">//읽기전용
+</span>})<span style="color:#cc7832;">;
+</span>
+<span style="color:#808080;">//슬라이드 이벤트 등록
+</span><span style="color:#9876aa;">$</span>( <span style="color:#00FFFF;">target</span><span style="color:#9876aa;"> </span>).<span style="color:#ffc66d;">on</span>( <span style="color:#6a8759;">&#39;slider:init slider:change&#39;</span><span style="color:#cc7832;">, </span><span style="color:#cc7832;font-weight:bold;">function </span>( e<span style="color:#cc7832;">, </span>value ) {
+   <span style="color:#808080;">//
+</span>})<span style="color:#cc7832;">;</span></pre>
+
+				<!-- //guide -->
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<!-- 공통 Modal 영역 -->
+<div id="ui-modal-area" style="display:none;">
+	<div class="ui-modal-dim"></div>
+	<div class="layer_popup com_layer_popup ui-modal-default-layer" style="display:none;">
+		<div class="layer_pop_head">
+			<h1 class="ui-modal-title layer_title"></h1>
+			<a href="#" class="ui-modal-btn-close layer_close_btn"><img src="common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<div class="ui-modal-contents-area alert_cont">
+			</div>
+			<div class="ui-modal-btn-area button_area both_btn">
+				<button type="button" class="botton_st_04 purple ui-modal-btn-confirm"></button>
+				<button type="button" class="botton_st_04 ui-modal-btn-cancel"></button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //공통 Modal 영역 -->
+
+<!-- 공통 UI 적용 스크립트 -->
+<script type="text/javascript" src="common/js/ui/ui.common.js"></script>
+<script>
+	$( '.ui-range-slider' ).rangeSlider({
+		numberFormat: true,
+		range: 1000
+	});
+
+	$( '.ui-remain-timer' ).remainTimer({
+		startTime: 0,
+		finishTime: 20 * ( 60 * 1000 )
+	});
+
+
+	//alert, confirm
+	$( '.btn-alert-open' ).click( function (e) {
+		UI.alert( 'Alert 띄우기' ).done( function () {
+			console.log( '확인 버튼 클릭' );
+		});
+	});
+
+	$( '.btn-confirm-open' ).click( function (e) {
+		UI.confirm( 'Confirm 띄우기', {
+			textAlignCenter:true
+		}).done( function () {
+			console.log( '확인 버튼 클릭' );
+		}).fail( function () {
+			console.log( '취소나 "X"버튼 클릭' );
+		});
+	});
+	
+	//10.슬라이드
+	$( '.ui-rating-slider' ).slider({
+		baseWidth: 439,
+		min: 1,
+		max: 10,
+		value: 5
+	});
+</script>
+</body>
+</html>

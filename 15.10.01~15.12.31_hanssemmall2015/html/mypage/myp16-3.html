@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 영수증조회 팝업</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+	<style type="text/css">
+		body {padding:50px;}
+	</style>
+</head>
+<body>
+	<div id="layer_popup" class="layer_popup pop_receipt_inquiry">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">영수증조회</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<div class="search_box clear">
+				<div class="sb1 ui-datepicker-btn">
+					<button type="button" class="botton_st_03 white fir">1주일</button><button type="button" class="botton_st_03 white">1개월</button><button type="button" class="botton_st_03 white">3개월</button><button type="button" class="botton_st_03 white fin">6개월</button>
+				</div>
+				<div class="sb1">							
+					<input type="text" class="from_date typ1 datepicker" title="검색 시작일 입력" /><span class="cal_space">~</span>
+					<input type="text" class="to_date typ1 datepicker" title="검색 마지막일 입력" />
+				</div>
+				<div class="sb2">
+					<button type="button" class="botton_st_03 gray ml_2">조회</button>
+				</div>
+			</div>
+			<p class="txt_noti">※ 최근 2주 이내의 조회 결과 입니다.</p>
+			<table class="tbl txt_c" summary="">
+				<caption></caption>
+				<colgroup>
+					<col width="50px" />
+					<col width="120px" />
+					<col width="100px" />
+					<col width="230px" />
+					<col width="100px" />
+					<col width="*" />
+				</colgroup>
+				<thead>
+					<tr class="bg">
+						<th>번호</th>
+						<th>주문번호</th>
+						<th>주문일</th>
+						<th>상품명</th>
+						<th>결재수단</th>
+						<th>영수증</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>10</td>
+						<td>2015102747441</td>
+						<td>2015-10-27</td>
+						<td class="prd">
+							수납침대SS 화이트 협탁 외 3개
+						</td>
+						<td>무통장</td>
+						<td><button type="button" class="botton_st_02">출력</button></td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>2015102747441</td>
+						<td>2015-10-27</td>
+						<td class="prd">
+							아임 빅 수납침대SS 화이트 협탁형 
+						</td>
+						<td>계좌이체</td>
+						<td><button type="button" class="botton_st_02">출력</button></td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>2015102747441</td>
+						<td>2015-10-27</td>
+						<td class="prd">
+							아임 빅 수납침대SS 화이트 협탁형 
+						</td>
+						<td>무통장</td>
+						<td><button type="button" class="botton_st_02">출력</button></td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>2015102747441</td>
+						<td>2015-10-27</td>
+						<td class="prd">
+							아임 빅 수납침대SS 화이트 협탁형 
+						</td>
+						<td>신용카드</td>
+						<td><button type="button" class="botton_st_02">출력</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="paging">
+				<span class="arrow prev">
+				  <a href="#none"><img src="../../common/images/common/btn_pre_end.png" alt="처음 페이지" /></a>
+				  <a href="#none"><img src="../../common/images/common/btn_pre.png" alt="이전 페이지" /></a>
+				</span>
+				<span class="list">
+				<span class="now">1</span>
+				  <a href="#none">2</a>
+				  <a href="#none">3</a>
+				  <a href="#none">4</a>
+				  <a href="#none">5</a>
+				</span>
+				<span class="arrow next">
+				 <a href="#none"><img src="../../common/images/common/btn_next_end.png" alt="다음 페이지" /></a>
+				  <a href="#none"><img src="../../common/images/common/btn_next.png" alt="마지막 페이지" /></a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<!-- 2차수정 : 달력추가 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-ui.min.js"></script>	
+	<script type="text/javascript" src="../../common/js/ui/ui.mypage.js"></script>			
+</body>
+</html>

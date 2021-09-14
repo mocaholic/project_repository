@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="http://image.hanssem.com/img/common/favicon.ico" />
+	<title>한샘몰 - 반품번호 조회 팝업</title><!-- 각 페이지별 타이틀 -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/common.css"/><!-- common css -->
+	<link rel="stylesheet" type="text/css" href="../../common/css/popup.css" /><!-- 각 카테고리별 css -->
+	<!-- 공통 스크립트 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/ixBand_0.7.min.js"></script>
+	<script type="text/javascript" src="../../common/js/libs/jquery.placeholder.min.js"></script>
+	<script type="text/javascript" src="../../common/js/ui/ui.plugins.js"></script>
+	<style type="text/css">
+		body {padding:50px;}
+	</style>
+</head>
+<body>
+	<div id="layer_popup" class="layer_popup return_num">
+		<div class="layer_pop_head">
+			<h1 class="ui-layer-title layer_title">반품번호 조회</h1>
+			<a href="#" class="ui-layer-close layer_close_btn"><img src="../../common/images/common/btn_pop_close.png" alt="닫기"></a>
+		</div>
+		<div class="layer_pop_cont">
+			<div class="search_box ">			
+				<label for="" class="ft_size16 ft_black ft_bold">반품번호</label><input type="text" class="typ5 ml15" placeholder="">
+				<button type="button" class="botton_st_03 gray ml_2">조회</button>
+			</div>	
+			<table class="tbl txt_c " summary="">
+				<caption></caption>
+				<colgroup>					
+					<col width="158px" />
+					<col  />
+					<col width="105px" />
+					<col width="105px" />
+					<col width="96px" />					
+				</colgroup>
+				<thead>
+					<tr class="">
+						<th>반품접수일 (반품번호)</th>
+						<th>고객정보</th>
+						<th>구매처</th>
+						<th>금액</th>
+						<th>결재</th>						
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2015-09-20<p class="ft_size13 clr66">(20150904625)</p></td>
+						<td>홍길동 /  <span>010-1234-5678</span></td>
+						<td>네이버</td>
+						<td class="prd">
+							15,000원
+						</td>					
+						<td><button type="button" class="botton_st_02 red">결제하기</button></td>
+					</tr>
+					<!-- 결제하기 버튼 클릭 시 tr class="pay_line" 생성 -->
+					<tr class="pay_line">
+						<td colspan="5">
+							<table class="ptbl" summary="">
+								<caption></caption>
+								<colgroup>
+									<col width="120px"/>
+									<col width="559px"/>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th class="ft_w5 vat">결제금액</th>
+										<td class="txt_left">50,000원</td>
+									</tr>
+									<tr>
+										<th class="ft_w5 vat">결제수단</th>
+										<td class="txt_left">
+											<div class="choice_radio">
+												<input type="radio" id="radio1" name="radio" checked="checked"><label for="radio1" class="ft_size14">신용카드(일반)</label>
+												<input type="radio" id="radio2" name="radio"><label for="radio2" class="ft_size14">신용카드(법인)</label>
+												<input type="radio" id="radio3" name="radio"><label for="radio3" class="ft_size14">실시간 계좌이체</label>
+											</div>
+											<div class="choice_select">
+												<div class="select_area ui-select-box ui-select-box-apply" style="width: 210px;">
+													<a href="javascript:;" class="select ui-select-box-face">신용카드 선택</a><select class="ui-input-select" style="display: none;">
+														<option value="" selected="selected">신용카드 선택</option>
+														<option value="">신한</option>
+														<option value="">비씨</option>
+														<option value="">KB국민</option>
+														<option value="">롯데</option>
+														<option value="">나(외환)</option>
+														<option value="">현대/NH채움</option>
+														<option value="">하나</option>
+														<option value="">우리</option>
+														<option value="">수협</option>
+														<option value="">씨티</option>
+														<option value="">광주</option>
+														<option value="">전북</option>
+														<option value="">제주</option>
+														<option value="">신협체크</option>
+														<option value="">우체국</option>
+														<option value="">MG새마을체크</option>
+														<option value="">저축은행체크</option>
+														<option value="">KDB산업은행</option>
+													</select>
+												<ul class="option_box ui-select-options"><li class="ui-select-option"><a href="javascript:;" class="selected">신용카드 선택</a></li><li class="ui-select-option"><a href="javascript:;">신한</a></li><li class="ui-select-option"><a href="javascript:;">비씨</a></li><li class="ui-select-option"><a href="javascript:;">KB국민</a></li><li class="ui-select-option"><a href="javascript:;">롯데</a></li><li class="ui-select-option"><a href="javascript:;">나(외환)</a></li><li class="ui-select-option"><a href="javascript:;">현대/NH채움</a></li><li class="ui-select-option"><a href="javascript:;">하나</a></li><li class="ui-select-option"><a href="javascript:;">우리</a></li><li class="ui-select-option"><a href="javascript:;">수협</a></li><li class="ui-select-option"><a href="javascript:;">씨티</a></li><li class="ui-select-option"><a href="javascript:;">광주</a></li><li class="ui-select-option"><a href="javascript:;">전북</a></li><li class="ui-select-option"><a href="javascript:;">제주</a></li><li class="ui-select-option"><a href="javascript:;">신협체크</a></li><li class="ui-select-option"><a href="javascript:;">우체국</a></li><li class="ui-select-option"><a href="javascript:;">MG새마을체크</a></li><li class="ui-select-option"><a href="javascript:;">저축은행체크</a></li><li class="ui-select-option"><a href="javascript:;">KDB산업은행</a></li></ul></div>
+												<!-- 4차 수정 : 일시불 삭제
+												<div class="select_area ui-select-box ui-select-box-apply" style="width: 210px;">
+													<a href="javascript:;" class="select ui-select-box-face">일시불</a><select class="ui-input-select" style="display: none;">
+														<option value="" selected="selected">일시불</option>
+														<option value="">2개월</option>
+														<option value="">3개월</option>
+														<option value="">4개월</option>
+														<option value="">5개월</option>
+														<option value="">6개월</option>
+														<option value="">7개월</option>
+														<option value="">8개월</option>
+														<option value="">9개월</option>
+														<option value="">10개월</option>
+														<option value="">11개월</option>
+														<option value="">12개월</option>
+														<option value="">무이자 2개월</option>
+														<option value="">무이자 3개월</option>
+														<option value="">무이자 4개월</option>
+														<option value="">무이자 5개월</option>
+														<option value="">무이자 6개월</option>
+														<option value="">7개월</option>
+														<option value="">8개월</option>
+														<option value="">9개월</option>
+														<option value="">10개월</option>
+														<option value="">11개월</option>
+														<option value="">12개월</option>
+													</select>
+												<ul class="option_box ui-select-options"><li class="ui-select-option"><a href="javascript:;" class="selected">일시불</a></li><li class="ui-select-option"><a href="javascript:;">2개월</a></li><li class="ui-select-option"><a href="javascript:;">3개월</a></li><li class="ui-select-option"><a href="javascript:;">4개월</a></li><li class="ui-select-option"><a href="javascript:;">5개월</a></li><li class="ui-select-option"><a href="javascript:;">6개월</a></li><li class="ui-select-option"><a href="javascript:;">7개월</a></li><li class="ui-select-option"><a href="javascript:;">8개월</a></li><li class="ui-select-option"><a href="javascript:;">9개월</a></li><li class="ui-select-option"><a href="javascript:;">10개월</a></li><li class="ui-select-option"><a href="javascript:;">11개월</a></li><li class="ui-select-option"><a href="javascript:;">12개월</a></li><li class="ui-select-option"><a href="javascript:;">무이자 2개월</a></li><li class="ui-select-option"><a href="javascript:;">무이자 3개월</a></li><li class="ui-select-option"><a href="javascript:;">무이자 4개월</a></li><li class="ui-select-option"><a href="javascript:;">무이자 5개월</a></li><li class="ui-select-option"><a href="javascript:;">무이자 6개월</a></li><li class="ui-select-option"><a href="javascript:;">7개월</a></li><li class="ui-select-option"><a href="javascript:;">8개월</a></li><li class="ui-select-option"><a href="javascript:;">9개월</a></li><li class="ui-select-option"><a href="javascript:;">10개월</a></li><li class="ui-select-option"><a href="javascript:;">11개월</a></li><li class="ui-select-option"><a href="javascript:;">12개월</a></li></ul></div> -->
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<div class="tal_box">
+												<p class="txt1">※ 신용카드와 실시간 계좌이체는 안전거래 서비스 LGU+를 통해 결제됩니다.</p>
+												<p class="button_area"><button type="button" class="botton_st_03">안심클릭서비스</button><button type="button" class="botton_st_03">안전결제(ISP)서비스안내</button><button type="button" class="botton_st_03">공인인증서 발급 방법 안내</button></p>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>			
+					<!-- //결제하기 버튼 클릭 시 tr class="pay_line" 생성 -->
+				</tbody>
+			</table>
+			<div class="button_area both_btn">
+				<button type="button" class="botton_st_04 red ft_size16">결제</button>
+				<button type="button" class="botton_st_04 ft_size16">취소</button>
+			</div>
+		</div>
+	</div>
+	<!-- 공통 UI 적용 스크립트 -->
+	<script type="text/javascript" src="../../common/js/ui/ui.common.js"></script>
+	<!-- 2차수정 : 달력추가 -->
+	<script type="text/javascript" src="../../common/js/libs/jquery-ui.min.js"></script>	
+	<script type="text/javascript" src="../../common/js/ui/ui.mypage.js"></script>			
+</body>
+</html>
