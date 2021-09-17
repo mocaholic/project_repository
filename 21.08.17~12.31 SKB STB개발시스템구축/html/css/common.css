@@ -26,13 +26,13 @@ frameset {border:0px;}
 iframe {width:100%; border:0px;}
 em, address, i {font-style:normal;}
 button, a, input, label, textarea {font-family:"Malgun Gothic", "맑은 고딕", "notokr-regular", "Dotum", "돋음"; vertical-align:middle; font-size:14px;}
-input {display:inline-block; height:35px; padding:0 14px; border:1px solid #e5e5e5; background:#f8f6f5; color:#9a9a9a; width:100%; border-radius:5px;}
+input {display:inline-block; height:35px; padding:0 14px; border:1px solid #c7c7c7; background:#f8f6f5; color:#9a9a9a; width:100%; border-radius:5px;}
 input:focus {background:#fff; color:#222;}
 input[readonly] {background-color:#; color:#222;}
 input[readonly]:focus {background:#f8f6f5;}
 input:disabled {background-color:#;}
-textarea {padding:14px 20px; border:1px solid #dadbdd; color:#222; font-weight:300; resize:none; width:100%;}
-select {min-width:254px; height:35px; padding:0 0 0 10px; border:1px solid #555; border-radius:3px; font-size:14px; color:#222; vertical-align:middle; background:#fff url('../images/icon_select_down.png') no-repeat calc(100% - 12px) center; -webkit-appearance:none; -moz-appearance:none; appearance:none;}
+textarea {padding:14px 20px; border:1px solid #c7c7c7; color:#222; font-weight:300; resize:none; width:100%; border-radius:5px;}
+select {min-width:180px; height:35px; padding:0 0 0 10px; border:1px solid #555; border-radius:3px; font-size:14px; color:#222; vertical-align:middle; background:#fff url('../images/icon_select_down.png') no-repeat calc(100% - 12px) center; -webkit-appearance:none; -moz-appearance:none; appearance:none;}
 select option {color:#999;}
 button {overflow:visible; appearance:none; outline:none; background:none;cursor:pointer; border:0px;}
 button::-moz-focus-inner {padding:0px;}
@@ -98,6 +98,8 @@ a:hover {text-decoration:none;}
 .mb5 {margin-bottom:5px !important;}
 
 .ml0 {margin-left:0 !important;}
+.ml5 {margin-left:5px !important;}
+.ml10 {margin-left:10px !important;}
 
 .pt0 {padding-top:0 !important;}
 .pt20 {padding-top:20px !important;}
@@ -109,9 +111,12 @@ a:hover {text-decoration:none;}
 .pl0 {padding-left:0 !important;}
 
 .w_auto {width:auto !important;}
+.w_full {width:100% !important;}
+.w_140 {width:140px !important;}
 .w_300 {width:300px !important;}
 .w_600 {width:600px !important;}
 
+.fs_22 {font-size:22px !important;}
 .fs_24 {font-size:24px !important;}
 
 .fw_300 {font-weight:300 !important;}
@@ -122,38 +127,42 @@ a:hover {text-decoration:none;}
 .fc_orange {color:#f48025 !important;}
 .fc_blue {color:#0997e5 !important;}
 
-.scroll_y {overflow-y:auto;}
+.scroll_y {position:relative; overflow-y:auto; max-height:240px;}
 
 /* heading */
 h1, h2, h3, h4, h5 {color:#333; font-weight:bold;}
 h2 {font-size:32px; text-align:center; }
 h2.page_title {font-size:26px; font-weight:normal; padding-bottom:15px; border-bottom:1px solid #dfdfdf; position:relative; text-align:left; padding-left:3px; margin-bottom:30px;}
 h2.page_title::after {display:block; content:""; background: linear-gradient(90deg, rgba(226,24,55,1) 0%, rgba(226,24,55,1) 18%, rgba(244,128,37,1) 18%, rgba(244,128,37,1) 100%); width:184px; height:3px; position:absolute; bottom:-1px; left:0;}
+h3 {font-size:20px;}
 
 /* form */
 .form_row {display:flex; align-items:center; width:100%;}
-.form_row.col_2 .form_col:nth-child(1) {width:calc(100% - 156px); flex:auto;}
-.form_row.col_2 .form_col:nth-child(2) {width:156px; flex:auto;}
-.form_row.col_2.rv .form_col:nth-child(1) {width:156px;}
-.form_row.col_2.rv .form_col:nth-child(2) {width:calc(100% - 156px);}
+.form_row label.tit + div {width:calc(100% - 150px);}
+.form_row label.tit + .txt {font-size:16px; margin-top:-3px;}
+.form_row select + .period {margin-left:10px;}
+.form_row.col_2 .form_col:nth-child(1) {width:calc(100% - 150px); flex:auto;}
+.form_row.col_2 .form_col:nth-child(2) {width:150px; flex:auto;}
+.form_row.col_2.rv .form_col:nth-child(1) {width:150px;}
+.form_row.col_2.rv .form_col:nth-child(2) {width:calc(100% - 150px);}
 .form_col {}
 .form_col {flex:1;}
 /* .form_col .btn {height:40px;} */
-.form_col + .form_col {margin-left:4px;}
+.form_col + .form_col {margin-left:10px;}
 
-label.tit {font-size:16px; display:inline-block !important; width:140px;}
+label.tit {font-size:16px; display:inline-block !important; width:150px; font-weight:700;}
 
 .file {position:relative;}
 .file input {position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; z-index:2; cursor:pointer;}
 .file button {background:#000; color:#fff; height:35px; width:100px; border-radius:5px;}
 
 .checkbox {position:relative; display:inline-block; vertical-align:top;}
-.checkbox input[type=checkbox] {position:absolute; top:0; left:0; width:24px; height:24px; opacity:0;}
+.checkbox input[type=checkbox] {position:absolute; top:0; left:0; width:24px; height:24px; opacity:0; cursor:pointer;}
 .checkbox label {line-height:31px;  color:#6a6a6a;}
 .checkbox input[type=checkbox]:not(:disabled) + label {cursor: pointer; }
 .checkbox label:not(.only)::before {margin-right:8px;}
 .checkbox label.only {font-size:0;}
-.checkbox label::before {content:''; display:inline-block; vertical-align:-6px; width:24px; height:24px; background:#fff; border-radius:2px; border:1px solid #e5e5e5;}
+.checkbox label::before {content:''; display:inline-block; vertical-align:-6px; width:24px; height:24px; background:#fff; border-radius:2px; border:1px solid #c7c7c7;}
 .checkbox  :disabled + label {color:#c7c7c7;}
 .checkbox :checked + label::before {background:#fff url('../images/icon_chk.png') no-repeat center; }
 .checkbox :disabled + label::before {}
@@ -165,7 +174,7 @@ label.tit {font-size:16px; display:inline-block !important; width:140px;}
 .radio input[type=radio]:not(:disabled) + label {cursor: pointer; }
 .radio label:not(.only)::before {margin-right:8px;}
 .radio label.only {font-size:0;}
-.radio label::before {content:''; display:inline-block; vertical-align:top; width:24px; height:24px; background:#fff; border-radius:50%; border:1px solid #e5e5e5;}
+.radio label::before {content:''; display:inline-block; vertical-align:top; width:24px; height:24px; background:#fff; border-radius:50%; border:1px solid #c7c7c7;}
 .radio  :disabled + label {color:#c7c7c7;}
 .radio :checked + label::before {background:#fff url('../images/icon_chk.png') no-repeat center 7px; background-size:15px 10px;}
 .radio :disabled + label::before {}
@@ -173,14 +182,14 @@ label.tit {font-size:16px; display:inline-block !important; width:140px;}
 
 
 /* btn */
-.btn {display:inline-block; text-align:center; width:156px; height:35px; flex:1; background:#f48025; color:#fff; font-size:15px; border-radius:5px;}
+.btn {display:inline-block; text-align:center; width:150px; height:35px; flex:1; background:#f48025; color:#fff; font-size:15px; border-radius:5px;}
 .btn.black {background:#000;}
 .btn.lgray {background:#9a9a9a;}
 .btn.more {background:#000;}
 .btn.sm {width:100px;}
 .btn.txt {width:auto; height:auto; padding:3px 10px;}
 .btn.big {height:55px; width:460px; font-size:18px; font-weight:700; border-radius:6px; margin-top:30px;}
-.btn:disabled {background:#ddd; cursor:default;}
+.btn:disabled {background:#c7c7c7; cursor:default;}
 
 .btn_switch {position:relative; cursor:pointer;}
 .btn_switch input[type="checkbox"] {display:none;}
@@ -200,7 +209,7 @@ label.tit {font-size:16px; display:inline-block !important; width:140px;}
 /* tab */
 .tab_menu {margin-bottom:30px;}
 .tab_menu ul {display:flex; border-bottom:1px solid #c9c9c9; height:45px;}
-.tab_menu li {width:233px; height:45px; background:#f5f5f5; border:1px solid #e5e5e5; border-bottom:1px solid #c9c9c9;}
+.tab_menu li {width:233px; height:45px; background:#f5f5f5; border:1px solid #c7c7c7; border-bottom:1px solid #c9c9c9;}
 .tab_menu li a {display:block; text-align:center; color:#000222; font-size:16px; line-height:45px;}
 .tab_menu li.on, .tab_menu li:hover {background:#fff; border:1px solid #c9c9c9; border-bottom:1px solid #fff;}
 .tab_menu li.on a {}
@@ -214,18 +223,19 @@ label.tit {font-size:16px; display:inline-block !important; width:140px;}
 .tbl_list.bdt {border-top:2px solid #555;}
 .tbl_list thead {}
 .tbl_list thead tr {border-bottom:1px solid #555;}
-.tbl_list thead tr.sticky {position:sticky; top:0; left:0; background:#fff; box-shadow:inset 0 2px 0 #555, inset 0 -1px 0 #555;}
-.tbl_list thead tr.sticky th {border-bottom:none;}
-.tbl_list thead th {border-top:2px solid #555; font-weight:700; background:#fff;}  
+.tbl_list thead tr.sticky {position:sticky; top:0; left:0; background:#fff; box-shadow:inset 0 2px 0 #555, inset 0 -1px 0 #555; z-index:3;}
+.tbl_list thead th {border-top:2px solid #555; font-weight:700; background:#fff; height:32px;}  
 .tbl_list tbody {}
-.tbl_list tbody tr {border-bottom:1px solid #ddd;}
-.tbl_list tbody tr:hover td {color:#e21837;}
+.tbl_list tbody tr {border-bottom:1px solid #c7c7c7;}
+.tbl_list tbody tr:hover td {color:#e21837; cursor:pointer;}
 .tbl_list tbody th {text-align:left; padding-left:10px; font-weight:700; background:#efefef;}
 .tbl_list tbody th + td {text-align:left; padding-left:10px; font-size:14px;}
 .tbl_list tbody td .tbl_list th {text-align:center; padding-left:0; background:#fff;}
-.tbl_list th {font-size:14px; color:#222; padding:6px 0 5px; line-height:1.45; text-align:center;}
-.tbl_list td {font-size:12px; color:#222; text-align:center; padding:4px 0 3px; line-height:1.45;}
-.tbl_list td.left {text-align:left; padding:2px 10px 1px;}
+.tbl_list tr {z-index:1;}
+.tbl_list th {font-size:14px; color:#222; padding:5px 0; line-height:1.45; text-align:center;}
+.tbl_list td {font-size:13px; color:#222; text-align:center; padding:3px 0; line-height:1.45;}
+.tbl_list td.left {text-align:left; padding:3px 10px 3px;}
+.tbl_list td button + button {margin-left:5px;}
 .tbl_list .btn.txt {font-size:12px;}
 
 /* paging */
@@ -252,7 +262,7 @@ label.tit {font-size:16px; display:inline-block !important; width:140px;}
 .popup .pop_body {}
 .popup .cont_area {padding:30px 0;}
 .popup .tbl_list {min-width:300px;}
-.popup .tbl_list tr:hover td {color:#222;}
+.popup .tbl_list tr:hover td {color:#222; cursor:auto;}
 .popup .tbl_list .scroll_y {margin-top:10px; max-height:300px; background:; padding:0 0 10px;}
 .popup .tbl_list .scroll_y .tbl_list {width:100%;}
 .popup .board_top .r_area select {min-width:100px;}

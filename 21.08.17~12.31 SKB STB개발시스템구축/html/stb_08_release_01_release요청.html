@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>SKB STB SW 개발 시스템</title>
+	<link type="text/css" rel="stylesheet" href="css/common.css" />
+	<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>
+</head>
+<body id="body">
+	<!-- wrap -->
+	<div id="wrapper">
+        <!-- left section -->
+        <div id="left_wrap">
+            <h1>
+                SK broadband
+                <span>STB SW 개발 시스템</span>
+            </h1>
+            <div class="util_menu">
+                <a href="#"><span>시스템관리</span></a>
+                <a href="#"><span>정보수정</span></a>
+                <a href="#"><span>Logout</span></a>
+            </div>
+
+            <nav class="lnb_area">
+                <ul id="lnb">
+                    <li>
+                        <a href="#" class="depth01">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">PLAN</a>
+                        <ul class="depth02">
+                            <li><a href="#">프로젝트 관리</a></li>
+                            <li><a href="#">Source</a></li>
+                            <li><a href="#">brc Party</a></li>
+                            <li><a href="#">펌웨어</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Code 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Commit 요청</a></li>
+                            <li><a href="#">Tagging 요청</a></li>
+                            <li><a href="#">Code review 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Build 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Build 요청</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01">Test 요청</a>
+                        <ul class="depth02">
+                            <li><a href="#">Test 요청</a></li>
+                        </ul>
+                    </li>
+                    <li class="on">
+                        <a href="#" class="depth01">Release 전송</a>
+                        <ul class="depth02">
+                            <li class="on"><a href="#">Release 전송</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- // left section -->
+        	
+		<!-- container -->
+		<div id="container">  
+            <!-- contents -->
+            <div id="contents">
+                <h2 class="page_title">Release 요청</h2>
+
+                <!-- cont_inner -->
+                <div class="cont_inner d_flex jcontent_s">
+                    <div class="cont_l">
+                        <h3 class="mt10">프로젝트 목록</h3>
+                        <ul class="list_t">
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li class="selected">
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                            <li>
+                                <a href="#">UI531</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont_r">
+                        <div class="board_top">
+                            <h3>프로젝트 명 : <span class="fs_22">UI531</span></h3>
+                            <div class="r_area">
+                                <div class="sch_box">
+                                    <input type="text" placeholder="검색어를 입력하세요" />
+                                    <button type="button" class="btn_sch">검색</button>
+                                </div>
+                                <div class="btn_area">
+                                    <button type="button" class="btn" onclick="popup('release_req')">Release 요청</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <table class="tbl_list">
+                            <colgroup>
+                                <col style="width:10%;" />
+                                <col style="width:10%;" />
+                                <col style="width:15%;" />
+                                <col style="width:10%;" />
+                                <col style="width:10%;" />
+                                <col style="width:10%;" />
+                                <col style="width:15%;" />
+                                <col style="width:20%;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">요청일</th>
+                                    <th scope="col">STB 모델</th>
+                                    <th scope="col">DEST</th>
+                                    <th scope="col">펌웨어 버전</th>
+                                    <th scope="col">Stage</th>
+                                    <th scope="col">사용중단</th>
+                                    <th scope="col">요청자</th>
+                                    <th scope="col">피드백</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2021.08.10 19:00</td>      
+                                    <td>BIP-AI100</td>
+                                    <td onclick="popup('firmware')">BIP-AI100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>                 
+                                    <td></td>         
+                                    <td></td>
+                                    <td onclick="popup('firmware')">BIP-AI100_5.3.4</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td>사용중단</td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">BIP-AI100_5.3.3</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>                                
+                                    <td>UXD-BX100</td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td><span class=""></span></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.4</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.3</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.2</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td>사용중단</td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.1</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td><span class=""></span></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td><span class=""></span></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2021.08.09 09:20</td> 
+                                    <td>BFX-UA300</td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td><span class=""></span></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td>사용중단</td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td><span class=""></span></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td>사용중단</td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">UXD-BX100_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>Alpha</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BFX-UA300</td>
+                                    <td onclick="popup('firmware')">BFX-UA300_5.3.5</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>QA</td>
+                                    <td></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td onclick="popup('firmware')">BFX-UA300_5.3.4</td>
+                                    <td onclick="popup('firmware')">15.234.7</td>
+                                    <td>QA</td>
+                                    <td><span class=""></span></td>
+                                    <td>홍길동(admin)</td>
+                                    <td>
+                                        <button type="button" class="btn txt black" onclick="popup('feedback_send')">피드백 전송</button>
+                                        <button type="button" class="btn txt" onclick="popup('feedback_send')">사용중단 요청</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="paging">
+                            <a href="#" class="prev_more">
+                                <span>처음</span>
+                            </a>
+                            <a href="#" class="prev">
+                                <span>이전</span>
+                            </a>
+                            <a href="#" class="on">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#" class="next">
+                                <span>다음</span>
+                            </a>
+                            <a href="#" class="next_more">
+                                <span>마지막</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- // cont_inner -->
+            </div>
+            <!-- // contents -->
+            <!-- footer -->
+            <footer id="footer">
+                <div class="footer_info">
+                    <p class="copy">Copyright © Device Development Squad, SK Boradband 2021.</p>
+                </div>
+            </footer>
+            <!-- //footer -->
+		</div>
+		<!-- //container -->
+		
+	</div>
+	<!-- //wrap -->
+
+    <!-- popup -->
+    <!-- Release 요청 -->
+    <div class="layer_popup release_req">
+        <div class="popup">
+            <h1>Release 요청</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="form_area">
+                        <div class="form_row">
+                            <label for="" class="tit">프로젝트</label>
+                            <strong class="txt">UI530</strong>
+                        </div>
+                        <div class="form_row aitems_s">
+                            <label for="" class="tit asterisk mt5">브렌치</label>
+                            <div>
+                                <button type="button" class="btn txt" onclick="popup('target_br');">브렌치 추가</button>
+                                <div class="scroll_y mt5">
+                                    <table class="tbl_list">
+                                        <colgroup>
+                                            <col style="width:30%;" />
+                                            <col style="width:30%;" />
+                                            <col style="width:40%;" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">STB 모델</th>
+                                                <th scope="col">DEST</th>
+                                                <th scope="col">펌웨어 버전</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>BID-AI100</td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.8</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BFX-UA300</td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.6</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.9</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">Stage</label>
+                            <select>
+                                <option>Alpha</option>
+                                <option>Beta</option>
+                                <option>QA</option>
+                                <option>BMT</option>
+                            </select>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">Comment</label>
+                            <textarea class="w_300" rows="3" placeholder="Comment를 입력해주세요."></textarea>
+                        </div>
+                        <div class="form_row col_2 rv aitems_s">
+                            <div class="form_col">
+                                <label for="" class="tit asterisk">메일 수신처</label><br>
+                                <button type="button" class="btn sm black mt5" onclick="popup('find_recipients');">대상찾기</button>
+                            </div>
+                            <div class="form_col ml0">
+                                <div class="mail_reception">
+                                    <div class="m_tag">
+                                        홍길동(SKP)
+                                        <button type="button" class="btn_del">삭제</button>
+                                    </div>
+                                    <div class="m_tag">
+                                        Anyway.app
+                                        <button type="button" class="btn_del">삭제</button>
+                                    </div>
+                                    <div class="m_tag">
+                                        홍길동(SK Broadband)
+                                        <button type="button" class="btn_del">삭제</button>
+                                    </div>
+                                    <textarea rows="1"></textarea>
+                                </div>
+                                <!-- 입력 시 노출되는 리스트 -->
+                                <div class="mail_list">
+                                    <div class="ml">
+                                        <b>A</b>
+                                        홍길동(SKP)
+                                    </div>
+                                    <div class="ml">
+                                        <b>A</b>
+                                        홍만덕(SK Broadband)
+                                    </div>
+                                    <div class="ml">
+                                        <b>A</b>
+                                        홍칠이(가비아 주식회사)
+                                    </div>
+                                    <div class="ml">
+                                        <b>A</b>
+                                        nyway.app
+                                    </div>
+                                </div>
+                                <!-- // 입력 시 노출되는 리스트 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">Tagging 요청</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('release_req')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('release_req')">×</button>
+        </div>
+    </div>
+    <!-- // Release 요청 -->
+    <!-- 브렌치 선택 -->
+    <div class="layer_popup target_br">
+        <div class="popup">
+            <h1>브렌치 선택</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="form_area">
+                        <div class="d_flex">
+                            <!-- STB 모델 -->
+                            <div class="pos_r">
+                                <div class="top">
+                                    <h2 class="tit">STB 모델 선택<span>(필터용)</span></h2> 
+                                    <input type="text" class="mt10" placeholder="검색어를 입력해주세요" />
+                                </div>
+                                <div class="line_box mt15">
+                                    <ul class="chk_list">
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb1" name="stb" />
+                                                <label for="stb1">BID-AI100</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb2" name="stb" />
+                                                <label for="stb2">BFX-UA300</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb3" name="stb" />
+                                                <label for="stb3">BFX-UA200</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb4" name="stb" />
+                                                <label for="stb4">BFX-UA100</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb5" name="stb" />
+                                                <label for="stb5">BKO-UH600</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb6" name="stb" />
+                                                <label for="stb6">BKO-UH500</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb7" name="stb" />
+                                                <label for="stb7">BKO-UH400</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb8" name="stb" />
+                                                <label for="stb8">BKO-UH300</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb1" name="stb" />
+                                                <label for="stb1">BID-AI100</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb2" name="stb" />
+                                                <label for="stb2">BFX-UA300</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb3" name="stb" />
+                                                <label for="stb3">BFX-UA200</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb4" name="stb" />
+                                                <label for="stb4">BFX-UA100</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb5" name="stb" />
+                                                <label for="stb5">BKO-UH600</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb6" name="stb" />
+                                                <label for="stb6">BKO-UH500</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb7" name="stb" />
+                                                <label for="stb7">BKO-UH400</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="stb8" name="stb" />
+                                                <label for="stb8">BKO-UH300</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- // STB 모델 -->
+
+                            <!-- 브렌치 -->
+                            <div class="pos_r">
+                                <div class="top">
+                                    <h2 class="tit">브렌치</h2>
+                                    <input type="text" class="mt10" placeholder="검색어를 입력해주세요" />
+                                </div>
+                                <div class="line_box mt15">
+                                    <ul class="chk_list">
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc1" name="brc" />
+                                                <label for="brc1">anypoint</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc2" name="brc" />
+                                                <label for="brc2">bootanimation</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc3" name="brc" />
+                                                <label for="brc3">boot_config</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc4" name="brc" />
+                                                <label for="brc4">daims_log-agent</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc5" name="brc" />
+                                                <label for="brc5">digcap_btv-app</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc6" name="brc" />
+                                                <label for="brc6">digcap_btv-app</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc7" name="brc" />
+                                                <label for="brc7">digcap_btv-app</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="brc8" name="brc" />
+                                                <label for="brc8">digcap_btv-app</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- // 브렌치 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">적용</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('target_br')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('target_br')">×</button>
+        </div>
+    </div>
+    <!-- // 브렌치 선택 -->
+    <!-- DEST 이력 -->
+    <div class="layer_popup firmware">
+        <div class="popup">
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="scroll_y">
+                        <table class="tbl_list">
+                            <colgroup>
+                                <col style="width:30%;" />
+                                <col style="width:30%;" />
+                                <col style="width:40%;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">STB 모델</th>
+                                    <th scope="col">DEST</th>
+                                    <th scope="col">펌웨어 버전</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BID-AI100</td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.8</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.7</td>
+                                </tr>
+                                <tr>
+                                    <td>BFX-UA300</td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.6</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.5</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>BID-AI100_5.3.1</td>
+                                    <td>15.123.9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">확인</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('firmware')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('firmware')">×</button>
+        </div>
+    </div>
+    <!-- // DEST 이력 -->
+    <!-- 피드백 전송, 사용 중단 요청 -->
+    <div class="layer_popup feedback_send">
+        <div class="popup">
+            <h1>피드백 전송</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="form_area">
+                        <div class="form_row">
+                            <label for="" class="tit">프로젝트</label>
+                            <strong class="txt">UI530</strong>
+                        </div>
+                        <div class="form_row aitems_s">
+                            <label for="" class="tit mt5">브렌치</label>
+                            <div>
+                                <div class="scroll_y mt5">
+                                    <table class="tbl_list">
+                                        <colgroup>
+                                            <col style="width:25%;" />
+                                            <col style="width:25%;" />
+                                            <col style="width:25%;" />
+                                            <col style="width:25%;" />
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">STB 모델</th>
+                                                <th scope="col">DEST</th>
+                                                <th scope="col">펌웨어 버전</th>
+                                                <th scope="col">사용중단</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>BID-AI100</td>
+                                                <td>BID-AI100_5.3.1</td>
+                                                <td>15.123.7</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit">Stage</label>
+                            <span class="txt">Alpha</span>
+                        </div>
+                        <div class="form_row">
+                            <label for="" class="tit asterisk">Comment</label>
+                            <textarea class="w_300" rows="3" placeholder="Comment를 입력해주세요."></textarea>
+                        </div>
+                        <div class="form_row col_2 rv aitems_s">
+                            <div class="form_col">
+                                <label for="" class="tit asterisk">메일 수신처</label><br>
+                                <button type="button" class="btn sm black mt5" onclick="popup('find_recipients');">대상찾기</button>
+                            </div>
+                            <div class="form_col ml0">
+                                <div class="mail_reception">
+                                    <div class="m_tag">
+                                        홍길동(SKP)
+                                        <button type="button" class="btn_del">삭제</button>
+                                    </div>
+                                    <div class="m_tag">
+                                        Anyway.app
+                                        <button type="button" class="btn_del">삭제</button>
+                                    </div>
+                                    <div class="m_tag">
+                                        홍길동(SK Broadband)
+                                        <button type="button" class="btn_del">삭제</button>
+                                    </div>
+                                    <textarea rows="1"></textarea>
+                                </div>
+                                <!-- 입력 시 노출되는 리스트 -->
+                                <div class="mail_list">
+                                    <div class="ml">
+                                        <b>A</b>
+                                        홍길동(SKP)
+                                    </div>
+                                    <div class="ml">
+                                        <b>A</b>
+                                        홍만덕(SK Broadband)
+                                    </div>
+                                    <div class="ml">
+                                        <b>A</b>
+                                        홍칠이(가비아 주식회사)
+                                    </div>
+                                    <div class="ml">
+                                        <b>A</b>
+                                        nyway.app
+                                    </div>
+                                </div>
+                                <!-- // 입력 시 노출되는 리스트 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">피드백 전송</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('feedback_send')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('feedback_send')">×</button>
+        </div>
+    </div>
+
+    <script>
+        // 화면 확인용 script (메일 수신처 - 대상찾기)
+        $('.mail_reception').click(function(e){
+            if(!$(e.target).is(".m_tag, .btn_del")) { 
+                $(this).find('textarea').focus();
+                console.log('d');
+            }
+        });
+
+        $('.mail_reception textarea').each(function(){
+            $(this).focusin(function(){
+                $('.mail_list').show();
+            });
+            $(this).focusout(function(){
+                $('.mail_list').hide();
+            });
+        });
+    </script>
+    <!-- // 피드백 전송 -->
+    
+    <!-- 메일 수신처 찾기 -->
+    <div class="layer_popup find_recipients">
+        <div class="popup">
+            <h1>메일 수신처 찾기</h1>
+            <div class="pop_body">
+                <div class="cont_area">
+                    <div class="board_top">
+                        <p class="rst_txt">총 <strong class="fc_red">30</strong>건이 검색되었습니다.</p>
+                        <div class="r_area">
+                            <select>
+                                <option>전체</option>
+                                <option>brc party</option>
+                                <option>제조사</option>
+                                <option>미들웨어사</option>
+                                <option>칩사</option>
+                            </select>
+                            <div class="sch_box">
+                                <input type="text" placeholder="검색어를 입력하세요" />
+                                <button type="button" class="btn_sch">검색</button>
+                            </div>
+                            <div class="btn_area">
+                                <button type="button" class="btn sm">선택 추가</button>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="scroll_y">
+                        <table class="tbl_list">
+                            <colgroup>
+                                <col style="width:31px;" />
+                                <col style="width:80px;" />
+                                <col style="width:200px;" />
+                                <col style="width:80px;" />
+                                <col style="width:80px;" />
+                                <col style="width:80px;" />
+                                <col style="width:80px;" />
+                                <col style="width:180px;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk_all" name="chk" />
+                                            <label for="chk_all"></label>
+                                        </div>
+                                    </th>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">Modules</th>
+                                    <th scope="col">POC</th>
+                                    <th scope="col">SKB담당자</th>
+                                    <th scope="col">개발사</th>
+                                    <th scope="col">개발 담당자</th>
+                                    <th scope="col">이메일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>brc Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>brc Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>brc Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>brc Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk1" name="chk" />
+                                            <label for="chk1"></label>
+                                        </div>
+                                    </td>
+                                    <td>brc Party</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>안성현</td>
+                                    <td>UEI</td>
+                                    <td>홍길동</td>
+                                    <td>fasds@gmail.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk2" name="chk" />
+                                            <label for="chk2"></label>
+                                        </div>
+                                    </td>
+                                    <td>제조사</td>
+                                    <td class="left">sptek_btv-middleware, sptek_device-control-app</td>
+                                    <td>UHD1</td>
+                                    <td>안성현</td>
+                                    <td>디지캠</td>
+                                    <td>강민경</td>
+                                    <td>34fs2@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk3" name="chk" />
+                                            <label for="chk3"></label>
+                                        </div>
+                                    </td>
+                                    <td>미들웨어사</td>
+                                    <td class="left">Anypoint_adv</td>
+                                    <td></td>
+                                    <td>안성현</td>
+                                    <td>SKB</td>
+                                    <td>민설진</td>
+                                    <td>gsd4ss2@daum.net</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="chk4" name="chk" />
+                                            <label for="chk4"></label>
+                                        </div>
+                                    </td>
+                                    <td>칩사</td>
+                                    <td class="left"></td>
+                                    <td class="left"></td>
+                                    <td>이미영</td>
+                                    <td>SKP</td>
+                                    <td>안영미</td>
+                                    <td>pgerfs3f452@naver.com</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="paging">
+                            <a href="#" class="prev_more">
+                                <span>처음</span>
+                            </a>
+                            <a href="#" class="prev">
+                                <span>이전</span>
+                            </a>
+                            <a href="#" class="on">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#" class="next">
+                                <span>다음</span>
+                            </a>
+                            <a href="#" class="next_more">
+                                <span>마지막</span>
+                            </a>
+                        </div>
+                    </div>
+                    <h2 class="tit mt20">선택 수신처</h2>                
+                    <div class="mt10">
+                        <div class="m_tag">
+                            강민경(SKB)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="m_tag">
+                            홍길동(SKB)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="m_tag">
+                            홍길동(SKP)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="m_tag">
+                            홍길동(SKP)
+                            <button type="button" class="btn_del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="btn">적용</button>
+                    <button type="button" class="btn lgray" onclick="popupClose('find_recipients')">취소</button>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="popupClose('find_recipients')">×</button>
+        </div>
+    </div>
+    <!-- // 메일 수신처 찾기 -->
+    <!-- // popup -->
+</body>
+</html>
