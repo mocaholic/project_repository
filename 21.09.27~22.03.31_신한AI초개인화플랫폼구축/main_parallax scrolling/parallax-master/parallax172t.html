@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>Parallax</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i'" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <style>
+        /* reset */
+        * {margin:0; padding:0; font-family: 'Lato';}
+        li {list-style: none;}
+        a {text-decoration: none;}
+        
+        /* nav */
+        #nav {position: fixed; left: 0; top: 0px; width: 100%; height: 61px; z-index: 1000; background-color: rgba(255,255,255,0.3); transition: all 0.3s ease;}
+        #nav.on {position: fixed; top: -61px;}
+        #nav h1 {float: left; color: #fff; font-size: 40px; padding: 5px 5px 5px 15px; font-family: 'Abel' }
+        
+        /* contents */
+        #contents {text-align: center; color: #fff;}
+
+        /* section */
+        #section1 {background:radial-gradient(ellipse farthest-corner at center top, #A3A1FF, #3A3897);}
+        #section1 h2 {font-size: 70px; font-weight: 200; text-transform: uppercase; padding: 20% 0;}
+        
+        /* container */
+        .container {width: 1200px; margin: 0 auto;}
+
+        /* post */
+        #postWrap {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #postWrap .post {
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            background-image: url(https://tistory2.daumcdn.net/tistory/2933724/skin/images/banner01.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 30px 30px 100px 30px;
+            background-color: #272C4E; 
+            
+        }
+        #postWrap .post:nth-child(2) {filter: hue-rotate(10deg) sepia(140%)}
+        #postWrap .post:nth-child(3) {filter: saturate(200%);}
+        #postWrap .post:nth-child(4) {filter: invert(10%);}
+        #postWrap .post:nth-child(5) {filter: hue-rotate(50deg)}
+        #postWrap .post:nth-child(6) {filter: hue-rotate(150deg)}
+        #postWrap .post:nth-child(7) {filter: hue-rotate(250deg)}
+        #postWrap .post:nth-child(8) {filter: hue-rotate(350deg)}
+        #postWrap .post:nth-child(9) {filter: grayscale(100%)}
+        #postWrap .post:nth-child(10) {filter: brightness(60%);}
+
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h1>WEB'S</h1>
+    </nav>
+
+    <div id="contents">
+        <div id="section1">
+            <h2>스크롤을 내리면 이미지가 <br>부드럽게 움직이게 하는 효과입니다.</h2>
+            <div class="container">
+                <div id="postWrap">
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                    <div class="post"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script>
+        var html = document.documentElement;
+        var body = document.body;
+
+        var scroller = {
+            target: document.querySelector("#postWrap"),
+            ease: 0.02, // <= scroll speed
+            endY: 0,
+            y: 0,
+            resizeRequest: 1,
+            scrollRequest: 0,
+        };
+
+        var requestId = null;
+
+        TweenLite.set(scroller.target, {
+            rotation: 0.01,
+            force3D: true
+        });
+
+        window.addEventListener("load", onLoad);
+
+        function onLoad() {    
+            updateScroller();  
+            window.focus();
+            window.addEventListener("resize", onResize);
+            document.addEventListener("scroll", onScroll); 
+        }
+
+        function updateScroller() {
+            var resized = scroller.resizeRequest > 0;
+            if (resized) {    
+                var height = scroller.target.clientHeight;
+                body.style.height = height + "px";
+                scroller.resizeRequest = 0;
+            }
+            
+            var scrollY = window.pageYOffset || html.scrollTop || body.scrollTop || 0;
+
+            scroller.endY = scrollY;
+            scroller.y += (scrollY - scroller.y) * scroller.ease;
+
+            if (Math.abs(scrollY - scroller.y) < 0.05 || resized) {
+                scroller.y = scrollY;
+                scroller.scrollRequest = 0;
+            }
+
+            TweenLite.set(scroller.target, { 
+                y: -scroller.y 
+            });
+
+            requestId = scroller.scrollRequest > 0 ? requestAnimationFrame(updateScroller) : null;
+        }
+
+        function onScroll() {
+            scroller.scrollRequest++;
+            if (!requestId) {
+            requestId = requestAnimationFrame(updateScroller);
+            }
+        }
+
+        function onResize() {
+            scroller.resizeRequest++;
+            if (!requestId) {
+            requestId = requestAnimationFrame(updateScroller);
+            }
+        }
+        
+    </script>
+</body>
+</html>

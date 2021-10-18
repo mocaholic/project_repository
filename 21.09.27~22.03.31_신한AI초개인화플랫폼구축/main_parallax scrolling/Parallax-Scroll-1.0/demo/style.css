@@ -1,0 +1,61 @@
+*, *::before, *::after {box-sizing:border-box}
+body {margin:0}
+
+.parallax-item {
+    width: 100%;
+    height: 50vh;
+    position: relative
+}
+
+.parallax-item.full {
+    height:100vh
+}
+
+.item-title {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    color:#fff;
+    z-index:2
+}
+
+.bg-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.bg {
+    position: fixed;
+    display: block;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-size: cover;
+    background-position: center center;
+}
+
+.parallax-item[data-title] .bg{
+    opacity:.5
+}
+
+.parallax-item[data-title] {
+    background:#000
+}
+
+.text {
+    margin:3rem 0;
+    padding:0 3rem;
+    line-height:2;
+    font-size:1.5rem
+}
