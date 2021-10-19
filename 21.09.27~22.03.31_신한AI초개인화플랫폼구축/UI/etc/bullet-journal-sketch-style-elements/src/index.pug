@@ -1,0 +1,125 @@
+main
+	section.traced-header
+		h1(data-splitting="items") 
+			| Just Bullet Journal Things
+	section.titles
+		
+		.normal-header
+			h1 Sample Title
+		
+		.circled-header
+			h1(data-splitting="items") Titles
+		.repeated-header
+			h1 Another!
+			
+	section.highlights(data-title="Bullet journalists use highlighters, like all the time.")
+		h5.highlight A Title
+		p.highlight.pink Text
+		p.highlight.yellow
+		p.highlight.orange
+		p.highlight.blue
+		button.highlight.purple
+			span Button?!
+	
+	section.tapes(data-title="Washi tapes are the bomb!")
+		.washi-tape.polkadot
+		.washi-tape.polkadot-dark
+		.washi-tape.dream
+		.washi-tape.zigzag
+		.washi-tape.emoji
+		.washi-tape.lines
+		
+	
+	section.lists-2
+		div.box-2
+			.grocery-list
+				h4 Kawaii List
+				- for (var i=0; i<20; i++)
+					input(type="text")
+					
+	
+	section.lists
+		div.box-1
+			h3 To-Do
+				small 15 October
+			ul.squiggly
+				li List Item 1
+				li List Item 2
+			ul.important
+				li List Item 1
+				li List Item 2
+			ul.curved
+				li List Item 1
+				li List Item 2
+				
+	
+	fieldset.forms
+		legend A form
+		.field-wrapper
+			label Fill
+			input(type="text" value="" placeholder="email@fox.com")
+		//.field-wrapper
+			input.alternative(type="text" value="" placeholder="Also fill here")
+		.field-wrapper
+			label Choose
+			select
+				option(selected value="1") Option 1
+				option(value="2")  Option 2
+				option(value="3")  Option 3
+		.field-wrapper
+			input(id="radio-1" type="radio" name="radio-type" checked)
+			label(for="radio-1") Radio 1
+			input(id="radio-2" type="radio" name="radio-type" checked)
+			label(for="radio-2") Radio 2
+		.field-wrapper
+			input(id="check-1" type="checkbox" name="check-type" checked)
+			label(for="check-1") Check
+			input(id="check-2" type="checkbox" name="check-type")
+			label(for="check-2") Check?
+			
+	
+	section.buttons
+		
+		button.btn-circle
+			span.visually-hidden Like this item
+		button.btn-circle.btn-star
+			span.visually-hidden Star this item
+		button.btn-circle.btn-x
+			span.visually-hidden Add this item
+		button.btn-box
+			span Button
+		button.btn-box.btn-box-dark
+			span Button
+		button.btn
+			span A button!
+	
+	
+	section.images
+		figure.polaroid
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/perth.jpg" alt="Poodle in Perth")
+			figcaption Memories
+		figure.classy
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/scotland.jpg" alt="White floof in Scotland")
+		figure.frame
+			img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/IMG_9409.JPG" alt="Dog party in Singapore")
+		
+	.title-cloud(data-title="This was supposed to be a cloud...")
+		h1 
+			span A
+			span Random
+			span Blob
+			
+			
+aside.context
+	.explanation
+		| An extension of the 
+		a(href="https://codepen.io/oliviale/full/aPwaXm" target="_blank") Bullet Journal pen
+		| .			
+
+footer
+	a(href="https://twitter.com/meowlivia_" target="_blank")
+		i.icon-social-twitter.icons
+	a(href="https://github.com/oliviale" target="_blank")
+		i.icon-social-github.icons
+	a(href="https://dribbble.com/oliviale" target="_blank")
+		i.icon-social-dribbble.icons

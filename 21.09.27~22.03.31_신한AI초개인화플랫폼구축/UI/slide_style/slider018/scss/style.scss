@@ -1,0 +1,135 @@
+$green: #009e5f;
+
+#product-carousel-container {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+#product-carousel {
+  height: 45vw;
+  margin: 50px 0 0;
+  list-style: none;
+  position: relative;
+
+  li {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 1;
+
+    &.item-1 {
+      z-index: 2;
+      transform: translateX(-50%) scale(1) translate3d(0, 0, 0);
+    }
+
+    &.item-2 {
+      z-index: 1;
+      transform: translateX(-50%) scale(0.7) translate3d(240%, -10%, 0);
+    }
+
+    &.item-3 {
+      z-index: 0;
+      transform: translateX(-50%) scale(0.5) translate3d(180%, -31%, 0);
+    }
+
+    &.item-4 {
+      z-index: 0;
+      transform: translateX(-50%) scale(0.5) translate3d(-180%, -31%, 0);
+    }
+
+    &.item-5 {
+      z-index: 1;
+      transform: translateX(-50%) scale(0.7) translate3d(-240%, -10%, 0);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(https://www.7up.com/images/bottle-shadow.png) no-repeat 50% 85%;
+      background-size: 100% auto;
+    }
+
+    &:hover {
+      img {
+        transform: translateY(-15px);
+      }
+    }
+
+    &:not(:hover) {
+      img {
+        transition: transform .075s ease-out;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 50%;
+      transition: transform .25s ease-in;
+    }
+  }
+}
+
+#product-carousel-nav {
+  .carousel-nav {
+    position: absolute;
+    top: 45%;
+    width: 50px;
+    height: 50px;
+    border-top: 2px solid $green;
+    border-right: 2px solid $green;
+    border-bottom: none;
+    border-left: none;
+    background-color: transparent;
+    outline: 0;
+    cursor: pointer;
+
+    &.prev {
+      left: -35%;
+      transform: rotate(-135deg);
+    }
+
+    &.next {
+      right: -35%;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+#carousel-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    li {
+      display: inline-block;
+      margin: 0 15px;
+      width: 10px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 100%;
+      cursor: pointer;
+
+      &.active {
+        background-color: $green;
+      }
+    }
+  }
+}

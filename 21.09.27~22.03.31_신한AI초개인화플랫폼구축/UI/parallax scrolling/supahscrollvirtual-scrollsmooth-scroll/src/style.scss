@@ -1,0 +1,103 @@
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font-size: calc(10px + 1vw);
+    font-family: Roboto,sans-serif;
+    color: #fff;
+    background: #121f26;
+    letter-spacing: .02em;
+    line-height: 1.7;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+    font-weight: 300;
+}
+
+h1 {
+  font-size: calc(10px + 4vw);
+  color: #fff;
+  line-height: 1.2;
+  margin: 2vw 0;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+main {
+  background: linear-gradient(to bottom, #f7455f, #f57a0c, #e6b30b);
+}
+
+
+/*---------------
+Supahscroll
+---------------*/
+.supah-scroll {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  will-change: transform;
+  overflow: hidden;
+}
+
+
+/*---------------
+Nav
+---------------*/
+.nav {
+  position: fixed;
+  z-index: 100;
+  padding: 30px 5vw;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: color-dodge;
+
+  &__logo {
+    display: flex;
+    color: rgba(#000, .8);
+    text-decoration: none;
+    pointer-events: all;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 1vw 5vw;
+    flex-direction: column;
+}
+
+.text {
+  padding: 4vw 0;
+}
