@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 모바일에서 화면배율을 디바이스 크기 기준으로 설정 -->
+    <!-- 이게 안되면 pc에서의 100px과 모바일에서의 100px이 디바이스 성능에 따라 달라집니다. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 슬라이드(게이지바)</title>
+        
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- slick 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    
+    <!-- 폰트어썸 불러오기 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="banner_slide.css">
+    <script src="banner_slide.js"></script>
+</head>
+<body>
+    <!-- 메인 배너 슬라이더 -->
+    <div class="slider-wrap con" data-slick-autoplay-status="Y">
+        <div class="slider main-slider con">
+            <div class="slide-item slide-item-1" data-dot-title="갤럭시 Unpacked">
+                <div class="slide-con">
+                    <div class="slide-dummy"></div>
+                    <div class="slide-txt">
+                        <h2 class="txt-tt">Galaxy UNPACKED</h2>
+                        <p class="txt-desc">2020년 2월 12일 4AM 삼성닷컴에서 생방송을 만나보세요</p>
+                        <div class="txt-btn">
+                            <a href="#" class="txt-btn-2">사전판매 알림신청</a>
+                        </div>
+                    </div>
+                    <picture class="img-box">
+                        <source srcset="https://source.unsplash.com/random/720x890" media="(max-width: 770px)">
+                        <img src="https://source.unsplash.com/random/1440x550" alt="">
+                    </picture>
+                </div>
+            </div>
+            <div class="slide-item slide-item-2" data-dot-title="그랑데AI">
+                <div class="slide-con">
+                    <div class="slide-dummy"></div>
+                    <div class="slide-txt">
+                        <h2 class="txt-tt">삼성 그랑데 <sup>AI</sup> 런칭</h2>
+                        <p class="txt-desc">세탁에서 건조까지 하나되어 맞추다</p>
+                        <div class="txt-btn">
+                            <a href="#" class="txt-btn-1">더 알아보기</a>
+                            <a href="#" class="txt-btn-2">구매 혜택 보기</a>
+                        </div>
+                    </div>
+                    <picture class="img-box">
+                        <source srcset="https://source.unsplash.com/random/720x890" media="(max-width: 770px)">
+                        <img src="https://source.unsplash.com/random/1440x550" alt="">
+                    </picture>
+                </div>
+            </div>
+            <div class="slide-item slide-item-3" data-dot-title="갤럭시 북">
+                <div class="slide-con">
+                    <div class="slide-dummy"></div>
+                    <div class="slide-txt">
+                        <h2 class="txt-tt txt-tt-book">갤럭시 북 런칭<br>FlexㅣIon</h2>
+                        <p class="txt-desc">가능성으로 빛나는 별의별 이야기와 삼성닷컴 단독 혜택 오픈</p>
+                        <div class="txt-btn">
+                            <a href="#" class="txt-btn-1">더 알아보기</a>
+                            <a href="#" class="txt-btn-2">구매 혜택 보기</a>
+                        </div>
+                    </div>
+                    <picture class="img-box">
+                        <source srcset="https://source.unsplash.com/random/720x890" media="(max-width: 770px)">
+                        <img src="https://source.unsplash.com/random/1440x550" alt="">
+                    </picture>
+                </div>
+            </div>
+            <div class="slide-item slide-item-4" data-dot-title="BESPOKE">
+                <div class="slide-con">
+                    <div class="slide-dummy"></div>
+                    <div class="slide-txt">
+                        <h2 class="txt-tt">BESPOKE 냉장고</h2>
+                        <p class="txt-desc">가구를 맞추듯 가전을 맞추다</p>
+                        <div class="txt-btn">
+                            <a href="#" class="txt-btn-1">더 알아보기</a>
+                            <a href="#" class="txt-btn-2">구매 혜택 보기</a>
+                        </div>
+                    </div>
+                    <picture class="img-box">
+                        <source srcset="https://source.unsplash.com/random/720x890" media="(max-width: 770px)">
+                        <img src="https://source.unsplash.com/random/1440x550" alt="">
+                    </picture>
+                </div>
+            </div>
+            <div class="slide-item slide-item-5" data-dot-title="라이프스타일 TV">
+                <div class="slide-con">
+                    <div class="slide-dummy"></div>
+                    <div class="slide-txt">
+                        <h2 class="txt-tt">New Lifestyle TV</h2>
+                        <p class="txt-desc">새로운 라이프 스타일을 스크린에 담다</p>
+                        <div class="txt-btn">
+                            <a href="#" class="txt-btn-1">더 알아보기</a>
+                            <a href="#" class="txt-btn-2">구매 혜택 보기</a>
+                        </div>
+                    </div>
+                    <picture class="img-box">
+                        <source srcset="https://source.unsplash.com/random/720x890" media="(max-width: 770px)">
+                        <img src="https://source.unsplash.com/random/1440x550" alt="">
+                    </picture>
+                </div>
+            </div>
+        </div>
+        <button class="s-autoplay-btn"></button>
+    </div>
+</body>
+</html>
