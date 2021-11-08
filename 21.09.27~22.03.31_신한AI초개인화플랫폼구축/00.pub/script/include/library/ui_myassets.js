@@ -14,7 +14,7 @@ var uiMyAssets = {
                 $(event.currentTarget).after('<div class="'+ wrapperClass +'"><div class="reDiv">'+ tooltipTxt +'<button class="closeBtn"><i class="iconTy32"></i></button></div></div><div class="wdim"/>');
                 // $(event.currentTarget).addClass('on');
             }else {
-                $(event.currentTarget).after('<div class="'+ wrapperClass +'"><div class="reDiv">'+ tooltipTxt +'<a href="javascript:void(0);" class="btnType3" onclick="'+ tooltiplink +'">'+ tooltiplinkText +'</a> <button class="closeBtn"><i class="iconTy32"></i></a></div></div><div class="wdim"/>');
+                $(event.currentTarget).after('<div class="'+ wrapperClass +'"><div class="reDiv">'+ tooltipTxt +'<a href="javascript:void(0);" class="btnType3" onclick="'+ tooltiplink +'">'+ tooltiplinkText +'</a> <button class="closeBtn"><i class="iconTy32"></i></button></div></div><div class="wdim"/>');
                 // $(event.currentTarget).addClass('on');
             }
 
