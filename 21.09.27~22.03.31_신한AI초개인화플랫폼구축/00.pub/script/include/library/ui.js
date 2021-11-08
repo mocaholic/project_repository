@@ -1429,21 +1429,208 @@ var ui = {
 				$('.shortPageWrap').contents().unwrap();
 				$('.shortPageInner').contents().unwrap();
 			}
-			$contents.wrapInner('<div class="shortPageWrap"></div>')
+			$contents.wrapInner('<div class="shortPageWrap"></div>');
+			$('.shortPageWrap').children().not($('.btnGroupBox.floating')).wrapAll('<div class="shortPageInner"></div>');
+			var $shortPageWrap = $('.shortPageWrap');
+			var $shortPageInner = $shortPageWrap.find('.shortPageInner');
+			var gap;
+			$contents.show();
+			if($shortPageInner.find('>.topAreaBox').length === 0){
+				$shortPageWrap.css({minHeight:"101%"});
+			}else{
+				gap = parseInt($shortPageInner.find('>.topAreaBox').css('margin-top'));
+				$shortPageWrap.css({minHeight:"calc(101% + "+ Math.abs(gap)+"px)"});
+			}
+			setTimeout(function(){
+				$shortPageWrap.removeAttr('style');
+				if($shortPageInner.find('>.topAreaBox').length > 0){
+					$shortPageWrap.css({minHeight:"calc(100% = "+ Math.abs(gap) +"px)"});
+				}
+			}, 200);
+		}else if($('#contentsWrap').find('>.btnGroupBox.floating.fixed').length > 0){
+			$('.contents').wrapInner('<div class="fixedpageWrap"></div>');
+		}else{
+			$('.contents').wrapInner('<div class="scrollSet" style="min-height:101%;"></div>');
+			setTimeout(function(){$('.scrollSet').contents().unwrap();}, 200);
 		}
 	},
 
-	'' : function(){
-		
+	// 키패드 올라올 때 개발에서 호출하는 함수 - 키패드 올라올 때 컨텐츠가 줄어들어서 높이값 세팅
+	'setShortPageHeight' : function(){
+		// if(isSetHeight) return;
+		// var isSetHeight = false;
+		var $shortPageWrap = $('.shortPageWrap');
+		var $shortPageInner = $shortPageWrap.find('.shortPageInner');
+		$shortPageInner.css({minHeight:$shortPageWrap.height() - parseInt($shortPageInner.css('padding-bottom'))});
+		// isSetHeight = true;
 	},
 
-	'' : function(){
-		
+	'removeShortPageHeight' : function(){
+		$('.shortPageInner').css({minHeight:""});
 	},
 
-	'' : function(){
-		
+	'drawTopButton' : function(){
+		if($('.btnTyCircleTop').length > 0){$('.btnTyCircleTop').remove();}
+
+		var contents = document.querySelector('.contents'),
+			$btnGroupBoxFix = $('.btnGroupBox.floating') || $('.btnGroupBox.fixed') || $('.btnGroupBox.floating.fixed'),
+			$btnTyCycle = $('.btnTyCycle');
+			$btnListCycle = $('.btnListCycle');
+			$btnTyCircleTop = '',
+			drawTopButtonHtml = '<a href="javascript:;" class="btnTyCircleTop">Top</a>',
+			btnTyCycleBottom = 0,
+			btnListCycleBottom = 0,
+			btnTyCircleTopHeight = 0,
+			isSet = false;
+
+		function set(){
+			isSet = true;
+			$('#contentsWrap').append(drawTopButtonHtml);
+			$btnTyCircleTop = $('.btnTyCircleTop');
+			$btnTyCircleTop.css({display:none});
+
+			$btnGroupBoxFix.length && TweenMax.set($btnTyCircleTop, {bottom:'+=' + $btnGroupBoxFix.outerHeight()});
+			// $btnGroupBoxFix.length && TweenMax.set($btnTyCircle, {bottom:'+=' + $btnGroupBoxFix.outerHeight()});
+			// $btnGroupBoxFix.length && TweenMax.set($btnListCircle, {bottom:'+=' + $btnGroupBoxFix.outerHeight()});
+
+			btnTyCycleBottom = parseFloat($btnTyCycle.css('bottom'));
+			btnListCycleBottom = parseFloat($btnListCycle.css('bottom'));
+			btnTyCircleTopHeight = $btnTyCircleTop.outerHeight(true);
+		}
+
+		$(contents).on('scroll', function(){
+			var sTop = $(this).scrollTop();
+
+			if(!isSet){set();}
+
+			if(getScrollTop(sTop)){ // 기준 스크롤 탑 보다 클 때
+				TweenMax.set($btnTyCircleTop, {display:'block'});
+				TweenMax.to($btnTyCycle, .35, {bottom:btnTyCycleBottom + btnTyCircleTopHeight + 5, force3D:true, ease:Linear.easseNone});
+				TweenMax.to($btnListCycle, .35, {bottom:btnListCycleBottom + btnTyCircleTopHeight, force3D:true, ease:Linear.easeNone});
+			}else{ // 작을 때
+				TweenMax.set($btnTyCircleTop, {display:'none'});
+				TweenMax.to($btnTyCycle, .35, {bottom:btnTyCycleBottom, force3D:true, ease:Linear.easeNone})
+				TweenMax.to($btnListCycle, .35, {bottom:btnListCycleBottom, force3D:true, ease:Linear.easeNone})
+			}
+		});
+
+		function getScrollTop(sTop){
+			return sTop > $(window).outerHeight(true) * 2;
+		}
 	},
 
+	'setScheduleSize' : function(){
+		if($('.outWrap').length === 0) return;
+		var $topWrap = $('.topWrap');
+		var $outWrap = $('.outWrap');
+		var topWrapHeight = $topWrap.height();
+		$outWrap.css({paddingTop:$topWrap.height()});
+	},
 
+	'formFocus' : function(){
+		var uAgent = navigator.userAgent.toLowerCase();
+		$(document).off('click.form').on('click.form', '.contents input[type=text], .contents input[type=password], .contents input[type=tel], .contents input[type=number], .contents input[type=email], .contents select, .contents textarea', function(){
+			var sHeight = screen.height/3.5;
+			var nTop = $(this).parent().offset().top;
+			var sTop = $('.contents').scrollTop();
+			var scNum = sTop + (nTop-sHeight);
+
+			if(uAgent.indexOf('android') > 0){
+				// 안드로이드 경우
+				if($('#contentsWrap > .totalTopBox').length > 0){
+					setTimeout(function(){
+						var scNum = sTop + (nTop - $('.btnGroupBox.fixed').offset().top) + 45;
+						$('#contentsWrap .contents').animate({scrollTop:scNum}, 200);
+					}, 500);
+				}else{
+					if(sHeight < nTop){
+						setTimeout(function(){
+							$('#contentsWrap .contents').animate({scrollTop:scNum}, 200);
+						}, 500);
+					}
+				}
+			}else{
+				// 아이폰 보안 키패드일 경우
+				if($(this).attr('readonly')){
+					if(sHeight < nTop){
+						setTimeout(function(){
+							$('#contentsWrap .contents').animate({scrollTop:scNum}, 200);
+						}, 500);
+					}
+				}
+			}
+		});
+	},
+
+	'init' : function(){
+		ui.contLayout(); // #contentsWrap minHeight 설정 및 innerBox last-child 클래스 추가
+		ui.headerFixed(); // header에 border color 조절
+		ui.dropdown(); // 드롭다운
+		ui.accordion(); // 아코디언
+		ui.tooltip(); // 툴팁
+		ui.effect(); // 페이지별 효과
+		ui.layPop(); // 레이어 팝업
+		ui.fullPop(); // 풀 팝업
+		ui.inputGroup(); // input Focus
+		ui.inputWrab(); // input group
+		ui.quickBtn(); // 퀵 버튼
+		TweenMax.delayedCall(.5,ui.subTit); // 스탭 상단 타이틀 영역
+		ui.calendarFloating(); // 캘린더 상단 고정
+		ui.stepMotion(); // 스텝 모션
+		ui.boxTyFloat(); // 파란색 금액 영역
+		ui.tabNormal(); // 일반 탭 기능
+		ui.cardFlip(); // 전체계좌 카드 플립 기능
+		ui.popover(); // 리스트형 툴팁
+		ui.mypage(); // 마이페이지
+		ui.profilereSizing(); // 모임 상단 백그라운드 리사이징
+		ui.ratingBox(); // 별점주기
+		ui.clickEvt(); // 팝업 내 토글
+		ui.toggleRadioM(); // 라디오 버튼 토글
+		TweenMax.delayedCall(.5, ui.swiperWa); // 스와이퍼 접근성 대응
+		ui.textarea(); // textarea 오토사이징
+		ui.tabSwipe(); // 탭 스와이프
+		ui.setPosition(); // 하단 배너 위치 조정
+		ui.shortPage(); // 하단 버튼 위치 조정
+		ui.setScheduleSize(); // 스케줄 paddingTop 값 설정
+		ui.formFocus(); // 입력폼 스크롤
+		pubApp.$body = $('body');
+		// $('.templateCss').length && pubApp.initFSizeTrigger(); // 폰트 사이즈 조정
+
+		ui.drawTopButton() // 하단 Top 버튼 그리기 및 설정
+		$('.layerPopBottomWrap').on('click', 'li', function(){ // 하단 팝업 리스트 클릭 시 리셋
+			if($('.contents').hasClass('touchLock')){
+				$('.contents').removeClass('touchLock');
+				$('.contents').css({overflow:'auto'});
+			}
+		});
+
+		// 퍼블 전용 스크립트(개발버전 제거)
+		if(location.href.indexOf('/pub/') > 0){
+			$(document).on('click', 'header a', function(){
+				history.back();
+			});
+		}
+
+		// 퍼블 전용 큰 글씨 (개발버전 제거)
+		$('header h1').on('click', function(){
+			$('body').toggleClass('size2');
+		});
+	},
+
+	// swiper 통합 호출
+	'swiperInit' : function(){
+		if($('.goodsSwiper').length > 0) ui.swiperAnimation(); // 상품상세 모션 스크립트
+		if($('.accountbookCate').length > 0) ui.accountSwipe(); // 지출분류
+		if($('.mainBefore, .mainAfter').length > 0) ui.mainSwiper(); // 메인 전/후 swiper
+
+		setTimeout(function(){
+			if($('.couponSwiper').length > 0) ui.couponSwiper(); // 쿠폰박스 swiper
+		});
+	},
 }
+
+$(function(){
+	$(window).load(function(){
+		ui.init();
+	});
+});
