@@ -430,7 +430,7 @@ var ui = {
 				}else{
 					$target.hide().data('return').focus(); 
 				}
-				$('#contentsWrap .contents').removeClass('touchLock');	
+				$('#©').removeClass('touchLock');	
 			}
 			return false;
 		}
@@ -444,7 +444,7 @@ var ui = {
 			}else{
 				// 안드로이드 윈도우
 				setTimeout(function(){
-					$('.popInner')..attr({'tabindex':0}).focus();
+					$('.popInner').attr({'tabindex':0}).focus();
 				}, 0)
 			}
 		}		
@@ -1630,7 +1630,21 @@ var ui = {
 }
 
 $(function(){
-	$(window).load(function(){
-		ui.init();
-	});
+    $(window).load(function(){
+        uiMyAssets.init();
+
+        $(document).on('click.CLICK_MAIN', '.layerPopWrap .btnPopClose, .btnGroupBox > .btnType, .layerPopBottomWrap .btnPopClose, .layerPopBottomWrap.hasDim',function(){
+            if($('#contentsWrap').find('.swiper-container').length && $('#contentsWrap').find('.mainDetailWrap').length){
+                $('#contentsWrap .mainDetailWrap').removeClass('touchLock');
+                publicSwiper().enableTouchControl();
+            }
+        });
+
+        $(document).on('click.CLICK_MAIN','.btnPopOpen',function(){
+            if($('#contentsWrap').find('.swiper-container').length && $('#contentsWrap').find('.mainDetailWrap').length){
+                $('#contentsWrap .mainDetailWrap').add630Class('touchLock');
+                publicSwiper().enableTouchControl();
+            }
+        });
+    });
 });

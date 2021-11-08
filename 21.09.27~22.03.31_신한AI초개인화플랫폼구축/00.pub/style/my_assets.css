@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+/* *****************************************************************
+    My자산 고도화 공통 : 레이아웃
+***************************************************************** */
+
+/* floating, fixed 버튼 컨텐츠 사이 간격 */
+.myAssets .shortPageInner,
+.myAssets .shortPageWrap {padding-bottom:124px;}
+
+/* *****************************************************************
+    My자산 고도화 공통 : 폰트
+***************************************************************** */
+
+/* [폰트] 기본컬러 재정의 (기존 #333 > > 변경 #000) */
+.myAssets,
+.myAssets .subTit {color:#000;}
+
+/* [폰트] 기본컬러 */
+.fcBlue {color:#0471e9 !important;}
+.fcMint, .fcMint2 {color:#00aacd !important;}
+.fcPrimary {color:#00aacd !important;}
+.fcPositive {color:#00bfa5 !important;}
+.fcNegative {color:#ff9f5f !important;}
+.fcRise {color:#d84c4c !important;}
+.fcDecline {color:#425cdc !important;}
+.fcError {color:#eb3d4f !important;}
+
+/* [폰트] 타이틀 */
+.myAssets .subTit2 {margin-bottom:0; padding:0 14px; color:#000; font-size:16px; font-weight:500; line-height:1.5;}
+
+/* *****************************************************************
+    My자산 고도화 공통 : 블릿 리스트
+***************************************************************** */
+/* dot list */
+.myAssets .dotList > li {position:relative; padding-left:10px; color:#666; font-size:14px; font-weight:400; line-height:1.57;}
+.myAssets .dotList > li + li {margin-top:8px;}
+
+
+/* dash list */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 아이콘
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 버튼
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 인풋
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 테이블
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 셀렉트
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 탭메뉴
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 유의사항(아코디언)
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 툴팁
+***************************************************************** */
+.myAssets .tooltipBoxNew {display:none; position:absolute; top:0; left:0; border:1px solid #aaa; background:#fff; margin:20px 16px; z-index:20; font-size:14px; color:#555; font-weight:400;}
+.myAssets .tooltipBoxNew.tyRight {left:auto !important; right:0;}
+.myAssets .tooltipBoxNew .reDiv {position:relative; padding:18px 38px 18px 18px; white-space:initial;}
+.myAssets .tooltipBoxNew .btnType3 {display:block; margin-top:10px; font-size:13px;}
+.myAssets .tooltipBoxNew .closeBtn {width:20px; height:20px; position:absolute; text-align:center; line-height:10px; right:5px; top:5px;}
+.myAssets .tooltipBoxNew + .wdim {position:fixed; left:0; top:0; right:0; bottom:0; background:#fff; opacity:0; z-index:9;}
+.myAssets .tipOpenNew {margin-top:-3px; margin-left:3px;}
+/* 
+    툴팁 클릭요소가 페이지 하단에 있어 툴팁 뷰요소가 상단으로 가야할 경우
+    1. 툴팁 클릭요소를 .tipWrap 으로 감싸준다.
+    2. 툴팁 클릭요소에 .tipOpenNewBtm 추가한다.
+ */
+ .myAssets .tipOpenNewBtm ~ .tooltipBoxNew {top:initial !important; bottom:30px; margin:0;}
+ .myAssets .tipOpenNewBtm ~ .tooltipBoxNew .reDiv {padding-right:24px;}
+ .myAssets .tipWrap {position:relative;}
+
+/* *****************************************************************
+    My자산 고도화 공통 : 토글버튼
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 리스트
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 뱃지
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 카드플립
+***************************************************************** */
+.myAssets .flipCardWrap {width:100%; /* height:200px */ background:transparent; perspective:1500px;}
+.myAssets .flipCardWrap .flipCardInner {position:relative; width:100%; height:100%; transition:transform .6s; transform-style:preserve-3d;}
+.myAssets .flipCardWrap .flipCardInner.active {transform:rotateY(180deg);}
+.myAssets .flipCardWrap .front,
+.myAssets .flipCardWrap .back {position:absolute; top:0; left:0; width:100%; height:100%; -webkit-backface-visibility:hidden; backface-visibility:hidden;}
+.myAssets .flipCardWrap .front {background:#ececec;}
+.myAssets .flipCardWrap .back {background:#ececec; transform:rotateY(180deg);}
+
+/* *****************************************************************
+    My자산 고도화 공통 : 말풍선
+***************************************************************** */
+/* [말풍선] 노랑 */
+.myAssets .bubbleWrap {display:inline-block; position:relative; /* max-width:182px; */ min-height:42px; padding-top:10px; vertical-align:top;}
+.myAssets .bubbleWrap::before {content:""; position:absolute; top:0; left:50%; transform:translateX(-50%); width:13px; height:10px; background:url('https://devsol.shinhan.com/images/in08/myassets/bg_bubble_arrow_yellow02.png') no-repeat center bottom; background-size:13px;}
+.myAssets .bubbleWrap .bubbleInner {display:-webkit-flex; display:flex; -webkit-box-pack:center; justify-content:center; -webkit-box-align:center; align-items:center; flex-direction:column; height:100%; padding:12px 20px; box-sizing:border-box; background:#ffd636; border-radius:6px; font-size:14px; line-height:1.58; color:#000;}
+.myAssets .bubbleWrap.typeBotArrow {padding-top:0; padding-bottom:10px;}
+.myAssets .bubbleWrap.typeBotArrow::before {top:auto; bottom:0; transform:translateX(-50%) rotate(180deg);}
+.myAssets .bubbleWrap.typeLeftArrow {padding-top:0; padding-left:10px;}
+.myAssets .bubbleWrap.typeLeftArrow::before {top:50%; left:0; transform:translateY(-50%) rotate(270deg);}
+.myAssets .bubbleWrap.typeRightArrow {padding-top:0; padding-right:10px;}
+.myAssets .bubbleWrap.typeRightArrow::before {top:50%; left:auto; right:0; transform:translateY(-50%) rotate(90deg);}
+.myAssets .bubbleWrap.alArrowLeft::before {left:20px;}
+.myAssets .bubbleWrap.alArrowRight::before {left:auto; right:200px; transform:translateX(50%)}
+.myAssets .bubbleWrap.alArrowRight.typeBotArrow::before {transform:translateX(50%) rotate(18ss0deg);}
+
+/* [말풍선] 회색 */
+.myAssets .bubbleWrap.typeGray {height:auto; min-height:60px; padding:0 0 6px; text-align:right;}
+.myAssets .bubbleWrap.typeGray::before {top:auto; left:auto; right:0; bottom:0; transform:none; width:10px; height:8px; background:url('https://devsol.shinhan.com/images/in08/myassets/bg_bubble_arrow_gray02.png') no-repeat 0 0; background-size:10px auto;}
+.myAssets .bubbleWrap.typeGray .bubbleInner {padding:12px; border-bottom-right-radius:0; background:#f6f5fa; font-size:12px; line-height:1.5;}
+.myAssets .bubbleWrap.typeGray .bubbleInner > * {display:block; width:100%;}
+.myAssets .bubbleWrap.typeGray span {font-weight:inherit;}
+.myAssets .bubbleWrap.typeGray .txt > * {display:inline-block; vertical-align:middle;}
+.myAssets .bubbleWrap.typeGray [class*='tick'] {position:relative; margin-left:2px; font-weight:500;}
+.myAssets .bubbleWrap.typeGray [class*='tick']::before {content:""; display:inline-block; margin-right:4px; vertical-align:middle;}
+.myAssets .bubbleWrap.typeGray [class*='tick'] > span {vertical-align:middle;}
+.myAssets .bubbleWrap.typeGray .tickUp {color:#d84c4c;}
+.myAssets .bubbleWrap.typeGray .tickUp::before {border-width:0 5px 8px; border-style:solid; border-color:transparent transparent #d84c4c transparent;}
+.myAssets .bubbleWrap.typeGray .tickDown {color:#4c64d8;}
+.myAssets .bubbleWrap.typeGray .tickDown::before {border-width:8px 5px 0; border-style:solid; border-color:#4c64d8 transparent transparent transparent;}
+.myAssets .bubbleWrap.typeGray .amount {font-weight:500;}
+.myAssets .bubbleWrap.typeGray::before {background-image:url('https://devsol.shinhan.com/images/in08/myassets/bg_bubble_arrow_gray.png');}
+.myAssets .bubbleWrap.typeGray .bubbleInner {background:#f6f5fa;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *****************************************************************
+    My자산 고도화 공통 : 팝업
+***************************************************************** */
+
+/* *****************************************************************
+    하단 느낌표 알림 메세지 정의
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 개발요청(하이차트)
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 메인 > 스와이프 컨테이너(공통)
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : 메인 > 상세 레이아웃(공통)
+***************************************************************** */
+
+/* *****************************************************************
+    My자산 고도화 공통 : (tab) 소비관리(only 퍼블)
+***************************************************************** */
