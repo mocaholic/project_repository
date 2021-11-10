@@ -1,0 +1,271 @@
+// ================
+// VARIABLES
+// ================
+$theme1:     #E74824; // "Pomegranate"
+$theme2:     #6D889F; // "Bermuda Grey"
+
+$black:      #000000;
+$white:      #FFFFFF;
+$grey:       #EFF0F2;
+$border:     #E9ECEF;
+$text-dark:  #212529;
+$text-light: #495057;
+
+$canvas-w: 646px;
+$canvas-h: 456px;
+$spacing:  20px;
+
+$logo: "https://image.ibb.co/bMgqOv/lada_logo_2x.png";
+$niva: "https://preview.ibb.co/cnSrVa/niva_clearcut_2x.png";
+$riva: "https://image.ibb.co/cgiLOv/riva_clearcut.png";
+
+
+// ================
+// CODEPEN CONTEXT ONLY
+// ================
+html, body { height: 100%; }
+
+body {
+  color: $text-dark;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $theme1;
+  font-family: "Source Sans Pro", sans-serif;
+  transition: background-color .5s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Interstitial-wrapper {
+  box-sizing: border-box;
+  width: ($canvas-w + ($spacing*2));
+  padding: $spacing;
+  margin: 0 auto;
+}
+
+
+// ================
+// BEGIN EXPERIMENT
+// ================
+.Canvas {
+  position: relative;
+  background-color: $white;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 456px;
+  box-shadow: 
+    0 10px 20px transparentize($black, 0.81), 
+    0 6px 6px transparentize($black, 0.77);
+}
+
+.Canvas-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $spacing - 5px;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.Canvas-header-logo {
+  width: 62px;
+  height: 22px;
+  background: transparent url($logo) 0 0 no-repeat;
+  background-size: 62px 22px;
+}
+
+.Canvas-slides {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000); // easeOutExpo
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.Car {
+  padding-top: $spacing*3;
+  padding-left: $spacing*2;
+  padding-right: $spacing*2;
+  box-sizing: border-box;
+}
+
+.Car-name,
+.Car-moto,
+.Car-link {
+  position: relative;
+  z-index: 3;
+  user-select: none;
+}
+
+.Car-name {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 69px;
+  height: $spacing*4;
+  font-style: italic;
+  text-transform: uppercase;
+  
+  small { font-size: 34px; }
+}
+
+.Car-moto {
+  font-size: 16px;
+  line-height: $spacing;
+  font-weight: 600;
+  
+  & + .Car-moto {
+    margin-left: 30px;
+    margin-bottom: 8px;
+  }
+}
+
+.Car-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: $spacing*3;
+}
+
+.Car-decor {
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.Car-image {
+  position: absolute;
+  top: $spacing*6;
+  right: 5px;
+  z-index: 2;
+}
+
+// ================
+// MODIFIER: NIVA
+// ================
+.Car--niva {
+  .Car-link { color: $theme1; }
+  
+  .Car-image {
+    width: 512px;
+    height: 266px;
+    background: transparent url($niva) 0 0 no-repeat;
+    background-size: 512px 266px;
+  }
+  
+  .Car-decor {
+    width: $spacing*3;
+    height: 100%;
+    
+    &::before {
+      width: $spacing*3;
+      height: 100%;
+      display: block;
+      content: '';
+      background: $theme1;
+      transform: skewX(30deg);
+    }
+    
+    &.one   { right: 40px; }
+    &.two   { right: 130px; }
+    &.three { right: 220px; }
+  }
+}
+
+// ================
+// MODIFIER: RIVA
+// ================
+.Car--riva {
+  .Car-link { color: $theme2; }
+  
+  .Car-image {
+    width: 499px;
+    height: 233px;
+    top: $spacing*7;
+    background: transparent url($riva) 0 0 no-repeat;
+    background-size: 499px 233px;
+  }
+  
+  .Car-decor {
+    &::before {
+      display: block;
+      content: '';
+      width: 190px;
+      height: 190px;
+      background: radial-gradient(circle at 111% -6%, #597389, #8babcd);
+      transform: rotate(45deg);
+    }
+    
+    &.one {
+      width: 165px;
+      height: 165px;
+      top: 60px;
+      right: 200px;
+    }
+    &.two {
+      width: 162px;
+      height: 162px;
+      top: 200px;
+      right: 80px;
+    }
+    &.three {
+      width: 190px;
+      height: 190px;
+      top: 24px;
+      right: 24px;
+    }
+  }
+}
+
+
+// ================
+// CUSTOMISE SWIPER CONTROLS
+// ================
+.swiper-container-horizontal > .swiper-pagination {
+  bottom: 24px;
+  background: $grey;
+  border-radius: 3px;
+  width: auto;
+  left: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 6px 0 transparentize($black, 0.93);
+  border: solid 1px $border;
+  transform: translateX(-50%);
+
+  // === Bullet
+  .swiper-pagination-bullet {
+    background: none;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    margin: 0;
+
+    // === Fake Buttons
+    &::before {
+      display: block;
+      font-size: 16px;
+      line-height: 1;
+      font-weight: 700;
+      padding: 10px 30px;
+      color: $text-light;
+      cursor: pointer;
+    }
+    
+    // === Fake Button Content
+    &:nth-child(1)::before { content: 'NIVA'; }
+    &:nth-child(2)::before { content: 'RIVA'; }
+
+    // === Active Bullet
+    &.swiper-pagination-bullet-active::before { background: $white; }
+  }
+}

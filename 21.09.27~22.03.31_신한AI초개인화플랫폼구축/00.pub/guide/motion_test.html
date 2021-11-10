@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+    <title>신한은행 - 모션 테스트</title>
+    <link rel="stylesheet" href="../style/shinhan.css">
+    <link rel="stylesheet" href="../style/my_assets.css">
+    <script type="text/javascript" src="../script/include/library/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../script/include/library/ui.js"></script>
+    <script type="text/javascript" src="../script/include/library/ui_myassets.js"></script>
+    <style>
+        *{margin:0;padding:0;}
+        ul,li{list-style:none;}
+        .slide{height:300px;overflow:hidden;}
+        .slide ul{height:calc(100% * 4);animation:slide 8s infinite;}
+        .slide li{height:calc(100% / 4);}
+        .slide li:nth-child(1){background:#ffa;}
+        .slide li:nth-child(2){background:#faa;}
+        .slide li:nth-child(3){background:#afa;}
+        .slide li:nth-child(4){background:#aaf;}
+        @keyframes slide {
+          0% {margin-top:0;}
+          10% {margin-top:0;}
+          25% {margin-top:-300px;}
+          35% {margin-top:-300px;}
+          50% {margin-top:-600px;}
+          60% {margin-top:-600px;}
+          75% {margin-top:-900px;}
+          85% {margin-top:-900px;}
+          100% {margin-top:0;}
+        }
+      </style>
+</head>
+<body>
+    <!--  자동 상하 슬라이드(js X)  -->
+    <div class="slide">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+</body>
+</html>

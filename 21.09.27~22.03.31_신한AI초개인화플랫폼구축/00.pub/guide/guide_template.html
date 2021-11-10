@@ -21,7 +21,7 @@
         .guideCont .guideList dd {padding:10px 0 0; font-size:13px;}
         .guideCont .guideList dd em {display:inline-block; background:#f2f2f2; font-size:11px; padding:3px; border-radius:4px; font-weight:300; margin-right:5px;}
         .guideCont .guideList dd strong {color:#0982fb; font-weight:normal;}
-        .guideCont .codeBox {font-family:'notosanskr'; display:block; font-size:11px; border:1px solid #dbdbdb; max-height:120px; padding:0 10px; line-height:2em; overflow-y:auto; overflow-x:none; background:#f7f7f7;}
+        .guideCont .codeBox {font-family:'notosanskr'; display:block; font-size:11px; border:1px solid #dbdbdb; max-height:120px; padding:0 10px; line-height:2em; overflow-y:auto; overflow-x:none; border-radius:10px; background:#f7f7f7;}
         .guideCont .code {padding:0 4px; background:#e2e2e2; color:deeppink; border-radius:3px;}
     </style>
 </head>
@@ -51,17 +51,17 @@
             <!-- contentsWrap -->
             <div id="contentsWrap" class="myAssets">
                 <!-- contents -->
-                <div class="cintents guideCont pt0"> <!-- .full -->
+                <div class="contents guideCont pt0"> <!-- .full -->
                     <!-- 말풍선 -->
                     <h2 class="guideTl">* 말풍선</h2>
 
                     <xmp class="codeBox">
-                        <div class="bubbleWrap">
-                            <p class="bubbleInner">
-                                <span>텍스트</span>
-                                <span>텍스트</span>
-                            </p>
-                        </div>
+<div class="bubbleWrap">
+    <p class="bubbleInner">
+        <span>텍스트</span>
+        <span>텍스트</span>
+    </p>
+</div>
                     </xmp>
 
                     <dl class="guideList">
@@ -184,6 +184,7 @@
                             <span>아래</span>
                         </p>
                     </div>
+                    <br><br>
                     <div class="bubbleWrap typeGray2 typeLeftArrow">
                         <p class="bubbleInner">
                             <span>좌측</span>
@@ -196,59 +197,121 @@
                         </p>
                     </div>
 
+                    <!-- 뱃지 -->
+                    <h2 class="guideTl">* 뱃지</h2>
+
+                    <xmp class="codeBox">
+<div class="badgeBox">
+    <em class="badgeTyBdWhite"><span>뱃지</span></em>
+    <em class="badgeTyBdGray"><span>뱃지</span></em>
+    <em class="badgeTyBdBlue"><span>뱃지</span></em>
+    <em class="badgeTyBgGray"><span>뱃지</span></em>
+</div>
+                    </xmp>
+
+                    <dl class="guideList">
+                        <dt>class: <em>.badgeTyBd[color]</em></dt>
+                        <dt>class: <em>.badgeTyBg[color]</em></dt>
+                        <dd><em>용례</em> [마이자산 메인/ 직접설계 메인/ 내차종합리포트]</dd>
+                        <dd>- 2개 뱃지 이상 사용 시 .badgeBox 로 그룹핑</dd>
+                        <dd>- 활성화 : <span class="code">.active</span> 추가</dd>  
+                        <dd>- 큰뱃지 : <span class="code">.large</span> 추가</dd>  
+                        <dd>- 작은뱃지 : <span class="code">.small</span> 추가</dd>  
+                        <dd>- 흰색 외곽선 : <span class="code">.badgeTyBdWhite</span> 추가</dd>  
+                        <dd>- 회색 외곽선 : <span class="code">.badgeTyBdGray</span> 추가</dd>  
+                        <dd>- 파란색 외곽선 : <span class="code">.badgeTyBdBlue</span> 추가</dd>  
+                        <dd>- 민트색 외곽선 : <span class="code">.badgeTyBdMint</span> 추가</dd>  
+                        <dd>- 회색 배경 : <span class="code">.badgeTyBgGray</span> 추가</dd>  
+                        <dd>- 진회색 배경 : <span class="code">.badgeTyBgDarkGray</span> 추가</dd>  
+                        <dd>- 핑크색 배경 : <span class="code">.badgeTyBgPink</span> 추가</dd>  
+                        <dd>- 하늘색 배경 : <span class="code">.badgeTyBgSky</span> 추가</dd>  
+                        <dd><em>적용</em></dd>
+                    </dl>
+
+                    <div style="padding:20px; background:rgba(0,0,0,.5)">
+                        <div class="badgeBox">
+                            <em class="badgeTyBdWhite small"><span>흰색 외곽선 작은 뱃지</span></em>
+                            <em class="badgeTyBdWhite"><span>흰색 외곽선 뱃지</span></em>
+                            <em class="badgeTyBdWhite large"><span>흰색 외곽선 큰 뱃지</span></em>
+                        </div>
+                    </div>
+                    <div style="padding:20px; background:rgba(0,0,0,.1)">
+                        <div class="badgeBox">
+                            <em class="badgeTyBdGray small"><span>회색 외곽선 작은 뱃지</span></em>
+                            <em class="badgeTyBdGray"><span>회색 외곽선 뱃지</span></em>
+                            <em class="badgeTyBdGray large"><span>회색 외곽선 큰 뱃지</span></em>
+                            <em class="badgeTyBdGray large active"><span>활성 뱃지(특이케이스)</span></em>
+                        </div>
+                    </div>
+                    <div style="padding:20px; background:rgba(0,0,0,.05)">
+                        <div class="badgeBox">
+                            <em class="badgeTyBdBlue small"><span>파란색 외곽선 작은 뱃지</span></em>
+                            <em class="badgeTyBdBlue"><span>파란색 외곽선 뱃지</span></em>
+                            <em class="badgeTyBdBlue large"><span>파란색 외곽선 큰 뱃지</span></em>
+                        </div>
+                    </div>
+                    <div style="padding:20px; background:rgba(0,0,0,.03)">
+                        <div class="badgeBox">
+                            <em class="badgeTyBdMint small"><span>민트색 외곽선 작은 뱃지</span></em>
+                            <em class="badgeTyBdMint"><span>민트색 외곽선 뱃지</span></em>
+                            <em class="badgeTyBdMint large"><span>민트색 외곽선 큰 뱃지</span></em>
+                        </div>
+                    </div>
+
+
                     <!-- 상품 리스트 -->
                     <h2 class="guideTl">* 상품 리스트</h2>
 
                     <xmp class="codeBox">
-                        <ul class="recomProdList">
-                            <li>
-                                <a href="#layerPopBottom01" class="btnPopOpen">
-                                    <div class="listInner">
-                                        <div class="infoArea">
-                                            <p class="prodSubTit">1만원부터 우대조건 없이!</p>
-                                            <strong class="prodTit ellipsis">신한 첫급여 드림(DREAM)</strong>
-                                            <div class="prodValue">
-                                                <em class="txt">연 <span>1.3</span>%</em>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#layerPopBottom01" class="btnPopOpen">
-                                    <div class="listInner">
-                                        <div class="infoArea">
-                                            <p class="prodCategory">
-                                                <span>예금</span>
-                                            </p>
-                                            <strong class="prodTit ellipsis">쏠편한 정기예금</strong>
-                                            <div class="prodValue">
-                                                <em class="txt">연 <span>1.3</span>%</em>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <!-- 썸네일 형태 -->
-                            <li>
-                                <a href="#layerPopBottom01" class="btnPopOpen">
-                                    <div class="listInner">
-                                        <div class="thumArea"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt=""></div>
-                                        <div class="infoArea">
-                                            <p class="prodCategory">
-                                                <span>신한은행</span>
-                                                <span>입출금</span>
-                                            </p>
-                                            <strong class="prodTit ellipsis">Sh평생주거래우대통장</strong>
-                                            <div class="prodValue">
-                                                <em class="txt">연 <span>1.3</span>%</em>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <!-- // 썸네일 형태 -->
-                        </ul>
+<ul class="recomProdList">
+    <li>
+        <a href="#layerPopBottom01" class="btnPopOpen">
+            <div class="listInner">
+                <div class="infoArea">
+                    <p class="prodSubTit">1만원부터 우대조건 없이!</p>
+                    <strong class="prodTit ellipsis">신한 첫급여 드림(DREAM)</strong>
+                    <div class="prodValue">
+                        <em class="txt">연 <span>1.3</span>%</em>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="#layerPopBottom01" class="btnPopOpen">
+            <div class="listInner">
+                <div class="infoArea">
+                    <p class="prodCategory">
+                        <span>예금</span>
+                    </p>
+                    <strong class="prodTit ellipsis">쏠편한 정기예금</strong>
+                    <div class="prodValue">
+                        <em class="txt">연 <span>1.3</span>%</em>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- 썸네일 형태 -->
+    <li>
+        <a href="#layerPopBottom01" class="btnPopOpen">
+            <div class="listInner">
+                <div class="thumArea"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt=""></div>
+                <div class="infoArea">
+                    <p class="prodCategory">
+                        <span>신한은행</span>
+                        <span>입출금</span>
+                    </p>
+                    <strong class="prodTit ellipsis">Sh평생주거래우대통장</strong>
+                    <div class="prodValue">
+                        <em class="txt">연 <span>1.3</span>%</em>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+    <!-- // 썸네일 형태 -->
+</ul>
                     </xmp>
 
                     <dl class="guideList">
@@ -333,10 +396,10 @@
                     <h2 class="guideTl">* 버튼</h2>
 
                     <xmp class="codeBox">
-                        <a href="javascript:;" class="btnType line"><span>파란색 외곽선 버튼</span></a>
-                        <a href="javascript:;" class="btnType lineBlack"><span>회색 외곽선 버튼</span></a>
-                        <a href="javascript:;" class="btnType line small"><span>파란색 외곽선 작은 버튼</span></a>
-                        <a href="javascript:;" class="btnType lineBlack small"><span>회색 외곽선 작은 버튼</span></a>
+<a href="javascript:;" class="btnType line"><span>파란색 외곽선 버튼</span></a>
+<a href="javascript:;" class="btnType lineBlack"><span>회색 외곽선 버튼</span></a>
+<a href="javascript:;" class="btnType line small"><span>파란색 외곽선 작은 버튼</span></a>
+<a href="javascript:;" class="btnType lineBlack small"><span>회색 외곽선 작은 버튼</span></a>
                     </xmp>
 
                     <dl class="guideList">
@@ -358,8 +421,8 @@
                     <h2 class="guideTl">* 인라인 버튼</h2>
 
                     <xmp class="codeBox">
-                        <a href="javascript:;" class="btnTypeR"><span>라운드 Large</span></a>
-                        <a href="javascript:;" class="btnTypeR btnSmall"><span>라운드 Small</span></a>
+<a href="javascript:;" class="btnTypeR"><span>라운드 Large</span></a>
+<a href="javascript:;" class="btnTypeR btnSmall"><span>라운드 Small</span></a>
                     </xmp>
 
                     <dl class="guideList">
@@ -377,32 +440,32 @@
                     <h2 class="guideTl">* 플립카드</h2>
 
                     <xmp class="codeBox">
-                        <!-- html -->
-                        <div class="flipCardWrap"> <!-- 높이값 css에 지정 -->
-                            <h3 class="blind">타이틀 - 상황에 맞게</h3>
-                            <div class="flipCardInner"> <!-- 활성 시 .active 클래스 추가 -->
-                                <div class="front">
-                                    front page
-                                    <button type="button" class="btnFlip">버튼</button>
-                                </div>
-                                <div class="back">
-                                    back page
-                                </div>
-                            </div>
-                        </div>
+<!-- html -->
+<div class="flipCardWrap"> <!-- 높이값 css에 지정 -->
+    <h3 class="blind">타이틀 - 상황에 맞게</h3>
+    <div class="flipCardInner"> <!-- 활성 시 .active 클래스 추가 -->
+        <div class="front">
+            front page
+            <button type="button" class="btnFlip">버튼</button>
+        </div>
+        <div class="back">
+            back page
+        </div>
+    </div>
+</div>
                     </xmp>
-                    <xmp calss="codeBox">
-                        <!-- javascript -->
-                        <script type="text/javascript">
-                            $(function(){
-                                $('.btnFlip').on('click', function(){
-                                    $('.flipCardInner').addClass('active');
-                                });
-                                $('.back').off('click').on('click', function(){
-                                    $('.flipCardInner').removeClass('active');
-                                });
-                            });
-                        </script>
+                    <xmp class="codeBox">
+<!-- javascript -->
+<script type="text/javascript">
+    $(function(){
+        $('.btnFlip').on('click', function(){
+            $('.flipCardInner').addClass('active');
+        });
+        $('.back').off('click').on('click', function(){
+            $('.flipCardInner').removeClass('active');
+        });
+    });
+</script>
                     </xmp>
 
                     <dl class="guideList">
@@ -527,17 +590,17 @@
                         <dd><em>적용</em></dd>
                     </dl>
 
-                    <p><<i class="iconTySurvey01">질문</i> : <span class="code">.iconTySurvey01</span></p>
+                    <p><i class="iconTySurvey01">질문</i> : <span class="code">.iconTySurvey01</span></p>
 
                     <!-- 블릿 리스트 -->
                     <h2 class="guideTl">* 블릿 리스트</h2>
 
                     <xmp class="codeBox">
-                        <ul class="dotList">
-                            <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
-                            <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
-                            <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
-                        </ul>
+<ul class="dotList">
+    <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
+    <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
+    <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
+</ul>
                     </xmp>
 
                     <dl class="guideList">
@@ -558,11 +621,11 @@
                     <hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
 
                     <xmp class="codeBox">
-                        <ul class="dashList">
-                            <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
-                            <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
-                            <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
-                        </ul>
+<ul class="dashList">
+    <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
+    <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
+    <li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 </li>
+</ul>
                     </xmp>
 
                     <dl class="guideList">
