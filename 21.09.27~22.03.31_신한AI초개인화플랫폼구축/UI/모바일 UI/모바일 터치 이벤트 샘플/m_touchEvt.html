@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 터치 이벤트 샘플</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <style>
+        .box{position:relative; width:380px; height:440px; border:10px solid #000; display: flex; flex-direction: column; justify-content: center;  align-items: center;}
+        .box p {display:none}
+    </style>
+</head>
+<body>
+    <div class="box">  
+        <p class="p1 toRight">오른쪽에서 왼쪽으로</p>
+        <p class="p1 toLeft">왼쪽에서 오른쪽으로</p>
+         <p class="p2 toTop">위에서 아래로</p>
+        <p class="p2 toBottom">아래서 위로</p>        
+    </div>
+
+    <script>
+        var startX,startY, endX,endY;
+        $(".box").on('touchstart',function(event){
+            startX = event.originalEvent.changedTouches[0].screenX;
+            startY = event.originalEvent.changedTouches[0].screenY;
+        });
+        $(".box").on('touchend',function(event){
+            endX=event.originalEvent.changedTouches[0].screenX;
+            endY=event.originalEvent.changedTouches[0].screenY;
+            if(startY-endY>50){
+                $(".box p.toTop").fadeOut(300);
+                $(".box p.toBottom").fadeIn(300);     
+                console.log('위');
+            }else if(endY-startY>50){
+                $(".box p.toBottom").fadeOut(300);
+                $(".box p.toTop").fadeIn(300);     
+                console.log('아래');
+            }else if(startY-endY<50 || endY-startY<50 ){
+                $(".box p.toBottom, .box p.toTop").fadeOut (300);
+            }
+        if(startX-endX>50){
+                $(".box p.toLeft").fadeOut(300);
+                $(".box p.toRight").fadeIn(300);     
+                console.log('왼쪽');
+            }else if(endX-startX>50){
+                $(".box p.toRight").fadeOut(300);
+                $(".box p.toLeft").fadeIn(300);     
+                console.log('오른쪽');
+            }else if(startX-endX<50 || endX-startX<50 ){
+            $(".box p.toRight, .box p.toLeft").fadeOut(300);
+            }
+        });
+    </script>
+</body>
+</html>
