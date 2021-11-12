@@ -1,8 +1,10 @@
 $(document).ready(function() {
     var $slider=$("#slider");
+    var slide = $('#slider > .slide');
     var slideLength = $("#slider > .slide").length -1 ;
     var ctrl=false;
-    $(document).keydown(function (e) {
+    // var curIdx = 
+    /* $(document).keydown(function (e) {
         if(e.keyCode==17) {
             ctrl=true;
             $("#slider").removeClass("_3D");
@@ -22,7 +24,10 @@ $(document).ready(function() {
             prevSlide();
             return;
         }
-    });
+    }); */
+
+    slide.addEventListener('touchstart', touch_start);
+    slide.addEventListener('touchend', touch_end);
 
     var is3D=false;
     $(".key").mousedown(function(){
@@ -67,5 +72,18 @@ $(document).ready(function() {
 
     function lastElem(){
         return $("#slider > .slide").last();
+    }
+
+    function touch_start(event) {
+        start_x = event.touches[0].pageX
+    }
+    
+    function touch_end(event) {
+        end_x = event.changedTouches[0].pageX;
+        if(start_x > end_x){
+            next();
+        }else{
+            prev();
+        }
     }
 });

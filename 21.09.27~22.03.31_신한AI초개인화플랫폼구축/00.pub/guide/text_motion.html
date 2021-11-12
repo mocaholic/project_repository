@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간차 텍스트 효과</title>
+    <script type="text/javascript" src="../script/include/library/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../script/include/library/ui.js"></script>
+    <style>
+        * {margin:0; padding:0;}
+        /* test1
+        .premeerRoungeV {width:100%; height:100vh; padding:19px 16px; background:url('../../images/solAI/bg-purple-01@3x.png') no-repeat 0 0; background-size:cover; position:relative;}
+        .premeerRoungeV .text {position:absolute; top:19px; right:30px;}
+        .premeerRoungeV .text .strip {font-size:16px; line-height:1.27; color:#fff3d7; position:relative; text-transform:uppercase; font-weight:400;}
+        .premeerRoungeV .text1 {position:absolute; bottom:119px; right:30px;}
+        .premeerRoungeV .text1 .strip {font-size:21px; line-height:1.52; color:#fff; position:relative; text-transform:uppercase; font-weight:400;}
+
+        .premeerRoungeV .strip span {
+            display: inline-block;
+            transition: transform 0.6s cubic-bezier(0.65, 0.02, 0.23, 1);
+            transform: translate(20%, 100%);
+            position: relative;
+            z-index: 1;
+            text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.1);
+        }
+        .premeerRoungeV .strip span:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-40%);
+            transition: transform 0.6s cubic-bezier(0.65, 0.02, 0.23, 1);
+        }
+        .premeerRoungeV .strip span.row {
+            overflow: hidden;
+            display: block;
+            transform: none;
+        }
+        .premeerRoungeV .text .strip span.row:first-of-type {line-height:2.69;}
+        .premeerRoungeV .text .strip span.row:nth-of-type(2), .premeerRoungeV .text .strip span.row:nth-of-type(3) {font-size:26px; font-weight:700;}
+        .premeerRoungeV .text .strip span.row:nth-of-type(2) .animate:last-of-type, .premeerRoungeV .text .strip span.row:nth-of-type(3) .animate:nth-of-type(3), .premeerRoungeV .text .strip span.row:nth-of-type(3) .animate:nth-of-type(4), .premeerRoungeV .text .strip span.row:nth-of-type(3) .animate:nth-of-type(5)  {font-size:16px; font-weight:400;}
+        .premeerRoungeV .strip span.row:before {
+            display: none;
+        }
+        .premeerRoungeV .strip .animate {
+            transform: translate(0, 0);
+        }
+        .premeerRoungeV .strip .animate:before {
+            transform: translateY(100%);
+        } */
+
+        /* test 2 */
+        .contentsWrap {height:100%; overflow-y:auto;}
+        .premeerRoungeV {width:100%; height:100vh; padding:19px 16px; background:url('../../images/solAI/bg-purple-01@3x.png') no-repeat 0 0; background-size:cover; position:relative; box-sizing:border-box;}
+        .premeerRoungeV .textArea {position:absolute; top:19px; right:30px; font-size:16px; line-height:1.27; color:#fff3d7; font-weight:400; transform:translate3d(0,0,0); transform-style:preserve-3d; }
+        /* .premeerRoungeV .text.active {animation:0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both running slideTop;} */
+        .premeerRoungeV .textArea span {display:block; line-height:2.69;}
+        .premeerRoungeV .textArea strong {font-size:26px;}
+        .premeerRoungeV .textArea.bottom {top:auto; bottom:119px; font-size:21px; line-height:1.52; color:#fff;}
+        .slideTop {-webkit-animation: slideTop 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; animation: slideTop 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;}
+
+        /**
+        * ----------------------------------------
+        * animation slideTop
+        * ----------------------------------------
+        */
+        @-webkit-keyframes slideTop {
+            0% {
+                -webkit-transform: translateY(100px);
+                        transform: translateY(100px);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+            }
+        }
+        @keyframes slideTop {
+            0% {
+                -webkit-transform: translateY(100px);
+                        transform: translateY(100px);
+            }
+            100% {
+                -webkit-transform: translateY(0);
+                        transform: translateY(0);
+            }
+        }
+
+        .hithere {
+            animation: hithere 1s ease infinite;
+            perspective-origin:center;
+        }
+        @keyframes hithere {
+            30% {}
+            40%, 60% { transform:rotate(-20deg); }
+            50% { transform:rotate(20deg); }
+            70% { transform:rotate(0deg); }
+            100% {}
+        }
+
+        .eff {animation:ld-jingle 1s linear infinite; transition:opacity .5s linear,visibility .5s linear;}
+    </style>
+</head>
+<body>
+    <!-- // test1 
+    <div class="premeerRoungeV">
+        <div class="text">
+            <div class="strip">
+                프리미어 고객을 위한<br>
+                특별한 혜택을<br>
+                경험하세요.
+            </div>
+        </div>
+        <div class="text1">
+            <div class="strip">
+                AI가 추천하 GO!<br>
+                내맘대로 추가하 GO!
+            </div>
+        </div>
+    </div> -->
+
+    <!-- test2 -->
+    <div class="premeerRoungeV">
+        <div class="textArea slideTop">
+            <span>프리미어 고객을 위한</span>
+            <strong>특별한 혜택</strong>을<br>
+            <strong>경험</strong>하세요.
+        </div>
+        <div class="character hithere">
+            <img class="" src="https://devsol.shinhan.com/images/solAI/icon_msg_character01.png" alt="">
+        </div>
+        <div class="textArea bottom slideTop">
+            AI가 추천하 GO!<br>
+            내맘대로 추가하 GO!
+        </div>
+    </div>
+    <div class="innerBox" style="height:300px;">
+        테스트 테스트 테스트 테스트
+    </div>
+
+
+    
+    <script>
+        /* // test1 
+        $('.strip').each(function(){
+            var $t = $(this),
+                rows = $.trim($t.html()).split('<br>');
+                words = $.trim($t.html()).split(' ');
+
+            $t.html('');
+
+            $.each(rows, function(i, val){
+                $('<span class="row"></span>').appendTo($t);
+
+                var letters = $.trim(val).split('');
+
+                $.each(letters, function(j, v){
+                v = (v == ' ') ? '&nbsp;' : v;
+                $('<span>' + $.trim(v) + '</span>').appendTo($('.row:last', $t));
+                });
+
+                words.forEach(word => {
+                    let html = '';
+                    for (var letter in word) {
+                    html += `
+                        <span class="a">
+                        <span class="a" data-letter="">
+                            
+                        </span>
+                        </span>
+                    `;
+                    };
+                    
+                    let wrappedWords = `<span class="a">${html}</span>`;
+                    letters.push(wrappedWords);
+                });
+
+            });
+        });
+        
+        for (i = 0; i < $('.strip span').length; i++) {
+            (function(ind) {
+            setTimeout(function(){
+                $('.strip span:not(".row")').eq(ind).toggleClass('animate');
+            }, ind * 15);
+            })(i);
+        } */
+
+        /* test 2 */
+        $(document).scroll(function(){
+            var scrollTop = $(this).scrollTop();
+            var innerHeight = $(this).innerHeight();
+            
+            // console.log(scrollTop);
+            /* if (scrollTop == 0) {
+                $('.premeerRoungeV .textArea').addClass('slideTop');
+            }else {
+                $('.premeerRoungeV .textArea').removeClass('slideTop');
+            }
+            return false; */
+        })
+    </script>
+</body>
+</html>
