@@ -88,7 +88,11 @@
                         transform: translateY(0);
             }
         }
-
+        .charArea {position:absolute; top:181px; right:30px;}
+        .charArea .character {width:220px; height:226px;}
+        .charArea .character img {width:100%;}
+        .charArea .text {font-size:12px; color:#c8c2f9; line-height:1.33; text-align:right;}
+        .charArea .text strong {display:block; font-size:18px; line-height:1.67;}
         .hithere {
             animation: hithere 1s ease infinite;
             perspective-origin:center;
@@ -99,6 +103,40 @@
             50% { transform:rotate(20deg); }
             70% { transform:rotate(0deg); }
             100% {}
+        }
+
+        .wobble-hor-bottom {
+            -webkit-animation: wobble-hor-bottom 1.7s both infinite;
+                    animation: wobble-hor-bottom 1.7s both infinite;
+        }
+        @keyframes wobble-hor-bottom {
+            0%, 10%, 20%, 80%, 90%,
+            100% {
+                -webkit-transform: translateX(0%);
+                        transform: translateX(0%);
+                -webkit-transform-origin: 50% 50%;
+                        transform-origin: 50% 50%;
+            }
+            30% {
+                -webkit-transform: translateX(-30px) rotate(-6deg);
+                        transform: translateX(-8px) rotate(-6deg);
+            }
+            40% {
+                -webkit-transform: translateX(15px) rotate(6deg);
+                        transform: translateX(5px) rotate(6deg);
+            }
+            50% {
+                -webkit-transform: translateX(-15px) rotate(-3.6deg);
+                        transform: translateX(-5px) rotate(-3.6deg);
+            }
+            60% {
+                -webkit-transform: translateX(9px) rotate(2.4deg);
+                        transform: translateX(3px) rotate(2.4deg);
+            }
+            70% {
+                -webkit-transform: translateX(-6px) rotate(-1.2deg);
+                        transform: translateX(-2px) rotate(-1.2deg);
+            }
         }
 
         .eff {animation:ld-jingle 1s linear infinite; transition:opacity .5s linear,visibility .5s linear;}
@@ -129,8 +167,14 @@
             <strong>특별한 혜택</strong>을<br>
             <strong>경험</strong>하세요.
         </div>
-        <div class="character hithere">
-            <img class="" src="https://devsol.shinhan.com/images/solAI/icon_msg_character01.png" alt="">
+        <div class="charArea">
+            <div class="character wobble-hor-bottom">
+                <img class="" src="https://devsol.shinhan.com/images/solAI/icon_msg_character01.png" alt="">
+            </div>
+            <p class="text">
+                <strong>초개인화 포트</strong>
+                예적금, 펀드 , ETF까지 한번에 만들 수 있어요.
+            </p>
         </div>
         <div class="textArea bottom slideTop">
             AI가 추천하 GO!<br>

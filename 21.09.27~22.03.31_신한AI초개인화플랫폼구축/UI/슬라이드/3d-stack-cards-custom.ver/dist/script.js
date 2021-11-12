@@ -2,53 +2,61 @@ $(document).ready(function() {
     var $slider=$("#slider");
     var slide = $('#slider > .slide');
     var slideLength = $("#slider > .slide").length -1 ;
-    var ctrl=false;
-    // var curIdx = 
-    /* $(document).keydown(function (e) {
-        if(e.keyCode==17) {
-            ctrl=true;
-            $("#slider").removeClass("_3D");
-            $(".key.ctrl").addClass("active");
-        }
-    }).keyup(function (e) {
-        if(e.which == 17){
-            ctrl=false;
-            $("#slider").addClass("_3D");
-            $(".key.ctrl").removeClass("active");
-        }
-        if(e.which==39 || e.which==40){
+    // var ctrl=false;
+    var indicator = $('.indicator');
+    // console.log(curIdx);
+
+    var curIdx = 0;
+    console.log(curIdx);
+
+    var startX,startY, endX,endY;
+    $("#slider").on('touchstart',function(event){
+        startX = event.originalEvent.changedTouches[0].screenX;
+        startY = event.originalEvent.changedTouches[0].screenY;
+        console.log('start');
+    });
+    $("#slider").on('touchend',function(event){
+        endX=event.originalEvent.changedTouches[0].screenX;
+        endY=event.originalEvent.changedTouches[0].screenY;
+ 
+        if(startX-endX>50){
+            
+            console.log('왼쪽');
+            if(curIdx >= slideLength){
+                curIdx = 0;
+                console.log('dd');
+            }else {
+                curIdx = curIdx + 1;
+            }
+            console.log(curIdx);
+            
+            indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
             nextSlide();
-            return;
-        }
-        if(e.which==37 || e.which==38){
+        }else if(endX-startX>50){
+            console.log('오른쪽');
+
+            if(curIdx <= -2){
+                curIdx = 0;
+                console.log('dd');
+            }else {
+                curIdx = curIdx - 1;
+            }
+            console.log(curIdx);            
+            indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
             prevSlide();
-            return;
-        }
-    }); */
+        }/* else if(startX-endX<50 || endX-startX<50 ){
+            console.log('test');
+        } */
+        indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
+    });
 
-    slide.addEventListener('touchstart', touch_start);
-    slide.addEventListener('touchend', touch_end);
-
-    var is3D=false;
-    $(".key").mousedown(function(){
-        if($(this).hasClass("ctrl")){
-            if($(this).hasClass("active")) is3D = true;
-            $("#slider").removeClass("_3D");
-        }
-        $(this).addClass("active");
-    }).mouseup(function(){
-        if($(this).hasClass("down") || $(this).hasClass("right")) nextSlide();
-        if($(this).hasClass("up") || $(this).hasClass("left")) prevSlide();
-        console.log(is3D);
-        if($(this).hasClass("ctrl active")){
-            if(is3D){
-                $(this).removeClass("active");
-                $("#slider").addClass("_3D");
-                is3D=false;
-            } 
-        }else{
-            $(this).removeClass("active");
-        }
+    $('.indicator a').on('click', function(){
+        var idx = $(this).index();
+        console.log(idx);
+        // curIdx++
+        // console.log(curIdx)
+        // show(idx > curIdx ? 1 : -1, curIdx, idx);
+ 
     });
 
     function nextSlide() {
@@ -60,6 +68,8 @@ $(document).ready(function() {
             $(document).find(".slide.active").removeClass("active");
             $slider.removeClass("transfomer");
         },300);
+
+        var showIdx = curIdx + 1
     }
 
     function prevSlide(){
@@ -74,8 +84,11 @@ $(document).ready(function() {
         return $("#slider > .slide").last();
     }
 
-    function touch_start(event) {
-        start_x = event.touches[0].pageX
+    
+
+    /* function touch_start(event) {
+        // start_x = event.touches[0].pageX
+
     }
     
     function touch_end(event) {
@@ -85,5 +98,5 @@ $(document).ready(function() {
         }else{
             prev();
         }
-    }
+    } */
 });
