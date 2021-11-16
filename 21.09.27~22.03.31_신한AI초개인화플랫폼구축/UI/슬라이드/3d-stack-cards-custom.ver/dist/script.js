@@ -56,7 +56,19 @@ $(document).ready(function() {
         // curIdx++
         // console.log(curIdx)
         // show(idx > curIdx ? 1 : -1, curIdx, idx);
- 
+        /* if(idx == 0){
+            // var $slicedSlide = $('.slide').slice(0).addClass("active");
+            $slider.find('.s1').addClass("active");
+            $slider.addClass("transfomer");
+            setTimeout(function(){
+                $slider.append($slider.find('.s1'));
+                $(document).find(".slide.active").removeClass("active");
+                $slider.removeClass("transfomer");
+            },300);
+        } */
+        goToSlide(idx);
+        $(this).addClass('on').siblings().removeClass('on');
+        
     });
 
     function nextSlide() {
@@ -69,7 +81,7 @@ $(document).ready(function() {
             $slider.removeClass("transfomer");
         },300);
 
-        var showIdx = curIdx + 1
+        // var showIdx = curIdx + 1
     }
 
     function prevSlide(){
@@ -83,7 +95,6 @@ $(document).ready(function() {
     function lastElem(){
         return $("#slider > .slide").last();
     }
-
     
 
     /* function touch_start(event) {
