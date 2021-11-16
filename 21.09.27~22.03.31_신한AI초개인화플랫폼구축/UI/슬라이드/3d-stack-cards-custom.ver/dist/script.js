@@ -20,29 +20,27 @@ $(document).ready(function() {
  
         console.log(curIdx);
         if(startX-endX>50){
-            console.log(startX-endX);
+            console.log('오른쪽에서 왼쪽');
             if(curIdx >= slideLength){
                 curIdx = 0;
-                console.log('dd');
             }else {
                 curIdx = curIdx + 1;
             }
             console.log(curIdx);
             
-            indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
             nextSlide();
+            indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
         }else if(endX-startX>50){
-            console.log('오른쪽');
+            console.log('왼쪽에서 오른쪽');
 
             if(curIdx <= -2){
                 curIdx = 0;
-                console.log('dd');
             }else {
                 curIdx = curIdx - 1;        
             }
             console.log(curIdx);    
-            indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
             prevSlide();
+            indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
         }
         // indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
     });
@@ -74,7 +72,9 @@ $(document).ready(function() {
         $(this).parent().addClass("active");
         $slider.addClass("transfomer");
         setTimeout(function(){
-            $slider.append($slider.find('.s' + curIdx));
+            // var $slicedSlide = $('.slide').slice(slideLength);
+            // $slider.prepend($slicedSlide);
+            $slider.prependTo($slider.find('.s' + curIdx));
             $(document).find(".slide.active").removeClass("active");
             $slider.removeClass("transfomer");
         },300);
