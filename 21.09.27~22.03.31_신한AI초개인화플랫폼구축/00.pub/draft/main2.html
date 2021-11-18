@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신한</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css">
+    <script src='js/jquery-1.12.4.min.js'></script>
+</head>
+<body>
+    <div class="mainWrap">
+        <div class="slideArea">
+            <ul class="slideImg">
+                <li class="on">
+                    <div class="ratio">
+                        <img src="image/main_slide01.png" alt="포트설계">
+                    </div>
+                    <a href="javascript:void(0);" class="btn2_1">포트설계</a>
+                    <a href="javascript:void(0);" class="btn2_2">건강도</a>
+                    <a href="javascript:void(0);" class="btn2_3">나의포트</a>
+                </li>
+                <li>
+                    <div class="ratio">
+                        <img src="image/main_slide02.png" alt="건강도">
+                    </div>
+                    <a href="javascript:void(0);" class="btn2_1" style="top:0%; left:47%;">포트설계</a>
+                    <a href="javascript:void(0);" class="btn2_2" style="top:4.4%; left:3%;">건강도</a>
+                    <a href="javascript:void(0);" class="btn2_3" style="top:1.6%; left:25%;">나의포트</a>
+                </li>
+                <li>
+                    <div class="ratio">
+                        <img src="image/main_slide03.png" alt="나의포트">
+                    </div>
+                    <a href="javascript:void(0);" class="btn2_1" style="top:1.6%; left:25%;">포트설계</a>
+                    <a href="javascript:void(0);" class="btn2_2" style="top:0%; left:47%;">건강도</a>
+                    <a href="javascript:void(0);" class="btn2_3" style="top:4.4%; left:3%;">나의포트</a>
+                </li>
+            </ul>
+            <div class="indicator">
+                <a href="javascript:void(0);" class="on">1</a>
+                <a href="javascript:void(0);">2</a>
+                <a href="javascript:void(0);">3</a>
+            </div>
+        </div>
+        <div class="contArea">
+            컨텐츠 영역
+        </div>
+    </div>
+    <a href="index.html" class="home"><i class="fas fa-home"></i></a>
+    <script>
+        $(function(){
+            $('.slideImg li a').click(function(){
+                var idx = $(this).index() - 1 ;
+                console.log(idx);
+
+                $('.slideImg').find('li').eq(idx).addClass('on').siblings('li').removeClass('on');
+                $('.indicator').find('a').eq(idx).addClass('on').siblings().removeClass('on');
+            });
+        });
+    </script>
+</body>
+</html>
