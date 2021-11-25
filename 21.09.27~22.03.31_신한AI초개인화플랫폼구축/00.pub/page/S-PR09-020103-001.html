@@ -1,0 +1,1212 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL PB > 포트폴리오 관리 > 추천상품
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		노소영
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>SOL PB</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../style/pwm.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../script/PR/PR09/PR0902/common/PR0902ui.js"></script> <!-- pwm ui script -->
+	
+	<script src="../../../../../../../script/include/library/highcharts.js"></script> <!-- chart script -->
+	<script src="../../../../../../../script/include/library/highcharts-more.js"></script> <!-- chart script -->
+	<script src="../../../../../../../script/sample/pbservice/pbservice_pub.js"></script> <!-- chart script -->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			fnc분석추천_도넛그래프('분석추천_도넛그래프1');									//id:분석추천_도넛그래프1
+			var a목록 = JSON.parse('[{"기준월":"2016.02","전월대비등락":"-60.20","기준월_originalValue":"201602","월수익률":"-5.77","월기준가":"984.02","연환산수익률":"-69.18","name":201602,"y":984.02},{"기준월":"2016.03","전월대비등락":"19.90","기준월_originalValue":"201603","월수익률":"2.02","월기준가":"1003.92","연환산수익률":"24.27","name":201603,"y":1003.92},{"기준월":"2016.04","전월대비등락":"6.36","기준월_originalValue":"201604","월수익률":"0.63","월기준가":"1010.28","연환산수익률":"7.60","name":201604,"y":1010.28},{"기준월":"2016.05","전월대비등락":"5.75","기준월_originalValue":"201605","월수익률":"0.57","월기준가":"1016.03","연환산수익률":"6.83","name":201605,"y":1016.03},{"기준월":"2016.06","전월대비등락":"-22.63","기준월_originalValue":"201606","월수익률":"-2.23","월기준가":"993.40","연환산수익률":"-26.73","name":201606,"y":993.4},{"기준월":"2016.07","전월대비등락":"8.29","기준월_originalValue":"201607","월수익률":"0.83","월기준가":"1001.69","연환산수익률":"10.01","name":201607,"y":1001.69},{"기준월":"2016.08","전월대비등락":"-54.98","기준월_originalValue":"201608","월수익률":"-5.49","월기준가":"946.71","연환산수익률":"-65.86","name":201608,"y":946.71},{"기준월":"2016.09","전월대비등락":"18.35","기준월_originalValue":"201609","월수익률":"1.94","월기준가":"965.06","연환산수익률":"23.26","name":201609,"y":965.06},{"기준월":"2016.10","전월대비등락":"-50.18","기준월_originalValue":"201610","월수익률":"-5.20","월기준가":"914.88","연환산수익률":"-62.40","name":201610,"y":914.88},{"기준월":"2016.11","전월대비등락":"-46.28","기준월_originalValue":"201611","월수익률":"-5.06","월기준가":"868.60","연환산수익률":"-60.70","name":201611,"y":868.6},{"기준월":"2016.12","전월대비등락":"34.81","기준월_originalValue":"201612","월수익률":"4.01","월기준가":"903.41","연환산수익률":"48.09","name":201612,"y":903.41},{"기준월":"2017.01","전월대비등락":"-16.31","기준월_originalValue":"201701","월수익률":"-1.81","월기준가":"887.10","연환산수익률":"-21.66","name":201701,"y":887.1},{"기준월":"2017.02","전월대비등락":"4.49","기준월_originalValue":"201702","월수익률":"0.51","월기준가":"891.59","연환산수익률":"6.07","name":201702,"y":891.59},{"기준월":"2017.03","전월대비등락":"3.38","기준월_originalValue":"201703","월수익률":"0.38","월기준가":"894.97","연환산수익률":"4.55","name":201703,"y":894.97},{"기준월":"2017.04","전월대비등락":"33.35","기준월_originalValue":"201704","월수익률":"3.73","월기준가":"928.32","연환산수익률":"44.72","name":201704,"y":928.32},{"기준월":"2017.05","전월대비등락":"39.63","기준월_originalValue":"201705","월수익률":"4.27","월기준가":"967.95","연환산수익률":"51.23","name":201705,"y":967.95},{"기준월":"2017.06","전월대비등락":"28.28","기준월_originalValue":"201706","월수익률":"2.92","월기준가":"996.23","연환산수익률":"35.06","name":201706,"y":996.23},{"기준월":"2017.07","전월대비등락":"-6.20","기준월_originalValue":"201707","월수익률":"-0.62","월기준가":"990.03","연환산수익률":"-7.47","name":201707,"y":990.03},{"기준월":"2017.08","전월대비등락":"5.51","기준월_originalValue":"201708","월수익률":"0.56","월기준가":"995.54","연환산수익률":"6.68","name":201708,"y":995.54},{"기준월":"2017.09","전월대비등락":"-20.82","기준월_originalValue":"201709","월수익률":"-2.09","월기준가":"974.72","연환산수익률":"-25.10","name":201709,"y":974.72},{"기준월":"2017.10","전월대비등락":"39.73","기준월_originalValue":"201710","월수익률":"4.08","월기준가":"1014.45","연환산수익률":"48.91","name":201710,"y":1014.45},{"기준월":"2017.11","전월대비등락":"65.40","기준월_originalValue":"201711","월수익률":"6.45","월기준가":"1079.85","연환산수익률":"77.36","name":201711,"y":1079.85},{"기준월":"2017.12","전월대비등락":"0.20","기준월_originalValue":"201712","월수익률":"0.02","월기준가":"1080.05","연환산수익률":"0.22","name":201712,"y":1080.05},{"기준월":"2018.01","전월대비등락":"103.41","기준월_originalValue":"201801","월수익률":"9.57","월기준가":"1183.46","연환산수익률":"114.89","name":201801,"y":1183.46},{"기준월":"2018.02","전월대비등락":"-68.42","기준월_originalValue":"201802","월수익률":"-5.78","월기준가":"1115.04","연환산수익률":"-69.38","name":201802,"y":1115.04},{"기준월":"2018.03","전월대비등락":"11.80","기준월_originalValue":"201803","월수익률":"1.06","월기준가":"1126.84","연환산수익률":"12.70","name":201803,"y":1126.84},{"기준월":"2018.04","전월대비등락":"40.03","기준월_originalValue":"201804","월수익률":"3.55","월기준가":"1166.87","연환산수익률":"42.63","name":201804,"y":1166.87},{"기준월":"2018.05","전월대비등락":"12.29","기준월_originalValue":"201805","월수익률":"1.05","월기준가":"1179.16","연환산수익률":"12.64","name":201805,"y":1179.16},{"기준월":"2018.06","전월대비등락":"-45.56","기준월_originalValue":"201806","월수익률":"-3.86","월기준가":"1133.60","연환산수익률":"-46.37","name":201806,"y":1133.6},{"기준월":"2018.07","전월대비등락":"-42.85","기준월_originalValue":"201807","월수익률":"-3.78","월기준가":"1090.75","연환산수익률":"-45.36","name":201807,"y":1090.75},{"기준월":"2018.08","전월대비등락":"18.79","기준월_originalValue":"201808","월수익률":"1.72","월기준가":"1109.54","연환산수익률":"20.67","name":201808,"y":1109.54},{"기준월":"2018.09","전월대비등락":"8.81","기준월_originalValue":"201809","월수익률":"0.79","월기준가":"1118.35","연환산수익률":"9.53","name":201809,"y":1118.35},{"기준월":"2018.10","전월대비등락":"-216.32","기준월_originalValue":"201810","월수익률":"-19.34","월기준가":"902.03","연환산수익률":"-232.11","name":201810,"y":902.03},{"기준월":"2018.11","전월대비등락":"55.08","기준월_originalValue":"201811","월수익률":"6.11","월기준가":"957.11","연환산수익률":"73.27","name":201811,"y":957.11},{"기준월":"2018.12","전월대비등락":"-17.89","기준월_originalValue":"201812","월수익률":"-1.87","월기준가":"939.22","연환산수익률":"-22.43","name":201812,"y":939.22},{"기준월":"2019.01","전월대비등락":"10.86","기준월_originalValue":"201901","월수익률":"1.16","월기준가":"950.08","연환산수익률":"13.88","name":201901,"y":950.08},{"기준월":"2019.02","전월대비등락":"36.12","기준월_originalValue":"201902","월수익률":"3.80","월기준가":"986.20","연환산수익률":"45.62","name":201902,"y":986.2},{"기준월":"2019.03","전월대비등락":"6.25","기준월_originalValue":"201903","월수익률":"0.63","월기준가":"992.45","연환산수익률":"7.60","name":201903,"y":992.45},{"기준월":"2019.04","전월대비등락":"37.53","기준월_originalValue":"201904","월수익률":"3.78","월기준가":"1029.98","연환산수익률":"45.38","name":201904,"y":1029.98},{"기준월":"2019.05","전월대비등락":"-59.85","기준월_originalValue":"201905","월수익률":"-5.81","월기준가":"970.13","연환산수익률":"-69.73","name":201905,"y":970.13},{"기준월":"2019.06","전월대비등락":"12.60","기준월_originalValue":"201906","월수익률":"1.30","월기준가":"982.73","연환산수익률":"15.59","name":201906,"y":982.73},{"기준월":"2019.07","전월대비등락":"-113.21","기준월_originalValue":"201907","월수익률":"-11.52","월기준가":"869.52","연환산수익률":"-138.24","name":201907,"y":869.52},{"기준월":"2019.08","전월대비등락":"-31.84","기준월_originalValue":"201908","월수익률":"-3.66","월기준가":"837.68","연환산수익률":"-43.94","name":201908,"y":837.68},{"기준월":"2019.09","전월대비등락":"29.56","기준월_originalValue":"201909","월수익률":"3.53","월기준가":"867.24","연환산수익률":"42.35","name":201909,"y":867.24},{"기준월":"2019.10","전월대비등락":"1.91","기준월_originalValue":"201910","월수익률":"0.22","월기준가":"869.15","연환산수익률":"2.64","name":201910,"y":869.15},{"기준월":"2019.11","전월대비등락":"-4.99","기준월_originalValue":"201911","월수익률":"-0.57","월기준가":"864.16","연환산수익률":"-6.89","name":201911,"y":864.16},{"기준월":"2019.12","전월대비등락":"65.22","기준월_originalValue":"201912","월수익률":"7.55","월기준가":"929.38","연환산수익률":"90.57","name":201912,"y":929.38},{"기준월":"2020.01","전월대비등락":"7.45","기준월_originalValue":"202001","월수익률":"0.80","월기준가":"936.83","연환산수익률":"9.62","name":202001,"y":936.83},{"기준월":"2020.02","전월대비등락":"-35.37","기준월_originalValue":"202002","월수익률":"-3.78","월기준가":"901.46","연환산수익률":"-45.31","name":202002,"y":901.46},{"기준월":"2020.03","전월대비등락":"-149.68","기준월_originalValue":"202003","월수익률":"-16.60","월기준가":"751.78","연환산수익률":"-199.25","name":202003,"y":751.78},{"기준월":"2020.04","전월대비등락":"116.28","기준월_originalValue":"202004","월수익률":"15.47","월기준가":"868.06","연환산수익률":"185.61","name":202004,"y":868.06},{"기준월":"2020.05","전월대비등락":"116.46","기준월_originalValue":"202005","월수익률":"13.42","월기준가":"984.52","연환산수익률":"160.99","name":202005,"y":984.52},{"기준월":"2020.06","전월대비등락":"17.74","기준월_originalValue":"202006","월수익률":"1.80","월기준가":"1002.26","연환산수익률":"21.62","name":202006,"y":1002.26},{"기준월":"2020.07","전월대비등락":"189.89","기준월_originalValue":"202007","월수익률":"18.95","월기준가":"1192.15","연환산수익률":"227.35","name":202007,"y":1192.15},{"기준월":"2020.08","전월대비등락":"80.70","기준월_originalValue":"202008","월수익률":"6.77","월기준가":"1272.85","연환산수익률":"81.23","name":202008,"y":1272.85},{"기준월":"2020.09","전월대비등락":"4.70","기준월_originalValue":"202009","월수익률":"0.37","월기준가":"1277.55","연환산수익률":"4.43","name":202009,"y":1277.55},{"기준월":"2020.10","전월대비등락":"-47.78","기준월_originalValue":"202010","월수익률":"-3.74","월기준가":"1229.77","연환산수익률":"-44.88","name":202010,"y":1229.77},{"기준월":"2020.11","전월대비등락":"145.36","기준월_originalValue":"202011","월수익률":"11.82","월기준가":"1375.13","연환산수익률":"141.84","name":202011,"y":1375.13},{"기준월":"2020.12","전월대비등락":"154.91","기준월_originalValue":"202012","월수익률":"11.27","월기준가":"1530.04","연환산수익률":"135.18","name":202012,"y":1530.04},{"기준월":"2021.01","전월대비등락":"89.29","기준월_originalValue":"202101","월수익률":"5.84","월기준가":"1619.33","연환산수익률":"70.03","name":202101,"y":1619.33},{"name":202102,"y":1571.25}]');
+			fnc펀드상세기준가추이("펀드상세기준가추이", a목록, "최근5년기준가추이", "88, 120, 196");	 //id:펀드상세기준가추이
+		});
+	</script>
+	
+</head>
+<body>
+	<!-- wrap S -->
+	<div class="pwm">
+		<!-- container S -->
+		<section>
+			<header>
+				<h1 class="cntrTit">추천 상품</h1>
+				<span class="pwmSwtichTy03">
+					<label for="pofolChk3">
+						<input type="checkbox" name="pofolChk3" id="pofolChk3" value="pofolChk"><i></i>
+					</label>
+				</span>
+				<button type="button" class="btnPre" onclick="history.go(-1)">이전페이지</button>
+			</header>
+			
+			<!-- contentsWrap S -->
+			<div class="contentsWrap">
+				
+				<!-- contents S -->
+				<div class="contents">
+				
+					<div class="pwmPortfolio">
+						
+						<!-- 포폴 S -->
+						<div class="pofolGo03 pwmListMotion">
+						 	<strong>나의 총자산을<br/>분석합니다</strong><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+							<a href="#none" class="pwmGoIcon"></a>
+						</div>
+						<!-- //포폴 E -->
+						
+						<!-- 신한의 추천 상품 S -->
+						<div class="pofolBoxWhite pwmChartTy04 pwmListMotion">
+							<!-- 상단 정보 S -->
+							<div class="pofolInfoTxt pofolRight">
+								<strong><span>공유</span>님의 투자성향인<br/><!-- [20210209] 퍼블 수정 : 문구 변경 -->
+								<strong><span>공격투자형</span></strong>에 대한<br/>
+								<strong><span>신한의 추천 상품</span></strong>입니다</strong>
+							</div>
+							<!-- //상단 정보 E -->
+							<!-- 차트 S -->
+							<div class="pofolSwiper">
+								<div class="pofolchart" id="분석추천_도넛그래프1"></div>
+								<ul>
+									<!--예금 : pwnChtDotblue
+										주식 : pwnChtDotred
+										채권 : pwnChtDotgreen
+										대체 : pwnChtDotyellow
+									-->
+									<li>
+										<a href="#pwmScrSection01">
+											<span class="pwnChtDotblue">예금<em>4</em></span>
+										</a>
+									</li>
+									<!-- [20210209] 퍼블 수정 : 순서 변경 S -->
+									<li>
+										<a href="#pwmScrSection02">
+											<span class="pwnChtDotred">채권<em>1</em></span>
+										</a>
+									</li>
+									<li>
+										<a href="#pwmScrSection03">
+											<span class="pwnChtDotgreen">주식<em>2</em></span>
+										</a>
+									</li>
+									<!--// [20210209] 퍼블 수정 : 순서 변경 E -->
+									<li>
+										<a href="#pwmScrSection04">
+											<span class="pwnChtDotyellow">대체<em>2</em></span>
+										</a>
+									</li>
+								</ul>
+								<div class="pwmFloatingMFixedGray"><!-- 숨김처리시  style처리 display:flex; / display:none 사용-->
+									<div class="pwmImgIn"><img src="/images/pwm/temp/pb_photo_s.png" alt=""></div>
+									<div class="pwmImgTxt">
+										<strong>송재우 팀장이 고객님만을 위해 추천하는 상품이 <b>3</b>개 있습니다.</strong>
+										<p><span class="pwmBadgeBgYellow">PB추천</span>아이콘을 살펴보세요!</p>
+									</div>
+								</div>
+							</div>
+							<!-- //차트 E -->
+						</div>
+						<!-- //신한의 추천 상품 E -->
+						
+						<!-- 예금 추천 상품 S -->
+						<div id="pwmScrSection01"><!-- [20210209] 퍼블 수정 : 하단 박스 id값 이동 -->
+							<div class="pofolListBoxblue pofoDeco pwmChkArea pwmListMotion"><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 class active 로 제어 -->
+								<div class="pofolInfoTxt">
+									<span class="pofolIcon05"></span>
+									<strong>예금 추천 상품을<br/>살펴보세요</strong>
+								</div>
+								<ol>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>01</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+										<!-- <div class="pwmNodataTxt">
+											<div class="pwmConfirm01"></div>
+											<strong>보유 자산이 없습니다.</strong>
+										</div> -->
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">1.5% ~ 7%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>06</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>07</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>08</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>09</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>10</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>11</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pofolNumInfo">
+												<p>금리<span class="pwmFtMain03">14.25%</span></p>
+												<p>기준일 : 2020.12.12</p>
+											</div>
+										</a>
+									</li>
+								</ol>
+								<div class="btnGroupBox">
+									<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+								</div>
+							</div>
+						</div>
+						<!-- //예금 추천 상품 E -->
+						
+						<!-- 채권 추천 상품 S -->
+						<div id="pwmScrSection02"><!-- [20210209] 퍼블 수정 : 하단 박스 id값 이동 -->
+							<div class="pofolListBoxPink pofoDecoR pwmChkArea pwmListMotion"><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 class active 로 제어 -->
+								<!-- [20210209] 퍼블 수정 : 채권순서변경 S -->
+								<div class="pofolInfoTxt pofolRight">
+									<span class="pofolIcon07"></span>
+									<strong>채권 추천 상품을<br/>살펴보세요</strong>
+								</div>
+								<!--// [20210209] 퍼블 수정 : 채권순서변경 E -->
+								<ol>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>01</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pwmAnalysisInfo">
+												<!-- 
+													별0 : pwmGradeStar0
+													별1 : pwmGradeStar01
+													별2 : pwmGradeStar02
+													별3 : pwmGradeStar03
+													별4 : pwmGradeStar04
+													별5 : pwmGradeStar05
+												-->
+				                                <div class="pwmGradeStar01"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                     <!-- 
+					                                	퍼블 추가
+					                                	플러스 수익률 : 클래스 없음 default 컬러 레드
+					                                	마이너스 수익률 : 클래스 pwmFtMain04 추가
+					                                 -->
+				                                    <span>12.98</span><!-- 마이너스 수익률 class="pwmFtMain04" -->
+				                                </div>
+				                            </div>
+			                            </a>
+			                            <!-- <div class="pwmNodataTxt">
+											<div class="pwmConfirm01"></div>
+											<strong>보유 자산이 없습니다.</strong>
+										</div> -->
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span class="pwmFtMain04">122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar03"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar04"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar05"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>06</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar0"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>07</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>08</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>09</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>10</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>122.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+								</ol>
+								<div class="btnGroupBox">
+									<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+								</div>
+							</div>
+						</div>
+						<!-- //주식 추천 상품 E -->
+						
+						<!-- 주식 추천 상품 S -->
+						<div id="pwmScrSection03"><!-- [20210209] 퍼블 수정 : 하단 박스 id값 이동 -->
+							<div class="pofolListBoxMint pofoDeco pwmChkArea pwmListMotion"><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 class active 로 제어 -->
+								<!-- [20210209] 퍼블 수정 : 주식순서변경 S -->
+								<div class="pofolInfoTxt">
+									<span class="pofolIcon06"></span>
+									<strong>주식 추천 상품을<br/>살펴보세요</strong>
+								</div>
+								<!--// [20210209] 퍼블 수정 : 주식순서변경 E -->
+								<ol>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>01</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pwmAnalysisInfo">
+												<!-- 
+													별0 : pwmGradeStar0
+													별1 : pwmGradeStar01
+													별2 : pwmGradeStar02
+													별3 : pwmGradeStar03
+													별4 : pwmGradeStar04
+													별5 : pwmGradeStar05
+												-->
+				                                <div class="pwmGradeStar01"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>12.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+			                            <!-- <div class="pwmNodataTxt">
+											<div class="pwmConfirm01"></div>
+											<strong>보유 자산이 없습니다.</strong>
+										</div> -->
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar03"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar04"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar05"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>06</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar0"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>07</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>08</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>09</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>10</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+								</ol>
+								<div class="btnGroupBox">
+									<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+								</div>
+							</div>
+						</div>
+						<!-- //채권 추천 상품 E -->
+						
+						<!-- 대체 추천 상품 S -->
+						<div id="pwmScrSection04"><!-- [20210209] 퍼블 수정 : 하단 박스 id값 이동 -->
+							<div class="pofolListBoxOrange pofoDecoR pwmChkArea pwmListMotion"><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 class active 로 제어 -->
+								<div class="pofolInfoTxt pofolRight">
+									<span class="pofolIcon08"></span>
+									<strong>대체 추천 상품을<br/>살펴보세요</strong>
+								</div>
+								<ol>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>01</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pwmAnalysisInfo">
+												<!-- 
+													별0 : pwmGradeStar0
+													별1 : pwmGradeStar01
+													별2 : pwmGradeStar02
+													별3 : pwmGradeStar03
+													별4 : pwmGradeStar04
+													별5 : pwmGradeStar05
+												-->
+				                                <div class="pwmGradeStar01"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+			                            <!-- <div class="pwmNodataTxt">
+											<div class="pwmConfirm01"></div>
+											<strong>보유 자산이 없습니다.</strong>
+										</div> -->
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar03"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar04"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar05"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>06</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar0"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>07</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>08</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>09</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                   <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+									<li>
+										<a href="#pop01" class="btnPopOpen">
+											<strong><span>10</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+											<div class="pwmAnalysisInfo">
+				                                <div class="pwmGradeStar02"></div>
+				                                <div class="grade">
+				                                    <p>위험등급</p>
+				                                    <span class="pwmgradeNum">2</span>
+				                                </div>
+				                                <div class="rate">
+				                                    <p>3개월수익률</p>
+				                                    <span>199.98</span>
+				                                </div>
+				                            </div>
+			                            </a>
+									</li>
+								</ol>
+								<div class="btnGroupBox">
+									<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+								</div>
+							</div>
+						</div>
+						<!-- //대체 추천 상품 E -->
+						
+						<!-- 가장 많이 판매된 상품 S -->
+						<div class="pofolListBoxNavi pofoDeco pwmListMotion">
+							<div class="pofolInfoTxt">
+								<span class="pofolIcon09"></span>
+								<p>PWM센터에서</p>
+								<strong><b>가장 많이 판매</b>된 상품은<br/>무엇일까요?<span>(최근 1개월)</span></strong>
+							</div>
+							<ol>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>01</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+										<div class="pwmAnalysisInfo">
+											<!-- 
+												별0 : pwmGradeStar0
+												별1 : pwmGradeStar01
+												별2 : pwmGradeStar02
+												별3 : pwmGradeStar03
+												별4 : pwmGradeStar04
+												별5 : pwmGradeStar05
+											-->
+			                                <div class="pwmGradeStar01"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+		                            <!-- <div class="pwmNodataTxt">
+										<div class="pwmConfirm01"></div>
+										<strong>보유 자산이 없습니다.</strong>
+									</div> -->
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar02"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar03"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar04"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar05"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+							</ol>
+						</div>
+						<!-- //가장 많이 판매된 상품 E -->
+						
+						<!-- 수익률 최고 상품 S -->
+						<div class="pofolListBoxNavi pofoDecoR pwmListMotion">
+							<div class="pofolInfoTxt pofolRight">
+								<span class="pofolIcon10"></span>
+								<p>PWM센터의</p><!-- [20210209] 퍼블 수정 : 문구변경 -->
+								<strong><b>수익률 BEST</b> 상품은<br/><span>(최근 1개월)</span>무엇일까요?</strong><!-- [20210209] 퍼블 수정 : 디자인 글자색영역변경 b태그 -->
+							</div>
+							<ol>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>01</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+										<div class="pwmAnalysisInfo">
+											<!-- 
+												별0 : pwmGradeStar0
+												별1 : pwmGradeStar01
+												별2 : pwmGradeStar02
+												별3 : pwmGradeStar03
+												별4 : pwmGradeStar04
+												별5 : pwmGradeStar05
+											-->
+			                                <div class="pwmGradeStar01"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+		                            <!-- <div class="pwmNodataTxt">
+										<div class="pwmConfirm01"></div>
+										<strong>보유 자산이 없습니다.</strong>
+									</div> -->
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E<i class="pwmBadgeBgYellow">PB추천</i></b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar02"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar03"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar04"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+								<li>
+									<a href="#pop01" class="btnPopOpen">
+										<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+										<div class="pwmAnalysisInfo">
+			                                <div class="pwmGradeStar05"></div>
+			                                <div class="grade">
+			                                    <p>위험등급</p>
+			                                    <span class="pwmgradeNum">2</span>
+			                                </div>
+			                                <div class="rate">
+			                                    <p>3개월수익률</p>
+			                                    <span>199.98</span>
+			                                </div>
+			                            </div>
+		                            </a>
+								</li>
+							</ol>
+						</div>
+						<!-- //수익률 최고 상품 E -->
+						
+						
+						
+						<!-- 추천상품 S -->
+						<div class="pwmFloatingMFixed">
+							<div class="pwmImgIn"><img src="/images/pwm/temp/pb_photo_s.png" alt=""/></div>
+							<a href="#">보고 계신 상품과 관련하여 상담이 필요하신가요?</a>
+						</div>
+						<!-- //추천상품 E -->
+						
+					</div>
+				</div>
+				<!-- // contents E -->
+				
+
+				
+			</div>
+			<!-- // contentsWrap E -->
+		</section>
+		<!-- // container E -->
+	</div>
+	<!-- // wrap E -->
+	
+	
+	<!-- 하단 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt large" id="pop01"><!-- [20210403] 퍼블 수정 : 아이폰6 ios 10 오류로 임시 처리 : large추가 -->
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">추천 상품</h1>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+                    <div class="pwmPofolRec">
+                        <div class="pofolInfoTxt">
+                            <strong>[선진] DB글로벌자산관리솔루션증권자투자신탁(H)[주식혼합-재간전형]종류A. 말줄임 처리 없음.</strong>
+                        </div>
+                        <!-- <div class="pwmAnalysisBox"> -->
+                        <div class="pwmAnalysisInfo">
+                            <div class="pwmGradeStar01"></div>
+                            <div class="grade">
+                                <p>위험등급</p>
+                                <span class="pwmgradeNum">2</span>
+                            </div>
+                            <div class="rate">
+                                <p>3개월수익률</p>
+                                <!-- 
+		                           	퍼블 추가
+		                           	플러스 수익률 : 클래스 없음 default 컬러 레드
+		                           	마이너스 수익률 : 클래스 pwmFtMain04 추가
+	                            -->
+                                <span>12.98</span><!-- 마이너스 수익률 class="pwmFtMain04" -->
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                        
+                        <!-- [20210208] 퍼블 수정 : 수익률 박스 추가 -->
+                        <div class="pofolRateList mlmr20">
+                            <strong class="pwmFt13">수익률</strong>
+                            <ul>
+                                <li>1개월<em class="decline">9.7</em></li>
+                                <li>3개월<em>100.678</em></li>
+                                <li>6개월<em class="decline">38.2</em></li>
+                                <li>1년<em>45.1</em></li>
+                            </ul>
+                        </div>
+                        <!-- // [20210208] 퍼블 수정 : 수익률 박스 추가 -->
+                        
+                        <div class="pwmChartTy05">
+                            <div class="pofolSwiper">
+                            	<!-- [20210208] 퍼블 수정 : 최대, 최저 기준가  추가 -->
+                           		<span class="posLT">
+                           			<span>최대 기준가 : <em>1,488</em> <em>(2020.00.00)</em></span>
+                           			<span>최저 기준가 : <em>488</em> <em>(2011.00.00)</em></span>
+                           		</span>
+                           		<!-- // [20210208] 퍼블 수정 : 최대, 최저 기준가 추가 -->
+								<span class="posRB">현재<em>14.25%</em></span>
+								<div class="pofolchart" id="펀드상세기준가추이"></div><!-- [20210208] 퍼블 수정 : 그래프 id 변경 -->
+							</div>
+                        </div>
+                        
+                        <!-- [20210208] 퍼블 수정 : 5년간 수익률 추가 -->
+                        <div class="pofolRateList02">
+                        	<ul>
+                        		<li>
+                        			<strong>5년간<br>최저월수익률</strong><!-- [20210412] 퍼블수정 : 문구 변경 -->
+                        			<div>
+                        				<span class="pwmFtMain04">-1.11</span>
+										<em>(2020.00)</em>
+                        			</div>
+                        		</li>
+                        		<li>
+                        			<strong>5년간<br>최고월수익률</strong><!-- [20210412] 퍼블수정 : 문구 변경 -->
+                        			<div>
+                        				<span>5.22</span>
+										<em>(2020.00)</em>
+                        			</div>
+                        		</li>
+                        	</ul>
+                        	<p class="pwmInfoTT">최저, 최고 수익률은 월말 기준, 연환산 수익률입니다.</p>
+                        </div>
+                        <!-- // [20210208] 퍼블 수정 : 5년간 수익률 추가 -->
+                        
+                        <ul class="pwmAccordian02">
+                            <li>
+                                <div class="accordianBox pwmChkArea">
+                                    <div class="accordianTit">
+                                        <a href="javascript:void(0);" class="pwmClick">
+                                            <strong>운영전략</strong>
+                                        </a>
+                                    </div>
+                                    <div class="accordianCon">
+                                        이 투자신탁은 중국본토시장(상해및심천증권거래소)에상장된 A주식에 주로투자하는KB중국본토A주증권모투자신탁(주식)의 집합투자증권을 법에서 정하는 주 된 투자 대상으로하는 투자신탁으로 중국본토관련주식시장의 상승에 따른 수익을 추구합니다. 그러나, 이 투자신탁의 투자목적이 반드시 달성된다는 보장은 없으며, 이 투자 신탁과 관련된 어떠한 당사자도 투자원금의 보장 또는 투자목적의 달성을 보장하지 아니합니다.<br><br>
+                                        ① 해외 및 국내주식에 투자하여 장기적인 투자수익 추구<br>
+                                        ② Thomson Reuters Global Renewable Energy Index에 포함되어 있지 않더라도 투모로우에너지와 관련하여 핵심 역량을 가지고 있으며 향후 국내 투모로우에너지 섹터에서 수혜가 예상되는 기업의 주식에 투자하여 투자수익 추구
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <hr class="pwmLine">
+                        
+                        <div class="pwmTop5">
+                            <div class="pofolInfoTxt">
+                                <strong class="pwmE">보유종목 TOP5</strong>
+                            </div>
+                            <span class="pwmFt13">단위 : %</span>
+                            <ul class="pwmTop5List">
+                                <li>
+                                    <p class="pwmFt13">XTRACKERS HARVEST CSI 300</p>
+                                    <div class="pwmTopGraphWrap">
+                                        <div class="bgGraph">
+                                            <i style="width: 80%"></i>
+                                        </div>
+                                        <span>80.00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="pwmFt13">VANECK VEC TORS.J.P. MORGAN E</p>
+                                    <div class="pwmTopGraphWrap">
+                                        <div class="bgGraph">
+                                            <i style="width: 20.21%"></i>
+                                        </div>
+                                        <span>20.21</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="pwmFt13">XTRACKERS HARVEST CSI 300</p>
+                                    <div class="pwmTopGraphWrap">
+                                        <div class="bgGraph">
+                                            <i style="width: 15.09%"></i>
+                                        </div>
+                                        <span>15.09</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="pwmFt13">XTRACKERS HARVEST CSI 300</p>
+                                    <div class="pwmTopGraphWrap">
+                                        <div class="bgGraph">
+                                            <i style="width: 20.21%"></i>
+                                        </div>
+                                        <span>20.21</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="pwmFt13">XTRACKERS HARVEST CSI 300</p>
+                                    <div class="pwmTopGraphWrap">
+                                        <div class="bgGraph">
+                                            <i style="width: 30.44%"></i>
+                                        </div>
+                                        <span>30.44</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    
+                    </div>
+                </div>
+                <!-- floating S -->
+                <div class="pwmFloatingMFixed">
+                    <div class="pwmImgIn"><img src="/images/pwm/temp/pb_photo_s.png" alt=""/></div>
+                    <a href="#">보고 계신 상품과 관련하여 상담이 필요하신가요?</a>
+                </div>
+                <!-- floating E -->
+            </div>
+		</div>
+	</div>
+    <!-- // 하단 레이어 팝업 -->
+	
+	
+</body>
+</html>

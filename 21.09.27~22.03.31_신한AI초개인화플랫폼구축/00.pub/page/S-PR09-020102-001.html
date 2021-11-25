@@ -1,0 +1,501 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL PB > 포트폴리오 관리 > 포트폴리오 분석 
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		노소영
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>SOL PB</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../style/pwm.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../script/PR/PR09/PR0902/common/PR0902ui.js"></script> <!-- pwm ui script -->
+	
+	<script src="../../../../../../../script/include/library/highcharts.js"></script> <!-- chart script -->
+	<script src="../../../../../../../script/include/library/highcharts-more.js"></script> <!-- chart script -->
+	<script src="../../../../../../../script/sample/pbservice/pbservice_pub.js"></script> <!-- chart script -->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//fnc포트폴리오분석_기대변동성("포트폴리오분석_기대변동성", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "기대수익률/변동성", "88, 120, 196");	//id:포트폴리오분석_기대변동성
+			fnc분석추천_도넛그래프('분석추천_도넛그래프1');																			//id:분석추천_도넛그래프1
+			fnc분석추천_도넛그래프('분석추천_도넛그래프2');																			//id:분석추천_도넛그래프2
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세1',"#9370e0");	//id:분석추천_도넛그래프상세
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세2',"#10c8b9");	//id:분석추천_도넛그래프상세
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세3',"#ff85b3");	//id:분석추천_도넛그래프상세
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세4',"#ffb81e");	//id:분석추천_도넛그래프상세
+		});
+		function fnc그래프출력(){
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세1',"#9370e0");	//id:분석추천_도넛그래프상세1
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세2',"#10c8b9");	//id:분석추천_도넛그래프상세2
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세3',"#ff85b3");	//id:분석추천_도넛그래프상세3
+			fnc분석추천_도넛그래프상세('분석추천_도넛그래프상세4',"#ffb81e");	//id:분석추천_도넛그래프상세4
+		}
+	</script>
+	
+</head>
+<body>
+	<!-- wrap S -->
+	<div class="pwm">
+		<!-- container S -->
+		<section>
+			<header>
+				<h1 class="cntrTit">총자산 분석</h1><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+				<span class="pwmSwtichTy03">
+					<label for="pofolChk3">
+						<input type="checkbox" name="pofolChk3" id="pofolChk3" value="pofolChk"><i></i>
+					</label>
+				</span>
+				<button type="button" class="btnPre" onclick="history.go(-1)">이전페이지</button>
+			</header>
+			
+			<!-- contentsWrap S -->
+			<div class="contentsWrap">
+				
+				<!-- contents S -->
+				<div class="contents">
+				
+					<div class="pwmPortfolio">
+						
+						
+						<!-- [20210208] 퍼블 수정 : 모션 변경 div 추가 -->
+						<div class="pwmListMotion">
+							<!-- 포폴 S -->
+							<div class="pofolGo01">
+								<strong>나의 총자산을<br/>알아봅니다</strong><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+								<a href="#none" class="pwmGoIcon"></a>
+							</div>
+							<!-- //포폴 E -->
+							
+							<!-- 투자성향분석 S -->
+							<div class="pofolBoxblue pwmChartTy01">
+								<!-- 상단 정보 S -->
+								<div class="pofolInfoTxt pofolRight pt0 pb0">
+									<strong><span>공유</span>님의 투자성향은<br/>
+									<b>안정추구형</b>입니다</strong>
+									<!-- [20210208] 퍼블 수정 : 텍스트 삭제 / 자세히 보기 버튼 추가 -->
+									<!-- <p class="allTxt">원금손실은 최소화 하고, 예/적금 보다<br/>높은 수익률을 원합니다. <br/>투자금의 일부는 변동성이 높은 상품에<br/>투자할 의향이 있습니다.</p> -->
+									<a href="#layerPopBottom02" class="pwmBtnLineWhite btnPopOpen"><span>자세히 보기</span></a>
+									<!-- // [20210208] 퍼블 수정 : 텍스트 삭제 / 자세히 보기 버튼 추가 -->
+								</div>
+								<!-- //상단 정보 E -->
+								
+								<!-- [20210208] 퍼블 수정 : 투자성향 분석 레이어 팝업으로 분리 -->
+								<!-- 차트 S -->
+								<!-- <div class="pofolSwiper">
+									<span class="posLT">기대수익률</span>
+									<span class="posRB">변동성</span>
+									<div class="pofolchart" id="포트폴리오분석_기대변동성"></div>
+								</div> -->
+								<!-- //차트 E -->
+								<!-- 버튼 S -->
+								<!-- <div class="btnGroupBox">
+									<a href="javascript:void(0)" class="pwmBtnBgwhiteBlue"><span>투자성향분석 다시하기</span></a>
+								</div> -->
+								<!-- //버튼 E -->
+								<!-- // [20210208] 퍼블 수정 : 투자성향 분석 레이어 팝업으로 분리 -->
+							</div>
+							<!-- //투자성향분석 E -->
+						</div>
+						<!-- // [20210208] 퍼블 수정 : 모션 변경 div 추가 -->
+						
+						<!-- 포트폴리오 현황 S -->
+						<div class="pofolBoxblue pwmChartTy02 pwmListMotion">
+							<!-- 상단 정보 S -->
+							<div class="pofolInfoTxt">
+								<strong>고객님의 <b>포트폴리오<br/>현황</b>은 다음과 같습니다</strong>
+								<p class="allTxt">고객님은 주로 주식과 채권에<br/>투자하고 계십니다.</p>
+							</div>
+							<!-- //상단 정보 E -->
+							<!-- 차트 S -->
+							<div class="pofolSwiper">
+								<div class="pofolchart" id="분석추천_도넛그래프1"></div>
+								<ul class="pwmTabGo">
+									<!--예금 : pwnChtDotblue
+										채권 : pwnChtDotred
+										주식 : pwnChtDotgreen
+										대체 : pwnChtDotyellow
+									-->
+									<li>
+										<a href="#layerPopBottom01" data-tab="0" class="btnPopOpen">
+											<span class="pwnChtDotblue">예금<em>40.2%</em></span>
+											<b>401,301,002원</b>
+										</a>
+									</li>
+									<li>
+										<a href="#layerPopBottom01" data-tab="1" class="btnPopOpen">
+											<span class="pwnChtDotred">채권<em>29.8%</em></span>
+											<b>41,301,002원</b>
+										</a>
+									</li>
+									<li>
+										<a href="#layerPopBottom01" data-tab="2" class="btnPopOpen">
+											<span class="pwnChtDotgreen">주식<em>10%</em></span>
+											<b>1,301,002원</b>
+										</a>
+									</li>
+									<li>
+										<a href="#layerPopBottom01" data-tab="3" class="btnPopOpen">
+											<span class="pwnChtDotyellow">대체<em>20%</em></span>
+											<b>301,002원</b>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //차트 E -->
+							
+							<!-- 버튼 S -->
+							<div class="btnGroupBox">
+								<a href="javascript:void(0)" class="pwmBtnBgwhiteBlue"><span>자산유형별 포트폴리오 분석</span></a>
+							</div>
+							<!-- //버튼 E -->
+							<p class="pwmInfoTT">방카, 노란우산, 퇴직연금, ISA, 금투Wrap 제외</p><!-- [20200308] 퍼블 수정 : 디자인줄바꿈변경 -->
+						</div>
+						<!-- //포트폴리오 현황 E -->
+						
+						<!-- 투자성향 포트폴리오 S -->
+						<div class="pofolBoxWhite pwmChartTy03 pwmListMotion">
+							<!-- 상단 정보 S -->
+							<div class="pofolInfoTxt pofolRight">
+								<strong>고객님의 투자성향에 적합한<br/><strong><span>포트폴리오</span></strong>입니다</strong>
+								<p class="allTxt">자산유형별 추천상품을<br/>확인해보세요.</p>
+							</div>
+							<!-- //상단 정보 E -->
+							<!-- 차트 S -->
+							<div class="pofolSwiper">
+								<div class="pofolchart" id="분석추천_도넛그래프2"></div>
+								<ul>
+									<!-- 
+										확대 : pwnChtStateUp
+										축소 : pwnChtStateDown
+										유지 : pwnChtState
+									 -->
+									<li>
+										<a href="S-PR09-020103-001.html#pwmScrSection01">
+											<span class="pwnChtDotblue">예금<em>40.2%</em></span>
+											<b class="pwnChtStateUp">15% 확대</b>
+										</a>
+									</li>
+									<li>
+										<a href="S-PR09-020103-001.html#pwmScrSection02">
+											<span class="pwnChtDotred">채권<em>29.8%</em></span>
+											<b class="pwnChtStateDown">15% 축소</b>
+										</a>
+									</li>
+									<li>
+										<a href="S-PR09-020103-001.html#pwmScrSection03">
+											<span class="pwnChtDotgreen">주식<em>10%</em></span>
+											<b class="pwnChtStateUp">7% 확대</b>
+										</a>
+									</li>
+									<li>
+										<a href="S-PR09-020103-001.html#pwmScrSection04">
+											<span class="pwnChtDotyellow">대체<em>20%</em></span>
+											<b class="pwnChtState">유지</b>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //차트 E -->
+						</div>
+						<!-- //투자성향 포트폴리오 E -->
+						
+						<!-- 추천상품 S -->
+						<div class="pofolGo02"><!-- [20210309] 퍼블수정 : pwmListMotion class삭제 -->
+							<strong>자산유형별  추천상품을<br/>확인하세요</strong>
+							<a href="#none" class="pwmGoIcon"></a>
+						</div>
+						<div class="pwmFloatingMFixed">
+							<div class="pwmImgIn"><img src="/images/pwm/temp/pb_photo_s.png" alt=""/></div>
+							<a href="#">고객님의 포트폴리오에 대해 상담이 필요하세요?</a>
+						</div>
+						<!-- //추천상품 E -->
+						
+					</div>
+				</div>
+				<!-- // contents E -->
+				
+			</div>
+			<!-- // contentsWrap E -->
+		</section>
+		<!-- // container E -->
+	</div>
+	<!-- // wrap E -->
+	
+	<!-- 총자산 분석 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt large" id="layerPopBottom01">
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">총자산 분석</h1><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon fixedCon">
+				<div class="conInner">
+					<div class="pwmTab pwmTabTy04 mt20 mlmr20">
+						<!-- [20210208] 퍼블 수정 : 자산유형 순서 변경 -->
+						<a href="#tabView1" class="on"><span>예금</span></a>
+						<a href="#tabView2"><span>채권</span></a>
+						<a href="#tabView3"><span>주식</span></a>
+						<a href="#tabView4"><span>대체</span></a>
+						<!-- // [20210208] 퍼블 수정 : 자산유형 순서 변경 -->
+					</div>
+					<div class="pwmTabCont scrInner">
+						<div class="tabView on" id="tabView1">
+							<div class="pwmPofolMyState">
+								<p class="stateTit">고객님의 예금 비중과<br>예금의 향후 6개월 전망치 입니다.</p>
+								<div class="graph">
+									<strong class="pwnChtDotblue">예금 <b>40</b>%</strong>
+									<div class="pofolchart" id="분석추천_도넛그래프상세1"></div>
+								</div>
+								<div class="pwmAnalysisBox">
+									<ul class="pwmPofolMyStateList">
+										<li>
+											<strong class="pwmFt13">예금유동성</strong>
+											<span>40%</span>
+											<!-- <i class="icWeather"></i> -->
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+							<div class="pofolInfoTxt">
+								<strong><strong><span>보유 상품</span></strong>을<br>확인해보세요.</strong>
+							</div>
+							<div class="pofolListBox03">
+								<ul>
+									<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+										<span class="pwmBankIcon">
+											<span>신한금융투자</span>
+										</span>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+									<li>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- // [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+						</div>
+						<!-- [20210208] 퍼블 수정 : 자산유형 순서 변경 -->
+						<div class="tabView" id="tabView2">
+							<div class="pwmPofolMyState">
+								<p class="stateTit">고객님의 채권 비중과<br>채권의 향후 6개월 전망치 입니다.</p>
+								<div class="graph">
+									<strong class="pwnChtDotred">채권 <b>40</b>%</strong>
+									<div class="pofolchart" id="분석추천_도넛그래프상세3"></div>
+								</div>
+								<div class="pwmAnalysisBox">
+									<ul class="pwmPofolMyStateList col2">
+										<li>
+											<strong class="pwmFt13">국내채권</strong>
+											<span>100%</span>
+											<i class="icWeather"></i>
+										</li>
+										<li>
+											<strong class="pwmFt13">해외채권</strong>
+											<span>40%</span>
+											<i class="icWeather02"></i>
+										</li>
+									</ul>
+								</div>
+								<p class="pwmInfoTT">자산유형별 기상도는 당행의 향후 6개월 전망을 반영하였습니다.</p>
+							</div>
+							<!-- [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+							<div class="pofolInfoTxt">
+								<strong><strong><span>보유 상품</span></strong>을<br>확인해보세요.</strong>
+							</div>
+							<div class="pofolListBox03">
+								<ul>
+									<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+										<span class="pwmBankIcon">
+											<span>신한금융투자</span>
+										</span>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+									<li>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- // [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+						</div>
+						<div class="tabView" id="tabView3">
+							<div class="pwmPofolMyState">
+								<p class="stateTit">고객님의 주식 비중과<br>주식의 향후 6개월 전망치 입니다.</p>
+								<div class="graph">
+									<strong class="pwnChtDotgreen">주식 <b>40.1</b>%</strong>
+									<div class="pofolchart" id="분석추천_도넛그래프상세2"></div>
+								</div>
+								<div class="pwmAnalysisBox">
+									<ul class="pwmPofolMyStateList col3">
+										<li>
+											<strong class="pwmFt13">국내주식</strong>
+											<span>40%</span>
+											<i class="icWeather"></i>
+										</li>
+										<li>
+											<strong class="pwmFt13">선진주식</strong>
+											<span>40%</span>
+											<i class="icWeather02"></i>
+										</li>
+										<li>
+											<strong class="pwmFt13">이머징주식</strong>
+											<span>40%</span>
+											<i class="icWeather03"></i>
+										</li>
+									</ul>
+								</div>
+								<p class="pwmInfoTT">자산유형별 기상도는 당행의 향후 6개월 전망을 반영하였습니다.</p>
+							</div>
+							<!-- [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+							<div class="pofolInfoTxt">
+								<strong><strong><span>보유 상품</span></strong>을<br>확인해보세요.</strong>
+							</div>
+							<div class="pofolListBox03">
+								<ul>
+									<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+										<span class="pwmBankIcon">
+											<span>신한금융투자</span>
+										</span>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+									<li>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- // [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+						</div>
+						<!-- // [20210208] 퍼블 수정 : 자산유형 순서 변경 -->
+						<div class="tabView" id="tabView4">
+							<div class="pwmPofolMyState">
+								<p class="stateTit">고객님의 대체 비중과<br>대체의 향후 6개월 전망치 입니다.</p>
+								<div class="graph">
+									<strong class="pwnChtDotyellow">대체<b> 40.8</b>%</strong>
+									<div class="pofolchart" id="분석추천_도넛그래프상세4"></div>
+								</div>
+								<div class="pwmAnalysisBox">
+									<ul class="pwmPofolMyStateList col2">
+										<li>
+											<strong class="pwmFt13">대체투자</strong>
+											<span>40%</span>
+											<i class="icWeather"></i>
+										</li>
+										<li>
+											<strong class="pwmFt13">ELS</strong>
+											<span>10%</span>
+											<!-- <i class="icWeather02"></i> -->
+										</li>
+									</ul>
+								</div>
+								<p class="pwmInfoTT">자산유형별 기상도는 당행의 향후 6개월 전망을 반영하였습니다.</p>
+							</div>
+							<!-- [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+							<div class="pofolInfoTxt">
+								<strong><strong><span>보유 상품</span></strong>을<br>확인해보세요.</strong>
+							</div>
+							<div class="pofolListBox03">
+								<ul>
+									<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+										<span class="pwmBankIcon">
+											<span>신한금융투자</span>
+										</span>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+									<li>
+										<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+										<p>000-000-000000</p>
+										<div class="tar">
+											<em>439,719,369<span>원</span></em>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- // [20210208] 퍼블 수정 : 보유 상품 영역 추가 -->
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //총자산 분석 팝업 -->
+	
+	<!-- [20210208] 퍼블 수정 : 투자성향 분석 레이어 팝업으로 분리 -->
+	<!-- 투자성향 분석 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt analysis" id="layerPopBottom02"><!-- [20210302] 퍼블 수정 : Large클래스제거 --><!-- [20210403] 퍼블 수정 : 아이폰6 ios 10 오류로 임시 처리 : analysis추가 -->
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">투자성향 분석</h1>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<!-- [02010223] 퍼블 수정 : .fixedCon 삭제 -->
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt mt40 mb40"><!-- [20210326] 챠트빠지면서 추가변경 mt40 mb40 -->
+						<strong>김신한님의 투자성향은<br><strong><span>안정추구형</span></strong>입니다</strong>
+						<p>원금손실은 최소화 하고, 예/적금 보다 높은 수익률을 원합니다. 투자금의 일부는 변동성이 높은 상품에 투자할 의향이 있습니다.</p>
+					</div>
+					<div class="pwmChartTy01">
+						<!-- 차트 S  [20210326] 챠트제거
+						<div class="pofolSwiper">
+							<span class="posLT">기대수익률</span>
+							<span class="posRB">변동성</span>
+							<div class="pofolchart" id="포트폴리오분석_기대변동성"></div>
+						</div>
+						 //차트 E -->
+						<!-- 버튼 S -->
+						<div class="btnGroupBox plpr20">
+							<a href="javascript:void(0)" class="pwmBtnBgwhiteBlue"><span>투자성향분석 다시하기</span></a>
+						</div>
+						<!-- //버튼 E -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 투자성향 분석 레이어 팝업 -->
+	<!-- // [20210208] 퍼블 수정 : 투자성향 분석 레이어 팝업으로 분리 -->
+	
+</body>
+</html>

@@ -1,0 +1,208 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL PB > 포트폴리오 관리 > 나의 포트폴리오 > 목표 수익률 알람 설정
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		노소영
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>SOL PB</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../style/pwm.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../script/PR/PR09/PR0902/common/PR0902ui.js"></script> <!-- pwm ui script -->
+	
+	<script>
+	$(function(){
+		$(window).load(function(){
+			pwmAlarmSet.init();
+		});
+	});
+	</script>
+</head>
+<body>
+	<!-- wrap S -->
+	<div class="pwm">
+		<!-- container S -->
+		<section>
+			<header>
+				<h1 class="cntrTit">나의 총자산</h1><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+				<button type="button" class="btnPre" onclick="history.go(-1)">이전페이지</button>
+			</header>
+			
+			<!-- contentsWrap S -->
+			<div class="contentsWrap">
+				<!-- contents S -->
+				<div class="contents">
+					<a href="#pop01" class="btnPopOpen">목표,위험 수익률 알람설정</a>
+				</div>
+				<!-- // contents E -->
+			</div>
+			<!-- // contentsWrap E -->
+		</section>
+		<!-- // container E -->
+	</div>
+	<!-- // wrap E -->
+	
+
+	
+	<!-- 목표,위험 수익률 알람 설정 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt" id="pop01" style="display:block;"><!-- style="display:block;" 개발시 제거 / 하단 페이지확인스크립트도 제거 -->
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">목표,위험 수익률 알람 설정</h1><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt mt20 mb40">
+						<p class="pwmFt13">설정하신 목표, 위험 수익률을 달성하면<br/>해당 수익률 달성 시 앱과 카카오톡을 통해 알려드립니다.</p>
+					</div>
+					<div class="pofolListBox04 toggleRadWrap alarmTy">
+						<ul>
+							<li>
+								<strong>알람여부</strong>
+								<div class="pwmRadBtn02">
+									<span>
+										<input type="radio" name="alram" id="" checked />
+										<label><i></i>알람수신</label>
+									</span>
+									<span>
+										<input type="radio" name="alram" id="" />
+										<label><i></i>알람미수신</label>
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="pofolListBox04 toggleRadCont">
+						<ul>
+							<li>
+								<strong>알람대상</strong>
+								<div class="pwmRadBtn02">
+									<span>
+										<input type="radio" name="alram01" id="" checked />
+										<label><i></i>앱</label>
+									</span>
+									<span>
+										<input type="radio" name="alram01" id="" />
+										<label><i></i>카카오톡</label>
+									</span>
+									<span>
+										<input type="radio" name="alram01" id="" />
+										<label><i></i>앱+카카오톡</label>
+									</span>
+								</div>
+							</li>
+							<li>
+								<div class="flexColumnArea formAreaBox">
+									<div class="flexRowArea flexBetween">
+										<strong>목표 수익률</strong>
+										<div class="pwmRadBtn02 small toggleRadWrap chuTy">
+											<span>
+												<input type="radio" name="alram02" id="" checked="checked" />
+												<label>+ 선택</label>
+											</span>
+											<span>
+												<input type="radio" name="alram02" id="" />
+												<label>- 선택</label>
+											</span>
+										</div>
+									</div>
+									<div class="pwmFormArea toggleRadCont plus">
+										<div class="inputBox">
+											<div>
+												<input type="number" id="" placeholder="수익률을 입력하세요." value=""/>
+												<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+											</div>
+											<div class="error">error 문구 출력</div>					
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="flexColumnArea formAreaBox">
+									<div class="flexRowArea flexBetween">
+										<strong>위험 수익률</strong>
+										<div class="pwmRadBtn02 small toggleRadWrap chuTy">
+											<span>
+												<input type="radio" name="alram029" id="" checked="checked" />
+												<label>+ 선택</label>
+											</span>
+											<span>
+												<input type="radio" name="alram029" id="" />
+												<label>- 선택</label>
+											</span>
+										</div>
+									</div>
+									<div class="pwmFormArea toggleRadCont plus">
+										<div class="inputBox">
+											<div>
+												<input type="number" id="" placeholder="수익률을 입력하세요." value=""/>
+												<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+											</div>
+											<div class="error">error 문구 출력</div>					
+										</div>
+									</div>
+									<span class="pwmInfoTT">수익률은 소수점 이하를 입력할 수 없습니다.</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="btnGroupBox">
+				<a href="#pop02" class="pwmBtnBg large btnPopOpen" disabled="disabled"><span>확인</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- //목표,위험 수익률 알람 설정 팝업 -->
+	
+	<!-- 목표,위험 수익률 알람 설정 완료 레이어 팝업 -->
+	<div class="layerPopWrap hasDim pwmPopSt small" id="pop02">
+		<div class="popInner">
+			<div class="layerHeader">
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="flexArea">
+						<!-- [20200201] 퍼블 수정 : .pwmPopIconAlram 클래스명 변경 -->
+						<span class="pwmPopIconAlram"></span>
+						<!-- [20200201] 퍼블 수정 : .pwmFt13 클래스 삭제, 텍스트 수정 -->
+						<p>
+							<span>공유</span> 고객님,<br/>오늘부터<br/>
+							목표 수익률 <span class="pwmFtMain03 pwmFtBold">+10%</span> 달성 시<br/><!-- [20210309] 퍼블 수정 : 디자인추가 -->
+							위험 수익률 <span class="pwmFtMain04 pwmFtBold">-10%</span> 달성 시<br/><!-- [20210309] 퍼블 수정 : 디자인추가-->
+							알람을<br/>보내드리겠습니다.
+						</p>
+					</div>
+				</div>
+				<div class="btnGroupBox">
+					<a href="javascript:void(0);" class="pwmBtnBg small btnType"><span>확인</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //목표,위험 수익률 알람 설정 완료 레이어 팝업 -->
+	
+	<script>
+		//페이지확인스크립트 : 개발에사용하지 않아야합니다.
+		$(".btnPopClose").click(function(){
+			$(this).closest(".pwmPopSt").css("display","none");
+		});
+	</script>
+	
+</body>
+</html>

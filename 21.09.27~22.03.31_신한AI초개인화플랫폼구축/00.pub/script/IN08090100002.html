@@ -1,0 +1,927 @@
+
+<!-- /*******************************************************************
+* @설명			: 캘린더(피드)
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		박기완		2020-12-12	 최초작성
+* 2		박기완		2021-01-21	 카드피드 하단 버튼 케이스 추가 (주석정보: )
+* 3		김재림		2021-04-12	 캘린더 문구 수정 (주석정보: 2021-04-12 수정)
+********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+
+	<script>
+	$(function() {
+
+		var d = new Date();
+
+		//Init
+		var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수
+		if(UserAgent.match(/i(Phone|Pod)/i) != null){
+			$('body').width(screen.width);
+		}
+		
+		fnInitSchdule();	//데이터 좌표 설정
+		
+		function fnInitSchdule() {
+			//달력배경 월별테마 설정
+			$(".myActTop").addClass("m" + (d.getMonth() + 1));
+
+			//데이터 좌표 설정
+			$(".scheduleList .list-item").each(function(i) {				
+				$(this).addClass( "d" + $(this).find(".day span").text() );	//각각 인덱스를 클래스로 부여				
+				$(this).data( "pos", $(this).position().top );	//현재 위치를 세팅
+			});
+
+			//선택된 주간 제외한 나머지 주간 숨기기
+			$(".calendarUI table tbody tr").not( $(".calendarUI table tbody tr.selected") ).hide();
+
+			
+		}
+
+		//상단 UI변경
+		$("#btnCO").on("click", function() {
+			if ( $(".myActTop").hasClass("mini") ) {
+				fnChangeH($(".myActTop"), true);
+
+				//Dim영역 스크롤 방지
+				$(".scheduleList").addClass("preventScroll");
+			} else {
+				fnChangeH($(".myActTop"), false);
+
+				//Dim영역 스크롤
+				$(".scheduleList").removeClass("preventScroll");				
+			}
+		});
+		//달력 Click
+		$(".calendarUI tbody td").click(function() {
+			fnAnimateCalendar( $(this) );
+			$(".scheduleList").removeClass("preventScroll");	//20191220
+		});
+		function fnAnimateCalendar(obj) {
+			//상단 높이 조절
+			fnChangeH($(".myActTop"), false);
+
+			//클릭한 주만 보여주기
+			obj.parents("tbody").find("tr").removeClass("selected");
+			obj.parents("tr").addClass("selected");
+			
+			//선택날짜 on 2021-03-22
+			obj.siblings().removeClass("on");
+			obj.addClass("on");
+			//console.log(obj.find("button").text());
+			$(".day.on").removeClass("on");
+			$(".d"+obj.find("button").text()).find(".day").addClass("on");
+			
+			//선택날짜로 스크롤
+			$(".scheduleList").animate({
+				scrollTop: $(".scheduleList .list-item.d" +obj.find("button").text()).data("pos") - 50	//2021-03-22 수정
+			}, 500, 'swing', function() {
+			});
+		}
+		$(".scheduleListDim").on("click", function() {
+			fnChangeH($(".myActTop"), false);
+
+			//Dim영역 스크롤
+			$(".scheduleList").removeClass("preventScroll");
+		});
+		//상단 UI변경 함수
+		function fnChangeH(obj, bl) {
+			if (bl) {	//작은 사이즈일때 -> 크게 늘림
+				obj.stop().animate({
+					height: 593
+				}, 200, 'swing', function() {
+					$(this).removeClass("mini");
+					$(".calendarUI table tbody td .info").show();
+					$(".calendarUI table tbody td .price").show(); //2021-03-22 추가
+					$(".calendarUI table tbody tr").show();
+					$(".scheduleListDim").show();
+					$(".dimL, .dimR").show();
+					$(".tabBox").hide();	//20191220 추가
+				});
+			} else {	//큰 사이즈일때 -> 작게 줄임
+				obj.stop().animate({
+					height: 187
+				}, 200, 'swing', function() {
+					//callback
+					$(this).addClass("mini");
+					$(".calendarUI table tbody td .info").hide();
+					$(".calendarUI table tbody td .price").hide(); //2021-03-22 추가
+					$(".calendarUI table tbody tr").not( $(".calendarUI table tbody tr.selected") ).hide();
+					$(".scheduleListDim").hide();
+					$(".dimL, .dimR").hide();
+					$(".tabBox").show();	//20191220 추가
+				});
+			}
+		}
+
+		//Dim높이변경 20191220 사용안함
+		/* function changeDinH() {
+			$(".scheduleListDim").height( $(".scheduleList").height() );
+		} */
+		
+		//20191220 클래스명 변경 : .scheduleList .dim -> .scheduleListDim
+	});
+	</script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<!-- 2021-04-12 수정 -->
+				<h1 class="tit">캘린더</h1>
+				<!-- //2021-04-12 수정 -->
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents full pb0">
+
+				<div class="myActUi type2"><!-- //2021-03-22 클래스수정 -->
+					<div class="myActTop m3 mini" style="height: 187px;"><!-- 상단 고정영역 -->
+						<div class="top">
+						
+							<!-- <a class="month" href="javascript:void(0)" id="dateTitle" onclick="fncDatePicker();">2021.03</a> -->
+							<div class="monthGrp">
+								<a href="javascript:;" class="btnPrev">이전</a>
+								<span>2020.12</span>
+								<a href="javascript:;" class="btnNext">다음</a>
+							</div>
+							
+							<div class="right">
+								<!-- 2021-04-12 수정 -->
+								<a href="javascript:;" class="btnBalance">예상잔액</a>
+								<!-- //2021-04-12 수정 -->
+								<a class="btnSendSchedule btnPopOpen" href="javascript:void(0)" onclick="fncSendSchedule();">개인일정내보내기</a>
+								<a class="btnPrivate" href="javascript:void(0)" onclick="fncAddSchedule();">개인+</a>
+							</div>
+						</div>
+						<!-- 2021-03-22 info 클래스 변경
+						.label01 : 입금
+						.label02 : 입출금
+						.label03 : 자산
+						.label04 : 개인일정
+						.label05 : 카드 
+						
+						금액표기
+						.plus : 입금
+						.min : 출금
+						-->
+						<div class="calendarUI">
+							<table>
+								<thead>
+									<tr>
+										<th>일</th>
+										<th>월</th>
+										<th>화</th>
+										<th>수</th>
+										<th>목</th>
+										<th>금</th>
+										<th>토</th>
+									</tr>
+								</thead>
+									<tbody id="calendarList" style="display: table-row-group;">
+										<tr style="display: none;">
+											<td></td>
+											<td id="appendList_1" class="hasInfo">
+												<button>1</button>
+												<div class="price">
+													<span class="plus">+20,000,0..</span>
+												</div>
+											</td>
+											<td id="appendList_2">
+												<button>2</button>
+											</td>
+											<td id="appendList_3" class="hasInfo">
+												<button>3</button>
+												<div class="price">
+													<span class="plus">+4.5억</span>
+													<span class="min">-2.1억 </span>
+													<span class="">2.2억 </span>
+												</div>
+											</td>
+											<td id="appendList_4">
+												<button>4</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_5" class="hasInfo">
+												<button>5</button>
+												<div class="price">
+													<span class="plus">+5,000,000</span>
+													<span class="min">-30,000</span>
+													<span class="">6,000,000</span>
+												</div>
+											</td>
+											<td id="appendList_6" class="hasInfo">
+												<button>6</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금1</a>
+												</div>
+											</td>
+										</tr>
+										<tr style="display: none;">
+											<td id="appendList_7" class="hasInfo">
+												<button>7</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금2</a>
+												</div>
+											</td>
+											<td id="appendList_8" class="hasInfo">
+												<button>8</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금2</a>
+												</div>
+											</td>
+											<td id="appendList_9" class="hasInfo">
+												<button>9</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금1</a>
+												</div>
+											</td>
+											<td id="appendList_10" class="hasInfo">
+												<button>10</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금3</a>
+												</div>
+											</td>
+											<td id="appendList_11">
+												<button>11</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_12">
+												<button>12</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_13" class="hasInfo">
+												<button>13</button>
+												<div class="info" style="display: none;">
+													<a class="label04" href="javascript:void(0)">개인 1</a>
+												</div>
+											</td>
+										</tr>
+										<tr style="display: none;">
+											<td id="appendList_14">
+												<button>14</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_15">
+												<button>15</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_16">
+												<button>16</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_17">
+												<button>17</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_18" class="hasInfo">
+												<button>18</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금2</a>
+												</div>
+											</td>
+											<td id="appendList_19" class="hasInfo">
+												<button>19</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금3</a>
+												</div>
+											</td>
+											<td id="appendList_20" class="hasInfo">
+												<button>20</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금9</a>
+												</div>
+											</td>
+										</tr>
+										<tr class="selected">
+											<td id="appendList_21">
+												<button>21</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_22" class="hasInfo today on"><!-- .today오늘, .on 날짜선택 -->
+												<button>22</button>
+												<div class="price">
+													<span class="plus">+5,000,000</span>
+													<span class="min">-30,000</span>
+													<span class="">6,000,000</span>
+												</div>
+											</td>
+											<!-- 2021-03-22 수정 -->
+											<td id="appendList_23" class="hasInfo lack"><!-- //2021-04-08 잔액부족 추가 -->
+												<button>23</button>
+												<div class="info" style="display: none;">
+													<a class="label01" href="javascript:;">급여입금6</a>
+													<a class="label02" href="javascript:;">입출금8</a>
+													<a class="label03" href="javascript:;">자산2</a>
+													<a class="label04" href="javascript:;">개인일정</a>
+													<a class="more" href="javascript:;">+3</a>
+												</div>
+											</td>
+											<td id="appendList_24">
+												<button>24</button>
+												<div class="info" style="display: none;">
+													<a class="label05" href="javascript:;">카드3</a>
+												</div>
+											</td>
+											<!-- //2021-03-22 수정 -->
+											<td id="appendList_25">
+												<button>25</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_26" class="hasInfo">
+												<button>26</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금1</a>
+												</div>
+											</td>
+											<td id="appendList_27" class="hasInfo">
+												<button>27</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금5</a>
+												</div>
+											</td>
+										</tr>
+										<tr style="display: none;">
+											<td id="appendList_28" class="hasInfo">
+												<button>28</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금2</a>
+												</div>
+											</td>
+											<td id="appendList_29">
+												<button>29</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_30">
+												<button>30</button>
+												<div class="info" style="display: none;"></div>
+											</td>
+											<td id="appendList_31" class="hasInfo">
+												<button>31</button>
+												<div class="info" style="display: none;">
+													<a class="label02 financeHist" href="javascript:void(0)">입출금1</a>
+												</div>
+											</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+						</div>
+
+						<button class="btnCO" id="btnCO">달력열고닫기</button>
+						<div class="dimL" style="display: none;"></div><!-- Dim처리 -->
+						<div class="dimR" style="display: none;"></div>
+					</div><!-- // 상단고정영역 -->
+					<!-- 2021-03-22 수정 -->
+					<div class="tabBox" style="display: block;">
+						<a class="gray" href="javascript:void(0)" onclick="">입출금</a> 
+						<a class="green on" href="javascript:void(0)" onclick="">카드</a>
+						<a class="blue on" href="javascript:void(0)" onclick="">금융알림</a>
+						<a class="yellow on" href="javascript:void(0)" onclick="">개인</a>
+					</div>
+					<!-- //2021-03-22 수정 -->
+					<div class="scheduleList"><!-- 하단 스크롤영역 -->
+						<!-- 조회된 활동이 없을때 -->
+						<p class="noData" id="pNoData" style="display:none;">
+							조회된 활동이 없습니다.
+						</p>
+
+							<div id="calendarDetailList"><!-- 2021-03-22 큰숫자가 위로 변경 -->
+								<div class="list-item listItem after financeHist d31">
+									<p class="day">
+										<span>31</span>수
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('30','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">외화적립</span>
+										<p>
+											[신한] 000-000-144940 계좌로 이체일입니다. 
+											<strong>
+												<em class="label">전월기준</em><!-- //2021-03-22 추가 -->
+												50,000<span>원</span>
+											</strong>
+										</p>
+									</div>
+									<!-- 2021-03-22 추가 -->
+									<div class="itemGroup type08 financeHist">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">잔액부족</span>
+										<p>
+											<strong>잔액이 부족할 것 같아요</strong>미리미리 계좌를 확인해주세요!
+										</p>
+										<a class="link">예상내용 자세히보기</a>
+									</div>
+									<!-- //2021-03-22 추가 -->
+								</div>
+								<div class="list-item listItem after financeHist d30">
+									<p class="day">
+										<span>30</span>화
+									</p>
+									<!-- 2021-03-22 추가 -->
+									<div class="itemGroup type05 pb20 financeHist">
+										<p class="txt">
+											오늘의 MY 활동은 없습니다.
+										</p>
+									</div>
+									<!-- //2021-03-22 추가 -->
+								</div>
+								
+								
+								
+								<div class="list-item listItem after financeHist d28">
+									<p class="day">
+										<span>28</span>일
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('27','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-271565 계좌로 이체일입니다. <strong>10,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('27','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-520-763812</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-000-011735 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem after financeHist d27">
+									<p class="day">
+										<span>27</span>토
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('26','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-271469 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('26','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-271476 계좌로 이체일입니다. <strong>500,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('26','2');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-271500 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('26','3');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-034-738323</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-271519 계좌로 이체일입니다. <strong>1<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('26','4');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-520-763812</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-001-265512 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem after financeHist d26">
+									<p class="day">
+										<span>26</span>금
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('25','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">자동이체</span>
+										<p>
+											[신한] 000-520-764693 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem after financeHist d23">
+									<p class="day">
+										<span>23</span>화
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('22','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">외화적립</span>
+										<p>
+											[신한] 000-010-172794 계좌로 이체일입니다. <strong>1,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem financeHist d22"><!-- 2021-03-22 당일은 after 제거 -->
+									<p class="day today">
+										<span>22</span>월
+									</p>
+									<div class="itemGroup type03 trsfHist">
+										<ul>
+											<li>
+												<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_020.png" alt="">우리은행 1002244591241</span> <span class="time">08:51:00</span>
+												<dl>
+													<dt class="ellipsis">하성우</dt>
+													<dd class="plus ellipsis">+300,000원</dd>
+												</dl>
+											</li>
+										</ul>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('21','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-520-763812</span> <span class="category">자동이체</span>
+										<p>
+											[신한] 000-409-387794 계좌로 이체일입니다. <strong>8<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type06 cardHist" style="display: block;">
+										<ul>
+											<li>
+												<span class="tit"><img src="../../../../../../../images/bank_logo/cardlogo_366.png" alt="신한카드 로고"><em>신한카드</em><em>플러스마일_대한항공</em><em>일시불</em></span>
+												<span class="time">09:03:07</span>
+												<dl>
+													<dt class="ellipsis">(주)파리크라상 파리바게뜨 명동</dt>
+													<dd class="ellipsis">5,000원</dd>
+												</dl>
+											</li>
+											<li>
+												<span class="tit"><img src="../../../../../../../images/bank_logo/cardlogo_366.png" alt="신한카드 로고"><em>신한카드</em><em>V478</em><em>일시불</em></span>
+												<span class="time">11:29:43</span>
+												<dl>
+													<dt class="ellipsis">롯데쇼핑(주)</dt>
+													<dd class="ellipsis">8,900원</dd>
+												</dl>
+											</li>
+											<li>
+												<span class="tit"><img src="../../../../../../../images/bank_logo/cardlogo_366.png" alt="신한카드 로고"><em>신한카드</em><em>V478</em><em>일시불</em></span>
+												<span class="time">12:39:42</span>
+												<dl>
+													<dt class="ellipsis">간편결제_이니시스 (주)케이지이</dt>
+													<dd class="ellipsis">191,200원</dd>
+												</dl>
+											</li>
+										</ul>
+									</div>
+								</div>
+								
+								<div class="list-item listItem  financeHist d20">
+									<p class="day">
+										<span>20</span>토
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">외화적립</span>
+										<p>
+											[신한] 000-010-172787 계좌로 이체일입니다. <strong>1<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281367 계좌로 이체일입니다. <strong>300<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','2');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281374 계좌로 이체일입니다. <strong>300<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','3');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281380 계좌로 이체일입니다. <strong>300<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','4');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281399 계좌로 이체일입니다. <strong>300<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','5');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281400 계좌로 이체일입니다. <strong>245,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','6');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281417 계좌로 이체일입니다. <strong>55,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','7');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281424 계좌로 이체일입니다. <strong>105,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('19','8');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-281430 계좌로 이체일입니다. <strong>95,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d19">
+									<p class="day">
+										<span>19</span>금
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('18','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">자동이체</span>
+										<p>
+											[신한] 000-409-387794 계좌로 이체일입니다. <strong>2<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('18','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-280410 계좌로 이체일입니다. <strong>10,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('18','2');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">타행이체</span>
+										<p>
+											[국민] 84310104253419 계좌로 이체일입니다. <strong>11<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d18">
+									<p class="day">
+										<span>18</span>목
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('17','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-245-039580 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('17','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-245-039608 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  d13">
+									<p class="day">
+										<span>13</span>토
+									</p>
+									<div class="itemGroup type04" onclick="fncViewSchedulePopup(&quot;CAL0000005508&quot;,&quot;2021.03.13&quot;);">
+										<span class="tit">개인</span>
+										<p>
+											<span>선물 옵션 만기일</span>선물 옵션<br>동시 만기일...
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d10">
+									<p class="day">
+										<span>10</span>수
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('9','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-274383 계좌로 이체일입니다. <strong>25,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('9','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-274391 계좌로 이체일입니다. <strong>25,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('9','2');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-274400 계좌로 이체일입니다. <strong>25,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d9">
+									<p class="day">
+										<span>9</span>화
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('8','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">외화적립</span>
+										<p>
+											[신한] 000-010-172659 계좌로 이체일입니다. <strong>11<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d8">
+									<p class="day">
+										<span>8</span>월
+									</p>
+									<div class="itemGroup type02 pb20 financeHist">
+										<div onclick="fncDetailViewPopup(&quot;7&quot;,&quot;0&quot;);">
+											<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-178-368109</span> <span class="category">대출이자</span>
+											<p>[신한은행]&lt;가계&gt;일반자금대출(만기일시상환)_유관기관 임직원대출 이자 납입일입니다.</p>
+										</div>
+										<a class="btn" href="javascript:void(0)" onclick="fnc대출이자확인(&quot;7&quot;,&quot;0&quot;, this);">이자확인</a>
+										<p class="mt0" style="display: none">
+											<strong class=""><em id="s대출이자이체금액_7_0"></em><span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('7','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-245-037570 계좌로 이체일입니다. <strong>12,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d7">
+									<p class="day">
+										<span>7</span>일
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('6','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-245-038303 계좌로 이체일입니다. <strong>309,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('6','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">자동이체</span>
+										<p>
+											[신한] 000-021-767672 계좌로 이체일입니다. <strong>100,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d6">
+									<p class="day">
+										<span>6</span>토
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('5','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-245-036042 계좌로 이체일입니다. <strong>33,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d5">
+									<p class="day">
+										<span>5</span>금
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('4','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">적금이체</span>
+										<p>
+											[신한] 000-245-039686 계좌로 이체일입니다. <strong>21,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('4','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-284930 계좌로 이체일입니다. <strong>6,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('4','2');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-284947 계좌로 이체일입니다. <strong>1,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('4','3');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-284954 계좌로 이체일입니다. <strong>1,500<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d3">
+									<p class="day">
+										<span>3</span>수
+									</p>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('2','0');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-272927 계좌로 이체일입니다. <strong>50,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('2','1');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-272934 계좌로 이체일입니다. <strong>50,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('2','2');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-272940 계좌로 이체일입니다. <strong>50,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('2','3');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-272981 계좌로 이체일입니다. <strong>200,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('2','4');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-273018 계좌로 이체일입니다. <strong>200,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('2','5');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-520-763812</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-272959 계좌로 이체일입니다. <strong>104,085<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+								<div class="list-item listItem  financeHist d1">
+									<p class="day">
+										<span>1</span>월
+									</p>
+									<div class="itemGroup type02 pb20 financeHist">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-001-974957</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-271768 계좌로 이체일입니다. <strong>50,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-147-276053 계좌로 이체일입니다. <strong>1,000,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('0','3');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-000-000000 계좌로 이체일입니다. <strong>1,000,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('0','4');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-000-000000 계좌로 이체일입니다. <strong>1,000,000<span>원</span></strong>
+										</p>
+									</div>
+									<div class="itemGroup type02 pb20 financeHist" onclick="fncDetailViewPopup('0','5');">
+										<span class="tit"><img src="../../../../../../../images/bank_logo/banklogo_035.png" alt="">신한은행 000-000-000000</span> <span class="category">펀드적립</span>
+										<p>
+											[신한] 000-000-000000 계좌로 이체일입니다. <strong>50,000<span>원</span></strong>
+										</p>
+									</div>
+								</div>
+
+								
+							</div>
+
+							<div class="space"></div>
+						<div class="naviBot">
+							<div class="top">
+								<a class="prev" href="javascript:void(0)" onclick="fncInqCalender('1');">이전달</a>
+								<a class="today" href="javascript:void(0)" onclick="fncRefresh();">오늘</a>
+								<a class="next" href="javascript:void(0)" onclick="fncInqCalender('-1');">다음달</a>
+							</div>
+
+							<div class="innerBox contAccordion mb0">
+								<div class="AccorTitle">
+									<a href="javascript:void(0)" title="세부내역 열기" role="button">
+										<p class="tit">알아두세요.</p>
+										<div class="arrow">
+											<span class="iconTy09"></span>
+											<span class="iconTy10"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont" style="display: none;">
+									<ul class="dotList">
+										<li>금융일정의 경우 등록일과 실제 이체일간 차이가 있을 수 있으며, 대출이자는 실제 납부일에 따라 금액이 변경될 수 있습니다.</li>
+										<li>타행, 타사의 금융활동은 MY자산에 등록된 기관의 정보로 노출됩니다.</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div><!-- // 하단 스크롤영역 -->
+					<div class="scheduleListDim" style="display: none;"></div><!-- Dim처리 -->
+				</div>
+
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+</body>
+</html>

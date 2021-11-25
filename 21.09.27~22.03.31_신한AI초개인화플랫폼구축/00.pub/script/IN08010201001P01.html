@@ -1,0 +1,380 @@
+
+<!-- /********************************************************************
+* @설명			:	메인 > 총자산상세 팝업
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		박기완		2021-04-27		최초작성
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">총자산 상세</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets"> <!-- .myAssets -->
+			<!-- contents -->
+			<div class="contents pb0 full"> <!-- .full -->
+				<div class="totalAssetsWrap">
+					<div class="contArea topInfo">
+						<p class="tit"><em>김신한</em>님의 총자산</p>
+						<p class="price"><em>33,000,000</em>원</p>
+					</div>
+					<div class="contArea">
+						<div class="tabTy03 uiTabs">
+							<button type="button" data-href="#" class="on" title="현재선택됨"><span>은행 <em>3</em></span></button> <!-- 활성화시 class="on" -->
+							<button type="button" data-href="#"><span>증권 <em>3</em></span></button>
+							<button type="button" data-href="#"><span>카드 <em>2</em></span></button>
+							<button type="button" data-href="#" disabled="disabled"><span>보험</span></button>
+							<button type="button" data-href="#"><span>연금 <em>1</em></span></button>
+							<button type="button" data-href="#" disabled="disabled"><span>부동산</span></button>
+							<button type="button" data-href="#"><span>자동차 <em>2</em></span></button>
+							<button type="button" data-href="#"><span>기타 <em>1</em></span></button>
+						</div>
+					</div>
+					<div class="contArea">
+						<div class="totalAssetsLst">
+							<ul class="inner">
+								<!-- 아코디언 아이탬 loop -->
+								<li class="item">
+									<div class="head">
+										<div class="flagArea">
+											<em class="badgeTyBdMint small"><span>오픈뱅킹</span></em>
+											<em class="badgeTyBdPurple small"><span>ID/PW</span></em>
+											<em class="badgeTyBdBlue small"><span>인증서</span></em>
+										</div>
+										<div class="thumbArea"><span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt=""></span></div>
+										<div class="infoArea">
+											<div class="infoTop">
+												<strong class="name">우리은행</strong>
+												<a href="#" class="btnTypeTextLink">연동해제</a>
+											</div>
+											<p class="date"><em>2021.04.26</em> 업데이트</p>
+										</div>
+									</div>
+									<div class="contAccordionNew">
+										<div class="AccorTitleNew"> <!-- .hidden : 잔액 모두 숨김 처리. -->
+											<a href="#" title="세부내역 닫기" role="button" class="price">
+												<span class="view"><em>17,770,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+												<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+												<i class="iconTySelArrow03"></i>
+											</a>
+										</div>
+										<div class="AccorContNew">
+											<ul class="totalAssetsDetailLst">
+												<!-- 상세 아이탬 loop -->
+												<li class="item">
+													<div class="inner"> <!-- .hidden : 잔액 숨김 처리. -->
+														<div class="infoTop">
+															<strong class="name ellipsis">
+																WON 예금 (저축예금)
+																<em class="baNumber">11101110111</em>
+															</strong>
+															<div class="setArea">
+																<div class="assetSwitchWrap">
+																	<input type="checkbox" id="switch0101" checked /> <!-- 활성시 checked 속성 추가 -->
+																	<label for="switch0101" class="switchLabel">
+																		<span class="blind">노출하기</span>
+																		<i class="switchRound"></i>
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="infoBot">
+															<strong class="price">
+																<span class="view"><em>960,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+																<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+															</strong>
+														</div>
+													</div>
+												</li>
+												<!-- //상세 아이탬 loop -->
+												<li class="item">
+													<div class="inner"> <!-- .hidden : 잔액 숨김 처리. -->
+														<div class="infoTop">
+															<strong class="name ellipsis">
+																주택청약종합저축
+																<em class="baNumber">15002110142</em>
+															</strong>
+															<div class="setArea">
+																<div class="assetSwitchWrap">
+																	<input type="checkbox" id="switch0102" checked /> <!-- 활성시 checked 속성 추가 -->
+																	<label for="switch0102" class="switchLabel">
+																		<span class="blind">노출하기</span>
+																		<i class="switchRound"></i>
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="infoBot">
+															<strong class="price">
+																<span class="view"><em>510,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+																<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+															</strong>
+														</div>
+													</div>
+												</li>
+												<li class="item">
+													<div class="inner">
+														<div class="infoTop">
+															<strong class="name ellipsis">
+																[직접] 비상금 통장
+																<em class="baNumber" style="display:none;">15002110142</em>
+															</strong>
+															<div class="setArea" style="display:none;">
+																<div class="assetSwitchWrap">
+																	<input type="checkbox" id="switch0103" checked /> <!-- 활성시 checked 속성 추가 -->
+																	<label for="switch0103" class="switchLabel">
+																		<span class="blind">노출하기</span>
+																		<i class="switchRound"></i>
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="infoBot">
+															<strong class="price">
+																<span class="view"><em>300,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+																<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+															</strong>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- 업데이트 오류 CASE -->
+									<p class="errorInfo"><a href="#">스마트폰 변경 또는 앱 재설치 시<br />연동해제 후 다시 등록해 주셔야 합니다.</a></p>
+									<!-- //업데이트 오류 CASE -->
+								</li>
+								<!-- //아코디언 아이탬 loop -->
+								<li class="item">
+									<div class="head">
+										<div class="flagArea">
+											<em class="badgeTyBdMint small"><span>오픈뱅킹</span></em>
+											<em class="badgeTyBdPurple small"><span>ID/PW</span></em>
+											<em class="badgeTyBdBlue small"><span>인증서</span></em>
+										</div>
+										<div class="thumbArea"><span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt=""></span></div>
+										<div class="infoArea">
+											<div class="infoTop">
+												<strong class="name">KEB하나은행</strong>
+												<a href="#" class="btnTypeTextLink">연동해제</a>
+											</div>
+											<p class="date"><em>2021.04.26</em> 업데이트</p>
+										</div>
+									</div>
+									<div class="contAccordionNew">
+										<div class="AccorTitleNew hidden"> <!-- .hidden : 잔액 모두 숨김 처리. -->
+											<a href="#" title="세부내역 닫기" role="button" class="price">
+												<span class="view"><em>17,770,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+												<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+												<i class="iconTySelArrow03"></i>
+											</a>
+										</div>
+										<div class="AccorContNew">
+											<ul class="totalAssetsDetailLst">
+												<!-- 상세 아이탬 loop -->
+												<li class="item">
+													<div class="inner hidden"> <!-- .hidden : 잔액 숨김 처리. -->
+														<div class="infoTop">
+															<strong class="name ellipsis">
+																하나 원큐 적금
+																<em class="baNumber">34121101246</em>
+															</strong>
+															<div class="setArea">
+																<div class="assetSwitchWrap">
+																	<input type="checkbox" id="switch0201" /> <!-- 활성시 checked 속성 추가 -->
+																	<label for="switch0201" class="switchLabel">
+																		<span class="blind">노출하기</span>
+																		<i class="switchRound"></i>
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="infoBot">
+															<strong class="price">
+																<span class="view"><em>960,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+																<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+															</strong>
+														</div>
+													</div>
+												</li>
+												<!-- //상세 아이탬 loop -->
+												<li class="item">
+													<div class="inner hidden"> <!-- .hidden : 잔액 숨김 처리. -->
+														<div class="infoTop">
+															<strong class="name ellipsis">
+																급여하나 통장
+																<em class="baNumber">30214412414</em>
+															</strong>
+															<div class="setArea">
+																<div class="assetSwitchWrap">
+																	<input type="checkbox" id="switch0202" /> <!-- 활성시 checked 속성 추가 -->
+																	<label for="switch0202" class="switchLabel">
+																		<span class="blind">노출하기</span>
+																		<i class="switchRound"></i>
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="infoBot">
+															<strong class="price">
+																<span class="view"><em>960,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+																<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+															</strong>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="item">
+									<div class="head">
+										<div class="thumbArea" style="display:none;"><span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt=""></span></div>
+										<div class="infoArea">
+											<div class="infoTop">
+												<strong class="name">현금</strong>
+												<a href="#" class="btnTypeTextLink">연동해제</a>
+											</div>
+											<p class="date"><em>2021.04.26</em> 업데이트</p>
+										</div>
+									</div>
+									<div class="contAccordionNew">
+										<div class="AccorTitleNew"> <!-- .hidden : 잔액 모두 숨김 처리. -->
+											<a href="#" title="세부내역 닫기" role="button" class="price">
+												<span class="view"><em>56,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+												<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+												<i class="iconTySelArrow03"></i>
+											</a>
+										</div>
+										<div class="AccorContNew">
+											<ul class="totalAssetsDetailLst">
+												<!-- 상세 아이탬 loop -->
+												<li class="item">
+													<div class="inner"> <!-- .hidden : 잔액 숨김 처리. -->
+														<div class="infoTop">
+															<strong class="name ellipsis">
+																[직접] 비상금
+																<em class="baNumber" style="display:none;">34121101246</em>
+															</strong>
+															<div class="setArea" style="display:none;">
+																<div class="assetSwitchWrap">
+																	<input type="checkbox" id="switch0301" /> <!-- 활성시 checked 속성 추가 -->
+																	<label for="switch0301" class="switchLabel">
+																		<span class="blind">노출하기</span>
+																		<i class="switchRound"></i>
+																	</label>
+																</div>
+															</div>
+														</div>
+														<div class="infoBot">
+															<strong class="price">
+																<span class="view"><em>56,000</em>원</span> <!-- 잔액 숨김 처리 시 css 히든 처리 되어 있습니다 -->
+																<span class="hidden">잔액 모두 숨김</span> <!-- 잔액 숨김 처리 시 css 히든해제 처리 되어 있습니다 -->
+															</strong>
+														</div>
+													</div>
+												</li>
+												<!-- //상세 아이탬 loop -->
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<!-- 연결된 자산이 없는 경우 노출 CASE -->
+						<div class="noDataWrap">
+							<p class="img nodata"></p>
+							<p class="txt">아직 연결된 자산이 없네요<br />자산추가하고 관리 시작해보세요!</p>
+						</div>
+						<!-- //연결된 자산이 없는 경우 노출 CASE -->
+					</div>
+
+					<div class="contAccordion typeNotice">
+						<div class="AccorTitle">
+							<a href="javascript:void(0);">
+								<p class="tit">이용안내</p>
+								<div class="arrow">
+									<span class="iconTyAccorArrowDefault"></span>
+									<span class="iconTyAccorArrowActive"></span>
+								</div>
+							</a>
+						</div>
+						<div class="AccorCont">
+							<ul class="dotList">
+								<li>인증서 재발급, 등록관련 오류는 해당기관에서 먼저 인증서 등록 / 갱신을 진행하셔야 근본적인 연결 오류를 해결할 수 있습니다.</li>
+								<li>SOL 자산 업데이트는 해당 기관의 상황에 따라 일시적으로 업데이트 지연 및 오류가 발생될 수 있습니다.</li>
+								<li>SOL 자산 업데이트 시 내보험다보여 정보는 제외됩니다.</li>
+								<li>총자산금액은 기관별 자산분류 기준에 따라 상이할 수 있습니다.</li>
+								<li>오류 관련하여 상담이 필요하신 경우<br />고객상담센터<a href="tel:1599-8000" class="fcMint">(1599-8000)</a>를 통해 안내해드리겠습니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+			<!-- floating button -->
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0)" class="btnType btnBlack"><span>자산연결</span></a>	
+				<a href="javascript:void(0)" class="btnType"><span>업데이트</span></a>
+			</div>
+			<!-- //floating button -->
+			
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<script type="text/javascript">
+	//컨텐츠 높이 변화
+	$(".uiTabs button").on("click",function(){
+		var idx = $(".uiTabs button").index(this);
+		if(idx == 1){
+			$(".totalAssetsLst .item").hide(); 
+		}else{
+			$(".totalAssetsLst .item").show();
+		}
+		guideBot();
+	});
+	
+	//컨텐츠 높이가 짧을 경우 이용안내를 하단고정 2021-06-02
+	function guideBot(){
+		$(".typeNotice").removeClass("fix");
+		var idh = $(".typeNotice .AccorTitle").offset().top + 58;
+		var wh = $(window).height() - 64;
+		if(idh < wh){
+			$(".typeNotice").addClass("fix");
+		}
+	}
+	
+	guideBot();
+</script>
+</body>
+</html>
