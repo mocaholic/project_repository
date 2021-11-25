@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신한은행 - AI기반 초개인화</title>
+    <link rel="stylesheet" href="../style/shinhan.css">
+    <script type="text/javascript" src="../script/include/library/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../script/include/library/ui.js"></script>
+    <script type="text/javascript" src="../script/include/library/ui_myassets.js"></script>
+    <script type="text/javascript" src="../script/PR0903ui.js"></script>
+    <script type="text/javascript" src="/cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    
+    <style>
+        .portSlider {position:relative; padding-bottom:17px; margin-top:26px;}
+        .portSlider #ptSlider {border:none; background:#f7f7f8; border-radius:9px; height:12px;}
+        .portSlider .txtArea {display:flex; justify-content:space-between; width:100%; margin-top:8px;}
+        .portSlider .txtArea > span {font-size:12px; color:#999; line-height:1.5;}
+        .portSlider .sBubble {position:absolute; left:0; bottom:0; width:66px; height:26px; background:#efecff; margin-left:-33px;}
+        .portSlider .sBubble::before {display:block; content:""; position:absolute; top:-35px; left:50%; width:1px; height:23px; border-left:1px dashed #333; z-index:2;}
+        .portSlider .sBubble::after {top:-6px; left:50%; transform:translateX(-50%); border:6px solid transparent; border-bottom-color:#efecff; border-top:0;}
+        .ptSlider .ui-slider-handle {top:-12px; margin-left:-16px; background:#fff; border-radius:50%; box-shadow:0 1px 4px 0 rgba(0,0,0,.1); border:1px solid #e5e5e5; width:32px; height:32px; z-index:3;}
+        .ptSlider .ui-slider-handle::before {}
+        .ptSlider .ui-slider-handle::after {}
+        .ptSlider .ui-widget-header {background-image:linear-gradient(to right, #65a4ff, #d87cde 50%, #fe2222 100%); border-radius:6px;}
+
+        .flowArea {height:217px; background:#f7f7f7;}
+        .barParent {border-radius:9px; background:#2ec1ac;}
+        .sliderBox .sliderBar .bar {height:18px; border-radius:9px; border:none; background:#eff2f8;}
+        .flowArea .ui-slider-handle {top:-5px; width:28px; height:28px; margin-left:-14px; border:none; border-radius:50%; background:#fff; box-shadow:0 1px 4px 0 rgba(0,0,0,.2); color:#454545;}
+        .sliderValueTxt {visibility:hidden; position:absolute; top:-62px; left:50%; transform:translateX(-50%); padding:13px 20px; border-radius:6px; background:#ffd636; font-weight:500; font-size:12px; line-height:1.5; white-space:nowrap; color:#000; pointer-events:none;}
+        .sliderValueTxt > span {font-weight:inherit; color:inherit;}
+        .sliderValueTxt::after {content:""; position:absolute; left:50%; bottom:-9px; width:12px; height:9px; margin-left:-6px; background:;}
+        .sliderBar .limit {position:relative; height:12px; margin-top:-14px;}
+        .sliderBar .limit .limitCurrent, .sliderBar .limit .limitGoal {position:absolute; top:0; left:0; width:12px; height:12px; margin-left:-6px; }
+        .blind {overflow:hidden; position:absolute; left:-9999px; width:0; height:0; text-indent:-9999px;}
+    </style>
+</head>
+<body>
+    <div class="portSlider">
+        <div class="ptSlider" id="ptSlider"> 
+            <div id="custom-handle" class="ui-slder-handle" style="left:70%"></div>
+        </div>
+        <div class="txtArea">
+            <span class="min">낮음</span>
+            <span class="sBubble" style="left:20%">제안포트</span>
+            <span class="max">높음</span>
+        </div>
+    </div>
+
+    <div class="flowArea">
+        <div class="sliderBox">
+            <dl class="sliderInfo">
+                <dt>변경 후 저축금액</dt>
+                <dd>
+                    <input type="text" id="currentAmount" value="300,000" autocomplete="off">원
+                </dd>
+            </dl>
+            <div class="sliderBar">
+                <div class="limit">
+                    <p class="limitCurrent" style="left:30%">
+                        <span class="blind">현재 저축금액</span>
+                    </p>
+                    <p class="limitGoal" style="left:50%">
+                        <span class="blind">목표 저축금액</span>
+                    </p>
+                </div>
+                <div class="barParent" style="left:30%;">
+                    <div id="slider1" class="bar">
+                        <div id="sliderHandle" class="ui-slder-handle">
+                            <p class="sliderValueText">
+                                <span id="sliderExtra">+0</span>원
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /* var handle = $('#custom-handle');
+        $('#ptSlider').slider({
+            create: function(){
+
+            },
+            slide: function(event, ui){
+
+            },
+            value: 70,
+            range: "min",
+            orientation: "horizontal"
+        }); */
+        
+        // 영역 슬라이더
+        function ranges(){
+            var rangeMin = 300000; // 저축 최소금액(진입 시 0원)
+            var rangeMax = 1000000; // 저축 최대금액
+            var goalValue = 500000; // 목표 저축금액
+            var rangeValue = rangeMin; // 현재 저축금액 (진입 시 "저축 최소금액"과 동일)
+            var rangeStep = 10000; // 저축금액 스텝 (현재 만원단위로 이동)
+
+            // 최소값, 목표값 세팅
+            var setValue = function(min, max, goal){
+                // min : 저축 최소금액
+                // max : 저축 최대금액
+                // goal : 저축 목표금액
+                if(min > max || goal > max){
+                    console.log('ERROR : Please reset values.');
+                    return;
+                }
+                var minVal = parseInt((min / max) * 100);
+                var goalVal = parseInt((goal / max) * 100);
+                $('.limitGoal').css('left', goalVal + '%');
+                $('.barParent').css('padding-left', minVal + '%');
+            };
+
+            // 1. Selector
+            // #slider1 : 슬라이더 호출 개체
+            // #sliderHandle : 슬라이더 핸들러(드래그)
+            // #sliderExtra : 추가로 저축할 금액(현재와 목표의 차액)
+            // #currentAmount : 슬라이더 현재 선택 값
+
+            $('#slider1').slider({
+                create: function(){
+                    // 최초 생성 시
+                    setValue(rangeMin, rangeMax, goalValue);
+
+                    var $target = $('.barParent, .ui-slider-range-min');
+                    $target.css('background', rangeValue >= goalValue ? '#2ec1ac' : '#ff9f5f');
+                },
+                slide: function(){
+                    // 핸들러 drag 시 (슬라이더값 변경 시)
+                    var differ = ui.value = rangeValue;
+                    $('#sliderExtra').text(differ === 0 ? differ : '+' + differ);
+
+                    var $target = $('.barParent, .ui-slider-range-min');
+                    $target.css('background', ui.Value >= goalValue ? '#2ec1ac' : '#ff9f5f');
+                },
+                stop: function(){
+                    // 핸들러 keyup 시
+                    $('#currentAmount').val(ui.value);
+                    previousValue = ui.value;
+                },
+                min: rangeMin, // 슬라이더 최소값
+                max: rangeMax, // 슬라이더 최대값
+                step: rangeStep, // 슬라이더 스텝
+                value: rangeValue, // 슬라이더 초기값
+                range: 'min', // 디자인을 위한 dom 추가 옵션 (슬라이더 게이지 영역)
+            });
+
+            var previousValue;
+            $('#currentAmount').on('focus active', function(e){
+                previousValue = e.target.value;
+            });
+
+            $('#currentAmount').on('change', function(e){
+                var changeValue = e.target.value;
+                if(changeValue >= rangeMin && changeValue <= rangeMax){
+                    $('#slider1').slider('value',changeValue); // 슬라이더 값 변경
+                }else{
+                    alert(rangeMin + '~' + rangeMax + '사이');
+                    $('#slider1').slider('value',previousValue);
+                    $('#currentAmount').val(previousValue).focus();
+                }
+            });
+        }
+        
+        $(function(){
+            $(window).load(function(){
+                ranges();
+            })
+        })
+    </script>
+</body>
+</html>

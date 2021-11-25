@@ -81,6 +81,29 @@ var solAI = {
     },
 }
 
+/* PB 0902 ui */
+var pwmScrMotion = {
+    init : function(){
+        this.bindEvt();
+    },
+    bindEvt : function(){
+        pwmScrMotion.updownMotion(); // 새로고침 or 화면진입시 모션
+        $('.contents, .layerCon').on('scroll', function(e){
+            $('.pwmListMotion').each(function(inx,ele){
+                if(!ele){return}
+                if(pwmScrMotion.updownPos(ele, -20)){
+                    $(ele).css({'opacity':'0', 'transfomr':'translateY(100px)', 'transition':'transform .7s, opacity 1s'});
+                }else{
+                    $(ele).css({'opacity':'1', 'transfomr':'translateY(0px)', 'transition':'transform .7s, opacity 1s'});
+                }
+            });
+        });
+    },
+    updownPos : function(ele,trigerDiff){
+        // var posTop = ele.
+    },
+}
+
 $(function(){
     $(window).load(function(){
         solAI.init();
