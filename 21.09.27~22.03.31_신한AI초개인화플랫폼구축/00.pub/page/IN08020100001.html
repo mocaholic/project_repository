@@ -1,0 +1,995 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	공통 > 자산연결 > 자산 현황판
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		이승찬		2021-03-10		최초작성
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+	<style>
+		.fixedpageWrap > .fixedpageWrap {padding-bottom: 0;}
+	</style>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">자산연결</h1>
+				<div class="rSec">
+					<a href="#" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents pt0">
+				<div class="assetConnectWrap">
+
+					<div class="topArea">
+						<h2 class="contTit">다양한 자산을 연결하면<br /> 관리가 똑똑해져요</h2>
+					</div>
+
+					<div class="boardArea">
+						<div class="boardHead">
+							<p class="info">자산연결 현황 <a href="javascript:void(0);" title="알아보기"><i class="iconTyTooltip03"></i></a></p>
+							<p class="status"><span class="actTxt">7</span><span class="totalTxt">/9</span></p>
+						</div>
+						<div class="boardCont">
+							<ul>
+								<li>
+									<a href="#layPop01" class="btnPopOpen btnStat" data-grade="3"><i class="iconTyBadgeBank"></i><span class="em">은행</span></a>
+								</li>
+								<li>
+									<a href="#layPop02" class="btnPopOpen btnStat" data-grade="2"><i class="iconTyBadgeCard"></i><span class="em">카드</span></a>
+								</li>
+								<li>
+									<a href="#layPop03" class="btnPopOpen btnStat" data-grade="1"><i class="iconTyBadgeFinance"></i><span class="em">증권</span></a>
+								</li>
+								<li>
+									<a href="#layPop04" class="btnPopOpen btnStat" data-grade="0"><i class="iconTyBadgeInsurance"></i><span class="em">보험</span></a>
+								</li>
+								<li>
+									<a href="#layPop05" class="btnPopOpen btnStat" data-grade="1"><i class="iconTyBadgePension"></i><span class="em">연금</span></a>
+								</li>
+								<li>
+									<a href="#layPop08" class="btnPopOpen btnStat" data-grade="1"><i class="iconTyBadgeCash"></i><span class="em">현금영수증</span></a>
+								</li>
+								<li>
+									<a href="#layPop09" class="btnPopOpen btnStat" data-grade="1"><i class="iconTyBadgeDormant"></i><span class="em">휴면계좌</span></a>
+								</li>
+								<li>
+									<a href="#layPop06" class="btnPopOpen btnStat" data-grade="1"><i class="iconTyBadgeEstate"></i><span class="em">부동산</span></a>
+								</li>
+								<li>
+									<a href="#layPop07" class="btnPopOpen btnStat" data-grade="1"><i class="iconTyBadgeCar"></i><span class="em">자동차</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="contArea">
+						<div class="contSecWrap">
+							<h3 class="contTit2">은행 <em class="badgeTyBdBlue"><span>중요</span></em></h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">흩어진 내 소중한 잔고<br /> 단 한번이면 흐름이 한눈에</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료 <em class="em">7</em></strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+									<div class="btnAddItemGroup">
+										<a href="javascript:void(0);" class="btnAddItem"><span>연결하기</span></a>
+										<a href="javascript:void(0);" class="btnAddItem"><span>직접입력</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="connectBox type2">
+								<span class="bgArrow"></span>
+								<strong class="tit">혹시 이 <span class="em">은행</span> 이용중이신가요?</strong>
+								<ul class="organList">
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="btnAddOrgan">
+											<i class="iconTyAddOrgan"></i><span class="blind">기관 추가하기</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">카드 <em class="badgeTyBdBlue"><span>중요</span></em></h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">방금 결제한 카드내역부터<br /> 빠져나갈 결제예정금액까지</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료 <em class="em">3</em></strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+									<div class="btnAddItemGroup">
+										<a href="javascript:void(0);" class="btnAddItem"><span>연결하기</span></a>
+										<a href="javascript:void(0);" class="btnAddItem"><span>직접입력</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="connectBox type2">
+								<strong class="tit">혹시 이 <span class="em">키드</span> 이용중이신가요?</strong>
+								<ul class="organList">
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="btnAddOrgan">
+											<i class="iconTyAddOrgan"></i><span class="blind">기관 추가하기</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">증권</h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">눈 깜짝하면 변하는<br /> 수익률도 놓치지 않아요</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료 <em class="em">1</em></strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+									<div class="btnAddItemGroup">
+										<a href="javascript:void(0);" class="btnAddItem"><span>연결하기</span></a>
+										<a href="javascript:void(0);" class="btnAddItem"><span>직접입력</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="connectBox type2">
+								<strong class="tit">혹시 이 <span class="em">증권</span> 이용중이신가요?</strong>
+								<ul class="organList">
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="btnAddOrgan">
+											<i class="iconTyAddOrgan"></i><span class="blind">기관 추가하기</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">보험</h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">납입현황부터 보장분석까지<br /> 든든하게 챙겨보세요</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료 <em class="em">1</em></strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+									<div class="btnAddItemGroup">
+										<a href="javascript:void(0);" class="btnAddItem"><span>연결하기</span></a>
+										<a href="javascript:void(0);" class="btnAddItem"><span>직접입력</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="connectBox type2">
+								<strong class="tit">혹시 이 <span class="em">보험</span> 이용중이신가요?</strong>
+								<ul class="organList">
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);">
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0);" class="btnAddOrgan">
+											<i class="iconTyAddOrgan"></i><span class="blind">기관 추가하기</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">연금</h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">연말정산 세액공제와<br /> 노후 준비까지 도와드려요</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료</strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">현금영수증</h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">지갑에서 빠져나간 내 현금<br /> 놓치지 않게 알려드려요</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료</strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">휴면계좌</h3>
+							<!-- case. 등록 전 -->
+							<div class="defaultBox">
+								<p class="boxTxt">나도 모르게 잠들어있는<br /> 자산을 깨워주세요</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">연결하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">연결완료</strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="organList">
+										<li>
+											<div class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="기관명" /></div>
+											<p class="name">기관명</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">부동산</h3>
+							<!-- case. 등록 전 -->
+							<p class="defaultTopInfo">주소만 입력하면 OK</p>
+							<div class="defaultBox">
+								<p class="boxTxt">내집시세는 물론<br /> 살고싶은동네 정보는 1+1</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">등록하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">등록완료 <em class="em">2</em></strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="textList">
+										<li><p class="ellipsis01">논현동 한화 꿈에 그린</p></li>
+										<li><p class="ellipsis01">서울 강남구 강남대로 44길 서울 강남구 강남대로 44길</p></li>
+									</ul>
+									<div class="btnAddItemGroup">
+										<a href="javascript:void(0);" class="btnAddItem"><span>연결하기</span></a>
+										<a href="javascript:void(0);" class="btnAddItem"><span>직접입력</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">자동차</h3>
+							<!-- case. 등록 전 -->
+							<p class="defaultTopInfo">차량번호만 입력하면 OK</p>
+							<div class="defaultBox">
+								<p class="boxTxt">예측 시세부터 정기점검일 등<br /> 차량관리의 모든 것을 한눈에</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">등록하기</a>
+								</div>
+							</div>
+							<!-- //case. 등록 전 -->
+							<!-- case. 등록 후 -->
+							<div class="connectBox contAccordion">
+								<div class="AccorTitle">
+									<a href="javascript:void(0);">
+										<strong class="tit">등록완료 <em class="em">2</em></strong>
+										<div class="arrow">
+											<span class="iconTyAccorArrowDefault"></span>
+											<span class="iconTyAccorArrowActive"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<ul class="textList">
+										<li><p class="ellipsis01">현대 싼타페 더 프라임</p></li>
+										<li><p class="ellipsis01">현대 신형 i30</p></li>
+									</ul>
+									<div class="btnAddItemGroup">
+										<a href="javascript:void(0);" class="btnAddItem"><span>연결하기</span></a>
+										<a href="javascript:void(0);" class="btnAddItem"><span>직접입력</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- //case. 등록 후 -->
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contSecWrap">
+							<h3 class="contTit2">직접입력</h3>
+							<div class="defaultBox">
+								<p class="boxTxt">저희가 모르는 자산이 있다면<br /> 더 알려주세요</p>
+								<div class="boxBtn">
+									<a href="javascript:void(0);" class="btnTypeR btnSmall">등록하기</a>
+								</div>
+							</div>
+							<div class="infoBox">
+								<strong class="boxTit"><i class="iconTyTooltip"></i> <em>연결한 직접입력 자산을 삭제 하시려면 <span class="fcPrimary">자산 &gt; 기타 &gt; 등록자산</span> 상세에서 삭제 가능</em></strong>
+							</div>
+						</div> <!-- //.contSecWrap -->
+
+						<div class="contLink">
+							<a href="javascript:void(0);" class="btnTypeTextLink">신한 MY자산 서비스란<i class="iconTyTooltip02"></i></a>
+						</div>
+					</div>
+
+				</div>
+				<div class="btnGroupBox floating">
+					<a href="javascript:void(0);" class="btnType btnBlack"><span>총자산 조회</span></a>
+					<a href="javascript:void(0);" class="btnType"><span>메인으로 가기</span></a>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- [팝업] 뱃지 : 은행 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop01">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="3">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeBank"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">갓은행</strong>
+					<p class="txt">일편단심 은행</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 은행 -->
+
+<!-- [팝업] 뱃지 : 카드 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop02">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="2">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeCard"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">타짜왕</strong>
+					<p class="txt">눈보다 손이 빠른 카드의 신</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 카드 -->
+
+<!-- [팝업] 뱃지 : 증권 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop03">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="1">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeFinance"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">워렌버핏</strong>
+					<p class="txt">존버 정신왕</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 증권 -->
+
+<!-- [팝업] 뱃지 : 보럼 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop04">
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="0">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeInsurance"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">준비왕</strong>
+					<p class="txt">인생 준비완료</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 보럼 -->
+
+<!-- [팝업] 뱃지 : 연금 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop05">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="1">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgePension"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">막강파워 왕</strong>
+					<p class="txt">든든 탄탄대로 인생</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 연금 -->
+
+<!-- [팝업] 뱃지 : 부동산 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop06">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="1">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeEstate"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">서식지 왕</strong>
+					<p class="txt">내 쉴 곳은 오직 부동산 뿐이리</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 부동산 -->
+
+<!-- [팝업] 뱃지 : 자동차 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop07">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="1">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeCar"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">고고씽 왕</strong>
+					<p class="txt">유턴 말고 직진 라이프</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 자동차 -->
+
+<!-- [팝업] 뱃지 : 현금영수증 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop08">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="1">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeCash"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">캐시 마스터</strong>
+					<p class="txt">결제는 현금이지</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 현금영수증 -->
+
+<!-- [팝업] 뱃지 : 휴면계좌 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop09">
+	<div class="doneImg"><img src="../../../../../../images/in08/myassets/bg_congratulations.gif" alt="축하합니다" /></div>
+	<div class="popInner">
+		<div class="assetConnectPopWrap">
+			<div class="assetConnectPopInner" data-grade="1">
+				<div class="headerBox">
+					<h1 class="blind">뱃지카드</h1>
+					<button type="button" class="btnPopClose">팝업 닫기</button>
+				</div>
+				<div class="imgBox">
+					<i class="iconTyBadgeDormant"></i>
+				</div>
+				<div class="contBox">
+					<strong class="tit">잠자는 통장</strong>
+					<p class="txt">이제 반짝 눈 뜰 시간</p>
+				</div>
+				<div class="btnBox">
+					<a href="javascript:void(0);" class="btnTypeR"><span>자산연결</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 뱃지 : 휴면계좌 -->
+
+<!-- [팝업] 총자산 조회 : 자동차 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="bsPop01">
+	<div class="popInner type2">
+		<div class="layerHeader">
+			<p class="layerTit blind">자동차 등록</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pd0">
+			<div class="shbInducePopWrap">
+				<strong class="tit">3년 후 <em>내차 시세</em>는 얼마일까?</strong>
+				<p class="txt">차량번호만 입력하면 시세부터<br /> 점검일 등 내 차에 필요한 정보가 한눈에</p>
+				<div class="formGroupBox">
+					<dl class="formItem">
+						<div class="formRow">
+							<dt><label for="inputElement1-1">차량번호</label></dt>
+							<dd>
+								<div class="inner">
+									<div class="input"><input type="text" class="inpElement" id="inputElement1-1" placeholder="000가 0000" /></div>
+									<div class="btn"><button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button></div>
+								</div>
+							</dd>
+							<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+						</div>
+					</dl>
+				</div>
+				<div class="confirmBtn">
+					<a href="javascript:void(0);" class="btnTypeR" disabled="disabled">차량번호 입력하기</a> <!-- 기본 disabled -->
+				</div>
+				<div class="linkBtn">
+					<a href="javascript:void(0);" class="btnTypeTextLink">더 이상 안 볼래요</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 총자산 조회 : 자동차 -->
+
+<!-- [팝업] 총자산 조회 : 부동산 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="bsPop02">
+	<div class="popInner type2">
+		<div class="layerHeader">
+			<p class="layerTit blind">부동산 등록</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pd0">
+			<div class="shbInducePopWrap">
+				<strong class="tit">혹시 <em>여기 거주</em>하고 계시나요?</strong>
+				<p class="txt">주소만 입력하면 변동하는 내집 시세와<br /> 궁금한 동네 주변 정보도 똑똑하게</p>
+				<div class="grayBox">
+					<p class="boxTxt">논현 e-편한세상</p>
+				</div>
+				<div class="confirmBtn">
+					<a href="javascript:void(0);" class="btnTypeR">부동산 등록하기</a>
+				</div>
+				<div class="linkBtn">
+					<a href="javascript:void(0);" class="btnTypeTextLink">더 이상 안 볼래요</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 총자산 조회 : 부동산 -->
+
+<!-- [팝업] 총자산 조회 : 은행 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="bsPop03">
+	<div class="popInner type2">
+		<div class="layerHeader">
+			<p class="layerTit blind">은행 연결</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pd0">
+			<div class="shbInducePopWrap">
+				<strong class="tit alLeft"><span>김신한</span>님, 이용 중이신<br /> <em>은행 연결</em>하고 흩어진 자산을<br /> 한번에 관리해보세요</strong>
+				<div class="confirmBtn">
+					<a href="javascript:void(0);" class="btnTypeR">지금 연결하기</a>
+				</div>
+				<div class="linkBtn">
+					<a href="javascript:void(0);" class="btnTypeTextLink">더 이상 안 볼래요</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 총자산 조회 : 은행 -->
+
+<!-- [팝업] 총자산 조회 : 카드 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="bsPop04">
+	<div class="popInner type2">
+		<div class="layerHeader">
+			<p class="layerTit blind">카드 연결</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pd0">
+			<div class="shbInducePopWrap">
+				<strong class="tit alLeft"><span>김신한</span>님, 이용 중이신<br /> <em>카드 연결</em>하고 흩어진 자산을<br /> 한번에 관리해보세요</strong>
+				<div class="confirmBtn">
+					<a href="javascript:void(0);" class="btnTypeR">지금 연결하기</a>
+				</div>
+				<div class="linkBtn">
+					<a href="javascript:void(0);" class="btnTypeTextLink">더 이상 안 볼래요</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //[팝업] 총자산 조회 : 카드 -->
+
+<script>
+	$(function() {
+		// 뱃지팝업 : 열때 gif 처리
+		$('.btnStat').on('click', function() {
+			var popId = $(this).attr('href');
+			var imgSrc = '../../../../../../images/in08/myassets/bg_congratulations.gif';
+			$(popId).find('.doneImg img').attr('src', imgSrc + '?ver=' + new Date().getTime());
+		});
+	});
+</script>
+
+<!-- 퍼블확인용 -->
+<script type="text/javascript">
+	$(function() {
+		// 뱃지팝업 : 닫기
+		$('.layerPopWrap .btnPopClose').on('click', function() {
+			$('.layerPopWrap').hide();
+			$('#contentsWrap .contents').removeClass('touchLock');
+		});
+
+		// 바텀시트 : 돌려가며 열기
+		var countPop = 0;
+		var arrPop = ['#bsPop01', '#bsPop02', '#bsPop03', '#bsPop04'];
+		$('.btnType.btnBlack').on('click', function() {
+			bottomPopOpen('<div data-href=' + arrPop[countPop] +' />');
+			if (countPop >= arrPop.length - 1) {
+				countPop = 0;
+			} else {
+				countPop++;
+			}
+		});
+
+		// 바텀시트 : 차량팝업 input 제어
+		var $popWrap = $('#bsPop01');
+		$('#inputElement1-1').on('keyup', function() {
+			if ($(this).val() == '') {
+				$popWrap.find('.confirmBtn a').attr('disabled', 'disabled');
+			} else {
+				$popWrap.find('.confirmBtn a').removeAttr('disabled');
+			}
+		});
+		$('.btnDelete').on('click', function() {
+			$popWrap.find('.confirmBtn a').attr('disabled', 'disabled');
+		});
+		var $error = $('#inputElement1-1').closest('.formRow').find('.errorMsg');
+		$('#bsPop01 .confirmBtn a').on('click', function() {
+			if ($(this).attr('disabled') !== 'disabled') {
+				$error.show();
+			}
+		});
+
+		$('.organList a').on('click', function() {
+			if ($(this).filter('.btnAddOrgan').length ) return;
+			alert('pub log : 예상거래기관으로 이동하기');
+		});
+	});
+</script>
+<!-- //퍼블확인용 -->
+</body>
+</html>

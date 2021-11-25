@@ -1,0 +1,351 @@
+
+<!-- /********************************************************************
+* @설명			:	메인 > 목표관리 > 설문하기
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		박기완		2020-12-2		최초작성
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+	
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets" style="height:100% !important;">
+			<!-- mainDetailWrap -->
+            <div class="mainDetailWrap">
+
+                <!-- detailHeader -->
+                <div class="detailHeader">
+                    <h2 class="blind">목표관리 안내</h2>
+                    <div class="optionArea">
+                        <h3 class="flag">목표관리</h3>
+                    </div>
+                    <!-- 질문 -->
+                    <div class="descArea"><em>김신한</em>님의 성향을<br />알려드릴게요</div>
+                </div>
+
+                <!-- detailContents -->
+                <div class="detailContents">
+
+                    <!-- 질문 -->
+                    <div class="goalStyleSettingWrap typeQ" style="display:block;">
+
+                        <div class="questionArea">
+                            <div class="questionBox">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="inner">
+                                                <p class="tit">
+                                                    <em>Q 결혼 하셨나요?</em>
+                                                </p>
+                                                <div class="toggleAreaTyColumn">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="rdo1" id="rdo101" data-keyword="single" autocomplete="off">
+                                                            <label for="rdo101">
+                                                                <span>미혼이예요</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo1" id="rdo102" data-keyword="married" autocomplete="off">
+                                                            <label for="rdo102">
+                                                                <span>기혼이예요</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="inner" id="single" style="display:none;">
+                                                <p class="tit">
+                                                    <em>Q 나를 위한 명품구입은?</em>
+                                                </p>
+                                                <div class="toggleAreaTyColumn">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="rdo2-1" id="rdo2-101" autocomplete="off">
+                                                            <label for="rdo2-101">
+                                                                <span>신상은 나의 것 하나하나 모아요</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo2-1" id="rdo2-102" autocomplete="off">
+                                                            <label for="rdo2-102">
+                                                                <span>내가 명품이라 관심 없어요</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="inner" id="married" style="display:none;">
+                                                <p class="tit">
+                                                    <em>Q 자녀는 있으세요?</em>
+                                                </p>
+                                                <div class="toggleAreaTyColumn">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="rdo2-2" id="rdo2-201" autocomplete="off">
+                                                            <label for="rdo2-201">
+                                                                <span>있다</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo2-2" id="rdo2-202" autocomplete="off">
+                                                            <label for="rdo2-202">
+                                                                <span>없다</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="inner">
+                                                <p class="tit">
+                                                    <em>Q 내일 신형 핸드폰이 출시한다면?</em>
+                                                </p>
+                                                <div class="toggleAreaTyColumn">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="rdo3" id="rdo301" autocomplete="off">
+                                                            <label for="rdo301">
+                                                                <span>이미 예약했어요</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo4" id="rdo302" autocomplete="off">
+                                                            <label for="rdo302">
+                                                                <span>그렇구나 하고 지나가요</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="inner">
+                                                <p class="tit">
+                                                    <em>Q 당신의 가슴을 뛰게 하는 것은?</em>
+                                                </p>
+                                                <div class="toggleAreaTyColumn typeRow">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="radio" name="rdo4" id="rdo401" autocomplete="off">
+                                                            <label for="rdo401">
+                                                                <span>게임</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo4" id="rdo402" autocomplete="off">
+                                                            <label for="rdo402">
+                                                                <span>레저활동</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo4" id="rdo403" autocomplete="off">
+                                                            <label for="rdo403">
+                                                                <span>스포츠</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="radio" name="rdo4" id="rdo404" autocomplete="off">
+                                                            <label for="rdo404">
+                                                                <span>여행</span>
+                                                                <i class="iconTySelArrow04"></i>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="selectionArea">
+                            <div class="selectList">
+                                <ul class="list">
+                                    <li class="active">
+                                        <a href="#">
+                                            <!-- 도넛차트 -->
+                                            <div class="myAssetsDonutChart" data-progress="100">
+                                                <em class="score">100</em>
+                                                <span class="circle_animation"></span>
+                                            </div>
+                                            <!-- //도넛차트 -->
+                                            
+                                            <span class="keyword">프리<br />마돈나</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <!-- 도넛차트 -->
+                                            <div class="myAssetsDonutChart" data-progress="10">
+                                                <em class="score">10</em>
+                                                <span class="circle_animation"></span>
+                                            </div>
+                                            <!-- //도넛차트 -->
+
+                                            <span class="keyword">스마트<br />세이버</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <!-- 도넛차트 -->
+                                            <div class="myAssetsDonutChart" data-progress="25">
+                                                <em class="score">25</em>
+                                                <span class="circle_animation"></span>
+                                            </div>
+                                            <!-- //도넛차트 -->
+
+                                            <span class="keyword">디지털<br />얼리버드</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <!-- 도넛차트 -->
+                                            <div class="myAssetsDonutChart" data-progress="15">
+                                                <em class="score">15</em>
+                                                <span class="circle_animation"></span>
+                                            </div>
+                                            <!-- //도넛차트 -->
+
+                                            <span class="keyword">트랜디족</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="refresh">
+                            <button type="button" class="btn_refresh btnPopOpen"><i class="iconTyBtnRefresh"></i> <span class="refreshLine">설문 다시하기</span></button>
+                        </div>
+                    </div>
+                    <!-- //질문 -->
+
+                </div>
+                <!-- 삭제 알림 경고창 -->
+                <div class="layerPopWrap myAssets hasDim" id="layerPop0201">
+                    <div class="popInner">
+                        <div class="layerHeader blind">
+                            <p>목표 삭제 알림</p>
+                        </div>
+                        <div class="layerCon">
+                            <div class="conInner">
+                                <p class="alertMsg">
+                                    목표를 삭제하시겠어요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="btnGroupBox">
+                            <a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+                            <a href="javascript:;" class="btnType"><span>삭제</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //삭제 알림 경고창 -->
+            </div>
+            <!-- // mainDetailWrap -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- script -->
+<script type="text/javascript">
+	// swiper
+	function initSwiper() {
+        var swiperName = '.swiper-container';
+        var swiperPagenation = '.swiper-pagination';
+        var $radios = $(swiperName).find('input[type="radio"]');
+	
+		var swiper = new Swiper(swiperName, {
+            pagination: swiperPagenation,
+            paginationType: 'fraction',
+            autoHeight: true,
+            onSlideChangeEnd: function(swiper) {
+                countMotion ();
+            },
+        });
+
+        $radios.on('change', function(e) {
+            var specialIndex = 0;
+            var $target = $(e.currentTarget);
+            var targetIndex = $('.questionBox').find('.swiper-slide-active').index();
+            var dataKeyword;
+            
+            if (specialIndex === targetIndex) {
+                dataKeyword = $target.attr('data-keyword');
+                $('.questionBox').find('#'+dataKeyword).show();
+            }            
+
+            var $nextSlide = $(e.target).parents('.swiper-slide').next();
+			$nextSlide.css('display') !== 'block'&& $nextSlide.show();
+			swiper.update();
+			swiper.slideNext();
+		});
+        
+        swiper.disableTouchControl();
+    };
+
+    // 숫자카운트 모션
+	function countMotion () {
+		$('.myAssetsDonutChart .score').each(function(){
+			$(this).prop('Counter',0).animate({
+                Counter:$(this).text()
+            },{
+                duration: 1000,
+                easing: 'swing',
+                step: function(now, fx){
+                    $(this).text(Math.ceil(now));
+                }
+            });
+		});
+	}
+    
+    $(function() {
+		/* 퍼블리싱 임시 (확인용) */
+		$('.btnType').on('click',function(){
+			$('.layerPopWrap').hide();
+		});
+		/* //퍼블리싱 임시 (확인용) */
+	});
+
+	$(window).bind('load', function(){
+		initSwiper();
+	});
+</script>
+<!-- //script -->
+</body>
+</html>
