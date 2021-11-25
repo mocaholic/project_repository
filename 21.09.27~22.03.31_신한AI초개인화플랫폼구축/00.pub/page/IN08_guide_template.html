@@ -1,0 +1,968 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행 - 마이자산 고도화 - 가이드 - 템플릿</title>
+	<link rel="stylesheet" type="text/css" href="../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../style/my_assets.css">
+	<script src="../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../script/include/library/ui.js"></script>
+	<script src="../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+	<style type="text/css">
+		body {-moz-user-select:auto; -ms-user-select:auto; -khtml-user-select:auto; -webkit-user-select:auto; -webkit-touch-callout:default;}
+		.guideCont{padding:0 20px 40px 20px;}
+		.guideCont h2.guideTl{font-size:18px; display:block; margin:40px -20px; padding:18px 20px; background:#333; color:#fff;}
+		.guideCont h2.guideTl:first-of-type {margin-top:0;}
+		.guideCont dl.guideList{display:block; margin:5px 15px;}
+		.guideCont .guideList dt{padding:15px 0 0 0; font-size:15px;}
+		.guideCont .guideList dt em{display:inline-block; color:#1826c3;}
+		.guideCont .guideList dd{padding:10px 0 0 0; font-size:13px;}
+		.guideCont .guideList dd em{display:inline-block; background:#f2f2f2; font-size:11px; padding:3px; border-radius: 4px; font-weight:300; margin-right:5px;}
+		.guideCont .guideList dd strong{color:#0982fb; font-weight:normal;}
+		.guideCont .codeBox{font-family:"notosanskr"; display:block; font-size:11px; border:1px solid #dbdbdb; max-height:120px; padding:0 10px; line-height:2.0em; overflow-y:auto; overflow-x: none; border-radius: 10px; background:#f7f7f7;}
+		.guideCont .code {padding:0 4px; background:#e2e2e2; color:deeppink; border-radius:3px;}
+	</style>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">템플릿 모음 가이드</h1>
+				<div class="rSec">
+					<a href="#" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets"> <!-- .myAssets -->
+			<!-- contents -->
+			<div class="contents guideCont pt0"> <!-- .full -->
+
+				<!-- 스위치 토글 체크박스 ==========================================  -->
+				<h2 class="guideTl">* 스위치 토글 체크박스</h2>
+
+				<xmp class="codeBox">
+<div class="assetSwitchWrap">
+	<input type="checkbox" id="switch01" />
+	<label for="switch01" class="switchLabel">
+		<span class="blind">노출하기</span>
+		<i class="switchRound"></i>
+	</label>
+</div>
+
+<div class="assetSwitchWrap">
+	<input type="checkbox" id="switch02" checked /> <!-- 활성시 checked 속성 추가 -->
+	<label for="switch02" class="switchLabel">
+		<span class="blind">노출하기</span>
+		<i class="switchRound"></i>
+	</label>
+</div>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.assetSwitchWrap</em></dt>
+					<dd><em>용례</em> [총자산상세]</dd>
+					<dd>- 활성시 input에 checked 속성 추가</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div class="assetSwitchWrap">
+					<input type="checkbox" id="switch01" />
+					<label for="switch01" class="switchLabel">
+						<span class="blind">노출하기</span>
+						<i class="switchRound"></i>
+					</label>
+				</div>
+
+				<div class="assetSwitchWrap">
+					<input type="checkbox" id="switch02" checked /> <!-- 활성시 checked 속성 추가 -->
+					<label for="switch02" class="switchLabel">
+						<span class="blind">노출하기</span>
+						<i class="switchRound"></i>
+					</label>
+				</div>
+
+				<!-- 유의사항 어코디언 ==========================================  -->
+				<h2 class="guideTl">* 유의사항(어코디언)</h2>
+
+				<xmp class="codeBox">
+<div class="contAccordion typeNotice">
+<div class="AccorTitle">
+	<a href="javascript:void(0);">
+		<h3 class="tit">유의사항</h3>
+		<div class="arrow">
+			<span class="iconTyAccorArrowDefault"></span>
+			<span class="iconTyAccorArrowActive"></span>
+		</div>
+	</a>
+</div>
+<div class="AccorCont">
+	<p class="txt">한단락 문단 : 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+	<p class="txt">한단락 문단 : 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+	<p class="txt">한단락 문단 : 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+</div>
+</div>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.contAccordion.typeNotice</em></dt>
+					<dd><em>용례</em> [공통]</dd>
+					<dd>- 토글버튼 높이 : 58px (변동 가능성 있음)</dd>
+					<dd>- 컨텐츠 좌우패딩이 30px인 경우를 기본으로, 토글버튼 좌우패딩을 30px로 정의</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div class="contAccordion typeNotice">
+					<div class="AccorTitle">
+						<a href="javascript:void(0);">
+							<h3 class="tit">유의사항</h3>
+							<div class="arrow">
+								<span class="iconTyAccorArrowDefault"></span>
+								<span class="iconTyAccorArrowActive"></span>
+							</div>
+						</a>
+					</div>
+					<div class="AccorCont">
+						<p class="txt">한단락 문단 : 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+						<p class="txt">한단락 문단 : 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+						<p class="txt">한단락 문단 : 텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트텍스트</p>
+					</div>
+				</div>
+
+
+				<!-- 뱃지 ==========================================  -->
+				<h2 class="guideTl">* 뱃지</h2>
+
+				<xmp class="codeBox">
+<div class="badgeBox">
+<em class="badgeTyBdWhite"><span>뱃지</span></em>
+<em class="badgeTyBdGray"><span>뱃지</span></em>
+<em class="badgeTyBdBlue"><span>뱃지</span></em>
+<em class="badgeTyBgGray"><span>뱃지</span></em>
+</div>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.badgeTyBd[color]</em></dt>
+					<dt>class: <em>.badgeTyBg[color]</em></dt>
+					<dd><em>용례</em> [마이자산 메인/ 직접설계 메인/ 내차종합리포트]</dd>
+					<dd>- 2개 뱃지 이상 사용시 .badgeBox로 그룹핑</dd>
+					<dd>- 활성화 : <span class="code">.active</span> 추가</dd>
+					<dd>- 큰뱃지 : <span class="code">.large</span> 추가</dd>
+					<dd>- 작은뱃지 : <span class="code">.small</span> 추가</dd>
+					<dd>- 흰색 외곽선 : <span class="code">.badgeTyBdWhite</span></dd>
+					<dd>- 회색 외곽선 : <span class="code">.badgeTyBdGray</span></dd>
+					<dd>- 파란색 외곽선 : <span class="code">.badgeTyBdBlue</span></dd>
+					<dd>- 민트색 외곽선 : <span class="code">.badgeTyBdMint</span></dd>
+					<dd>- 회색 배경 : <span class="code">.badgeTyBgGray</span></dd>
+					<dd>- 진회색 배경 : <span class="code">.badgeTyBgDarkGray</span></dd>
+					<dd>- 핑크색 배경 : <span class="code">.badgeTyBgPink</span></dd>
+					<dd>- 하늘색 배경 : <span class="code">.badgeTyBgSky</span></dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div style="padding:20px; background:rgba(0,0,0,0.5);">
+					<div class="badgeBox">
+						<em class="badgeTyBdWhite small"><span>흰색 외곽선 작은 뱃지</span></em>
+						<em class="badgeTyBdWhite"><span>흰색 외곽선 뱃지</span></em>
+						<em class="badgeTyBdWhite large"><span>흰색 외곽선 큰 뱃지</span></em>
+					</div>
+				</div>
+				<div style="padding:20px; background:rgba(0,0,0,0.1);">
+					<div class="badgeBox">
+						<em class="badgeTyBdGray small"><span>회색 외곽선 작은 뱃지</span></em>
+						<em class="badgeTyBdGray"><span>회색 외곽선 뱃지</span></em>
+						<em class="badgeTyBdGray large"><span>회색 외곽선 큰 뱃지</span></em>
+						<em class="badgeTyBdGray large active"><span>활성 뱃지(특이케이스)</span></em>
+					</div>
+				</div>
+				<div style="padding:20px; background:rgba(0,0,0,0.05);">
+					<div class="badgeBox">
+						<em class="badgeTyBdBlue small"><span>파란색 외곽선 작은 뱃지</span></em>
+						<em class="badgeTyBdBlue"><span>파란색 외곽선 뱃지</span></em>
+						<em class="badgeTyBdBlue large"><span>파란색 외곽선 큰 뱃지</span></em>
+					</div>
+				</div>
+				<div style="padding:20px; background:rgba(0,0,0,0.03);">
+					<div class="badgeBox">
+						<em class="badgeTyBdMint small"><span>민트색 외곽선 작은 뱃지</span></em>
+						<em class="badgeTyBdMint"><span>민트색 외곽선 뱃지</span></em>
+						<em class="badgeTyBdMint large"><span>민트색 외곽선 큰 뱃지</span></em>
+					</div>
+				</div>
+
+				<div style="padding:20px; border:1px solid #eee;">
+					<div class="badgeBox">
+						<em class="badgeTyBgGray small"><span>회색 배경 작은 뱃지</span></em>
+						<em class="badgeTyBgGray"><span>회색 배경 뱃지</span></em>
+						<em class="badgeTyBgGray large"><span>회색 배경 큰 뱃지</span></em>
+					</div>
+				</div>
+				<div style="margin-top:-1px; padding:20px; border:1px solid #eee;">
+					<div class="badgeBox">
+						<em class="badgeTyBgDarkGray small"><span>진회색 배경 작은 뱃지</span></em>
+						<em class="badgeTyBgDarkGray"><span>진회색 배경 뱃지</span></em>
+						<em class="badgeTyBgDarkGray large"><span>진회색 배경 큰 뱃지</span></em>
+					</div>
+				</div>
+				<div style="margin-top:-1px; padding:20px; border:1px solid #eee;">
+					<div class="badgeBox">
+						<em class="badgeTyBgPink small"><span>핑크색 배경 작은 뱃지</span></em>
+						<em class="badgeTyBgPink"><span>핑크색 배경 뱃지</span></em>
+						<em class="badgeTyBgPink large"><span>핑크색 배경 큰 뱃지</span></em>
+					</div>
+				</div>
+				<div style="margin-top:-1px; padding:20px; border:1px solid #eee;">
+					<div class="badgeBox">
+						<em class="badgeTyBgSky small"><span>하늘색 배경 작은 뱃지</span></em>
+						<em class="badgeTyBgSky"><span>하늘색 배경 뱃지</span></em>
+						<em class="badgeTyBgSky large"><span>하늘색 배경 큰 뱃지</span></em>
+					</div>
+				</div>
+
+				<!-- 리스트 ==========================================  -->
+				<h2 class="guideTl">* 링크 리스트</h2>
+
+				<xmp class="codeBox">
+<ul class="listTyBoxLink01">
+<li>
+	<a href="javascript:void(0);">
+		<div class="linkInner">
+			<p class="sup">모을 때도, 받을 때도 세액 공제</p>
+			<div class="tit">개인형 퇴직연금(IRP)</div>
+		</div>
+	</a>
+</li>
+<li>
+	<a href="javascript:void(0);">
+		<div class="linkInner">
+			<p class="sup">알아서 척척 관리해주는 은퇴 솔루션</p>
+			<div class="tit">퇴직연금 포트폴리오</div>
+		</div>
+	</a>
+</li>
+</ul>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.listTyBoxLink01</em></dt>
+					<dd><em>용례</em> [은퇴시뮬레이션]</dd>
+					<dd>- 링크 막을땐 <span class="code">a</span>태그 삭제하기 : 화살표도 삭제됨</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<ul class="listTyBoxLink01">
+					<li>
+						<a href="javascript:void(0);">
+							<div class="linkInner">
+								<p class="sup">모을 때도, 받을 때도 세액 공제</p>
+								<div class="tit">개인형 퇴직연금(IRP)</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<div class="linkInner">
+								<p class="sup">알아서 척척 관리해주는 은퇴 솔루션</p>
+								<div class="tit">퇴직연금 포트폴리오</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<!-- 말풍선(OLD) ==========================================  -->
+				<h2 class="guideTl" style="text-decoration:line-through;">* 말풍선(old - 삭제)</h2>
+
+				<xmp class="codeBox">
+<p class="bubble"><span>빨리 모아서 얼른</span></p>
+				</xmp>
+
+				<dl class="guideList" style="text-decoration:line-through;">
+					<dt>class: <em>.bubble</em></dt>
+					<dd><em>용례</em> [생애재무관리]</dd>
+					<dd>- 말꼬리는 기본적으로 위(上) 방향</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<p class="bubble"><span>빨리 모아서 얼른</span></p>
+
+				<!-- 말풍선(NEW) ==========================================  -->
+				<h2 class="guideTl">* 말풍선(new)</h2>
+
+				<xmp class="codeBox">
+<div class="bubbleWrap">
+	<p class="bubbleInner">
+		<span>텍스트</span>
+		<span>텍스트</span>
+	</p>
+</div>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.bubbleWrap</em></dt>
+					<dd><em>용례</em> [서브공통/은퇴시뮬레이션]</dd>
+					<dd>- 확장성 위해 새로운 케이스 추가 (old 쓰지 말것)</dd>
+					<dd>- 가로형 기본으로 제작되었기에 세로로 늘어나는 경우 고려X</dd>
+					<dd>- 말꼬리 상(上) : <span class="code">.bubbleWrap</span></dd>
+					<dd>- 말꼬리 하(下) : <span class="code">.bubbleWrap.typeBotArrow</span></dd>
+					<dd>- 말꼬리 좌(左) : <span class="code">.bubbleWrap.typeLeftArrow</span></dd>
+					<dd>- 말꼬리 우(右) : <span class="code">.bubbleWrap.typeRightArrow</span></dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div class="bubbleWrap">
+					<p class="bubbleInner">
+						<span>빨리 모아서 얼른</span>
+					</p>
+				</div>
+				<div class="bubbleWrap typeBotArrow">
+					<p class="bubbleInner">
+						<span>죽을 때까지</span>
+						<span>일할 순 없어요 ㅠㅠ</span>
+					</p>
+				</div>
+				<br>
+				<div class="bubbleWrap typeLeftArrow">
+					<p class="bubbleInner">
+						<span>왼쪽</span>
+					</p>
+				</div>
+				<div class="bubbleWrap typeRightArrow">
+					<p class="bubbleInner">
+						<span>오른쪽</span>
+					</p>
+				</div>
+				
+				<hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
+
+				<dl class="guideList">
+					<dt>class: <em>.bubbleWrap.alArrowLeft</em></dt>
+					<dd>- 말꼬리 좌측정렬</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+				<div class="bubbleWrap alArrowLeft">
+					<p class="bubbleInner">
+						<span>기본 말풍선</span>
+					</p>
+				</div>
+				<div class="bubbleWrap typeBotArrow alArrowLeft">
+					<p class="bubbleInner">
+						<span>기본 말풍선</span>
+					</p>
+				</div>
+
+				<hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
+
+				<dl class="guideList">
+					<dt>class: <em>.bubbleWrap.alArrowRight</em></dt>
+					<dd>- 말꼬리 우측정렬</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+				<div class="bubbleWrap alArrowRight">
+					<p class="bubbleInner">
+						<span>기본 말풍선</span>
+					</p>
+				</div>
+				<div class="bubbleWrap typeBotArrow alArrowRight">
+					<p class="bubbleInner">
+						<span>기본 말풍선</span>
+					</p>
+				</div>
+
+				<hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
+
+				<dl class="guideList">
+					<dt>class: <em>.bubbleWrap.typeGray.alBotEdgeRight</em></dt>
+					<dd><em>용례</em> [환율전망서비스]</dd>
+					<dd>- 배경 회색 + 우측말꼬리</dd>
+					<dd>- 회색/우측말꼬리 : <span class="code">.typeGray</span> <span class="code">.alBotEdgeRight</span></dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div class="bubbleWrap typeGray alBotEdgeRight">
+					<p class="bubbleInner">
+						<span class="txt">
+							<span>오늘</span>
+							<strong class="tickUp"><span>5.32</span><span class="blind">원 오름</span></strong>
+						</span>
+						<em class="amount"><span>1,117.83</span>원</em>
+					</p>
+				</div>
+				<div class="bubbleWrap typeGray alBotEdgeRight">
+					<p class="bubbleInner">
+						<span class="txt">
+							<span>오늘</span>
+							<strong class="tickDown"><span>5.32</span><span class="blind">원 내림</span></strong>
+						</span>
+						<em class="amount"><span>1,117.83</span>원</em>
+					</p>
+				</div>
+
+				<hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
+
+				<dl class="guideList">
+					<dt>class: <em>.bubbleWrap.typeGray2</em></dt>
+					<dd><em>용례</em> [메인|소비관리]</dd>
+					<dd>- 배경 회색</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div class="bubbleWrap typeGray2">
+					<p class="bubbleInner">
+						<span>기본</span>
+					</p>
+				</div>
+				<div class="bubbleWrap typeGray2 typeBotArrow">
+					<p class="bubbleInner">
+						<span>아래</span>
+					</p>
+				</div>
+				<br /><br />
+				<div class="bubbleWrap typeGray2 typeLeftArrow">
+					<p class="bubbleInner">
+						<span>좌측</span>
+					</p>
+				</div>
+				<div class="bubbleWrap typeGray2 typeRightArrow">
+					<p class="bubbleInner">
+						<span>카드를 연결하면</span><span>소비현황이 더 정교해져요!</span>
+					</p>
+				</div>
+
+				<!-- 상품 리스트 ==========================================  -->
+				<h2 class="guideTl">* 상품 리스트</h2>
+
+				<xmp class="codeBox">
+<ul class="recomProdList">
+<li>
+	<a href="#layerPopBottom01" class="btnPopOpen">
+		<div class="listInner">
+			<div class="infoArea">
+				<p class="prodSubTit">1만원부터 우대조건 없이!</p>
+				<strong class="prodTit ellipsis">신한 첫급여 드림(DREAM)</strong>
+				<div class="prodValue">
+					<em class="txt">연 <span>1.3</span>%</em>
+				</div>
+			</div>
+		</div>
+	</a>
+</li>
+<li>
+	<a href="#layerPopBottom01" class="btnPopOpen">
+		<div class="listInner">
+			<div class="infoArea">
+				<p class="prodCategory">
+					<span>예금</span>
+				</p>
+				<strong class="prodTit ellipsis">쏠편한 정기예금</strong>
+				<div class="prodValue">
+					<em class="txt">연 <span>1.3</span>%</em>
+				</div>
+			</div>
+		</div>
+	</a>
+</li>
+<!-- 썸네일 형태  -->
+<li>
+	<a href="#layerPopBottom01" class="btnPopOpen">
+		<div class="listInner">
+			<div class="thumbArea"><img src="../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt=""></div>
+			<div class="infoArea">
+				<p class="prodCategory">
+					<span>신한은행</span>
+					<span>입출금</span>
+				</p>
+				<strong class="prodTit ellipsis">Sh평생주거래우대통장</strong>
+				<div class="prodValue">
+					<em class="txt">연 <span>1.3</span>%</em>
+				</div>
+			</div>
+		</div>
+	</a>
+</li>
+<!-- //썸네일 형태  -->
+</ul>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.recomProdList</em></dt>
+					<dd><em>용례</em> [추천상품 공통]</dd>
+					<dd>- 그림자박스 : 기본</dd>
+					<dd>- 보더라인 : <span class="code">.recomProdList</span>에 <span class="code">.typeBdline</span> 추가</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<ul class="recomProdList">
+					<li>
+						<a href="#layerPopBottom01" class="btnPopOpen">
+							<div class="listInner">
+								<div class="infoArea">
+									<p class="prodSubTit">서브타이틀</p>
+									<strong class="prodTit ellipsis">타이틀</strong>
+									<div class="prodValue">
+										<em class="txt">연 <span>1.3</span>%</em>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#layerPopBottom01" class="btnPopOpen">
+							<div class="listInner">
+								<div class="infoArea">
+									<p class="prodCategory">
+										<span>카테고리</span>
+										<span>카테고리</span>
+									</p>
+									<strong class="prodTit ellipsis">타이틀</strong>
+									<div class="prodValue">
+										<em class="txt">연 <span>1.3</span>%</em>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+				<ul class="recomProdList typeBdline mt10">
+					<li>
+						<a href="#layerPopBottom01" class="btnPopOpen">
+							<div class="listInner">
+								<div class="thumbArea">
+									<span class="img"><img src="../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+								</div>
+								<div class="infoArea">
+									<p class="prodCategory">
+										<span>신한은행</span>
+										<span>입출금</span>
+									</p>
+									<strong class="prodTit ellipsis">Sh평생주거래우대통장</strong>
+									<div class="prodValue">
+										<em class="txt">연 <span>1.3</span>%</em>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#layerPopBottom02" class="btnPopOpen">
+							<div class="listInner">
+								<div class="thumbArea"><img src="../images/in08/myassets/img_recomprod_card_default.png" alt=""></div>
+								<div class="infoArea">
+									<p class="prodCategory">
+										<span>현대카드</span>
+										<span>카드</span>
+									</p>
+									<strong class="prodTit ellipsis">더드림 신용대출</strong>
+									<div class="prodTag">
+										<span>#영화</span>
+										<span>#도서/문화</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<!-- 버튼 ==========================================  -->
+				<h2 class="guideTl">* 버튼</h2>
+
+				<xmp class="codeBox">
+<a href="javascript:;" class="btnType line"><span>파란색 외곽선 버튼</span></a>
+
+<a href="javascript:;" class="btnType lineBlack"><span>회색 외곽선 버튼</span></a>
+
+<a href="javascript:;" class="btnType line small"><span>파란색 외곽선 작은 버튼</span></a>
+
+<a href="javascript:;" class="btnType lineBlack small"><span>회색 외곽선 작은 버튼</span></a>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.btnType.line[type]</em></dt>
+					<dd><em>용례</em> [공통]</dd>
+					<dd>- 파란색 외곽선 버튼 : <span class="code">.btnType.line</span></dd>
+					<dd>- 파란색 외곽선 버튼 : <span class="code">.btnType.lineBlack</span></dd>
+					<dd>- 작은 버튼 : <span class="code">.small</span> 추가</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<a href="javascript:;" class="btnType line"><span>정의대기중/ 임시추가</span></a>
+				<br />
+				<a href="javascript:;" class="btnType lineBlack"><span>2줄까지만 처리가능 2줄까지만 처리가능 2줄까지만 처리가능</span></a>
+				<br />
+				<a href="javascript:;" class="btnType line small"><span>정의대기중/ 임시추가</span></a>
+				<br />
+				<a href="javascript:;" class="btnType lineBlack small"><span>2줄까지만 처리가능 2줄까지만 처리가능 2줄까지만 처리가능</span></a>
+
+				<!-- 버튼 ==========================================  -->
+				<h2 class="guideTl">* 인라인 버튼</h2>
+
+				<xmp class="codeBox">
+<a href="javascript:;" class="btnTypeR"><span>라운드 Large</span></a>
+
+<a href="javascript:;" class="btnTypeR btnSmall"><span>라운드 Small</span></a>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.btnTypeR</em></dt>
+					<dd><em>용례</em> [공통]</dd>
+					<dd>- 라운드 Large : <span class="code">.btnTypeR</span></dd>
+					<dd>- 라운드 Small : <span class="code">.btnTypeR.btnSmall</span></dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<a href="javascript:;" class="btnTypeR"><span>라운드 Large</span></a>
+				<a href="javascript:;" class="btnTypeR btnSmall"><span>라운드 Small</span></a>
+
+				<!-- 플립카드 ==========================================  -->
+				<h2 class="guideTl">* 플립카드</h2>
+
+				<xmp class="codeBox">
+<!-- HTML -->
+<div class="flipCardWrap"> <!-- 높이값 css에 지정 -->
+	<h3 class="blind">타이틀 - 상황에 맞게</h3>
+	<div class="flipCardInner"> <!-- 활성시 .active 클래스 추가 -->
+		<div class="front">
+			front page
+			<button type="button" class="btnFlip">버튼</button>
+		</div>
+		<div class="back">
+			back page
+		</div>
+	</div>
+</div>
+					</xmp>
+					<xmp class="codeBox">
+<!-- JAVASCRIPT -->
+<script type="text/javascript">
+	$(function() {
+		$('.btnFlip').on('click', function() {
+			$('.flipCardInner').addClass('active');
+		});
+		$('.back').off('click').on('click', function() {
+			$('.flipCardInner').removeClass('active');
+		});
+	});
+</script>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.flipCardWrap</em> </dt>
+					<dd><em>용례</em> [환율전망서비스]</dd>
+					<dd>- <span class="code">.flipCardWrap</span> 에 높이 지정하여 사용 (css에 정의)</dd>
+					<dd>- 퍼블확인용 js와 함께 사용.</dd>
+					<dd>- 앞/뒷장 카드에 컬러 <span class="code">#ececec</span> 적용되어 있음 (퍼블에서 시각용으로 판단)</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div class="flipCardWrap" style="height:200px;"> <!-- 높이값 css에 지정 -->
+					<h3 class="blind">전일 환율전망 맞춤 안내</h3>
+					<div class="flipCardInner"> <!-- 활성시 .active 클래스 추가 -->
+						<div class="front" style="text-align:center;">
+							앞장<br />
+							<button type="button" class="btnFlip">뒤집기 버튼 (클릭)</button>
+						</div>
+						<div class="back" style="text-align:center;">
+							뒷장 (카드 전체클릭 - 되돌아가기)
+						</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(function() {
+						$('.btnFlip').on('click', function() {
+							$('.flipCardInner').addClass('active');
+						});
+						$('.back').off('click').on('click', function() {
+							$('.flipCardInner').removeClass('active');
+						});
+					});
+				</script>
+
+				<!-- 목표관리 아이콘 ==========================================  -->
+				<h2 class="guideTl">* 목표관리 아이콘</h2>
+
+				<xmp class="codeBox">
+<i class="iconTyPlanCategory" data-code="11">목표</i>
+<i class="iconTyPlanCategory small" data-code="11">목표</i>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.iconTyPlanCategory</em> </dt>
+					<dd><em>용례</em> [생애재무관리]</dd>
+					<dd>- data-code 10, 20, 30, 40, 90번 확인 필요</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div>
+					<!-- 10, 20, 30, 40, 50번 확인 필요 -->
+					<!-- <p><i class="iconTyPlanCategory" data-code="10">목표</i> : <span class="code">data-code="10"</span> (여가 #)</p> -->
+					<p><i class="iconTyPlanCategory" data-code="11">목표</i> : <span class="code">data-code="11"</span> (여행)</p>
+					<p><i class="iconTyPlanCategory" data-code="12">목표</i> : <span class="code">data-code="12"</span> (취미)</p>
+					<p><i class="iconTyPlanCategory" data-code="13">목표</i> : <span class="code">data-code="13"</span> (레저)</p>
+					<p><i class="iconTyPlanCategory" data-code="14">목표</i> : <span class="code">data-code="14"</span> (피트니스)</p>
+					<!-- <p><i class="iconTyPlanCategory" data-code="20">목표</i> : <span class="code">data-code="20"</span> (소비 #)</p> -->
+					<p><i class="iconTyPlanCategory" data-code="21">목표</i> : <span class="code">data-code="21"</span> (쇼핑)</p>
+					<p><i class="iconTyPlanCategory" data-code="22">목표</i> : <span class="code">data-code="22"</span> (명품)</p>
+					<p><i class="iconTyPlanCategory" data-code="23">목표</i> : <span class="code">data-code="23"</span> (자동차)</p>
+					<p><i class="iconTyPlanCategory" data-code="24">목표</i> : <span class="code">data-code="24"</span> (디지털기기)</p>
+					<p><i class="iconTyPlanCategory" data-code="25">목표</i> : <span class="code">data-code="25"</span> (가전제품)</p>
+					<!-- <p><i class="iconTyPlanCategory" data-code="30">목표</i> : <span class="code">data-code="30"</span> (이벤트 #)</p> -->
+					<p><i class="iconTyPlanCategory" data-code="31">목표</i> : <span class="code">data-code="31"</span> (교육)</p>
+					<p><i class="iconTyPlanCategory" data-code="32">목표</i> : <span class="code">data-code="32"</span> (결혼)</p>
+					<!-- <p><i class="iconTyPlanCategory" data-code="40">목표</i> : <span class="code">data-code="40"</span> (목돈마련 #)</p> -->
+					<p><i class="iconTyPlanCategory" data-code="41">목표</i> : <span class="code">data-code="41"</span> (노후)</p>
+					<p><i class="iconTyPlanCategory" data-code="42">목표</i> : <span class="code">data-code="42"</span> (주택)</p>
+					<p><i class="iconTyPlanCategory" data-code="43">목표</i> : <span class="code">data-code="43"</span> (여유자금마련)</p>
+					<!-- <p><i class="iconTyPlanCategory" data-code="90">목표</i> : <span class="code">data-code="90"</span> (기타 #)</p> -->
+					<p><i class="iconTyPlanCategory" data-code="91">목표</i> : <span class="code">data-code="91"</span> (대출상환)</p>
+					<p><i class="iconTyPlanCategory" data-code="92">목표</i> : <span class="code">data-code="92"</span> (자산일임)</p>
+					<p><i class="iconTyPlanCategory" data-code="99">목표</i> : <span class="code">data-code="99"</span> (기타)</p>
+					
+					<hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
+
+					<dl class="guideList">
+						<dt>class: <em>.iconTyPlanCategory.small</em> </dt>
+						<dd><em>용례</em> [생애재무관리]</dd>
+						<dd>- 작은 케이스</dd>
+						<dd>- data-code 10, 20, 30, 40, 90번 확인 필요</dd>
+						<dd><em>적용</em></dd>
+					</dl>
+
+					<p><i class="iconTyPlanCategory small" data-code="11">목표</i> : <span class="code">data-code="11"</span> (여행)</p>
+					<p><i class="iconTyPlanCategory small" data-code="12">목표</i> : <span class="code">data-code="12"</span> (취미)</p>
+					<p><i class="iconTyPlanCategory small" data-code="13">목표</i> : <span class="code">data-code="13"</span> (레저)</p>
+					<p><i class="iconTyPlanCategory small" data-code="14">목표</i> : <span class="code">data-code="14"</span> (피트니스)</p>
+					<p><i class="iconTyPlanCategory small" data-code="21">목표</i> : <span class="code">data-code="21"</span> (쇼핑)</p>
+					<p><i class="iconTyPlanCategory small" data-code="22">목표</i> : <span class="code">data-code="22"</span> (명품)</p>
+					<p><i class="iconTyPlanCategory small" data-code="23">목표</i> : <span class="code">data-code="23"</span> (자동차)</p>
+					<p><i class="iconTyPlanCategory small" data-code="24">목표</i> : <span class="code">data-code="24"</span> (디지털기기)</p>
+					<p><i class="iconTyPlanCategory small" data-code="25">목표</i> : <span class="code">data-code="25"</span> (가전제품)</p>
+					<p><i class="iconTyPlanCategory small" data-code="31">목표</i> : <span class="code">data-code="31"</span> (교육)</p>
+					<p><i class="iconTyPlanCategory small" data-code="32">목표</i> : <span class="code">data-code="32"</span> (결혼)</p>
+					<p><i class="iconTyPlanCategory small" data-code="41">목표</i> : <span class="code">data-code="41"</span> (노후)</p>
+					<p><i class="iconTyPlanCategory small" data-code="42">목표</i> : <span class="code">data-code="42"</span> (주택)</p>
+					<p><i class="iconTyPlanCategory small" data-code="43">목표</i> : <span class="code">data-code="43"</span> (여유자금마련)</p>
+					<p><i class="iconTyPlanCategory small" data-code="91">목표</i> : <span class="code">data-code="91"</span> (대출상환)</p>
+					<p><i class="iconTyPlanCategory small" data-code="92">목표</i> : <span class="code">data-code="92"</span> (자산일임)</p>
+					<p><i class="iconTyPlanCategory small" data-code="99">목표</i> : <span class="code">data-code="99"</span> (기타)</p>
+				</div>
+
+				<!-- 고객성향 설문 아이콘 ==========================================  -->
+				<h2 class="guideTl">* 고객성향 설문 아이콘</h2>
+
+				<xmp class="codeBox">
+<i class="iconTySurvey01">질문</i>
+<i class="iconTySurvey02">질문</i>
+<i class="iconTySurvey03">질문</i>
+<i class="iconTySurvey04">질문</i>
+<i class="iconTySurvey05">질문</i>
+<i class="iconTySurvey06">질문</i>
+<i class="iconTySurvey07">질문</i>
+<i class="iconTySurvey08">질문</i>
+<i class="iconTySurvey09">질문</i>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.iconTySurvey{num}</em> </dt>
+					<dd><em>용례</em> [생애재무관리]</dd>
+					<dd>- 설문조사 질문 아이콘</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div>
+					<p><i class="iconTySurvey01">질문</i> : <span class="code">.iconTySurvey01</span></p>
+					<p><i class="iconTySurvey02">질문</i> : <span class="code">.iconTySurvey02</span></p>
+					<p><i class="iconTySurvey03">질문</i> : <span class="code">.iconTySurvey03</span></p>
+					<p><i class="iconTySurvey04">질문</i> : <span class="code">.iconTySurvey04</span></p>
+					<p><i class="iconTySurvey05">질문</i> : <span class="code">.iconTySurvey05</span></p>
+					<p><i class="iconTySurvey06">질문</i> : <span class="code">.iconTySurvey06</span></p>
+					<p><i class="iconTySurvey07">질문</i> : <span class="code">.iconTySurvey07</span></p>
+					<p><i class="iconTySurvey08">질문</i> : <span class="code">.iconTySurvey08</span></p>
+					<p><i class="iconTySurvey09">질문</i> : <span class="code">.iconTySurvey09</span></p>
+				</div>
+
+				<!-- 환율전망 배너 아이콘 ==========================================  -->
+				<h2 class="guideTl">* 환율전망 배너 아이콘</h2>
+
+				<xmp class="codeBox">
+<i class="iconTyExchangeRate01"></i>
+<i class="iconTyExchangeRate02"></i>
+<i class="iconTyExchangeRate03"></i>
+<i class="iconTyExchangeRate04"></i>
+<i class="iconTyExchangeRate05"></i>
+<i class="iconTyExchangeRate06"></i>
+<i class="iconTyExchangeRate07"></i>
+<i class="iconTyExchangeRate08"></i>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.iconTyExchangeRate{num}</em> </dt>
+					<dd><em>용례</em> [환율전망서비스]</dd>
+					<dd>- 배너 아이콘</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div>
+					<p><i class="iconTyExchangeRate01"></i> : <span class="code">.iconTyExchangeRate01</span></p>
+					<p><i class="iconTyExchangeRate02"></i> : <span class="code">.iconTyExchangeRate02</span></p>
+					<p><i class="iconTyExchangeRate03"></i> : <span class="code">.iconTyExchangeRate03</span></p>
+					<p><i class="iconTyExchangeRate04"></i> : <span class="code">.iconTyExchangeRate04</span></p>
+					<p><i class="iconTyExchangeRate05"></i> : <span class="code">.iconTyExchangeRate05</span></p>
+					<p><i class="iconTyExchangeRate06"></i> : <span class="code">.iconTyExchangeRate06</span></p>
+					<p><i class="iconTyExchangeRate07"></i> : <span class="code">.iconTyExchangeRate07</span></p>
+					<p><i class="iconTyExchangeRate08"></i> : <span class="code">.iconTyExchangeRate08</span></p>
+				</div>
+
+				<!-- 자산연결 현황판 아이콘 ==========================================  -->
+				<h2 class="guideTl">* 자산연결 현황판 아이콘</h2>
+
+				<xmp class="codeBox">
+<div data-grade="3"><i class="iconTyBadgeBank"></i></div>
+<div data-grade="3"><i class="iconTyBadgeCard"></i></div>
+<div data-grade="3"><i class="iconTyBadgeFinance"></i></div>
+<div data-grade="3"><i class="iconTyBadgeInsurance"></i></div>
+<div data-grade="3"><i class="iconTyBadgePension"></i></div>
+<div data-grade="3"><i class="iconTyBadgeCash"></i></div>
+<div data-grade="3"><i class="iconTyBadgeDormant"></i></div>
+<div data-grade="3"><i class="iconTyBadgeEstate"></i></div>
+<div data-grade="3"><i class="iconTyBadgeCar"></i></div>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>[data-grade={num}] .iconTyBadge{Type}</em> </dt>
+					<dd><em>용례</em> [공통-자산연결]</dd>
+					<dd>- 부모에 data-grade 속성으로 타입 제어</dd>
+					<dd>- 184px이 기본이지만 80px로 줄여서 사용중</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<p data-grade="0"><i class="iconTyBadgeBank"></i> : <span class="code">[data-grade=0] .iconTyBadgeBank</span></p>
+				<p data-grade="1"><i class="iconTyBadgeBank"></i> : <span class="code">[data-grade=1] .iconTyBadgeBank</span></p>
+				<p data-grade="2"><i class="iconTyBadgeBank"></i> : <span class="code">[data-grade=2] .iconTyBadgeBank</span></p>
+				<p data-grade="3"><i class="iconTyBadgeBank"></i> : <span class="code">[data-grade=3] .iconTyBadgeBank</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeCard"></i> : <span class="code">[data-grade=0] .iconTyBadgeCard</span></p>
+				<p data-grade="1"><i class="iconTyBadgeCard"></i> : <span class="code">[data-grade=1] .iconTyBadgeCard</span></p>
+				<p data-grade="2"><i class="iconTyBadgeCard"></i> : <span class="code">[data-grade=2] .iconTyBadgeCard</span></p>
+				<p data-grade="3"><i class="iconTyBadgeCard"></i> : <span class="code">[data-grade=3] .iconTyBadgeCard</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeFinance"></i> : <span class="code">[data-grade=0] .iconTyBadgeFinance</span></p>
+				<p data-grade="1"><i class="iconTyBadgeFinance"></i> : <span class="code">[data-grade=1] .iconTyBadgeFinance</span></p>
+				<p data-grade="2"><i class="iconTyBadgeFinance"></i> : <span class="code">[data-grade=2] .iconTyBadgeFinance</span></p>
+				<p data-grade="3"><i class="iconTyBadgeFinance"></i> : <span class="code">[data-grade=3] .iconTyBadgeFinance</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeInsurance"></i> : <span class="code">[data-grade=0] .iconTyBadgeInsurance</span></p>
+				<p data-grade="1"><i class="iconTyBadgeInsurance"></i> : <span class="code">[data-grade=1] .iconTyBadgeInsurance</span></p>
+				<p data-grade="2"><i class="iconTyBadgeInsurance"></i> : <span class="code">[data-grade=2] .iconTyBadgeInsurance</span></p>
+				<p data-grade="3"><i class="iconTyBadgeInsurance"></i> : <span class="code">[data-grade=3] .iconTyBadgeInsurance</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgePension"></i> : <span class="code">[data-grade=0] .iconTyBadgePension</span></p>
+				<p data-grade="1"><i class="iconTyBadgePension"></i> : <span class="code">[data-grade=1] .iconTyBadgePension</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeCash"></i> : <span class="code">[data-grade=0] .iconTyBadgeCash</span></p>
+				<p data-grade="1"><i class="iconTyBadgeCash"></i> : <span class="code">[data-grade=1] .iconTyBadgeCash</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeDormant"></i> : <span class="code">[data-grade=0] .iconTyBadgeDormant</span></p>
+				<p data-grade="1"><i class="iconTyBadgeDormant"></i> : <span class="code">[data-grade=1] .iconTyBadgeDormant</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeEstate"></i> : <span class="code">[data-grade=0] .iconTyBadgeEstate</span></p>
+				<p data-grade="1"><i class="iconTyBadgeEstate"></i> : <span class="code">[data-grade=1] .iconTyBadgeEstate</span></p>
+
+				<p data-grade="0"><i class="iconTyBadgeCar"></i> : <span class="code">[data-grade=0] .iconTyBadgeCar</span></p>
+				<p data-grade="1"><i class="iconTyBadgeCar"></i> : <span class="code">[data-grade=1] .iconTyBadgeCar</span></p>
+
+				<!-- 소비/자산 분석 아이콘 ==========================================  -->
+				<h2 class="guideTl">* 소비/자산 분석 아이콘</h2>
+
+				<xmp class="codeBox">
+<i class="iconTyAnalysis" data-code="0"></i>
+<i class="iconTyAnalysis" data-code="1"></i>
+<i class="iconTyAnalysis" data-code="2"></i>
+<i class="iconTyAnalysis" data-code="3"></i>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.iconTyAnalysis[data-code={num}]</em> </dt>
+					<dd><em>용례</em> [소비분석/자산분석]</dd>
+					<dd>- 자신에 data-code 속성으로 타입 제어</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<p><i class="iconTyAnalysis" data-code="0"></i> : <span class="code">.iconTyAnalysis[data-code="0"]</span></p>
+				<p><i class="iconTyAnalysis" data-code="1"></i> : <span class="code">.iconTyAnalysis[data-code="1"]</span></p>
+				<p><i class="iconTyAnalysis" data-code="2"></i> : <span class="code">.iconTyAnalysis[data-code="2"]</span></p>
+				<p><i class="iconTyAnalysis" data-code="3"></i> : <span class="code">.iconTyAnalysis[data-code="3"]</span></p>
+				
+
+				<!-- 블릿 리스트 ==========================================  -->
+				<h2 class="guideTl">* 블릿 리스트</h2>
+
+				<xmp class="codeBox">
+<ul class="dotList">
+	<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+	<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+	<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+</ul>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.dotList</em> </dt>
+					<dd><em>용례</em> [공통]</dd>
+					<dd>- dot 리스트</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div>
+					<ul class="dotList">
+						<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+						<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+						<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+					</ul>
+				</div>
+
+				<hr style="margin:20px 0 5px; height:4px; background:#eee; border:0 none;">
+				
+				<xmp class="codeBox">
+<ul class="dashList">
+	<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+	<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+	<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+</ul>
+				</xmp>
+
+				<dl class="guideList">
+					<dt>class: <em>.dashList</em> </dt>
+					<dd><em>용례</em> [공통]</dd>
+					<dd>- dash 리스트</dd>
+					<dd><em>적용</em></dd>
+				</dl>
+
+				<div>
+					<ul class="dashList">
+						<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+						<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+						<li>리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용 리스트 내용</li>
+					</ul>
+				</div>
+
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>
