@@ -1,0 +1,245 @@
+
+<!-- /*******************************************************************
+* @설명			: 자산추가
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		유현우		2019-09-16	 최초작성
+********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script>
+		$(function() {
+
+			/*
+				Chart type Bubble
+	
+				데이터가 없는 경우 	circle 클래스에 nodata를 추가해야 합니다.
+				추가하면 해당 circle은 click이벤트가 사라집니다.
+			*/
+	
+			//차트 원들의 기본값z
+			var objCircle = $(".chart-type-Bubble .circle");
+			var objHideFld = $(".chart-type-Bubble .hidden");
+			var objBorder1 = $(".chart-type-Bubble .border1");
+			var objBorder2 = $(".chart-type-Bubble .border2");
+			var circleLength = [ 110, 80, 71, 60, 50 ];	//단위 px
+			var activeLength = 140;	//활성화 원 지름
+			var borderLenth1 = 180;	//안쪽 테두리 지름
+			var borderLenth2 = 220;	//바깥쪽 테두리 지름
+			var posCircleX = [ 65, 40, 84, 27, 11 ];		//단위 %
+			var posCircleY = [ 22, 162, 124, 49, 126 ];	//단위 px
+			var posActX = "60%";		//가운데 정렬 X좌표
+			var posActY = "60px";		//가운데 정렬 Y좌표
+			var posActBoderY = "40px";	//안쪽 테두리 Y좌표
+			var posActBoder2Y = "20px";	//바깥쪽 테두리 Y좌표
+			var circlsBg = [ '#bb97f8', '#c377f4', '#9656ef', '#7446db', '#5d4be3' ];	//배경색
+			
+			var detailUrl = [ '내모든연금.html', '금융컨설팅.html', '', '', '' ];	//20191022 추가
+	
+			if ( $(".chart-type-Bubble").length > 0 ) {
+				//Init
+				objHideFld.css( "left", posActX );	//hidden circle
+				objBorder1.css( "left", posActX );	//inner border
+				objBorder2.css( "left", posActX );	//inner border
+	
+				//원위치 제자리로
+				objCircle.each(function(i) {
+					fnCircleOrgPos( i );
+				});
+				//첫번째 활성화
+				fnCircleCenter( objCircle.eq(0), 0);
+			}
+	
+			//click 이벤트
+			$(".chartWrap .circle").click(function() {
+				var idx = $(".chartWrap .circle").index(this);
+				//원위치 제자리로
+				objCircle.each(function(i) {
+					if ( i != idx) {
+						fnCircleOrgPos( i );
+					}
+				});
+				//click한 원 가운데로
+				fnCircleCenter( $(this), idx );
+			});
+			//모든 원 제자리로 idx(click한 인덱스)
+			function fnCircleOrgPos(idx) {
+				objCircle.eq(idx).animate({
+					width: circleLength[idx],
+					height: circleLength[idx],
+					borderRadius: (circleLength[idx] / 2),
+					backgroundColor: circlsBg[idx],
+					left: posCircleX[idx] + "%",
+					top: posCircleY[idx],
+					zIndex: 1
+				}, 300, 'swing', function() {
+					$(this).find(".rank").show();	//rank 다시 보여주기
+					$(this).removeClass("active");	//활성화 체크 제거
+				});
+			}
+			//원 가운데로
+			function fnCircleCenter(obj, idx) {
+				objHideFld.hide();
+				$(".chart-type-Bubble .border1, .chart-type-Bubble .border2").hide();
+	
+				obj.animate({
+					width: activeLength,
+					height: activeLength,
+					left: posActX,
+					top: posActY,
+					transform: "translateX(-50%)",
+					borderRadius: activeLength / 2,
+					zIndex: 2
+				}, 300, 'swing', function() {
+				});
+				obj.animate({
+					backgroundColor: "#fff",
+					opacity: 0.7
+				}, 300, 'swing', function() {
+					//수치정보 보여주기
+					showHideInfo( $(this), idx );
+	
+					//테두리 효과
+					circleBorderInit();
+					circleBorderAnimate();
+					
+					//상세보기 url 세팅
+					$(".chart-type-Bubble .detailInfo").attr("href", detailUrl[i]);	//20191022 추가
+				});
+			}
+			//수치정보 보여주기
+			function showHideInfo( obj, idx ) {
+				objHideFld.hide();	//기존정보 모두 초기화
+				obj.eq(idx).find(".rank").hide();	//rank 숨기기
+				obj.addClass("active");	//현재원 활성화 체크
+				objHideFld.eq(idx).fadeIn(300);		//hidden 정보 show
+			}
+			//원테두리 애니메이션
+			function circleBorderInit() {
+				$(".chart-type-Bubble .border1, .chart-type-Bubble .border2").css({
+					width: 140,
+					height: 140,
+					top: 60,
+					borderRadius: 70,
+					opcity: 1
+				}).hide();
+			}
+			function circleBorderAnimate() {
+				$(".chart-type-Bubble .border1").show().stop().animate({
+					width: borderLenth1,
+					height: borderLenth1,
+					top: 40,
+					transform: "translateX(-50%)",
+					borderRadius: borderLenth1 / 2,
+					opacity: 0.3
+				}, 300, 'swing', function() {
+				});
+				$(".chart-type-Bubble .border2").show().stop().animate({
+					width: borderLenth2,
+					height: borderLenth2,
+					top: 20,
+					borderRadius: borderLenth2 / 2,
+					opacity: 0.1
+				}, 300, 'swing', function() {
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">차트</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents pt0 pb0">
+				<h2 class="mb15">메인 버블차트</h2>
+
+				<!-- 차트 A -->
+				<div class="chartTypeBuble chart-type-Bubble">
+					<div class="chartWrap">
+						<!-- set -->
+						<div class="circle"><span class="rank">TOP 1</span></div>
+						<div class="hidden">
+							<span class="title">수익율</span>
+							<span class="num"><span class="plus">+</span>60.09<span>%</span></span>
+							<span class="amt">￦ 627,700</span>
+						</div>
+						<!-- // set -->
+
+						<div class="circle"><span class="rank">TOP 2</span></div>
+						<div class="hidden">
+							<span class="title">수익율</span>
+							<span class="num"><span class="plus">+</span>40.09<span>%</span></span>
+							<span class="amt">￦ 627,700</span>
+						</div>
+
+						<div class="circle"><span class="rank">TOP 3</span></div>
+						<div class="hidden">
+							<span class="title">수익율</span>
+							<span class="num"><span class="plus">+</span>30.09<span>%</span></span>
+							<span class="amt">￦ 627,700</span>
+						</div>
+ 
+						<div class="circle"><span class="rank">TOP 4</span></div>
+						<div class="hidden">
+							<span class="title">수익율</span>
+							<span class="num"><span class="plus">+</span>20.09<span>%</span></span>
+							<span class="amt">￦ 627,700</span>
+						</div>
+
+						<div class="circle nodata"><span class="rank">TOP 5</span></div>
+						<div class="hidden">
+							<span class="title">수익율</span>
+							<span class="num"><span class="plus">+</span>10.09<span>%</span></span>
+							<span class="amt">￦ 627,700</span>
+						</div>
+						
+						<div class="border1"></div><!-- 원테두리 20191009 추가 -->
+						<div class="border2"></div>
+						
+						<a class="detailInfo" href="내모든연금.html"></a><!-- 20191022 상세보기 -->
+					</div>
+				</div>
+				<!-- // 차트 A -->
+
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+
+</body>
+</html>

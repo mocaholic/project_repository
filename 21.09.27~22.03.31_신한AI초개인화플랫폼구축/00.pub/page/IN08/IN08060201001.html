@@ -1,0 +1,464 @@
+
+<!--
+/********************************************************************
+* @설명			:	내 연금시뮬레이션
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		조승태		2019-09-18		최초작성
+* 2		조승태		2019-09-19		하단 자동이체/조회 변경 버튼 삭제
+* 3		조승태		2019-09-24		연금없을 경우 노출되는 버튼 추가 [Line 201 ~ 220]
+* 4		유현우		2019-09-25		수정
+* 5		김수영		2019-10-23		연금수령/수령기간/수익률 직접입력 input type > number 로 수정
+* 5		김수영		2019-10-25		여백수정
+* 6		김수영		2019-10-28		매월저축준비/목돈으로 준비 case 1,2,4 일경우 노툴 영역 추가
+*********************************************************************/
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class="bg">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">내모든연금</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="innerGap lineN">
+					<div class="mySimul">
+						<div class="mySimulTop">
+							<p class="tit">내가 모은 연금</p>	
+							<strong class="totalMoney"><span>123,456,789</span>원</strong>
+							<p class="comm">개인연금 수령조건을 변경해보세요.</p>
+						</div>
+						<div class="formAreaBox">
+							<div class="inputBox button"> <!-- .button // -->
+								<dl>
+									<dt>연금수령</dt>
+									<dd>
+										<input type="text" id="" placeholder="55세 부터" value="" readonly="readonly" autocomplete="off">
+										<button type="button" data-href="#layerPopBottom01" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+									</dd>
+								</dl>
+							</div>
+							<div class="inputBox button"> <!-- .button // -->
+								<dl>
+									<dt>수령기간</dt>
+									<dd>
+										<input type="text" id="" placeholder="20년 동안" value="" readonly="readonly" autocomplete="off">
+										<button type="button" data-href="#layerPopBottom02" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+									</dd>
+								</dl>
+							</div>
+							<div class="inputBox button"> <!-- .button // -->
+								<dl class="rate">
+									<dt>수익률</dt>
+									<dd>
+										<input type="text" id="" placeholder="2%" value="" readonly="readonly" autocomplete="off">
+										<button type="button" data-href="#layerPopBottom03" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+									</dd>
+								</dl>
+							</div>
+							<div class="inputBox button"> <!-- .button // -->
+								<dl class="national">
+									<dt>국민연금</dt>
+									<dd>
+										<span class="swtichTy01">
+											<label for="dummy2">
+												<input type="checkbox" name="dummy2" id="dummy2" value="dummy2" checked="" autocomplete="off">
+												<i>
+													<span class="on">포함</span>
+													<span class="off">미포함</span>
+												</i>
+											</label>
+										</span>
+									</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="totalMonth">
+							<p class="everyMonth">매월</p>
+							<p class="total"><span class="countUp">1500000</span>원<span>을</span></p>
+							<p class="get">연금으로 받을 수 있어요!</p>
+						</div>
+					</div>
+					<div class="customSimul">
+						<p class="tit">나만의 맞춤형 연금 계획을<br/>세워보세요</p>
+						<div class="customList slide-tab">
+							<div class="swiper-wrapper anchorWrap">
+								<!-- 활성화시 class="on" -->
+								<a href="#none" class="swiper-slide on"><span class="goal">목표연금액</span></a>
+								<a href="#none" class="swiper-slide"><span class="every">매월저축준비</span></a>
+								<a href="#none" class="swiper-slide"><span class="chunk">목돈으로준비</span></a>
+							</div>
+						</div>
+						<div class="customSimulation-slide swiper-container-horizontal slide-items">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="customCard type01">
+										<p class="tit">은퇴 후 매월 필요한</br>나의 연금 금액은?</p>
+										<div class="formAreaBox">
+											<div class="inputBox button"> <!-- .button // -->
+												<input type="text" id="" placeholder="매월 2,000,000원" value="" readonly="readonly" autocomplete="off">
+												<button type="button" data-href="#layerPopBottom04" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+											</div>
+											<p>받으려면</p>
+										</div>
+										<div class="practice">
+											<p>지금부터 54세까지</p>
+											<p class="receive"><span class="highlight">매월 <span class="cntUp">1000000</span>원</span> 더 모으면 가능해요!</p>
+										</div>
+										<div class="practice">
+											<p>목돈으로</p>
+											<p class="receive"><span class="highlight"><span class="cntUp">100000000</span>원<em>을</em></span> 바로 넣어도 가능해요!</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="customCard type02">
+										<p class="tit">매월 저축금액을 변경하면</br>나의 연금 수령액은?</p>
+										<div class="formAreaBox">
+											<div class="inputBox button"> <!-- .button // -->
+												<input type="text" id="" placeholder="매월 2,000,000원" value="" readonly="readonly" autocomplete="off">
+												<button type="button" data-href="#layerPopBottom04" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+											</div>
+											<p>저축하면</p>
+										</div>
+										<div class="practice">
+											<p>국민연금 수령 전까지</p>
+											<p class="receive"><span class="highlight">매월 <span class="cntUp">1000000</span>원</span> 수령 가능해요!</p>
+										</div>
+										<div class="practice">
+											<p>국민연금 개시 후 부터</p>
+											<p class="receive"><span class="highlight"><span class="cntUp">1500000</span>원<em>을</em></span> 수령 가능해요!</p>
+										</div>
+										<!-- 20191028 추가 : 국민연금 수령 전 금액 미노출/국민연금 개시 후 금액 미노출 일때 노출
+										<div class="practice case124"></div>
+										 -->
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="customCard type03">
+										<p class="tit">목돈을 한꺼번에 저축하면</br>나의 연금 수령액은?</p>
+										<div class="formAreaBox">
+											<div class="inputBox button"> <!-- .button // -->
+												<input type="text" id="" placeholder="매월 2,000,000원" value="" readonly="readonly" autocomplete="off">
+												<button type="button" data-href="#layerPopBottom04" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+											</div>
+											<p>저축하면</p>
+										</div>
+										<div class="practice">
+											<p>국민연금 수령 전까지</p>
+											<p class="receive"><span class="highlight">매월 <span class="cntUp">1000000</span>원</span> 수령 가능해요!</p>
+										</div>
+										<div class="practice">
+											<p>국민연금 개시 후 부터</p>
+											<p class="receive"><span class="highlight"><span class="cntUp">100000000</span>원<em>을</em></span> 수령 가능해요!</p>
+										</div>
+										<!-- 20191028 추가 : 국민연금 수령 전 금액 미노출/국민연금 개시 후 금액 미노출 일때 노출
+										<div class="practice case124"></div>
+										 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="addDeposit"> <!-- 20191025 mt40 클래스 제거 -->
+						<ul class="listTyArrowLink img">
+							<li>
+								<a href="javascript:;">
+									<span class="img deposit"></span>
+									<div class="listWrap">
+										<p class="listTit">추가입금</p>
+										<p class="listTxt">내 연금에 추가로 저축해 보세요.</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span class="img irp"></span>
+									<div class="listWrap">
+										<p class="listTit">IRP 추가입금</p>
+										<p class="listTxt">예금과 투자를 내 마음대로 조정할 수 있는<br>IRP로 저축해보세요.</p>
+									</div>
+								</a>
+							</li>
+							<!-- 연금이 없을 경우 노출 '2019-09-24 추가' -->
+							<!-- <li>
+								<a href="javascript:;">
+									<span class="img join"></span>
+									<div class="listWrap">
+										<p class="listTit">바로가기</p>
+										<p class="listTxt">내 연금을 가입해 보세요.</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<span class="img irpjoin"></span>
+									<div class="listWrap">
+										<p class="listTit">IRP 바로가기</p>
+										<p class="listTxt">예금과 투자를 내 마음대로 조정할 수 있는</br>IRP로 저축해보세요.</p>
+									</div>
+								</a>
+							</li> -->
+							<!--// 연금이 없을 경우 노출 '2019-09-24 추가' -->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 연금수령 나이 선택 팝업 -->
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom01" tabindex="-1">
+		<div class="popInner" tabindex="0" style="display: block;">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">나이시작 변경</p>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="searchPop">
+					<div class="formAreaBox">
+						<div class="inputBox search">
+						<!-- 입력 오루시 class="wrong" 추가 -->
+							<dl>
+								<dd>
+									<input type="number" id="" placeholder="나이를 입력하세요" autocomplete="off"> <!-- 20191023  input type number 로  수정 -->
+									<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+									<button type="button" class="icon">확인</button>
+								</dd>
+							</dl>
+							<div class="error">나이를 입력 또는 선택하세요.</div>
+						</div>
+					</div>
+				</div>
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">55세 부터</button></li>
+						<li><button type="button">60세 부터</button></li>
+						<li><button type="button">65세 부터</button></li>
+						<li><button type="button">70세 부터</button></li>
+						<li><button type="button">75세 부터</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--// 연금수령 나이 선택 팝업 -->
+<!-- 수령기간 선택 팝업 -->
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom02" tabindex="-1">
+		<div class="popInner" tabindex="0" style="display: block;">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">기간변경</p>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="searchPop">
+					<div class="formAreaBox">
+						<div class="inputBox search">
+						<!-- 입력 오루시 class="wrong" 추가 -->
+							<dl>
+								<dd>
+									<input type="number" id="" placeholder="1년 ~ 45년" autocomplete="off"> <!-- 20191023  input type number 로  수정 -->
+									<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+									<button type="button" class="icon">확인</button>
+								</dd>
+							</dl>
+							<div class="error">기간을 입력 또는 선택하세요.</div>
+						</div>
+					</div>
+				</div>
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">5년 동안</button></li>
+						<li><button type="button">10년 동안</button></li>
+						<li><button type="button">15년 동안</button></li>
+						<li><button type="button">20년 동안</button></li>
+						<li><button type="button">25년 동안</button></li>
+						<li><button type="button">30년 동안</button></li>
+						<li><button type="button">35년 동안</button></li>
+						<li><button type="button">40년 동안</button></li>
+						<li><button type="button">45년 동안</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--// 수령기간 선택 팝업 -->
+<!-- 수익률 선택 팝업 -->
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom03" tabindex="-1">
+		<div class="popInner" tabindex="0" style="display: block;">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">수익률 변경</p>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="searchPop">
+					<div class="formAreaBox">
+						<div class="inputBox search">
+						<!-- 입력 오루시 class="wrong" 추가 -->
+							<dl>
+								<dd>
+									<input type="number" id="" placeholder="0% ~ 10%" autocomplete="off"> <!-- 20191023  input type number 로  수정 -->
+									<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+									<button type="button" class="icon">확인</button>
+								</dd>
+							</dl>
+							<div class="error">수익률을 입력 또는 선택하세요.</div>
+						</div>
+					</div>
+				</div>
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">수익률 1%</button></li>
+						<li><button type="button">수익률 2%</button></li>
+						<li><button type="button">수익률 3%</button></li>
+						<li><button type="button">수익률 4%</button></li>
+						<li><button type="button">수익률 5%</button></li>
+						<li><button type="button">수익률 6%</button></li>
+						<li><button type="button">수익률 7%</button></li>
+						<li><button type="button">수익률 8%</button></li>
+						<li><button type="button">수익률 9%</button></li>
+						<li><button type="button">수익률 10%</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--// 수익률 선택 팝업 -->
+<!-- 목표연금액 선택 팝업 -->
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom04" tabindex="-1">
+		<div class="popInner" tabindex="0" style="display: block;">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">수익률 변경</p>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="searchPop">
+					<div class="formAreaBox">
+						<div class="inputBox search">
+						<!-- 입력 오루시 class="wrong" 추가 -->
+							<dl>
+								<dd>
+									<input type="number" id="" placeholder="목표연금액을 만원단위로 입력하세요." autocomplete="off"> <!-- 20191023  input type number 로  수정 -->
+									<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+									<button type="button" class="icon">확인</button>
+								</dd>
+							</dl>
+							<div class="error">목표 연금액을 입력 또는 선택하세요.</div>
+						</div>
+					</div>
+				</div>
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">200 만원</button></li>
+						<li><button type="button">300 만원</button></li>
+						<li><button type="button">400 만원</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--// 목표연금액 선택 팝업 -->
+
+<!-- 숫자 카운트 스크립트 -->
+<script>
+	
+	//내가모음 연금
+	numCntAnimation( $(".countUp") );
+	
+	//카운트 애니메이션
+	function numCntAnimation( obj ) {
+		var originNumber = uncomma(obj.text());
+		$({ val : 0}).animate({ val : originNumber }, {
+			duration: 1000,
+			step: function() {
+				obj.text(Math.floor(this.val));
+			},
+			complete: function() {
+				obj.text(comma(Math.floor(this.val)));
+			}
+		});
+	}
+	//콤마찍기
+	function comma(str) {
+	    str = String(str);
+	    return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+	}
+	 //콤마풀기
+    function uncomma(str) {
+        str = String(str);
+        return str.replace(/[^\d]+/g, '');
+    }
+		
+	
+</script>
+<!--// 숫자 카운트 스크립트 -->
+<!-- 목표연금액 카드 슬라이드 스크립트 -->
+<script>
+	var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수
+	if(UserAgent.match(/i(Phone|Pod)/i) != null){
+		$('body').width(screen.width);
+	}
+
+	function noSwipeTab(){
+		if($(".customSimulation-slide").length){
+			var $menu = $(".anchorWrap");				
+			var $target = $('.customSimulation-slide');
+			var swiper = new Swiper(".customSimulation-slide", {
+				observer: true,
+				observeParents: true,
+				calculateHeight:true,
+				spaceBetween: 20,
+				onInit: function(swiper){
+					$menu.on("click", "a", function(){
+						var index = $(this).index();
+						swiper.slideTo(index);
+					});
+				},
+				onSlideChangeEnd: function(swiper){
+					//tab활성화
+					$menu.find("a").removeClass("on").removeAttr("title").eq(swiper.activeIndex).addClass("on").attr("title", "현재 선택 됨");
+					//숫자 카운트애니메이션
+					numCntAnimation( $(".customSimulation-slide .swiper-slide").eq( swiper.activeIndex).find(".cntUp:eq(0)") );
+					numCntAnimation( $(".customSimulation-slide .swiper-slide").eq( swiper.activeIndex).find(".cntUp:eq(1)") );
+				}
+			})
+		}
+	}
+	noSwipeTab();
+</script>
+<!--// 목표연금액 카드 슬라이드 스크립트 -->
+</body>
+</html>

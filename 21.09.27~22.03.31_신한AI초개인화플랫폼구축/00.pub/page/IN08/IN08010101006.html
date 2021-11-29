@@ -1,0 +1,118 @@
+
+<!--
+/********************************************************************
+* @설명			:	MY 자산 > 신용평가 현황
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		유현우		2019-11-27		최초작성
+*********************************************************************/
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+
+
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+
+	<div class="appTrustGrade"><!-- app -->
+		<ul class="txt">
+			<li class="bad">Bad</li>
+			<li class="fair">Fair</li>
+			<li class="good">Good</li>
+		</ul>
+
+		<ul class="light"><!-- 17 x 22 -->
+			<li class="step1"></li>
+			<li class="step2"></li>
+			<li class="step3 "><div></div></li><!-- grade 15 -->
+			<li class="step4 "><div></div></li><!-- grade 14 -->
+			<li class="step5"><div></div></li><!-- grade 13 -->
+			<li class="step6"><div></div></li><!-- grade 12 -->
+			<li class="step7"><div></div></li><!-- grade 11 -->
+			<li class="step8"><div></div></li><!-- grade 10 -->
+			<li class="step9"><div></div></li><!-- grade 9 -->
+			<li class="step10"><div></div></li><!-- grade 8 -->
+			<li class="step11"><div></div></li><!-- grade 7 -->
+			<li class="step12"><div></div></li><!-- grade 6 -->
+			<li class="step13"><div></div></li><!-- grade 5 -->
+			<li class="step14"><div></div></li><!-- grade 4 -->
+			<li class="step15"><div></div></li><!-- grade 3 -->
+			<li class="step16"><div></div></li><!-- grade 2 -->
+			<li class="step17"><div></div></li><!-- grade 1 -->
+		</ul>
+
+		<!-- case 1, case2 에 따라 보여지는 영역이 다름 -->
+		<div class="info case2">
+			<span class="title">
+				<span>김신한님의</span><!-- case1일 경우에 hidden -->
+				신용등급
+			</span>
+			<span class="grade">우수</span>
+			<span class="cmt"><!-- case2일 경우 hidden -->
+				예상대출한도는<br>
+				<strong>19,900만원</strong>입니다
+			</span>
+			<span class="date">2019.11.12 기준</span>
+		</div>
+	</div><!--// app -->
+
+</div>
+<!-- // wrap -->
+
+<script>
+	var maxCnt = 17;	//Light Max Count
+	var grade = 7;		//등급 데이터를 받아 이곳에 넣으세요
+	var cnt = 0;			//Count
+	var strGrade = "";	//등급구분 텍스트
+
+	//Turn On Light
+	var autoLight;
+	autoLight = setInterval(function() {
+		if (cnt < (grade + 1) ) {
+			$(".appTrustGrade .light li").eq(cnt).addClass("on");
+			cnt++;
+		} else {
+			$(".appTrustGrade .light li").eq(cnt).addClass("last");
+			clearInterval( autoLight );
+		}
+	}, 100);
+
+	//반짝임
+	var twinkleLight;
+	twinkleLight = setInterval(function() {
+		$(".appTrustGrade .light li.last div").fadeOut(600).fadeIn(800);
+	}, 900);
+
+	//개인등급 텍스트
+	if (grade > 10) {
+		strGrade = "주의";
+	} else if (grade > 7 && grade < 11) {
+		strGrade = "보통";
+	} else if (grade == 7) {
+		strGrade = "양호";
+	} else if (grade > 3 && grade < 7) {
+		strGrade = "우수";
+	} else if (grade < 4) {
+		strGrade = "매우우수";
+	} else {
+		strGrade = "";
+	}
+	$(".appTrustGrade .info .grade").text(strGrade);
+
+</script>
+
+</body>
+</html>

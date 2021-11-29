@@ -1,0 +1,667 @@
+
+<!--
+/********************************************************************
+* @설명			:	목적설계
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김수영		2019-09-20		최초작성
+* 2		김수영		2019-10-10		추천카드 영역 수정
+* 3             김수영		2019-10-22		평균금액/그래프 금액 마크업 수정
+* 4             김수영		2019-10-24		배너추가
+* 5             김수영		2019-10-25		금액 밑줄 수정
+* 6             김수영		2019-10-28		배너 문구 수정
+*********************************************************************/
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class="bg">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">금융진단</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="financialWrap">
+					<a href="javascript:void(0)" class="financialMonth_btn" data-href="#layerPopBottom04" onclick="bottomPopOpen(this);">9월</a>
+					<!--
+					<div class="monthBtnWrap">
+						<div class="month">
+							<a href="javascript:;" class="prev">이전</a>
+							<span>9월</span>
+							<a href="javascript:;" class="next">다음</a>
+						</div>
+					</div>
+
+					-->
+					<div class="tit"><h2><span>금융진단 1. <i class="assetIcon question assetVat">도움말</i></span>나의 저축 현황은?</h2></div>
+					<div class="graphWrap" id="chart-1">
+						<div class="ex"> <!--정보 없을 시 비노출-->
+							<ul style="display: none">
+								<li>40대 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+							<ul style="display: none">
+								<li>40대 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>1000,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+							<ul>
+								<li>40대 평균 : <span class="price"><div>2500,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>3400,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+						</div>
+						
+						<!-- 차트 -->
+						<div class="chartTypeC chart-type-C">
+							<div class="chartWrap">
+								<div class="graph">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">7월</div>
+								</div>	
+								<div class="graph">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">8월</div>
+								</div>
+								<div class="graph active">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">9월</div>
+								</div>
+							</div>
+						</div>
+						<!-- // 차트 -->
+						
+						<!-- 20191011 아이콘 정의 추가
+						 ico_financial_level_01.png	양호
+						 ico_financial_level_02.png	주의
+						 ico_financial_level_03.png	위험
+						 -->
+						<div class="graphDetail"> <!--정보 없을 시 비노출-->
+							<ul>
+								<li>연령 대비<span class="type1">양호<i class="assetIcon question assetVat">도움말</i></span>
+									<div class="per">
+										<div>상위 <span>10 <em>%</em></span></div>
+										<img src="../../../../../../images/in08/ico_financial_level_01.png" alt="">
+									</div>
+								</li>
+								
+								<li>소득 대비<span class="type3">위험<i class="assetIcon question assetVat">도움말</i></span>
+									<div class="per">
+										<div>상위 <span>78 <em>%</em></span></div>
+										<img src="../../../../../../images/in08/ico_financial_level_03.png" alt="">
+									</div>
+								</li>
+							</ul>
+							<div class="result">
+								<p class="ac">40대 평균대비 <strong>10</strong>만원 적고<br>유사소득 평균대비 <strong class="color2">15</strong>만원 많습니다.</p> <!-- 20191025 strong tag 영역 수정 -->
+							</div>
+						</div>
+					</div>
+
+					<!-- 20191024 배너 추가 -->
+					<div class="financialBanner type3">
+						<p><a href="javascript:;">목돈마련의 시작  <strong>고민말고 목표 설정 먼저</strong></a></p>
+					</div>
+					<!-- //20191024 배너 추가 -->
+					
+					<h3 class="fontSL mt40 pb30"><strong>우대금리 혜택 추천적금</strong></h3>
+					<div class="financialListWrap">
+						<ul class="listTypeTable financial">
+							<li class="row">
+								<a href="#">
+									<div class="leftCol"><p class="tit">신한 첫급여 드림(Dream)적금</p></div>
+									<div class="rightCol"><p class="txt blue">최고 연 <span>5%</span></p></div>
+								</a>
+							</li>
+							<li class="row">
+								<a href="#">
+									<div class="leftCol type2"><p class="tit2">급여받는 누구나~</p></div>
+									<div class="rightCol"><p class="txt fontSSS">최저 연 2% (12개월,세전)</p></div>
+								</a>
+							</li>
+						</ul>
+						<ul class="listTypeTable financial">
+							<li class="row">
+								<a href="#">
+									<div class="leftCol"><p class="tit">신한 첫급여 드림(Dream)적금</p></div>
+									<div class="rightCol"><p class="txt blue">최고 연 <span>5%</span></p></div>
+								</a>
+							</li>
+							<li class="row">
+								<a href="#">
+									<div class="leftCol type2"><p class="tit2">급여받는 누구나~</p></div>
+									<div class="rightCol"><p class="txt fontSSS">최저 연 2% (12개월,세전)</p></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="financialWrap type2">
+					<div class="tit"><h2><span>금융진단 2. <i class="assetIcon question assetVat">도움말</i></span>나의 지출 현황은?</h2></div>
+					<div class="graphWrap" id="chart-2">
+						<div class="ex"> <!--정보 없을 시 비노출-->
+							<ul style="display: none">
+								<li>40대 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+							<ul style="display: none">
+								<li>40대 평균 : <span class="price"><div>700,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>1,000,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+							<ul>
+								<li>40대 평균 : <span class="price"><div>1,500,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>1,000,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+						</div>
+						
+						<!-- 차트 -->
+						<div class="chartTypeC chart-type-C">
+							<div class="chartWrap">
+								<div class="graph">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">7월</div>
+								</div>	
+								<div class="graph">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">8월</div>
+								</div>
+								<div class="graph active">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">9월</div>
+								</div>
+							</div>
+						</div>
+						<!-- // 차트 -->
+						
+						<div class="graphDetail"> <!--정보 없을 시 비노출-->
+							<ul>
+								<li>연령 대비<span class="type1">양호<i class="assetIcon question assetVat">도움말</i></span>
+									<div class="per">
+										<div>상위 <span>10 <em>%</em></span></div>
+										<img src="../../../../../../images/in08/ico_financial_level_01.png" alt="">
+									</div>
+								</li>
+								
+								<li>소득 대비<span class="type2">보통<i class="assetIcon question assetVat">도움말</i></span>
+									<div class="per">
+										<div>상위 <span>78 <em>%</em></span></div>
+										<img src="../../../../../../images/in08/ico_financial_level_02.png" alt="">
+									</div>
+								</li>
+							</ul>
+							<div class="result">
+								<p class="ac">40대 평균대비 <strong>100</strong>만원 초과했고<br>유사소득 평균대비 <strong class="color2">150</strong>만원 미달했습니다.</p> <!-- 20191025 strong tag 영역 수정 -->
+							</div>
+						</div>
+					</div>
+
+					<!--20191010 수정-->
+					<!--h3 class="fontSL mt40 pb30"><strong>절약을 위한 체크카드</strong></h3>
+					<div class="financialListWrap">
+						<ul class="listTypeTable financial card">
+							<li class="row">
+								<div class="leftCol"><a href="#"><img src="../../../../../../images/in08/@card.png" alt="SOL Deep Dream 체크카드 이미지" class="vm"></a></div>
+								<div class="leftCol">
+									<p class="tit pb10">SOL Deep Dream 체크카드</p>
+									<p class="tit2">통신요금, 교통비 캐시백</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><a href="#"><img src="../../../../../../images/in08/@card.png" alt="S-Line 체크 (마이펫) 이미지" class="vm"></a></div>
+								<div class="leftCol">
+									<p class="tit pb10">S-Line 체크 (마이펫)</p>
+									<p class="tit2">요식업, 교통, 쇼핑 할인 / 금융우대</p>
+								</div>
+							</li>
+						</ul>
+					</div-->
+					<div class="financialBanner type2">
+						<p><a href="javascript:;">꼭 맞는 <strong>맞춤 카드를 추천 받아보세요</strong></a></p> <!-- 20191028 '고객님께' 삭제-->
+					</div>
+					<!--//20191010 수정-->
+				</div>
+
+				<div class="financialWrap type3">
+					<div class="tit"><h2><span>금융진단 3. <i class="assetIcon question assetVat">도움말</i></span>나의 연금준비 현황은?</h2></div>
+					<div class="graphWrap" id="chart-3">
+						<div class="ex"> <!--정보 없을 시 비노출-->
+							<ul style="display: none">
+								<li>40대 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 --> 
+								<li>유사소득 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+							<ul style="display: none">
+								<li>40대 평균 : <span class="price"><div>1,000,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+							<ul>
+								<li>40대 평균 : <span class="price"><div>1,000,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+								<li>유사소득 평균 : <span class="price"><div>800,000</div>원</span></li> <!-- 20191022 수정 : 금액 부분  > 마크업 수정 -->
+							</ul>
+						</div>
+						
+						<!-- 차트 -->
+						<div class="chartTypeC chart-type-C">
+							<div class="chartWrap">
+								<div class="graph">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">7월</div>
+								</div>	
+								<div class="graph">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">8월</div>
+								</div>
+								<div class="graph active">
+									<div class="top"><span>15,500</span>원</div> <!-- 20191022 '만' 텍스트 삭제-->
+									<div class="bot">9월</div>
+								</div>
+							</div>
+						</div>
+						<!-- // 차트 -->
+						
+						<div class="graphDetail"> <!--정보 없을 시 비노출-->
+							<ul>
+								<li>연령 대비<span class="type1">양호<i class="assetIcon question assetVat">도움말</i></span>
+									<div class="per">
+										<div>상위 <span>10 <em>%</em></span></div>
+										<img src="../../../../../../images/in08/ico_financial_level_01.png" alt="">
+									</div>
+								</li>
+								
+								<li>소득 대비<span class="type2">보통<i class="assetIcon question assetVat">도움말</i></span>
+									<div class="per">
+										<div>상위 <span>78 <em>%</em></span></div>
+										<img src="../../../../../../images/in08/ico_financial_level_02.png" alt="">
+									</div>
+								</li>
+							</ul>
+							<div class="result">
+								<p class="ac"> <!-- 20191025 strong tag 영역 수정 -->
+								연금준비현황은 <strong> 미흡 </strong> 합니다.<br> 
+								50대 평균 대비 <strong>150</strong>만원 적고<br>
+								유사소득 대비 <strong class="color2">10</strong>만원 많습니다.<br>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="financialBanner">
+						<p><a href="javascript:;">노후자금 <strong>내 모든 연금으로 준비해보세요</strong></a></p> <!-- 20191028 '고객님의' 삭제-->
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+<!-- 현황 안내-->
+<div class="layerPopWrap hasDim" id="layerPop01" tabindex="0">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit">현황 안내</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<ul class="financialPop">
+						<li class="type1"><img src="../../../../../../images/in08/ico_financial_level_01.png" alt="양호"><span>양호</span>:  상위 1~40% 이내</li>
+						<li class="type2"><img src="../../../../../../images/in08/ico_financial_level_02.png" alt="보통"><span>보통</span>:  상위 40~70% 이내</li>
+						<li class="type3"><img src="../../../../../../images/in08/ico_financial_level_03.png" alt="위험"><span>위험</span>:  상위 70~100% 이내</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 저축금액의 기준-->
+<div class="layerPopWrap hasDim" id="layerPop02" tabindex="0">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit">저축금액의 기준</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<p class="txt">
+						 신한은행 입출금 계좌를 통하여,
+						 예적금, 신탁, 펀드, 보험료, 정기성 자동이체
+						 등으로 입금된 금액
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--지출금액의 기준-->
+<div class="layerPopWrap hasDim" id="layerPop03" tabindex="0">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit"> 지출금액의 기준</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<p class="txt">
+						 신한은행 입출금 계좌를 통하여, 공과금, 통신비, 교통비, 기부금, 경조사비, 의료비, 여행비, 모임비, 렌탈비, 간편결제, 교육/육아, 취미/쇼핑, 외식비, 카드비, 국민연금/의보, 환전/송금, 현금지급 등으로 지출된 금액
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 연금준비금액의 기준-->
+<div class="layerPopWrap hasDim" id="layerPop04" tabindex="0">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit">연금준비금액의 기준</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<p class="txt">
+						  신한은행에서 가입한 연금성 상품(펀드, 신탁, 보험)의 전월 대비하여 증가한 금액
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="layerPopBottomWrap hasDim" id="layerPopBottom04" tabindex="-1">
+	<div class="popInner" tabindex="0" style="display: block;">
+		<div class="layerHeader">
+			<p class="layerTit" onclick="bottomPopClose(this)">월 선택</p>
+			
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">6월</button></li>
+					<li><button type="button">7월</button></li>
+					<li><button type="button">8월</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$('.btnPopClose, .btnType').on('click',function(){
+		$('.layerPopWrap').hide();
+	});
+	
+	
+	if ( $(".chart-type-C").length > 0 ) {
+		
+		var strUserAge = 40;	//사용자 나이
+		
+		//차트 1 정보
+		var objChart1 = $("#chart-1");	//객체
+		var arrAmt1 = [ 100, 100, 200 ];		//저축금액
+		var min1 = getMinVal(arrAmt1);	//저축금액중 최소값
+		var max1 = getMaxVal(arrAmt1);	//저축금액중 최대값
+		var arrMonth1 = [ '7월', '8월', '9월' ];	//월
+		var arrAge1 = [ '20대 평균', '30대 평균', '40대 평균' ];	//나이  평균
+		var arrAvg1 = [ 100, 200, 300];	//나이대별 평균 금액
+		var min1_2 = getMinVal(arrAvg1);	//나이대별 평균금액중 최소값
+		var max1_2 = getMaxVal(arrAvg1);	//나이대별 평균금액중 최대값
+		var arrAvgIncome1 = [ 80, 70, 250 ];	//연령대 평균 소득
+		var arrSameIncome1 = [ 80, 100, 340 ];	//유사소득
+		var arrAmtRate1 = [ '30%', '20%', '70%' ];
+		
+		chartTypeCPlay( objChart1, arrAmt1, arrMonth1, min1, max1, arrAge1, arrAvg1, min1_2, max1_2 );	//첫번째 차트
+		
+		//첫번째 차트 click
+		objChart1.find(".graph").click(function() {
+			var idx = objChart1.find(".graph").index(this);
+			topAvgSet( objChart1, idx, arrAvgIncome1[idx], arrSameIncome1[idx] );
+			objChart1.find(".graph").removeClass("active");
+			$(this).addClass("active");
+		});
+		
+		
+		//차트2 정보
+		var objChart2 = $("#chart-2");
+		var arrAmt2 = [ 300, 200, 100 ];		//저축금액
+		var min2 = getMinVal(arrAmt2);	//저축금액중 최소값
+		var max2 = getMaxVal(arrAmt2);	//저축금액중 최대값
+		var arrMonth2 = [ '7월', '8월', '9월' ];	//월
+		var arrAge2 = [ '20대 평균', '30대 평균', '40대 평균' ];	//나이  평균
+		var arrAvg2 = [ 100, 200, 300];	//나이대별 평균 금액
+		var min2_2 = getMinVal(arrAvg2);	//나이대별 평균금액중 최소값
+		var max2_2 = getMaxVal(arrAvg2);	//나이대별 평균금액중 최대값
+		var arrAvgIncome2 = [ 80, 70, 150 ];	//연령대 평균 소득
+		var arrSameIncome2 = [ 80, 100, 100 ];	//유사소득
+		
+		chartTypeCPlay( objChart2, arrAmt2, arrMonth2, min2, max2, arrAge2, arrAvg2, min2_2, max2_2 );	//두번째 차트
+		
+		//두번째 차트 click
+		objChart2.find(".graph").click(function() {
+			var idx = objChart2.find(".graph").index(this);
+			topAvgSet( objChart2, idx, arrAvgIncome2[idx], arrSameIncome2[idx] );
+			objChart2.find(".graph").removeClass("active");
+			$(this).addClass("active");
+		});
+		
+		
+		//차트3 정보
+		var objChart3 = $("#chart-3");
+		var arrAmt3 = [ 300, 200, 100 ];		//저축금액
+		var arrMonth3 = [ '7월', '8월', '9월' ];	//월
+		var min3 = getMinVal(arrAmt3);	//저축금액중 최소값
+		var max3 = getMaxVal(arrAmt3);	//저축금액중 최대값
+		var arrAge3 = [ '20대 평균', '30대 평균', '40대 평균' ];	//나이  평균
+		var arrAvg3 = [ 100, 200, 300];	//나이대별 평균 금액
+		var min3_2 = getMinVal(arrAvg3);	//나이대별 평균금액중 최소값
+		var max3_2 = getMaxVal(arrAvg3);	//나이대별 평균금액중 최대값
+		var arrAvgIncome3 = [ 80, 70, 200 ];	//연령대 평균 소득
+		var arrSameIncome3 = [ 80, 100, 100 ];	//유사소득
+		
+		chartTypeCPlay( objChart3, arrAmt3, arrMonth3, min3, max3, arrAge3, arrAvg3, min3_2, max3_2 );	//세번째 차트
+		
+		//세번째 차트 click
+		objChart3.find(".graph").click(function() {
+			var idx = objChart3.find(".graph").index(this);
+			topAvgSet( objChart3, idx, arrAvgIncome3[idx], arrSameIncome3[idx] );
+			objChart3.find(".graph").removeClass("active");
+			$(this).addClass("active");
+		});
+		
+		//상단 정보 세팅
+		setTopVal(0, arrAvgIncome1, arrSameIncome1);
+		setTopVal(1, arrAvgIncome2, arrSameIncome2);
+		setTopVal(2, arrAvgIncome3, arrSameIncome3);
+		function setTopVal(index, arr1, arr2) {
+			for (var i=0; i < arr1.length; i++) {
+				$(".financialWrap .graphWrap .ex").eq(index).find("ul:eq(" + i + ") li:eq(0)").html("40대" + "평균 : <span class='price'><div>" + arr1[i] + "</div>원</span>");
+				$(".financialWrap .graphWrap .ex").eq(index).find("ul:eq(" + i + ") li:eq(1)").html("유사소득 평균 : <span class='price'><div>" + arr2[i] + "</div>원</span>");
+			}
+		}
+		
+		function chartTypeCPlay( objChart, arrAmt, arrMonth, min, max, arrAge, arrAvg, min2, max2 ) {
+			var count = 0;	// 금액 중 0 카운트
+			
+			for ( var i=0; i < arrAmt.length; i++ ) {
+				if ( arrAmt[i] == 0 ) count++;
+			}
+			
+			if ( count == 3 ) {
+				//연령대 평균 차트
+				objChart.find(".ex").hide();
+				objChart.find(".graphDetail").hide();
+				objChart.find(".graph").removeClass("active");
+				objChart.find(".graph").eq(1).addClass("active");	//중앙에 디폴트 활성화
+				for ( var i=0; i < arrAvg.length; i++ ) {
+					if ( arrAvg[i] == min2 ) { graphAnimation(objChart.find(".graph").eq(i), 'low'); }
+					if ( arrAvg[i] != min2 && arrAvg[i] != max2 ) { graphAnimation(objChart.find(".graph").eq(i), 'middle'); }
+					if ( arrAvg[i] == max2 ) { graphAnimation(objChart.find(".graph").eq(i), 'high'); }
+					setValTop(objChart, i, arrAvg[i]);
+					setValBot(objChart, i, arrAge[i]);
+					objChart.find(".graph").addClass("none-click");
+				}
+			} else {
+				//저축금액 차트
+				
+				for ( var i=0; i < arrAmt.length; i++ ) {
+					
+				}
+				
+				
+				
+				if ( arrAmt[2] != 0 ) {		//3번째 차트가 마지막값일때
+					for ( var i=0; i < arrAmt.length; i++ ) {
+						if ( arrAmt[i] == 0 ) {		//금액이 0일때
+							graphAnimation(objChart.find(".graph").eq(i), 'zero');	//차트 숨김
+							
+						} else {		//금액이 0이 아닐때
+							if ( i == 2 ) {
+								//마지막 차트는 무조건 중
+								graphAnimation(objChart.find(".graph").eq(i), 'middle');	//중
+							} else {
+								if ( arrAmt[i] > arrAmt[2] ) {
+									graphAnimation(objChart.find(".graph").eq(i), 'high');		//상
+								} else if ( arrAmt[i] < arrAmt[2] ) {
+									graphAnimation(objChart.find(".graph").eq(i), 'low');		//하
+								} else {
+									graphAnimation(objChart.find(".graph").eq(i), 'middle');	//중
+								}
+							}
+						}
+						setValTop(objChart, i, arrAmt[i]);
+						setValBot(objChart, i, arrMonth[i]);
+					}
+				} else {		//2번째 차트가 마지막값일때
+					console.log("마지막값이 없을때");
+				
+					for ( var i=0; i < arrAmt.length; i++ ) {
+						if ( arrAmt[1] != 0 ) {		//2번째 차트가 마지막일때
+							if ( arrAmt[i] == 1 ) {
+								graphAnimation(objChart.find(".graph").eq(i), 'middle');	//중
+							} else {
+								if ( i != 2) {
+									if ( arrAmt[i] > arrAmt[1] ) {
+										graphAnimation(objChart.find(".graph").eq(i), 'high');		//상
+									} else if ( arrAmt[i] < arrAmt[1] ) {
+										graphAnimation(objChart.find(".graph").eq(i), 'low');		//하
+									} else {
+										graphAnimation(objChart.find(".graph").eq(i), 'middle');	//중
+									}
+								}
+							}
+						} else {	//1번째 차트만 있을때
+							graphAnimation(objChart.find(".graph").eq(0), 'middle');	//중
+						}
+						setValTop(objChart, i, arrAmt[i]);
+						setValBot(objChart, i, arrMonth[i]);
+					}
+				}
+			}
+		}
+	}
+	
+	//그래프 애니메이션
+	function graphAnimation(obj, status) {
+		var h = 0;
+		if ( status == "high" ) h = "90%"
+		if ( status == "middle" ) h = "60%"
+		if ( status == "low" ) h = "40%"
+		if ( status == "zero" ) h = "0%"
+		obj.css("height", 0).stop().animate({
+			height: h
+		}, 500, 'swing', function() {
+		});
+	}
+	//상단 값 세팅
+	function setValTop(objChart, index, num) {
+		objChart.find(".graph").eq(index).find(".top span").text(num);
+	}
+	//하단 값 세팅
+	function setValBot(objChart, index, str) {
+		objChart.find(".graph").eq(index).find(".bot").text(str);
+	}
+	//최대값 구하기
+	function getMaxVal(arr) {
+		var maxNum;
+		for (var i=0; i<arr.length; i++) {
+			if (!maxNum) {
+				maxNum = arr[i];
+			}
+			if (maxNum < arr[i]) {
+				maxNum = arr[i];
+			}
+		}
+		return maxNum;
+	}
+	//최소값 구하기
+	function getMinVal(arr) {
+		var minNum;
+		for (var i=0; i<arr.length; i++) {
+			if (!minNum) {
+				minNum = arr[i];
+			}
+			if (minNum > arr[i]) {
+				minNum = arr[i];
+			}
+		}
+		return minNum;
+	}
+	//상단 평균값 세팅
+	function topAvgSet( obj, idx, userAvgIncome, sameIncome ) {
+		if ( !obj.find(".graph").hasClass("none-click") ) {
+			obj.find(".ex ul").hide();
+			obj.find(".ex ul").eq(idx).show();
+		}
+	}
+	
+	//그래프 높이를 바로 인식하지 못해서 timeout 사용
+	setTimeout( function() {
+		topAvgSet( objChart1, 2, arrAvgIncome1[2], arrSameIncome1[2] );
+		topAvgSet( objChart2, 2, arrAvgIncome2[2], arrSameIncome2[2] );
+		topAvgSet( objChart2, 2, arrAvgIncome3[2], arrSameIncome3[2] );
+	}, 500 );
+	 
+	
+	
+	
+</script>
+
+</body>
+</html>

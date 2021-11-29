@@ -1,0 +1,380 @@
+
+<!-- /********************************************************************
+* @설명			: (POP)지출줄이기 도전
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		유현우		2019-09-11	   최초작성
+* 2		유현우		2019-09-26	   디자인 반영
+* 3     김수영           2019-10-23    팝업 타이틀 수정/ 월 지출 예산 type 수정
+* 4     김수영           2019-10-24    전반적 ui 수정
+*********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">지출 줄이기 도전</h1> <!-- 20191023 수정 -->
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="innerBox">
+					<p class="txt txtBlack2 fontSL"> <!-- 20191024 class 추가 'fontSL' -->
+						카드 지출금액과 내역을 참고하여<br>
+						지출 예산을 계획해보세요. 
+					</p>
+
+					<div class="boxInfo_01 mt30">
+						<span class="tit medium">9월 카드 소비금액</span> <!-- 20191024 class 추가 'medium' -->
+						<dl>
+							<dt>
+								지난달<span>+400,000원</span>
+							</dt>
+							<dd><a href=""><span class="lnk">21,662,000원</span></a></dd>
+						</dl>
+					</div>
+
+					<!-- 지출항목 TOP3 -->
+					<div class="areaAC003 mt30 mr-21 ml-21">
+						<h4 class="subTitle_02"><span class="fontS">지출항목 TOP5</span></h4> <!-- 20191024 class 추가 'fontS' -->
+						<ul class="graph type2"> <!-- 20191024 class 추가 'type2' -->
+							<!-- 20191023 카테고리별 class 적용 -->
+							<li class="familyEvent">
+								<div class="categoryNm">경조사</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="education">
+								<div class="categoryNm">교육</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="traffic">
+								<div class="categoryNm">교통</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="finance">
+								<div class="categoryNm">금융</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="etc">
+								<div class="categoryNm">기타</div>
+								<div class="bar">
+									<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+								</div>
+								<div class="amt">860,000</div>
+							</li>
+							<li class="beauty">
+								<div class="categoryNm">미용 등</div>
+								<div class="bar">
+									<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+								</div>
+								<div class="amt">860,000</div>
+							</li>
+							<li class="social">
+								<div class="categoryNm">사회/종교단체</div>
+								<div class="bar">
+									<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+								</div>
+								<div class="amt">860,000</div>
+							</li>
+							<li class="necessaries">
+								<div class="categoryNm">생필품</div>
+								<div class="bar">
+									<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+								</div>
+								<div class="amt">860,000</div>
+							</li>
+							<li class="life">
+								<div class="categoryNm">생활</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="shoping">
+								<div class="categoryNm">쇼핑</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="commission">
+								<div class="categoryNm">수수료|</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="commission2">
+								<div class="categoryNm">수수료||</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="travel">
+								<div class="categoryNm">여행</div>
+								<div class="bar">
+									<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+								</div>
+								<div class="amt">1,500,000</div>
+							</li>
+							<li class="food">
+								<div class="categoryNm">외식|</div>
+								<div class="bar">
+									<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="food2">
+								<div class="categoryNm">외식||</div>
+								<div class="bar">
+									<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="pleasure">
+								<div class="categoryNm">유흥</div>
+								<div class="bar">
+									<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="medical">
+								<div class="categoryNm">의료</div>
+								<div class="bar">
+									<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="fashion">
+								<div class="categoryNm">의류/패션</div>
+								<div class="bar">
+									<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="interior">
+								<div class="categoryNm">인테리어</div>
+								<div class="bar">
+									<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="car">
+								<div class="categoryNm">자동차|</div>
+								<div class="bar">
+									<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="car2">
+								<div class="categoryNm">자동차||</div>
+								<div class="bar">
+									<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="hobby">
+								<div class="categoryNm">취미/관심사</div>
+								<div class="bar">
+									<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="academy">
+								<div class="categoryNm">학원</div>
+								<div class="bar">
+									<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<li class="overseas">
+								<div class="categoryNm">해외</div>
+								<div class="bar">
+									<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+								</div>
+								<div class="amt">620,000</div>
+							</li>
+							<!-- //20191023 카테고리별 class 적용 -->
+						</ul>
+					</div>
+					<!-- // 지출항목 TOP3 -->
+				</div>
+
+				<div class="innerBox lineN">
+					<div class="formAreaBox">
+						<div class="inputBox mt0">
+							<dl>
+								<dt>월 지출 예산</dt>
+								<dd>
+									<input type="tel" id="목표예산" placeholder="금액입력" maxlength="12" value="" autocomplete="off" onkeyup="javascript:sbInputAmountDecimal('목표예산', 'N');fncGetTargetBudget(this);"><!-- 20191023 type 수정 --> 
+									<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+								</dd>
+							</dl>
+							<div class="error">error 문구 출력</div>
+						</div>
+						<div class="inputBox button"> <!-- .button // -->
+							<dl>
+								<dt>예산사용 시작일</dt>
+								<dd>
+									<input type="text" id="예산사용시작일" placeholder="1일" value="" readonly="readonly" autocomplete="off" class="txtBlack1 medium"> <!-- 20191024 class 추가 txtBlack1 medium -->
+									<button type="button" data-href="#layerPopBottom02" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+								</dd>
+							</dl>
+						</div>
+					</div>
+		
+					<!-- 2020-05-26 추가 -->
+					<div class="mt30 pb30">
+						<p>예산사용 시작일까지 <em class="txtBlue2">10</em>일 남았습니다.</p>
+						<p class="mt5">그때까지의 예산을 <em class="txtBlue2">5,806,452</em>원으로 설정해드릴게요.</p>
+						<div class="stickCol">
+							<ul>
+								<li style="width:35%">
+									<span class="tit">오늘</span>
+									<span class="price">5,806,452원</span>
+								</li>
+								<li>
+									<span class="tit">월 예산시작일</span>
+									<span class="price">18,000,000원</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="mt30 pb30">
+						<p>예산사용 시작일까지 <em class="txtBlue2">20</em>일 남았습니다.</p>
+						<p class="mt5">그때까지의 예산을 <em class="txtBlue2">11,612,903</em>원으로 설정해드릴게요.</p>
+						<div class="stickCol">
+							<ul>
+								<li style="width:50%">
+									<span class="tit">오늘</span>
+									<span class="price">11,612,903원</span>
+								</li>
+								<li>
+									<span class="tit">월 예산시작일</span>
+									<span class="price">18,000,000원</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="mt30 pb30">
+						<p>예산사용 시작일까지 <em class="txtBlue2">29</em>일 남았습니다.</p>
+						<p class="mt5">그때까지의 예산을 <em class="txtBlue2">16,838,710</em>원으로 설정해드릴게요.</p>
+						<div class="stickCol">
+							<ul>
+								<li style="width:65%">
+									<span class="tit">오늘</span>
+									<span class="price">11,612,903원</span>
+								</li>
+								<li>
+									<span class="tit">월 예산시작일</span>
+									<span class="price">18,000,000원</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 2020-05-26 추가 -->
+				</div>				
+
+				<!-- btnGroupBox -->
+				<div class="btnGroupBox floating">
+					<a href="javascript:void(0)void(0)" class="btnType"><span>도전하기</span></a>
+				</div>
+				<!-- //btnGroupBox -->
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 레이어팝업 -->
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom01" tabindex="-1" style="display: none;">
+		<div class="popInner" tabindex="0">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">선택항목</p>
+
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">매월</button></li>
+						<li><button type="button">매주</button></li>
+						<li><button type="button">매일</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom02" tabindex="-1" style="display: none;">
+		<div class="popInner" tabindex="0">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">선택항목</p>
+
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">1일</button></li>
+						<li><button type="button">2일</button></li>
+						<li><button type="button">3일</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- // 레이어팝업 -->
+
+<script type="text/javascript">
+	//예산사용 시작일 선택시 위치로 스크롤이동
+	var popName = "#layerPopBottom02";
+	$(popName).find(".listOneLineBox button").on("click",function(){
+		$(popName).find(".btnPopClose").trigger("click");
+		var scNum = $("button[data-href='"+popName+"']").parents(".innerBox").offset().top - 45;
+		$(".contents").animate({"scrollTop":$(".contents").scrollTop() + scNum});
+	});
+</script>
+</body>
+</html>

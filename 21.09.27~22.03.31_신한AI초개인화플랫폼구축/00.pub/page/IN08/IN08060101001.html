@@ -1,0 +1,681 @@
+
+<!--
+/********************************************************************
+* @설명			:	내모든연금
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		조승태		2019-09-16		최초작성
+* 2		조승태		2019-09-17		세액공제 탭 수정
+* 3		조승태		2019-09-18		디자인 수정으로 인한 하단 연금상품배너, 더많은정보 버튼 스타일 수정작업
+* 4		조승태		2019-09-19		그래프 1개인 상태 추가[LINE150], 업데이트 새로고침수정
+* 5		유현우		2019-09-25		그래프 수정완료
+* 6		김수영		2019-10-07		배너 case 추가
+*********************************************************************/
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr.css"><!-- 2020-05-28 수정 -->
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class="bg">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">내모든연금</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="innerGap lineN">
+					<div class="myAnnuity">
+						<!-- 당행X, 연금X일 경우 노출 -->
+						<div class="annuityDim">
+							<p>통합연금포털 연결하고<br/>내가 받을 수 있는 예상 연금을<br/>확인해보세요.</p>
+							<div class="buttonArea">
+								<a href="javascript:;" class="btnType_02 type02 txtWhite1">연금자산 추가</a><!-- 20191027 -->
+							</div>
+						</div>
+						<!--// 당행X, 연금X일 경우 노출 -->
+						<!-- 세액공제 - 당행X일 경우 노출 -->
+						<!--
+						<div class="annuityDim">
+							<p>100세 시대! 은퇴 후 든든한<br/>노후 대비가 필요합니다.<br/>내 연금을 가입해 보세요.</p>
+							<div class="buttonArea">
+								<a href="javascript:;" class="btnType_02 txtWhite1">연금 바로가기</a>
+							</div>
+						</div>
+						-->
+						<!--// 세액공제 - 당행X일 경우 노출 -->
+						<div class="myAnnuityTop">
+							<p class="tit">내가 모은 연금<a href="javascript:;" class="Question"><i class="assetIcon question assetVat">도움말</i></a></p>
+							<strong class="totalMoney">123,456,789<span>원</span></strong>
+							<!-- 자동 업데이트 완료 상태 
+							<p class="update">업데이트 <span>오늘 11:02:03</span></p> -->
+							<!--// 자동 업데이트 완료 상태 -->
+							<!-- 업데이트 진행중 상태 -->
+							<!-- <p class="update">업데이트 진행중<a href="javascript:;" class="Refresh"><i class="assetIcon refresh">새로고침</i></a></p> -->
+							<!--// 업데이트 진행중 상태 -->
+							<!-- 수동 업데이트 상태 -->
+							<!-- <p class="update">업데이트 <span>오늘 11:02:03</span><a href="javascript:;" class="Refresh"><i class="assetIcon refresh_02">새로고침</i></a></p> -->
+							<!--// 수동 업데이트 상태 -->
+						</div>
+
+						<div class="myAnnuityGraph chart-type-B" id="myAllAnnuity01">
+							<div class="buttonArea">
+								<!-- 탭시 class="on" 추가 -->
+								<a href="javascript:;" class="btnType_02 on">예상연금</a>
+								<a href="javascript:;" class="btnType_02">세액공제</a>
+							</div>
+							<div class="graphTit">
+								<p class="tit">월평균 예상수령액<a href="javascript:;" class="Question"><i class="assetIcon question assetVat">도움말</i></a></p>
+							</div>
+
+							<!-- 우측 그래프가 높은 경우 -->
+							<div class="graphWrap triple">
+								<div class="graphContent type01">
+									<div class="leftGraph bar-L" style="height: 0">
+										<div class="commWrap">
+											<span class="graphComm">매월 1,000,000원</span>
+										</div>
+									</div>
+									<div class="rightGraph bar-R" style="height: 0">
+										<div class="commWrap">
+											<span class="graphComm">매월 5,000,000원</span>
+										</div>
+									</div>
+								</div>
+								<div class="graphStandard">
+									<!-- 예상연금 탭 상태시 노출 -->
+									<span class="first"><span>55</span>세</span>
+									<span class="middle"><span>65</span>세</span>							
+									<span class="last"><span>70</span>세</span>
+
+									<!-- 세액공제 노출 -->
+									<span class="middle2" style="display: none">2019년 현재 기준 (신한은행 거래 계좌 기준)</span>
+								</div>
+							</div>
+							<!--// 우측 그래프가 높은 경우 -->
+
+							<!-- 그래프가 하나일 경우 -->
+							<div class="graphWrap only">
+								<div class="graphContent type06">
+									<div class="centerGraph" style="height: 0">
+										<div class="commWrap">
+											<span class="graphComm">매월 5,000,000원</span>
+										</div>
+									</div>
+								</div>
+								<div class="graphStandard">
+									<span class="first"><span>55</span>세</span>
+									<span class="last"><span>70</span>세</span>
+								</div>
+							</div>
+							<!--// 그래프가 하나일 경우 -->
+						</div>
+						<div class="myAnnuityBanner">
+							<a href="javascript:void(0)" class="BannerLink tab01" onclick="fncMoveNext('IN08060201001');"><p class="bannerTit ls-1">나의 예상 연금 수령액을 <span>자유롭게 시뮬레이션 하기</span></p></a>
+							<!-- 당행O 연금X 일시 -->
+							<a href="javascript:void(0)" class="BannerLink tab02" onclick="fncMoveNext('IN08060101006');" style="display:none;" ><p class="bannerTit type3">IRP 추가 납입을 통해 <span>더 많은 세금혜택 받기</span></p></a>
+							<!--// 당행O 연금X 일시 -->
+						</div>
+					</div>
+
+					<div class="myAnnuityList">
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">퇴직연금</h3>
+								<div class="arrow">
+									<!-- 아코디언 오픈시 class="on" 추가 -->
+									<span class="ico_arrow">세부내역 열림</span>
+								</div>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+							<!-- AccorCont_01 -->
+							<div class="AccorCont_01" style="display: none;">
+								<div class="listTypeTable_01 halfType lineType">
+									<div class="row">
+										<div class="leftCol">
+											<p class="tit">타금융기관</p>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+									
+									<!-- 아코디온그룹 20191001 변경 -->
+									<div class="accrdionGroup">
+										<!-- 아코디언 오픈시 class="on" 추가 -->
+										<div class="row btn-combo-inner">
+											<div class="leftCol">
+												<a href="javascript:;" class="tit accor ">신한은행</a>
+											</div>
+											<div class="rightCol">
+												<p class="txt">26,172,839원</p>
+											</div>
+										</div>
+										<div class="AccorCont_inner" style="display: none">
+											<div class="listTypeTable_01 halfType lineType">
+												<div class="row">
+													<div class="leftCol">
+														<p class="tit fontN">개인형 IRP</p>
+													</div>
+													<div class="rightCol">
+														<p class="txt hasArrow">13,172,839원</p><!-- 20191219 hasArrow 클래스 추가 -->
+													</div>
+												</div>
+												<div class="row">
+													<div class="leftCol">
+														<p class="tit fontN">DC</p>
+													</div>
+													<div class="rightCol">
+														<p class="txt hasArrow">13,172,839원</p><!-- 20191219 hasArrow 클래스 추가 -->
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- // 아코디온그룹 -->
+								</div>
+							</div>
+							<!-- //AccorCont_01 -->
+						</div>
+
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">개인연금</h3>
+								<div class="arrow">
+									<!-- 아코디언 오픈시 class="on" 추가 -->
+									<span class="ico_arrow">세부내역 열림</span>
+								</div>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+							<!-- AccorCont_01 -->
+							<div class="AccorCont_01" style="display: none;">
+								<div class="listTypeTable_01 halfType lineType">
+									<div class="row">
+										<div class="leftCol">
+											<p class="tit">타금융기관</p>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+									
+									<!-- 아코디온그룹 20191001 변경  -->
+									<div class="accrdionGroup">
+										<div class="row btn-combo-inner">
+											<div class="leftCol">
+												<a href="javascript:;" class="tit accor">신한은행</a>
+											</div>
+											<div class="rightCol">
+												<p class="txt">26,172,839원</p>
+											</div>
+										</div>
+									
+										<!-- 2019-09-19 연금저축신탁, 연금저축보험 버튼 추가 -->
+										<div class="AccorCont_inner" style="display: none">
+											<div class="listTypeTable_01 halfType lineType">
+												<div class="row">
+													<div class="leftCol">
+														<p class="tit fontN">연금저축신탁</p>
+													</div>
+													<div class="rightCol">
+														<p class="txt">26,343,100원</p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="leftCol">
+														<p class="tit fontN">연금저축보험</p>
+													</div>
+													<div class="rightCol">
+														<p class="txt">20,200,013원</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //AccorCont_01 -->
+						</div>
+
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">국민연금</h3>
+								<div class="arrow">
+									<!-- 아코디언 오픈시 class="on" 추가 -->
+									<span class="ico_arrow">세부내역 열림</span>
+								</div>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+							<!-- AccorCont_01 -->
+							<div class="AccorCont_01" style="display: none;">
+								<div class="listTypeTable_01 halfType lineType">
+									<div class="row">
+										<div class="leftCol">
+											<p class="tit">타금융기관</p>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="leftCol">
+											<a href="javascript:;" class="tit accor">신한은행</a>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //AccorCont_01 -->
+						</div>
+
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">매월 예상 연금 수령액</h3>
+								<div class="arrow">
+									<!-- 아코디언 오픈시 class="on" 추가 -->
+									<span class="ico_arrow">세부내역 열림</span>
+								</div>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+							<!-- AccorCont_01 -->
+							<div class="AccorCont_01" style="display: none;">
+								<div class="listTypeTable_01 halfType lineType">
+									<div class="row">
+										<div class="leftCol">
+											<p class="tit">퇴직연금</p>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="leftCol">
+											<p class="tit">개인연금</p>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="leftCol">
+											<p class="tit">국민연금 <span class="condition">65세부터 수령가능</span></p>
+										</div>
+										<div class="rightCol">
+											<p class="txt">26,172,839원</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //AccorCont_01 -->
+						</div>
+
+						<!-- 세액공제 탭시 노출 -->
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">IRP</h3>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+						</div>
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">DC</h3>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+						</div>
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">신탁</h3>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+						</div>
+						<div class="contAccordion borderR12 Annuity">
+							<!-- AccorTitle_01 -->
+							<div class="AccorTitle_01 btn-combo">
+								<h3 class="tit">펀드</h3>
+								<p class="won">936,543,113<span>원</span></p>
+							</div>
+							<!-- //AccorTitle_01 -->
+						</div>
+						<!--// 세액공제 탭시 노출 -->
+					</div>
+				</div>
+				<!-- 2020-05-28 수정 -->
+				<div class="innerBox prodMain lineN">
+					<h2 class="subTit2">시뮬레이션</h2>
+					<p class="infoTxt">#많이찾는 #좋아할만한</p>
+					<div class="prodSwiper swiper-container">
+						<ul class="swiper-wrapper productList1">
+							<li class="swiper-slide">
+								<a href="javascript:;">
+									<span class="imgArea prod13">
+										<em class="label">연금</em>
+										<em class="img"><img src="../../../../../../../images/in08/img_pord0101.png" alt=""/></em>
+									</span>
+									<span class="infoArea">
+										<em class="name">연금수령액<br /> 시뮬레이션</em>
+										<em class="info">목표연금액,<br /> 예상저축액 비교</em>
+									</span>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="javascript:;">
+									<span class="imgArea prod13">
+										<em class="label">세금</em>
+										<em class="img"><img src="../../../../../../../images/in08/img_pord0102.png" alt=""/></em>
+									</span>
+									<span class="infoArea">
+										<em class="name">세액공제<br /> 시뮬레이션</em>
+										<em class="info">올해 적용받는<br /> 내 연금 절세액</em>
+									</span>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="javascript:;">
+									<span class="imgArea prod14">
+										<em class="label">은퇴</em>
+										<em class="img"><img src="../../../../../../../images/in08/img_pord0103.png" alt=""/></em>
+									</span>
+									<span class="infoArea">
+										<em class="name">은퇴설계<br /> 시뮬레이션</em>
+										<em class="info">노후준비,<br /> 은퇴진단부터</em>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="innerBox prodMain lineN">
+					<h2 class="subTit2">퇴직연금관리</h2>
+					<p class="infoTxt">#퇴직연금 수익률 #운용상품 #이체금액</p>
+					<div class="prodSwiper swiper-container">
+						<ul class="swiper-wrapper productList1">
+							<li class="swiper-slide">
+								<a href="javascript:;">
+									<span class="imgArea prod15">
+										<em class="label">관리</em>
+										<em class="img"><img src="../../../../../../../images/in08/img_pord0201.png" alt=""/></em>
+									</span>
+									<span class="infoArea">
+										<em class="name">퇴직연금<br /> 종합관리</em>
+										<em class="info">운용 확인 및<br /> 변경을 손쉽게!</em>
+									</span>
+								</a>
+							</li>
+							<li class="swiper-slide">
+								<a href="javascript:;">
+									<span class="imgArea prod12">
+										<em class="label">기타</em>
+										<em class="img"><img src="../../../../../../../images/in08/img_pord0202.png" alt=""/></em>
+									</span>
+									<span class="infoArea">
+										<em class="name">연금(IRP)<br /> 계좌이체</em>
+										<em class="info">연금 통장을<br /> 하나로 쉽게 변경!</em>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="innerBox prodMain lineN">
+					<h2 class="subTit2 mb15">연금 정보 한눈에</h2>
+					<p class="imgWrap">
+						<a href="javascript:;"><img src="../../../../../../../images/in08/img_banner_futureplan.png" alt="미래설계포유 연금에 대한 모든 정보가 한 곳에" /></a>
+					</p>
+				</div>
+				<!-- //2020-05-28 수정 -->
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- layerPopWrap 당행O 국민연금X 일시 노출-->
+<div class="layerPopWrap hasDim" id="layerPop03_02" style="display: none;">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit">통합연금포털 연결 안내</p>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<p class="txt">자산추가를 통해 흩어진 내 연금을 한번에 불러오세요. (국민연금 포함)</p>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:;" class="btnType btnBlack"><span>닫기</span></a>
+			<a href="javascript:;" class="btnType"><span>연금자산추가</span></a>
+		</div>
+	</div>
+</div>
+<!--// layerPopWrap 당행O 국민연금X 일시 노출-->
+
+
+
+
+<script>
+	
+		/*
+			Chart type B
+
+			: 내모든연금 예상연금 차트
+
+			objChart : 차트객체
+			arrAge[0] : 하단 첫번째 값
+			arrAge[1] : 하단 두번째 값
+			arrAge[2] : 하단 세번째 값
+			amtLeft : 그래프 왼쪽 금액 (원 차트 금액)
+			amtRight : 그래프 오른쪽 금액
+			category: "예상연금 1 / 세액공제 2"
+
+			case : arrAge배열의 값이 2개일때 가운데 1차트
+			case : arrAge배열의 값이 3개일때 2차트
+			그래프 금액이 1개의 값을 가질경우는 amtRight = null
+		*/
+		//정의
+		var objChart = $("#myAllAnnuity01");
+		var arrAge = [ 50, 60, 75 ];
+		var amtLeft = 500;
+		var amtRight = 1000;
+		var category = 1;		// 1 예상연금, 2 세액공제
+
+		//호출
+		fnChartInput(objChart, arrAge, amtLeft, amtRight, category);
+
+		function fnChartInput(obj, arrAge, amtLeft, amtRight, category) {
+			$(obj).find(".graphWrap").hide();
+
+			if ( arrAge.length < 3 ) {		//case 1 : 나이값이 2개만 들어옴
+				console.log("가운데 차트");
+				fnSetGraphOnly(obj, arrAge, amtLeft);
+				$(obj).find(".only").show();
+
+			} else {	//case 2 : 나이값이 3개 모두 들어옴
+				if ( amtRight == "" || amtRight === null || amtRight == "undefined"  ) {		//case 3 : amtRight(그래프 오른쪽 금액) 없는 경우
+					console.log("오른쪽 차트");
+					fnSetGraph( obj, arrAge, amtLeft, null, category );
+					$(obj).find(".triple").show();
+
+				} else {		//case 4 : amtLeft(그래프 왼쪽 금액), amtRight(그래프 오른쪽 금액) 모두 있음
+					console.log("양쪽 차트");
+					fnSetGraph( obj, arrAge, amtLeft, amtRight, category);
+					$(obj).find(".triple").show();
+				}
+			}
+		}
+		//양쪽 그래프 높이세팅
+		function fnSetGraph( obj, arrAge, amtLeft, amtRight, category ) {
+			var amtLeftH, amtRightH;
+
+			//Graph Amt
+			fnSetGraphVal( obj, amtLeft, amtRight, category );
+
+			//Bottom
+			if ( category == 1 ) {
+				$(obj).find(".graphWrap .first span").text( arrAge[0] );
+				$(obj).find(".graphWrap .middle span").text( arrAge[1] );
+				$(obj).find(".graphWrap .last span").text( arrAge[2] );
+			} else {
+				$(obj).find(".graphWrap .first").hide();
+				$(obj).find(".graphWrap .middle").hide();
+				$(obj).find(".graphWrap .middle2").show();
+				$(obj).find(".graphWrap .last").hide();
+			}
+
+			//Animation
+			if ( parseInt(amtLeft) < parseInt(amtRight) ) {
+				amtLeftH = "50%";
+				amtRightH = "100%";
+			} else if ( parseInt(amtLeft) > parseInt(amtRight) ) {
+				amtLeftH = "100%";
+				amtRightH = "50%";
+			} else {
+				if ( amtRight == "" || amtRight === null || amtRight == "undefined"  ) {
+					amtLeftH = "0%";
+					amtRightH = "100%";
+				} else {
+					amtLeftH = "50%";
+					amtRightH = "50%";
+				}
+			}
+			$(obj).find(".bar-L").css("height", 0).stop().animate({
+				height : amtLeftH
+			}, 400, function() {
+				//callback
+			});
+			$(obj).find(".bar-R").css("height", 0).stop().animate({
+				height : amtRightH
+			}, 400, function() {
+				//callback
+			});
+		}
+		//가운데 그래프 높이세팅
+		function fnSetGraphOnly( obj, arrAge, amtLeft ) {
+			//Graph Amt
+			$(obj).find(".graphWrap.only .graphComm").text( "매월 " + fnSetComma(amtLeft) + "원" );
+
+			//Bottom
+			$(obj).find(".graphWrap .first span").text( arrAge[0] );
+			$(obj).find(".graphWrap .last span").text( arrAge[1] );
+
+			//Animation
+			$(obj).find(".only .centerGraph").stop().animate({
+				height : "80%"
+			}, 400, function() {
+				//callback
+			});
+		}
+		//Graph 금액
+		function fnSetGraphVal( obj, amtLeft, amtRight, category ) {
+			if ( category == 1 ) {
+				$(obj).find(".bar-L .graphComm").html( "매월 " + fnSetComma(amtLeft) + "원" );
+				if ( amtRight === null ) {
+					$(obj).find(".bar-R .graphComm").html( "매월 " + fnSetComma(amtLeft) + "원" );
+				} else {
+					$(obj).find(".bar-R .graphComm").html( "매월 " + fnSetComma(amtRight) + "원" );
+				}
+			} else {
+				$(obj).find(".bar-L .graphComm").html( "총 납입금액<br> " + fnSetComma(amtLeft) + "원" );
+				$(obj).find(".bar-R .graphComm").html( "세액공제 금액<br> " + fnSetComma(amtRight) + "원" );
+			}
+		}
+		//통화 컴마처리
+		function fnSetComma(num) {
+			if ( num === null ) {
+				return null;
+			} else {
+				return num.toString().replace( /\B(?=(\d{3})+(?!\d))/g, "," );
+			}
+		}
+		
+		
+		//아코디온
+		$(function() {
+			$(".btn-combo").on("click", function() {
+				if ($(this).next().css("display") == "none") {
+					//open
+					$(this).next().slideDown(400);
+					$(this).find(".ico_arrow").addClass("on");
+				} else {
+					//close
+					$(this).next().slideUp(400);
+					$(this).find(".ico_arrow").removeClass("on");
+				}
+			});
+			//내부 아코디온
+			$(".btn-combo-inner").on("click", function() {
+				if ($(this).next().css("display") == "none") {
+					//open
+					$(this).next().slideDown(400);
+					$(this).addClass("on");
+				} else {
+					//close
+					$(this).next().slideUp(400);
+					$(this).removeClass("on");
+				}
+			});
+		});
+			
+		
+		var UserAgent = navigator.platform;
+		if(UserAgent.match(/i(Phone|Pod|Pad)/i) != null){
+			$('body').width(screen.width);
+		}
+		// 2020-05-28 수정
+		var prodSwiper2 = new Swiper('.prodSwiper', {
+			freeMode: true,
+			spaceBetween: 17,
+			slidesPerView: 2.5,
+			onSlideChangeEnd:function(swiper) {
+				var productList = swiper.slides.parent().attr("class").split("productList")[1];
+				var swiperNum = swiper.activeIndex;
+				console.log(productList + "번째 " + swiperNum + "번 이동");
+			}
+		});
+</script>
+</body>
+</html>

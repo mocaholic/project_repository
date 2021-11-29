@@ -1,0 +1,104 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL AI > 쏠 프리미어 메인
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		윤지혜		
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header" class="premier"><!-- class="premier" 추가 -->
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>  
+				<h1 class="tit">초개인화 포트 설계</h1> 
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a> 
+				</div>
+			</div> 
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+				<div class="solAi premierMain">
+					<!-- 비주얼 영역 -->
+					<div class="innerBox lineN visualArea">
+
+					</div>
+					<!-- // 비주얼 영역 -->
+					<!-- 컨텐츠 영역 -->
+					<div class="innerBox lineN" style="height:1000px;">
+					</div>
+					<!-- // 컨텐츠 영역 -->
+				</div>
+			</div>			
+			<!-- // contents -->
+			<!-- 하단 플로팅 버튼 -->
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0);" class="btnType light">추천포트보기</a>
+			</div>			
+			<!-- // 하단 플로팅 버튼 -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<script type="text/javascript">
+$(function(){
+	$('.contents').on('scroll',function(){
+        var scrollTop = $(this).scrollTop();
+        var visualHeight = $('.visualArea').innerHeight(); 
+        var scrollHeight = $(this).prop('scrollHeight');
+		console.log(scrollTop);
+
+
+		if(scrollTop <= visualHeight - 45) {
+			$('#header').addClass('premier');
+		}else{
+			$('#header').removeClass('premier');
+		}
+		
+
+        // if (scrollTop + innerHeight >= scrollHeight) {
+        // $("#confirm").attr('disabled', false);
+        // } else {
+        // $("#confirm").attr('disabled', true);
+        // }
+	});
+	// var winScrollTop = $(window).scrollTop();
+	// var wrapH = $('#wrap').height();
+	// var visualH = $('.visualArea').scrollTop();
+
+	// console.log(visualH);
+});
+	
+</script>
+</body>
+</html>

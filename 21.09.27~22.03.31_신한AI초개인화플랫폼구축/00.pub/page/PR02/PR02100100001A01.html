@@ -1,0 +1,1066 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr02.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class="transfer2">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">이체</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- 다건이체 -->
+			<div class="boxPlural">
+				<div class="tblType">
+					<span class="nums">
+						<em class="num">1건</em>
+						<em>총 300,000원</em>
+					</span>
+					<span class="btns">
+						<a href="javascript:;" class="btnModify">수정</a>
+						<a href="javascript:;" class="btnTransfer">이체</a>
+					</span>
+				</div>
+				<p>
+					<a href="javascript:;" class="txtBatch" style="">일괄 이체금액 300,000원</a>
+					<a href="javascript:;" class="batchClose">일괄 이체금액 삭제</a><!-- //2021-03-29 추가 -->
+				</p>
+			</div>
+			<!-- //다건이체 -->
+			<!-- contents -->
+			<div class="contents full">
+				<div class="innerBox lineN">
+					<div class="formAreaBox account">
+						<div class="inputBox button mt10">
+							<dl>
+								<dt>출금계좌</dt>
+								<dd>
+									<p class="name">
+										<img src="../../../../../../../images/bank_logo/banklogo_088.png" alt="신한은행">
+										<span>신한 주거래 우대통장</span>
+									</p>
+									<p class="num">000-123-123456</p>
+									<button type="button" data-href="#layerOutAcctPop" class="btn" disabled="disabled"><span class="iconTy40">내역 열림</span></button><!-- //2021-05-31 button 및 disabled 추가 -->
+								</dd>
+							</dl>
+							<p class="inputTxt">출금가능금액 1,000,000원</p>
+						</div>
+					</div>
+					<div class="formAreaBox price now">
+						<div class="inputBox">	
+							<dl>
+								<dt>금액</dt>
+								<dd class="on">
+									<p class="hanTxt">육십만원</p>
+									<span class="cursor"><em id="iptIpAmt_cursor"></em><i class="hide">원</i></span>
+									<input id="iptIpAmt" type="tel" value="" placeholder="금액 입력" maxlength="15" onclick="fncRemoveAllKeyPad(this, 'iptIpAmt_onclick');" onfocus="fncRemoveAllKeyPad_focus();" onkeyup="iptIpAmt_onkeyup();iptIpAmt_onchange();" onchange="iptIpAmt_onchange();" title="금액" readonly="readonly">
+									<a href="javascript:;" class="btnAccDel hide">삭제</a><!-- //2021-04-27 수정 -->
+									<a href="javascript:;" class="selectAcc hide">계좌선택</a>
+								</dd>
+							</dl>
+							<div class="cf">
+								<div class="fl">
+									<div class="error">error 문구 출력</div> 
+									<div class="inputTxt">
+										<span>일 잔여한도 4,000,000원</span>
+										<a href="javascript:void(0)" class="tipOpen iconTy27" title="<p class='title'>이체한도안내</p>
+										<p class='referTxt txtRed1'>출금계좌가 한도제한계좌 입니다.</p>
+										<p>1회 : 99,999,999,999원</p>
+										<p>1일 : 99,999,999,999원</p>
+										<p>오늘 이체한 금액 : 99,999,999,999원</p>
+										">?</a>
+									</div>
+								</div>
+								<a href="#layerPopBatch" class="btnType3 fr btnSmall5 mt5 btnPopOpen"><span>일괄금액</span></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="formAreaBox toTab">
+						<div class="inputBox">
+							<dl>
+								<dt class="vm">받는분</dt>
+								<dd>
+									<a href="javascript:;" class="btnTxt">최근/★</a>
+									<a href="#layerSpeedPop" class="btnTxt btnScPop">스피드</a>
+									<a href="javascript:;" class="btnTxt">계좌번호 입력</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="formAreaBox toForm">
+						<div class="inputBox button mt0"> <!-- .button // -->
+							<dl>
+								<dd>
+									<p class="fieldTxt">
+										<img src="../../../../../../../images/bank_logo/banklogo_021.png" class="vm">
+										<span class="vm">신한</span>
+									</p>
+									<a href="#layerSelBankPop" class="btn btnScPop full"><span class="iconTy40">내역 열림</span></a>
+									<!-- <button type="button" class="btn"><span class="iconTy40">내역 열림</span></button> -->
+								</dd>
+							</dl>
+						</div>
+						<div class="inputBox mt0">
+							<dl>
+								<dd>
+									<input type="tel" id="" placeholder="계좌번호 입력" readonly="readonly">
+									<a href="javascript:;" class="btnAccDel hide">삭제</a><!-- //2021-04-27 수정 -->
+								</dd>
+							</dl>
+							<div class="error">error 문구 출력</div>
+						</div>
+					</div>
+					<div class="formAreaBox account toForm2" style="">
+						<div class="inputBox button">
+							<dl>
+								<dt>받는분</dt>
+								<dd>
+									<p class="name">
+										<img src="../../../../../../../images/bank_logo/banklogo_088.png" alt="신한은행">
+										<span>신한 홍길동</span>
+									</p>
+									<p class="num">000-123-123456</p>
+									<a href="javascript:;" class="selectAcc">계좌선택</a>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					
+					<!-- 메모 -->
+					<div class="memoArea">
+						<div class="formAreaBox">
+							<div class="inputBox mt0">
+								<dl>
+									<dt>받는분메모</dt>
+									<dd class="memo">
+										<input type="text" id="iptMemo" name="" value="홍길동" placeholder="7자이내 입력" title="받는통장 메모">
+										<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+										<a href="#layerMemoPop" class="btn" id="btnMemoPop"><span class="iconTy40">내역 열림</span></a>
+									</dd>
+								</dl>
+							</div>
+							<div class="inputBox">
+								<dl>
+									<dt>내통장메모</dt>
+									<dd class="memo">
+										<input type="text" id="iptMyMemo" name="" value="" placeholder="7자이내 입력" title="내통장메모">
+										<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+										<a href="#layerMyMemoPop" class="btn" id="btnMyMemoPop"><span class="iconTy40">내역 열림</span></a>
+									</dd>
+								</dl>
+							</div>
+							<div class="inputBox">
+								<dl>
+									<dt><a href="javascript:;" class="underLine btnCms">CMS코드</a></dt>
+									<dd class="blind">
+										<input type="text" value="" placeholder="보험, 기업 등 요청코드">
+										<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+			<div class="bottomFix" style="display:none;">
+				<div class="btnGroupBox type2">
+					<a href="javascript:;" class="btnType"><span>확인 (2건)</span></a>
+				</div>
+				<p class="mTrans"><button type="button" onclick="" disabled="disabled">추가 이체</button></p><!-- //2021-05-31 button 및 disabled 추가 -->
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<div class="temp_pricepad">
+	<p><a href="javascript:;" class="btnPadPrice block"><img src="../../../../../../../images/pr02/img_test_price_pad.png" class="wfull vm"/></a></p>
+	<a href="javascript:;" class="btnPadEnter" style="position:absolute;right:0;bottom:0;width:33%;height:21%;background:rgba(0,0,0,0);text-indent:-9999px;">완료</a>
+</div>
+<div class="temp_pricepad2">
+	<p><a href="javascript:;" class="btnPadNum block"><img src="../../../../../../../images/pr02/img_test_price_pad2.png" class="wfull vm"/></a></p>
+	<a href="javascript:;" class="btnPadEnd" style="position:absolute;left:4%;top:77%;width:92%;height:17%;background:rgba(0,0,0,0);text-indent:-9999px;">완료</a>
+</div>
+
+
+
+<!-- 이체선택 bottom sheet -->
+<div class="dragPopup2">
+	<div class="popInner2">
+		<div class="layerHeader">
+			<p class="layerTit">받는분</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="accTab">
+				<a href="#selGrp1" class="on" onclick="return false;">최근</a>
+				<a href="#selGrp2" class="favo" onclick="return false;"><span>즐겨찾는 계좌</span></a>
+				<a href="#selGrp3" onclick="return false;">내계좌</a>
+				<a href="#selGrp4" onclick="return false;">연락처</a>
+				<a href="#selGrp5" class="search" onclick="return false;">검색</a>
+			</div>
+			<div class="dragScroll tabView on" id="selGrp1">
+				<div class="listOneLineBox logo2 accSlide">
+					<ul>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_035.png"/></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">신한 011-123-1234123</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_035.png"/></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">신한 011-123-1234123</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>박</span></span>
+										<p><span class="name">박신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>홍</span></span>
+										<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_035.png"/></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">신한 011-123-1234123</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_035.png"/></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">신한 011-123-1234123</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>박</span></span>
+										<p><span class="name">박신한</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>홍</span></span>
+										<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+										<p class="num">010-1234-1234</p>
+									</a>
+									<a href="javascript:;" class="favorit"></a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="dragScroll tabView" id="selGrp2">
+				<!-- 2020-07-20 추가 -->
+				<div class="oftenSet">
+					<a href="javascript:;" class="btnOften"><span>그룹</span></a>
+					<div class="oftenBox">
+						<a href="javascript:;" class="on">전체</a>
+						<a href="javascript:;">그룹미지정</a>
+						<a href="javascript:;">그룹최대글자열두자리</a>
+						<a href="javascript:;">동호회</a>
+						<a href="javascript:;">그룹최대글자열두자리까지</a>
+					</div>
+				</div>
+				<!-- //2020-07-20 추가 -->
+				<div class="listOneLineBox logo2 accSlide">
+					<ul>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <!--<span class="gName">그룹명</span>--></p><!-- //2020-08-07 수정 -->
+										<p class="num">010-1234-1234</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_035.png"/></span>
+										<p><span class="name">김신한</span> <!--<span class="gName">그룹명</span>--></p><!-- //2020-08-07 수정 -->
+										<p class="num">신한 011-123-1234123</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+						<li>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<a href="javascript:;">
+										<span class="initial"><span>김</span></span>
+										<p><span class="name">김신한</span> <!--<span class="gName">그룹명</span>--></p><!-- //2020-08-07 수정 -->
+										<p class="num">010-1234-1234</p>
+									</a>
+								</div>
+								<a href="javascript:;" class="swiper-slide btnDel"><span>삭제</span></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="dragScroll tabView" id="selGrp3">
+				<div class="listOneLineBox logo2">
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_035.png"></span>
+								<p><span class="name">쏠편한입출금</span> <!--<span class="gName">그룹명</span>--></p>
+								<p class="num">신한 000-123-1234123</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_012.png"></span>
+								<p><span class="name">농협입출금</span> <!--<span class="gName">그룹명</span>--></p>
+								<p class="num">농협 000-123-1234123</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<span class="logo"><img src="../../../../../../../images/bank_logo2/bank_037.png"></span>
+								<p><span class="name">테스트입출금 계좌</span> <!--<span class="gName">그룹명</span>--></p>
+								<p class="num">테스트 000-123-1234123</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabView" id="selGrp4">
+				<div class="formAreaBox phoneTxt">
+					<span class="tit">연락처</span>
+					<div class="inputBox">
+						<dl>
+							<dd>
+								<input type="tel" placeholder="휴대폰 번호 직접입력"/>
+								<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+								<a href="javascript:;" class="searchBtn">전체팝업활성</a>
+							</dd>
+						</dl>
+					</div>
+					<a href="javascript:;" class="phoneAcc">이체</a><!-- //disabled일 경우 -->
+				</div>
+				<div class="dragScroll">
+					<div class="listOneLineBox logo2">
+						<ul>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>김</span></span>
+									<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>홍</span></span>
+									<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>아</span></span>
+									<p><span class="name">아무개</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>김</span></span>
+									<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>홍</span></span>
+									<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>아</span></span>
+									<p><span class="name">아무개</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>김</span></span>
+									<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>홍</span></span>
+									<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>아</span></span>
+									<p><span class="name">아무개</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>김</span></span>
+									<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>홍</span></span>
+									<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>아</span></span>
+									<p><span class="name">아무개</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>김</span></span>
+									<p><span class="name">김신한</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>홍</span></span>
+									<p><span class="name">홍길동</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+							<li>
+								<a href="#layerPopName" class="btnPopOpen">
+									<span class="initial"><span>아</span></span>
+									<p><span class="name">아무개</span> <span class="date">2020.03.12</span></p>
+									<p class="num">010-1234-1234</p>
+								</a>
+								<a href="javascript:;" class="favorit"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="tabView" id="selGrp5">
+				<div class="formAreaBox searchArea">
+					<div class="inputBox">
+						<dl>
+							<dd>
+								<input type="text" id="" placeholder="별명 입력" value="">
+								<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+								<a href="javascript:;" class="searchBtn">전체팝업활성</a>
+							</dd>
+						</dl>
+					</div>
+					<p class="searchTxt">받는분의 은행, 이름, 계좌번호, 연락처 정보로 검색할 수 있습니다.</p>
+				</div>
+				<div class="dragScroll">
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- //이체선택 bottom sheet -->
+
+<!-- 실명확인BS -->
+<div class="layerPopBottomWrap hasDim search" id="layerPopName">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">실명확인</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pt10">
+			<p class="nameInfo1"><strong class="txtBlue1">이순신</strong>님의 실명(성+이름)을 입력해주세요.</p>
+			<p class="nameInfo2 wdown">받는 분의 이름과 예금주의 이름이 정확히 일치해야 이체가 가능합니다.</p>
+			<div class="formAreaBox type2">
+				<div class="inputBox mt15"><!-- class wrong -->
+					<dl>
+						<dd>
+							<input type="text" id="nameIpt" title="실명확인" placeholder="" value="이순"/>
+							<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+						</dd>
+					</dl>
+					<div class="nameInfo cf">
+						<div class="error">받는분의 실명을 입력해주세요.</div>
+						<span class="txtNum"><em class="txtBlue1">3자</em>/10자</span>
+					</div>
+				</div>
+			</div>
+			<div class="btnGroupBox type2 mt20">			
+				<button onclick="void(0)" class="btnType" disabled="disabled"><span>확인</span></button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //실명확인BS -->
+<!-- 일괄금액BS -->
+<div class="layerPopBottomWrap hasDim search" id="layerPopBatch">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">일괄 이체금액</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pb70 pt10">
+			<p class="mb20">모든 이체에 동일한 금액이 적용됩니다.</p>
+			<div class="formAreaBox price type2">
+				<div class="inputBox">	
+					<dl>
+						<dd class="on">
+							<p class="hanTxt">육십만원</p>
+							<span class="cursor"><em id="iptIpAmt_cursor2"></em><i class="hide">원</i></span>
+							<input id="iptIpAmt2" type="tel" value="" placeholder="금액 입력" maxlength="15" onclick="fncRemoveAllKeyPad(this, 'iptIpAmt_onclick');" onfocus="fncRemoveAllKeyPad_focus();" onkeyup="iptIpAmt_onkeyup();iptIpAmt_onchange();" onchange="iptIpAmt_onchange();" title="금액" readonly="readonly" autocomplete="off">
+							<a href="javascript:;" class="btnAccDel hide"><i class="iconTy28">삭제</i></a>
+							<a href="javascript:;" class="selectAcc hide">계좌선택</a>
+						</dd>
+					</dl>
+					<div class="error op">error 문구 출력</div><!-- //2021-04-28 클래스수정-->
+				</div>
+			</div>
+			<div class="btnGroupBox type5 mt25">
+				<button type="button" id="autoAmt_confirm" class="btnType" onclick="javascript:trComm.autoAmt_confirm();" disabled="disabled"><span>입력 완료</span></button>
+			</div>
+			<div style="height:56vw;"></div>
+		</div>
+	</div>
+</div>
+
+
+<!-- //일괄금액BS -->
+<script type="text/javascript">
+//공통 드래그팝업 열기
+var popId = "";
+var popSc = "";
+$(".btnScPop").on("click", function() {
+	//선택된 항목 표시
+	$(".formAreaBox").removeClass("now").find("dd").removeClass("on");
+	$(this).parents(".formAreaBox").addClass("now");
+	$(".temp_pricepad").slideUp(300);	
+	
+	popId = $(this).attr("href"); //팝업 ID
+	$(popId).fadeIn("fast").addClass("on");
+	$(".contents").addClass("touchLock");
+	//자동팝업 기능수정(full 일경우 스크롤)
+	if($(popId).hasClass("auto")){
+		var inTit = $(popId).find(".layerTit").outerHeight(true);
+		var inBtns = $(popId).find(".bottomFix").outerHeight(true);
+		if($(popId).find(".layerCon").height() > ($(window).height()-inTit-inBtns)){
+			$(popId).addClass("full");
+		}
+	}
+});
+$(popId + " .layerCon").on("scroll", function() {
+	if ($(this).scrollTop() > 1) {
+		$(popId).addClass("full");
+		$(this).scrollTop(0);
+		$(".dragScroll").scrollTop(0);
+	}
+});
+//상단 닫기버튼
+$(popId + " .btnPopClose").on("click", function() {
+	$(popId).fadeOut("fast").removeClass("on").removeClass("full");
+	$(".layerCon").scrollTop(0);
+	$(".contents").removeClass("touchLock");
+});
+//딤클릭시 닫기
+$(".dragPopup").on("click", function(e) {
+	if ($(e.target).hasClass('dragPopup')) {
+		$(popId + " .btnPopClose").trigger("click");
+	}
+});
+//2020-07-13 기능추가
+var moveTouchY = "";
+var popTop = "";
+//버튼 쓸어내리면 닫기
+$(".layerHeader").on("touchmove",function(event){
+	event.preventDefault();
+	var e = event.originalEvent;
+	moveTouchY = e.targetTouches[0].pageY;
+	popTop = $(this).offset().top;
+	if(moveTouchY > (popTop+40)){
+		$(popId + " .btnPopClose").trigger("click");
+	}
+});
+//버튼 쓸어올리면 full
+$(".layerHeader").on("touchend",function(){
+	if(moveTouchY < popTop){
+		$(popId).addClass("full");
+	}
+});
+
+//툴팁 그대로 사용
+$(".tooltipArea .btnToolTip").on("click",function(){
+	if($(this).hasClass("on")){
+		$(this).removeClass("on");
+	}else{
+		$(this).addClass("on");
+		var widthNum = $(this).next().find(".reDiv").width()+3;
+		var leftNum = ($(window).width()/2) - $(this).offset().left - ((widthNum+42)/2);
+		$(this).next().css({"width":widthNum,"left":leftNum});
+	}
+});
+$(".tooltipArea .closeBtn").on("click",function(){
+	$(this).parents(".tooltipArea").find(".btnToolTip").removeClass("on");
+});
+$(document).on("mouseup",function(e){
+	var cont = $(".tooltipArea");  //레이어팝업 영역
+	if(cont.has(e.target).length == 0){
+		cont.find(".btnToolTip").removeClass("on");  //레이어팝업 닫기
+	}
+});
+
+//테스트 계좌선택
+$(".accountSelect").on("click",function(){
+	$("#layerOutAcctPop .btnPopClose").trigger("click");
+	//출금계좌선택시 금액입력 항목 이동
+	$(".formAreaBox").removeClass("now").find("dd").removeClass("on");
+	$(".formAreaBox.price").addClass("now").find("dd").addClass("on");
+	$(".temp_pricepad").slideDown(300);  //보안숫자키패드 열기
+});
+
+//테스트 금액입력
+$(".btnPadPrice").on("click",function(){
+	//일괄금액
+	if($("#layerPopBatch").css("display") == "block"){
+		$("#iptIpAmt2").val("8,571,000");
+		$("#iptIpAmt_cursor2").text("8,571,000").next().removeClass("hide");
+		$("#iptIpAmt2").parents("dd").find(".btnAccDel").removeClass("hide");
+		$("#iptIpAmt2").parents("dd").find(".hanTxt").css("opacity","1");
+		//return false;
+	}
+	
+	$("#iptIpAmt").val("8,571,000");
+	$("#iptIpAmt_cursor").text("8,571,000").next().removeClass("hide");
+	$("#iptIpAmt").parents("dd").find(".btnAccDel").removeClass("hide");
+	$("#iptIpAmt").parents("dd").find(".hanTxt").css("opacity","1");
+});
+//테스트 금액입력완료
+$(".btnPadEnter").on("click",function(){
+	$(this).parent().slideUp("fast");  //보안키패드 닫기
+	$(".formAreaBox.price").removeClass("now");  //금액축소
+	$(".formAreaBox.price dd").removeClass("on");  //가상포커스 제거
+	$(".formAreaBox.toTab").addClass("now");  //받는분 선택
+	//일괄금액BS 닫기
+	if($("#layerPopBatch").css("display") == "block"){
+		$("#layerPopBatch .btnPopClose").trigger("click");
+		$(".txtBatch").show();
+	}
+	//잔여한도 일괄금액버튼 숨김
+	$(".btnSmall5").fadeOut(300);
+	$(".inputTxt").animate({"opacity":"0"},300,function(){
+		$(".toTab .btnTxt:first").trigger("click");
+	});
+	//BS 올리기
+	openDp2();
+	startSwipe();
+});
+//테스트 일괄금액 BS 열기
+$(".txtBatch").on("click",function(){
+	closeDp2();
+	$(".temp_pricepad").slideDown(300); //보안키패드 올리기
+	$("a[href='#layerPopBatch']").trigger("click");
+});
+$(".toForm input").on("click",function(){
+	$(".toTab .btnTxt:last").trigger("click");
+});
+//테스트 계좌직접입력
+$(".btnPadNum").on("click",function(){
+	$(".toForm input").val("1101231234");
+	$(".toForm .btnAccDel").removeClass("hide");
+});
+//테스트 계좌입력완료
+$(".btnPadEnd").on("click",function(){
+	$(".temp_pricepad2").slideUp(300);
+	closeDp2();
+	$(".formAreaBox .btnAccDel").addClass("hide");
+	$(".formAreaBox .selectAcc").removeClass("hide");  //연필보여짐
+	
+	$(".toTab, .toForm").hide();
+	$(".toForm2").show();
+	
+	$(".memoArea, .bottomFix").show();
+	$(".contents").css({"padding-bottom":$(".bottomFix").outerHeight(true)});  //하단고정버튼 영역 계산
+});
+//테스트 BS선택
+$(".listOneLineBox.logo2.accSlide a").on("click",function(){
+	$(".btnPadEnd").trigger("click");
+});
+//테스트 실명확인
+$("#nameIpt").on("focusin",function(){
+	$(this).parents(".popInner").find(".btnType").prop("disabled",false);
+	$(this).parents(".popInner").find(".btnType").on("click",function(){
+		$(".btnPadEnd").trigger("click");
+	});
+});
+
+
+//금액연필 클릭
+$(".price .selectAcc").on("click",function(){
+	$(this).addClass("hide").parents("dd").addClass("on");
+	$(this).parent().find(".btnAccDel").removeClass("hide");
+	$(".temp_pricepad").slideDown(300);
+});
+//금액삭제 클릭
+$(".price .btnAccDel").on("click",function(){
+	$(this).addClass("hide").parents("dd").addClass("on").find("input").val("");
+	$("#iptIpAmt_cursor").text("").next().addClass("hide");
+	$(".temp_pricepad").slideDown(300);
+	closeDp2();
+});
+
+//계좌연필 클릭
+$(".toForm2 .selectAcc").on("click",function(){
+	$(".toTab, .toForm").show();
+	$(".toForm2, .memoArea").hide();
+	$(".toForm .btnAccDel").removeClass("hide");
+	$(".btnTxt.on").trigger("click");
+});
+//계좌삭제 클릭
+$(".toForm .btnAccDel").on("click",function(){
+	$(this).addClass("hide").parents("dd").addClass("on").find("input").val("");
+});
+
+
+//CMS코드입력
+$(".btnCms").on("click", function() {
+	$(this).removeClass("underLine");
+	$(this).parents("dl").find("dd").removeClass("blind");
+});
+
+//금액입력 테스트
+function iptIpAmt_onchange(){}
+function fncRemoveAllKeyPad_focus(){}
+function fncRemoveAllKeyPad(){}
+//커서 위치 셋팅
+function iptIpAmt_onkeyup(){
+	$("#iptIpAmt_cursor").text($("#iptIpAmt").val());
+	if($("#iptIpAmt_cursor").text().length){
+		$("#iptIpAmt_cursor").next().removeClass("hide");
+	}else{
+		$("#iptIpAmt_cursor").next().addClass("hide");
+	}
+}
+//일괄 입력
+function iptIpAmt_onkeyup2(){
+	$("#iptIpAmt_cursor2").text($("#iptIpAmt2").val());
+	if($("#iptIpAmt_cursor2").text().length){
+		$("#iptIpAmt_cursor2").next().removeClass("hide");
+	}else{
+		$("#iptIpAmt_cursor2").next().addClass("hide");
+	}
+}
+
+//받는분 tab
+$(".toTab .btnTxt").on("click",function(){
+	$(".temp_pricepad").slideUp(300);
+	$(this).siblings().removeClass("on");
+	$(this).addClass("on");
+	var btnNum = $(".toTab .btnTxt").index(this);
+	if(btnNum == 0){
+		$(".temp_pricepad2").slideUp(300);
+		openDp2();
+	}else if(btnNum == 2){
+		/* $(".toForm input").focus();
+		$(".temp_pricepad2").slideDown(300);
+		closeDp2();
+		$(".contents").addClass("dp2"); */
+	}
+	$(".formAreaBox.toForm").show();
+});
+
+
+//받는분BS 전체팝업 2021-03-08 수정
+$(".dragPopup2 .layerCon").on("scroll",function(){
+	if ($(this).scrollTop() > 1) {
+		$(".dragPopup2").addClass("full");
+		$(".dragScroll").scrollTop(0);
+	}
+	resetSwipe();
+});
+
+//받는분BS 전체팝업해제 2021-03-08 수정
+$(".dragPopup2 .btnPopClose").on("click", function() {
+	if ($(this).parents(".dragPopup2").hasClass("full")) {
+		$(".dragScroll").scrollTop(0);
+		$(".dragPopup2").removeClass("full");
+	}
+	resetSwipe();
+});
+//검색창 전체팝업
+$(".searchBtn").on("click", function() {
+	//$(".dragPopup2").addClass("full");
+	$(this).parents("[class*=dragPopup]").addClass("full");
+
+	var uAgent = navigator.userAgent.toLowerCase();
+	if (uAgent.indexOf("android") > 0) { // IOS버그발생
+		$(this).prev("input").focus();
+	}
+	
+	resetSwipe();
+});
+
+//즐겨찾는 계좌
+$(".favorit").on("click", function() {
+	if ($(this).hasClass("on")) {
+		$(this).removeClass("on");
+	} else {
+		$(this).addClass("on");
+	}
+});
+//팝업 탭
+$(".accTab a").on("click", function() {
+	if(!$(this).hasClass("jsNone")){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+
+		$(this).parents("[class*=popInner]").find(".tabView").removeClass("on");
+		$(this).parents("[class*=popInner]").find($(this).attr("href")).addClass("on");
+	}
+	startSwipe();
+	//return false;  //2020-07-17 추가
+});
+
+$(window).load(function() {
+	//전화번호 아이콘 랜덤배경
+	$(".initial").each(function() {
+		var idx = Math.floor(Math.random() * 4 + 1);
+		$(this).addClass("bg" + idx);
+	});
+
+	//해당계좌 삭제
+	$(".accSlide .btnDel").on("click",function(){
+		$(this).parents("li").slideUp("fast",function(){
+			$(this).remove();
+		});
+	});
+	
+});
+//2020-07-08 추가
+function startSwipe(){
+	$(".tabView.on .accSlide").each(function(){
+		//최초 한번만 실행(중복실행시 오류)
+		if(!$(this).find("ul").hasClass("swipeOn")){
+			accSwiper = new Swiper($(this).find("li"), {
+		     	slidesPerView: 'auto',
+		     	resistanceRatio: 0,
+		  	 	onTouchMove : function () {
+			  		//다른 스와이프 초기화
+		  	 		resetSwipe();
+			  	}
+			});
+			$(this).find("ul").addClass("swipeOn");
+		}
+	});
+}
+function resetSwipe(){
+	$(".accSlide .swiper-wrapper").css({"transform":"translateX(0)"});
+}
+$(".oftenSet .btnOften").on("click",function(){
+	if($(this).hasClass("on")){
+		$(this).removeClass("on");
+		$(this).parent().find(".oftenBox").stop().slideUp("fast");
+	}else{
+		$(this).addClass("on");
+		$(this).parent().find(".oftenBox").stop().slideDown("fast");
+	}
+});
+$(".oftenBox a").on("click",function(){
+	$(this).siblings().removeClass("on");
+	$(this).addClass("on");
+});
+//받는분 BS올리기
+function openDp2(){
+	$(".dragPopup2").addClass("on");
+	$(".contents").addClass("dp2").delay(300).animate({scrollTop:$(".contents").prop("scrollHeight")},300);  //스크롤올리기
+}
+//받는분 BS내리기
+function closeDp2(){
+	$(".dragPopup2").removeClass("on");
+	$(".contents").removeClass("dp2");
+}
+</script>
+</body>
+</html>

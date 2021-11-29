@@ -1,0 +1,1613 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/highcharts.js"></script>
+	<script src="../../../../../../script/include/library/highcharts-more.js"></script>
+	<script src="../../../../../../script/include/library/highcharts-series-label.js"></script>
+	<script src="../../../../../../script/include/library/circle-progress.js"></script><!-- 2020-01-09 추가 -->
+
+	<script type="text/javascript">
+	//////window.onload = init;
+	console.log("THE START OF HIGH CHART");
+
+	$(function() {
+		
+		//미래 필요자금 설계
+		if ( $(".fnFundDesign ul li").length < 4 ) {
+			$(".fnFundDesign ul").width(screen.width);
+		} else {
+			$(".fnFundDesign ul").width(
+				($(".fnFundDesign ul li a").width() + 30) * $(".fnFundDesign ul li").length
+			);
+		}
+		
+		//탭 click 2020-01-09 수정
+		var scrollH = $(".floatTab.in").offset().top - 45;
+		$(".tabTy_03 a").click(function(e) {
+			e.preventDefault();
+			
+			//탭 활성화
+			$(".tabTy_03 a").removeClass("on");
+			
+			var idx = $(this).parent().find("a").index(this);
+			$(".tabViewWrap .tabView").removeClass("on");
+			if (idx == 0) {	//Tab1
+				$(".tabTy_03.in a:eq(0), .tabTy_03.fix a:eq(0)").addClass("on");
+				$("#tabView1").addClass("on");
+			} else if(idx == 1) {	//Tab2
+				$(".tabTy_03.in a:eq(1), .tabTy_03.fix a:eq(1)").addClass("on");
+				$("#tabView2").addClass("on");
+				startProgCir2();  //목표예상그래프작동
+			} else {  //Tab3
+				//탭 컨트롤
+				$(".tabTy_03.in a:eq(2), .tabTy_03.fix a:eq(2)").addClass("on");
+				$("#tabView3").addClass("on");
+				startProgCir(progcir1);  //가입전 그래프작동
+				//startProgCir(progcir2);  //가입후 그래프작동
+			}
+			
+			//파란영역까지 스크롤
+			$("#contentsWrap .contents").animate({
+				scrollTop : scrollH
+			}, 500);
+			
+		});
+		
+		var UserAgent = navigator.platform;
+		if(UserAgent.match(/i(Phone|Pod|Pad)/i) != null){
+			$("body").width(screen.width);
+		}
+		
+		//스크롤 발생시 탭 상단 고정
+		$("#contentsWrap .contents").scroll(function() {
+			if ( $(this).scrollTop() >= $(".chart-type-A").height() ) {
+				//fix
+				$(".floatTab.fix").show();
+			}
+			if ( $(this).scrollTop() < $(".chart-type-A").height() + 81 ) {
+				//fix해제
+				$(".floatTab.fix").hide();
+			}
+		});
+
+
+
+		/*
+			Chart type A
+
+			obj : Chart object
+			depositAmt : 입금액
+			withdrawAmt : 출금액
+			diffAmt : 차이금액
+			account : 계좌여부
+			currentMonth : 선택된 월
+		*/
+		//정의
+		var objChartA = $(".chart-type-A");
+		var depositAmt = 6207000;
+		var withdrawAmt = 4207000;
+		var diffAmt = depositAmt - withdrawAmt;
+		var account = 1;	//계좌가 없으면 0, 있으면 1
+		var currentMonth = 9;
+		var userNm = "김신한";
+
+		//호출
+		fnChartInput( objChartA, depositAmt, withdrawAmt, diffAmt, account, currentMonth );
+
+		//함수
+		function fnChartInput( obj, depositAmt, withdrawAmt, diffAmt, account, currentMonth ) {
+			var str;
+			var diff1, diff2;
+
+			//차이금액 양수인 경우 + 붙이기
+			if ( diffAmt > 0 ) 	{
+				diff1 = "+" + diffAmt;
+				diff2 = diffAmt;
+			} else {
+				diff1 = diffAmt;
+				diff2 = -(diffAmt);
+			}
+
+			//수치입력
+			obj.find(".chartL > span span").text( fnSetComma(withdrawAmt) );	//출금액
+			obj.find(".chartR > span span").text( fnSetComma(depositAmt) );		//입금액
+			obj.find(".difference").text( fnSetComma(diff1) );		//차이금액
+
+			if ( account == 0 ) {		//당행 계좌가 없을경우
+				chartL = "50%";
+				chartR = "50%";
+				obj.find(".chartBox").addClass("Same");
+				$(".chartBox").css("opacity", 0.5);
+				$(".chartBox .bar > div > span").text("");
+				str = userNm + "님, " + currentMonth + "월에는 <strong>입출금이 없으셨네요.</strong>";
+			} else {
+				if ( withdrawAmt < depositAmt ) 	{	//입금액이 큰경우
+					if ( withdrawAmt == 0 ) {	//출금액이 없는 경우
+						chartL = "20%";
+						chartR = "100%";
+						obj.find(".difference").addClass("long");
+					} else {
+						chartL = "50%";
+						chartR = "100%";
+						obj.find(".difference").removeClass("long");
+					}
+					str = "여유로웠던 " + currentMonth + "월, <strong>여유자금 "+fnSetComma(diff2) +"원</strong>";
+
+				} else if ( withdrawAmt > depositAmt ) {	//출금액이 큰경우
+					if ( depositAmt == 0 ) {	//출금액이 없는 경우
+						chartL = "100%";
+						chartR = "20%";
+						obj.find(".difference").addClass("long");
+						obj.find(".chartR > span").css("top", "80%");
+					} else {
+						chartL = "100%";
+						chartR = "50%";
+						obj.find(".difference").removeClass("long");
+					}
+					obj.find(".chartBox").addClass("RT");
+					str = "출금이 많았던 " + currentMonth + "월, <strong>초과지출 "+ fnSetComma(diff2) +"원</strong>";
+				} else {		//기타
+					chartL = "50%";
+					chartR = "50%";
+					obj.find(".chartBox").addClass("Same");
+					str = "소득만큼 지출한 " + currentMonth + "월, <strong>알뜰하게 쓰셨네요.</strong>";
+
+					if ( withdrawAmt == 0 && depositAmt == 0 ) {		//입금액, 출금액 모두 없을때
+						$(".chartBox").css("opacity", 0.5);
+						$(".chartBox .bar > div > span").text("");
+						str = userNm + "님, " + currentMonth + "월에는 <strong>입출금이 없으셨네요.</strong>";
+					}
+				}
+			}
+
+			//Text
+			obj.find(".comment").html(str);
+
+			//Bar Ainmation
+			obj.find(".chartL").stop().animate({
+				height: chartL
+			}, 1000, '', function() {
+				//Callback
+				$(this).find("span").stop().animate({
+					width: $(".chart-type-A").width() - (($(".chart-type-A").width() * 20) / 100) - 112
+				}, 500, 'easeOutQuint', function() {
+					//Callback
+				});
+			});
+			obj.find(".chartR").stop().animate({
+				height: chartR
+			}, 700, 'easeOutQuint', function() {
+				//Callback
+				$(this).find("span").stop().animate({
+					width: $(".chart-type-A").width() - (($(".chart-type-A").width() * 10) / 100) - 56
+				}, 500, 'easeOutQuint', function() {
+					//Callback
+					if ( withdrawAmt == depositAmt ) 	{
+						obj.find(".difference").hide();
+					} else {
+						if (account > 0) {
+							obj.find(".difference").fadeIn(150);
+						}
+					}
+				});
+			});
+		}
+
+
+		/*
+			Chart type B
+
+			obj : Chart object
+			futureSaveAmt : 미래저축금액
+			curAssetAmt : 현재금융자산
+			setYn: 설정여부	Y 설정 후, N 설정 전
+		*/
+		var objChartB = $(".chart-type-B");
+		var futureSaveAmt = 2500;
+		var curAssetAmt = 3500;
+		var setYn = "Y";
+
+		//2개 차트 호출
+		//fnChartBInput( objChartB, futureSaveAmt );
+
+		//3개 차트 호출
+		fnChartBInput( objChartB, futureSaveAmt, curAssetAmt, setYn );
+
+		//2차트 호출
+		function fnChartBInput( objChartB, futureSaveAmt, curAssetAmt, setYn ) {
+			if ( curAssetAmt == "" || curAssetAmt === null || curAssetAmt === undefined ) {	//현재금융자산 값을 못받은 경우
+				//2개 차트
+				$(".chart-type-B.graph3").hide();
+				$(".chart-type-B.graph2").show();
+				objChartB.find(".chartWrap .graph").css( "height", 0 ).stop().animate({
+					height: "50%"
+				}, 700, 'swing', function() {
+				});
+			} else {
+				//3개 차트
+				$(".chart-type-B.graph2").hide();
+				if ( setYn == "N" ) {		//설정  전
+					$(".chart-type-B.graph3.before").show();
+					fnChartBGraphSet( objChartB, futureSaveAmt, curAssetAmt );
+				} else {		//설정 후
+					$(".chart-type-B.graph3.after").show();
+					fnChartBGraphSet( objChartB, futureSaveAmt, curAssetAmt, setYn );
+				}
+
+			}
+		}
+		function fnChartBGraphSet( obj, futureSaveAmt, curAssetAmt, setYn ) {
+			if ( futureSaveAmt < curAssetAmt ) {	//미래비용 < 현재자산
+				heightL = "40%";
+				heightR = "60%";
+			} else if ( futureSaveAmt > curAssetAmt ) {	//미래비용 > 현재자산
+				heightL = "60%";
+				heightR = "40%";
+			} else {	//미래비용 = 현재자산
+				heightL = "50%";
+				heightR = "50%";
+			}
+			obj.find(".chartWrap .graph.L").css( "height", 0 ).stop().animate({
+				height: heightL
+			}, 700, 'swing', function() {
+			});
+			obj.find(".chartWrap .graph.R").css( "height", 0 ).stop().animate({
+				height: heightR
+			}, 700, 'swing', function() {
+			});
+
+			if ( setYn == "Y" ) {
+				obj.find(".chartWrap .graph.graphResult").css( "height", 0 ).stop().animate({
+					height: "80%"
+				}, 700, 'swing', function() {
+				});
+			}
+		}
+
+		//원차트 2020-06-01 제거
+		/* if ( $(".chart-type-Circle").length > 0 ) {
+			var per = $(".chart-type-Circle .percent strong").text();
+			if ( per <= 100 ) {
+				if (per == 0) { $(".chart-type-Circle .circle").addClass("per0"); }
+				if (per > 0 && per <= 10) { $(".chart-type-Circle .circle").addClass("per10"); }
+				if (per > 10 && per <= 20) { $(".chart-type-Circle .circle").addClass("per20"); }
+				if (per > 20 && per <= 30) { $(".chart-type-Circle .circle").addClass("per30"); }
+				if (per > 30 && per <= 40) { $(".chart-type-Circle .circle").addClass("per40"); }
+				if (per > 40 && per <= 50) { $(".chart-type-Circle .circle").addClass("per50"); }
+				if (per > 50 && per <= 60) { $(".chart-type-Circle .circle").addClass("per60"); }
+				if (per > 60 && per <= 70) { $(".chart-type-Circle .circle").addClass("per70"); }
+				if (per > 70 && per <= 80) { $(".chart-type-Circle .circle").addClass("per80"); }
+				if (per > 80 && per <= 99) { $(".chart-type-Circle .circle").addClass("per90"); }
+				if (per == 100) { $(".chart-type-Circle .circle").addClass("per100"); }
+				$(".circleChart .circle .lb").text("사용중");
+			} else {
+				$(".chart-type-Circle .circle").addClass("perOver");
+				$(".circleChart .circle .lb").text("예산초과");
+				$(".circleChart .circle .lb").addClass("red");
+			}
+		} */
+
+
+
+		//통화 컴마처리
+		function fnSetComma(num) {
+			if ( num === null ) {
+				return null;
+			} else {
+				return num.toString().replace( /\B(?=(\d{3})+(?!\d))/g, "," );
+			}
+		}
+
+		
+	});
+
+
+	</script>
+
+</head>
+<body class="bg">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">금융컨설팅</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full pb0">
+
+				<!-- 차트 A -->
+				<div class="chartTypeA chart-type-A" style="/* display:none; */">
+					<div class="topArea">
+						<div class="topAreaWrap">
+							<div class="leftArea">
+								<a class="btnfinancialConsulting" href="javascript:;">9월</a>
+							</div>
+							<div class="rightArea ar">
+								<a class="myAct" href="javascript:;">MY활동</a>
+							</div>
+						</div>
+					</div>
+
+					<p class="comment">
+						여유로웠던 9월,
+						<strong>여유자금 2,000,000원</strong>
+					</p>
+
+					<div class="diff">
+						8월 대비<span class="up"><!-- class="down" --></span>190,000원
+					</div>
+
+					<div class="chartBox">
+						<div class="bar">
+							<div class="chartL"><span>출금 <span>0</span></span></div><!-- 출금 -->
+							<div class="chartR"><span>입금 <span>0</span></span></div><!-- 입금 -->
+						</div>
+
+						<div class="difference" style="display: none">0</div>
+					</div>
+
+					<!--191014 수정-->
+					<p class="banner">
+						<a href="javascript:;">한달동안 스쳐간 흔적을 찾아서~ <span>내통장리포트</span></a>
+					</p>
+					<!--//191014 수정-->
+
+				</div>
+				<!-- // 차트 A -->
+
+
+				<!-- <div class="innerBox lineN">
+					<div class="graphArea">
+							 <div id="graph_IN08040101001" class="graph pd0"></div>
+							$('#graph_IN08040101001').highcharts(json);
+					</div>
+
+
+					<div class="chartArea_01">
+						 <div id="graph_IN08040101001" class="graph pd0" style="background: #eee"></div>
+						$('#graph_IN08040101001').highcharts(json);
+					</div>
+				</div> -->
+
+				<!-- 탭 --><!-- 코딩변경 20190911 -->
+				<div class="tabTy_03 floatTab in">
+					<!-- 활성화시 class="on" -->
+					<!-- <a href="#tabView1" class="on" > -->
+					<!-- <a href="#tabView1" class="on"><span onClick="SavingConsultingClick()";>저축컨설팅</span></a>
+					<a href="#tabView2"><span  onClick="ConsumptionConsultingClick()";>소비컨설팅</span></a> -->
+					<a href="javascript:;" class="on"><span>저축</span></a>
+					<a href="javascript:;"><span>소비</span></a>
+					<a href="javascript:;"><span>MY신용관리</span></a> <!-- 20191127 추가 -->
+				</div>
+				<!-- // 탭 -->
+
+				<div class="tabViewWrap mt0 mb0"><!-- 저축컨설팅 -->
+					<div class="tabView on" id="tabView1"  tabindex="1"> <!--탭내용 on-->
+						<!-- 20190911 디자인 반영 -->
+						<h2 class="blind">저축컨설팅</h2>
+						<h3 class="subTitle_01 line2">신한은행 40대 고객님의<br> 저축금액 분석결과</h3><!-- 20191025 수정 -->
+						<h3 class="subTitle_01 line2">신한은행 40대 고객님의<br>평균 저축금액은 3,000,000원 입니다. <a class="btnPopOpen assetIcon question ml8" href="#layerPop01"></a></h3><!-- 20191025 수정 -->
+
+						<div class="txtAC_01 mt35">
+							<p>미래생활 자금,<strong>얼마나 필요할까?</strong></p>
+						</div>
+						<!-- // 20190911 디자인 반영 -->
+
+						<div class="innerBox lineN pt0">
+
+							<!-- 	<p class="txt" id="sss1">40대 고객님의 자동이체 저축금액 분석결과</p>
+								<p class="txt" id="sss2">윤태영님</p>
+							 -->
+							<p class="txt" id="p1"></p>
+
+							<div class="formAreaBox_01 mt25 etc03">
+								<div class="line">
+									<span class="txt mr10">매월</span>
+									<input class="w150" type="text" id="MonthlyMoney" readonly>
+									<span  class="txt ml10">원 으로,</span> <!-- 20191028 이며 > 으로 수정 -->
+								</div>
+
+								<div class="line">
+									<!-- 		<input   type="text" id="sAge" title="나이"  readonly style="text-align:right"  /> -->
+									<input class="w50" type="text" id="" title="나이" placeholder="선택하여 입력" value="55세" readonly autocomplete="off">
+									<button type="button" class="btn" data-href="#layerPopBottom01" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+									<span class="txt mr10 ml10">까지</span>
+
+									<input class="w50" type="text" id="" title="나이" placeholder="선택하여 입력" value="2.0%" readonly autocomplete="off">
+									<button type="button" class="btn" data-href="#layerPopBottom02" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+									<span class="txt mr10 ml10">이율로 저축하면</span> <!-- 20191028 수익률 > 이율 수정 -->
+								</div>
+							</div>
+
+							<!-- <div class="conBox lineType blue mt20">
+								<div class="listTypeTable halfType">
+									<ul>
+										<li class="row">
+											<div class="leftCol"><p class="tit">미래 예상저축 금액</p></div>
+											<div class="rightCol"><p class="txt" id="FutureExptMoney">원</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div> -->
+
+							<dl class="listTypeOnlyone mt15"><!-- 코딩변경 20190911 : 위 주석에서 현 소스로 -->
+								<dt class="ellipsis">
+									미래 예상저축 금액<a class="btnPopOpen assetIcon question ml8" href="#layerPop01"></a>
+								</dt>
+								<dd id="FutureExptMoney" class="ellipsis txtBlack1">150,000,000원</dd><!-- 20191024 클레스 추가 -->
+							</dl>
+
+							<!-- <div class="chartArea_01 mt20"> 사용안함
+								<div class="half" style="background: #eee">
+								<div id="graph_IN08040101001_1" class="graph pd0" style="background: #eee"></div>
+								</div>
+								<div class="half">
+									<span>내 인생, 비용이 얼마나 들까?</span>
+								</div>
+							</div> -->
+						</div>
+
+						<!-- 미래 필요 자금 설계 --><!-- 20190911 : 추가 -->
+						<div class="fnFundDesign">
+							<dl>
+								<dt>미래 필요자금 설계<i class="assetIcon bullet_01"></i></dt>
+								<dd class="ellipsis">250,000,000원</dd>
+							</dl>
+							<div>
+								<ul>
+									<li><a class="leisure" href="javascript:;">여가생활</a></li>
+									<li><a class="buycar" href="javascript:;">차량구입</a></li>
+									<li><a class="venture" href="javascript:;">창업</a></li>
+									<li><a class="leisure" href="javascript:;">여가생활</a></li>
+									<li><a class="buycar" href="javascript:;">차량구입</a></li>
+									<li><a class="venture" href="javascript:;">창업</a></li>
+									
+								</ul>
+							</div>
+						</div>
+						<!-- // 미래 필요 자금 설계 -->
+
+						<!-- 추가 필요 자금 --><!-- 20190911 : 추가 -->
+						<div class="txtAC_02 mt30">
+							<p>추가 필요자금은?</p>
+						</div>
+
+
+						<!-- 차트 B -->
+						<div class="">
+							<!-- 2개 차트 -->
+							<div class="chartTypeB chart-type-B graph2">
+								<div class="chartWrap">
+									<div class="graph">
+										<div class="chartTop">
+											<span class="txt">미래저축금액</span>
+											<span class="amt">15,500만원</span>
+											<span class="circle"></span>
+										</div>
+									</div>
+
+									<div class="graphLast">
+										<div class="txt"><span>미래필요 자금은?</span></div>
+										<div class="bar"></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 3개 차트 : 설정 전 -->
+							<div class="chartTypeB chart-type-B graph3 before" style="display: none">
+								<div class="chartWrap">
+									<div class="graph L">
+										<div class="chartTop">
+											<span class="txt">현재금융자산</span>
+											<span class="amt">15,500만원</span>
+											<span class="circle"></span>
+										</div>
+									</div>
+
+									<div class="graph R">
+										<div class="chartTop">
+											<span class="txt">미래저축금액</span>
+											<span class="amt">15,500만원</span>
+											<span class="circle"></span>
+										</div>
+									</div>
+
+									<div class="graphLast">
+										<div class="txt"><span>미래필요 자금은?</span></div>
+										<div class="bar"></div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 3개 차트 : 설정 후 -->
+							<div class="chartTypeB chart-type-B graph3 after" style="display: none">
+							<div class="chartWrap">
+								<div class="graph L">
+									<div class="chartTop">
+										<span class="txt">현재금융자산</span>
+										<span class="amt">15,500만원</span>
+										<span class="circle"></span>
+									</div>
+								</div>
+
+								<div class="graph R">
+									<div class="chartTop">
+										<span class="txt">미래저축금액</span>
+										<span class="amt">15,500만원</span>
+										<span class="circle"></span>
+									</div>
+								</div>
+
+								<div class="graph graphResult">
+									<div class="chartTop">
+										<span class="txt">미래비용</span>
+										<span class="amt">31,000만원</span>
+										<span class="circle"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+						<!-- // 차트 B -->
+
+						<!-- <div class="areaACbot_01 line02"> 텍스트 2줄일때 line02 클래스 추가 -->
+						<div class="areaACbot_01">
+							<p>
+								추가 필요자금 <strong><span>65,000,000원</span></strong>은<br>
+								매월 자동이체 금액을 <strong class="mb10"><span>150,000원</span></strong> 늘려야<br>
+								필요자금 마련이 가능합니다.
+							</p>
+						</div>
+						<!-- // 추가 필요 자금 -->
+					</div>
+				</div>
+				<div class="btnGroupBox floating" style="display: none">
+					<a href="javascript:void(0)void(0)" class="btnType consulting"><span>미래비용 설정하기</span></a>
+				</div><!-- // 저축컨설팅 -->
+				
+
+				<div class="tabViewWrap mt0 mb0"><!-- 소비컨설팅 -->
+					<div class="tabView" id="tabView2"  tabindex="2">
+						<h2 class="blind">소비컨설팅</h2>
+						<h3 class="subTitle_01">김신한님의 카드 소비현황 분석</h3>
+						<div class="dimWrap "><!-- 20191018 추가 : dimWrap 시작 >> class 'on' 있을때만 노출 -->
+							<!-- 20191018 추가 -->
+							<div class="layer">
+								<p>신한카드 발급받고 <strong>소비컨설팅 받아보세요!</strong></p>
+								<div class="btnWrap">
+									<a href="javascript:;">신한 카드 발급받기</a>
+									<a href="javascript:;">타사 카드 불러오기</a>
+								</div>
+							</div>
+							<!-- //20191018 추가-->
+
+							<!-- 목표설정 전 -->
+
+							<div style="display: none">
+
+								<div class="innerBox lineN pb0">
+									<div class="btnArea">
+										<a class="btnYearMonth01" href="javascript:;">9월</a>
+										<a class="btnYearMonth01 auto ml10" href="javascript:;">전체</a>
+									</div>
+								</div>
+
+								<div class="areaAC001 mt20">
+									<p class="spend">3,290,000원 지출</p>
+									<p class="spendBefore mt8">전월 대비 <span class="plus">+4000,000원</span></p>
+									 <!-- <span class="minus">-4000,000원</span> -->
+
+									<a class="btnShowCont" href="javascript:;">내역보기</a>
+								</div>
+
+								<div class="areaAC002">
+									<div>
+										<p>이번달도 탕진잼? </p>
+									</div>
+									<span class="bg01"></span>
+
+									<!--
+										case별 클래스와 텍스트
+										bg02 : 이번달은 제법 절약중!
+										bg03 : 이번달은 아슬아슬한데,<br>컨설팅 시작해보세요.
+									-->
+								</div>
+
+								<!-- 카테고리별 지출 -->
+								<div class="areaAC003 mt45">
+									<h4 class="subTitle_02"><span>카테고리별 지출내역</span></h4>
+									<ul class="graph">
+										<!-- 20191023 카테고리별 class 적용 -->
+										<li class="familyEvent">
+											<div class="categoryNm">경조사</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="education">
+											<div class="categoryNm">교육</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="traffic">
+											<div class="categoryNm">교통</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="finance">
+											<div class="categoryNm">금융</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="etc">
+											<div class="categoryNm">기타</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="beauty">
+											<div class="categoryNm">미용 등</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="social">
+											<div class="categoryNm">사회/종교단체</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="necessaries">
+											<div class="categoryNm">생필품</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="life">
+											<div class="categoryNm">생활</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="shoping">
+											<div class="categoryNm">쇼핑</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="commission">
+											<div class="categoryNm">수수료|</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="commission2">
+											<div class="categoryNm">수수료||</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="travel">
+											<div class="categoryNm">여행</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="food">
+											<div class="categoryNm">외식|</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="food2">
+											<div class="categoryNm">외식||</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="pleasure">
+											<div class="categoryNm">유흥</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="medical">
+											<div class="categoryNm">의료</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="fashion">
+											<div class="categoryNm">의류/패션</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="interior">
+											<div class="categoryNm">인테리어</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="car">
+											<div class="categoryNm">자동차|</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="car2">
+											<div class="categoryNm">자동차||</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="hobby">
+											<div class="categoryNm">취미/관심사</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="academy">
+											<div class="categoryNm">학원</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="overseas">
+											<div class="categoryNm">해외</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<!-- //20191023 카테고리별 class 적용 -->
+									</ul>
+								</div>
+								<!-- // 카테고리별 지출 -->
+
+								<div class="ac mt30">
+									<a href="javascript:;">더보기+</a>
+								</div>
+
+								<div class="bannerType_02 case02 mt50"><!-- case 1 : 카드 미발급일 경우 노출 -->
+									신한카드 만들고
+									<strong>소비컨설팅 받아보세요!</strong><!-- 20191015 문구변경 (시작하세요 -> 받아보세요) -->
+								</div>
+
+								<!--div class="bannerType_02 mt50">
+									지금부터 차곡차곡
+									<strong>지출 다이어트 시작하세요!</strong>
+								</div-->
+
+								<!--a href="javascript:void(0)void(0)" class="btnType consulting"><span>카드 발급하러 가기</span></a-->
+
+							</div>
+							<!-- // 목표설정 전 -->
+
+
+							<!-- 목표설정 후 -->
+							<div style="display: block">
+								<h3 class="subTitle_01">김신한님의 소비줄이기 현황 분석</h3>
+
+								<div class="innerBox lineN mt20">
+									<h4 class="subTit">10월 소비 컨설팅 목표예상</h4>
+
+									<div class="popoverWrap por btnLayer02">
+										<button type="button" class="btnToggle"><span class="popOpen iconTy06">부가메뉴</span></button>
+										<div class="toolBox">
+											<ul>
+												<li><a href="javascript:;">수정하기</a></li>
+												<li><a href="javascript:;">종료하기</a></li>
+											</ul>
+											<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+										</div>
+									</div>
+
+									<ul class="listType_06 etc02 mt25">
+										<li>
+											<span class="lb">매월 시작일</span>
+											<span class="amt">15일</span>
+										</li>
+										<li>
+											<span class="lb">매월 목표예산</span>
+											<span class="amt">1,500,000원</span>
+										</li>
+										<li>
+											<span class="lb">12/22 ~ 12/23 예산</span>
+											<span class="amt">4,500,000원</span>
+										</li>
+									</ul>
+								</div>
+
+								<div class="circleChart chart-type-Circle mt20 prog">
+									<div class="circle per100">
+										<div id="circleCt" data-animation-start-value="1.0" data-value="0.74"></div>
+										<div class="circleTxt">
+											<p class="txt">목표 예산 대비</p>
+											<p class="per percent"><strong>0</strong>%</p>
+											<p><span class="lb blue">사용중</span></p>
+										</div>
+										<div class="bubbleGrp">
+											<div class="text">하루<br>42,000원씩</div>
+										</div>
+									</div>
+								</div>
+								<div class="innerBox lineN mt0">
+									<ul class="listType_04">
+										<li>
+											<span class="lb">현재 지출 금액</span>
+											<span class="amt"><a class="btnPopOpen" href="#layerPop02"><span class="lnk">1,500,000원</span></a></span>
+										</li>
+										<li>
+											<span class="lb">잔여 예산 금액</span>
+											<span class="amt">770,000원</span>
+										</li>
+									</ul>
+									<p class="txt_02 mt10">오늘~2019.10.03까지</p>
+								</div>
+
+								<div class="txt_01 mt20 pb40">
+									<p>
+										소비 줄이기 도전 달성을 위해<br>
+										<span>20일</span> 동안 하루에 <span>42,000원씩</span> 사용하세요!
+									</p>
+								</div>
+
+								<h3 class="subTitle_01 bt">김신한님의 카드 소비현황 분석</h3>
+
+								<div class="innerBox lineN pb0 mt20">
+									<div class="btnArea">
+										<a class="btnYearMonth01" href="javascript:;">9월</a>
+										<a class="btnYearMonth01 ml10" href="javascript:;">전체</a>
+									</div>
+								</div>
+
+								<div class="areaAC001 mt20">
+									<p class="spend">3,290,000원 지출</p>
+									<p class="spendBefore mt8">8월 대비 <span>4000,000원</span> 더 지출</p>
+
+									<a class="btnShowCont" href="javascript:;">내역보기</a>
+								</div>
+
+								<div class="areaAC002">
+									<div>
+										<p>이번달도 탕진잼? </p>
+									</div>
+									<span class="bg01"></span>
+
+									<!--
+										case별 클래스와 텍스트
+										bg02 : 이번달은 제법 절약중!
+										bg03 : 이번달은 아슬아슬한데,<br>컨설팅 시작해보세요.
+									-->
+								</div>
+
+								<!-- 카테고리별 지출 -->
+								<div class="areaAC003 mt45">
+									<h4 class="subTitle_02"><span>카테고리별 지출내역</span></h4>
+									<ul class="graph">
+										<!-- 20191023 카테고리별 class 적용 -->
+										<li class="familyEvent">
+											<div class="categoryNm">경조사</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="education">
+											<div class="categoryNm">교육</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="traffic">
+											<div class="categoryNm">교통</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="finance">
+											<div class="categoryNm">금융</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="etc">
+											<div class="categoryNm">기타</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="beauty">
+											<div class="categoryNm">미용 등</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="social">
+											<div class="categoryNm">사회/종교단체</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="necessaries">
+											<div class="categoryNm">생필품</div>
+											<div class="bar">
+												<span style="width: 45%"><span class="num">45%</span></span><!-- bar -->
+											</div>
+											<div class="amt">860,000</div>
+										</li>
+										<li class="life">
+											<div class="categoryNm">생활</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="shoping">
+											<div class="categoryNm">쇼핑</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="commission">
+											<div class="categoryNm">수수료|</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="commission2">
+											<div class="categoryNm">수수료||</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="travel">
+											<div class="categoryNm">여행</div>
+											<div class="bar">
+												<span style="width: 55%"><span class="num">55%</span></span><!-- bar -->
+											</div>
+											<div class="amt">1,500,000</div>
+										</li>
+										<li class="food">
+											<div class="categoryNm">외식|</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="food2">
+											<div class="categoryNm">외식||</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="pleasure">
+											<div class="categoryNm">유흥</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="medical">
+											<div class="categoryNm">의료</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="fashion">
+											<div class="categoryNm">의류/패션</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="interior">
+											<div class="categoryNm">인테리어</div>
+											<div class="bar">
+												<span style="width: 40%"><span class="num">40%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="car">
+											<div class="categoryNm">자동차|</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="car2">
+											<div class="categoryNm">자동차||</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="hobby">
+											<div class="categoryNm">취미/관심사</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="academy">
+											<div class="categoryNm">학원</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<li class="overseas">
+											<div class="categoryNm">해외</div>
+											<div class="bar">
+												<span style="width: 20%"><span class="num">20%</span></span><!-- bar -->
+											</div>
+											<div class="amt">620,000</div>
+										</li>
+										<!-- //20191023 카테고리별 class 적용 -->
+									</ul>
+								</div>
+								<!-- // 카테고리별 지출 -->
+
+								<div class="ac mt30">
+									<a href="javascript:;">더보기+</a>
+								</div>
+							</div>
+							<!-- // 목표설정 후 -->
+						</div><!-- 20191018 추가 : dimWrap 끝 -->
+
+					</div>
+				</div>
+				<div class="btnGroupBox floating" style="display:none ">
+					<a href="javascript:void(0)void(0)" class="btnType consulting"><span>지출줄이기 목표설정</span></a>
+				</div><!-- // 소비컨설팅 -->
+				
+				<!-- 20191127 추가 : 신용관리 탭 컨텐츠  -->
+				<div class="tabViewWrap mt0 mb0"><!-- MY신용관리 -->
+					<div class="tabView" id="tabView3"  tabindex="1">
+						<h2 class="blind">자산관리</h2>
+						
+						<!-- 서비스 이용전 -->
+						<div style="/* display:none */" id="서비스이용여부N"> 
+							<div class="creditInfo">
+								<p class="tit">나의 신용상태와 대출한도를 한번에 !<br><span>MY신용관리</span></p>
+								<p class="txt">고객님의 현재 신용상태와 은행 거래 등을 바탕으로<br>고객님만을 위한 신용관리 컨설팅 Tip<br>맞춤형 대출한도 및 금리를 안내해드립니다.</p>
+							</div>
+							<!-- 2020-06-01 수정 -->
+							<div class="creditInfoNodata type2">
+								<div class="progcir n1">
+									<span class="txt t1">Bad</span>
+									<span class="txt t2">Fair</span>
+									<span class="txt t3">Good</span>
+								</div>
+								<!-- data 값은 100% = 0.72 -->
+								<!-- 예) 37% 적용시 (37*0.72)/100 = 0.26 -->
+								<div class="progcir n2" data-value="0.72" id="progcir1"></div>
+								<div class="progcir stage">
+									<p class="tit">신용상태</p>
+									<div class="cardTxt2">
+										<ul class="in"><li>주</li><li>의</li></ul>
+									</div>
+									<p class="date">평가기준일 2019.11.12</p>
+								</div>
+								<div class="bubbleGrp">
+									<div class="text">신용관리팁을<br/>확인하세요!</div>
+								</div>
+							</div>
+							<!-- //2020-06-01 수정 -->
+							<!-- 안내사항 -->
+							<div class="creditTip">
+								<h3 class="tit">안내사항</h3>
+								<ul class="dotList fontSS">
+									<li>서비스 가입 시 신용조회가 됩니다. 다만, 신용조회에 따른 신용등급 상의 불이익은 없습니다.</li>
+									<li>고객님께서 제출(또는 입력)하신 정보를 바탕으로 결과가 산출됩니다.</li>
+									<li>공인인증서를 통한 정보제출 시 더욱 정확하게 산출할 수 있습니다.</li>
+								</ul>
+							</div>
+							<!-- //안내사항 -->							
+						</div>
+						<!-- //서비스 이용전 -->
+						
+						<!-- case 2 : 회원가입 이후  -->
+						<div style="/* display:none */">
+							<h3 class="subTitle_01" id="scName1">김신한님의 신용상태 및 대출 분석 현황</h3>
+							<div class="creditTit">
+								<h4 class="tit">나의 신용정보</h4>
+								<div class="popoverWrap por btnLayer">
+									<button type="button" class="btnToggle"><span class="popOpen iconTy06">부가메뉴</span></button>
+									<div class="toolBox" style="display: none;">
+										<ul>
+											<li><a href="javascript:;">정보변경</a></li>
+											<li><a href="javascript:;">서비스탈회</a></li>
+										</ul>
+										<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+									</div>
+								</div>
+							</div>
+							<!-- 테스트버튼 : 개발시 제거-->
+							<p class="mb30"><a href="javascript:startProgCir(progcir2);" class="btnType3 testGrp">신용상태 확인 테스트버튼(개발시 제거)</a></p>
+							<!-- 테스트버튼 : //개발시 제거-->
+							<!-- 20209 -->
+							<div class="creditInfoNodata type2 mb30">
+								<div class="progcir n1">
+									<span class="txt t1">Bad</span>
+									<span class="txt t2">Fair</span>
+									<span class="txt t3">Good</span>
+								</div>
+								<!-- data 값은 100% = 0.72 -->
+								<!-- 예) 37% 적용시 (37*0.72)/100 = 0.26 -->
+								<div class="progcir n2" data-value="0.10" id="progcir2"></div>
+								<div class="progcir stage">
+									<p class="tit">신용상태</p>
+									<div class="cardTxt2">
+										<ul class="in"><li>주</li><li>의</li></ul>
+									</div>
+									<p class="date">평가기준일 2019.11.12</p>
+								</div>
+								<div class="bubbleGrp">
+									<div class="text">신용관리팁을<br>확인하세요!</div>
+								</div>
+							</div>
+							
+							
+							<div class="creditAccordian"><!-- 신용관리 Tip -->
+								<p class="tip"><img src="../../../../../../../images/in08/ico_creditrecommend.png" alt="맞춤 신용관리 팁!" /></p>
+								<ul>
+									<li>
+										<div class="tit"><a href="javascript:void(0);">보유한 고금리  <span>대출은 빠른 시일 내 상환</span>하기</a></div>
+										<div class="text">신한은행으로 급여 이체, 카드대금 결제, 공과금과 통신비 납부를 연계하고, 예·적금과 펀드, 연금 등의 금융거래실적을 꾸준히 쌓으면, 신한은행의 대출상품 취급 시 우대 금리나 수수료 등에서 혜택을 받을 수 있습니다. 뿐만 아니라 은행 자체적으로 산출하는 신용도 평가에도 긍정적으로 반영되어 신용등급 상승에도 유리합니다.</div>
+									</li>
+									<li>
+										<div class="tit"><a href="javascript:void(0);">대출 이용 금융  <span>기관의 수 줄이기</span></a></div>
+										<div class="text">신한은행으로 급여 이체, 카드대금 결제, 공과금과 통신비 납부를 연계하고, 예·적금과 펀드, 연금 등의 금융거래실적을 꾸준히 쌓으면, 신한은행의 대출상품 취급 시 우대 금리나 수수료 등에서 혜택을 받을 수 있습니다. 뿐만 아니라 은행 자체적으로 산출하는 신용도 평가에도 긍정적으로 반영되어 신용등급 상승에도 유리합니다.</div>
+									</li>
+									<li>
+										<div class="tit"><a href="javascript:void(0);">추가 자금 필요 시  <span>보유 대출 활용</span>하기</a></div>
+										<div class="text">신한은행으로 급여 이체, 카드대금 결제, 공과금과 통신비 납부를 연계하고, 예·적금과 펀드, 연금 등의 금융거래실적을 꾸준히 쌓으면, 신한은행의 대출상품 취급 시 우대 금리나 수수료 등에서 혜택을 받을 수 있습니다. 뿐만 아니라 은행 자체적으로 산출하는 신용도 평가에도 긍정적으로 반영되어 신용등급 상승에도 유리합니다.</div>
+									</li>
+									<li>
+										<div class="tit"><a href="javascript:void(0);">신한은행  <span>대출금 성실하게 상환</span>하기</a></div>
+										<div class="text">신한은행으로 급여 이체, 카드대금 결제, 공과금과 통신비 납부를 연계하고, 예·적금과 펀드, 연금 등의 금융거래실적을 꾸준히 쌓으면, 신한은행의 대출상품 취급 시 우대 금리나 수수료 등에서 혜택을 받을 수 있습니다. 뿐만 아니라 은행 자체적으로 산출하는 신용도 평가에도 긍정적으로 반영되어 신용등급 상승에도 유리합니다.</div>
+									</li>
+									<li>
+										<div class="tit"><a href="javascript:void(0);">신한은행을 <span>주거래 은행</span>으로 만들기</a></div>
+										<div class="text">신한은행으로 급여 이체, 카드대금 결제, 공과금과 통신비 납부를 연계하고, 예·적금과 펀드, 연금 등의 금융거래실적을 꾸준히 쌓으면, 신한은행의 대출상품 취급 시 우대 금리나 수수료 등에서 혜택을 받을 수 있습니다. 뿐만 아니라 은행 자체적으로 산출하는 신용도 평가에도 긍정적으로 반영되어 신용등급 상승에도 유리합니다.</div>
+									</li>
+								</ul>
+							</div><!-- 신용관리 Tip -->
+							
+							<div class="creditRecommend"><!-- 맞춤 대출상품이 있을 때 -->
+								<p class="tit">김신한님을 위한 맞춤 <br><strong>대출 상품의 금리와 한도</strong>를<br>확인해보세요!</p>
+								<p class="prodName">쏠편한 직장인 대출S</p>
+								<ul class="prodInfo">
+									<li>예상한도<div class="info">최대<span><strong>2</strong>억원</span></div></li>
+									<li>예상금리<div class="info">최저<span class="normal"><strong>2.86</strong>%~</span></div></li>
+								</ul>
+								<a href="javascript:;" class="btn_loan">대출신청</a>
+							</div><!-- //맞춤 대출상품이 있을 때 -->
+							
+							
+							<div class="creditRecommend type2"><!-- 맞춤 대출상품이 없을 때 -->
+								<p class="tit">김신한님을 위한 <br><strong>맞춤 대출 상품이 없네요!</strong></p>
+								<p class="text">신용관리 팁을 활용해서 신용상태를 올려보세요!</p>
+							</div><!-- //맞춤 대출상품이 없을 때 -->	
+							
+							<!-- 안내사항 -->
+							<div class="creditTip">
+								<h3 class="tit">안내사항</h3>
+								<ul class="dotList fontSS">
+									<!-- 20191210 아래정보로 변경
+									<li>고객님의 근무중인 회사와 재직기간, 연소득 등을 통해 맞춤상품을 추천해 드립니다.</li>
+									<li>사전한도 심사 시스템에 의하여 산출된 결과로 본 대출심사 시 결과가 달라질 수 있습니다.</li> -->
+									<li>고객님께서 제출(또는 입력)하신 정보를 바탕으로 산출되었으며, 실제 대출심사 시 결과는 달라질 수 있습니다.</li>
+									<li>'나의 신용정보'는 신한은행 대출을 진행하기 위한 신용등급으로, 신용평가회사(KCB, NICE 등)의 신용등급과는 다를 수 있습니다.</li>
+									<li>맞춤상품은 SOL에서 취급 가능한 개인 신용대출만 추천합니다. 개인사업자 대출 등 추가 상품은 가까운 영업점으로 문의하여 주시기 바랍니다.</li>
+									<li>맞춤상품은 고객님께 가능한 상품과 한도를 안내드리며, 금리는 상품의 최저금리로 실제 고객님의 금리와는 다를 수 있습니다.</li>
+									<li>서비스 가입 이후, 이직, 소득 등이 변경된 경우, “정보변경'으로 재산출할 수 있습니다.</li>
+									<li>자세한 사항은 신한은행 콜센터(1599-8000) 및 가까운 영업점으로 문의하여 주시기 바랍니다.</li>
+								</ul>
+							</div>
+							<!-- //안내사항 -->
+						</div>
+						<!-- //case 2 : 회원가입 이후  -->
+					</div><!-- //tabView -->
+				</div><!-- // MY신용관리 -->
+				<!-- 서비스 이용전 일때 노출 -->
+				
+				<div class="btnGroupBox floating" style="display:none">
+					<a href="javascript:void(0)void(0)" class="btnType consulting"><span>신용관리 서비스 이용하기</span></a>
+				</div>
+				<!-- //서비스 이용전 일때 노출 -->
+				<!-- //20191127 추가 : 신용관리 탭 컨텐츠  -->
+				
+			</div>
+			<!-- // contents -->
+
+			<!-- 탭 : hidden -->
+			<div class="tabTy_03 floatTab fix" style="display: none">
+				<!-- 활성화시 class="on" -->
+				<!-- <a href="#tabView1" class="on" > -->
+				<!-- <a href="#tabView1" class="on"><span onClick="SavingConsultingClick()";>저축컨설팅</span></a>
+				<a href="#tabView2"><span  onClick="ConsumptionConsultingClick()";>소비컨설팅</span></a> -->
+				<a href="javascript:;"><span>저축</span></a>
+				<a href="javascript:;"><span>소비</span></a>
+				<a href="javascript:;" class="on"><span>MY신용관리</span></a> <!-- 20191127 추가 -->
+			</div>
+			<!-- // 탭 -->
+
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+	<!-- 레이어팝업 -->
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom01" tabindex="-1" style="display: none;">
+		<div class="popInner" tabindex="0">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">선택항목</p>
+
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">55세</button></li>
+						<li><button type="button">60세</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerPopBottomWrap hasDim" id="layerPopBottom02" tabindex="-1" style="display: none;">
+		<div class="popInner" tabindex="0">
+			<div class="layerHeader">
+				<p class="layerTit" onclick="bottomPopClose(this)">선택항목</p>
+
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="listOneLineBox type1">
+					<ul>
+						<li><button type="button">1.0%</button></li>
+						<li><button type="button">2.0%</button></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerPopWrap hasDim" id="layerPop01" tabindex="0" style="display: none;">
+		<div class="popInner" tabindex="0">
+			<div class="layerHeader">
+				<p class="layerTit"> 미래 저축금액 예상</p>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="txtWrap">
+						<p class="txt">
+							 현재 자산과 저축 자동이체 금액<br>
+							 시뮬레이션으로 계산한 미래 저축<br>
+							 예상금액입니다.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerPopWrap hasDim" id="layerPop02" style="display: none;">
+		<div class="popInner">
+			<div class="layerHeader">
+				<p class="layerTit">카드 거래내역</p>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<ul class="listType_05">
+						<li>
+							<div class="leftCol ellipsis">
+								<span class="top">2019.06.22 | 신용</span>
+								<span class="bot">고속도로 통행료</span>
+							</div>
+							<div class="rightCol">5,500 원</div>
+						</li>
+						<li>
+							<div class="leftCol ellipsis">
+								<span class="top">2019.06.22 | 신용</span>
+								<span class="bot">고속도로 통행료</span>
+							</div>
+							<div class="rightCol">5,500 원</div>
+						</li>
+						<li>
+							<div class="leftCol ellipsis">
+								<span class="top">2019.06.22 | 신용</span>
+								<span class="bot">고속도로 통행료</span>
+							</div>
+							<div class="rightCol">5,500 원</div>
+						</li>
+						<li>
+							<div class="leftCol ellipsis">
+								<span class="top">2019.06.22 | 신용</span>
+								<span class="bot">고속도로 통행료</span>
+							</div>
+							<div class="rightCol">5,500 원</div>
+						</li>
+						<li>
+							<div class="leftCol ellipsis">
+								<span class="top">2019.06.22 | 신용</span>
+								<span class="bot">고속도로 통행료</span>
+							</div>
+							<div class="rightCol">5,500 원</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="layerPopWrap hasDim" id="layerPop03" style="display: none;">
+		<div class="popInner">
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="txtWrap">
+						<p class="txt">진행중인 소비컨설팅을 종료하시겠습니까?</p>
+					</div>
+				</div>
+			</div>
+			<div class="btnGroupBox">
+				<a href="javascript:void(0)" class="btnType btnBlack"><span>취소</span></a>
+				<a href="javascript:void(0)" class="btnType"><span>확인</span></a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 20191127 서비스탈회안내 팝업 추가 -->
+	<div class="layerPopWrap hasDim" id="layerPop05" tabindex="0">
+		<div class="popInner" tabindex="0">
+			<div class="layerHeader">
+				<p class="layerTit">서비스 탈회 안내</p>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="txtWrap">
+						<p class="txt">
+							신용관리서비스를 탈회하시겠습니까?
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="btnGroupBox">
+				<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+				<a href="javascript:;" class="btnType"><span>확인</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- //20191127 서비스탈회안내 팝업 추가 -->
+	<!-- // 레이어팝업 -->
+
+<!-- // wrap -->
+
+
+<script>
+$(document).ready(function(){
+	$('.creditAccordian ul li .tit > a').click(function(){
+		$('.creditAccordian ul li').removeClass('on');
+		$(this).parents('li').addClass('on');
+		if ( $(this).parents('.tit').next().css("display") == "none") {
+			//open
+			$('.creditAccordian ul li .text').slideUp();
+			$(this).parents('.tit').next('.text').slideDown();
+		} else {
+			//close
+			$(this).parents('.tit').next('.text').slideUp();
+			$('.creditAccordian ul li').removeClass('on');
+		}
+	});
+	$('.creditTip .tit').click(function(){
+		$(this).parents('.creditTip').children('.dotList').slideToggle();
+		$(this).toggleClass('on');
+	});
+});
+
+//2020-06-01 수정
+function startProgCir(progSet){
+	var progSet = $(progSet);
+	var cardSet = progSet.parents(".creditInfoNodata").find(".cardTxt2");
+	var cardtxt = "";
+	var duTime = 0;
+	var bubble = progSet.parents(".creditInfoNodata").find(".bubbleGrp");
+	var dvalue = progSet.attr("data-value") - '0';
+	
+	if(dvalue == 0){ //컨시어지 레벨이 0(미확인)인 경우 미리 카드 글자 셋팅
+		var cardtxt = "<ul class='in'><li>미</li><li>확</li><li>인</li></ul>";
+    	cardSet.empty().append(cardtxt);
+    	bubble.removeClass("on");
+	}else{
+		duTime = progSet.attr("data-value").split("0.")[1].substr(0,1);
+		bubble.addClass("p"+Math.floor(duTime*10));  //말풍선 위치지정
+	}
+	
+	progSet.circleProgress({
+		startAngle: -Math.PI / 4 * 4.9,
+		thickness : 20,
+	    lineCap: 'round',
+	    size: 250.0,  //가로세로 사이즈
+	    fill: {gradient: ['#8075fe', '#26affa']},  //색상
+	    animation: {
+	        duration: duTime*1000,  //시간
+	    },
+	    emptyFill: 'transparent',  //배경색상
+	}).on('circle-animation-progress', function(event, progress, stepValue) {
+	    var idd = Math.round(100 * stepValue);
+	    if(idd == 0){
+	    	var cardtxt = "<ul class='in'><li>주</li><li>의</li></ul>";
+	    	cardSet.empty().append(cardtxt);
+	    	bubble.removeClass("on");
+	    }
+	    if(dvalue > 0.28){ 
+	    	if(idd == 10){
+		    	var cardtxt = "<ul><li>보</li><li>통</li></ul>";
+		    	cardChange(cardtxt);
+		    }
+	    	if(dvalue > 0.44){
+	    		if(idd == 28){
+			    	var cardtxt = "<ul><li>양</li><li>호</li></ul>";
+			    	cardChange(cardtxt);
+			    }else if(idd == 47){
+		    		var cardtxt = "<ul><li>우</li><li>수</li></ul>";
+		    		cardChange(cardtxt);
+		    	}else if(idd == 59){
+		    		var cardtxt = "<ul><li>매</li><li>우</li> <li>우</li><li>수</li></ul>";
+		    		cardChange(cardtxt);
+		    	}
+	    	}
+	    }
+	    if(progress >= 0.9){
+	    	bubble.addClass("on");
+	    }
+	});
+	
+	function cardChange(cardtxt){
+		cardSet.find("ul").addClass("out");
+		setTimeout(function(){
+			cardSet.empty().append(cardtxt);
+			setTimeout(function(){
+				cardSet.find("ul").addClass("in");
+	    	},100);
+		},300);
+	}
+}
+
+function startProgCir2(){
+	var dvalue = $("#circleCt").attr("data-value");
+	var bubble = $(".circleChart").find(".bubbleGrp");
+	var duTime = 1;
+	var i;
+	
+	//그래프 값 초기화
+	bubble.removeClass("on");
+	$(".circleChart>div").addClass("per100").removeClass("per0");
+	for(i = 0; i < 10; ++i)
+		$(".prog .bubbleGrp").removeClass("p"+i);
+	if($(".circleChart .circle .lb").hasClass("red")){
+		$("#circleCt").show();
+		$(".chart-type-Circle .circle").removeClass("perOver");
+		$(".circleChart .circle .lb").text("사용중").removeClass("red");
+	}
+	
+	if(dvalue != 0 && dvalue != 1){
+		duTime = dvalue.split(".")[1].substr(0,1); 
+		if(duTime == 0)
+			duTime = 1;
+	}
+	dvalue = 1 - dvalue;
+	
+	if(dvalue <= 0 || dvalue >= 1)
+		bubble.addClass("p9"); //금액 초과하거나 0%, 100%일 때 말풍선 위치 고정
+	else
+		bubble.addClass("p"+Math.floor(dvalue*10));  //말풍선 위치지정
+
+	$("#circleCt").circleProgress({
+		startAngle: -Math.PI / 4 * 2,
+		thickness : 28,
+	    value: dvalue, 
+	    lineCap: 'round',
+	    size: 226.0,  //가로세로 사이즈
+	    fill: {gradient: ['#1eb4fa', '#1eb4fa']},  //색상
+	    animation: {
+	        duration: duTime*800,  //시간
+	    },
+	    emptyFill: 'transparent',  //배경색상
+	    reverse : true,
+	}).on('circle-animation-progress', function(event, progress, stepValue) {
+		var ide = Math.round(100 * stepValue);
+		if(dvalue < 1){
+			ide = 100 - ide;
+		}
+		if(progress == 1){
+			bubble.addClass("on");
+		}
+		if(ide > 100){
+			$("#circleCt").hide();
+			$(".chart-type-Circle .circle").addClass("perOver");
+			$(".circleChart .circle .lb").text("예산초과").addClass("red");
+		}
+		if(dvalue != 1)
+			$(".circleTxt .per strong").text(ide);
+	});
+}
+
+</script>
+
+
+<!-- <script type="text/javascript" src="../../../../../../script/include/common/common_import.js"></script>   -->
+
+</body>
+</html>

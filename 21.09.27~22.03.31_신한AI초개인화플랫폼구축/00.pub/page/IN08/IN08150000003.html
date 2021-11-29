@@ -1,0 +1,1215 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	내차종합리포트  > 차량정보
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김재림		2021-01-29		최초작성
+*********************************************************************/ 
+--> 
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">내차종합리포트</h1>
+				<div class="rSec">
+					<a href="#" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents pt0">
+				<!-- mycarReportWrap -->
+				<div class="mycarReportWrap">
+					<!-- mycarDetailHeader -->
+					<div class="mycarManagementHeader">
+						<h2 class="blind">기본정보</h2>
+						<div class="mycarManagementArea">
+							<div class="mycarTit">
+								<div class="selector">
+									<a href="#layerPopBottom01" class="btnPeriod btnPopOpen">내 차 관리 <span class="count">2</span></a>
+								</div>
+								<strong class="title">
+									<span class="brand">현대</span>
+									<span class="model">제네시스 GV80</span>
+								</strong>
+								<div class="grade">
+									<span>2.5 가솔린 터보</span>
+								</div>
+							</div>
+							<div class="mycarImg">
+								<img src="../../../../../../images/in08/myassets/img_mycarmanagement_01.png" alt="현대 제네시스 GV80">
+								<span class="number">출고가격 <em>42,750,000</em>원</span>
+							</div>
+							<div class="mycarInfo">
+								<dl>
+									<div class="infoItem">
+										<dt>차량번호</dt>
+										<dd>123고4567</dd>
+									</div>
+									<div class="infoItem">
+										<dt>최초 등록일</dt>
+										<dd>2020.11.23</dd>
+									</div>
+								</dl>
+								<div class="detailLink">
+									<a href="#">
+										<span class="detailBtn">
+											상세정보
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- mycarManagementContents -->
+					<div class="mycarManagementContents">
+						<!-- totalArea -->
+						<div class="totalArea">
+							<h2 class="blind">차량 상세정보</h2>
+							<!-- Module -->
+							<div class="mycarModule">
+								<!-- 내 차 시세 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<p class="itemTitle">
+												<i class="iconTyMycarInfo01"></i>
+												<em>내 차 시세</em>
+											</p>
+										</div>
+									</div>
+									<div class="AccorContNew" style="display:block !important;">
+										<div class="mdMarketPrice">
+											<div class="priceInfo">
+												<div class="ratio">
+													<span>감가율</span>
+													<i class="iconTyDepreciationRate"></i>
+													<strong class="fcMint"><em>55.4</em>%</strong>
+												</div>
+												<div class="cost"><em>20,750,000</em>원</div>
+												<div class="mileage">
+													주행거리
+													<button data-href="#layerPopBottom01_1" class="btnPopOpen">
+														<em>113,222km</em>
+														<i class="iconTySelArrow03"></i>
+													</button>
+												</div>
+												<dl class="LHprice">
+													<div class="item">
+														<dt>최저가</dt>
+														<dd><em>1,875</em>만원</dd>
+													</div>
+													<div class="item">
+														<dt>최고가</dt>
+														<dd><em>2,135</em>만원</dd>
+													</div>
+												</dl>
+											</div>
+											<div class="highcharts">
+												<div style="height:170px; background:rgba(0,0,0,.4);">하이차트 영역</div>
+											</div>
+											<div class="noticeArea">
+												<p>차량 상태 및 업체에 따라 실제 금액과 차이가 있을 수 있습니다.</p>
+											</div>
+											<!-- case: 시세정보를 불러오지 못했을 경우 -->
+											<div class="noDataWrap">
+												<p class="img nodata"></p>
+												<p class="txt"><span>고객님 차종에 대한 시세정보가 없습니다</span></p>
+												<p class="txt">해당 차종에 대한 시세정보가<br />준비되는대로 서비스해 드리겠습니다.<br />불편을 드려 죄송합니다.</p>
+											</div>
+											<!-- //case: 시세정보를 불러오지 못했을 경우 -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //Module -->
+
+							<!-- Module -->
+							<div class="mycarModule">
+								<!-- 보험 만기(자동차 보험) : 보험사를 선택 안한 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo02"></i>
+												<em class="changeText">
+													<span>보험 만기</span>
+													<span>자동차 보험</span>
+												</em>
+												<span class="toggleText">1개월 전</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<button class="btnChange"><i class="iconTyBtnEditPencil"></i>변경</button>
+											<div class="infoTxt">
+												<p class="text">보험 만기까지<br /><em class="fcMint"><span>1</span>개월</em> 남은 것으로 예상됩니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>보험만료월</dt>
+													<dd><em>2020.12</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험사</dt>
+													<dd><em>-</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험금</dt>
+													<dd><em>586,200</em> 까지</dd>
+												</div>
+											</dl>
+											<a href="#" class="serviceLinkBox">
+												<span>MY자산에 보험사를 연결하시면<br />더 정확한 정보를 조회하실 수 있습니다</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- 보험 만기(자동차 보험) : 보험사를 선택 한 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo02"></i>
+												<em class="changeText">
+													<span>보험 만기</span>
+													<span>자동차 보험</span>
+												</em>
+												<span class="toggleText">1개월 전</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<button class="btnChange"><i class="iconTyBtnEditPencil"></i>변경</button>
+											<div class="infoTxt">
+												<p class="text">보험 만기까지<br /><em class="fcMint"><span>1</span>개월</em> 남은 것으로 예상됩니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>보험만료월</dt>
+													<dd><em>2020.12</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험사</dt>
+													<dd><em>삼성화재(애니카)</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험금</dt>
+													<dd><em>586,200</em> 까지</dd>
+												</div>
+											</dl>
+											<a href="#" class="serviceLinkBox">
+												<span>MY자산에 보험사를 연결하시면<br />더 정확한 정보를 조회하실 수 있습니다</span>
+											</a>
+											<!-- 긴급출동 전화번호 : AXA손보 -->
+											<a href="tel:1566-1566" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													AXA손보 긴급출동
+												</span>
+												<span class="compPhone">1566-1566</span>
+											</a>
+											<!-- 긴급출동 전화번호 : DB손보 -->
+											<a href="tel:1588-0100" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													DB손보 긴급출동
+												</span>
+												<span class="compPhone">1588-0100</span>
+											</a>
+											<!-- 긴급출동 전화번호 : KB손보 -->
+											<a href="tel:1544-0114" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													KB손보 긴급출동
+												</span>
+												<span class="compPhone">1544-0114</span>
+											</a>
+											<!-- 긴급출동 전화번호 : MG 손보(JOY) -->
+											<a href="tel:1588-5959" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													MG 손보(JOY) 긴급출동
+												</span>
+												<span class="compPhone">1588-5959</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 롯데손보(하우머치) -->
+											<a href="tel:1588-3344" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													롯데손보(하우머치) 긴급출동
+												</span>
+												<span class="compPhone">1588-3344</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 메리츠화재 -->
+											<a href="tel:1566-7711" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													메리츠화재 긴급출동
+												</span>
+												<span class="compPhone">1566-7711</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 삼성화재(애니카) -->
+											<a href="tel:1588-5114" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													삼성화재(애니카) 긴급출동
+												</span>
+												<span class="compPhone">1588-5114</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 캐롯손보(퍼마일) -->
+											<a href="tel:1566-0300" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													캐롯손보(퍼마일) 긴급출동
+												</span>
+												<span class="compPhone">1566-0300</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 하나손보(마이에듀카) -->
+											<a href="tel:1566-3000" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													하나손보(마이에듀카) 긴급출동
+												</span>
+												<span class="compPhone">1566-3000</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 한화손보 -->
+											<a href="tel:1566-8000" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													한화손보 긴급출동
+												</span>
+												<span class="compPhone">1566-8000</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 현대해상(하이카) -->
+											<a href="tel:1588-5656" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													현대해상(하이카) 긴급출동
+												</span>
+												<span class="compPhone">1588-5656</span>
+											</a>
+											<!-- 긴급출동 전화번호 : 흥국화재(이유) -->
+											<a href="tel:1688-1688" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													흥국화재(이유) 긴급출동
+												</span>
+												<span class="compPhone">1688-1688</span>
+											</a>
+											<!-- 긴급출동 전화번호 : NH농협 손보 -->
+											<a href="tel:1644-9000" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													NH농협 손보 긴급출동
+												</span>
+												<span class="compPhone">1644-9000</span>
+											</a>
+											<!-- 긴급출동 전화번호 : AIG손보 -->
+											<a href="tel:1544-2792" class="urgentCall">
+												<span class="compName">
+													<i class="iconTyInsuranceCompanyPhone"></i>
+													AIG손보 긴급출동
+												</span>
+												<span class="compPhone">1544-2792</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- 보험 만기(자동차 보험) : 보험정보를 불러오지 못한 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo02"></i>
+												<em class="changeText">
+													<span>보험 만기</span>
+													<span>자동차 보험</span>
+												</em>
+												<span class="toggleText">1개월 전</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<button class="btnChange"><i class="iconTyBtnEditPencil"></i>변경</button>
+											<div class="infoTxt">
+												<p class="text">자동차 보험 정보가 없습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>보험만료월</dt>
+													<dd><em>-</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험사</dt>
+													<dd><em>-</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험금</dt>
+													<dd><em>-</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="serviceLinkBox">
+												<span>MY자산에 보험사를 연결하시면<br />더 정확한 정보를 조회하실 수 있습니다</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- 보험 만기(자동차 보험) : 보험 만료월 OR 만료월이 지난 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo02"></i>
+												<em class="changeText">
+													<span>보험 만기</span>
+													<span>자동차 보험</span>
+												</em>
+												<span class="toggleText">1개월 전</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<button class="btnChange"><i class="iconTyBtnEditPencil"></i>변경</button>
+											<div class="infoTxt">
+												<p class="text">보험을 갱신하셨다면 갱신 월을 선택하세요</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>보험만료월</dt>
+													<dd><em>2020.12</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험사</dt>
+													<dd><em>삼성화재(애니카)</em></dd>
+												</div>
+												<div class="row">
+													<dt>보험금</dt>
+													<dd><em>586,200</em>원</dd>
+												</div>
+											</dl>
+											<a href="#" class="serviceLinkBox">
+												<span>MY자산에 보험사를 연결하시면<br />더 정확한 정보를 조회하실 수 있습니다</span>
+											</a>
+										</div>
+									</div>
+								</div>
+
+								<!-- 세금 : 1분기 남부기간 (6월) -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo03"></i>
+												<em>세금</em>
+												<span class="toggleText">납부월</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">2020년 자동차세 <em class="fcMint"><span>1</span>기분 납부</em><br>기간입니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>납부기간</dt>
+													<dd><em>2020.06.16 ~ 2020.06.30</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차세 연납</span></a>
+											<div class="infoTxt">
+												<p class="text">2020년 자동차세 연납기간으로<br />세액의 약 <em class="fcMint"><span>5</span>% 할인</em>받으실 수 있습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>연납기간</dt>
+													<dd><em>2020.06.16 ~ 2020.06.30</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차세 연납</span></a>
+											<div class="ac mt20">
+												<a href="#" class="btnTypeTextLink fcMint"><span>자동차세를 계산해보세요</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 세금 : 2분기 남부기간 (12월) -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo03"></i>
+												<em>세금</em>
+												<span class="toggleText">납부월</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">2021년 자동차세 <em class="fcMint"><span>2</span>기분 납부</em>가<br>시작되었습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>납부기간</dt>
+													<dd><em>2020.12.16 ~ 2021.06.30</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차세 연납</span></a>
+											<div class="ac mt20">
+												<a href="#" class="btnTypeTextLink fcMint"><span>자동차세를 계산해보세요</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 세금 : 연납기간 1월 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo03"></i>
+												<em>세금</em>
+												<span class="toggleText">납부월</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">2020년 자동차세 연납기간으로<br />세액의 약 <em class="fcMint"><span>10</span>% 할인</em>받을 수 있습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>납부기간</dt>
+													<dd><em>2020.01.16 ~ 2020.01.31</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차세 연납</span></a>
+											<div class="ac mt20">
+												<a href="#" class="btnTypeTextLink fcMint"><span>자동차세를 계산해보세요</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 세금 : 연납기간 3월 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo03"></i>
+												<em>세금</em>
+												<span class="toggleText">납부월</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">2020년 자동차세 연납기간으로<br />세액의 약 <em class="fcMint"><span>7.5</span>% 할인</em>받을 수 있습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>납부기간</dt>
+													<dd><em>2020.03.16 ~ 2020.06.30</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차세 연납</span></a>
+											<div class="ac mt20">
+												<a href="#" class="btnTypeTextLink fcMint"><span>자동차세를 계산해보세요</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 세금 : 연납기간 9월 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo03"></i>
+												<em>세금</em>
+												<span class="toggleText">납부월</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">2020년 자동차세 연납기간으로<br />세액의 약 <em class="fcMint"><span>2.5</span>% 할인</em>받을 수 있습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>납부기간</dt>
+													<dd><em>2020.09.16 ~ 2020.09.30</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차세 연납</span></a>
+											<div class="ac mt20">
+												<a href="#" class="btnTypeTextLink fcMint"><span>자동차세를 계산해보세요</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 세금 : 납부월이 아닌경우 (2,4,5,7,8,10,11 월) -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo03"></i>
+												<em>세금</em>
+												<span class="toggleText">납부월</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">자동차세 납부 기간이 아닙니다</p>
+												<p class="text small">납세액은 1년 기준세액을 분할하여 6월, 12월 두번 부과되며, 연 세액이 10만원 이하인 차량은 6월에 한 번만 부과합니다.</p>
+											</div>
+											<a href="#" class="btnType btnBlack small"><span>연납신청 하시면 할인 받으실 수 있어요</span></a>
+											<div class="ac mt20">
+												<a href="#" class="btnTypeTextLink fcMint"><span>자동차세를 계산해보세요</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 자동차 검사 : 아직 자동차 검사기간이 아닌 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo04"></i>
+												<em>자동차 검사</em>
+												<span class="toggleText">D-163일</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">자동차 정기/종합 검사일 <em class="fcMint"><span>163</span>일</em><br />남았습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>검사기간</dt>
+													<dd><em>2021.06.13 ~ 2021.08.14</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차 검사 예약</span></a>
+										</div>
+									</div>
+								</div>
+
+								<!-- 자동차 검사 : 자동차 검사시간인 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo04"></i>
+												<em>자동차 검사</em>
+												<span class="toggleText">D-163일</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">자동차 정기/종합 검사기간 입니다<br />종합검사 예약 후 검사 받으세요</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>검사기간</dt>
+													<dd><em>2021.06.13 ~ 2021.08.14</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small"><span>자동차 검사 예약</span></a>
+										</div>
+									</div>
+								</div>
+
+								<!-- 자동차 검사 : 검사기간을 불러오지 못한 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<a href="javascript:void(0)" title="세부내역 열기" role="button" class="itemTitle">
+												<i class="iconTyMycarInfo04"></i>
+												<em>자동차 검사</em>
+												<span class="toggleText">D-163일</span>
+												<div class="arrow">
+													<span class="iconTyAccorArrowDefault">세부내역 열힘</span>
+													<span class="iconTyAccorArrowActive">세부내역 닫힘</span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="AccorContNew">
+										<div class="mdGeneral">
+											<div class="infoTxt">
+												<p class="text">자동차 정기/종합 검사일을 조회하지<br />못했습니다</p>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>검사기간</dt>
+													<dd><em>-</em></dd>
+												</div>
+											</dl>
+											<a href="#" class="btnType btnBlack small" disabled="disabled"><span>자동차 검사 예약</span></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //Module -->
+						</div>
+						<!-- //totalArea -->
+						<!-- upkeepArea -->
+						<div class="upkeepArea">
+							<h2 class="blind">내 차 유지비를 절약해보세요</h2>
+							<div class="titWrap">
+								<h3 class="serviceTit">내 차 유지비를 절약해보세요</h3>
+							</div>
+							<div class="unkeepInfo">
+								<div class="unkeepTit">
+									<div class="titWrap">
+										<h4 class="subTit">11월 유지비</h4>
+									</div>
+								</div>
+								<ul class="unkeepCont">
+									<li>
+										<a href="#">
+											<div class="contInfo">
+												<i class="iconTyMycarInfo06"></i>
+												<div class="record">
+													<strong class="tit">차량 유지비</strong>
+													<span>125,000원</span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="contInfo">
+												<i class="iconTyMycarInfo07"></i>
+												<div class="record">
+													<strong class="tit">주유/충전비</strong>
+													<span>275,000원</span>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="unkeepInfo">
+								<div class="unkeepTit">
+									<div class="titWrap hasSubInfo">
+										<h4 class="subTit">유가 정보</h4>
+										<em>
+											<span class="blind">국제 유가 기준날짜</span>
+											2021.01.14 기준
+										</em>
+									</div>
+									<a href="#layerPopBottom03" class="btnSelect btnPopOpen">
+										<span class="blind">연료선택</span>
+										휘발유<i class="iconTySelArrow03"></i>
+									</a>
+								</div>
+								<ul class="unkeepCont">
+									<li>
+										<div class="contInfo">
+											<div class="record">
+												<dl class="inner">
+													<dt class="tit">전국 평균</dt>
+													<dd class="rate up"> <!-- .up/.down -->
+														<i class="iconTyIncreaseArrow02">상승</i>
+														<i class="iconTyDecreaseArrow02">하락</i>
+														0.03<em>%</em>
+													</dd>
+												</dl>
+												<span class="oilPrice">1450.75<em>원</em></span>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="contInfo">
+											<div class="record">
+												<dl class="inner">
+													<dt class="tit">서울시 중구</dt>
+													<dd class="rate down"> <!-- .up/.down -->
+														<i class="iconTyIncreaseArrow02">상승</i>
+														<i class="iconTyDecreaseArrow02">하락</i>
+														0.03<em>%</em>
+													</dd>
+												</dl>
+												<span class="oilPrice">1450.75<em>원</em></span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="unkeepInfo">
+								<div class="unkeepTit">
+									<div class="titWrap">
+										<h4 class="subTit">자동차 혜택카드</h4>
+									</div>
+								</div>
+								<div class="recommendSlder">
+									<div class="swiper-container">
+										<ul class="swiper-wrapper recomProdList">
+											<li class="swiper-slide">
+												<div class="listInner">
+													<div class="thumbArea">
+														<span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_card03.png" alt=""></span>
+													</div>
+													<div class="infoArea">
+														<p class="prodCategory">
+															<span>신한카드</span>
+														</p>
+														<strong class="prodTit ellipsis">Deep Oil 신용카드</strong>
+														<div class="prodValue">
+															<p class="infoTxt">디지털 스트리밍 서비스 이용요금 1만원, 온라인 간편결제 서비스 5% 청구 할인</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="swiper-slide">
+												<div class="listInner">
+													<div class="thumbArea">
+														<span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_card03.png" alt=""></span>
+													</div>
+													<div class="infoArea">
+														<p class="prodCategory">
+															<span>신한카드</span>
+														</p>
+														<strong class="prodTit ellipsis">Deep Oil 신용카드</strong>
+														<div class="prodValue">
+															<p class="infoTxt">디지털 스트리밍 서비스 이용요금 1만원, 온라인 간편결제 서비스 5% 청구 할인</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="swiper-slide">
+												<div class="listInner">
+													<div class="thumbArea">
+														<span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_card03.png" alt=""></span>
+													</div>
+													<div class="infoArea">
+														<p class="prodCategory">
+															<span>신한카드</span>
+														</p>
+														<strong class="prodTit ellipsis">Deep Oil 신용카드</strong>
+														<div class="prodValue">
+															<p class="infoTxt">디지털 스트리밍 서비스 이용요금 1만원, 온라인 간편결제 서비스 5% 청구 할인</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="swiper-slide">
+												<div class="listInner">
+													<div class="thumbArea">
+														<span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_card03.png" alt=""></span>
+													</div>
+													<div class="infoArea">
+														<p class="prodCategory">
+															<span>신한카드</span>
+														</p>
+														<strong class="prodTit ellipsis">Deep Oil 신용카드</strong>
+														<div class="prodValue">
+															<p class="infoTxt">디지털 스트리밍 서비스 이용요금 1만원, 온라인 간편결제 서비스 5% 청구 할인</p>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="swiper-slide">
+												<div class="listInner">
+													<div class="thumbArea">
+														<span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_card03.png" alt=""></span>
+													</div>
+													<div class="infoArea">
+														<p class="prodCategory">
+															<span>신한카드</span>
+														</p>
+														<strong class="prodTit ellipsis">Deep Oil 신용카드</strong>
+														<div class="prodValue">
+															<p class="infoTxt">디지털 스트리밍 서비스 이용요금 1만원, 온라인 간편결제 서비스 5% 청구 할인</p>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+										<div class="swiper-pagination"></div>
+									</div>
+								</div>
+							</div>
+							<div class="bannerWrap">
+								<a href="#" class="bannerCont">
+									<strong>신한 My Car 대출</strong>
+									<span>
+										한도는 높이고<br />
+										부담은 낮추고
+									</span>
+								</a>
+							</div>
+						</div>
+						<!-- //upkeepArea -->
+						<!-- goalArea -->
+						<div class="goalArea">
+							<h2 class="blind">기타 정보</h2>
+							<!-- Module -->
+							<div class="mycarModule">
+								<!-- 나의 새 차 구입 목표 : 목표설정을 한 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<p class="itemTitle">
+												<i class="iconTyRegSpending06"></i>
+												<em>나의 새 차 구입 목표</em>
+											</p>
+										</div>
+									</div>
+									<div class="AccorContNew" style="display:block !important;">
+										<div class="mdBuyingNewCar">
+											<div class="planBar">
+												<span class="planBarLevel" style="width:23%;">
+													<em class="score">
+														<span>23%</span>
+													</em>
+												</span>
+											</div>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>목표금액</dt>
+													<dd><em>50,000,000</em>원</dd>
+												</div>
+												<div class="row">
+													<dt>평가금액</dt>
+													<dd><em>12,900,000</em>원</dd>
+												</div>
+												<div class="row">
+													<dt>목표기간</dt>
+													<dd><em>2022.10.10</em> 까지</dd>
+												</div>
+											</dl>
+											<dl class="infoTbl">
+												<div class="row">
+													<dt>월 저축금액</dt>
+													<dd><em>200,000</em>원</dd>
+												</div>
+											</dl>
+											<div class="link">
+												<a href="#" class="btnTypeTextLink fcMint">더 빠른 구입을 위해 계획 조정이 필요해요</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //Module -->
+
+							<!-- Module -->
+							<div class="mycarModule">
+								<!-- 나의 새 차 구입 목표 : 목표설정을 안한 경우 -->
+								<div class="contAccordionNew">
+									<div class="AccorTitleNew">
+										<div class="accorTitleInner">
+											<p class="itemTitle">
+												<i class="iconTyRegSpending06"></i>
+												<em>자동차 구입 계획</em>
+											</p>
+										</div>
+									</div>
+									<div class="AccorContNew" style="display:block !important;">
+										<div class="mdBuyingNewCar">
+											<p class="text">드림카를 위한 현명한 계획을 세워보세요</p>
+											<div class="link">
+												<a href="#" class="btnTypeTextLink fcMint">자동차 구입 목표 설계하기</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //Module -->
+						</div>
+						<!-- //goalArea -->
+					</div>
+				</div>
+				<!-- //mycarReportWrap -->
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 내 차 시세 모듈 : 주행거리 구분 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom01_1">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit normal">주행거리 구분</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon hasButton">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">10,000km</button></li>
+					<li><button type="button">20,000km</button></li>
+					<li><button type="button">30,000km</button></li>
+					<li><button type="button">40,000km</button></li>
+					<li><button type="button">50,000km</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //내 차 시세 모듈 : 주행거리 구분 -->
+
+<!-- 내 차 관리 선택 팝업 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit"> 내 차 관리 <em>2</em></p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon hasButton">
+			<div class="mycarManagement">
+				<div class="toggleAreaTyColumn typeList1">
+					<ul>
+						<li>
+							<input type="radio" name="rdo1" id="rdo101" checked="checked">
+							<label for="rdo101">
+								<span>
+									<span class="thumbnail">
+										<img src="../../../../../../images/in08/myassets/icon_mycar_management01.png" alt="제네시스 (GV80) 132고4567">
+									</span>
+									<em class="name txtBlack6">
+										<span>제네시스 (GV80)</span>
+										<span class="sub fontSSS">132고4567</span>
+									</em>
+								</span>
+							</label>
+							<button type="button" class="btnmycarClose btnPopOpen" data-href="#layerPop02">삭제</button>
+						</li>
+						<li>
+							<input type="radio" name="rdo1" id="rdo102">
+							<label for="rdo102">
+								<span>
+									<span class="thumbnail">
+										<img src="../../../../../../images/in08/myassets/icon_mycar_management01.png" alt="뉴 쏘나타 (LF) 123가1234">
+									</span>
+									<em class="name txtBlack6">
+										<span>뉴 쏘나타 (LF)</span>
+										<span class="sub fontSSS">123가1234</span>
+									</em>
+								</span>
+							</label>
+							<button type="button" class="btnmycarClose btnPopOpen" data-href="#layerPop02">삭제</button>
+						</li>
+						<li>
+							<input type="radio" name="rdo1" id="rdo103">
+							<label for="rdo103">
+								<span>
+									<span class="thumbnail">
+										<img src="../../../../../../images/in08/myassets/icon_mycar_management01.png" alt="테슬라 모델3 125아1257">
+									</span>
+									<em class="name txtBlack6">
+										<span>테슬라 모델3</span>
+										<span class="sub fontSSS">125아1257</span>
+									</em>
+								</span>
+							</label>
+							<button type="button" class="btnmycarClose btnPopOpen" data-href="#layerPop02">삭제</button>
+						</li>
+					</ul>
+					<div class="mycarAdd">
+						<button type="button">내 차 추가하기</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox floating fixed">
+			<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //내 차 관리 선택 팝업 -->
+
+<!-- 연료 선택 팝업 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom03">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">연료 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">고급 휘발유</button></li>
+					<li><button type="button">휘발유</button></li>
+					<li><button type="button">경유</button></li>
+					<li><button type="button">LPG</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //내 차 관리 선택 팝업 -->
+
+<!-- 위치정보 수집동의 팝업 -->
+<div class="layerPopWrap hasDim myAssets" id="layerPop01">
+	<div class="popInner">
+		<div class="layerHeader blind">
+			<p class="layerTit">위치정보 수집동의</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div>신한 SOL에서 현재 위치정보를<br />사용하는데 동의 하시겠습니까?</div>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:void(0);" class="btnType btnBlack"><span>아니요</span></a>
+			<a href="javascript:void(0);" class="btnType"><span>예</span></a>
+		</div>
+	</div>
+</div>
+<!-- //위치정보 수집동의 팝업 -->
+
+<!-- 등록 차량 삭제 팝업 -->
+<div class="layerPopWrap hasDim myAssets" id="layerPop02">
+	<div class="popInner">
+		<div class="layerHeader blind">
+			<p class="layerTit">등록 차량 삭제</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<div>차량(123가1231) 삭제 시 기존에<br />저장된 데이터는 모두 삭제 됩니다.</div>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:void(0);" class="btnType btnBlack"><span>취소</span></a>
+			<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //등록 차량 삭제 팝업 -->
+<script>
+	function initSwiper() {
+		var swiperName = '.swiper-container';
+		var slidesLength = $('.swiper-container').find('.swiper-slide').length;
+		
+		var swiper = new Swiper(swiperName, {
+			spaceBetween: 16, // 슬라이드 간격
+			scrollbarDraggable: false, // 스크롤바 drag
+			scrollbarHide: false, // 스크롤바 hide
+			resistanceRatio: 0, // 첫번째, 마지막 슬라이드 바운스 효과 제거
+			pagination: '.swiper-pagination',
+			
+			//슬라이드 1개 case
+			onInit: function(swiper) {
+				if (swiper.slides.length == 1) {
+					swiper.slides.parents('.recommendSlder').addClass('onlyOne');
+					swiper.slides.children('.listInner').addClass('onlyOne');
+				}
+			},
+		});
+	};
+	$(window).bind('load', function(){
+		initSwiper();
+	});
+	/* 임시 팝업닫기 퍼블리싱 확인용 */
+	$('.btnPopClose, .btnType').on('click',function(){
+		$('.layerPopWrap').hide();
+	});
+	/* //임시 팝업닫기 퍼블리싱 확인용 */
+</script>
+</body>
+</html>

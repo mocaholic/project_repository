@@ -1,0 +1,291 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	살기좋은동네 > 매물찾기 지도 > 검색
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		이승찬		2021-03-02		최초작성
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr09.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">검색</h1>
+				<div class="rSec">
+					<a href="javascript:void(0);" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents pd0">
+				<!-- neighborhoodWrap -->
+				<div class="neighborhoodWrap">
+					<div class="searchContainer">
+						<div class="inpArea">
+							<div class="formAreaBox">
+								<div class="inputBox search">
+									<dl>
+										<dd>
+											<input type="search" id="inp01" placeholder="동 이름, 단지 명 직접검색" />
+											<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											<button type="button" class="icon"><span class="iconTyMapSearch">검색</span></button>
+										</dd>
+									</dl>
+									<div class="error">error 문구 출력</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 
+							# 크게 case1 과 case2 의 화면이 토글됨.
+
+							1. 초기 진입시
+							- case2-2 화면만 노출됨
+							
+							2. 검색어로 검색시.
+							- 리스트 있으면 : case1 노출
+							- 리스트 없으면 : case2-1, 2-2 노출
+
+							3. 투기과열지구 문구
+							- 읍/면/동 화면에서만 노출
+						-->
+
+						<!-- case1. 검색어로 검색 -->
+						<div class="resultTypeArea">
+							<p class="searchTotal">총 <span class="em">121</span>건</p>
+							<ul class="searchList">
+								<li>
+									<div class="listInner">
+										<p class="location">
+											<span>서울시 중구 <mark>소공동</mark></span> <!-- 검색어는 mark 태그로 감쌈 -->
+										</p>
+										<div class="name">
+											<strong class="ellipsis02"><span>삼성힐스테이트 1단지</span></strong>
+										</div>
+										<div class="sales">
+											<div class="salesItem">매매 <span class="em">1</span></div>
+											<div class="salesItem">전세 <span class="em">2</span></div>
+											<div class="salesItem">월세 <span class="em">9</span></div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="listInner">
+										<p class="location">
+											<span>서울시 중구 <mark>소공동</mark></span> <!-- 검색어는 mark 태그로 감쌈 -->
+										</p>
+										<div class="name">
+											<strong class="ellipsis02"><span><mark>소공동</mark> 힐스테이트 1단지</span></strong> <!-- 검색어는 mark 태그로 감쌈 -->
+										</div>
+										<div class="sales">
+											<div class="salesItem">매매 <span class="em">1</span></div>
+											<div class="salesItem">전세 <span class="em">2</span></div>
+											<div class="salesItem">월세 <span class="em">9</span></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<div class="searchMore">
+								<button type="button" class="btnSearchMore"><i class="iconTySelArrow03"></i><span>더보기</span></button>
+							</div>
+						</div>
+						<!-- //case1. 검색어로 검색 -->
+
+						<!-- case2-1. 데이터 없을시 -->
+						<div class="nodataTypeArea">
+							<p class="txt">
+								<i class="iconTyMapNodata"></i>
+								<span class="block">검색 결과가 없습니다.</span>
+							</p>
+						</div>
+						<!-- //case2-1. 데이터 없을시 -->
+
+						<!-- case2-2. 지역으로 검색 -->
+						<div class="selectTypeArea">
+							<div class="selectNavBox">
+								<button type="button" class="btnSelNav active" title="시/도 선택"><span>시/도</span> <i class="iconTySelArrow03"></i></button> <!-- 활성시 button.active 클래스 -->
+								<button type="button" class="btnSelNav" title="시/군/구 선택"><span>시/군/구</span> <i class="iconTySelArrow03"></i></button>
+								<button type="button" class="btnSelNav" title="읍/면/동 선택"><span>읍/면/동</span> <i class="iconTySelArrow03"></i></button>
+							</div>
+
+							<div class="selectContBox">
+								<div class="toggleTyBtn col3">
+									<ul>
+										<li><button type="button" class="btnSelCont"><span>서울</span></button></li> <!-- 활성시 li.active 클래스 -->
+										<li><button type="button" class="btnSelCont"><span>부산</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>대구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>인천</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>광주</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>대전</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>울산</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>세종</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>경기</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>강원</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>충북</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>충남</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>전북</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>전남</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>경북</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>경남</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>제주</span></button></li>
+									</ul>
+								</div>
+							</div>
+							<div class="selectContBox" style="display:none;">
+								<div class="toggleTyBtn col3">
+									<ul>
+										<li><button type="button" class="btnSelCont"><span>강남구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>강동구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>강북구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>강서구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>관악구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>광진구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>구로구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>금천구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>노원구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>도봉구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>동대문구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>동작구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>마포구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>서대문구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>서초구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>성동구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>성북구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>송파구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>양천구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>영등포구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>용산구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>은평구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>종로구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>중구</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>중랑구</span></button></li>
+									</ul>
+								</div>
+								<div class="btnBox">
+									<a href="javascript:void(0)" class="btnType btnBlack small"><span>서울시 지도보기</span></a>
+								</div>
+							</div>
+							<div class="selectContBox" style="display:none;">
+								<div class="toggleTyBtn col3">
+									<ul>
+										<li><button type="button" class="btnSelCont"><span>개포동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>논현동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>대치동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>도곡동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>삼성동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>세곡동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>수서동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>신사동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>압구정동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>역삼동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>율현동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>일원동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>자곡동</span></button></li>
+										<li><button type="button" class="btnSelCont"><span>청담동</span></button></li>
+									</ul>
+								</div>
+								<div class="btnBox">
+									<p class="alarmTxt">강남구 투기과열지구 [2020.11.12]</p>
+									<a href="javascript:void(0)" class="btnType btnBlack small"><span>강남구 지도보기</span></a>
+								</div>
+							</div>
+
+							<div class="anotherBox">
+								<strong class="anotherTit">주소지로 검색</strong>
+								<div class="address">
+									<ul class="addressInner">
+										<li>
+											<a href="javascript:void(0);">
+												<dl class="item">
+													<dt><i class="iconTyMapAddressHome"></i><span>집</span></dt>
+													<dd>경기도 성남시 분당구 벌말로50번길 12</dd>
+												</dl>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);">
+												<dl class="item">
+													<dt><i class="iconTyMapAddressOffice"></i><span>회사</span></dt>
+													<dd>서울시 강남구 논현로 748</dd>
+												</dl>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- //case2-2. 지역으로 검색 -->
+					</div>
+				</div>
+				<!-- //neighborhoodWrap -->
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 퍼블확인용 -->
+<script>
+	$(function() {
+		// 탭메뉴 클릭시 기능
+		$('.btnSelNav').off().on('click.PUB', function() {
+			$(this).addClass('active').siblings().removeClass('active');
+			// $('.contents').scrollTop(0);
+
+			$('.selectContBox').eq($(this).index()).show().siblings('.selectContBox').hide();
+
+			if ($(this).index() === 0) {
+				$('.anotherBox').show();
+				$('.btnGroupBox.floating').eq(0).hide();
+				$('.btnGroupBox.floating').eq(1).hide();
+				$('.searchFloatTxt').hide();
+
+			} else if ($(this).index() === 1) {
+				$('.anotherBox').hide();
+				$('.btnGroupBox.floating').eq(0).show();
+				$('.btnGroupBox.floating').eq(1).hide();
+				$('.searchFloatTxt').hide();
+
+			} else if ($(this).index() === 2) {
+				$('.anotherBox').hide();
+				$('.btnGroupBox.floating').eq(0).hide();
+				$('.btnGroupBox.floating').eq(1).show();
+				$('.searchFloatTxt').show();
+			}
+		});
+
+		// 라운드박스 버튼 활성화 기능
+		$('.toggleTyBtn .btnSelCont').on('click', function() {
+			$(this).parents('li').addClass('active').siblings().removeClass('active');
+		});
+	});
+</script>
+<!-- //퍼블확인용 -->
+</body>
+</html>

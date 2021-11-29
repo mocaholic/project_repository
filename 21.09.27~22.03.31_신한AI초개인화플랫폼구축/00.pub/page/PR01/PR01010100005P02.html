@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- 팝업:비율금액 -->
+<div class="layerPopWrap hasDim" id="layerPop01" style="display:block;">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit ac">채울금액</p>
+		</div>
+		<div class="layerCon">
+			<div class="sliderBox">
+				<div class="priceBall"></div>
+				<div class="fillBox">
+					<p class="tit">채울 금액</p>
+					<!-- <p class="price"><span>300,000</span> 원</p> -->
+					<p class="price"><input type="tel" value="999,999,999"/> 원</p>
+				</div>
+				<div class="sliderArea">
+					<div id="slider1">
+						<span class="shadow"></span>
+						<div id="custom-handle1" class="ui-slider-handle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+			<a href="javascript:;" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //팝업:비율금액 -->
+<script>
+var handle1 = $("#custom-handle1");
+$("#slider1").slider({
+	create: function(){
+		$('.priceBall').text('출금가능금액 ' + $(this).slider("value")+' 원');
+		$('.shadow').css('bottom',$('.ui-slider-handle').css('bottom'));
+	},
+	slide: function( event, ui ) {
+		$('.priceBall').text('출금가능금액 ' + ui.value+' 원');
+		$('.shadow').css('bottom',$('.ui-slider-handle').css('bottom'));
+	},
+	orientation:"vertical",
+	min: 0, /* 최소 */
+	max: 600000, /* 최대 */
+	step : 5 /* 스텝 */
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/solRobo.css"><!-- 2020-08-05 수정 -->
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script>
+	$(function() {
+
+		//graph 애니메이션
+		if ( $(".graphWrap").length > 0 ) {
+			var orgW = $(".graphWrap .bar_area .bar").width();
+			$(".graphWrap .bar_area .bar").width(0);
+			$(".graphWrap .bar_area .bar").animate({
+				width: orgW
+			}, 700, 'swing', function() {
+			});
+		}
+	});
+	</script>
+</head>
+<body class="bg MFO"><!-- 2020-08-05 수정 -->
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">목돈마련</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full pb0 bgWhite2"><!-- 20191015 추가 -->
+
+				<!-- 탭 -->
+				<div class="tabTy_03 floatTab">
+					<a href="#tabView1" class="on"><span>목표 진행 중</span></a>
+					<a href="#tabView2"><span>목표 종료</span></a>
+				</div>
+				<!-- // 탭 -->
+
+				<div class="tabViewWrap mt0 mb0">
+					<!-- 목표 진행 중 -->
+					<div class="tabView on" id="tabView1"> <!--탭내용 on-->
+						
+						<!-- 20191119 자동환매 진입점 -->
+						<div class="innerBox bgWhite2">
+							<div class="cardViewWrap">
+								<div class="popoverWrap por btnLayer">
+									<button type="button" class="btnToggle"><span class="popOpen iconTy06">부가메뉴</span></button>
+									<div class="toolBox type2" style="display: none;"> <!-- 20191119 class 'type2' 추가 -->
+										<ul>
+											<li><a href="javascript:;">목표이름 관리</a></li>
+											<li><a href="javascript:;">포트폴리오 자동이체</a></li> <!-- 20191119 버튼 목록 추가  -->
+										</ul>
+										<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+									</div>
+								</div>
+
+								<div class="targetTabWrap">
+									<div class="accountSearchTop01 type2">
+										<div class="logoWrap04">
+											<div class="titleWrap">
+												<a href="javascript:;">
+													<span class="imgIcon"><img src="../../../../../../../images/in08/ico_bucket.png" alt="여행"></span>
+													<h2 class="title ellipsis">버킷리스트 실현버킷리스트 실현버킷리스트 실현버킷리스트 실현</h2>
+													<p class="subText">2018.07.25~2021.07.24</p>
+													<div class="dayDetail">D-365</div>
+												</a>
+											</div>
+
+											<div class="go_link">
+												<div class="graphWrap">
+													<span class="bar_area">
+														<span class="bar" style="width: 90%"></span>
+													</span>
+												</div>
+	
+												<div class="doneText"><p>목표금액 달성을 축하드립니다.</p></div>
+	
+												<div class="listTypeTable pb20">
+													<ul>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">현재 달성률</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlue1 fontSL"> - %</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">목표금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">2,000,000원</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">신규금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">165,000원</p>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<!-- 하단 버튼 -->
+										<!-- 20191119 자동환매 신청버튼 타입추가 -->
+										<div class="btnBottomType resale">
+											<a href="javascript:;">목표만기일 자동환매가 신청되지 않았습니다.<span>목표만기일 자동환매 신청하기</span></a>
+										</div>
+										<!-- //20191119 자동환매 신청버튼 타입추가 -->
+										<!-- //하단 버튼 -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //20191119 자동환매 진입점 -->
+						
+						<div class="innerBox bgWhite2">
+							<!-- 20191015 추가 수정 -->
+							<div class="cardViewWrap">
+								<div class="popoverWrap por btnLayer">
+									<button type="button" class="btnToggle"><span class="popOpen iconTy06">부가메뉴</span></button>
+									<div class="toolBox" style="display: none;">
+										<ul>
+											<li><a href="javascript:;">목표이름관리</a></li>
+										</ul>
+										<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+									</div>
+								</div>
+
+								<div class="targetTabWrap">
+									<div class="accountSearchTop01 pb0">
+
+										<div class="logoWrap04">
+											<div class="titleWrap">
+												<a href="javascript:;">
+													<span class="imgIcon"><img src="../../../../../../../images/in08/ico_bucket2.png" alt="자동차"></span>
+													<h2 class="title ellipsis">버킷리스트 실현버킷리스트 실현버킷리스트 실현버킷리스트 실현</h2>
+													<p class="subText">2018.07.25~2021.07.24</p>
+													<div class="dayDetail">D-365</div>
+												</a>
+											</div>
+
+
+											<!-- 20191025 링크 영역  -->
+											<div class="go_link">
+												<div class="graphWrap">
+													<span class="bar_area">
+														<span class="bar" style="width: 90%"></span>
+													</span>
+												</div>
+	
+												<div class="listTypeTable pb20">
+													<ul>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">현재 달성률</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlue1 fontSL"> - %</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">목표금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">2,000,000원</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">신규금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">165,000원</p>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- //20191025 링크 영역  -->
+										</div>
+										<!-- 2020-08-05 수정 -->
+										<div class="btnBottomType2">
+											<div>
+												<p class="inlineBlock txtBlue2">리밸런싱이란</p>
+												<a href="javascript:void(0)" class="tipOpen iconTyQB" title="
+													<p class='txtBlue2 bold'>리밸런싱이란?<p>
+													<p class='txtBlack3 mt15'>포트폴리오에 있는 가입금액의 조정을 의미합니다. 시장변화에 따라 투자전략을 수정하고 <em class='txtBlue2'>투자성향에 따른 맞춤화된 리밸런싱(상품 재조정)을 제안해 드립니다.</em></p>">?
+												</a>
+											</div>
+											<p class="txtBlack3 mt5">포트폴리오 리밸런싱이 필요합니다.<br /> 아래 버튼을 클릭하여 리밸런싱을 실행해 주세요.</p>
+											<div class="btnGroupBox innerGap3 mt20">
+												<a href="javascript:;" class="btnTypeR btnBlue04"><span class="bold fontL">리배런싱</span></a>
+											</div>
+										</div>
+										<!-- //2020-08-05 수정 -->
+									</div>
+								</div>
+							</div>
+							<!-- //20191015 추가 수정 -->
+						</div>
+
+						<div class="innerBox bgWhite2">
+							<!-- 20191015 추가 수정 -->
+							<div class="cardViewWrap">
+								<div class="popoverWrap por btnLayer">
+									<button type="button" class="btnToggle"><span class="popOpeaccountSearchTop01 mb20 pb0n iconTy06">부가메뉴</span></button>
+									<div class="toolBox" style="display: none;">
+										<ul>
+											<li><a href="javascript:;">목표이름관리</a></li>
+										</ul>
+										<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+									</div>
+								</div>
+								<div class="targetTabWrap">
+									<div class="accountSearchTop01 pb0">
+										<div class="logoWrap04">
+											<div class="titleWrap">
+												<a href="javascript:;">
+													<span class="imgIcon"><img src="../../../../../../../images/in08/ico_bucket3.png" alt="비상금"></span>
+													<p class="title ellipsis">버킷리스트 실현버킷리스트 실현버킷리스트 실현버킷리스트 실현</p>
+													<p class="subText">2018.07.25~2021.07.24</p>
+													<div class="dayDetail done">완료</div>
+												</a>
+											</div>
+											<!-- 20191025 링크 영역  -->
+											<div class="go_link">
+												<div class="graphWrap">
+													<span class="bar_area">
+														<span class="bar" style="width: 90%"></span>
+													</span>
+												</div>
+												<div class="doneText"><p>목표 만기가 종료되었습니다.</p></div><!-- 기획서 : 3-1 -->
+												<div class="doneText2"><!-- 기획서 : 3-2 -->
+													<p>축하드립니다.</p>
+													<em class="bold">목표금액 <span class="txtBlue1">100% 달성</span></em>
+												</div>
+												<div class="listTypeTable pb20">
+													<ul>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">현재 달성률</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlue1 fontSL"> - %</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">목표금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">2,000,000원</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">신규금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">165,000원</p>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<ul class="listTyArrowLink brdT">
+												<li class="brdNone fullWidth pt10 bgNone">
+													<a href="javascript:;" class="arrow">
+														<p class="listTit txtBlue1 medium">리밸런싱 거래 진행 중</p><!-- 2020-08-05 수정-->
+														<p class="listTxt fontSSS">최종 거래 완료 예정일: 2019.08.01</p>
+													</a>
+												</li>
+											</ul>
+										</div>
+										<!-- 하단 버튼 -->
+										<div class="btnBottomType fullWidth">
+											<a href="javascript:;" >일괄해지</a>
+											<a href="javascript:;" >리밸런싱</a>
+										</div>
+										<!-- //하단 버튼 -->
+									</div>
+								</div>
+							</div>
+							<!-- //20191015 추가 수정 -->
+						</div>
+
+						<div class="innerBox bgWhite2">
+							<!-- 20191015 추가 수정 -->
+							<div class="cardViewWrap">
+								<div class="popoverWrap por btnLayer">
+									<button type="button" class="btnToggle"><span class="popOpen iconTy06">부가메뉴</span></button>
+									<div class="toolBox" style="display: none;">
+										<ul>
+											<li><a href="javascript:;">목표이름관리</a></li>
+										</ul>
+										<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+									</div>
+								</div>
+								<div class="targetTabWrap">
+									<div class="accountSearchTop01 pb0">
+										<div class="logoWrap04">
+											<div class="titleWrap">
+												<a href="javascript:;">
+													<span class="imgIcon"><img src="../../../../../../../images/in08/ico_bucket2.png" alt="자동차"></span>
+													<h2 class="title ellipsis">버킷리스트 실현버킷리스트 실현버킷리스트 실현버킷리스트 실현</h2>
+													<p class="subText">2018.07.25~2021.07.24</p>
+													<div class="dayDetail">D-365</div>
+												</a>
+											</div>
+											<!-- 20191025 링크 영역  -->
+											<div class="go_link">
+												<div class="graphWrap">
+													<span class="bar_area">
+														<span class="bar" style="width: 90%"></span>
+													</span>
+												</div>
+												<div class="listTypeTable pb20">
+													<ul>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">현재 달성률</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlue1 fontSL"> - %</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">목표금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">2,000,000원</p>
+															</div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit fontN">신규금액</p></div>
+															<div class="rightCol">
+																<p class="txt txtBlack1 fontSL">165,000원</p>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<!-- //20191025 링크 영역  -->
+										</div>
+										<!-- 2020-08-05 수정-->
+										<div class="srCard type2 roundN brdT2 mt0">
+											<div class="srDate">
+												<p class="txtBlue2 bold fontN">리밸런싱 거래 진행중</p>
+												<p class="mt7">최종 거래 완료 예정일 : 2019.04.15</p>
+											</div>
+											<!-- 단계 -->
+											<div class="progress">
+												<ul>
+													<li class="on">
+														<p>신청</p>
+														<p class="date block">9/10</p>
+													</li>
+													<li class="on now">
+														<p>거래진행</p>
+														<p class="date block">9/12</p>
+														<p class="msg block">
+															<span>
+																<em><strong>3</strong>건</em>
+															</span>
+														</p>
+													</li>
+													<li class="on now">
+														<p>완료</p>
+														<p class="date block">4/15(예정)</p>
+														<p class="msg end block">
+															<span>
+																<em><strong>1</strong>건</em>
+															</span>
+														</p>
+													</li>
+												</ul>
+											</div>
+											<!-- //단계 -->
+										</div>
+										<!-- //2020-08-05 수정  -->
+									</div>
+								</div>
+							</div>
+							<!-- //20191015 추가 수정 -->
+						</div>
+					</div>
+					<!-- //목표 진행 중 -->
+					
+					<!-- 목표 종료  20191025 추가 -->
+					<div class="tabView" id="tabView2"> <!--탭내용 on-->
+						<div class="titleBox pt50 pb50">
+							<p class="txt noData">종료된 목표가 없습니다.</p>
+						</div>
+					</div>
+					<!-- //목표 종료  20191025 추가 -->
+					
+					<!-- 공통 -->
+					<div class="comBtnWrap">
+						<p class="mb30 ac">목표는 <span class="txtBlue2">3개</span>까지 추가할 수 있습니다.</p>
+						<div class="ac">
+							<a href="javascript:void(0);" class="btnPlus"><span>목표 추가</span></a>
+						</div>
+						<!-- 20191120 서비스안내 보기 버튼 추가 -->
+						<div class="pt50 pb30 ac"><a href="javascript:;" class="txtBtnIcon black">서비스 알아보기</a></div>
+						<!-- //20191120 서비스안내 보기 버튼 추가 -->
+					</div>
+					<!-- //공통 -->
+				</div>	
+			
+				<!-- 2020-02-25 : 수정 진행중 목표없을 때 -->
+				<div class="purposeInfo">
+					<!-- 20191023 수정 -->
+					<p class="tit">목돈마련의 시작,<br><span>고민말고 목표 설정 먼저!</span></p>
+					<p class="txt">
+						안정적인 적금 상품부터 변동성 적은 포트폴리오까지!<br>목표기간에 최적화된 금융상품을 추천합니다.
+					</p>
+					<!-- //20191023 수정 -->
+					<a href="javascript:;" class="txtBtnIcon">서비스 알아보기</a>
+				</div>
+				<div class="purposeInfoSlideWrap">
+					<div class="purposeInfoSlide">
+						<div class="ov-h pb20">
+							<p class="fl tit">이루고 싶은 목표를 선택해 주세요. </p>
+							<div class="fr swiper-pagination"></div>
+						</div>
+						<div class="swiper-wrapper">
+							<div class="swiper-slide type1">
+								<a class="linkBox" href="javascript:;"></a>
+								<div class="flag">
+									<img src="../../../../../../../images/in08/img_purposeInfo0102.png" class="img1"/>
+								</div>
+								<div class="text">
+									<p><span>휴식이 필요해</span>일상에 지친 나를 위한 인생여행<br>부담없이 떠나고 싶다면  </p>
+									<a href="javascript:;" class="link">2년 300만원 모으기</a>
+								</div>
+							</div>
+							<div class="swiper-slide type2">
+								<a class="linkBox" href="javascript:;"></a>
+								<div class="flag">
+									<img src="../../../../../../../images/in08/img_purposeInfo0202.png" class="img1"/>
+								</div>
+								<div class="text">
+									<p><span>내차가 필요해</span>오랜 기간 꿈꿔왔던<br/>나만의 드림카를 마련하고 싶다면</p>
+									<a href="javascript:;" class="link">3년 2,000만원 모으기</a>
+								</div>
+							</div>
+							<div class="swiper-slide type3">
+								<a class="linkBox" href="javascript:;"></a>
+								<div class="flag">
+									<img src="../../../../../../../images/in08/img_purposeInfo0302.png" class="img1"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0303.png" class="img2"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0304.png" class="img3"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0305.png" class="img4"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0305.png" class="img5"/>
+								</div>
+								<div class="text">
+									<p><span>비상금이 필요해</span>풍요로운 삶을 위해<br>비상금을 준비해두고 싶다면 </p>
+									<a href="javascript:;" class="link">3년 1,000만원 모으기</a>
+								</div>
+							</div>
+							<div class="swiper-slide type4">
+								<a class="linkBox" href="javascript:;"></a>
+								<div class="flag">
+									<img src="../../../../../../../images/in08/img_purposeInfo0402.png" class="img1"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0403.png" class="img2"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0404.png" class="img3"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0404.png" class="img4"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0404.png" class="img5"/>
+								</div>
+								<div class="text">
+									<p><span>변화가 필요해</span>다양한 액티비티, 모임, 배움 등으로<br>일상을 바꾸고 싶다면</p>
+									<a href="javascript:;" class="link">1년 200만원 모으기</a>
+								</div>
+							</div>
+							<div class="swiper-slide type5">
+								<a class="linkBox" href="javascript:;"></a>
+								<div class="flag">
+									<img src="../../../../../../../images/in08/img_purposeInfo0502.png" class="img1"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0503.png" class="img2"/>
+									<img src="../../../../../../../images/in08/img_purposeInfo0504.png" class="img3"/>
+								</div>
+								<div class="text">
+									<p><span>내 목표는 내가 정한다!</span>결혼자금, 어학연수, 인테리어 등<br/>나만의 목표를 위한 목돈 마련하기</p>
+									<a href="javascript:;" class="link">목표 설정하러 가기</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //2020-02-25 : 수정 진행중 목표없을 때 -->
+			</div>
+			
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+<!-- 20191105 리밸런싱  추가 팝업 1-1 -->
+<div class="layerPopWrap hasDim" id="layerPop03_01" tabindex="0">
+	<div class="popInner" tabindex="0">
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<p class="txt">
+						입금,해지,출금 등 거래예약 중인 상품 N건이 포함되어 포트폴리오 리밸런싱을 진행 할 수 없습니다. <br><br>
+						예약 거래가 완료된 후 리밸런싱이 가능 합니다.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:;" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //20191105 리밸런싱  추가 팝업 1-1 -->
+
+<!-- 20191105 리밸런싱  추가 팝업 1-2 -->
+<div class="layerPopWrap hasDim" id="layerPop03_01" tabindex="0">
+	<div class="popInner" tabindex="0">
+		<div class="layerCon">
+			<div class="conInner">
+				<div class="txtWrap">
+					<p class="txt">
+						신한은행을 이용해주시는 고객님 감사합니다. <br>
+						리밸런싱(상품 재조정) 가능시간은 09:00 ~ 15:00 입니다.<br>
+						서비스 이용에 참고 부탁 드립니다.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:;" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //20191105 리밸런싱  추가 팝업 1-2 -->
+
+
+<!-- layerPopWrap : 목표 추가 -->
+<div class="purposeInfoPop">
+	<div class="purposeInfoSlideWrap">
+		<div class="purposeInfoSlide">
+			<div class="ov-h pb10">
+				<p class="fl tit">나만의 버킷리스트를 만들기 위해 이루고 싶은 목표를 선택해주세요. </p>
+				<div class="fr"><button type="button" class="btnPopClose">팝업 닫기</button></div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<!-- 2020-02-25 수정 -->
+			<div class="swiper-wrapper mt20">
+				<div class="swiper-slide type1">
+					<a class="linkBox" href="javascript:;"></a>
+					<div class="flag">
+						<img src="../../../../../../../images/in08/img_purposeInfo0102.png" class="img1"/>
+					</div>
+					<div class="text">
+						<p><span>휴식이 필요해</span>일상에 지친 나를 위한 인생여행<br>부담없이 떠나고 싶다면  </p>
+						<a href="javascript:;" class="link">2년 300만원 모으기</a>
+					</div>
+				</div>
+				<div class="swiper-slide type2">
+					<a class="linkBox" href="javascript:;"></a>
+					<div class="flag">
+						<img src="../../../../../../../images/in08/img_purposeInfo0202.png" class="img1"/>
+					</div>
+					<div class="text">
+						<p><span>내차가 필요해</span>오랜 기간 꿈꿔왔던<br/>나만의 드림카를 마련하고 싶다면</p>
+						<a href="javascript:;" class="link">3년 2,000만원 모으기</a>
+					</div>
+				</div>
+				<div class="swiper-slide type3">
+					<a class="linkBox" href="javascript:;"></a>
+					<div class="flag">
+						<img src="../../../../../../../images/in08/img_purposeInfo0302.png" class="img1"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0303.png" class="img2"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0304.png" class="img3"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0305.png" class="img4"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0305.png" class="img5"/>
+					</div>
+					<div class="text">
+						<p><span>비상금이 필요해</span>풍요로운 삶을 위해<br>비상금을 준비해두고 싶다면 </p>
+						<a href="javascript:;" class="link">3년 1,000만원 모으기</a>
+					</div>
+				</div>
+				<div class="swiper-slide type4">
+					<a class="linkBox" href="javascript:;"></a>
+					<div class="flag">
+						<img src="../../../../../../../images/in08/img_purposeInfo0402.png" class="img1"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0403.png" class="img2"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0404.png" class="img3"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0404.png" class="img4"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0404.png" class="img5"/>
+					</div>
+					<div class="text">
+						<p><span>변화가 필요해</span>다양한 액티비티, 모임, 배움 등으로<br>일상을 바꾸고 싶다면</p>
+						<a href="javascript:;" class="link">1년 200만원 모으기</a>
+					</div>
+				</div>
+				<div class="swiper-slide type5">
+					<a class="linkBox" href="javascript:;"></a>
+					<div class="flag">
+						<img src="../../../../../../../images/in08/img_purposeInfo0502.png" class="img1"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0503.png" class="img2"/>
+						<img src="../../../../../../../images/in08/img_purposeInfo0504.png" class="img3"/>
+					</div>
+					<div class="text">
+						<p><span>내 목표는 내가 정한다!</span>결혼자금, 어학연수, 인테리어 등<br/>나만의 목표를 위한 목돈 마련하기</p>
+						<a href="javascript:;" class="link">목표 설정하러 가기</a>
+					</div>
+				</div>
+			</div>
+			<!-- //2020-02-25 수정 -->
+		</div>
+	</div>
+</div>
+<!-- //layerPopWrap : 목표 추가 -->
+
+<script type="text/javascript">
+var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수
+if(UserAgent.match(/i(Phone|Pod|Pad)/i) != null){
+	$('body').width(screen.width);
+}
+
+var swiper = new Swiper('.purposeInfoSlide', {
+	slidesPerView: 'auto',
+	spaceBetween: 22,
+	pagination: '.swiper-pagination',
+	centeredSlides: false,
+	loop: true
+});
+//목표선택 팝업 2020-02-25 수정
+$(document).ready(function(){
+	$('.btnPlus').click(function(){
+		$('.purposeInfoPop').addClass('on');
+		$(".purposeInfoPop .swiper-slide-active").each(function(){
+			var typeNum = $(this).attr("class").split("type")[1].split(" ")[0];
+			$(this).removeClass("swiper-slide-active");
+			setTimeout(function(){
+				$(".type"+typeNum).addClass("swiper-slide-active");
+			},300);
+		});
+	});
+	$('.btnPopClose').click(function(){
+		$('.purposeInfoPop').removeClass('on');
+	});
+	//진행중 목표 없을때
+	$('.no_purpose a').click(function(){
+		$('.no_purpose').addClass('hide');
+	});
+});
+
+
+
+</script>
+
+</body>
+</html>

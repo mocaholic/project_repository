@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/ra01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">적금계산기</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full pb0">
+				<div class="themeCardTopBox calc">
+					<h2 class="title">목표를 이루려면<br />얼만큼 노력해야 할까?</h2>
+					<ul class="cardSelect mt20">
+						<li class="on">
+							<button type="button" data-href="#layerPopBottom01" class="btnPopOpen">
+								<span>집 보증금을 올려주기 위한</span>
+								<span class="point">2천만원</span>
+							</button>
+						</li>
+						<li>
+							<span>목돈이 필요한 시점</span>
+							<button type="button" data-href="#layerPopBottom01" class="btnPopOpen">
+								<span class="point">1년 6개월 후</span>
+							</button>
+						</li>
+						<li>
+							<span>얼마나 자주 입금할지</span>
+							<button type="button" data-href="#layerPopBottom01" class="btnPopOpen">
+								<span class="point">매주</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<div class="reportBox">
+					<h2 class="subTit2">쏠쏠한 팁!</h2>
+					<div class="boxTyW radius">
+						<div class="txtReport">
+							목표를 이루기 위해 <br/><strong class="txtLabel">1년 6개월</strong> 동안 <strong class="txtLabel">매주</strong> 마다<br/>
+							<div class="txtBlue1 txtLine">
+							<div class="number">123,123</div>원</div>씩
+							<!-- <strong class="txtBlue1 txtLine">223,217원</strong>씩 -->
+							<br/>적립이 필요합니다!
+						</div>
+					</div>
+				</div>
+				<div class="innerBox lineN">
+					<p><a href="javascript:void(0)"><img src="../../../../../../../images/ra01/img_banner_sdream.png" class="wfull" alt="신한 S드림적금"/></a></p>
+					<p class="referTxt">본 화면은 1.3% 이자율을 가정, 세금을 고려하지 않은 간략 
+				    시뮬레이션 결과이므로 참조용 목적으로만 활용 가능합니다. 
+				    각 상품별 원리금은 본 시뮬레이션과 상이할 수 있습니다. 
+					</p>
+				</div>
+			</div>
+			<!-- // contents -->
+			
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0)" class="btnType"><span>추천상품 가입하기</span></a>
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 하단 레이어 팝업 -->
+<div class="layerPopBottomWrap hasDim" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<!-- 제목영역 필요 없으면 삭제 가능 -->
+			<p class="layerTit">선택항목</p>
+			
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listTypeTable lineType">
+				<ul>
+					<li class="row">
+						<a href="javascript:void(0)">2천만원</a>
+					</li>
+					<li class="row">
+						<a href="javascript:void(0)">3천만원</a>
+					</li>
+					<li class="row">
+						<a href="javascript:void(0)">4천만원</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //하단 레이어 팝업 -->
+<script type="text/javascript">
+
+
+$('.listTypeTable a').click(function(){
+	$('.btnPopClose').trigger('click');  //임시 레이어팝업 닫기
+	
+	//숫자 모션
+	var num = '223,217';
+	$('.number').each(function(){
+		var numLang = num.length;
+		var numH = $('.number').height();
+		$(this).text('').find('.countUp').remove();
+		$(this).append('<div class="countUp"></div>');
+		for(var i=0;i<numLang;i++){
+			var tnum = String(num).substr(i,1)
+			if(tnum == ","){
+				$('.countUp').append('<span class="cm">,</span>');
+			}else{
+				$('.countUp').append('<ul class="c'+tnum+'"><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>');
+				$('.c'+tnum).animate({'margin-top':-tnum*numH},500);
+			}
+		}
+		//초기화
+		setTimeout(function(){
+			$('.number').text(num).find('.countUp').remove();
+		},500);
+	});
+	
+});
+</script>
+</body>
+</html>

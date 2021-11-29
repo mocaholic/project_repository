@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr09.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">상세설정</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="innerBox brdB lineN">
+					<div class="cf">
+						<h2 class="subTit3 fl mb0">매물 유형</h2>
+						<span class="fr txtBlack3 fontSS">중복선택가능</span>
+					</div>
+					<div class="rdoAreaTy2 col4 estate">
+						<ul>
+							<li><input type="checkbox" id="chk101" checked="checked"><label for="chk101">전체</label></li>
+							<li><input type="checkbox" id="chk102"><label for="chk102">아파트</label></li>
+							<li><input type="checkbox" id="chk103"><label for="chk103">오피스텔</label></li>
+							<li><input type="checkbox" id="chk104"><label for="chk104">분양권</label></li>
+						</ul>
+					</div>
+				</div>
+				<div class="innerBox brdB lineN">
+					<div class="cf">
+						<h2 class="subTit3 fl mb0">거래 유형</h2>
+						<span class="fr txtBlack3 fontSS">중복선택가능</span>
+					</div>
+					<div class="rdoAreaTy2 col4">
+						<ul>
+							<li><input type="checkbox" id="chk201" checked="checked"><label for="chk201">전체</label></li>
+							<li><input type="checkbox" id="chk202"><label for="chk202">매매</label></li>
+							<li><input type="checkbox" id="chk203"><label for="chk203">전세</label></li>
+							<li><input type="checkbox" id="chk204"><label for="chk204">월세</label></li>
+						</ul>
+					</div>
+				</div>
+				<div class="innerBox lineN pb0">
+					<ul class="formEstate">
+						<li>
+							<div class="cf">
+								<span class="fl txtBlack1 bold">매매가</span>
+								<span class="fr">
+									<input type="checkbox" id="loanY"/><label for="loanY">융자금 있음</label>
+								</span>
+							</div>
+							<div class="btnsExtent col6">
+								<button type="button" value="1">~1억</button>
+								<button type="button" value="10,000">1억</button>
+								<button type="button" value="20,000">2억</button>
+								<button type="button" value="30,000">3억</button>
+								<button type="button" value="40,000">4억</button>
+								<button type="button" value="50,000">5억</button>
+								<button type="button" value="60,000">6억</button>
+								<button type="button" value="70,000">7억</button>
+								<button type="button" value="80,000">8억</button>
+								<button type="button" value="90,000">9억</button>
+								<button type="button" value="100,000">10억</button>
+								<button type="button" value="110,000">11억</button>
+								<button type="button" value="120,000">12억</button>
+								<button type="button" value="130,000">13억</button>
+								<button type="button" value="140,000">14억</button>
+								<button type="button" value="150,000">15억</button>
+								<button type="button" value="160,000">16억</button>
+								<button type="button" value="9,999,999">16억~</button> 
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소"/>
+								<span>-</span>
+								<input type="tel" placeholder="최대"/>
+								<span>만원</span>
+							</div>
+						</li>
+						<li>
+							<div class="txtBlack1 bold">전세가</div>
+							<div class="btnsExtent col6">
+								<button type="button" value="1">~7천</button>
+								<button type="button" value="7,000">7천</button>
+								<button type="button" value="8,000">8천</button>
+								<button type="button" value="9,000">9천</button>
+								<button type="button" value="10,000">1억</button>
+								<button type="button" value="20,000">2억</button>
+								<button type="button" value="30,000">3억</button>
+								<button type="button" value="40,000">4억</button>
+								<button type="button" value="50,000">5억</button>
+								<button type="button" value="60,000">6억</button>
+								<button type="button" value="70,000">7억</button>
+								<button type="button" value="80,000">8억</button>
+								<button type="button" value="90,000">9억</button>
+								<button type="button" value="10,000">10억</button>
+								<button type="button" value="11,000">11억</button>
+								<button type="button" value="12,000">12억</button>
+								<button type="button" value="13,000">13억</button>
+								<button type="button" value="9,999,999">13억~</button>
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소" /> <span>-</span> <input type="tel" placeholder="최대" /> <span>만원</span>
+							</div>
+						</li>
+						<li>
+							<div class="txtBlack1 bold">보증금</div>
+								<div class="btnsExtent col6">
+								<button type="button" value="1">~1천</button>
+								<button type="button" value="1,000">1천</button>
+								<button type="button" value="2,000">2천</button>
+								<button type="button" value="3,000">3천</button>
+								<button type="button" value="4,000">4천</button>
+								<button type="button" value="5,000">5천</button>
+								<button type="button" value="6,000">6천</button>
+								<button type="button" value="7,000">7천</button>
+								<button type="button" value="8,000">8천</button>
+								<button type="button" value="9,000">9천</button>
+								<button type="button" value="10,000">1억</button>
+								<button type="button" value="20,000">2억</button>
+								<button type="button" value="30,000">3억</button>
+								<button type="button" value="40,000">4억</button>
+								<button type="button" value="50,000">5억</button>
+								<button type="button" value="60,000">6억</button>
+								<button type="button" value="70,000">7억</button>
+								<button type="button" value="9,999,999">7억~</button>
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소"/>
+								<span>-</span>
+								<input type="tel" placeholder="최대"/>
+								<span>만원</span>
+							</div>
+						</li>
+						<li>
+							<div class="txtBlack1 bold">월세</div>
+								<div class="btnsExtent col6">
+								<button type="button" value="1">~20</button>
+								<button type="button" value="20">20</button>
+								<button type="button" value="30">30</button>
+								<button type="button" value="40">40</button>
+								<button type="button" value="50">50</button>
+								<button type="button" value="60">60</button>
+								<button type="button" value="70">70</button>
+								<button type="button" value="80">80</button>
+								<button type="button" value="90">90</button>
+								<button type="button" value="100">1백</button>
+								<button type="button" value="200">2백</button>
+								<button type="button" value="9,999,999">2백~</button>
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소"/>
+								<span>-</span>
+								<input type="tel" placeholder="최대"/>
+								<span>만원</span>
+							</div>
+						</li>
+						<li>
+							<div class="txtBlack1 bold">융자금</div>
+							<div class="btnsExtent col6">
+								<button type="button" value="1">~1천</button>
+								<button type="button" value="1,000">1천</button>
+								<button type="button" value="2,000">2천</button>
+								<button type="button" value="3,000">3천</button>
+								<button type="button" value="4,000">4천</button>
+								<button type="button" value="5,000">5천</button>
+								<button type="button" value="6,000">6천</button>
+								<button type="button" value="7,000">7천</button>
+								<button type="button" value="8,000">8천</button>
+								<button type="button" value="9,000">9천</button>
+								<button type="button" value="10,000">1억</button>
+								<button type="button" value="20,000">2억</button>
+								<button type="button" value="30,000">3억</button>
+								<button type="button" value="40,000">4억</button>
+								<button type="button" value="50,000">5억</button>
+								<button type="button" value="60,000">6억</button>
+								<button type="button" value="70,000">7억</button>
+								<button type="button" value="9,999,999">7억~</button>
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소"/>
+								<span>-</span>
+								<input type="tel" placeholder="최대"/>
+								<span>만원</span>
+							</div>
+						</li>
+						<li>
+							<div class="cf">
+								<span class="fl bold txtBlack1">면적</span>
+								<span class="fr">
+									<input type="checkbox" id="pyeong"/><label for="pyeong">평형으로 면적 보기</label>
+								</span>
+							</div>
+							<div class="btnsExtent col4">
+								<button type="button" value="1~33">~33㎡</button>
+								<button type="button" value="33~66">33~66㎡</button>
+								<button type="button" value="66~99">66~99㎡</button>
+								<button type="button" value="99~132">99~132㎡</button>
+								<button type="button" value="132~165">132~165㎡</button>
+								<button type="button" value="165~198">165~198㎡</button>
+								<button type="button" value="198~231">198~231㎡</button>
+								<button type="button" value="231~9,999">231㎡~</button>
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소"/>
+								<span>-</span>
+								<input type="tel" placeholder="최대"/>
+								<span>㎡</span>
+							</div>
+						</li>
+						<li>
+							<div class="cf">
+								<span class="fl bold txtBlack1">면적</span>
+								<span class="fr">
+									<input type="checkbox" id="pyeong" checked="checked"/><label for="pyeong">평형으로 면적 보기</label>
+								</span>
+							</div>
+							<div class="btnsExtent col4">
+								<button type="button" value="1~33">~10평대</button>
+								<button type="button" value="33~66">10평대</button>
+								<button type="button" value="66~99">20평대</button>
+								<button type="button" value="99~132">30평대</button>
+								<button type="button" value="132~165">40평대</button>
+								<button type="button" value="165~198">50평대</button>
+								<button type="button" value="198~231">60평대</button>
+								<button type="button" value="231~9,999">70평~</button>
+							</div>
+							<div class="minMax">
+								<input type="tel" placeholder="최소"/>
+								<span>-</span>
+								<input type="tel" placeholder="최대"/>
+								<span>㎡</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="btnGroupBox floating fixed">
+					<a href="javascript:;" class="btnType btnSkyblue"><span>초기화</span></a>
+					<a href="javascript:;" class="btnType btnNavy"><span>완료</span></a>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<script type="text/javascript">
+	var setClass;
+	
+	$('.formEstate li').each(function(index){
+		$(this).addClass('set'+index);
+	});
+	$('.btnsExtent button').click(function(){
+		setClass = $(this).parents('li').attr('class');
+		var odNum = $('.'+setClass+' .btnsExtent button').index(this);
+		if($(this).hasClass('on')){
+			reset();
+			return false;
+		}
+		var iptVal0 = $(this).parents('li').find('.minMax input:eq(0)');
+		var iptVal1 = $(this).parents('li').find('.minMax input:eq(1)');
+		
+		if($(this).siblings('.on').size() == 0){
+			// 한번선택
+			$(this).addClass('on');
+			iptVal1.val($(this).val()).attr('title',odNum);
+		}else if($(this).siblings('.on').size() == 1){
+			// 두번째선택
+			$(this).addClass('on');
+			var iptTit = Number(iptVal1.attr('title'))
+			if(iptTit < odNum){
+				for(var i=(iptTit+1);odNum > i;i++){
+					$(this).parent().find('button').eq(i).addClass('el');
+				}
+				//alert('자리변경');
+				iptVal0.val(iptVal1.val());
+				iptVal1.val($(this).val());
+			}else{
+				//alert('순차선택');
+				for(var i=(odNum+1);iptTit > i;i++){
+					$(this).parent().find('button').eq(i).addClass('el');
+				}
+				iptVal0.val($(this).val());
+			}
+		}else{
+			//alert('센번째 선택');
+			reset();
+			$(this).addClass('on');
+			iptVal1.val($(this).val()).attr('title',odNum);
+		}
+	});
+	
+	function reset(){
+		$('.'+setClass).find('button').removeClass().parents('li').find('input').val('');
+	}
+</script>
+</body>
+</html>

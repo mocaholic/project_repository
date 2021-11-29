@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/ra01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">남들은 어떻게 돈 모아?</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full pb0">
+				<div class="themeCardTopBox">
+					<h2 class="title">나와 비슷한 다른 사람들은<br /> 어떻게 모으고 있을까?</h2>
+					<div class="wrapSlider">
+						<strong class="tit">나의 월 평균 급여</strong>
+						<div id="slider2">
+							<div id="custom-handle2" class="ui-slider-handle"></div>
+							<p class="slider cf num5">
+								<span class="txt">100만원<br /> 이하</span>
+								<span></span>
+								<span class="txt">500만원<br /> 이하</span>
+								<span></span>
+								<span class="txt">1000만원<br /> 이상</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="reportBox">
+					<h2 class="subTit2">쏠쏠한 리포트</h2>
+					<div class="boxTyW radius">
+						<p class="txtReport">
+							월평균 급여가 <strong class="txtLabel">300만원</strong> 대에 속하는 그룹의 평균 납입금액 합계는 <strong class="txtBlue1 txtLine">6,217만원</strong>입니다.
+						</p>
+					</div>
+				</div>
+				<div class="innerBox lineN">
+					<h2 class="subTit2">자동이체 금액 비교</h2>
+					<div class="boxTyW line">
+						<p class="txtVs">
+							<strong class="txtBlue1">김신한</strong>님 <span class="vs">vs</span> 월평균 <strong>300만</strong> 급여그룹
+						</p>
+					</div>
+					<ul class="grpProd cf mt20">
+						<li>
+							<p class="tit">적금</p>
+							<div class="grpImg">
+								<!-- 그래프영역 -->
+								<div class="num">58%</div>
+							</div>
+							<p>100만원</p>
+						</li>
+						<li>
+							<p class="tit">청약</p>
+							<div class="grpImg">
+								<!-- 그래프영역 -->
+								<div class="num">58%</div>
+							</div>
+							<p>100만원</p>
+						</li>
+						<li>
+							<p class="tit">펀드</p>
+							<div class="grpImg">
+								<!-- 그래프영역 -->
+								<div class="num">58%</div>
+							</div>
+							<p>100만원</p>
+						</li>
+						<li>
+							<p class="tit">연금</p>
+							<div class="grpImg">
+								<!-- 그래프영역 -->
+								<div class="num">58%</div>
+							</div>
+							<p>100만원</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- // contents -->
+			
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0)" class="btnType btnBlack"><span>자동이체 금액변경</span></a>
+				<a href="javascript:void(0)" class="btnType"><span>적금 신규</span></a>
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<script type="text/javascript">
+var handle2 = $("#custom-handle2");
+$("#slider2").slider({
+	create: function(){
+		//최초 실행
+		handle2.append('<span>'+$(this).slider( "value" )+'만원</span>');
+	},
+	slide: function( event, ui ) {
+		//핸들링시 실행
+		handle2.find('span').text(ui.value+'만원');
+	},
+	min: 100, /* 최소 */
+	max: 1000, /* 최대 */
+	step : 225 /* 스텝 */
+});
+
+</script>
+</body>
+</html>

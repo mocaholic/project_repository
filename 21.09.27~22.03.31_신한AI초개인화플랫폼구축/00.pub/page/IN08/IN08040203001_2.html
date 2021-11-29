@@ -1,0 +1,703 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/circle-progress.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">청약 컨설팅</h1>
+				<div class="rSec">
+					<a href="javascript:;" onclick="sbRemoveAllScr();" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="myHomeTop">
+					<p><strong class="fontZZ">내 집 마련의 첫걸음,</strong> <span class="block fontSL">청약에 대한 종합정보 제공</span></p>
+					<p class="mt10 pb20"><!-- 2020-08-14 수정 -->
+						<a href="#layerPopGuideHome" class="btnType3 btnHomePop" onclick="bottomPopOpen(this);"><span>서비스 알아보기</span></a>
+					</p>
+					<!-- 등록 전 -->
+					<div class="borderR12 type2">
+						<p class="fontL mb15">다른 은행에서 가입한<br /> 청약상품도 관리해 드립니다</p>
+						<div class="btnGroupBox margin">
+							<a href="javascript:void(0)" class="btnType btnGrad04"><span class="block normal">다른은행 청약통장<br /> 가져오기 <i class="iconTy72 small ml5"></i></span></a>
+							<a href="javascript:void(0)" class="btnType btnGrad05"><span class="block normal">가입 안 하셨다면<br /> 지금 바로 <i class="iconTy72 small ml5"></i></span></a>
+						</div>
+					</div>
+					<!-- //등록 전 -->
+					<!-- 등록 후 -->
+					<div class="borderR12 type2">
+						<h2 class="subTitHome">MY 청약상품</h2>
+						<div class="btnGroupBox margin">
+							<a href="javascript:void(0)" class="btnType btnGrad01"><span class="ellipsis02">주택청약<br /> 종합저축</span></a>
+							<a href="javascript:void(0)" class="btnType btnGrad02"><span>5년3개월<br /> 보유</span></a>
+							<a href="javascript:void(0)" class="btnType btnGrad03"><span>999,000,000원</span></a>
+						</div>
+						<div class="boxSkyblue mt20">
+							<ul class="dotList txtBlack4 fontSS">
+								<li><span class="txtBlue2 mr5">자동이체 :</span><a href="javascript:void(0)" class="btnTypeR btnSmall3" style="background:#71abe6"><span>신청하기 &gt;</span></a></li>
+								<li class="cf"><span class="txtBlue2 mr5 fl">소득공제 :</span><span class="block" style="overflow:hidden">신청중 / 소득공제연간한도 : 240만원</span></li>
+								<li class="cf"><span class="txtBlue2 mr5 fl">청년우대형 비과세 :</span><span class="block" style="overflow:hidden">신청중 / 비과세한도 : 240만원</span></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //등록 후 -->
+				</div>
+				<div class="myHomeBtm">
+					<!-- MY 청약가점 -->
+					<div class="borderR12 type2 pb0">
+						<!-- 2020-08-14 수정 -->
+						<div class="listTitleBox mb0">
+							<div class="left">
+								<h2 class="subTitHome mb0 inlineBlock">MY 청약가점</h2>
+								<p class="fontSS txtBlack4 inlineBlock">(2020.05.29 등록)</p><!-- 등록 후 일 경우 -->
+							</div>
+							<div class="right vt w80">
+								<a href="#layerPopBottom01" class="btnMoreTy2 txtBlack4 btnPopOpen"><span>수정하기</span></a><!-- 등록 후 일 경우 -->
+							</div>
+						</div>
+						<!-- //2020-08-14 수정 -->
+						<p class="referTxt txtBlack4">고객님의 점수에 맞춰 분양단지를 추천해 드립니다.</p><!-- 등록 전 일 경우 -->
+						<!-- 그래프 영역 -->
+						<div class="creditInfoNodata myHomeCircle">
+							<div class="circle per100 beforeC"><!-- 등록 후 일경우 : beforeC 삭제 -->
+								<!-- data 값은 100% = 0.72 -->
+								<!-- data 값은 50% = 0.36 -->
+								<!-- data 값은 2% = 0.0144 -->
+								<!-- data 값은 1% = 0.0072 -->
+								<!-- 예) 36% 적용시 (36*0.72)/100 = 0.26 -->
+								<div  class="circleCt progcir n2" data-value="0.72"></div><!-- 등록 전 일 경우 항상 data-value="0.72" -->
+								<div class="circleTxt type1"><!-- 2020-08-06 수정 -->
+									<p class="txt"><strong>0</strong><span>점</span></p>
+								</div>
+								<div class="txtMax">최대 84점</div>
+								<div class="bubbleGrp">
+									<div class="text"><a href="#layerPopBottom01" class="btnPopOpen">MY 청약가점<br />확인하세요 &gt;</a></div>
+								</div>
+							</div>
+						</div>
+						<!-- //그래프 영역 -->
+					</div>
+					<!-- //MY 청약가점 -->
+					<!-- 분양 예정단지 -->
+					<div class="fixedArea">
+						<div class="listTitleBox fixedTitle">
+							<div class="left"><h2 class="subTitHome inlineBlock">분양 예정단지</h2> <span class="txtBlue7 fontSS">서울/충남/제주</span></div>
+							<div class="right vt">
+								<a href="javascript:void(0)" class="fontSS txtBlack4"><span>더 보기 +</span></a>
+							</div>
+						</div>
+					</div><!-- //2020-08-14 수정 -->
+					<div class="borderR12 type2">
+						<div class="listTitleBox mb15">
+							<div class="left">
+								<h3 class="fontS normal txtBlack3"><a href="javascript:void(0)"><span class="iconTyHeart mr5"></span>관심단지 바로 가기</a></h3>
+							</div>
+							<div class="right">
+								<a href="javascript:void(0)" class="btnMoreTy2 txtBlack4"><span>분양지역 설정 </span></a>
+							</div>
+						</div>
+						<!-- 관심단지 목록 -->
+						<div class="borderR12 complex">
+							<div class="titHome">
+								<a href="javascript:void(0)" class="iconTyHeart2 on"><span>관심단지</span></a>
+								<p class="tit"><strong class="vm">위례신도시 우미린 2차</strong> <i class="iconTyLabel2G round8">추첨제</i></p>
+								<p class="txt">경기도 의정부시 가능동</p>
+							</div>
+							<div class="infoHome">
+								<div class="imgArea"><img src="../../../../../../../images/in08/@img_home.jpg" alt="" /></div>
+								<div class="infoArea">
+									<strong class="txt">5억1,000만 ~ 7억2,000만</strong><br /> 
+									<a href="javascript:void(0)" class="btnType2 btnSmall4 btnSum"><span class="fontSSS"><span class="iconTyCalc mr5"></span>자금계산</span></a>
+								</div>
+							</div>
+							<div class="boxTyHome">
+								<ul class="detailListH cf">
+									<li>
+										<span class="txtBlack4">분양 :</span> <span>2020.06.30</span>
+									</li>
+									<li>
+										<span class="txtBlack4">예상가점 :</span> <strong class="txtPurple2">65</strong>
+									</li>
+									<li>
+										<span class="txtBlack4">입주 :</span> <span>-</span>
+									</li>
+									<li>
+										<span class="txtBlack4">예상경쟁률 :</span> <strong class="txtPurple2">70:1</strong>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //관심단지 목록 -->
+						<!-- 자금계산 -->
+						<div class="boxSumBlue">
+							<div class="formAreaBox">
+								<div class="inputBox button mt0"> <!-- .button // -->
+									<dl>
+										<dt style="width:150px">면적을 선택해 주세요.</dt>
+										<dd>
+											<input type="text" title="면적 선택" placeholder="예시)132㎡" readonly="readonly">
+											<button type="button" class="btn btnPopOpen" data-href="#layerPopBottom02"><span class="iconTy40">내역 열림</span></button>
+										</dd>
+									</dl>
+									<div class="error">error 문구 출력</div>	
+								</div>
+							</div>
+							<div class="listTypeTable mt25">
+								<ul>
+									<li class="row">
+										<div class="leftCol"><p class="tit">분양가</p></div>
+										<div class="rightCol">
+											<p class="txt">6억원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol"><p class="tit">주택대출</p></div>
+										<div class="rightCol">
+											<p class="txt">2억 4천만원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol"><p class="tit">MY자산</p></div>
+										<div class="rightCol">
+											<p class="txt">3억 4천만원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol"><p class="tit"><strong class="txtLine">부족한 금액</strong></p></div>
+										<div class="rightCol">
+											<p class="txt"><strong class="txtLine">5천만원</strong></p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<p class="referTxt mt25">주택대출은 예상금액으로 취급은행이나 정부 정책에 따라 달라질 수 있습니다.</p>
+						</div>
+						<!-- //자금계산 -->
+						<!-- 관심단지 목록 -->
+						<div class="borderR12 complex">
+							<div class="titHome">
+								<a href="javascript:void(0)" class="iconTyHeart2"><span>관심단지</span></a>
+								<p class="tit"><strong class="vm">호반써밋 목동</strong> <i class="iconTyLabel2G round8">후분양</i></p>
+								<p class="txt">경기도 의정부시 가능동</p>
+							</div>
+							<div class="infoHome">
+								<div class="imgArea"><img src="../../../../../../../images/in08/@img_home.jpg" alt="" /></div>
+								<div class="infoArea">
+									<strong class="txt">5억1,000만 ~ 7억2,000만</strong><br /> 
+									<a href="javascript:void(0)" class="btnType2 btnSmall4 btnSum"><span class="fontSSS"><span class="iconTyCalc mr5"></span>자금계산</span></a>
+								</div>
+							</div>
+							<div class="boxTyHome">
+								<ul class="detailListH cf">
+									<li>
+										<span class="txtBlack4">분양 :</span> <span>2020.06.30</span>
+									</li>
+									<li>
+										<span class="txtBlack4">예상가점 :</span> <strong class="txtPurple2">65</strong>
+									</li>
+									<li>
+										<span class="txtBlack4">입주 :</span> <span>-</span>
+									</li>
+									<li>
+										<span class="txtBlack4">예상경쟁률 :</span> <strong class="txtPurple2">70:1</strong>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //관심단지 목록 -->
+						<!-- 자금계산 -->
+						<div class="boxSumBlue">
+							<div class="formAreaBox">
+								<div class="inputBox button mt0"> <!-- .button // -->
+									<dl>
+										<dt style="width:150px">면적을 선택해 주세요.</dt>
+										<dd>
+											<input type="text" title="면적 선택" placeholder="예시)132㎡" readonly="readonly">
+											<button type="button" class="btn btnPopOpen" data-href="#layerPopBottom02"><span class="iconTy40">내역 열림</span></button>
+										</dd>
+									</dl>
+									<div class="error">error 문구 출력</div>	
+								</div>
+							</div>
+							<div class="listTypeTable mt25">
+								<ul>
+									<li class="row">
+										<div class="leftCol"><p class="tit">분양가</p></div>
+										<div class="rightCol">
+											<p class="txt">6억원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol"><p class="tit">주택대출</p></div>
+										<div class="rightCol">
+											<p class="txt">2억 4천만원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol"><p class="tit">MY자산</p></div>
+										<div class="rightCol">
+											<p class="txt">3억 4천만원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol"><p class="tit"><strong class="txtLine">부족한 금액</strong></p></div>
+										<div class="rightCol">
+											<p class="txt"><strong class="txtLine">5천만원</strong></p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<p class="referTxt mt25">주택대출은 예상금액으로 취급은행이나 정부 정책에 따라 달라질 수 있습니다.</p>
+						</div>
+						<!-- //자금계산 -->
+						<!-- 관심단지 목록 -->
+						<div class="borderR12 complex">
+							<div class="titHome">
+								<a href="javascript:void(0)" class="iconTyHeart2"><span>관심단지</span></a>
+								<p class="tit"><strong class="vm">브라이튼 여의도</strong></p>
+								<p class="txt">경기도 의정부시 가능동</p>
+							</div>
+							<div class="infoHome">
+								<div class="imgArea"><img src="../../../../../../../images/in08/@img_home.jpg" alt="" /></div>
+								<div class="infoArea">
+									<strong class="txt txtBlack4">분양가 미정</strong><br /> 
+								</div>
+							</div>
+							<div class="boxTyHome">
+								<ul class="detailListH cf">
+									<li>
+										<span class="txtBlack4">분양 :</span> <span>2020.06.30</span>
+									</li>
+									<li>
+										<span class="txtBlack4">예상가점 :</span> <strong class="txtPurple2">65</strong>
+									</li>
+									<li>
+										<span class="txtBlack4">입주 :</span> <span>-</span>
+									</li>
+									<li>
+										<span class="txtBlack4">예상경쟁률 :</span> <strong class="txtPurple2">70:1</strong>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- //관심단지 목록 -->
+					</div>
+					<p class="referTxt txtBlack3 mt15">자금플랜은 입주자모집공고 이후 분양가 확정된 단지만 가능합니다.</p>
+					<!-- //분양 예정단지 -->
+					
+					<div class="btnGroupBox mt20">
+						<a href="javascript:void(0)" class="btnType line blue2 round03"><span class="bold">6월 2주차 분양소식</span></a>
+					</div>
+					<div class="btnGroupBox mt10">
+						<a href="javascript:void(0)" class="btnType line blue2 round03"><span class="bold">청약 신청 Tip</span></a>
+					</div>
+					<div class="btnGroupBox mt10">
+						<a href="javascript:void(0)" class="btnType line blue2 round03"><span class="bold">청약 신청하기(한국감정원)</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- MY자산 청약컨설팅 안내 팝업 2020-08-06 수정 -->
+<div class="layerPopWrap hasDim assetsAddGuide home" id="layerPopGuideHome">
+	<div class="ctsWrap">
+		<a href="javascript:void(0)" class="btnClose">닫기</a><!-- 닫기버튼 -->
+		<div class="swiper-pagination"></div><!-- Pagination -->
+		<div class="assetsAddInfoSlide">
+			<div class="swiper-wrapper">
+				<!-- 1 page -->
+				<div class="swiper-slide slideItem home01">
+					<div class="top">
+						<p class="title">내 집 마련의 첫걸음,<br /> <strong>청약에 대한 종합정보 제공</strong></p>
+					</div>
+					<div class="bot">
+						<div class="mobile">
+							<div class="info">
+								<div class="btnGroupBox margin">
+									<span class="btnType btnGrad01"><span>주택청약<br /> 종합저축</span></span>
+									<span class="btnType btnGrad02" style="display: none;"><span>5년3개월<br /> 보유</span></span>
+									<span class="btnType btnGrad03" style="display: none;"><span>999,000,000원</span></span>
+								</div>
+								<!-- 그래프 영역 -->
+								<div class="creditInfoNodata myHomeCircle">
+									<div class="circle">
+										<div class="circleCt1 progcir n2"></div>
+										<div class="circleTxt typeS1">
+											<p class="txt">내 청약 <br /> 가점은 몇점?</p>
+										</div>
+										<div class="bubbleGrp">
+											<div class="text"><span>MY 청약가점<br />확인하세요 &gt;</span></div>
+										</div>
+									</div>
+								</div>
+								<!-- //그래프 영역 -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 1 page -->
+				<!-- 2 page -->
+				<div class="swiper-slide slideItem home02">
+					<div class="top">
+						<p class="title"><strong>내 청약가점에 따른 맞춤형<br /> 분양단지 추천</strong><span>(청약가점 계산을<br /> 통해 당첨 가능한 아파트 추천)</span></p>
+					</div>
+					<div class="bot">
+						<div class="mobile">
+							<div class="info">
+								<!-- 그래프 영역 -->
+								<div class="creditInfoNodata myHomeCircle">
+									<div class="circle">
+										<div class="circleCt2 progcir n2" data-value="0.45"></div>
+										<div class="circleTxt typeS2">
+											<p class="txt"><strong>0</strong><span>점</span></p>
+										</div>
+									</div>
+								</div>
+								<!-- //그래프 영역 -->
+								<div class="infoHomeView02"><img src="../../../../../../../images/in08/bg_mobile_home02_02.png" alt="" /></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 2 page -->
+				<!-- 3 page -->
+				<div class="swiper-slide slideItem home03">
+					<div class="top">
+						<p class="title"><strong>관심 분양지역 알림 서비스를<br /> 통해 청약 신청을 챙겨드려요</strong>(입주자 모집 공고일에 알림 발송)</p>
+					</div>
+					<div class="bot">
+						<div class="mobile">
+							<div class="info">
+								<div class="infoHome03"><span class="iconTyHand"></span><span class="iconTyHandBg"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 3 page -->
+				<!-- 4 page -->
+				<div class="swiper-slide slideItem home04">
+					<div class="top">
+						<p class="title"><strong>분양가 기준으로 자금플랜<br /> 계획을 도와드려요</strong></p>
+					</div>
+					<div class="bot">
+						<div class="mobile">
+							<div class="info">
+								<div class="infoHome04">
+									<span class="iconTyHand02"></span><span class="iconTyHandBg02"></span>
+									<div class="infoHomeView04"><img src="../../../../../../../images/in08/bg_mobile_home04_01.png" alt="" /></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 4 page -->
+			</div>
+			<div class="btnArea">
+				<a href="javascript:void(0)" class="btnType"><span>확인</span></a><!-- 2020-08-14 수정 -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //MY자산 청약컨설팅 안내 팝업 2020-08-06 수정 -->
+<!-- 면적 선택 팝업 -->
+<div class="layerPopBottomWrap hasDim" id="layerPopBottom02">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit">면적 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li>
+						<button type="button">59㎡</button>
+					</li>
+					<li>
+						<button type="button">84㎡</button>
+					</li>
+					<li>
+						<button type="button">112㎡</button>
+					</li>
+					<li>
+						<button type="button">132㎡</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //면적 선택 팝업 -->
+<script type="text/javascript">
+	//MY 청약가점
+	function startProgCir2(){
+		var dvalue = $(".circleCt").attr("data-value");
+		var bubble = $(".circle").find(".bubbleGrp");
+		var duTime = 1;
+		var i;
+		
+		//그래프 값 초기화
+		bubble.removeClass("on");
+		$(".creditInfoNodata>div").addClass("per100").removeClass("per0");
+		
+		if(dvalue != 0 && dvalue != 1){
+			duTime = dvalue.split(".")[1].substr(0,1); 
+			if(duTime == 0)
+				duTime = 1;
+		}
+		dvalue = 1 - dvalue;
+	
+		$(".circleCt").circleProgress({
+			startAngle: -Math.PI / 4 * 4.9,
+			thickness : 20,
+			lineCap: 'round',
+			size: 250.0,  //가로세로 사이즈
+			fill: {gradient: ['#8075fe', '#26affa']},  //색상
+			animation: {
+				duration: duTime*1000,  //시간
+			},
+			emptyFill: 'transparent',  //배경색상
+		}).on('circle-animation-progress', function(event, progress, stepValue) {
+	
+			var ide = 100 * stepValue;
+			
+			//등록전
+			if($(".beforeC").length){
+				$(".circleTxt.type1 .txt").html('내 청약 <br /> 가점은 몇점?'); //2020-08-06 수정
+				
+				if(progress == 1){
+					bubble.addClass("on");
+				}
+			}
+			
+			if(dvalue < 1){
+				ide = Math.round(ide*100/72*0.84); //2020-08-06 수정
+			}
+			/* if(ide > 100){
+				$(".circleCt").hide();
+			} */
+			if(dvalue != 1) $(".circleTxt.type1 .txt strong").text(ide); //2020-08-06 수정
+		});
+	}
+	$(function() {
+		startProgCir2(); 
+	});
+	
+	//관심지역 선택
+	$(".iconTyHeart2.on").attr("title","등록");
+	$(".iconTyHeart2").on("click",function(){
+		if($(this).hasClass('on')){
+			$(this).removeClass("on");
+			$(this).attr("title","등록 해제");
+		}else {
+			$(this).addClass("on");
+			$(this).attr("title","등록");
+		}
+	});
+	
+	//자금계산
+	$(".btnSum").on("click",function(){
+		if($(this).hasClass('on')){
+			$(this).removeClass("on");
+			$(this).parents('.complex').next('.boxSumBlue').slideUp();
+		}else {
+			$(this).addClass("on");
+			$(this).parents('.complex').next('.boxSumBlue').slideDown();
+		}
+	});
+
+	//MY자산 청약컨설팅 안내 팝업
+	var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수
+	if(UserAgent.match(/i(Phone|Pod)/i) != null){
+		$('body').width(screen.width);
+	}
+	//MY자산 청약컨설팅 안내 팝업 열기
+	$(".btnHomePop").click(function(e) {
+		swiperInfoHome();
+	});
+	
+	function startProgCirS1(){
+		var bubble = $(".circle").find(".bubbleGrp");
+		
+		//그래프 값 초기화
+		bubble.removeClass("on");
+	
+		$(".circleCt1").circleProgress({
+			startAngle: -Math.PI / 4 * 4.9,
+			thickness : 20,
+			lineCap: 'round',
+			size: 250.0,  //가로세로 사이즈
+			fill: {gradient: ['#8075fe', '#26affa']},  //색상
+			animation: {duration: 2000},  //시간
+			emptyFill: 'transparent',  //배경색상
+			value: 0.72,
+		}).on('circle-animation-progress', function(event, progress) {
+			if(progress == 1){
+				bubble.addClass("on");
+			}
+		});
+	}
+	function startProgCirS1Reset(){
+		var bubble = $(".circle").find(".bubbleGrp");
+		
+		//그래프 값 초기화
+		bubble.removeClass("on");
+	
+		$(".circleCt1").circleProgress({
+			value: 0,
+		}).on('circle-animation-progress', function(event) {
+			bubble.removeClass("on");
+		});
+	}
+	
+	function startProgCirS2(){
+		var dvalue2 = $(".circleCt2").attr("data-value");
+		var duTime2 = 1;
+		var i;
+		
+		if(dvalue2 != 0 && dvalue2 != 1){
+			duTime2 = dvalue2.split(".")[1].substr(0,1); 
+			if(duTime2 == 0)
+				duTime2 = 1;
+		}
+		dvalue2 = 1 - dvalue2;
+	
+		$(".circleCt2").circleProgress({
+			startAngle: -Math.PI / 4 * 4.9,
+			thickness : 20,
+			lineCap: 'round',
+			size: 250.0,  //가로세로 사이즈
+			fill: {gradient: ['#8075fe', '#26affa']},  //색상
+			animation: {
+				duration: duTime2*1000,  //시간
+			},
+			emptyFill: 'transparent',  //배경색상
+		}).on('circle-animation-progress', function(event, progress, stepValue2) {
+			var ide2 = 100 * stepValue2;
+			
+			if(dvalue2 < 1){
+				ide2 = Math.round(ide2*100/72);
+			}
+			if(dvalue2 != 1) $(".circleTxt.typeS2 .txt strong").text(ide2);
+		});
+	}
+	var swiperHome = "";
+	function swiperInfoHome() {
+		
+		if($('.btnHomePop').hasClass('on')){
+			swiperHome.slideTo(0, 0);
+			swiperHome.startAutoplay();
+			return false;
+		}
+		$('.btnHomePop').addClass('on');
+		
+		swiperHome = new Swiper('.assetsAddInfoSlide', {
+			observer: true,
+			observeParents: true,	/* display: none 처리 */
+			slidesPerView: 'auto',
+			spaceBetween: 0,
+			pagination: '.swiper-pagination',
+			centeredSlides: false,
+			onSlideChangeStart: function(swiper){
+				console.log("change end"  + swiper.activeIndex);
+				
+				switch(swiper.activeIndex) {
+					case 0 :
+						//Reset
+						clearInterval(autoAni1_1); //clear
+						clearTimeout(autoAni1_2); //clear
+						resetaniUp();
+						//활성화
+						aniUp1_1();
+						aniUp1_2();
+						break;
+						
+					case 1 :
+						startProgCirS1Reset();
+						startProgCirS2();
+						break;
+				}
+			},
+			autoplay: 5000,
+			speed : 1000,
+			loop: false
+		});
+		
+		aniUp1_1();
+		aniUp1_2();
+	}
+	//Page1
+	var autoAni1_1;
+	function aniUp1_1() {
+		var cnt = 0; //count
+		autoAni = setInterval(function() {
+			cnt++;
+			$(".assetsAddGuide .btnGroupBox .btnType").eq(cnt).fadeIn(500); //메뉴리스트 변경
+		}, 800);
+	}
+	function resetaniUp() {
+		$(".assetsAddGuide .btnGroupBox .btnType").hide();
+		$(".assetsAddGuide .btnGroupBox .btnType").eq(0).show(); //메뉴리스트 변경
+	}
+	var autoAni1_2;
+	function aniUp1_2() {
+		autoAni1_2 = setTimeout( function() {
+			startProgCirS1(); //MY 청약가점 그래프
+		}, 2000);
+	}
+	
+	//MY자산 청약컨설팅 안내 팝업 닫기
+	$('.assetsAddGuide .btnClose, .assetsAddGuide .btnType').on('click', function(){
+		$('.assetsAddGuide').hide();
+		startProgCirS1Reset();
+	});
+	
+	//분양 예정단지 타이틀 고정(android만 반영) 2020-08-14 수정
+	//uAgent.indexOf("iPhone|iPod|iPad")
+	var uAgent = navigator.userAgent.toLowerCase();
+	if(uAgent.indexOf("android") > 0){
+
+		$('.contents').scroll(function(){
+			var offset = $(".fixedArea").offset().top;
+			if(offset < 45){
+				$(".fixedArea").addClass("on");
+			}else{
+				$(".fixedArea").removeClass("on");
+			}
+		});
+		
+	}
+
+</script>
+</body>
+</html>

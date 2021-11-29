@@ -1,0 +1,1001 @@
+@charset "utf-8";
+@import 'pr.css';
+
+body {-webkit-tap-highlight-color:transparent;}
+.formAreaBox.pr05Line { position:relative; margin:20px 0; padding:20px 0;}
+.formAreaBox.pr05Line:before { content:''; display:block; position:absolute; top:0; left:-16px; right:-16px; height:1px; background:#f2f2f2;}
+.btnType2.green {background-color: #2ea672;}
+.btnFloatingMore {position:absolute;bottom:45px;width:100%;height:32px;line-height:32px;}
+.btnFloatingMore span {color:#555;}
+.brdbLine {padding-bottom: 20px;border-bottom: 1px solid #e9e9e9;}
+.accountSelect.blueBoxTy2 {border-top:1px solid #dbdbdb; border-bottom:1px solid #e0e7ef; background:#f0f6fc;}
+.contents > .accountSelect.blueBoxTy2:first-child,
+.contents > .shortPageWrap > .accountSelect.blueBoxTy2:first-child{margin-top:-1px;}
+.accountSelect .defaultInfo{padding:9px 18px;}
+.accountSelect .info .efTable{display:table;width:100%;color:#333;font-size:14px;}
+.accountSelect .info .efTable .rGroup{display:table-row;width:100%;}
+.accountSelect .info .efTable .rGroup div{display:table-cell;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.accountSelect .info .efTable .rGroup .rL{width:70px;padding:6px 0;text-align:left;}
+.accountSelect .info .efTable .rGroup .rR{width:auto;padding:0 20px 0 0; font-size:14px;font-weight:;text-align:right;}
+.accountSelect .info .efTable .rGroup .text01{display:inline-block;position:relative;margin-left:3px;font-size:15px;font-weight:400;top:-1px;}
+.accountSelect .info .efTable .rGroup .text02{display:inline-block;position:relative;margin-right:5px;color:#c7e0ff;font-size:13px;font-weight:400;top:-1px;}
+.accountSelect .info .efTable .rGroup:first-child .rL,
+.accountSelect .info .efTable .rGroup:first-child .rR{border-top:0;}
+.accountSelect .btnToggle {bottom:8px;}
+.accountSelect .btnToggle .iconTy07 {width:13px; background: url("../../images/icon_toggle_36x24_3.png") no-repeat 0 0; background-size:13px auto;}
+.accountSelect .btnToggle .iconTy08 {width:13px; background: url("../../images/icon_toggle_36x24_3.png") no-repeat 0 bottom; background-size:13px auto;}
+.accountSelect .expansion {padding:10px 0 9px; margin:0 18px; border-top:1px solid #e0e7ef; background:none;}
+.accountSelect .expansion:before {display:none;}
+.accountSelect .expansion .rTable .list {}
+.accountSelect .expansion .rTable .list > li {display:flex;display:-webkit-flex; padding:6px 0; width:100%; box-sizing:border-box; color:#333;}
+.accountSelect .expansion .rTable .list > li span {flex:1;-webkit-flex:1; text-align:left;}
+.accountSelect .expansion .rTable .list > li span.rate {text-align:right;}
+
+/* 투자성향 */
+.investTendency {padding-top:80px;}
+.investTendency .titleBox {padding:0;}
+.investTendency > .titleBox .txt {margin-top:18px;font-size:18px;}
+.investTendency .boxTyGray {padding:30px 0;background-color:#fff;}
+.investTendency .boxTyGray.type2 {padding:15px 16px;}
+.investTendency .titleBox.result .txt {padding-top:91px;font-size:18px;line-height:22px;background-repeat:no-repeat;background-position:50% 0;}
+.investTendency .titleBox.result .txt > em {font-weight:700;color:#3789dc;}
+.investTendency .innerBox:after,
+.investTendency .innerBox.line:after {display:none;}
+.investTendency .titleBox.result .case01 {background-image:url('../../images/pr05/img_invest_case01.png');background-size:71px auto;}
+.investTendency .titleBox.result .case02 {background-image:url('../../images/pr05/img_invest_case02.png');background-size:113px auto;}
+.investTendency .titleBox.result .case03 {background-image:url('../../images/pr05/img_invest_case03.png');background-size:70px auto;}
+.investTendency .titleBox.result .case04 {background-image:url('../../images/pr05/img_invest_case04.png');background-size:90px auto;}
+.investTendency .titleBox.result .case05 {background-image:url('../../images/pr05/img_invest_case05.png');background-size:92px auto;}
+.investTendency .titleBox.result .txt > span {padding-top:15px;line-height:18px;color:#555;}
+.investTendency .titleBox.result .btnWrap {margin-top:20px;text-align:center;}
+.investTendency.noResult .titleBox .txt > span {padding:15px 0 25px;color:#555;}
+.investTendency.noResult .titleBox .img {width:70px;height:70px;margin:0 auto;background:url('../../images/pr05/img_invest_tendency.png') no-repeat 0 0;background-size:70px auto;}
+.investTendency .tooltipBox {text-align:left;}
+.investTendency.result {padding-top:0;padding-bottom:0;}
+.investTendency .innerWrap {
+	display:-webkit-box;display:-webkit-flex;display:flex;flex-direction:column;
+	min-height:250px;padding:0 0 20px;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;box-sizing:border-box;
+}
+.qnaList .txtWrap > .txt {font-weight:500;color: #333;}
+.bottomMsg{position:fixed;left:0;bottom:50px;right:0;background:#f8f9fb;padding:11px 20px 11px 80px;}
+.bottomMsg .img{position:absolute;left:20px;top:50%;width:40px;-webkit-transform:translateY(-50%);}
+.bottomMsg p{font-size:11px;line-height:1.6;font-weight:bold;}
+.investChart{position:relative;}
+.investChart .midArea{position:absolute;left:0;top:50%;right:0;-webkit-transform:translateY(-60%)}
+.investChart .lineTape{display:inline-block;position:relative;}
+.investChart .lineTape:before{content:"";position:absolute;left:-2px;bottom:-2px;right:-2px;height:60%;background:#e9f1fc;}
+.investChart .lineTape em{position:relative;z-indenx:1;}
+.bottomMsg2{position:relative;left:0;bottom:0;right:0;padding:21px 79px 21px 16px;background:#fff;}
+.bottomMsg2 .img{position:absolute;right:20px;top:50%;width:40px;-webkit-transform:translateY(-50%) scaleX(-1);}
+.bottomMsg2 p{font-size:13px;color:#555;word-wrap:break-word;word-break:keep-all;}
+.investChart2{position:relative;padding:40px 8.533% 40px 8.533%;box-sizing:border-box;}
+.investChart2 .tit {font-weight:bold;font-size:24px;}
+.investChart2 .txt {margin-top:10px;color:#555;line-height:1.57}
+.investChart2 .img {position:relative;margin-top:25px;text-align:center;}
+.investChart2 .img img {width:64.3%}
+.investChart2 .emoji {position:absolute;left:50%;bottom:33.9%;-webkit-transform:translateX(-50%);font-size:5.1vw}
+.investChart2 .txtLine{display:inline-block;position:relative;z-index:1;}
+.investChart2 .txtLine:before{content:"";position:absolute;left:-2px;right:-2px;bottom:0;z-index:-1;height:9px;background:#e5f0fc;}
+.contInvest .fixedpageWrap {padding-bottom:50px;}
+.contInvest .contAccordion + .bottomMsg2:before {content:"";position:absolute;left:16px;right:16px;top:0;height:1px;background:#e8ebf0}
+.tblInvest {width: 100%;font-size:13px;color:#555;text-align:center;}
+.tblInvest th, .tblInvest td {padding:10px;border:1px solid #dbdee2;}
+.tblInvest th {background:#f2f4f6;}
+.tblInvest th:first-child, .tblInvest td:first-child {border-left:none;}
+.tblInvest th:last-child, .tblInvest td:last-child {border-right:none;}
+.tblInvest tr:first-child th, .tblInvest tr:first-child td {border-top:1px solid #555;}
+.tblInvest .btnTyLine {display:inline-block;height:30px;padding:0 12px;border:1px solid #e8ebf0;border-radius:4px;line-height:30px;vertical-align:middle;}
+
+/* 개별펀드- 펀드 목록 */
+.fundProductWrap .noticeArea {margin: 20px 16px 24px;padding-bottom: 20px;border-bottom: 1px solid #e9e9e9;}
+.fundProductWrap .yield,
+.fundProductWrap .yield > * {font-weight: 700;}
+.fundProductWrap .yield.plus,
+.fundProductWrap .yield.plus > * {color: #eb3d4f;}
+.fundProductWrap .yield.minus,
+.fundProductWrap .yield.minus > * {color: #3789dc;}
+.fundProductWrap .btnWrap {margin: 14px 16px;}
+.fundProductWrap .fundProductBox {padding: 0 16px 20px;border-bottom: 1px solid #e9e9e9;}
+.fundProductBox .productTitWrap {position:relative;}
+.fundProductBox .productTitWrap > a {display:block;padding-right:24px;}
+.fundProductBox .productTitWrap > a:after {content:'';display:block;position:absolute;top:50%;right:0;width:8px;height:13px;margin-top:-7px;background: url(../../images/icon_arrow_link.png) no-repeat 0 0;background-size:8px auto;}
+.fundProductBox .productTitWrap .tit {margin-top: 10px;font-size: 18px;font-weight: 500;}
+.fundProductBox .productTitWrap .txt {margin-top: 9px;font-size: 13px;}
+.fundProductBox .productTitWrap .fundInfo {position: relative;}
+.fundProductBox .productTitWrap .fundInfo .rating {margin-top: 8px;}
+.fundProductBox .productTitWrap .fundInfo .yield {position: absolute;top: 50%;right: 0;font-size: 27px;line-height: 1;}
+.fundProductBox .productTitWrap .fundInfo .right {position:absolute;right:0;top:initial;bottom:0;text-align:right;}
+.fundProductBox .productTitWrap .fundInfo .right .yield {position:initial;}
+.fundProductBox .btnWrap {margin: 30px 0 0 0;}
+.fundProductBox .btnWrap .btnType {width: 100%;background-color: #27a488;}
+.fundProductBox .btnWrap button.btnType span {line-height:50px;} /* button tag 텍스트 정렬 오류 2020-07-24 */
+.fundProductList .listTypeTable .row {border-bottom: 1px solid #e9e9e9;}
+.fundProductList .listTypeTable .row + .row {margin-top: 0;}
+.fundProductList .listTypeTable .row .leftCol {width: 72%;}
+.fundProductList .listTypeTable .row .leftCol [class*=iconTy]{margin-bottom:6px;}
+.fundProductList .listTypeTable .row .leftCol .tit {/* margin-top: 6px; */font-size: 15px;color: #333;}
+.fundProductList .listTypeTable .row .leftCol .tit .ty {display:block;}
+.fundProductList .listTypeTable .row .leftCol .date {margin-top:3px; color:#777; font-size:13px;}
+.fundProductList .yield {font-size: 17px;}
+.fundProductList .infoBox {}
+.fundProductList .infoBox .tit {margin-top:7px; font-size:18px;}
+.fundProductList .infoBox .date {margin-top:10px; font-size:13px;}
+.fundProductList.fundBestList .listTypeTable .row > a {padding-left:10px}
+.fundProductList.fundBestList .listTypeTable .row .leftCol {width:auto;}
+.fundProductList.fundBestList .listTypeTable .row .rightCol{width:82px;}
+.fundProductList.fundBestList .listTypeTable .row .rank {display:table-cell;width:20px;padding-right:10px;font-size:15px;text-align:center;vertical-align:middle;}
+
+/* 거치식 포트폴리오 */
+/* 거치식 포트폴리오 - 포트폴리오 안내 */
+.bgGreen {background-color: #f2faf7;}
+
+.contents.full .innerBox.portfolioWrap {padding: 32px 25px 0; background-color: #f2faf7;}
+.contents.full .innerBox.portfolioWrap.pfType01 {background: url('../../images/pr05/bg_portfolio01.png') no-repeat right 70px;background-size:126px auto;}
+.contents.full .innerBox.portfolioWrap.pfType02 {padding-bottom: 80px;background: url('../../images/pr05/bg_portfolio02.png') no-repeat right 273px;background-size:134px auto;}
+.contents.full .innerBox.portfolioWrap .conBox {margin: 0 -35px;padding: 0 35px 80px;}
+.contents.full .innerBox.portfolioWrap.pfType02 .conBox {padding-bottom: 70px;}
+.portfolioWrap .conBox {padding:5px 0 30px;}
+.portfolioWrap .conBox .txtWrap {padding: 0;}
+.portfolioWrap .conBox .txtWrap > .tit {font-weight: 500;font-size: 35px;color: #0f472f;}
+.portfolioWrap .conBox .txtWrap > .tit + .txt {margin-top: 17px;font-size: 15px;font-weight: 500;line-height: 20px;color: #0f472f;}
+.portfolioWrap .conBox .txtWrap > .referTxt {margin-top: 7px;}
+
+.portfolioWrap .portfolioList {display:flex;display:-webkit-flex;}
+.portfolioWrap .portfolioList li {width: 50%;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.portfolioWrap .portfolioList li:first-child {padding-right: 20px;}
+.portfolioWrap .portfolioList li + li {padding-left: 20px;border-left: 1px solid #bcddd1;}
+.portfolioWrap .portfolioList .infoBox {position: relative;}
+.portfolioWrap .portfolioList.singleTy .infoBox .btnWrap {margin-right: 34px;}
+.portfolioWrap .portfolioList.singleTy li {width: 70%;} 
+.portfolioWrap .portfolioList .infoBox .tit {font-size: 18px;font-weight: 500;color: #079759;}
+.portfolioWrap .portfolioList .infoBox .tit span {display: inline-block;}
+.portfolioWrap .portfolioList .infoBox .txt {min-height: 86px;margin-top: 11px;line-height: 19px;color: #555;}
+.contents.full .innerBox.portfolioWrap.pfType02 .portfolioList .infoBox .txt {min-height: 109px;}
+.portfolioWrap .portfolioList .infoBox .txt > span {display: block;margin-top: 7px;font-size: 13px;color: #777;}
+.portfolioWrap .portfolioList .infoBox .btnWrap {/* margin: 15px 0 40px; */}
+.portfolioWrap .portfolioList .infoBox .btnWrap > .btnType2 {width: 100%;height: 45px;line-height: 45px;font-size: 15px;box-sizing:border-box;-webkit-box-sizing:border-box;}
+.portfolioWrap .portfolioList .infoBox .logo {position: absolute;width: 101px;margin-top: 10px;}
+.portfolioWrap .portfolioList .infoBox .logo img {width: 100%;}
+
+/* 거치식 포트폴리오 - 시뮬레이션 결과 */
+/* .portfolioWrap .conBox .titleBox {padding: 0;}
+.portfolioWrap .titleBox .resultIcon {width: 70px;height: 70px;margin: 0 auto;background-repeat:no-repeat;background-position: 0 0;background-size:70px auto;}
+.portfolioWrap .titleBox .resultIcon.stablility {background-image: url("../../images/pr05/bg_simulation_result01.png");}
+.portfolioWrap .titleBox .resultIcon.seekingStablility {background-image: url("../../images/pr05/bg_simulation_result02.png");}
+.portfolioWrap .titleBox .resultIcon.danger {background-image: url("../../images/pr05/bg_simulation_result03.png");}
+.portfolioWrap .titleBox .resultIcon.active {background-image: url("../../images/pr05/bg_simulation_result04.png");}
+.portfolioWrap .titleBox .resultIcon.attack {background-image: url("../../images/pr05/bg_simulation_result05.png");}
+.portfolioWrap .titleBox .txt {margin-top: 11px;font-size: 15px;line-height: 19px;color: #fff;} */
+
+.portfolioWrap .simulationBox {padding: 30px 36px;background-color: #27a488;}
+.portfolioWrap .simulationBox .titleBox {padding: 0;}
+.portfolioWrap .simulationBox .titleBox .txt {font-size: 15px;line-height: 19px;color: #fff;}
+.portfolioWrap .simulationBox .titleBox .txt > strong {display: block;margin-bottom: 13px;font-size: 22px;}
+.portfolioWrap .simulationBox .expansion {margin:30px 0 0 0;padding: 0;border-top: none;}
+
+/* .portfolioWrap .simulationBox .titleBox .resultIcon {width: 70px;height: 70px;margin: 0 auto;background-repeat:no-repeat;background-position: 0 0;background-size:70px auto;}
+.portfolioWrap .simulationBox .titleBox .resultIcon.stablility {background-image: url("../../images/pr05/bg_simulation_result01.png");}
+.portfolioWrap .simulationBox .titleBox .resultIcon.seekingStablility {background-image: url("../../images/pr05/bg_simulation_result02.png");}
+.portfolioWrap .simulationBox .titleBox .resultIcon.danger {background-image: url("../../images/pr05/bg_simulation_result03.png");}
+.portfolioWrap .simulationBox .titleBox .resultIcon.active {background-image: url("../../images/pr05/bg_simulation_result04.png");}
+.portfolioWrap .simulationBox .titleBox .resultIcon.attack {background-image: url("../../images/pr05/bg_simulation_result05.png");} */
+
+.portfolioWrap .defaultInfo {margin-top: 19px;padding:16px 0 0 0;border-top: 1px solid #39bc9f;}
+.portfolioWrap .defaultInfo .info {padding-right: 24px;}
+.portfolioWrap .defaultInfo .rGroup li:after {content:"";display: block;clear: both;}
+.portfolioWrap .defaultInfo .rGroup li + li {margin-top: 7px;}
+.portfolioWrap .defaultInfo .rGroup li > p {float: left;color: #fff;}
+.portfolioWrap .defaultInfo .rGroup li  > .rR {float: right;margin-top: -5px;font-size: 18px;font-weight: 700;}
+.portfolioWrap .defaultInfo .btnToggle {bottom: -4px;right: -9px;}
+.portfolioWrap .expansion {margin-top: 24px;padding: 0 14px;background: transparent;}
+.portfolioWrap .expansion .dotList li {color: #fff;}
+.portfolioWrap .expansion .dotList > li:before {background:#fff;}
+
+.portfolioWrap .simulationBox .accountSelect .defaultInfo .btnToggle .iconTy07 {width: 12px;height: 8px;background: url('../../images/pr05/icon_simulation_toggle.png') no-repeat 0 0;background-size: 100%;}
+.portfolioWrap .simulationBox .accountSelect .defaultInfo .btnToggle .iconTy08 {width: 12px;height: 8px;background: url('../../images/pr05/icon_simulation_toggle.png') no-repeat 0 -8px;background-size: 100%;}
+
+/* 거치식 포트폴리오 - 가입완료
+.titleBox .img.fundJoinComplete {width:63px; height:51px; background:url("../../images/pr05/img_fundpolio_stepComplete.png") no-repeat; background-size:63px auto;} 이강민 삭제 */
+.dealState {margin-top: 4px;}
+.dealState > span + span:before {content:'';display: inline-block;width: 1px;height: 12px;margin: 0 10px 0 6px;background-color: #ccc;}
+.dealState .error {color: #eb3d4f;}
+
+/* 적립식 펀드Folio - 포트폴리오 결과 */
+.portfolioResult .txtWrap {margin-bottom:20px;text-align:center;}
+.portfolioResult .txtWrap .txt {font-size:15px;}
+.portfolioResult .txtWrap .txt strong {display: block;margin-bottom: 5px;font-size: 18px;font-weight:500;}
+
+.portfolioResult .searchWrap {margin-bottom:18px;}
+.portfolioResult .searchWrap .inputBox.search {margin:0 -16px;}
+.portfolioResult .searchWrap .inputBox.search .btnSearch {position:absolute;top:0;right:0;width:50px;height:49px;text-align:center;}
+.portfolioResult .searchWrap .subTit2.grayBg:after {display: block;content:'';clear: both;}
+.portfolioResult .searchWrap .subTit2.grayBg .selecter {float: right;padding-left: 0;}
+.portfolioResult .searchWrap .subTit2.grayBg .selecter a > span {margin-left: 10px;transform: rotate(90deg);-webkit-transform: rotate(90deg);}
+.portfolioResult .searchWrap .subTit2.grayBg .selecter .sub {top: 25px;left: initial;right: -4px;min-width:78px;}
+.portfolioResult .functionWrap {position:relative;margin:20px -16px;padding:0 16px;height:35px;border-bottom:1px solid #e9e9e9;}
+.portfolioResult .functionWrap .groupL,
+.portfolioResult .functionWrap .groupR {position:absolute;top:-3px;}
+.portfolioResult .functionWrap .groupL {left:9px;}
+.portfolioResult .functionWrap .groupR {right:9px;}
+.portfolioResult .functionWrap button {padding:10px 7px;}
+.portfolioResult .functionWrap button> span {margin:-3px 6px 0 0;}
+
+.portfolioResult .tabViewWrap {margin-top:0;}
+.portfolioResult .searchWrap + .productChange.type2 {margin: 0 -16px 14px;}
+.portfolioResult .searchWrap + .productChange.type2 .productList.select {margin-bottom: 0;padding: 0 16px;border-bottom: 1px solid #e9e9e9;}
+.portfolioResult .productChange.type2 .productList li:first-child{padding-top:0;}
+.portfolioResult .productChange.type2 .productList.edit .productBox {padding:0 0 0 28px;border-bottom: none;}
+.portfolioResult .productChange.type2 .productList.edit .productBox .btnWrap {position:absolute;top:50%;left:0;margin-top:-24px;}
+.portfolioResult .productChange.type2 .productList.edit .btnProductDel {padding:10px;position: absolute;top: 10px;left: -10px;margin-top: -17px;padding: 10px;}
+.portfolioResult .productChange.type2 .productList.select {margin-bottom:30px;}
+.portfolioResult .productChange.type2 .productList.select .productBox {padding:0 0 0 33px;border-bottom: 0;}
+.portfolioResult .productChange.type2 .productList.select .checkWrap {position:absolute;top:50%;left:0;margin-top:-19px;}
+
+/* elf 자가진단 팝업 */
+.accountSelect.qnaList .btnWrap {position: relative;overflow: hidden;margin: 10px 0;}
+.accountSelect.qnaList .btnToggle {position: static;float: right;padding: 0;}
+.accountSelect.qnaList .btnToggle em {display: inline-block;padding-right: 18px;font-size: 13px;font-weight: 500;color: #3789dc;}
+.accountSelect.qnaList .btnToggle > span {width: 12px;height: 6px;background: url('../../images/pr05/icon_commentary_toggle.png') no-repeat 0 -8px;background-size: 100%;}
+.accountSelect.qnaList .btnToggle.on > span {background-position: 0 0;}
+.accountSelect.qnaList .btnToggle > span,
+.accountSelect.qnaList .btnToggle.on > span{position: absolute;top: 5px;right:0;}
+.accountSelect.qnaList > ul > li + li {margin-top: 20px;padding-top: 20px;border-top: 1px solid #e9e9e9;}
+.accountSelect.qnaList > ul > li .checkList {padding-bottom: 0;}
+.accountSelect.qnaList .conBox.commentary {display: none;clear: both;padding:16px;background-color: #f1f5fa;}
+.accountSelect.qnaList .conBox.commentary .txt {line-height: 18px;color: #555;}
+
+/* 연금저축펀드 */
+.checkPointWrap {margin-top: 30px;}
+.checkPointWrap .checkPoint {font-size: 13px;font-weight: 700;}
+.checkPointWrap .checkPoint > i {margin: -3px 4px 0 0;}
+.checkPointWrap .checkPoint  + * {margin-top: 10px;}
+
+/* 담보대출계좌 */
+.btnFlexWrap {display: flex;display: -webkit-flex;margin-top: 15px;}
+.btnFlexWrap.item2 > * {width: 50%;}
+.btnFlexWrap.item2 > a:first-child {margin-right: 8px;}
+.productChange .productBox .listTyArrowLink.block .titProduct {font-weight: 500;}
+
+/* 펀드 담보 대출 */
+.fundLoanWrap .certifTop .fundLoan {margin: 24px auto 20px;width: 158px;height: 100px;background: url("../../images/pr05/bg_loan_fund.png") no-repeat 0 0;background-size:158px auto;}
+.fundLoanWrap .btnWrap {margin: 17px 0;}
+.fundLoanWrap .btnWrap:last-child {margin-bottom: 0;}
+.fundLoanWrap .certifTop {padding: 40px 16px;}
+.fundLoanWrap .certifTop.blueBg {color: #fff;background: #1c93f6;}
+.fundLoanWrap .certifTop .title {font-size: 22px;font-weight: 500;}
+.fundLoanWrap .certifTop .txt {font-size: 14px;font-weight: 300;}
+
+/* 일괄신규 유의사항, 연금저축펀드 신규  */
+.fundProcessList {display:flex;display:-webkit-flex;}
+.fundProcessList > li {position: relative;width: 50%;padding-top: 60px;text-align: center;color: #555;}
+.fundProcessList > li + li:before {content:'';position: absolute;top: 19px;left: 0;width: 8px;height: 13px;background: url("../../images/pr05/bg_fund_processlist.png") no-repeat 0 0;background-size:8px auto;}
+.fundProcessList > li em {position: absolute;top: 0;left: 50%;margin-left: -25px;width: 50px;height: 50px;border-radius:50%;background-color: #3789dc;}
+.fundProcessList > li em:before {content:'';display: inline-block;width: 28px;height: 50px;margin: 0 auto;background-repeat:no-repeat; background-position: 50% 50%;background-size:28px auto;}
+.fundProcessList.bulkNew > li.process01 em:before {background-image: url("../../images/pr05/icon_bulknew_process01.png");}
+.fundProcessList.bulkNew > li.process02 em:before {background-image: url("../../images/pr05/icon_bulknew_process02.png");}
+.fundProcessList.savingNew > li.process01 em:before {background-image: url("../../images/pr05/icon_savingnew_process01.png");}
+.fundProcessList.savingNew > li.process02 em:before {background-image: url("../../images/pr05/icon_savingnew_process02.png");}
+.fundProcessList.savingNew > li.process03 em:before {background-image: url("../../images/pr05/icon_savingnew_process03.png");}
+
+/* 펀드담보대출 */
+.formAreaBox.accountSelect .btn > .price + .price {margin-top: 9px;padding-top: 9px;border-top: 1px solid #e9e9e9;}
+
+/* 상품상세 */
+/* prItemTy04 : 노란우산공제 */
+.productWrap.prItemTy04 .motionArea {background: -webkit-linear-gradient(top, #fffbf2 0%, #fffbf2 80%, #fef4e3 100%);background: -moz-linear-gradient(top, #fffbf2 0%, #fffbf2 80%, #fef4e3 100%);}
+.productWrap.prItemTy04 .motionArea .tit,
+.productWrap.prItemTy04 .motionArea .txt {color: #5a4a32;}
+.productWrap.prItemTy04 .motionArea .btnType {color: #504835;background-color: #fdae06;}
+
+/* prItemTy05 : 연금저축보험 */
+.productWrap.prItemTy05 .motionArea {background: -webkit-linear-gradient(top, #fdf8f8 0%, #fdf8f8 80%, #f8e4e4 100%);background: -moz-linear-gradient(top, #fdf8f8 0%, #fdf8f8 80%, #f8e4e4 100%);}
+.productWrap.prItemTy05 .motionArea .tit,
+.productWrap.prItemTy05 .motionArea .txt {color: #532a2a;}
+.productWrap.prItemTy05 .prInfoList {width: 69%;}
+.productWrap.prItemTy05 .motionArea .btnType {color: #fff;background-color: #db6c6c;}
+.productWrap.prItemTy05 .motionArea .btnType.type2 {color:#db6c6c;background:none;border:1px solid #db6c6c;}
+/* 상품상세 버튼영역 */
+.productWrap.prItemTy05 .motionArea .btnAreaWrap {display:flex;display:-webkit-flex;position:absolute;left:0;bottom:20px;width:100%;padding:0 27px;text-align:center;box-sizing:border-box;}
+.productWrap.prItemTy05 .motionArea .btnAreaWrap .btnType {position:static;flex:1;-webkit-flex:1;margin:0;vertical-align:middle;}
+.productWrap.prItemTy05 .motionArea .btnAreaWrap .btnType + .btnType {margin-left:10px;}
+.productWrap.prItemTy05 .motionArea .btnAreaWrap .btnType span {display:block;padding:0;}
+
+/* prItemTy06 : 펀드담보대출 */
+.productWrap.prItemTy06 .motionArea {background: -webkit-linear-gradient(top, #f2faf7 0%, #f2faf7 80%, #e2ede9 100%);background: -moz-linear-gradient(top, #fdf8f8 0%, #fdf8f8 80%, #f8e4e4 100%);}
+.productWrap.prItemTy06 .motionArea .tit,
+.productWrap.prItemTy06 .motionArea .txt {color: #0f472f;}
+.productWrap.prItemTy06 .prInfoList {width: 69%;}
+.productWrap.prItemTy06 .motionArea .btnType {color: #fff;background-color: #079759;}
+.productWrap.prItemTy06 .goodsInfoWrap .txtBubble {background-color: #044f4e;}
+.productWrap.prItemTy06 .goodsInfoWrap .txtBubble:after {background-image: url('../../images/pr05/bg_goods_bubble.png');}
+.productWrap.prItemTy06 .goodsInfoWrap .txtRate {color: #079759;}
+
+/* 자계좌 추가 */
+.formAreaBox.rateBox + .formAreaBox.rateBox {margin-top: 20px;border-top: 1px solid #e9e9e9;}
+
+.shareList { overflow:hidden; margin:20px -16px 0; padding-top:20px; border-top:1px solid #f2f2f2;}
+.shareList li { float:left; width:33.33%; text-align:center;}
+.shareList li a { font-size:11px; text-align:center; color:#555555;}
+
+.iframeArea * {color:#555;}
+
+
+.mark + .subTit {margin-top:13px;}
+div + .btnAreaWrap {margin-top:20px;}
+
+.fundProductWrap .topAreaBox {margin:0;}
+.listTypeTable .rating {display:block; text-align:left;}
+.rating, .rating .fillRating {background-size: 90px auto;}
+.rightCol .rating {margin-top: 0;}
+
+.fundBaseInfoWrap .productWrap {padding: 20px 16px 25px;background: -webkit-linear-gradient(top, #f2faf7 0%, #f2faf7 80%, #e2ede9 100%);}
+.fundBaseInfoWrap .titArea .tit {position: relative;padding-right: 34px;font-size: 18px;font-weight: 500;line-height:22px;color: #0f472f;}
+.fundBaseInfoWrap .titArea .tit > a {position: absolute;top: 15px; right: 0;}
+.fundBaseInfoWrap .titArea .priceWrap {margin-top: 14px;}
+.fundBaseInfoWrap .titArea .priceWrap .txt {color: #0f472f;}
+.fundBaseInfoWrap .titArea .priceWrap em {position: relative;display: inline-block;margin-left: 15px;padding-left: 18px;}
+.fundBaseInfoWrap .titArea .priceWrap em.up {color: #f13e51;}
+.fundBaseInfoWrap .titArea .priceWrap em.down {color: #3789dc;}
+.fundBaseInfoWrap .titArea .priceWrap em i {position: absolute;top: 50%;left: 0;width: 11px;height: 8px;margin-top: -4px;background-repeat: no-repeat;background-position: 0 0;background-size:11px auto;}
+.fundBaseInfoWrap .titArea .priceWrap em.up i {background-image: url('../../images/pr05/icon_price_up.png');}
+.fundBaseInfoWrap .titArea .priceWrap em.down i {background-image: url('../../images/pr05/icon_price_down.png');}
+.fundBaseInfoWrap .fundInfoArea {margin-top: 37px;}
+.fundBaseInfoWrap .fundInfoArea > .infoList {}
+.fundBaseInfoWrap .fundInfoArea > .infoList:after {display: block;content:'';clear: both;}
+.fundBaseInfoWrap .fundInfoArea .infoList li {float: left;text-align: center;box-sizing:border-box;}
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01 {width: 23%;}
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01 span {background-repeat:no-repeat;background-position: 50% 0;background-size: 38px auto;}
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01.case01 span {background-image: url('../../images/pr05/bg_fund_case01.png');} /* 주식형 */
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01.case02 span {background-image: url('../../images/pr05/bg_fund_case02.png');} /* 채권형 */
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01.case03 span {background-image: url('../../images/pr05/bg_fund_case03.png');} /* 혼합형 */
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01.case04 span {background-image: url('../../images/pr05/bg_fund_case04.png');} /* MMF */
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01.case05 span {background-image: url('../../images/pr05/bg_fund_case05.png');} /* 주식파생형 */
+.fundBaseInfoWrap .fundInfoArea .infoList li.data01 span{margin-top: 0;padding-top: 43px;}
+.fundBaseInfoWrap .fundInfoArea .infoList li.data02 {width: 27.5%;}
+.fundBaseInfoWrap .fundInfoArea .infoList li.data03 {float: right;width: auto;}
+.fundBaseInfoWrap .fundInfoArea .infoList li > .grade,
+.fundBaseInfoWrap .fundInfoArea .infoList li > .yield {font-weight: 700;font-size: 30px;line-height: 1;}
+.fundBaseInfoWrap .fundInfoArea .infoList li > .yield.plus {color: #eb3d4f;}
+.fundBaseInfoWrap .fundInfoArea .infoList li > .yield.minus {color: #3789dc;}
+.fundBaseInfoWrap .fundInfoArea .infoList li > .yield span {font-weight: 700;line-height: 1;}
+.fundBaseInfoWrap .fundInfoArea .infoList li > span {display: block;margin-top: 13px;color: #555;}
+.fundBaseInfoWrap .fundInfoArea .infoList.flex{display:flex}
+.fundBaseInfoWrap .fundInfoArea .infoList.flex li{width:100%;}
+.fundBaseInfoWrap .fundInfoArea .infoList.flex li.data01{padding-left:3%;}
+.fundBaseInfoWrap .fundInfoArea .infoList.flex li.data03{text-align:right;padding-right:3%;}
+.fundBaseInfoWrap .btnAreaWrap {margin-top: 40px;}
+.fundBaseInfoWrap .btnAreaWrap .btnType {display: block;width: 150px;height: 45px;margin: 0 auto;background-color: #079759;}
+.fundBaseInfoWrap .btnAreaWrap.flex{display:flex;margin:40px -5px 0 -5px;}
+.fundBaseInfoWrap .btnAreaWrap.flex .btnType{width:100%;margin:0 5px;}
+.fundBaseInfoWrap .btnAreaWrap .btnType.btnLine{border:1px solid #079759;color:#079759;background:none;}
+.fundBaseInfoWrap .fundBox{background:rgba(99,169,139,0.15);border-radius:10px;padding:10px 8px;margin-top:20px;}
+.fundBaseInfoWrap .fundBox .referTxt{font-size:13px;}
+.gradeWrap {position:relative;}
+.gradeWrap .gradeCon {display:flex;display:-webkit-flex;position: relative;width:100%;}
+.gradeWrap .leftTit {padding-right:10px;}
+.gradeWrap .leftTit li {font-size:13px; line-height:35px; color:#777;}
+.gradeWrap .gradeCon .chkArea {flex:1;-webkit-flex:1;}
+.gradeWrap .gradeCon table {width:100%;}
+.gradeWrap .gradeCon table td {position:relative; height:35px; border:1px solid #dbdbdb; text-align:center;}
+.gradeWrap .gradeCon table td.current:before {display:inline-block; border:2px solid #3789dc; width:18px; height:18px; content:""; box-sizing:border-box; border-radius:50px;}
+.gradeWrap .bottomTit {margin-top:5px;}
+.gradeWrap .bottomTit li {float:left; width:33%; text-align:center; font-size:13px; color:#777;}
+.gradeWrap .bottomTit:after {display:block; content:""; clear:both;}
+.gradeWrap .digonalTit {position: absolute;bottom: 0;left: 0;font-size: 13px;color: #777;}
+
+.numberList > li .inlineBlock {margin-top:5px;}
+.numberList > li .imgArea {margin-left:-20px;}
+.numberList > li .imgArea img {display:block; width:100%;}
+.numberList > li .dotList {margin-top:5px;}
+.viewCont .bottomTxt {margin-top:10px;}
+.viewCont .bottomTxt + .chkArea {margin-top:5px;}
+
+/* 로보 펀드Folio */
+.productChange.type2 .productList > li {position:relative; padding:20px 0 0; border-bottom:none;}
+.productChange.type2 .productList > li:after {display:block; width: calc(100% + 32px); height:1px; margin:0 0 0 -16px; content:""; background:#e9e9e9;}
+.productChange.type2 .productList > li:last-child:after {display:none;}
+.productChange.type2 .productList .productBox {padding: 0;border-bottom: none;}
+.productChange.type2 .productList .productBox .titProduct {padding-bottom: 8px;border-bottom: none;}
+.productChange.type2 .productList .productBox .txtPeriod .iconTyLabel02 {border:1px solid #c5c5c5;}
+.productChange.type2 .productList .productBox .txtPeriod .iconTy107 {border: 1px solid #3387ce;}
+.productChange.type2 .productList .productBox .txtPeriod span {margin-right:3px;}
+.productChange.type2 .productList .listTypeTable {padding:0;}
+.productChange.type2 .productList .listTypeTable li {padding:10px 0 13px; border-bottom:none;}
+.productChange.type2 .productList .listTypeTable .tit {color: #777;}
+.productChange.type2 .productList .listTypeTable .price,
+.productChange.type2 .productList .listTypeTable .price span,
+.productChange.type2 .productList .listTypeTable .rate em {font-weight: 700;}
+.productChange.type2 .productList .listTypeTable .rate {color:#333;}
+.productChange.type2 .productList .listTypeTable .rate.plus {color:#eb3d4f;}
+.productChange.type2 .productList .listTypeTable .rate.minus {color:#1150c5;}
+
+.snsTxt {padding: 15px 0; color: #555;}
+
+/* 투자성향분석 */
+.subTit2.subTitQna {padding-left:17px;text-indent:-17px;}
+.subTit3.subTitQna {padding-left:14px;text-indent:-14px;}
+.subTit3.subTitQna2 {padding-left:27px;text-indent:-27px;}
+.qnaInvest {margin-top:8px;}
+.qnaInvest .AccorTitle {position:relative;padding:10px 25px 10px 15px;background:#6194d8;border-radius:4px 4px 0 0;}
+.qnaInvest .AccorTitle a {display:block;}
+.qnaInvest .AccorTitle .tit {padding-left:24px;text-indent:-24px;font-weight:700;font-size:14px;color:#fff;}
+/* .qnaInvest:nth-child(9) ~.qnaInvest .AccorTitle .tit {padding-left:43px;text-indent:-32px;} */
+.qnaInvest .AccorTitle .num {font-weight:700;font-size:15px;font-family:'Century Gothic';color:#b3f0ff;box-sizing:border-box;}
+.qnaInvest .AccorTitle .arrow {position:absolute;top:50%;right:10px;margin-top:-2.5px;width:8px;height:5px;background:url(../../images/pr05/icon_toggle_arrow.png) no-repeat 0 -5px;background-size:100%;transform:rotate(180deg)}
+.qnaInvest.type02 .AccorTitle {background:#887fe0;}
+.qnaInvest.type02 .AccorTitle .num {color:#e8deff;}
+.qnaInvest [class*=AccorCont] {position:relative;border-width:0 1px 1px 1px;border-style:solid;border-color:#bcc4cf;border-radius:0 0 4px 4px;}
+.qnaInvest .AccorCont {display:none;}
+.qnaInvest .contAnswer {padding:10px 10px 10px 40px;font-size:13px;color:#888;background:url(../../images/pr05/icon_answer_off.png) no-repeat 15px 11px;background-size:21px auto;}
+.qnaInvest.result .contAnswer {color:#333;background-image:url(../../images/pr05/icon_answer_on.png)}
+.qnaInvest.on .AccorTitle .arrow {transform:initial;}
+.qnaInvest.on .AccorContView {display:none;}
+.qnaInvest.on .AccorCont {display:block;border-color:#6194d8}
+.qnaInvest.type02.on [class*=AccorCont] {border-color:#887fe0}
+.qnaInvest input[type="radio"] + label:before {background-image:url(../../images/icon_checkbox_57x57.png);}
+.qnaInvest .innerBox.lineType {padding:10px;}
+.qnaInvest .innerBox.lineType:first-child {border-top:0}
+.qnaInvest .btnGroupBox {padding:10px;}
+.qnaInvest .btnGroupBox.lineT {border-top:1px solid #dbdbdb;}
+.qnaInvest .boxGray {padding:10px;background:#ececec;color:#555}
+/* rdoAreaAge */
+.rdoAreaAge {display:flex;display:-webkit-flex;position:relative;padding:37px 8px 20px;}
+.rdoAreaAge .input {display:block;position:relative;width:100%;padding-left:7px;box-sizing:border-box;text-align:center;}
+.rdoAreaAge .input:before {content:'';display:block;position:absolute;top:-17px;left:0;width:100%;height:1px;background:#666;}
+.rdoAreaAge .input:first-child {padding-left:0;}
+.rdoAreaAge .input:first-child:before{width:50%;left:50%;}
+.rdoAreaAge .input:last-child:before{width:50%;}
+.rdoAreaAge input[type="radio"] + label {width:100%;padding:4px 0;border:1px solid #a1a9af;background-color:#a1a9af;border-radius:3px;font-size:11px;color:#fff;}
+.rdoAreaAge input[type="radio"] + label:first-child {margin-left:0}
+.rdoAreaAge input[type="radio"] + label:before {top:-27px;left:50%;margin:0 0 0 -9.5px;background-image:url(../../images/pr05/icon_checkbox.png);}
+.rdoAreaAge input[type="radio"] + label:after,
+.rdoAreaAge input[type="radio"]:checked + label span:after {content:'';position:absolute;top:-4px;left:50%;margin-left:-4px;width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;}
+.rdoAreaAge input[type="radio"] + label:after {border-bottom:4px solid #a1a9af;}
+.rdoAreaAge input[type="radio"]:checked + label {border-color:#6194d8;background-color:#fff;color:#333}
+.rdoAreaAge input[type="radio"]:checked + label:before {background-image:url(../../images/icon_checkbox_57x57.png);}
+.rdoAreaAge input[type="radio"]:checked + label:after {border-bottom:4px solid #fff;top:-3px;}
+.rdoAreaAge input[type="radio"]:checked + label span:after {border-bottom:4px solid #6194d8;}
+.rdoAreaAge.lineH02 input[type="radio"] + label {min-height:28px;display:flex;display:-webkit-flex;justify-content:center;-webkit-justify-content:center;-webkit-align-items:center;align-items:center;} /* 텍스트 두줄 */
+.rdoAreaAge2 {display:flex;display:-webkit-flex;position:relative;padding:45px 0 10px;margin:0 -10px;}
+.rdoAreaAge2 .input {display:block;position:relative;width:100%;padding-left:7px;box-sizing:border-box;text-align:center;}
+.rdoAreaAge2 .input:before {content:'';display:block;position:absolute;top:-17px;left:0;width:100%;height:1px;background:#ccc;}
+.rdoAreaAge2 .input:first-child {padding-left:0;}
+.rdoAreaAge2 .input:first-child:before{width:50%;left:50%;}
+.rdoAreaAge2 .input:last-child:before{width:50%;}
+.rdoAreaAge2 .input input + label {padding:4px 0;font-size:12px;}
+.rdoAreaAge2 .input input + label:first-child {margin-left:0}
+.rdoAreaAge2 .input input + label:before {top:-27px;left:50%;margin:0 0 0 -9.5px;}
+/* rdoAreaImg */
+.rdoAreaImg .input {display:block;padding:10px;border-bottom:1px solid #c0d4ef;box-sizing:border-box}
+.rdoAreaImg .input:last-child {border-bottom:0}
+.rdoAreaImg .input input + label {display:table;font-size:13px;}
+.rdoAreaImg .input input + label .txt {display:table-cell;vertical-align:middle}
+.rdoAreaImg .input input + label .sub {display:block;margin-top:2px;font-size:12px;color:#555;}
+.rdoAreaImg .input input + label .img {width:60px;margin-right:10px;}
+.rdoAreaImg.type2 {overflow:hidden;padding:2px 0;} /* inline type */
+.rdoAreaImg.type2 .input {float:left;margin-left:20px;border:none;}
+.rdoAreaImg.type2 .input:first-child {margin-left:0}
+.rdoAreaImg02 {overflow:hidden;}
+.rdoAreaImg02 .input {float:left;padding:8px 0 12px;margin-bottom:-1px;border-right:1px solid #c0d4ef;border-bottom:1px solid #c0d4ef;box-sizing:border-box;}
+.rdoAreaImg02 input[type="radio"] + label {display:block;min-height:auto;padding:25px 0 0 0;font-size:11px;vertical-align:top;text-align:center;}
+.rdoAreaImg02 input[type="radio"] + label:before {top:0px;left:50%;z-index:1;margin:0 0 0 -9.5px;}
+.rdoAreaImg02 .img {display:block;width:60px;margin:0 auto 6px;}
+.rdoAreaImg02.item02 .input {width:50%}
+.rdoAreaImg02.item02 .input:nth-child(2n){border-right:0;}
+.rdoAreaImg02.item03 .input {width:33.3%}
+.rdoAreaImg02.item03 .input:nth-child(3n){border-right:0;}
+/* rdoAreaList */
+.rdoAreaList {display:flex;display:-webkit-flex;padding:0 8px;}
+.rdoAreaList .input {display:block;position:relative;width:100%;margin-left:7px;padding-top:10px;}
+.rdoAreaList .input:after {content:"";position:absolute;left:50%;top:0;width:1px;height:100%;background:#dadada;}
+.rdoAreaList .input:first-child {margin-left:0;}
+.rdoAreaList input[type="checkbox"] + label {display:block;padding:25px 0 0 0;font-size:11px;vertical-align:top;text-align:center;}
+.rdoAreaList input[type="checkbox"] + label:before {top:0;left:50%;z-index:1;margin:0 0 0 -9.5px;}
+.listPord {position:relative;margin-bottom:20px;}
+.listPord li {position:relative;z-index:1;padding:2px;margin-top:7px;border:1px solid #dadada;background:#fff;box-sizing:border-box;}
+.listPord li:first-child {margin-top:0;}
+.listPord li:first-child:before {content:'';position:absolute;left:-1px;right:-1px;top:-4px;height:0;border-width:0 2px 4px 2px;border-style:solid;}
+.listPord01 li:first-child:before {border-color:transparent transparent #f23c4f transparent;}
+.listPord02 li:first-child:before {border-color:transparent transparent #f89c2d transparent;}
+.listPord03 li:first-child:before {border-color:transparent transparent #fdcb21 transparent;}
+.listPord04 li:first-child:before {border-color:transparent transparent #b4de32 transparent;}
+.listPord05 li:first-child:before {border-color:transparent transparent #64d9ca transparent;}
+/* 투자성향분석 2021 */
+.qnaInvest.type03 {margin-top:12px;border:1px solid #cde3ff;border-radius:4px;}
+.qnaInvest.type03 .AccorTitle {padding:15px 39px 15px 15px;background:#ebf7ff;border-bottom:none;}
+.qnaInvest.type03 .AccorTitle a{position:static;}
+.qnaInvest.type03 .AccorTitle .tit {overflow:hidden;padding-left:0;text-indent:0;color:#333;padding:0;height:auto;}
+.qnaInvest.type03 .AccorTitle .tit span {font-weight:bold;}
+.qnaInvest.type03 .AccorTitle .tit .num {float:left;margin-right:4px;font-size:14px;font-family:'shinhan';color:#1150c5;}
+.qnaInvest.type03 .AccorTitle .tit .txt {display:block;overflow:hidden;}
+.qnaInvest.type03 .AccorTitle p {padding:4px 0 0 28px;font-size:12px;color:#555}
+.qnaInvest.type03 .AccorTitle.type2 p {padding-left:36px;}
+.qnaInvest.type03 .AccorTitle .referTxt {margin-left:14px}
+.qnaInvest.type03 .AccorTitle .arrow {top:20px;right:16px;margin-top:0;width:12px;height:8px;background-image:url(../../images/ico_arrow_top.png);background-position:0 0;}
+.qnaInvest.type03 [class*=AccorCont] {border:none;}
+.qnaInvest.type03 .AccorCont {padding:0 15px;}
+.qnaInvest .contAnswer2 {padding:15px 15px 15px 45px;font-size:13px;color:#333;background:url(../../images/pr05/icon_answer2_on.png) no-repeat 15px 15px;background-size:25px auto;}
+.qnaInvest.type03 input[type="radio"] + label:before {background-image:url(../../images/icon_radio_57x57.png);}
+.qnaInvest.type03 .rdoAreaImg .input {padding:13px 0;border-color:#e8ebf0}
+.qnaInvest.type03 .rdoAreaImg .input input + label {color:#333;}
+.qnaInvest.type03 .btnGroupBox {padding:0 0 10px;}
+.qnaInvest.type03 .btnGroupBox .btnType2.line {height:40px;line-height:40px;border-radius:3px;font-size:14px;}
+.rdoAreaTy2.blue input + label {height:40px;background:#f2f4f6;border-radius:4px;font-size:14px;line-height:40px;}
+.rdoAreaTy2.blue input:checked + label {background:#4399ff;font-weight:bold;}
+
+/* media query */
+@media only screen and (max-device-width: 360px) {
+	.contents.full .innerBox.portfolioWrap.pfType01 {background-position: right 100px;background-size: 106px auto;}
+	.contents.full .innerBox.portfolioWrap.pfType02 {padding-bottom: 57px;background-position: right 296px;background-size: 104px auto;}
+	.contents.full .innerBox.portfolioWrap.pfType02 .txtWrap > .tit {letter-spacing: -2px;}
+	.contents.full .innerBox.portfolioWrap.pfType01 .conBox,
+	.contents.full .innerBox.portfolioWrap.pfType02 .conBox {padding-bottom: 60px;}
+	.portfolioWrap .portfolioList li:first-child {padding-right: 13px;}
+	.portfolioWrap .portfolioList li + li {padding-left: 13px;border-left: 1px solid #bcddd1;}
+	.portfolioWrap .portfolioList .infoBox .tit {font-size: 17px;letter-spacing: -1px;}
+}
+
+/* 투자성향분석 2021.05 */
+.investTypeBox {margin:30px -16px 0;padding:24px 16px 0;background:-webkit-linear-gradient(to bottom, #f8f8f8, #fff);background:linear-gradient(to bottom, #f8f8f8, #fff);}
+.investTypeBox img {width:100%}
+.tblInvestType {margin-top:16px;border-top:1px solid #555}
+.tblInvestType .tblTyDefault {margin-top:0}
+.tblInvestType .tblTyDefault.rowType tbody > tr:first-child th, .tblInvestType .tblTyDefault.rowType tbody > tr:first-child td {border-top-width:0}
+.tblInvestType .tblTyDefault tbody th {font-size:13px;color:#555;line-height:1.5;background:#f2f4f6;border:1px solid #dbdee2;border-width:0 0 1px 0}
+.tblInvestType .tblTyDefault tbody td {font-size:13px;color:#555;line-height:1.5;border:1px solid #dbdee2;border-width:0 0 1px 1px}
+.tblInvestType .btnType.line {display:inline-block;margin-top:4px;height:32px;width:142px;font-size:13px;font-weight:normal;color:#333;border:1px solid #e8ebf0;border-radius:4px;text-align:center;line-height:30px}
+
+/*펀드약관*/
+.termsBox .btnTerms{position:absolute;right:0;top:0;bottom:0;width:50px;text-indent:-9999px;}
+.termsBox .btnTerms:after{content:"";width:16px;height:10px;background:url(../../images/icon_fromBoxArrow_2.png) no-repeat;background-size:100% auto;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%, -50%)}
+.termsBox .btnTerms.on:after{-webkit-transform:translate(-50%, -50%) rotate(180deg)}
+.scrollArea{position:relative;overflow:hidden;}
+.scrollArea .swiper-wrapper{height:auto;}
+.termsCont .termsList{border-top:0;padding:0;}
+.termsCont .termsList > li{padding-left:0;}
+.termsBox .scrollArea .termsList > li{padding-right:16px;}
+.termsCont .swiper-container-vertical>.swiper-scrollbar{z-index:1;}
+
+/* 08/03 보험 방카슈랑스 S */
+.bcInGap { padding:0 8px;}
+.bcInnerGap { padding:0 24px;}
+
+/* 보험 : color */
+.bcTxtCol01 { color:#1bc2c8;}
+.bcTxtCol02 { color:#db6c6c;}
+.bcBgCol01 { background-color:#1bc2c8;}
+.bcBgCol02 {  background-color:#db6c6c;}
+
+/* 보험 : icon */
+.iconTyLike { width:18px;height:18px;background:#ccc;}
+.on .iconTyLike { background:red;}
+.iconTyBcArrow01 { display:inline-block;vertical-align:middle;padding:0 9px;height:34px;line-height:34px;border:1px solid #1150c5;color:#1150c5;background-color:transparent;}
+.iconTyBcArrow01 span::after { content:"";display:inline-block;vertical-align:middle;margin:0 0 4px 7px;width:10px;height:7px;background:url(../../images/pr05/icon_bcarrow_down01.png) no-repeat;background-size: 100%;}
+
+/* 보험 : logo - BANK */
+.bcBanklogo { display:inline-block;width:auto;height:18px;}
+.bcBanklogo img { width:auto;height:100%;}
+
+/* 보험 : btn */
+.btnBcView01,
+.btnBcView01 span { display:inline-block;vertical-align:middle;font-size:14px;color:#1150c5;font-weight:500;}
+.btnBcView01 span::after { content:"";display:inline-block;vertical-align:middle;margin:0 0 4px 7px;width:10px;height:7px;transform:rotate(-90deg);-webkit-transform:rotate(-90deg);background:url(../../images/pr05/icon_bcarrow_down01.png) no-repeat;background-size: 100%;}
+.btnBcView01 { position:relative;padding-bottom:4px}
+.btnBcView01::before {content:"";display:block;position:absolute;bottom:0;left:0;width:100%;height:1px;background-color:#1f5ac8;}
+.btnBcView02,
+.btnBcView02 span { display:inline-block;color:#fff;}
+.btnBcView02 { padding:0 14px;height:35px;line-height:35px;border-radius:3px;background-color:#1bc2c8;}
+.btnDetail { display:inline-block;padding:5px 0;color:#333;}
+.btnDetail::after { content: '';margin:0 0 3px 8px;width: 7px;height: 10px;background: url(../../images/pr05/icon_bcarrow_side01.png) no-repeat 0 0;background-size: 7px auto;}
+
+/* 보험 : txt hilight LINE */
+[class^="bcHilight"] { position:relative;display:inline-block;font-size:inherit;font-weight:inherit;color:inherit;z-index:1;}
+[class^="bcHilight"]::before { content:"";display:block;position:absolute;bottom:0;left:0;width:100%;height:8px;background-color:#fbe55a;z-index:-1;}
+[class^="bcHilightAni"]::before { width:0;-webkit-animation:hilightShow 2s ease-in-out forwards;animation:hilightShow 1s ease-in-out forwards;}
+
+/* 보험 : 글자수감지 3줄이상 폰트사이즈 조정 */
+.bcFontFluid { display:block;width:100%;white-space: nowrap;}
+.bcFontFluid span { font-size: inherit;color:inherit;font-weight:inherit;line-height: inherit;}
+.bcFontFluid.break { white-space:normal;}
+.bcFontFluid .resize01 { font-size:0.7em;}
+.bcFontFluid .resize02 { font-size:0.5em;}
+
+/* 보험 : 상단탭 */
+.bcTab { margin:-20px -16px 0;}
+.bcTab .tabTy02 a,
+.bcTab .tabTy02 a.on { color:#333;font-weight:400;}
+.bcTab .tabTy02 a.on:after { background:#333;}
+.bcTab .tabTy02 a span,
+.bcTab .tabTy02 a.on span { font-weight:400;}
+.bcTabConts { margin-top:4px;}
+
+/* 보험 : shadow border BOX - #fff */
+[class^="bcInfoCard"] { position:relative;margin:0 -4px;border-radius:10px;background:#fff;box-sizing:border-box;box-shadow:0 5px 10px 5px rgba(0,0,0,0.05);text-align:left;}
+[class^="bcInfoCard"].typ01 {padding:24px 30px;}
+[class^="bcInfoCard"].typ02 {padding:22px 20px;}
+[class^="bcInfoCard"] .infoList + .infoList { margin-top:30px;padding-bottom:3px}
+[class^="bcInfoCard"] .infoList .tit, .bcInfoCard .infoList .tit span { font-size:16px;font-weight:500;}
+[class^="bcInfoCard"] .infoList .txt { margin-top:8px;font-size:13px;color:#959595;}
+[class^="bcInfoCard"].typ03 .leftCol { padding:22px 20px; position:relative;width:50%;}
+[class^="bcInfoCard"].typ03 .rightCol { position:absolute;right:20px;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);}
+[class^="bcInfoCard"].typ03 .txt { margin-top:4px;}
+
+.bcCardWrap [class^="bcInfoCard"] + [class^="bcInfoCard"] { margin-top:12px}
+
+/* 보험 : list */
+[class^="inlineList"] { display:table;margin-left:-5px;}
+[class^="inlineList"] li { display:table-cell;vertical-align:middle;position:relative;padding:0 8px;}
+[class^="inlineList"].listBar li + li::after { content:"";display:block;position:absolute;left:0;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);width:1px;height:18px;background-color:#555;}
+[class^="inlineList"].listBar li span { font-size:16px;color:#555}
+
+/* 보험 : 상품목록 */
+[class^="bcTopArea"] { position:relative;padding:36px 0;}
+[class^="bcTopArea"] [class^="tit"] { word-break:keep-all;}
+[class^="bcTopArea"] .titM { display:block;font-size:21px;}
+[class^="bcTopArea"] .titL { display:block;font-size:24px;}
+[class^="bcTopArea"] .txt { display:block;margin-top:8px;font-size:13px;color:#555;}
+[class^="bcTopArea"] .prdTit { position:relative;}
+[class^="bcTopArea"] .prdTit .tit { margin-top:10px;}
+[class^="bcTopArea"] .prdTit .bcBanklogo + .titL { margin-top:10px;}
+[class^="bcTopArea"] .prdTit .bcBanklogo + .titM { margin-top:6px;}
+[class^="bcTopArea"] .prdTit .topBtnWrap {position:absolute;right:-8px;top:2px;font-size:0;}
+[class^="bcTopArea"] .prdTit .topBtnWrap [class^="link"] { display:inline-block;vertical-align:middle;}
+[class^="bcTopArea"] .prdTit .topBtnWrap [class^="link"] + [class^="link"] { margin-left:5px;} 
+[class^="bcTopArea"].prd .iconTyBcArrow01 { margin-top:38px;}
+[class^="bcTopArea"] .innerImg { position:absolute;right:-7px;bottom:0;width:127px;height:123px;}
+[class^="bcTopArea"] .innerImg img{ width:100%;}
+
+/* 목록 TOP영역 : 오른쪽영역확보 (BG삽입) 경우 */
+[class^="bcTopArea"].leftSide .prdTit { padding-right:40px;} 
+
+.bcPrdList { margin-top:11px;}
+.bcPrdList::after { content:"";display:block;clear:both;}
+.bcPrdList .bcListTop { position:relative;}
+.bcPrdList .resultTxt { position:absolute;left:0;bottom:0;padding:10px 0;}
+.bcPrdList .bcListTop .selecter { padding:0;text-align:right;}
+.bcPrdList .bcListTop .selecter .select { padding:0;height:30px;line-height:30px;}
+.bcPrdList .bcListTop .selecter .select a { font-size:13px;color:#000;}
+.bcPrdList .bcListTop .selecter .sub { left:auto;right:0;}
+.bcPrdList .listLink { position:relative;display:block;}
+.bcPrdList .listBox > * { box-sizing:border-box;}
+.bcPrdList .listBox .row { position:relative;padding:16px 0 19px;border-bottom:1px solid #dbdbdb;} 
+.bcPrdList .listBox .row.rowLeft .listTit,
+.bcPrdList .listBox .row.rowLeft .listTxt { width:72.5%;}
+.bcPrdList .listBox .listTit { min-height:65px;word-break:keep-all;}
+.bcPrdList .listBox .listTit .tit { display:block;margin-top:3px;font-size:16px;font-weight:500;}
+.bcPrdList .listBox .listTxt { position:relative;padding-top:13px;width:100%;}
+.bcPrdList .listBox .listTxt [class^="desc"] { color:#959595;font-size:12px;line-height:1.47;word-break:keep-all;}
+.bcPrdList .listBox .listTxt .desc_result.monthlyPay { margin-top: 8px;font-size:14px;font-weight: 500;color: #555;}
+.bcPrdList .listBox .listValue {position:absolute;right:0;bottom:-3px;width:92px;text-align:right;}
+.bcPrdList .listBox .listValue .rate [class^="rate"] { display:block;}
+.bcPrdList .listBox .listValue .rateName { font-size:13px;color:#555;}
+.bcPrdList .listBox .listValue .rateNum { margin-top:6px;font-size:21px;font-weight:500;color:#1bc2c8;}
+.bcPrdList .listBox .btnDetail { padding-top:9px;}
+.bcPrdList .listBox .listTxt.typ01 { height:92px;}
+.bcPrdList .listBox .listTxt.typ01 [class^="desc"] { vertical-align:middle;}
+
+/* 보험 : 상품상세 */
+.bcPrdDetails [class^="bcTopArea"] .btn { margin-top:16px;}
+.bcPrdDetails .bcTopArea .prdSummaryList { display:table;table-layout:fixed;width:100%;margin-top:21px;}
+.bcPrdDetails .bcTopArea .prdSummaryList .row { display:table-cell;vertical-align:top;}
+.bcPrdDetails .bcTopArea .prdSummaryList .row + .row { padding-left:30px;}
+
+/* 보험 : 간편설계 - btmsheet */
+.bcPopBottom .formAreaBox.col2 { display:table;table-layout:fixed;width:100%:}
+.bcPopBottom .formAreaBox.col2 .inputBox{ display:table-cell;padding-top:0;width:50%;vertical-align:top;}
+.bcPopBottom .formAreaBox.col2 .inputBox.gender dd { display:flex;display:-webkit-flex;}
+.bcPopBottom .currentValue { padding-top:20px;text-align:center;}
+.bcPopBottom .currentValue [class^="txt"] { position:relative;padding:0 3px;}
+.bcPopBottom .currentValue [class^="txt"] + [class^="txt"] { margin-left:5px;}
+.bcPopBottom .currentValue [class^="txt"] + [class^="txt"]::before { content:"/";display:block;position:absolute;right:100%;bottom:0;}
+
+.bcPopBottom .formAreaBox.type3 .inputBox.price .transPrice { right:25px;bottom:10px;margin:0;font-size:15px;color:#959595;}
+.bcPopBottom .formAreaBox.type3 .inputBox.price input { padding-right:140px;}
+
+/* 보험 : 간편설계 - 결과 */
+.bcPrdResult .listTypeTable .row .leftCol { width:auto;}
+.bcInfoList { padding-top:4px;border-top:1px solid #dbdbdb;}
+.bcInfoList .row { padding:9px 0;}
+.bcInfoList .row + .row { margin-top:0;}
+.btmNotice { margin-top: 27px;}
+.bcResultDetails { margin-top:25px;}
+
+.recommendList { margin-bottom:23px;}
+.recommendList .tabTy02 { background-color:transparent;}
+.recommendList .tabTy02[class*=swiper-container] { padding:0 24px;}
+.recommendList .tabTy02[class*=swiper-container]:before {display:none;}
+.recommendList .tabTy02 .swiper-slide { padding:0 20px;height:32px;line-height:32px;border-radius:20px;font-size:13px;color:#959595;background-color:#e7e7e9;}
+.recommendList .tabTy02 .swiper-slide + .swiper-slide { margin-left:12px;}
+.recommendList .tabTy02 .swiper-slide.on {color:#f8fafb;background-color:#555;}
+.recommendList .tabTy02 .swiper-slide.on::after { display:none;}
+.recommendList .tabTy02 .hashtagBox { display:inline-block;min-width:50px;font-size:15px;text-align:center;border:1px solid #999;background-color:#fff;}
+
+/* 보험 : 간편설계 - 그래프 */
+.resultGrp { padding:26px 0;}
+.resultGrp .grp { position:relative;height:18px;}
+.resultGrp .grp::before { content:"";display:block;position:absolute;left:0;top:0;width:100%;height:100%;border-radius:5px;background-color:#f8f8f8;}
+.resultGrp .grp + .grp { margin-top:62px;}
+.resultGrp [class^="period"] { display:block;position:absolute;top:0;left:0;width:100%;height:100%;}
+.resultGrp [class^="period"]::after { content:"";display:block;clear:both;}
+.resultGrp .periodPay { z-index:10;}
+.resultGrp .periodFixed { z-index:5;}
+.resultGrp [class^="period"] .tit { position:absolute;bottom:100%;padding-bottom:6px;font-size:11px;font-weight:500;color:#4d4f5c;}
+.resultGrp [class^="period"] [class^="point"] { display:block;position:absolute;top:100%;padding-top:5px;font-size:11px;color:#555;font-weight:500;}
+.resultGrp [class^="period"] .pointStart { left:3px;}
+.resultGrp [class^="period"] .pointEnd { right:0;}
+.resultGrp .periodPay { background-color:#5fe3a1;}
+.resultGrp .periodFixed{ border-radius:0 5px 5px 0;background-color:#f38074;}		
+.resultGrp .periodPay .tit { left:0;color:#379b69;}
+.resultGrp .periodFixed .tit { right:0;color:#9d4747;}
+.resultGrp .periodProvision { left:auto;right:0;border-radius:0 5px 5px 0;
+    background:-webkit-linear-gradient(to right, #56d9fe, #a3a1fb);
+    background:-o-linear-gradient(to right, #56d9fe, #a3a1fb);
+    background:-moz-linear-gradient(to right, #56d9fe, #a3a1fb);
+    background:linear-gradient(to right, #56d9fe, #a3a1fb);
+    }
+.resultGrp .periodProvision [class^="point"] { color:#413fa7;}
+.resultGrp .periodProvision .tit { color:#2790fb;}
+
+/* 보험 : 간편설계 - 상세정보입력 */
+.bcPlaningInfo .boxTyLabel { margin:0 -16px;padding:14px 16px;border-bottom:1px solid #dae7ef;background-color:#f0f6fc;}
+.bottomKeypad .formAreaBox { border-top:1px solid #d2d5d9;background-color:#fff;}
+.bottomKeypad .formAreaBox .inputBox.price { padding:0 16px 20px;}
+.bottomKeypad .formAreaBox .inputBox dt { width:80px;min-width:80px;text-align:left;}
+
+/* 보험 : animation */
+@keyframes hilightShow {
+    0% { width : 0 }
+    100%{ width : 100% }
+}
+
+/* 신탁 */
+.btmFixMsg {position:fixed;bottom:50px;padding:9px 0;width:100%;font-size:13px;color:#638cb5;background:#f1f8ff;text-align:center}
+.investTendency.trNoResult {padding-bottom:130px;background:url('../../images/pr05/img_trust_noresult.png') no-repeat calc(50% + 8px) bottom;background-size:166px auto}
+.investTendency[class*="trCase"] {position:relative;padding-top:150px}
+.investTendency[class*="trCase"]:before {content:'';overflow:hidden;display:block;position:absolute;top:85px;left:50%;transform:translateX(-50%);width:66px;height:66px;background-image:url('../../images/pr05/img_trust_case.png');background-repeat:no-repeat;background-size:auto 66px;}
+.investTendency.trCase01:before {background-position:0 0}
+.investTendency.trCase02:before {background-position:-71px 0}
+.investTendency.trCase03:before {background-position:-142px 0}
+.investTendency.trCase04:before {background-position:-213px 0}
+.investTendency.trCase05:before {background-position:-284px 0}
+.investTendency[class*="trCase"] .txt {margin-top:22px;font-size:25px;line-height:1.2}
+
+/* 신탁 > ELT, ETF */
+.topInfoBox {position:relative;padding:13px 0 35px}
+.topInfoBox .infoTxt {overflow:hidden;height:45px;/* transition:all 1s */}
+.topInfoBox .infoTxt.on {height:auto;}
+.topInfoBox .infoTxt.on + .btnInfoMore:before {transform:rotate(180deg)}
+.btnInfoMore {position:absolute;right:0;bottom:8px;padding:3px 16px 3px 5px;font-size:13px;color:#777}
+.btnInfoMore:before {content:'';display:block;position:absolute;top:50%;right:0;margin-top:-3px;width:10px;height:6px;background:url('../../images/pr05/icon_info_arr.png') no-repeat center;background-size:100% auto}
+.trSrchBox {margin:0 -16px;padding:14px 14px 20px;background:#fff}
+.sortingBox {display:flex;flex-direction:row;position:relative;}
+.sortingBox .inputBox {position:relative;width:calc(100% - 35px);height:50px;border:1px solid #dbdbdb;box-sizing:border-box;}
+.sortingBox .inputBox input {padding:0 10px;width:calc(100% - 45px);height:100%;font-size:15px;border:0;box-sizing:border-box;}
+.sortingBox .inputBox input::placeholder {color:#959595}
+.sortingBox .inputBox .btnSrch {position:absolute;right:0;top:0;width:45px;height:100%;text-align:center;}
+.btnSorting {position:absolute;right:-5px;top:0;width:35px;height:100%;background:url('../../images/pr05/btn_sorting.png') no-repeat center;background-size:18px}
+.trSrchBox .selBox {margin-top:15px}
+.trSrchBox .selBox .selecter {display:inline-block;padding:0}
+.trSrchBox .selBox .selecter .select {display:inline-block;position:relative;margin:0 15px 0 9px;padding:5px 30px 3px 0;width:auto;height:auto;color:#333;line-height:1.3;font-size:14px;box-sizing:border-box;border:0;border-bottom:1px solid #dbdbdb;-webkit-appearance:none;border-radius:0}
+.trSrchBox .selBox .selecter .select em .iconTy43 {margin:0;position:absolute;right:4px;top:52%;-webkit-transform:translateY(-50%) rotate(90deg);transform:translateY(-50%) rotate(90deg)}
+.trSrchBox .selBox .selecter.focus .select em .iconTy43 {-webkit-transform:translateY(-50%) rotate(-90deg);transform:translateY(-50%) rotate(-90deg)}
+.trSrchBox .selBox .selecter .sub {margin-top:-1px;left:9px}
+.trSrchBox .selBox .selecter .sub button {padding:0 23px}
+.trSrchBox .selBox select {margin:0 15px 0 9px;padding:5px 30px 3px 0;font-size:14px;box-sizing:border-box;border:0;border-bottom:1px solid #dbdbdb;-webkit-appearance:none;background:url('../../images/ico_arrow_bottom.png') no-repeat right center;background-size:13px auto;border-radius:0}
+.trSrchBox .selBox .count {color:#777}
+.trSrchBox .selBox .count em {font-size:17px;font-weight:bold;color:#233de8}
+.trProdTit {margin:18px 0 13px;font-size:14px;font-weight:bold;text-align:center;}
+.sortingResult {margin:0 -16px;padding:20px 14px;background:#eef2f8;border-top:1px solid #dcdcdc}
+.sortingResult .trProdTit {color:#3789dc}
+.sortingResultMsg .noSearch {margin:0 auto;}
+.trProduct {padding:14px;background:#fff;border-radius:5px;box-shadow:0px 2px 3px 1px rgba(0,0,0,0.25);}
+.trProduct + .trProduct {margin-top:15px}
+.trProduct .prodName {margin-top:11px}
+.trProduct .targetRate {margin:15px 15px 20px;}
+.trProduct .subTit {margin:14px 0 8px;font-size:13px;font-weight:bold;}
+.trProduct table th, .trProduct table td {padding:7px 0;font-size:13px}
+.trProduct table td {font-weight:bold}
+.tblTyDefault.tblTr th, .tblTyDefault.tblTr td {padding:8px 0;}
+.tblTyDefault.tblTr td {font-weight:bold}
+.trProduct .prodRate {margin-top:8px;font-size:13px;color:#f13e51;text-align:right;}
+.trProduct .prodRate strong {margin-left:5px;font-size:24px;font-weight:bold}
+.trProduct.typ2 {text-align:center;box-shadow:none;padding:0}
+.trProduct.typ2 .prodName {margin-top:7px;font-size:18px;font-weight:bold}
+.trProduct.typ2 .targetRate {margin:15px 30px 20px}
+.trProduct.typ2 .btnType2.lineBlack {border-color:#cacaca}
+.trProduct.typ2 .btnType2 + .btnType2 {margin-left:13px}
+.trProduct .prodDetail {display:flex;flex-direction:row;justify-content:space-between;align-items:flex-end;margin:28px 0 30px;}
+.trProduct .prodDetail li > p {margin-top:6px;color:#555}
+.trProduct .prodDetail [class^="typ"] p {margin-top:0;padding-top:45px;width:auto;min-width:67px;background-repeat:no-repeat;background-position:center 3px;background-size:37px auto}
+.trProduct .prodDetail .typ01 p {background-image:url('../../images/pr05/bg_fund_case01.png')}
+.trProduct .prodDetail .typ02 p {background-image:url('../../images/pr05/bg_fund_case02.png')}
+.trProduct .prodDetail .typ03 p {background-image:url('../../images/pr05/bg_fund_case03.png')}
+.trProduct .prodDetail .typ04 p {background-image:url('../../images/pr05/bg_fund_case04.png')}
+.trProduct .prodDetail .typ05 p {background-image:url('../../images/pr05/bg_fund_case05.png')}
+.trProduct .prodDetail .level strong {color:#0f472f;font-size:30px;font-weight:bold}
+.trProduct .prodDetail .rate strong {font-size:30px;font-weight:bold}
+.trProduct .prodDetail .rate.plus strong {color:#eb3d4f;}
+.trProduct .prodDetail .rate.minus strong {color:#3789dc}
+.targetRate .targetLi {display:flex;flex-direction:row;justify-content:space-between;align-items:center;position:relative;padding-right:28px}
+.targetRate .targetLi:before {content:'';overflow:hidden;display:block;position:absolute;right:0;width:17.6px;height:19.6px;background:url('../../images/pr05/bg_target_rate.png') no-repeat;background-size:100% auto}
+.targetRate .targetLi.plus:before {background-position:0 0}
+.targetRate .targetLi.minus:before {background-position:0 -27px}
+.targetRate .targetLi span {font-size:11px;text-align:right;}
+.targetRate .targetLi span > .subTxt {display:block}
+.targetRate .targetLi strong {font-size:14px}
+.targetRate .targetLi.plus strong {color:#f85553}
+.targetLi {padding-bottom:5px;border-bottom:1px solid #d0d0d0}
+.targetLi + .targetLi {padding-bottom:0;padding-top:5px;border:0}
+.trProduct .dotList li {font-size:12px;color:#959595}
+.trProduct .dotList li + li {margin-top:4px}
+.trProdList + .btnType {margin-top:8px;margin-bottom:-10px;padding:10px 0;width:100%;height:auto;background:transparent;}
+.btnPopChart {position:fixed;right:11px;bottom:77px;width:53px;height:53px;background-size:100%;background-repeat:no-repeat}
+.btnPopChart.elt {background-image:url('../../images/pr05/btn_chart_elt.png')}
+.btnPopChart.etf {background-image:url('../../images/pr05/btn_chart_etf.png')}
+.lh15 {line-height:1.5 !important}
+
+.floatingFixTr {position:fixed}
+
+/* 신탁 > 조건검색팝업 */
+.rdoCurrencyBox ul {display:flex;}
+.rdoCurrencyBox ul li + li {margin-left:20px}
+.chkProdBox.rdoAreaTy2[class*="col"] li {margin-top:2px;width:calc((100% - 4px) / 3);vertical-align:middle}
+
+/* 지수차트 */
+.rdoAreaTy2[class*="col"].indexRdo ul {display:flex;flex-direction:row;flex-wrap:wrap;margin:-4px 0 0 -2px}
+.rdoAreaTy2[class*="col"].indexRdo li {display:block;margin:4px 0 0 2px;width:calc((100% - 8px) / 3)}
+.rdoAreaTy2[class*="col"].indexRdo input + label {margin:0;box-sizing:border-box;display: -webkit-flex;display: flex;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-webkit-align-items: center;align-items: center;}
+
+/* 위험 등급 숫자 컬러 */
+.numLevel1 {color:#279c45 !important}
+.numLevel2 {color:#3387ce !important}
+.numLevel3 {color:#03a0a2 !important}
+.numLevel4 {color:#c48600 !important}
+.numLevel5 {color:#f13e51 !important}
+.numLevel6 {color:#c40e0e !important}
+
+/* 투자정보 */
+#contentsWrap .contents.tab.investInfo{height:calc(100% - 69px)}
+.yearSelct{text-align:center;}
+.yearSelct > *{display:inline-block;vertical-align:middle;}
+.yearSelct span{font-size:18px;font-weight:bold;}
+.yearSelct a{width:28px;height:28px;text-indent:-9999px;position:relative;}
+.yearSelct a:before{content:"";width:6px;height:6px;border:solid #343a3f;border-width:1.5px 1.5px 0 0;position:absolute;left:50%;top:50%;-webkit-transform:translate(-70%, -50%) rotate(45deg)}
+.yearSelct a.btnPrev:before{-webkit-transform:translate(-30%, -50%) rotate(-135deg)}
+.weekSelct{position:relative;margin-top:12px;}
+.weekSelct .btns{width:24px;height:24px;position:absolute;left:-12px;top:8px;text-indent:-9999px;}
+.weekSelct .btns.next{left:auto;right:-12px;}
+.weekSelct .btns:before{content:"";width:8px;height:8px;border:solid #343a3f;border-width:1.5px 1.5px 0 0;position:absolute;left:50%;top:50%;-webkit-transform:translate(-70%, -50%) rotate(45deg)}
+.weekSelct .btns.prev:before{-webkit-transform:translate(-30%, -50%) rotate(-135deg)}
+.weekSelct .dateList{text-align:center;}
+.weekSelct .dateList a{width:36px;height:60px;text-align:center;display:inline-block;box-sizing:border-box;padding-top:8px;position:relative;margin:0 2.2%;}
+.weekSelct .dateList a span{display:block;color:#b9c1c9;font-size:12px;line-height:1.3;}
+.weekSelct .dateList a span.num{font-size:14px;font-weight:bold;}
+.weekSelct .dateList a.file:before{content:"";width:6px;height:6px;background:#59a1f1;position:absolute;left:50%;bottom:8px;margin-left:-3px;border-radius:100%;}
+.weekSelct .dateList a.after span{color:#21272a;}
+.weekSelct .dateList a.on{background:#59a1f1;border-radius:9999px;}
+.weekSelct .dateList a.on span{color:#fff;}
+.weekSelct .dateList a.on.file:before{background:#fff;}
+.investInfo #divPdf img{width:100%;vertical-align:middle;}
+.investInfo .listTypeTable.lineType .tit{display: -webkit-box !important;text-overflow: ellipsis;overflow: hidden;-webkit-box-orient: vertical;-webkit-line-clamp: 2;}
+.investInfo .listTypeTable.lineType li:last-child{border-bottom:0;}
+.fundProductWrap .noticeArea.type2{margin:0;padding:20px 16px;border:0;}
+.fundProductList.type2 .listTypeTable .row{border-top:1px solid #ebeff5;border-bottom:0;position:relative;}
+.boxTyGray.tyFund{margin:0 16px 20px 16px;background:rgba(229, 240, 252, 0.4);border-radius:6px;}
+.fundProductList.type2 .listTypeTable.linkType .row > a{padding:20px 16px 16px 16px;}
+.fundProductList.type2 .listTypeTable .row .leftCol [class*=iconTyLv]{font-size:12px;border:1px solid #b9c1c9;height:20px;line-height:18px;border-radius:2px;box-sizing:border-box;font-style:normal;color:#565c63;padding:0 4px;margin-right:1px;}
+.fundProductList.type2 .listTypeTable .row .leftCol .tit{font-size:16px;color:#121619;}
+.fundProductList.type2 .listTypeTable .row .leftCol .iconTyLv01{border-color:rgba(199,25,43,0.6);color:#c7192b;}
+.fundProductList.type2 .listTypeTable .row .leftCol .iconTyLv02{border-color:rgba(235,61,79,0.6);color:#eb3d4f;}
+.fundProductList.type2 .listTypeTable .row .leftCol .iconTyLv03{border-color:rgba(236,112,20,0.6);color:#ec7014;}
+.fundProductList.type2 .listTypeTable .row .leftCol .iconTyLv04{border-color:rgba(196,134,0,0.6);color:#c48600;}
+.fundProductList.type2 .listTypeTable .row .leftCol .iconTyLv05{border-color:rgba(3,160,162,0.6);color:#03a0a2;}
+.fundProductList.type2 .listTypeTable .row .leftCol .iconTyLv06{border-color:rgba(54,141,237,0.6);color:#368ded;}
+.fundProductList.type2 .yield{font-size:18px;}
+.fundProductList.type2 .yield.minus{color:#0471e9;}
+.fundProductList.type2 .cate{margin-top:11px;}
+.fundProductList.type2 .cate span{display:inline-block;font-size:12px;color:#808892;position:relative;padding:0 8px;}
+.fundProductList.type2 .cate span:before{content:"";position:absolute;left:0;top:50%;width:1px;height:12px;background:#d6dbe1;-webkit-transform:translateY(-50%);}
+.fundProductList.type2 .cate span:first-child{padding-left:0;}
+.fundProductList.type2 .cate span:first-child:before{display:none;}
+.fundProductList.type2 .heart{position:absolute;right:0;top:0;width:50px;height:50px;}
+.fundProductList.type2 .heart label{display:block;width:50px;height:50px;margin:0;padding:0;top:0;text-indent:-9999px;}
+.fundProductList.type2 .heart input{width:20px;height:20px;background:url(../../images/pr05/icon_line_heart.png) no-repeat;background-size:100% auto;position:absolute;left:50%;top:20px;-webkit-transform:translateX(-50%)}
+.fundProductList.type2 .heart input:checked{background-position-y:-20px}
+
+.fundGuideSwiper{height:100%;position:relative;}
+.fundGuideSwiper .swiper-wrapper{height:auto !important;}
+.swiper-container-vertical>.swiper-wrapper{flex-direction:column;}
+/* 연금저축 가져오기 */
+.toastBox.tyS{bottom:104px;left:40px;width:calc(100% - 80px);padding:10px;border-radius:2px;font-size:12px;}
+.contents.mainPension {padding:0 !important}
+.contents.mainPension .innerBox {padding:36px 20px 40px}
+.contents.contPension .shortPageInner {padding:0 0 130px !important}
+.mainPension .listTypeTable .row .leftCol{width:102px}
+.titPension {margin-top:4px;font-size:20px;font-weight:bold;line-height:1.4 !important;}
+.btmInfo{position:absolute;bottom:88px;left:0;right:0;padding:16px 0 0;background:#fff;text-align:center;}
+.btmInfo .iconTyGuide05 {margin:-3px 4px 0 0}
+.txtGuide{display:inline-block;padding-left:20px;background:url(../../images/icon_guide05.png) no-repeat left 2px;background-size:16px auto;color:#0471e9}
+.checkBoxRWrap {}
+.checkBoxR{position:relative;margin-top:12px;padding:20px;background:#fff;border:1px solid #ebeff5;border-radius:12px;}
+.checkBoxR.on {border-color:#0471e9}
+.checkBoxR input[type="radio"] + label {display:block;padding-left:32px;color:#121619 }
+.checkBoxR input[type="radio"] + label:before {top:0;margin-top:0;background-position:0 -57px;}
+.checkBoxR input[type="radio"]:checked + label:before {background-position: 0 -19px;}
+.listTypeTable.tyS .row + .row {margin-top:4px;}
+.listTypeTable.tyS .row .leftCol {width:60px;}
+.listTypeTable.tyS .row .leftCol .tit {font-size:12px;color:#121619}
+.contAccordion.lineR {margin-top:12px;border:1px solid #ebeff5;border-radius:12px;box-shadow:0 3px 5px 0 rgba(22,37,66,0.04);}
+.contAccordion.lineR .AccorTitle .tit {height:auto;padding:18px 20px;font-size:14px;}
+.contAccordion.lineR:first-child {margin-top:0;}
+.contAccordion.tyBlack {background:#565c63;}
+.contAccordion.tyBlack .AccorTitle .tit {color:#fff}
+.contAccordion.tyBlack .btnView:after {content:"";position:absolute;right:30px;top:50%;-webkit-transform:translateY(-70%) rotate(-225deg);transform:translateY(-70%) rotate(-225deg);width:8px;height:8px;border:solid #fff;border-width:2px 2px 0 0}
+.contAccordion.tyBlack.on .btnView:after {-webkit-transform:translateY(-30%) rotate(-45deg)}
+.contAccordion.tyBlack .dotList > li {margin-top:12px;color:#fff;}
+.contAccordion.tyBlack .dotList > li:before {background:#fff;}
+.imgListR > li {margin-top:10px;}
+.imgListR > li:first-child {margin-top:0}
+.imgListR > li .listWrap {display:block;position:relative;width:100%;padding:20px 20px;background:#fff;border-radius:100px;box-sizing:border-box;}
+.imgListR > li .listWrap > .imgArea {position:absolute;top:50%;left:20px;width:56px;transform:translateY(-50%)}
+.imgListR > li .listWrap > .imgArea img {display:block;width:100%;}
+.imgListR > li .listWrap > .imgArea + .infoArea {padding-left:64px;}
+.stepPension {margin:8px 0}
+.stepPension > li {display:table;position:relative;padding-bottom:16px}
+.stepPension > li > * {display:table-cell;position:relative;vertical-align:middle;}
+.stepPension > li:before {content:'';position:absolute;top:0;left:28px;height:100%;border-left:1px dotted #79b1f0;}
+.stepPension > li:last-child {padding-bottom:0;}
+.stepPension > li:last-child:before {display:none}
+.stepPension .imgWrap {display:block;width:40px;padding:8px;background:#fff;border-radius:100px;box-shadow:0 3px 5px 0 rgba(22,37,66,0.04);}
+.stepPension .imgWrap img {display:block;}
+.stepPension .txtWrap {padding-left:12px}
+.stepPension .txt1 {font-size:16px;color:#343a3f;font-weight:bold;}
+.stepPension .txt2 {font-size:12px;color:#808892}
+.stepPension .on .txt1 {color:#368ded;}
+.stepPension .off .txt1 {color:#808892;}
+.stepPension .iconTyTr01 {vertical-align:top;font-weight:bold;}
+.srAccordion2 ~ .contents {padding-top: 52px !important;}
+.srAccordion2 {position:absolute;left:0;right:0;z-index:100;padding-bottom:52px;background:#f8f9fb;border-bottom:1px solid #d6dbe1;box-sizing:border-box;box-shadow:0 2px 6px 0 rgba(22,37,66,0.1);}
+.srAccordion2 .title {position:absolute;left:0;right:0;bottom:0;height:52px;text-align:center;}
+.srAccordion2 .title span {position:relative;display:inline-block;padding:0 28px;line-height:52px;font-weight:bold;}
+.srAccordion2 .title span:after {content:'';position:absolute;right:10px;top:50%;-webkit-transform:translateY(-80%) rotate(-45deg);width:7px;height:7px;border:solid #b9c1c9;border-width:0 0 1.5px 1.5px;border-radius:1px;}
+.srAccordion2 .title.on span:after {-webkit-transform:translateY(-20%) rotate(135deg);}
+.srAccordion2 .cont {display:none;padding:0 16px;background:#f8f9fb;}
+.swtichSet2 i {height:24px;background:#b9c1c9;}
+.swtichSet2 i:before {top:1px;left:1px;width:22px;height:22px;}
+.swtichSet2 input:checked + i {background:#0471e9;}
+.swtichSet2 input:checked + i:before {left:23px;}
+.btnSetS {display:inline-block;height:24px;padding:0 14px;background:#f2f4f6;border-radius:3px;line-height:24px;font-size:12px;font-weight:bold;color:#0471e9;vertical-align:middle;}
+.btnSetS span {line-height:24px;font-weight:bold;}
+.boxList2 .txtRate {display:inline-block;width:40px;text-align:right;}
+.boxList2 .btnSetS {margin-left:4px;vertical-align:top;}
+.txtDel {position:relative;margin-top:8px;}
+.txtDel:first-child {margin-top:12px;}
+.txtDel .txt{display:inline-block;padding:4px 0;margin-right:40px;color:#565c63;}
+.txtDel .btn {overflow:hidden;position:absolute;right:0;top:0;z-index:2;width:12px;height:100%;background:url(../../images/icon_close4.png) no-repeat right 50%;background-size:100% auto;text-indent:-9999px;font-size:0;line-height:0;}
+.titWrapN {padding:16px;border-bottom:1px solid #f8f9fb;}
+.titWrapN .title {font-size:16px;color:#343a3f;font-weight:bold;}
+.boxTyGray4.select {padding:34px;border:1px solid #368ded;text-align:center;}
+.topSelectR {display:table;width:100%;padding:10px 16px;border-bottom:1px solid #eee;background:#fff;box-sizing:border-box;}
+.topSelectR:after {content:'';display:block;clear:both;}
+.topSelectR .left {display:table-cell;}
+.topSelectR .right {display:table-cell;text-align:right;}
+.topSelectR .selecter.type2 {display:inline-block;padding-left:0} 
+.topSelectR .selecter.type2:first-child {padding-left:0}
+.topSelectR .selecter.type2 .current{display:block;position:relative;padding:5px 27px 5px 9px;background:#fff;border:1px solid #d6dbe1;border-radius:4px;box-sizing:border-box;font-size:13px;color:#121619;}
+.topSelectR .selecter.type2 .current:after{content:"";position:absolute;right:10px;top:50%;-webkit-transform:translateY(-70%) rotate(-45deg);width:7px;height:7px;border:solid #808892;border-width:0 0 1px 1px;}
+.topSelectR .selecter.type2 .current .iconTy43 {display:none}
+.topSelectR .selecter.type2 .sub{left:0;margin-top:6px;width:100%;border-radius:4px;border-color:#d6dbe1;box-shadow:0 3px 5px 1px rgba(22,37,66,0.04);}
+.topSelectR .selecter.type2.focus .sub li:first-child{margin-top:10px;}
+.topSelectR .selecter.type2.focus .sub li:last-child{margin-bottom:10px;}
+.topSelectR .selecter.type2.focus .sub li button {margin:0;padding:6px 6px 6px 16px;color:#808892;}
+.topSelectR .selecter.type2.focus .sub li.on {background:none;}
+.topSelectR .selecter.type2.focus .sub li.on button {font-weight:bold;}
+.selectIvst{display:flex;margin-top:24px;}
+.selectIvst li{width:100%;margin-right:12px;border:1px solid #ebeff5;border-radius:8px;box-shadow:0 2px 4px 0 rgba(22,37,66,0.04)}
+.selectIvst li:last-child{margin-right:0;}
+.selectIvst li a{display:block;padding:15px 0;}
+.selectIvst li span{display:block;text-align:center;}
+.selectIvst li .img{margin-bottom:5px;}
+.selectIvst li .img img{width:44px;vertical-align:middle;}
+.selectIvst li.on{border-color:#0471e9;}

@@ -1,0 +1,108 @@
+
+<!-- /*******************************************************************
+* @설명			: 자산추가
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		조승태		2019-09-09	 최초작성
+* 2		최은정		2019-09-16	 디자인 작업
+* 3		김수영		2019-09-23	 은행로고 css > 이미지태그로 변경
+********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in08.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+
+	<script>
+		$(function() {
+			
+			//position setting
+			$(".uiTimeLine ul li").each(function() {
+				$(this).data("pos", $(this).position().top);
+			});
+
+			//animation
+			var cnt = 0;
+			var auto = null;
+			auto = setInterval(function() {
+				if (cnt < 3) {
+					$(".uiTimeLine ul li").eq(cnt).stop().animate({
+						top: 0
+					}, 800, 'swing', function() {});
+					cnt++;
+				} else {
+					clearInterval(auto);
+				}
+			}, 450);
+		});
+		
+	</script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">My자산</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full pb0">
+
+				<!-- 타임라인 -->
+				<div class="uiTimeLine">
+					<ul>
+						<li class="first">
+							<img src="../../../../../../images/in08/banklogo_035.png" alt=""> <!-- 190923 은행로고 이미지 태그로 수정-->
+							<strong>신한 첫급여 드림적금</strong><br>만기 3일전입니다.
+							<div class="graph">
+								<span class="bar_area">
+									<span class="bar" style="width: 90%"></span>
+								</span>
+								<span class="date">2019.08.26</span>
+							</div>
+						</li>
+						<li class="kb">
+							<img src="../../../../../../images/in08/banklogo_035.png" alt=""> <!-- 190923 은행로고 이미지 태그로 수정-->
+							KB국민 내맘대로 적금<br>만기 160일전입니다.
+						</li>
+						<li class="wb">
+							<img src="../../../../../../images/in08/banklogo_035.png" alt=""> <!-- 190923 은행로고 이미지 태그로 수정-->
+							우리 SUPER 주거래 정기적금<br>만기 242일전입니다.
+						</li>
+					</ul>
+				</div>
+				<!-- // 타임라인 -->
+
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+</body>
+</html>

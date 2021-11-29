@@ -1,0 +1,717 @@
+
+<!-- 
+/*******************************************************
+* @설명			:	상품 Pick > (Tab) 상품검색
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일		2021-10-05	   최초작성  
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>Data Pick : 신한은행</title>
+	<link rel="stylesheet" type="text/css" href="/style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="/style/my_assets.css">
+	<link rel="stylesheet" type="text/css" href="/style/mydata.css"><!--마이데이터 CSS-->
+  	<script src="/script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="/script/include/library/ui.js"></script>
+	<script src="/script/include/library/ui_myassets.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<section id="container">
+		<header id="headerWrap">
+			<div id="header">
+                <div class="lSec">
+                    <a href="javascript:void(0);" class="btnBefore"><span class="iconTy01">이전</span></a>
+                </div>
+				<h1 class="tit">Data Pick</h1>
+				<div class="rSec">
+                    <a href="javascript:void(0)" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+                    <a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+                </div>
+			</div>
+		</header>
+		<div id="contentsWrap" class="myAssets">
+			<div class="contents full">
+                <!-- 탭 -->
+                <div class="tabTy_03_1 floatTab in">
+                    <a href="javascript:void(0)"><span>나vs또래부자</span></a> 
+                    <a href="javascript:void(0)"><span>테마별상품</span></a>
+                    <a href="javascript:void(0)" class="on"><span>상품찾기</span></a><!--탭 on-->
+                    <a href="javascript:void(0)"><span>데이터동향</span></a>
+                </div>
+				<!-- // 탭 -->
+                <!-- 내용1 -->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView" id="tabView1" tabindex="1"> <!--탭내용 on-->
+						준거집단
+					</div>
+				</div>
+                <!-- //내용1 -->
+                <!--내용2-->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView" id="tabView2"  tabindex="2">
+                        개인화추천
+					</div>
+				</div>
+                <!--//내용2-->
+                <!--내용3-->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView on" id="tabView3"  tabindex="3">
+                        <!--상품검색-->
+                        <div class="mainDetailWrap_r">
+                            <!--타이틀-->
+                            <div class="detailContents mt40">
+								<div class="consumAnalysisArea assetAnalysisArea">
+									<!-- [메시지 노출 Case] 20210927수정 -->
+									<div class="descArea1">필요한 조건으로<br>콕~집어<em class="descAreaLine"> 골라드려요!</em> </div>
+									<!-- //[메시지 노출 Case] 20210927수정 -->
+								</div>
+							</div>
+                            <!--//타이틀-->
+                            <!--전체버튼1-->
+                            <div class="mydataWrap myRequest">
+                                <div class="myRequest_body1">
+                                    <div class="tabTy03_1 uiTabs uiCate3">
+                                        <a href="#myView1_1" class="on" title="현재 선택됨"><span>적금</span></a>
+                                        <a href="#myView1_2"><span>예금</span></a>
+                                        <a href="#myView1_3"><span>입출금</span></a>
+                                        <a href="#myView1_4"><span>대출</span></a>
+                                        <a href="#myView1_5"><span>카드</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//전체버튼1-->
+                            <!-- 참조) 구분선 하나 추가되었습니다 -->
+							<hr class="full mt24" />
+                            <!--두번째버튼-->
+                            <div class="conInner">
+								<div class="tabViewWrap mt30 mb0" id="test1">
+									<!--Tab의 상세정보 1-->
+									<div class="tabView on" id="myView1_1" name="myView1_1">
+                                        <!--하위 Tab 버튼-->
+										<div class="md_swiper_frame1">
+                                            <div class="swiper-container md_swp">
+                                                <div class="swiper-wrapper md_swp_wrap"> <!--적금-->
+                                                    <a href="#swp_cont10" class="swiper-slide md_swp_btn on" title="현재선택됨"><em class="badgeTyBdGray1 large active"><span>은행</span></em></a>
+                                                    <a href="#swp_cont11" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>우대조건 </span></em></a>
+                                                    <a href="#swp_cont12" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>가입기간</span></em></a>
+                                                    <a href="#swp_cont13" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>적립방식</span></em></a>
+                                                    <a href="#swp_cont14" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>가입가능금액</span></em></a>
+                                                    <a href="#swp_cont15" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>연령제한</span></em></a>
+                                                </div>
+                                                <div class="md_swp_pop"></div>
+                                                <div class="md_swp_ctrl">
+                                                    <button type="button" class="menuOn"><span>펼치기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//하위 Tab 버튼-->
+                                        <!-- 참조) 구분선 하나 추가되었습니다 -->
+                                        <hr class="full" />
+                                        <!--하위 Tab 내용-->
+										<div class="md_swp_cont mrg0">
+                                            <div id="swp_cont10" class="md_swp_box" style="display:block">
+                                                <!--상품-->
+                                                <div class="detailContents1">
+                                                    <!--탭 and 타이틀-->
+                                                    <div class="tabTyMyAsset03 uiTabs">
+                                                        <div class="flexBox1 mb20">
+                                                            <div class="itemBox">
+                                                                <strong class="tit">상품</strong>
+                                                                <em class="em">14건</em>
+                                                            </div>
+                                                            <div class="itemBox">
+                                                                <div class="tabInner">
+                                                                    <a href="#gtabView1_1" class="on" title="현재선택됨"><span>최고금리순</span></a> <!-- 활성화시 class="on" -->
+                                                                    <a href="#gtabView1_2"><span>짧은기간순</span></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--//탭 and 타이틀-->
+                                                    <div class="conInner">
+                                                        <div class="tabViewWrap mt0 mb0">
+                                                            <!--내용1--><!--최고금리순-->
+                                                            <div class="tabView on" id="gtabView1_1">
+                                                                <!--넣기-->
+                                                                <ul class="recomProdList mt20">
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="listInner">
+                                                                                <!-- 210112 수정 -->
+                                                                                <div class="thumbArea">
+                                                                                    <span class="img"><img src="../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+                                                                                </div>
+                                                                                <!-- //210112 수정 -->
+                                                                                <div class="infoArea">
+                                                                                    <p class="prodCategory">
+                                                                                        <span>신한은행</span>
+                                                                                        <span>예금</span>
+                                                                                    </p>
+                                                                                    <strong class="prodTit ellipsis">쏠편한 정기예금</strong>
+                                                                                    <div class="prodValue">
+                                                                                        <div class="valueItem medium">최고 연 <em class="large"><span>1.3</span>%</em></div>
+                                                                                        <div class="valueItem">~ 최저 연 <span>1.2</span>%</div>
+                                                                                    </div>
+                                                                                    <div class="prodTxt">
+                                                                                        <span class="txtItem">기준일 20.04.12</span>
+                                                                                        <span class="txtItem">세전</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="#">
+                                                                            <div class="listInner">
+                                                                                <!-- 210112 수정 -->
+                                                                                <div class="thumbArea">
+                                                                                    <span class="img"><img src="../../../../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+                                                                                </div>
+                                                                                <!-- //210112 수정 -->
+                                                                                <div class="infoArea">
+                                                                                    <p class="prodCategory">
+                                                                                        <span>신한은행</span>
+                                                                                        <span>적금</span>
+                                                                                    </p>
+                                                                                    <strong class="prodTit ellipsis">쏠편한 작심3일 적금</strong>
+                                                                                    <div class="prodValue">
+                                                                                        <div class="valueItem medium">최고 연 <em class="large"><span>1.3</span>%</em></div>
+                                                                                        <div class="valueItem">~ 최저 연 <span>1.2</span>%</div>
+                                                                                    </div>
+                                                                                    <div class="prodTxt">
+                                                                                        <span class="txtItem">기준일 20.04.12</span>
+                                                                                        <span class="txtItem">세전</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                                <div class="btnGroupBox mt30">
+                                                                    <a href="javascript:void(0);" class="btnType btnMore lineBlack"><span><i class="iconTySelArrow03"></i> 더보기</span></a> <!--아이콘작업해야함-->
+                                                                </div>
+                                                                <!--//넣기-->
+                                                                <div class="pConTex_all_r">
+                                                                    <p class="pConTex">타행 상품의 정확한 정보는 해당 기관 홈페이지를 참고하세요. </p>
+                                                               </div>
+                                                            </div>
+                                                            <!--//내용1-->
+                                                            <!--내용2--><!--짧은기간순-->
+                                                            <div class="tabView" id="gtabView1_2">
+                                                                <div class="noData">
+                                                                    <p>조건을 선택해 원하는 상품을 검색해 보세요. </p>
+                                                                </div>
+                                                                <div class="noData">
+                                                                    <p>일치된 정보가 없습니다. <br/>
+                                                                       조건을 변경하여 다시 검색해 보세요. </p>
+                                                                </div>
+                                                            </div>
+                                                            <!--//내용2-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--//상품-->
+                                            </div>
+                                            <div id="swp_cont11" class="md_swp_box">우대조건</div>
+                                            <div id="swp_cont12" class="md_swp_box">가입기간</div>
+                                            <div id="swp_cont13" class="md_swp_box">적립방식</div>
+                                            <div id="swp_cont14" class="md_swp_box">가입가능금액</div>
+                                            <div id="swp_cont15" class="md_swp_box">연령제한</div>
+                                        </div>
+										<!--//하위 Tab-->
+									</div>
+									<!--//Tab의 상세정보 1-->
+
+									<!--Tab의 상세정보 2-->
+									<div class="tabView" id="myView1_2" name="myView1_2">
+										<!--하위 Tab 버튼-->
+										<div class="md_swiper_frame1">
+                                            <div class="swiper-container md_swp">
+                                                <div class="swiper-wrapper md_swp_wrap"> <!--예금--><!--#만있을경우-->
+                                                    <a href="#swp_cont1" class="swiper-slide md_swp_btn on" title="현재선택됨"><em class="badgeTyBdGray2 large active"><span>은행</span></em></a>
+                                                    <a href="#swp_cont2" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray2 large"><span>우대조건 </span></em></a>
+                                                    <a href="#swp_cont3" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray2 large"><span>가입기간</span></em></a>
+                                                    <a href="#swp_cont4" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray2 large"><span>적립방식</span></em></a>
+                                                    <a href="#swp_cont5" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray2 large"><span>가입가능금액</span></em></a>
+                                                    <a href="#swp_cont6" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray2 large"><span>연령제한 </span></em></a>
+                                                </div>
+                                                <div class="md_swp_pop"></div>
+                                                <div class="md_swp_ctrl">
+                                                    <button type="button" class="menuOn"><span>펼치기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//하위 Tab 버튼-->
+                                        <!-- 참조) 구분선 하나 추가되었습니다 -->
+                                        <hr class="full" />
+                                        <!--하위 Tab 내용-->
+										<div class="md_swp_cont mrg0">
+                                            <div id="swp_cont1" class="md_swp_box" style="display:block">
+                                                <!--상품-->
+                                                <div class="detailContents1">
+                                                    <!--탭 and 타이틀-->
+                                                    <div class="tabTyMyAsset03 uiTabs">
+                                                        <div class="flexBox1 mb20">
+                                                            <div class="itemBox">
+                                                                <strong class="tit">상품</strong>
+                                                                <em class="em">14건</em>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--//탭 and 타이틀-->
+                                                    <div class="conInner">
+                                                        <div class="tabViewWrap mt0 mb0">
+                                                            <!--내용1-->
+                                                            <div class="tabView on">
+                                                                내용넣기
+                                                            </div>
+                                                            <!--//내용1-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--//상품-->
+                                            </div>
+                                            <div id="swp_cont2" class="md_swp_box">우대조건</div>
+                                            <div id="swp_cont3" class="md_swp_box">가입기간</div>
+                                            <div id="swp_cont4" class="md_swp_box">적립방식</div>
+                                            <div id="swp_cont5" class="md_swp_box">가입가능금액</div>
+                                            <div id="swp_cont6" class="md_swp_box">연령제한</div>
+                                        </div>
+										<!--//하위 Tab-->
+									</div>
+									<!--//Tab의 상세정보 2-->
+
+                                    <!--Tab의 상세정보 3-->
+									<div class="tabView" id="myView1_3" name="myView1_3">
+                                        <!--하위 Tab 버튼-->
+										<div class="md_swiper_frame1">
+                                            <div class="swiper-container md_swp">
+                                                <div class="swiper-wrapper md_swp_wrap"> <!--입출금-->
+                                                    <a href="#swp_cont21" class="swiper-slide md_swp_btn on" title="현재선택됨"><em class="badgeTyBdGray1 large active"><span>은행</span></em></a>
+                                                    <a href="#swp_cont22" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>우대조건 </span></em></a>
+                                                    <a href="#swp_cont23" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>가입기간</span></em></a>
+                                                    <a href="#swp_cont24" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>적립방식</span></em></a>
+                                                    <a href="#swp_cont25" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>가입가능금액</span></em></a>
+                                                    <a href="#swp_cont26" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>연령제한</span></em></a>
+                                                </div>
+                                                <div class="md_swp_pop"></div>
+                                                <div class="md_swp_ctrl">
+                                                    <button type="button" class="menuOn"><span>펼치기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//하위 Tab 버튼-->
+                                        <!-- 참조) 구분선 하나 추가되었습니다 -->
+                                        <hr class="full" />
+                                        <!--하위 Tab 내용-->
+										<div class="md_swp_cont mrg0">
+                                            <div id="swp_cont21" class="md_swp_box" style="display:block">
+                                                <!--상품-->
+                                                <div class="detailContents1">
+                                                    <!--탭 and 타이틀-->
+                                                    <div class="tabTyMyAsset03 uiTabs">
+                                                        <div class="flexBox1 mb20">
+                                                            <div class="itemBox">
+                                                                <strong class="tit">상품</strong>
+                                                                <em class="em">10건</em>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--//탭 and 타이틀-->
+                                                    <div class="conInner">
+                                                        <div class="tabViewWrap mt0 mb0">
+                                                            <!--내용1-->
+                                                            <div class="tabView on">
+                                                                내용넣기
+                                                            </div>
+                                                            <!--//내용1-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--//상품-->
+                                            </div>
+                                            <div id="swp_cont22" class="md_swp_box">우대조건</div>
+                                            <div id="swp_cont23" class="md_swp_box">가입기간</div>
+                                            <div id="swp_cont24" class="md_swp_box">적립방식</div>
+                                            <div id="swp_cont25" class="md_swp_box">가입가능금액</div>
+                                            <div id="swp_cont26" class="md_swp_box">연령제한</div>
+                                        </div>
+										<!--//하위 Tab-->
+									</div>
+									<!--//Tab의 상세정보 3-->
+
+                                    <!--Tab의 상세정보 4-->
+									<div class="tabView" id="myView1_4" name="myView1_4">
+                                        <!--하위 Tab 버튼-->
+										<div class="md_swiper_frame1">
+                                            <div class="swiper-container md_swp">
+                                                <div class="swiper-wrapper md_swp_wrap"> <!--대출-->
+                                                    <a href="#swp_cont31" class="swiper-slide md_swp_btn on" title="현재선택됨"><em class="badgeTyBdGray1 large active"><span>직업군</span></em></a>
+                                                    <a href="#swp_cont32" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>은행 </span></em></a>
+                                                    <a href="#swp_cont33" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>마이너스통장</span></em></a>
+                                                </div>
+                                                <div class="md_swp_pop"></div>
+                                                <div class="md_swp_ctrl">
+                                                    <button type="button" class="menuOn"><span>펼치기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//하위 Tab 버튼-->
+                                        <!-- 참조) 구분선 하나 추가되었습니다 -->
+                                        <hr class="full" />
+                                        <!--하위 Tab 내용-->
+										<div class="md_swp_cont mrg0">
+                                            <div id="swp_cont31" class="md_swp_box" style="display:block">
+                                                <!--상품-->
+                                                <div class="detailContents1">
+                                                    <!--탭 and 타이틀-->
+                                                    <div class="tabTyMyAsset03 uiTabs">
+                                                        <div class="flexBox1 mb20">
+                                                            <div class="itemBox">
+                                                                <strong class="tit">상품</strong>
+                                                                <em class="em">14건</em>
+                                                            </div>
+                                                            <div class="itemBox">
+                                                                <div class="tabInner">
+                                                                    <a href="#gtabView3_1" class="on" title="현재선택됨"><span>최저금리순</span></a> <!-- 활성화시 class="on" -->
+                                                                    <a href="#gtabView3_2"><span>높은한도순</span></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--//탭 and 타이틀-->
+                                                    <div class="conInner">
+                                                        <div class="tabViewWrap mt0 mb0">
+                                                            <!--내용1--><!--최저금리순-->
+                                                            <div class="tabView on" id="gtabView3_1">
+                                                                <!--넣기-->
+                                                                내용넣기1
+                                                                <!--//넣기-->
+                                                            </div>
+                                                            <!--//내용1-->
+                                                            <!--내용2--><!--높은한도순-->
+                                                            <div class="tabView" id="gtabView3_2">
+                                                                내용넣기2
+                                                            </div>
+                                                            <!--//내용2-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--//상품-->
+                                            </div>
+                                            <div id="swp_cont32" class="md_swp_box">은행</div>
+                                            <div id="swp_cont33" class="md_swp_box">마이너스통장</div>
+                                        </div>
+										<!--//하위 Tab 내용-->
+									</div>
+									<!--//Tab의 상세정보 4-->
+
+                                    <!--Tab의 상세정보 5-->
+									<div class="tabView" id="myView1_5" name="myView1_5" >
+                                        <!--하위 Tab 버튼-->
+										<div class="md_swiper_frame1">
+                                            <div class="swiper-container md_swp">
+                                                <div class="swiper-wrapper md_swp_wrap"> <!--카드-->
+                                                    <a href="#swp_cont41" class="swiper-slide md_swp_btn on" title="현재선택됨"><em class="badgeTyBdGray1 large active"><span>발급유형</span></em></a>
+                                                    <a href="#swp_cont42" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>카드유형 </span></em></a>
+                                                    <a href="#swp_cont43" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>발급사</span></em></a>
+                                                    <a href="#swp_cont44" class="swiper-slide md_swp_btn"><em class="badgeTyBdGray1 large"><span>나를 위한 혜택</span></em></a>
+                                                </div>
+                                                <div class="md_swp_pop"></div>
+                                                <div class="md_swp_ctrl">
+                                                    <button type="button" class="menuOn"><span>펼치기</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//하위 Tab 버튼-->
+                                        <!-- 참조) 구분선 하나 추가되었습니다 -->
+                                        <hr class="full" />
+                                        <!--하위 Tab 내용-->
+										<div class="md_swp_cont mrg0">
+                                            <div id="swp_cont41" class="md_swp_box" style="display:block">
+                                                <!--상품-->
+                                                <div class="detailContents1">
+                                                    <!--탭 and 타이틀-->
+                                                    <div class="tabTyMyAsset03 uiTabs">
+                                                        <div class="flexBox1 mb20">
+                                                            <div class="itemBox">
+                                                                <strong class="tit">상품</strong>
+                                                                <em class="em">14건</em>
+                                                            </div>
+                                                            <div class="itemBox">
+                                                                <div class="tabInner">
+                                                                    <a href="#gtabView4_1" class="on" title="현재선택됨"><span>연회비 낮은순</span></a> <!-- 활성화시 class="on" -->
+                                                                    <a href="#gtabView4_2"><span>전월실적 낮은순 </span></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--//탭 and 타이틀-->
+                                                    <div class="conInner">
+                                                        <div class="tabViewWrap mt0 mb0">
+                                                            <!--내용1--><!--연회비 낮은순-->
+                                                            <div class="tabView on" id="gtabView4_1">
+                                                                <!--넣기-->
+                                                                내용넣기1
+                                                                <!--//넣기-->
+                                                            </div>
+                                                            <!--//내용1-->
+                                                            <!--내용2--><!--전월실적 낮은순-->
+                                                            <div class="tabView" id="gtabView4_2">
+                                                                내용넣기2
+                                                            </div>
+                                                            <!--//내용2-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--//상품-->
+                                            </div>
+                                            <div id="swp_cont42" class="md_swp_box">카드유형</div>
+                                            <div id="swp_cont43" class="md_swp_box">발급사</div>
+                                            <div id="swp_cont44" class="md_swp_box">나를 위한 혜택</div>
+                                        </div>
+										<!--//하위 Tab-->
+									</div>
+									<!--//Tab의 상세정보 5-->
+								</div>
+							</div>
+                            <!--//두번째버튼-->
+                        </div>
+                        <!--//상품검색-->
+					</div>
+				</div>
+                <!--//내용3-->
+                <!--내용4-->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView" id="tabView4"  tabindex="4">
+                        DB가알려주마
+					</div>
+				</div>
+                <!--//내용4-->
+			</div>
+		</div>
+	</section>
+</div>
+
+<!--상단메뉴 탭스크립트-->
+<script type="text/javascript">
+	//////window.onload = init;
+	// console.log("THE START OF HIGH CHART");
+
+	$(function() {
+		//탭 click 2020-01-09 수정
+		var scrollH = $(".floatTab.in").offset().top - 45;
+		$(".tabTy_03_1 a").click(function(e) {
+			e.preventDefault();
+			//탭 활성화
+			$(".tabTy_03_1 a").removeClass("on");
+			var idx = $(this).parent().find("a").index(this);
+			$(".tabViewWrap .tabView").removeClass("on");
+			if (idx == 0) {	//Tab1
+				$(".tabTy_03_1.in a:eq(0), .tabTy_03_1.fix a:eq(0)").addClass("on");
+				$("#tabView1").addClass("on");
+			} else if(idx == 1) {	//Tab2
+				$(".tabTy_03_1.in a:eq(1), .tabTy_03_1.fix a:eq(1)").addClass("on");
+				$("#tabView2").addClass("on");
+            } else if(idx == 2) {	//Tab3
+				$(".tabTy_03_1.in a:eq(2), .tabTy_03_1.fix a:eq(2)").addClass("on");
+				$("#tabView3").addClass("on");
+            } else if(idx == 3) {	//Tab3
+				$(".tabTy_03_1.in a:eq(3), .tabTy_03_1.fix a:eq(3)").addClass("on");
+				$("#tabView4").addClass("on");
+            } else {  //Tab3
+				//탭 컨트롤
+				//$("#contentsWrap .contents").animate({scrollTop:scrollH + 1});
+				startProgCir();  //4번탭일때 바로실행
+			}
+			
+			//파란영역까지 스크롤
+			//$("#contentsWrap .contents").animate({  // 준거집단선택시 위로 올리는 애니
+			//	scrollTop : scrollH
+			//}, 500);
+			
+		});
+		
+		var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수 20191010 추가
+		if(UserAgent.match(/i(Phone|Pod)/i) != null){
+			$("body").width(screen.width);
+		}
+		
+		//스크롤 발생시 탭 상단 고정
+		$("#contentsWrap .contents").scroll(function() {
+			if ( $(this).scrollTop() >= $(".chart-type-A").height() ) {
+				//fix
+				$(".floatTab.fix").show();
+			}
+			if ( $(this).scrollTop() < $(".chart-type-A").height() + 81 ) {
+				//fix해제
+				$(".floatTab.fix").hide();
+			}
+		});
+	});
+</script>
+
+<!--스와이프-->
+<script>
+    $(document).ready(function(){
+        const mdSwp = new Swiper('.md_swp',{
+            observer : true,
+            observeParents : true,
+            spaceBetween : 6,
+            slidesPerView :'auto',				
+            //slidesPerColumn : 1,
+            onInit: function(swiper){
+                $(swiper.wrapper).find("a").on("click",function(){
+                    var nums = $(this).attr("href").substr(9);
+                    $(this).attr("title","현재 선택 됨").siblings().removeAttr("title");
+                    $(this).find("em").addClass("active");
+                    $(this).siblings().find("em").removeClass("active");
+                    $(".md_swp_cont").find(".md_swp_box").hide();
+                    $(".md_swp_cont").find("#swp_cont"+nums).show();
+                });
+            }
+        });
+        var btnCount = 0;
+        $(document).on("click",".menuOn",function(){
+            $(this).removeClass("menuOn").addClass("menuOff");
+            $(this).addClass("active");
+            //debugger;
+            var onTab = $(".tabTy03_1 a[class=on]").attr("href");
+            $(onTab+" .md_swp_wrap").children().appendTo(onTab+" .md_swp_pop");
+            $(onTab+" .md_swp_wrap").css("z-index","-1");
+            $(onTab+" .md_swp_wrap").css("height","0");
+            $(onTab+" .md_swp_pop").show();
+            //debugger;
+            // var onTab = $(".tabTy03_1 a[class=on]").attr("href");
+            // $("#test1 .tabView").hide();
+            // $(onTab).show();
+        });
+        $(document).on("click",".md_swp a",function(){
+            //btnCount = $(this).index();
+            btnCount = $(this).attr("href").substr(9) - 1;
+            console.log(btnCount);
+        });
+        $(document).on("click",".menuOff",function(){
+            $(this).removeClass("menuOff").addClass("menuOn");
+            $(this).removeClass("active");
+            var onTab = $(".tabTy03_1 a[class=on]").attr("href");
+
+            $(onTab+" .md_swp_wrap").css("z-index","0");
+            $(onTab+" .md_swp_pop").children().appendTo(onTab+" .md_swp_wrap");
+            $(onTab+" .md_swp_wrap").css("height","initial");
+            $(onTab+" .md_swp_pop").hide();
+            console.log(btnCount);
+            // mdSwp.init();
+            // mdSwp.slideTo(btnCount);
+        });
+
+        // setCount = $(".md_Bottom").find(".md_Bottom_cont").find(".orgin_group").length;
+        // btUp = 64;
+        // btDown = ($(".btnGroupBox").height() + $(".md_Bottom_head").height()) - $(".md_Bottom").height();
+        // $(".md_Bottom").find(".cont_num em").text(setCount);
+        // $(".md_swp_box").find(".organ_list").each(function(){
+        //     org_list_num = $(this).index();
+        //     $(this).addClass("organ_list"+org_list_num);
+        // });
+
+        // $(document).on("click",".btnMDB",function(){
+        //     $(this).removeClass("btnMDB").addClass("btnMDB_on");
+        //     $(this).find(".btnArrow button").addClass("on");
+        //     $(".md_Bottom").animate({bottom:btUp},300);
+        //     $(".md_swp_cont").css("padding-bottom","100px");
+        // });
+        // $(document).on("click",".btnMDB_on",function(){
+        //     $(this).removeClass("btnMDB_on").addClass("btnMDB");
+        //     $(this).find(".btnArrow button").removeClass("on");
+        //     $(".md_Bottom").animate({bottom:btDown},200);
+        //     $(".md_swp_cont").css("padding-bottom","0");
+        // });
+        // $(".checkAll").click(function(){
+        //     if($(".checkAll").prop("checked")){
+        //         $(".checkThis").prop("checked",true);
+        //         $(this).siblings("label").text("전체해제");
+        //     }else{
+        //         $(".checkThis").prop("checked",false);
+        //         $(this).siblings("label").text("전체선택");
+        //     }
+        // });
+        // $(".checkThis").click(function(){
+        //     var checkCount = $(".md_swp_box .organ_list").length;
+        //     if($("input[name='oganCheck']:checked").length == checkCount){
+        //         $(".checkAll").prop("checked",true);
+        //     }else{
+        //         $(".checkAll").prop("checked",false);
+        //     }
+        // });
+        
+        // $(".organ_check input").on("click",function(){
+        //     var checkNum = $(this).parent().parent().attr("class").substr(21);
+        //     check_count = $(".listup").find(".orgin_group").length;
+        //     if($(this).is(":checked")==true){
+        //         var clone_logo = $(this).parent().siblings().find("img").attr("src");
+        //         var clone_tit = $(this).parent().siblings().find(".tit").text();
+        //         $(".listup").append("<div class='orgin_group orgin_group"+checkNum+"'><span class='logo'><img src='"+clone_logo+"' alt='' /></span><a href='javascript:void(0)'' class='btnD'><em>삭제</em></a><span class='tit'>"+clone_tit+"</span></div>");
+        //     }else{
+        //         $(".orgin_group"+checkNum).remove();
+        //         check_count = $(".listup").find(".orgin_group").length;
+        //     }
+        //     check_count = $(".listup").find(".orgin_group").length;
+        //     if(check_count > 0){
+        //         $(".cont_num em").text(check_count);
+        //         $(".md_Bottom").find(".cont").text(check_count+"개 기관을 선택하셨어요.");
+        //     }else{
+        //         $(".cont_num em").text("0");
+        //         $(".md_Bottom").find(".cont").text("연결하실 기관을 선택하세요.");
+        //         $(".md_Bottom").find(".md_Bottom_head a").removeClass("btnMDB_on").addClass("btnMDB");
+        //         $(".md_Bottom").find(".btnArrow button").removeClass("on");
+        //         $(".md_Bottom").animate({bottom:btDown},200);
+        //         $(".md_swp_cont").css("padding-bottom","0");
+        //     }
+        // });
+
+        /* 20210701 */
+      
+        /* 20210701 end */
+        // $(document).on("click",".btnD",function(){
+        //     var checkBack = $(this).parent().attr("class").substr(23);
+        //     check_count = $(".listup").find(".orgin_group").length;
+        //     $(this).parent().remove();
+        //     if(checkBack != ''){
+        //          $(".md_swp_box").find(".organ_list"+checkBack).find(".organ_check input").attr("checked",false);
+        //     }
+        //     check_count = $(".listup").find(".orgin_group").length;
+        //     if(check_count > 0){
+        //         $(".cont_num em").text(check_count);
+        //         $(".md_Bottom").find(".cont").text(check_count+"개 기관을 선택하셨어요.");
+        //     }else{
+        //         $(".cont_num em").text("0");
+        //         $(".md_Bottom").find(".cont").text("연결하실 기관을 선택하세요.");
+        //         $(".md_Bottom").find(".md_Bottom_head a").removeClass("btnMDB_on").addClass("btnMDB");
+        //         $(".md_Bottom").find(".btnArrow button").removeClass("on");
+        //         $(".md_Bottom").animate({bottom:btDown},200);
+        //         $(".md_swp_cont").css("padding-bottom","0");
+        //     }
+        // });
+    });
+</script>
+<!--//스와이프-->
+<!--원본-열고닫힘-->
+<script>
+	$(document).ready(function(){
+		$(document).on("click",".btn_toggle",function(){
+			$(this).toggleClass("on");
+			$(this).parent().parent().siblings(".account_group_detail").slideToggle();
+		});
+	});
+</script>
+<!--열고닫힘-->
+</body>
+</html>

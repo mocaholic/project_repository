@@ -1,0 +1,610 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr02.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class="transfer2">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">이체</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			
+			<!-- contents -->
+			<div class="contents">
+				<p class="subTit2">입력정보확인 Bottom Sheet 모음</p>
+				<p class="pb5"><a href="#layerPopBottom01" class="btnType2 btnSmall line btnPopOpen"><span>단건</span></a>
+				<a href="#layerPopBottom02" class="btnType2 btnSmall line btnPopOpen"><span>예약</span></a>
+				<a href="#layerPopBottom03" class="btnType2 btnSmall line btnPopOpen"><span>다건</span></a>
+				<a href="#layerPopBottom04" class="btnType2 btnSmall line btnPopOpen"><span>연락처</span></a></p>
+				<a href="#layerPopBottom05" class="btnType2 btnSmall line btnPopOpen"><span>국세/지방세</span></a></p>
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- 단건 -->
+<div class="layerPopBottomWrap hasDim list" id="layerPopBottom01">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">입력정보 확인</p>
+			<a href="javascript:;" class="btnPopClose">팝업 닫기</a>
+		</div>
+		<div class="layerCon pb90">
+			<div class="listTypeTable info">
+				<ul>
+					<li class="row">
+						<div class="leftCol"><p class="tit">출금계좌</p></div>
+						<div class="rightCol">
+							<p class="txt">000-123-123456</p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol"><p class="tit">금액</p></div>
+						<div class="rightCol">
+							<p class="txt bold">48,002원</p><!-- //2021-02-26 클래스수정 -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol type4"><p class="tit">받는분</p></div><!-- //2021-02-26 클래스수정 -->
+						<div class="rightCol">
+							<p class="accNum">
+                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 신한 100-000-000000</span>
+                           		<span>/ 고객명 7자일때</span>
+                           </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="memoArea2">
+				<div class="listTypeTable">
+					<ul>
+						<li class="row">
+							<div class="leftCol"><p class="tit">받는분메모</p></div>
+							<div class="rightCol">
+								<p class="txt">홍길동</p>
+							</div>
+						</li>
+						<li class="row">
+							<div class="leftCol"><p class="tit">내통장메모</p></div>
+							<div class="rightCol">
+								<p class="txt">7자 이내 입력</p>
+							</div>
+						</li>
+						<li class="row">
+							<div class="leftCol type4"><p class="tit">수수료</p></div>
+							<div class="rightCol">
+								<p class="txt"><em class="before">3,000원</em><em>0원</em></p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<p class="pointChk"><input type="checkbox" id="pointChk"> <label for="pointChk">마이신한포인트로 결제</label></p>
+				<div class="formAreaBox pointBox" style="display: none;">
+					<div class="inputBox">
+						<dl class="txtType">
+							<dt>사용가능 포인트</dt>
+							<dd>
+								<p class="txt ar">3,000포인트(원)</p>
+							</dd>
+						</dl>
+						<div class="error">error 문구 출력</div>
+					</div>
+					<div class="inputBox">
+						<dl>
+							<dt>적용 포인트</dt>
+							<dd class="point">
+								<input type="tel" id="" title="적용 포인트" value="2,000">
+								<p class="txt">포인트(원)</p>
+							</dd>
+						</dl>
+						<div class="error">error 문구 출력</div>
+					</div>
+				</div>
+				<div class="otherArea">
+					<div class="infoTxt fl mt5">
+						<span>면제혜택</span>
+						<a href="javascript:void(0)" class="tipOpen iconTy27" title="
+						<ul class='dotList'><li>지금 다른 은행 입출금 계좌를 등록하시면 <br/>이체수수료가 <em class='txtBlue1'>면제</em>됩니다.</li></ul>">?</a>
+					</div>
+					<a href="javascript:;" class="btnOther fr"><span>다른은행 입출금 계좌 등록</span></a>
+				</div>
+			</div>
+			<p class="memoInfo mb30">대출지원, 결제 등으로 이체요청을 받으신 경우,<br/>꼭! <strong>보이스피싱</strong>을 의심하세요.</p>
+		</div>
+		<div class="bottomFix">
+			<div class="rel"><div class="msgBottom"><em>OTP</em> 를 준비해주세요.</div></div>
+			<div class="btnGroupBox type2">
+				<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+				<a href="PR02100100002.html" class="btnType"><span>이체</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //단건 -->
+<!-- 예약 -->
+<div class="layerPopBottomWrap hasDim list" id="layerPopBottom02">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">입력정보 확인</p>
+			<a href="javascript:;" class="btnPopClose">팝업 닫기</a>
+		</div>
+		<div class="layerCon pb90">
+			<div class="listTypeTable info">
+				<ul>
+					<li class="row">
+						<div class="leftCol"><p class="tit">출금계좌</p></div>
+						<div class="rightCol">
+							<p class="txt">000-123-123456</p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol"><p class="tit">금액</p></div>
+						<div class="rightCol">
+							<p class="txt bold">48,002원</p><!-- //2021-02-26 클래스수정 -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol type4"><p class="tit">받는분</p></div><!-- //2021-02-26 클래스수정 -->
+						<div class="rightCol">
+							<p class="accNum">
+                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 신한 100-000-000000</span>
+                           		<span>/ 고객명 7자일때</span>
+                           </p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol type4"><p class="tit">예약</p></div><!-- //2021-02-26 클래스수정 -->
+						<div class="rightCol">
+							<p class="accNum">2021.01.26 07시 ~ 09시</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="memoArea2">
+				<div class="listTypeTable">
+					<ul>
+						<li class="row">
+							<div class="leftCol"><p class="tit">받는분메모</p></div>
+							<div class="rightCol">
+								<p class="txt">홍길동</p>
+							</div>
+						</li>
+						<li class="row">
+							<div class="leftCol"><p class="tit">내통장메모</p></div>
+							<div class="rightCol">
+								<p class="txt">7자 이내 입력</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="memoInfo pb30">대출지원, 결제 등으로 이체요청을 받으신 경우,<br>꼭! <strong>보이스피싱</strong>을 의심하세요.</p>
+		</div>
+		<div class="bottomFix">
+			<div class="rel"><div class="msgBottom"><em>OTP</em> 를 준비해주세요.</div></div>
+			<div class="btnGroupBox type2">
+				<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+				<a href="PR02100100002.html" class="btnType"><span>이체</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //예약 -->
+<!-- 다건 -->
+<div class="layerPopBottomWrap hasDim list" id="layerPopBottom03">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">입력정보 확인</p>
+			<a href="javascript:;" class="btnPopClose">팝업 닫기</a>
+		</div>
+		<div class="layerCon">
+			<div class="listTypeTable info">
+				<ul>
+					<li class="row">
+						<div class="leftCol"><p class="tit">출금계좌</p></div>
+						<div class="rightCol">
+							<p class="txt">신한 000-123-123456</p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol"><p class="tit">금액</p></div>
+						<div class="rightCol">
+							<p class="txt txtBlue1 bold">123,090원</p>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+			<div class="transList">
+				<div class="rowBox">
+					<div class="listTypeTable acc">
+						<ul>
+							<li class="row">
+								<div class="leftCol type4"><p class="tit">받는분1</p></div>
+								<div class="rightCol">
+									<p class="accNum">
+		                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 100-000-000000</span>
+		                           		<span>/ 아무개</span>
+		                           </p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">이체금액</p></div><!-- //2021-02-26 클래스수정 -->
+								<div class="rightCol">
+									<p class="txt">240,000원</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="listTypeTable">
+						<ul>
+							<li class="row">
+								<div class="leftCol"><p class="tit">받는분메모</p></div>
+								<div class="rightCol">
+									<p class="txt">홍길동</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">내통장메모</p></div>
+								<div class="rightCol">
+									<p class="txt">김신한</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="rowBox">
+					<div class="listTypeTable acc">
+						<ul>
+							<li class="row">
+								<div class="leftCol type4"><p class="tit">받는분2</p></div>
+								<div class="rightCol">
+									<p class="accNum">
+		                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_011.png"> 100-000-000000</span>
+		                           		<span>/ 홍길동</span>
+		                           </p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">이체금액</p></div>
+								<div class="rightCol">
+									<p class="txt">2,000원</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="listTypeTable">
+						<ul>
+							<li class="row">
+								<div class="leftCol"><p class="tit">받는분메모</p></div>
+								<div class="rightCol">
+									<p class="txt">홍길동</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">내통장메모</p></div>
+								<div class="rightCol">
+									<p class="txt">김신한</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="rowBox">
+					<div class="listTypeTable acc">
+						<ul>
+							<li class="row">
+								<div class="leftCol type4"><p class="tit">받는분3</p></div>
+								<div class="rightCol">
+									<p class="accNum">
+		                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 100-000-000000</span>
+		                           		<span>/ 고객명 7자일때</span>
+		                           </p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">이체금액</p></div>
+								<div class="rightCol">
+									<p class="txt">240,000원</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="listTypeTable">
+						<ul>
+							<li class="row">
+								<div class="leftCol"><p class="tit">받는분메모</p></div>
+								<div class="rightCol">
+									<p class="txt">홍길동</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">내통장메모</p></div>
+								<div class="rightCol">
+									<p class="txt">김신한</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="rowBox">
+					<div class="listTypeTable acc">
+						<ul>
+							<li class="row">
+								<div class="leftCol type4"><p class="tit">받는분3</p></div>
+								<div class="rightCol">
+									<p class="accNum">
+		                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 100-000-000000</span>
+		                           		<span>/ 고객명 7자일때</span>
+		                           </p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">이체금액</p></div>
+								<div class="rightCol">
+									<p class="txt">240,000원</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="listTypeTable">
+						<ul>
+							<li class="row">
+								<div class="leftCol"><p class="tit">받는분메모</p></div>
+								<div class="rightCol">
+									<p class="txt">홍길동</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">내통장메모</p></div>
+								<div class="rightCol">
+									<p class="txt">김신한</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="rowBox">
+					<div class="listTypeTable acc">
+						<ul>
+							<li class="row">
+								<div class="leftCol type4"><p class="tit">받는분3</p></div>
+								<div class="rightCol">
+									<p class="accNum">
+		                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 100-000-000000</span>
+		                           		<span>/ 고객명 7자일때</span>
+		                           </p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">이체금액</p></div>
+								<div class="rightCol">
+									<p class="txt">240,000원</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="listTypeTable">
+						<ul>
+							<li class="row">
+								<div class="leftCol"><p class="tit">받는분메모</p></div>
+								<div class="rightCol">
+									<p class="txt">홍길동</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">내통장메모</p></div>
+								<div class="rightCol">
+									<p class="txt">김신한</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="rowBox">
+					<div class="listTypeTable acc">
+						<ul>
+							<li class="row">
+								<div class="leftCol type4"><p class="tit">받는분3</p></div>
+								<div class="rightCol">
+									<p class="accNum">
+		                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_035.png"> 100-000-000000</span>
+		                           		<span>/ 고객명 7자일때</span>
+		                           </p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">이체금액</p></div>
+								<div class="rightCol">
+									<p class="txt">240,000원</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="listTypeTable">
+						<ul>
+							<li class="row">
+								<div class="leftCol"><p class="tit">받는분메모</p></div>
+								<div class="rightCol">
+									<p class="txt">홍길동</p>
+								</div>
+							</li>
+							<li class="row">
+								<div class="leftCol"><p class="tit">내통장메모</p></div>
+								<div class="rightCol">
+									<p class="txt">김신한</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			<p class="memoInfo pb30">대출지원, 결제 등으로 이체요청을 받으신 경우,<br>꼭! <strong>보이스피싱</strong>을 의심하세요.</p>
+		</div>
+		<div class="bottomFix">
+			<div class="rel"><div class="msgBottom"><em>OTP</em> 를 준비해주세요.</div></div>
+			<div class="btnGroupBox type2">
+				<a href="PR02100100001P02.html" class="btnType btnBlack"><span>수정</span></a>
+				<a href="PR02100100002A01.html" class="btnType"><span>이체</span></a>
+			</div>
+		</div>	
+	</div>
+</div>
+<!-- //다건 -->
+<!-- 연락처 -->
+<div class="layerPopBottomWrap hasDim list" id="layerPopBottom04">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">입력정보 확인</p>
+			<a href="javascript:;" class="btnPopClose">팝업 닫기</a>
+		</div>
+		<div class="layerCon pb90">
+			<div class="listTypeTable info">
+				<ul>
+					<li class="row">
+						<div class="leftCol"><p class="tit">출금계좌</p></div>
+						<div class="rightCol">
+							<p class="txt">신한 000-123-123456</p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol"><p class="tit">금액</p></div>
+						<div class="rightCol">
+							<p class="txt bold">48,002원</p><!-- //2021-02-26 클래스수정 -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol type4"><p class="tit">받는분</p></div><!-- //2021-02-26 클래스수정 -->
+						<div class="rightCol">
+							<p class="accNum bold">010-1234-1234 / 이순신</p><!-- //2021-02-26 클래스수정 -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="memoArea2">
+				<div class="listTypeTable">
+					<ul>
+						<li class="row">
+							<div class="leftCol"><p class="tit">받는분메모</p></div>
+							<div class="rightCol">
+								<p class="txt">홍길동</p>
+							</div>
+						</li>
+						<li class="row">
+							<div class="leftCol"><p class="tit">내통장메모</p></div>
+							<div class="rightCol">
+								<p class="txt">7자 이내 입력</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="memoInfo pb30">대출지원, 결제 등으로 이체요청을 받으신 경우,<br>꼭! <strong>보이스피싱</strong>을 의심하세요.</p>
+		</div>
+		<div class="bottomFix">
+			<div class="rel"><div class="msgBottom"><em>OTP</em> 를 준비해주세요.</div></div>
+			<div class="btnGroupBox type2">
+				<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+				<a href="PR02100100002A02.html" class="btnType"><span>이체</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //연락처 -->
+<!-- 국세/지방세 -->
+<div class="layerPopBottomWrap hasDim list" id="layerPopBottom05">
+	<div class="popInner auto">
+		<div class="layerHeader">
+			<p class="layerTit">입력정보 확인</p>
+			<a href="javascript:;" class="btnPopClose">팝업 닫기</a>
+		</div>
+		<div class="layerCon pb90">
+			<div class="listTypeTable info">
+				<ul>
+					<li class="row">
+						<div class="leftCol"><p class="tit">출금계좌</p></div>
+						<div class="rightCol">
+							<p class="txt">신한 000-123-123456</p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol"><p class="tit">금액</p></div>
+						<div class="rightCol">
+							<p class="txt bold">48,400원</p>
+						</div>
+					</li>
+					<li class="row">
+						<div class="leftCol type4"><p class="tit">받는분</p></div><!-- //2021-02-26 수정 -->
+						<div class="rightCol">
+							<p class="accNum">
+                           		<span class="logo"><img src="../../../../../../../images/bank_logo/banklogo_481.png"> 지방세입 12345678901234567890</span>
+                           		<span>김신한(지방세입명) 지방세입(00시)</span>
+                           </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="memoArea2">
+				<div class="listTypeTable">
+					<ul>
+						<li class="row">
+							<div class="leftCol"><p class="tit">받는분메모</p></div>
+							<div class="rightCol">
+								<p class="txt">홍길동(지방세입명)</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="memoInfo mb30">대출지원, 결제 등으로 이체요청을 받으신 경우,<br/>꼭! <strong>보이스피싱</strong>을 의심하세요.</p>
+		</div>
+		<div class="bottomFix">
+			<div class="rel"><div class="msgBottom"><em>OTP</em> 를 준비해주세요.</div></div>
+			<div class="btnGroupBox type2">
+				<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+				<a href="PR02100100002A04.html" class="btnType"><span>이체</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //국세/지방세 -->
+
+
+<script type="text/javascript">
+//입력정보확인 마이신한포인트로 결제
+$("#pointChk").on("change",function(){
+	if($(this).is(":checked")){
+		$(".pointBox").slideDown("fast");
+	}else{
+		$(".pointBox").slideUp("fast");
+	}
+});
+</script>
+</body>
+</html>

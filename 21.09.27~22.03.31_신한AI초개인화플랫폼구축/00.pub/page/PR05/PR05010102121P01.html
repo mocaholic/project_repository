@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr05.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- 계약기간 바텀시트팝업 -->
+<div class="layerPopBottomWrap hasDim type4" id="layerPopBottom01" style="display:block;">
+	<div class="popInner type2" style="display:block; ">
+		<div class="layerHeader">
+			<p class="layerTit brdBNone">계약기간</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pt0 pb100">
+			<div class="calCon type3">
+				<div class="popPicker">
+					<div class="pickerWrap" style="width:100%;">
+						<div class="swiper-container" id="divFirstList" >
+							<!-- 1뎁스 선택 -->
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><button type="button">최소계약개월 + 1개월</button></div>
+								<div class="swiper-slide"><button type="button">최소계약개월 + 2개월</button></div>
+								<div class="swiper-slide"><button type="button">최소계약개월 + 3개월</button></div>
+							</div>
+							<!-- 1뎁스 선택 -->
+						</div>
+					</div>
+					<div class="currentCover"></div>
+					<div class="currentCover1"></div>
+					<div class="currentCover2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox type5 floating">
+			<a href="javascript:void(0)" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!--// 계약기간 바텀시트팝업 -->
+<script type="text/javascript">
+/* ui call */
+$(document).bind({
+	'ready' : function(){
+		///////////////////////////////////////////////////2. 원하는 current length 설정
+		currentFirst = 0; //"0"부터 시작
+
+		///////////////////////////////////////////////////3.이체주기 Load
+		calTerm();
+		
+		function calTerm(){
+			if($('.pickerWrap').length){
+				var termSwiper1 = new Swiper('#divFirstList', {
+					slidesPerView: 5,
+					direction: 'vertical',
+					centeredSlides: true,
+					observer : true,
+					observeParents : true,
+					onSlideChangeStart : function(siwper){
+						sbCurrentFirst = $(siwper.container).find('.swiper-slide-active').index();//current value 전달
+					}
+				});
+				termSwiper1.slideTo(currentFirst); //첫번째 current
+			}
+		}
+	}
+});
+</script>
+</body>
+</html>

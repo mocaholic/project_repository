@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr06.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/circle-progress.js"></script><!-- 2020-07-22 추가 -->
+	<style>
+		#contentsWrap .contents {-webkit-overflow-scrolling:auto}
+	</style>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container"> 
+		<!-- header -->
+		<header id="headerWrap" class="headerRp"><!-- 2020-08-24 .headerRp 클래스 추가 -->
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore" id="header_btn_left"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">나의 퇴직연금<span class="label">New</span></h1><!-- 2020-08-24 텍스트 수정 및 new label 추가 -->
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+					<a href="javascript:void(0)" class="btnTotal" id="header_btn_right"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents --> 
+			<div class="contents bg pt0"><!-- 2020-08-24 클래스 변경 pb10 -> pt0 -->
+				<div class="rpTopBg"></div> --><!-- 2020-08-24 rpTopBg 추가 -->
+				<div class="rpFixCont"><!-- 2020-08-24 rpFixCont 추가 -->
+					<div class="rpContInr mt0"><!-- 2020-08-24 rpContInr / mt0 추가 -->
+						<div class="tabMenu on"><!-- 2020-08-24 .on 클래스 추가 -->
+							<div class="rpTab">
+								<a href="javascript:void(0)" class="menu01"><span>Main</span></a>
+								<a href="javascript:void(0)" class="menu02 on"><span>입금현황</span></a>
+								<a href="javascript:void(0)" class="menu03"><span>보유상품</span></a>
+								<a href="javascript:void(0)" class="menu04"><span>매수예정</span></a>
+								<a href="javascript:void(0)" class="menu05"><span>상품안내</span></a>
+								<a href="javascript:void(0)" class="menu06"><span>알림현황</span></a><!-- 2020-08-25 순서변경(텍스트 수정) -->
+								<a href="javascript:void(0)" class="menu07"><span>타기관연금</span></a><!-- 2020-08-25 순서변경(텍스트 수정) -->
+								<a href="javascript:void(0)" class="menu08"><span>주요메뉴</span></a>
+							</div>
+							<!-- 2020-08-24 버튼 추가 -->
+							<button type="button" class="btnTabCtl"><span class="blind">탭 열기/닫기</span></button>
+						</div>
+						<!-- 2020-08-07 타이틀 삭제 -->
+						<div class="rp accountList skin09 mt10"><!-- 2020-08-07 mt10 클래스 추가 -->
+							<ul><!-- 2020-07-15 ul 태그 추가 -->
+								<li><!-- 2020-07-15 li 태그 추가 -->
+									<button class="btnPopOpen listBox" data-href="">
+										<span class="tl ellipsis">확정기여형(DC)_(호)민눈상인봄인주</span> 
+										<span class="number">000-000-000000</span>
+										<!-- 2020-08-26 arrow 삭제 -->
+									</button>
+								</li>
+							</ul>
+						</div>
+						<div class="inrFullBox">
+							<h2 class="rpMainTit mt0"><a href="javascript:void(0)" class="btnFullPop">연간입금현황 <i class="iconTyQuestion2">연간입금현황 안내 팝업</i></a></h2><!-- 2020-07-15 a태그 위치 수정 -->
+							<!-- 2020-07-22 circle progress graph -->
+							<div class="circleProgBox">
+								<div class="circleProgGraph">
+									<div class="progressEtc">
+										<div class="progressIcon">
+											<div class="progressTxt"><p>추가입금가능액</p><strong>16,000,000<em>원</em></strong></div>
+										</div>
+										<div class="progressPoint"></div>
+									</div>
+									<!-- progress icon 위치 값 100% = 100
+										 예) 70% 적용시 70 -->
+									<p class="valTxt"><span>100</span></p>
+									<div class="progressCircle"></div>
+									<div class="txt1">
+										<p>입금액(2020)</p>
+										<strong>12,000,000<em>원</em></strong>
+									</div>
+									<div class="txt2">
+										<p>나의입금한도</p>
+										<p>18,000,000<em>원</em></p>
+									</div>
+								</div>						
+								<div class="txt3">
+									<p class="txtRow1">
+										<span>입금액(2020)</span>
+										<strong>12,000,000<em>원</em></strong>
+									</p>
+									<p class="txtRow2">
+										<span>추가입금가능액</span>
+										<strong>6,000,000<em>원</em></strong>
+									</p>
+								</div>
+								<div class="txt4">
+									<span>최대가능한도 18,000,000원</span>
+									<span>세액공제한도 7,000,000원</span>
+								</div>
+							</div>					
+						</div>
+						<!-- // 2020-07-22 circle progress graph -->
+						<h2 class="rpMainTit mb0">쏙~ 입금 챌린지</h2>
+						<p class="txtBlack2 fontN mt3">소소하게, 쏠쏠하게, 입금 챌린지</p><!-- 2020-08-24 클래스 수정 .fontN -->
+						<ul class="depositChallenge">
+							<li class="challenge1">
+								<a href="#layerPop01" class="btnPopOpen">
+									<strong class="money">1만원</strong>
+									<p class="txt">커피값 아껴<br>쏙~ 입금</p><!-- 2020-08-07 br 태그 추가 -->
+								</a>
+							</li>
+							<li class="challenge2">
+								<a href="javascript:void(0)" class="btnPopOpen">
+									<strong class="money">3만원</strong>
+									<p class="txt">택시비 아껴<br>쏙~ 입금</p><!-- 2020-08-07 br 태그 추가 -->
+								</a>
+							</li>
+							<li class="challenge3">
+								<a href="javascript:void(0)" class="btnPopOpen">
+									<strong class="money">5만원</strong>
+									<p class="txt">외식비 아껴<br>쏙~ 입금</p><!-- 2020-08-07 br 태그 추가 -->
+								</a>
+							</li>
+							<li class="challenge4">
+								<a href="javascript:void(0)" class="btnPopOpen">
+									<strong class="money">10만원</strong>
+									<p class="txt">쇼핑비 아껴<br>쏙~ 입금</p><!-- 2020-08-07 br 태그 추가 -->
+								</a>
+							</li>
+							<li class="challenge5">
+								<a href="javascript:void(0)" class="btnPopOpen">
+									<strong class="money">30만원</strong>
+									<p class="txt">미래의 나에게<br>쏙~ 입금</p><!-- 2020-08-07 br 태그 추가 -->
+								</a>
+							</li>
+							<li class="challenge6">
+								<a href="javascript:void(0)" class="btnPopOpen">
+									<strong class="money">50만원</strong>
+									<p class="txt">여행비 아껴<br>쏙~ 입금</p><!-- 2020-08-07 br 태그 추가 -->
+								</a>
+							</li>
+						</ul>
+						<h2 class="rpMainTit">최근 1개월 입금현황</h2>
+						<div class="depositList swiper-container">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide">
+									<p class="date">7.10</p>
+									<p class="money">100,000<span>원</span></p>
+								</li>
+								<li class="swiper-slide">
+									<p class="date">7.10</p>
+									<p class="money">100,000<span>원</span></p>
+								</li>
+								<li class="swiper-slide">
+									<p class="date">7.10</p>
+									<p class="money">100,000<span>원</span></p>
+								</li>
+								<li class="swiper-slide">
+									<p class="date">7.10</p>
+									<p class="money">100,000<span>원</span></p>
+								</li>
+								<li class="swiper-slide">
+									<p class="date">7.10</p>
+									<p class="money">100,000<span>원</span></p>
+								</li>
+								<li class="swiper-slide">
+									<a href="javascript:void(0)" class="btnDepositMore">자세히보기</a>
+								</li>
+							</ul>
+						</div>
+						<h2 class="rpMainTit">자동이체</h2>
+						<div class="rp accountList skin01 mb20"><!-- 2020-08-07 .mb20 클래스 추가 -->
+							<ul><!-- 2020-07-15 ul 태그 추가 -->
+								<li><!-- 2020-07-15 li 태그 추가 -->
+									<button type="button" class="listBox">
+										<span class="tl ellipsis">이체기간</span> 
+										<span class="number">2020.08.09~2025.03.09</span>
+										<span class="price"><em>19,387,078</em><em>원</em></span>
+										<span class="arrow data_flip"><span class="iconTy59">상세내용</span></span>
+									</button>
+									<div class="viewBox">
+										<div class="detailList">
+											<ul>
+												<li>
+													<p class="left">지급계좌</p>
+													<p class="right">123-123-123456</p>
+												</li>
+												<li>
+													<p class="left">이체일자</p>
+													<p class="right">10일</p>
+												</li>
+												<li>
+													<p class="left">이체주기</p>
+													<p class="right">1개월</p>
+												</li>
+											</ul>
+										</div>
+										<div class="btnArea">
+											<a href="javascript:void(0)"><span>자동이체 변경</span></a>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="msgBox shadow mb20"><!-- 2020-08-07 .mb20 클래스 추가 -->
+							<p>등록된 자동이체가 없습니다.</p>
+							<div class="btnArea">
+								<a href="javascript:void(0)"><span>자동이체 등록</span></a>
+							</div>
+						</div>
+						<div class="inrFullBox pb0"><!-- 2020-08-24 pb0 클래스 추가 -->
+							<h2 class="rpMainTit mt0"><a href="javascript:void(0)" class="btnFullPop">예상 세금혜택 <i class="iconTyQuestion2">예상세금혜택 안내 팝업</i></a></h2><!-- 2020-08-07 디자인 수정 : mb10 클래스 삭제 -->
+							<p class="txtBlack2 fontN">소득구분</p><!-- 2020-08-24 클래스 추가 .fontN -->
+							<div class="incomeRdoBox">
+								<input type="radio" name="rdo1" id="rdo1-1" checked><label for="rdo1-1" class="income1">근로소득</label>
+								<input type="radio" name="rdo1" id="rdo1-2"><label for="rdo1-2" class="income2">종합소득</label>
+							</div>
+							<p class="txtBlack2 fontN mt20">소득구간</p><!-- 2020-08-24 클래스 추가 .fontN -->
+							<button class="btnPopOpen btnSelIncome" data-href="#layerPop02">5,500만원 이하</button>
+							<div class="contAccordion taxCalcBox">
+								<div class="AccorTitle">
+									<a href="javascript:void(0)">
+										<p class="tit">세금혜택 계산</p>
+									</a>
+								</div>
+								<div class="AccorCont">
+									<div class="taxCalcResult">
+										<!-- 2020-07-23 기획 / 디자인 수정 반영 : 마크업 변경 -->
+										<h3 class="tit mt3">현재 입금액 기준</h3>
+										<div class="CalcBox1">
+											<p class="taxTxt flex">
+												<span>입금액</span>
+												<strong>4,000,000<em>원</em></strong>
+											</p>
+											<div class="barGraphBox">
+												<!-- D : 비율에 따라 % 값으로 조절 -->
+												<div class="bar" style="width:30%"><span class="blind">입금액 기준 비율 그래프</span></div>										
+											</div>
+											<p class="fullMoney">세액공제 한도 700만원</p>
+											<div class="taxExpect">
+												<span>세액공제예상액</span>
+												<strong>131,835<em>원</em></strong>
+											</div>
+										</div>
+										<h3 class="tit">세액공제한도(700만원) 기준</h3>
+										<div class="CalcBox2">
+											<p class="taxTxt">추가로 <strong class="underline">3,000,000원</strong>을 입금했을 경우</p><!-- 2020-08-07 span 태그 삭제 -->
+											<div class="taxExpect">
+												<span>총 세액공제예상액</span>
+												<strong>1,155,000<em>원</em></strong>
+											</div>
+										</div>
+										<p class="starTxt">해당 계좌의 입금액만을 고려하여 산출한 정보입니다.</p><!-- 2020-08-07 클래스 변경 .starTxt-->
+										<!-- // 2020-07-23 기획 / 디자인 수정 반영 : 마크업 변경 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 입금확인 layer popup -->
+<div class="layerPopWrap hasDim" id="layerPop01">
+	<div class="popInner">
+		<div class="layerCon">
+			<div class="conInner ac">
+				<strong class="fontLL bold">50만원</strong>
+				<p class="fontN txtBlack2 mt10">선택하신 금액을 입금하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:;" class="btnType btnBlack"><span>취소</span></a>
+			<a href="javascript:;" class="btnType"><span>입금</span></a>
+		</div>
+	</div>
+</div>
+<!-- // 입금확인 layer popup -->
+<!-- 소득구간 하단 layer popup -->
+<div class="layerPopBottomWrap hasDim" id="layerPop02">
+	<div class="popInner" style="height:182px"><!-- 2020-07-15 style 추가 -->
+		<div class="layerHeader">
+			<p class="layerTit">소득구간</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li>
+						<button type="button">5,500만원 이하</button>
+					</li>
+					<li>
+						<button type="button">5,500만원 ~ 1.2억원</button>
+					</li>
+					<li>
+						<button type="button">1.2억 원 초과</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 소득구간 하단 layer popup -->
+</body>
+<script>
+	// 상단 탭
+	$(document).on('click', '.rpTab [class^="menu"]', function(){
+		var $this = $(this);
+
+		if(!$this.is('.on')){
+			$this.addClass('on').siblings('a').removeClass('on');
+		}
+	})
+	// 2020-08-24 추가
+	setTimeout(function(){
+		$('.tabMenu').removeClass('on');
+		tabPos(); // 2020-08-25 추가
+	}, 700)
+
+	$('.btnTabCtl').on('click', function(){
+		var tabMenu = $('.tabMenu'),
+			tabInr = $('.rpTab');
+			
+		tabMenu.toggleClass('on');
+		if(tabMenu.hasClass('on')){
+			tabMenu.css({height:157}); // 2020-08-25 수정
+		}else {
+			tabMenu.css({height:88.6}); // 2020-08-25 수정
+		}
+		tabPos(); // 2020-08-25 추가 
+	})
+
+	// 2020-08-25 추가
+	function tabPos(){
+		var tabH = $('.tabMenu').height(),
+			menuIdx = $('[class^="menu"].on').index(),
+			menuTarget = $('[class^="menu"]');
+		if(!$('.tabMenu').hasClass('on')){
+			if(menuIdx > 3 && menuTarget.hasClass('on')){
+				$('.rpTab').stop().animate({scrollTop:tabH});
+			} else {
+				$('.rpTab').stop().animate({scrollTop:0});
+			}
+		}
+	}
+
+	$(".data_flip").click(function(){
+		if($(this).parents(".listBox").hasClass("on")){
+			$(this).parents(".listBox").removeClass("on");
+		}else{
+			$(this).parents(".listBox").addClass("on");
+		}		
+	});
+
+	// IOS 스와이퍼 오류대응
+	var UserAgent = navigator.platform;
+	if(UserAgent.match(/i(Phone|Pod)/i) != null){
+		$('body').width(screen.width);
+	}
+	var depositListSwiper = new Swiper('.depositList', {
+		slidesPerView: 3, // 2020-08-07 값 수정
+		spaceBetween: 5
+	})
+
+	// 2020-07-22 circle progress graph
+	$('.circleProgGraph').each(function(){
+		var barEtc = $(this).find('.progressEtc'),
+			barIcon = barEtc.find('.progressIcon'),
+			barPoint = barEtc.find('.progressPoint'),
+			barTxt = barEtc.find('.progressTxt'),
+			val = $(this).find('.valTxt'),
+			per = parseInt(val.text(), 10);
+
+		$({p:0}).animate({p:per}, {
+			duration: 2000,
+			easign: 'swing',
+			step: function(p) {
+				barEtc.css({
+					transform: 'rotate('+ (4+(p*2.62)) +'deg)'
+				});
+				barIcon.css({
+					transform: 'rotate('+ (-4-(p*2.62)) +'deg)'
+				});				
+				val.text(p|0);
+			}
+		});
+		setTimeout(function(){
+			barTxt.show();
+		}, 2100)
+	});
+
+	$('.progressCircle').circleProgress({
+		startAngle: -Math.PI / 4 * 4.9,
+		value: 0.72, // progress data 값 100% = 0.72 / 예) 70% 적용시 (70*0.72)/100 = 0.504
+		thickness : 22,
+		lineCap: 'round',
+		size: 222, // 2020-08-07 값 수정
+		fill: {gradient: ['#4d94de']},
+		animation: {
+			duration: 2000,
+			easing: 'swing',
+		},
+		emptyFill: 'transparent',
+	});
+</script>
+</html>

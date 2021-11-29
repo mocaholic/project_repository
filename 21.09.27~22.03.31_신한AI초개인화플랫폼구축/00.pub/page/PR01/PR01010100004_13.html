@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/roundslider.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/roundslider.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container"> 
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit"><img src="../../../../../../../images/icon_heyoung.png" class="vm" style="height:35px;" alt="Hey Young" /> 머니박스 상세조회</h1><!-- 2020-06-02 수정-->
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full moneyBox"><!-- 2020-06-08 수정 : moneyBox -->
+				<!-- ========================= 계좌선택 & 금액 상세 ========================= -->
+				<!--
+					1. skin01 : 입출금
+					2. skin02 : 적금
+					3. skin03 : 대출
+					4. skin04 : 신탁
+					5. skin05 : 펀드
+					6. skin06 : 외환
+					7. skin07 : 골드/실버
+					8. skin08 : isa
+					9. skin09 : 개인형 IRP
+					10. skin10 : 보험
+				 -->
+				<div class="accountSelect blueBox skinSafe"><!--skinSafe 수정 -->
+					<div class="defaultInfo addCoinBox">
+						<div class="bankInfo">
+							<p class="name bold"><img src="../../../../../../../images/icon_heyoung02.png" class="vm" style="height:35px;" alt="Hey Young" /> 머니박스</p><!-- 2020-06-02 수정 -->
+							<p class="number">연결계좌 110-111-111111</p>
+						</div>
+						<div class="moneyInfo al mt50">
+							<div class="money2"><span class="vm">15일간 쌓인 이자</span> <i class="iconTyLabelW2">연 1.5%</i></div>
+							<div class="money"><strong>1,907</strong>원</div>
+						</div>
+					</div>
+					<div class="popoverWrap por">
+						<!-- 앱접근성 변경 -->
+						<button type="button"><span class="popOpen iconTy05">부가메뉴</span></button> <!-- 앱접근성 변경 (문구) -->
+						<!-- //앱접근성 변경 -->
+						<div class="toolBox">
+							<ul>
+								<li><a href="#">금고별명 관리</a></li>
+								<li><a href="#">바로가기 등록</a></li>
+								<li><a href="#">금고 삭제</a></li>
+							</ul>
+							<!-- 앱접근성 변경 -->
+							<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+							<!-- //앱접근성 변경 -->
+						</div>
+					</div>
+					<!-- roundSlider-->
+					<div class="roundSliderWrap">
+						<div class="txtSliderMax"><span class="blind">한도 최대 금액</span> 200</div><!-- 2019-10-29 수정 : 추가 -->
+						<div class="txtSliderMin"><span class="blind">한도 최소 금액</span> 0</div><!-- 2019-10-29 수정 : 추가 -->
+						<div id="slider" class="sliderSafe"></div>
+						<div class="btnWrap">
+							<a href="#layerPopBottom01" onclick="" class="btnType2 lineBlack2 round02 btnPopOpen" ><span class="txtRed1">+ <span class="txt">채우기</span></span></a><br />
+							<a href="#layerPopBottom01" class="btnType2 lineBlack2 round02 btnPopOpen"style="display:none"></a>
+							<a href="javascript:;" class="btnType2 lineBlack2 round02"><span class="txtBlue2">- <span class="txt">비우기</span></span></a><br />
+							<!-- <a href="javascript:;" class="btnType3"><span class="bold txtBlack1 fontN">금고 타입 변경하기</span></a> 2020-05-26 수정 : 삭제 -->
+						</div>
+					</div>
+					<!-- //roundSlider -->
+					<div class="layerPopBottomWrap hasDim" id="layerPopBottom01">
+							<div class="popInner">
+								<div class="layerHeader">
+									<!-- 제목영역 필요 없으면 삭제 가능 -->
+									<p class="layerTit">공유</p>
+									
+									<button type="button" class="btnPopClose">팝업 닫기</button>
+								</div>
+								<div class="layerCon pb70">
+									<div class="listTypeTable lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol"><p class="tit">이체금액</p></div>
+												<div class="rightCol">
+													<p class="txt">100,000원</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">이체예약일시</p></div>
+												<div class="rightCol">
+													<p class="txt">2017.09.30 16:24</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">받는통장메모</p></div>
+												<div class="rightCol">
+													<p class="txt">홍길동</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">내통장메모</p></div>
+												<div class="rightCol">
+													<p class="txt">홍길동</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">CMS코드</p></div>
+												<div class="rightCol"></div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">이체금액</p></div>
+												<div class="rightCol">
+													<p class="txt">100,000원</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">이체예약일시</p></div>
+												<div class="rightCol">
+													<p class="txt">2017.09.30 16:24</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">받는통장메모</p></div>
+												<div class="rightCol">
+													<p class="txt">홍길동</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">내통장메모</p></div>
+												<div class="rightCol">
+													<p class="txt">홍길동</p>
+												</div>
+											</li>
+											<li class="row">
+												<div class="leftCol"><p class="tit">CMS코드</p></div>
+												<div class="rightCol"></div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="btnGroupBox floating fixed">			
+									<a href="javascript:void(0)" class="btnType btnBlack"><span>이전</span></a>	
+									<a href="javascript:void(0)" class="btnType"><span>확인</span></a>
+								</div>
+							</div>
+						</div>
+					<div class="mySaftListWrap">
+						<button type="button" class="btnToggle js-target" data-href="#detileBox"><span class="iconTy08">세부내역 닫힘</span><span class="iconTy07">세부내역 열림</span></button>
+						<div class="expansion" id="detileBox">
+							<div class="listTypeTable lineType">
+								<ul>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">납입 원금 수익률</p></div>
+										<div class="rightCol">
+											<p class="txt">1.84%</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">저축종류</p></div>
+										<div class="rightCol">
+											<p class="txt">임의식</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">신규일자</p></div>
+										<div class="rightCol">
+											<p class="txt">2004.02.03</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">만기일자</p></div>
+										<div class="rightCol">
+											<p class="txt">2020.02.03</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">잔고좌수</p></div>
+										<div class="rightCol">
+											<p class="txt">21,357,340</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">입금방식</p></div>
+										<div class="rightCol">
+											<p class="txt">익일 이후 입금</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">출금방식</p></div>
+										<div class="rightCol">
+											<p class="txt">익일 이후 출금</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">연결계좌번호</p></div>
+										<div class="rightCol">
+											<p class="txt">110-008-807435</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">세금우대/비과세<br />종합저축 약정 금액</p></div>
+										<div class="rightCol">
+											<p class="txt">6,000,000원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">세금우대/비과세<br />종합저축 종류</p></div>
+										<div class="rightCol">
+											<p class="txt">세금우대</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">목표 수익률</p></div>
+										<div class="rightCol">
+											<p class="txt">30%</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol type2"><p class="tit">위험 수익률</p></div>
+										<div class="rightCol">
+											<p class="txt">-15%</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ========================= //계좌선택 & 금액 상세 ========================= -->
+				
+				<div class="innerBox lineN pb0">
+					<!-- 2019-06-07 수정 -->
+					<div class="formAreaBox type3">
+						<div class="inputBox calRange calendar type02 mt0"> <!-- .calRange .calendar// -->
+							<ul class="duration col4 mt0">
+								<li><a href="javascript:void(0)" class="on">1주일</a></li>
+								<li><a href="javascript:void(0)">1개월</a></li>
+								<li><a href="javascript:void(0)">6개월</a></li>
+								<li><a href="#tabView2">상세조회</a></li>
+							</ul>
+							<div class="dateInput" id="tabView2" style="display: ;">
+								<dl class="dateBox inner mt0">
+									<dd>
+										<input type="text" id="" class="shinhan" placeholder="시작일" value="2017.08.16" readonly="readonly">
+										<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+									</dd>
+									<dd>
+										<input type="text" id="" class="shinhan" placeholder="종료일" value="2017.08.16" readonly="readonly">
+										<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+									</dd>
+								</dl>
+								<div class="formAreaBox">
+									<div class="inputBox mt0"> <!-- .on .wrong .button .radio .calendar .password -->
+										<dl>
+											<dt class="listAccount">
+												<div class="selecter type2 line">
+													<a href="javascript:void(0)" class="current" name="" id="">통장메모 <span class="iconTy43">하위메뉴 열림</span></a>
+													<div class="sub">
+														<ul>
+															<li><button class="case2">통장메모</button></li>
+															<li><button class="case1">금액구간</button></li>
+														</ul>
+													</div>
+												</div>
+											</dt>
+											<!-- 통장메모 일 경우 -->
+											<dd class="gugan2">
+												<input type="text" id="" placeholder="거래메모 #해시태그" value="" title="거래메모 #해시태그 입력">
+												<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+											</dd>
+											<!-- //통장메모 일 경우 -->
+											<!-- 금액구간 일 경우 -->
+											<dd class="gugan1" style="display:none">
+												<input type="tel" id="amountMin" onclick="amountKeyPad(id);" placeholder="금액 시작" value="" title="금액 입력" class="ac">
+												<span>~</span>
+												<input type="tel" id="amountMax" onclick="amountKeyPad(id);" placeholder="금액 끝" value="" title="금액 입력" class="ac">
+											</dd>
+											<!-- 금액구간 일 경우 -->
+										</dl>
+										<div class="error">error 문구 출력</div>
+									</div>
+								</div>
+								<p class="mt15"><a href="javascript:;" class="btnType btnSmall"><span>조회</span></a></p>
+								<!-- 2019-07-23 추가 -->
+								<div class="contAccordion accGraph mt15 gugan2">
+									<div class="AccorTitle">
+										<a href="#" title="세부내역 열기" role="button">
+											<h3 class="tit txtBlack2 fontNS normal"><strong class="txtBlue6 pr10">#모임회비</strong>최근 1년 그래프</h3>
+											<div class="arrow">
+												<span class="iconTy09"></span>
+												<span class="iconTy10"></span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont" style="display: none;">
+										<div class="graphArea" style="height:200px;background:pink; text-align:center;">
+											<p style="line-height:200px;">그래프영역</p>
+										</div>
+									</div>
+								</div>
+								<!-- 2019-07-23 추가 -->
+							</div>
+						</div>	
+					</div>
+					<div class="searchInfo mt15">
+						<button type="button" class="cToggle">최신순</button>
+						<div class="selecter">
+							<a href="javascript:void(0)" class="select"><em class="current">입금+출금 <span class="iconTy43">링크</span></em></a>
+							<div class="sub" tabindex="0">
+								<ul>
+									<li class="on"><button>입금+출금</button></li>
+									<li><button>입금</button></li>
+									<li><button>출금</button></li>
+									<li><button>신한은행 ATM</button></li>
+								</ul>
+							</div>
+						</div>
+						<span class="num">[최근 10건]</span>
+						<span class="swtichTy01">
+							<label for="dummy">
+								<span class="text">잔액</span>
+								<input type="checkbox" name="dummy" id="dummy" value="dummy">
+								<i></i>
+							</label>
+						</span>
+					</div>
+					<!-- //2019-06-07 수정 -->
+					<!-- 2019-07-12 추가 -->
+					<div class="dataSelect">
+						<a href="javascript:;" class="prev"><span>이전</span></a>
+						<span class="num">2018.04.14~2018.08.05<em class="pl5">[500건]</em></span>
+						<a href="javascript:;" class="next"><span>다음</span></a>
+					</div>
+					<!-- //2019-07-12 추가 -->
+					<!-- 날짜별 -->
+					<p class="data">2017.08.31</p>
+					<div class="timeBox">
+						<div class="listTypeTable lineType type2 mb0">
+							<ul>
+								<li class="row">
+									<div class="topCont">
+										<div class="leftCol vt">
+											<p class="time">18:12 <span>신한체크</span></p>
+											<p class="tit fontN txtBlack1">정기적금 자동이체 </p>
+										</div>
+										<div class="rightCol">
+											<p class="txt txtBlue2">이체완료</p>
+											<p class="money txtBlue2"><strong>150,000</strong>원</p>
+											<p>잔액 12,125,015원</p>
+										</div>
+										<div class="popoverWrap por vt">
+											<button type="button" class="btnToggle"><span class="iconTy06">부가메뉴</span></button> <!-- 앱접근성 변경 (문구) -->
+											<div class="toolBox">
+												<ul>
+													<li><a href="#" class="on">블라블라블라</a></li>
+													<li><a href="#">블라블라블라</a></li>
+													<li><a href="#">블라블라블라</a></li>
+													<li><a href="#">블라블라블라</a></li>
+												</ul>
+												<!-- 앱접근성 변경 -->
+												<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+												<!-- //앱접근성 변경 -->
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="row">
+									<div class="topCont">
+										<div class="leftCol vt">
+											<p class="time">18:12</p>
+											<p class="tit fontN">펀드예탁금이자 </p>
+										</div>
+										<div class="rightCol">
+											<p class="txt txtRed1">이체취소</p>
+											<p class="money txtRed1"><strong>200,000</strong>원</p>
+											<p>잔액 12,125,015원</p>
+										</div>
+										<div class="popoverWrap por vt">
+											<button type="button" class="btnToggle"><span class="iconTy06">부가메뉴</span></button> <!-- 앱접근성 변경 (문구) -->
+											<div class="toolBox">
+												<ul>
+													<li><a href="#">블라블라블라</a></li>
+													<li><a href="#">블라블라블라</a></li>
+													<li><a href="#">블라블라블라</a></li>
+													<li><a href="#">블라블라블라</a></li>
+												</ul>
+												<!-- 앱접근성 변경 -->
+												<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+												<!-- //앱접근성 변경 -->
+											</div>
+										</div>
+									</div>
+									<!-- 회차별 우대글리 -->
+									<div class="topCont">
+										<div class="leftCol">
+											<p class="tit">회차별 우대금리 </p>
+										</div>
+										<div class="rightCol">
+											<p>0.3%</p>
+										</div>
+										<div class="popoverWrap por"></div>
+									</div>
+									<!-- //회차별 우대글리 -->
+									<p class="memoText">결혼을 진심으로 축하드립니다.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //날짜별 -->
+					
+					<!-- 날짜별 -->
+					<p class="data">2017.08.31</p>
+					<div class="timeBox">
+						<div class="listTypeTable lineType type2 mb0">
+							<ul>
+								<li class="row">
+									<div class="topCont">
+										<div class="leftCol vt">
+											<p class="time">18:12 <span>신한체크</span></p>
+											<p class="tit fontN txtBlack1">정기적금 자동이체 </p>
+										</div>
+										<div class="rightCol">
+											<p class="txt txtBlue2">이체완료</p>
+											<p class="money txtBlue2"><strong>150,000</strong>원</p>
+											<p>잔액 12,125,015원</p>
+										</div>
+										<div class="popoverWrap por vt">
+											<button type="button" class="btnToggle"><span class="iconTy06">부가메뉴</span></button> <!-- 앱접근성 변경 (문구) -->
+											<div class="toolBox">
+												<ul>
+													<li><a href="#">계좌번호 복사</a></li>
+													<li><a href="#">카카오톡 전송</a></li>
+													<li><a href="#">QR 코드 생성</a></li>
+													<li><a href="#">예금별명 관리</a></li>
+													<li><a href="#">우대계좌 전환</a></li>
+												</ul>
+												<!-- 앱접근성 변경 -->
+												<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+												<!-- //앱접근성 변경 -->
+											</div>
+										</div>
+									</div>
+									
+									<p class="mt10">거래메모는 20자까지 입력 거래메모는 20자까지 입력</p>
+									<!-- 신규추가 -->
+									<p class="memoText">결혼을 진심으로 축하드립니다.</p>
+								</li>
+								<li class="row">
+									<div class="topCont">
+										<div class="leftCol vt">
+											<p class="time">18:12</p>
+											<p class="tit fontN">펀드예탁금이자 </p>
+										</div>
+										<div class="rightCol">
+											<p class="txt txtRed1">이체취소</p>
+											<p class="money txtRed1"><strong>200,000</strong>원</p>
+											<p>잔액 12,125,015원</p>
+										</div>
+										<div class="popoverWrap por vt">
+											<button type="button" class="btnToggle"><span class="iconTy06">부가메뉴</span></button> <!-- 앱접근성 변경 (문구) -->
+											<div class="toolBox">
+												<ul>
+													<li><a href="#">계좌번호 복사</a></li>
+													<li><a href="#">카카오톡 전송</a></li>
+													<li><a href="#">QR 코드 생성</a></li>
+													<li><a href="#">예금별명 관리</a></li>
+													<li><a href="#">우대계좌 전환</a></li>
+												</ul>
+												<!-- 앱접근성 변경 -->
+												<a href="javascript:void(0)" class="btn"><span class="blind">부가메뉴</span> 닫기</a>
+												<!-- //앱접근성 변경 -->
+											</div>
+										</div>
+									</div>
+									<p class="mt10">거래메모는 20자까지 입력 거래메모는 20자까지 입력</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //날짜별 -->
+					
+					<!-- <div class="noSearchBox">
+						<p class="txt"><span>조회결과가 없습니다.</span>출금계좌 및 조회조건 등을<br>확인하시기 바랍니다.</p>
+					</div> -->
+				</div>
+			</div>
+			<!-- // contents -->
+			<!-- 2017.11.22 추가 -->
+			<div class="cycleFloating">
+				<a href="javascript:;" class="btnTyCycle">퀵메뉴 열기</a>
+				<ul class="btnListCycle">
+					<!-- 아이콘 스타일은 기획, 디자인 확인후 변경하도록 하겠습니다. -->
+					<li>
+						<a href="javascript:;" class="type01">
+							<div>이체</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="type02">
+							<div>자동이체</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="type03">
+							<div>예약이체</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="type04">
+							<div>경조금이체</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="type04">
+							<div>연락처이체</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="type04">
+							<div>이체결과조회</div>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="type04">
+							<div>우대통장전환</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+			<a href="javascript:;" class="btnTyCircleTop">Top</a>
+			<!-- //2017.11.22 추가 -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<script type="text/javascript">
+	$(".cToggle").click(function(){
+		if($(this).hasClass('on')){
+			$(this).removeClass('on');
+			$(this).text("최신순");
+		}else{
+			$(this).addClass('on');
+			$(this).text("과거순");
+		}
+	});
+	
+	$(".dateInput .selecter .sub li button").click(function(){
+		if($(this).hasClass('case2')){
+			$('.gugan1').hide();
+			$('.gugan2').show();
+		}else{
+			$('.gugan1').show();
+			$('.gugan2').hide();
+		}
+	});
+
+	//계좌상세
+	var roundW = parseInt($(window).width()/1.6); //2020-05-26 수정
+	if(roundW > 276){
+		roundW = 276;
+	}
+	
+	$("#slider").roundSlider({
+		sliderType: "min-range",
+		circleShape : "half-left",
+		width: 5,
+		handleSize: "30",
+		handleShape: "dot",
+		radius: roundW,
+		value:0,
+		//step: 10,
+		mouseScrollAction: true,
+		tooltipFormat: "changeTooltip",
+		drag: "traceEvent",
+		change: "traceEvent",
+		editableTooltip: false,
+	});
+	function traceEvent(e) {
+		var valKeep = 0; // 보관금액
+		var val = parseInt($(".rs-handle").offset().top) - $(".rs-inner-container").offset().top; //2020-05-26 수정
+		var val2= e.value, bgType;
+		var bg = $('.rs-control');
+		var bgD = 'rs-g rs-g1 rs-g2';
+		
+		$(".rs-inner-bg").css("top", val); //2020-05-26 수정
+
+		if (val2 < valKeep) bgType = bg.removeClass(bgD).addClass('rs-g1');
+		else if (val2 > valKeep) bgType = bg.removeClass(bgD).addClass('rs-g2');
+		else bgType = bg.removeClass(bgD).addClass('rs-g');
+	}
+	function changeTooltip(e) {
+		var valKeep = 0; // 보관금액
+		var val = e.value;
+		var val2 = e.value, amount;
+		
+		if (val2 < valKeep) amount = -valKeep + val;
+		else if (val2 > valKeep) amount = val - valKeep;
+		else amount = '한도 200만원';
+		
+		return "<span class='tit'>" + "보관금액"+ "</span>" + "<span class='amount'>" + val + "</span>" + "<br /> <span class='num'>" + amount + "</span>";
+	}
+	
+	var roundSliderWrapH = $("#slider").width();
+	var roundSliderWrapH2 = $("#slider").height();
+	
+	$(".roundSliderWrap").height(parseInt(roundSliderWrapH*1.6)); //2020-05-26 수정
+</script>
+</body>
+</html>

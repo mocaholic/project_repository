@@ -1,0 +1,2043 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	살기좋은동네 > 매물찾기 지도
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		이승찬		2021-02-23		최초작성
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr09.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">서울 광진구 구의동</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnSearch"><span class="iconTy29">검색</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents pd0">
+				<!-- neighborhoodWrap -->
+				<div class="neighborhoodWrap">
+					<h2 class="blind">본문</h2>
+					<div class="mapContainer hasFilter"> <!-- 필터유무 .hasFilter-->
+						<!-- Filter -->
+						<div class="topArea uiMapFilter"> <!-- .collapse -->
+							<div class="filterDiv">
+								<div class="filterSelect">
+									<div class="inner">
+										<span class="zoneTypeMy">
+											<button type="button" class="myfilter" data-id="id_my"><i class="iconTyMyStar"></i><span>MY필터</span></button>
+										</span>
+										<span class="zone">
+											<button type="button" data-id="id-01" data-sort="1" data-label="거주유형"><span>거주유형</span></button>
+											<button type="button" data-id="id-02" data-sort="2" data-label="거래유형"><span>거래유형</span></button>
+											<button type="button" data-id="id-03" data-sort="3" data-label="학교"><span>학교</span></button>
+											<button type="button" data-id="id-04" data-sort="4" data-label="역세권"><span>역세권</span></button>
+											<button type="button" data-id="id-05" data-sort="5" data-label="준공년도"><span>준공년도</span></button>
+											<button type="button" data-id="id-06" data-sort="6" data-label="면적"><span>면적</span></button>
+											<button type="button" data-id="id-07" data-sort="7" data-label="방/욕실수"><span>방/욕실수</span></button>
+											<button type="button" data-id="id-08" data-sort="8" data-label="세대수"><span>세대수</span></button>
+											<button type="button" data-id="id-09" data-sort="9" data-label="관리비"><span>관리비</span></button>
+											<button type="button" data-id="id-10" data-sort="10" data-label="재건축가능성"><span>재건축가능성</span></button>
+											<button type="button" data-id="id-11" data-sort="11" data-label="주차장"><span>주차장</span></button>
+											<button type="button" data-id="id-12" data-sort="12" data-label="MY자산 맞춤매물"><span>MY자산 맞춤매물</span></button>
+											<button type="button" data-id="id-13" data-sort="13" data-label="보증금/월세"><span>보증금/월세</span></button>
+										</span>
+									</div>
+								</div>
+								<div class="filterBtn">
+									<button type="button" class="btnFilterOpen"><i class="iconTyMapFilter"></i><span class="blind">필터열기</span></button>
+								</div>
+							</div>
+
+							<div class="settingDiv">
+								<!-- MY필터 ▽ -->
+								<div class="settingBox" id="id_my">
+									<div class="noItem">저장된 조건이 없습니다.</div>
+									<ul class="scrollX">
+										<!-- <li>
+											<div class="item">
+												<button type="button"><span class="ellipsis02">매매/학교 10분/지하철 10분이내/준공년도 최근 10년이내,/면적 99~132㎡</span></button>
+												<button type="button" class="btnItemDel"><i class="iconTyMapItemClose"></i><span class="blind">삭제</span></button>
+											</div>
+										</li> -->
+									</ul>
+								</div>
+								<!-- 거주유형 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-01">
+									<div class="toggleTyBtn col2 uiToggleTyBtn">
+										<ul>
+											<li>
+												<button type="button" class="btnTgItem" data-label="아파트" data-value="1"><span>아파트</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="오피스텔" data-value="2"><span>오피스텔</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 거래유형 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-02">
+									<div class="toggleTyBtn col3 uiToggleTyBtn">
+										<ul>
+											<li>
+												<button type="button" class="btnTgItem" data-label="매매" data-value="1"><span>매매</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="전세" data-value="2"><span>전세</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="월세" data-value="3"><span>월세</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 학교 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-03" data-prefix="학교" data-suffix="분">
+									<div class="sliderBar">
+										<div class="barParent">
+											<div class="uiRangeSlider" data-step="1" data-min="0" data-max="20" data-value='0,20'></div>
+										</div>
+										<div class="limit step5">
+											<p class="limitPoint"><span class="txt">0</span></p>
+											<p class="limitPoint"><span class="txt">5분</span></p>
+											<p class="limitPoint"><span class="txt">10분</span></p>
+											<p class="limitPoint"><span class="txt">15분</span></p>
+											<p class="limitPoint"><span class="txt">20분</span></p>
+										</div>
+									</div>
+									<div class="toggleTyBtn col4 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="학교" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="학교 0~5분" data-value="0,5"><span>~5분</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="학교 0~10분" data-value="0,10"><span>~10분</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="학교 0~15분" data-value="0,15"><span>~15분</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="학교 0~20분" data-value="0,20"><span>~20분</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 역세권 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-04" data-prefix="역세권" data-suffix="분">
+									<div class="sliderBar">
+										<div class="barParent">
+											<div class="uiRangeSlider" data-step="1" data-min="0" data-max="15" data-value='0,15'></div>
+										</div>
+										<div class="limit step4">
+											<p class="limitPoint"><span class="txt">0</span></p>
+											<p class="limitPoint"><span class="txt">5분</span></p>
+											<p class="limitPoint"><span class="txt">10분</span></p>
+											<p class="limitPoint"><span class="txt">15분</span></p>
+										</div>
+									</div>
+									<div class="toggleTyBtn col4 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="all" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="역세권 0~5분" data-value="0,5"><span>~5분</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="역세권 0~10분" data-value="0,10"><span>~10분</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="역세권 0~15분" data-value="0,15"><span>~15분</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 준공년도 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-05" data-prefix="준공" data-suffix="년">
+									<div class="sliderBar">
+										<div class="barParent">
+											<div class="uiRangeSlider" data-step="1" data-min="0" data-max="30" data-value='0,30'></div>
+										</div>
+										<div class="limit step4">
+											<p class="limitPoint"><span class="txt">0</span></p>
+											<p class="limitPoint"><span class="txt">10년</span></p>
+											<p class="limitPoint"><span class="txt">20년</span></p>
+											<p class="limitPoint"><span class="txt">30년</span></p>
+										</div>
+									</div>
+									<div class="toggleTyBtn col4 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 0~3년" data-value="0,3"><span>~3년</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 0~5년" data-value="0,5"><span>~5년</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 0~10년" data-value="0,10"><span>~10년</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 0~15년" data-value="0,15"><span>~15년</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 0~20년" data-value="0,20"><span>~20년</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 0~30년" data-value="0,30"><span>~30년</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="준공 30년~" data-value="30,99999999"><span>30년~</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 면적 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-06" data-suffix="㎡" data-unit="meter">
+									<div class="changeItem toggleLabel">
+										<button type="button" class="btnChange" data-value='pyung'><i class="iconTyMapChange"></i><span>평형</span></button>
+										<button type="button" class="btnChange" data-value='meter'style="display:none;"><i class="iconTyMapChange"></i><span class="blind">면적</span><span>㎡</span></button>
+									</div>
+
+									<div class="toggleSection">
+										<div class="sliderBar">
+											<div class="barParent">
+												<div class="uiRangeSlider" data-step="1" data-min="0" data-max="264" data-value="0,264"></div>
+											</div>
+											<div class="limit step5">
+												<p class="limitPoint"><span class="txt">0</span></p>
+												<p class="limitPoint"><span class="txt" data-label="66㎡" data-toggle-label="20평">66㎡</span></p>
+												<p class="limitPoint"><span class="txt" data-label="132㎡" data-toggle-label="40평">132㎡</span></p>
+												<p class="limitPoint"><span class="txt" data-label="198㎡" data-toggle-label="60평">198㎡</span></p>
+												<p class="limitPoint"><span class="txt" data-label="264㎡" data-toggle-label="80평">264㎡</span></p>
+											</div>
+										</div>
+										<div class="toggleTyBtn col3 uiMultiTyBtn">
+											<ul>
+												<li> <!-- 활성시 .active 클래스 -->
+													<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="~33㎡" data-toggle-label="~10평" data-value="0,33"><span>~33㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="33~66㎡" data-toggle-label="10평대" data-value="33,66"><span>33~66㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="66~99㎡" data-toggle-label="20평대" data-value="66,99"><span>66~99㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="99~132㎡" data-toggle-label="30평대" data-value="99,132"><span>99~132㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="132~165㎡" data-toggle-label="40평대" data-value="132,165"><span>132~165㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="165~198㎡" data-toggle-label="50평대" data-value="165,198"><span>165~198㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="198~231㎡" data-toggle-label="60평대" data-value="198,231"><span>198~231㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="231~264㎡" data-toggle-label="70평대" data-value="231,264"><span>231~264㎡</span></button>
+												</li>
+												<li>
+													<button type="button" class="btnTgItem" data-label="264㎡~" data-toggle-label="80평~" data-value="264,99999999"><span>264㎡~</span></button>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- 방/욕실수 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-07">
+									<ul class="toggleWrapper">
+										<li>
+											<strong class="tit">방</strong>
+											<div class="toggleTyBtn col5 uiToggleTyBtn" data-add-type="0">
+												<ul>
+													<li> <!-- 활성시 .active 클래스 -->
+														<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="방 1개+" data-value="1"><span>1개+</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="방 2개+" data-value="2"><span>2개+</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="방 3개+" data-value="3"><span>3개+</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="방 4개+" data-value="4"><span>4개+</span></button>
+													</li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<strong class="tit">욕실</strong>
+											<div class="toggleTyBtn col5 uiToggleTyBtn" data-add-type="1">
+												<ul>
+													<li> <!-- 활성시 .active 클래스 -->
+														<button type="button" class="btnTgItem" data-label="all" data-value="all"><span>전체</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="욕실 1개+" data-value="1"><span>1개+</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="욕실 2개+" data-value="2"><span>2개+</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="욕실 3개+" data-value="3"><span>3개+</span></button>
+													</li>
+													<li>
+														<button type="button" class="btnTgItem" data-label="욕실 4개+" data-value="4"><span>4개+</span></button>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!-- 세대수 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-08">
+									<div class="toggleTyBtn col3 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="100세대 이하" data-value="0,100"><span>~100세대</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="100세대 이상" data-value="100,99999999"><span>100세대~</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="500세대 이상" data-value="500,99999999"><span>500세대~</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="1000세대 이상" data-value="1000,99999999"><span>1000세대~</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="2000세대 이상" data-value="2000,99999999"><span>2000세대~</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="3000세대 이상" data-value="3000,99999999"><span>3000세대~</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 관리비 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-09" data-prefix="관리비" data-suffix="만원">
+									<div class="sliderBar">
+										<div class="barParent">
+											<div class="uiRangeSlider" data-step="1" data-min="0" data-max="100" data-value="0,100"></div>
+										</div>
+										<div class="limit step5">
+											<p class="limitPoint"><span class="txt">0</span></p>
+											<p class="limitPoint"><span class="txt">25만원</span></p>
+											<p class="limitPoint"><span class="txt">50만원</span></p>
+											<p class="limitPoint"><span class="txt">75만원</span></p>
+											<p class="limitPoint"><span class="txt">100만원</span></p>
+										</div>
+									</div>
+									<div class="toggleTyBtn col4 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비~10만원" data-value="0,100000"><span>~10만원</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비~20만원" data-value="0,200000"><span>~20만원</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비~30만원" data-value="0,300000"><span>~30만원</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비~40만원" data-value="0,400000"><span>~40만원</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비~50만원" data-value="0,500000"><span>~50만원</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비~100만원" data-value="0,1000000"><span>~100만원</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리비100만원~" data-value="1000000,99999999"><span>100만원~</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 재건축가능성 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-10">
+									<div class="toggleTyBtn col3 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="구역지정~" data-value="구역지정"><span>구역지정</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="추진위승인~" data-value="추진위승인"><span>추진위승인</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="조합설립인가~" data-value="조합설립인가"><span>조합설립인가</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="사업시행인가~" data-value="사업시행인가"><span>사업시행인가</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="관리처분인가~" data-value="관리처분인가"><span>관리처분인가</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="이주 및 철거~" data-value="이주및철거"><span>이주 및 철거</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="착공 및 분양~" data-value="착공및분양"><span>착공 및 분양</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- 주차장 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-11">
+									<div class="toggleTyBtn col3 uiToggleTyBtn">
+										<ul>
+											<li> <!-- 활성시 .active 클래스 -->
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="1대 이상" data-value="1.0"><span>1대 이상</span></button>
+											</li>
+											<li>
+												<button type="button" class="btnTgItem" data-label="1.5대 이상" data-value="1.5"><span>1.5대 이상</span></button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- MY자산 내 구매가능 매물 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-12" data-prefix="매매/전세" data-suffix="억" data-unit="dot">
+									<div class="toggleTyBtn uiToggleTyBtn" style="display:none;">
+										<ul>
+											<li>
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+										</ul>
+									</div>
+									<div class="toggleSection" data-add-type="0">
+
+										<div class="toggleTyBtn uiToggleTyBtn" style="display:none;">
+											<ul>
+												<li>
+													<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+												</li>
+											</ul>
+										</div>
+
+										<div class="sliderBar">
+											<div class="barParent">
+												<div class="uiRangeSlider" data-min-target=".pointMin" data-max-target=".pointMax" data-step="1" data-min="0" data-max="300" data-value="0,300"></div>
+											</div>
+											<div class="limit">
+												<p class="limitPoint"><span class="txt">0원</span></p>
+												<p class="limitPoint"><span class="txt">30억원</span></p>
+											</div>
+										</div>
+										<div class="formGroupBox">
+											<div class="formItem typeRange">
+												<dl class="formRow">
+													<dt class="blind">최소 금액</dt>
+													<dd>
+														<div class="inner">
+															<div class="input">
+																<input type="text" class="inpElement pointMin" data-max="999" title="최소 금액 입력란" placeholder="금액 입력" value="최소" />
+															</div>
+															<div class="btn">
+																<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+															</div>
+														</div>
+													</dd>
+													<!-- <dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd> -->
+												</dl>
+												<div class="interval">~</div>
+												<dl class="formRow">
+													<dt class="blind">최대 금액</dt>
+													<dd>
+														<div class="inner">
+															<div class="input">
+																<input type="text" class="inpElement pointMax" data-max="999" title="최대 금액 입력란" placeholder="금액 입력" value="최대" />
+															</div>
+															<div class="btn">
+																<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+															</div>
+														</div>
+													</dd>
+													<!-- <dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd> -->
+												</dl>
+												<div class="won">천만원</div>
+											</div>
+										</div>
+										<div class="defineBox">
+											<dl>
+												<div class="dHeader">
+													<dt>
+														<!-- case01: 매매인 경우 -->
+														<span class="inlineBlock">예산맞춤</span> <span class="inlineBlock">최대 매매가</span>
+														<!-- case02: 전세인 경우 -->
+														<!-- <span class="inlineBlock">예산맞춤</span> <span class="inlineBlock">최대 보증금</span> -->
+													</dt>
+													<dd><span>1,725,000,000</span>원</dd>
+												</div>
+												<div class="dItem">
+													<dt>금융자산</dt>
+													<dd><span>123,000,000</span>원</dd>
+												</div>
+												<div class="dItem">
+													<dt>부동산</dt>
+													<dd><span>520,000</span>원</dd>
+												</div>
+												<div class="dItem">
+													<dt>대출잔액</dt>
+													<dd><span>20,500,000</span>원</dd>
+												</div>
+												<div class="dItem">
+													<dt>현금/마이너스통장</dt>
+													<dd><span>20,500,000</span>원</dd>
+												</div>
+											</dl>
+											<p class="dLink">
+												<a href="javascript:void(0);">MY자산 상세보기</a>
+											</p>
+										</div>
+										<div class="defineBox">
+											<p class="nodataTxt">MY자산을 연결하고 내가 살 수 있는<br /> 최대 예산 및 부족자금을 확인해 보세요</p>
+											<p class="dLink">
+												<a href="#layPop03" class="btnPopOpen">MY자산 연결하기</a>
+											</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- 보증금/월세 ▽ -->
+								<div class="settingBox uiCtrlTgSingle" id="id-13" data-prefix="매매" data-suffix="억" data-unit="cost">
+									<div class="toggleTyBtn uiToggleTyBtn" style="display:none;">
+										<ul>
+											<li>
+												<button type="button" class="btnTgItem" data-label="전체" data-value="all"><span>전체</span></button>
+											</li>
+										</ul>
+									</div>
+
+									<div class="toggleSection">
+										<div data-add-type="0">
+											<strong class="setTit">보증금</strong>
+											<div class="sliderBar">
+												<div class="barParent">
+													<div class="uiRangeSlider" data-min-target=".pointMin" data-max-target=".pointMax" data-step="1" data-min="0" data-max="200" data-value="0,200"></div>
+												</div>
+												<div class="limit">
+													<p class="limitPoint"><span class="txt">0원</span></p>
+													<p class="limitPoint"><span class="txt">20억원</span></p>
+												</div>
+											</div>
+											<div class="formGroupBox">
+												<div class="formItem typeRange">
+													<dl class="formRow">
+														<dt class="blind">최소 금액</dt>
+														<dd>
+															<div class="inner">
+																<div class="input">
+																	<input type="text" data-max="999" class="inpElement pointMin" title="최소 금액 입력란" placeholder="금액 입력" value="최소" />
+																</div>
+																<div class="btn">
+																	<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+																</div>
+															</div>
+														</dd>
+														<!-- <dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd> -->
+													</dl>
+													<div class="interval">~</div>
+													<dl class="formRow">
+														<dt class="blind">최대 금액</dt>
+														<dd>
+															<div class="inner">
+																<div class="input">
+																	<input type="text" data-max="999" class="inpElement pointMax" title="최대 금액 입력란" placeholder="금액 입력" value="최대" />
+																</div>
+																<div class="btn">
+																	<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+																</div>
+															</div>
+														</dd>
+														<!-- <dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd> -->
+													</dl>
+													<div class="won">천만원</div>
+												</div>
+											</div>
+										</div>
+										<div data-add-type="1">
+											<strong class="setTit">월세</strong>
+											<div class="sliderBar">
+												<div class="barParent">
+													<div class="uiRangeSlider" data-min-target=".pointMin2" data-max-target=".pointMax2" data-step="1" data-min="0" data-max="500" data-value="0,500"></div>
+												</div>
+												<div class="limit">
+													<p class="limitPoint"><span class="txt">0원</span></p>
+													<p class="limitPoint"><span class="txt">500만원</span></p>
+												</div>
+											</div>
+											<div class="formGroupBox">
+												<div class="formItem typeRange">
+													<dl class="formRow">
+														<dt class="blind">최소 금액</dt>
+														<dd>
+															<div class="inner">
+																<div class="input">
+																	<input type="text" class="inpElement pointMin2" data-max="999" title="최소 금액 입력란" placeholder="금액 입력" value="최소" />
+																</div>
+																<div class="btn">
+																	<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+																</div>
+															</div>
+														</dd>
+														<!-- <dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd> -->
+													</dl>
+													<div class="interval">~</div>
+													<dl class="formRow">
+														<dt class="blind">최대 금액</dt>
+														<dd>
+															<div class="inner">
+																<div class="input">
+																	<input type="text" class="inpElement pointMax2" data-max="999" title="최대 금액 입력란" placeholder="금액 입력" value="최대" />
+																</div>
+																<div class="btn">
+																	<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+																</div>
+															</div>
+														</dd>
+														<!-- <dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd> -->
+													</dl>
+													<div class="won">만원</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="optionDiv">
+								<div class="left">
+									<button type="button" class="btnUtil01" id="uiSaveBtn"><i class="iconTyMapStarEmpty"></i><span>필터 저장</span></button>
+									<button type="button" class="btnUtil01" id="uiResetBtn"><i class="iconTyMapReset"></i><span>전체 초기화</span></button>
+								</div>
+								<div class="right">
+									<button type="button" class="btnUtil02" id="uiSearchBtn"><span>매물검색</span></button>
+									<button type="button" class="btnFilterClose"><i class="iconTyMapArrowup"></i><span class="blind">필터닫기</span></button>
+								</div>
+							</div>
+						</div>
+						<!-- //Filter -->
+						<!-- Map -->
+						<div class="mapArea">
+							<div class="mapInner">
+								<div class="mapVisual">
+									<!-- API -->
+									<div style="overflow:hidden; width:100%; height:100%;" id="dummy01">
+										<img src="../../../../../../../images/pr09/img_temp_map.jpg" />
+									</div>
+									<!-- //API -->
+
+									<div style="position:absolute; top:80px; left:20%; right:20%;">
+										<!-- case. 말풍선 : 매물/단지 있는 경우 (필터매매, 단지선택) -->
+										<div class="speechBubble01">
+											<button type="button">
+												<em><span class="blind">평형</span> <span>45평</span></em>
+												<em><span class="blind">매매가</span> <span>31억</span></em>
+											</button>
+										</div>
+										<!-- //case. 말풍선 : 매물/단지 있는 경우 (필터매매, 단지선택) -->
+
+										<!-- case. 말풍선 : 매물/단지 있는 경우 (필터전세) -->
+										<div class="speechBubble01 active"> <!-- 활성시 active 클래스 추가 -->
+											<button type="button">
+												<em><span class="blind">평형</span> <span>45평</span></em>
+												<em><span class="blind">전세보증금</span> <span>31억</span></em>
+											</button>
+										</div>
+										<!-- //case. 말풍선 : 매물/단지 있는 경우 (필터전세) -->
+
+										<!-- case. 말풍선 : 매물/단지 있는 경우 (필터월세) -->
+										<div class="speechBubble01">
+											<button type="button">
+												<em><span class="blind">평형</span> <span>45평</span></em>
+												<em><span class="blind">보증금</span> <span>31억</span></em>
+											</button>
+										</div>
+										<!-- //case. 말풍선 : 매물/단지 있는 경우 (필터월세) -->
+
+										<!-- case. 말풍선 : 매물/단지 없는 경우 -->
+										<div class="speechBubble02">
+											<button type="button"><span class="blind">매물없음</span></button>
+										</div>
+										<div class="speechBubble02 active"> <!-- 활성시 active 클래스 추가 -->
+											<button type="button"><span class="blind">매물없음</span></button>
+										</div>
+										<!-- //case. 말풍선 : 매물/단지 없는 경우 -->
+
+										<!-- case. 포인트 : 부가시설(분양) -->
+										<div class="pointParcelOut">
+											<button type="button"><span class="blind">부가시설(분양)</span></button>
+										</div>
+										<div class="pointParcelOut">
+											<button type="button" class="active"><span class="blind">부가시설(분양)</span></button> <!-- 활성시 active 클래스 추가 -->
+										</div>
+										<!-- //case. 포인트 : 부가시설(분양) -->
+
+										<!-- case. 포인트 : 부가시설(초·중·고등학교) -->
+										<div class="pointSchool">
+											<button type="button"><span class="blind">부가시설(초등학교)</span></button>
+										</div>
+										<div class="pointSchool">
+											<button type="button" class="active"><span class="blind">부가시설(초등학교)</span></button> <!-- 활성시 active 클래스 추가 -->
+										</div>
+										<div class="pointSchool">
+											<button type="button" disabled="disabled"><span class="blind">부가시설(중고등학교)</span></button>
+										</div>
+										<!-- //case. 포인트 : 부가시설(초·중·고등학교) -->
+
+										<br />
+										<a href="#mapPop01" class="btnType2 btnSmall btnPopOpen">[layer] 매물 없음</a>
+										<a href="#mapPop02" class="btnType2 btnSmall btnPopOpen">[layer] 단지 없음</a>
+										<a href="#mapPop03" class="btnType2 btnSmall btnPopOpen">[layer] 분양권 없음</a>
+										<a href="#mapPop04" class="btnType2 btnSmall btnPopOpen">[layer] 학교 없음</a>
+										<a href="#mapPop05" class="btnType2 btnSmall btnPopOpen">[layer] MY필터 없음</a>
+									</div>
+								</div>
+
+								<div class="mapCtrlBtns left">
+									<div class="group">
+										<button type="button" class="btnCtrlMap"><i class="iconTyMapCenter"></i><span class="blind">현재위치로 이동</span></button>
+									</div>
+									<div class="group">
+										<button type="button" class="btnCtrlMap"><i class="iconTyMapZoomin"></i><span class="blind">지도 확대</span></button>
+										<button type="button" class="btnCtrlMap"><i class="iconTyMapZoomout"></i><span class="blind">지도 축소</span></button>
+									</div>
+								</div>
+
+								<div class="mapCtrlBtns right uiMapCtrlBtn">
+									<div class="group">
+										<button type="button" class="btnCtrlMap active" data-toggle-filter="true"><span class="txt">매물</span></button>
+										<button type="button" class="btnCtrlMap" data-toggle-filter="false"><span class="txt">단지</span></button>
+									</div>
+									<div class="group typeIconTxt">
+										<button type="button" class="btnCtrlMap bgParcelout"><span>분양</span></button>
+									</div>
+									<div class="group typeIconTxt">
+										<button type="button" class="btnCtrlMap bgSchool"><span>학교</span></button>
+									</div>
+								</div>
+
+								<div class="mapLayerPopup">
+									<!-- case. 토스트팝업 -->
+									<div class="layerWrap typeToast" id="mapPop01">
+										<div class="inner">
+											<p class="txt">조건에 맞는 매물정보가 없습니다.<br /> 지도를 축소하거나 필터를 변경해주세요.</p>
+										</div>
+									</div>
+									<div class="layerWrap typeToast" id="mapPop02">
+										<div class="inner">
+											<p class="txt">단지 정보가 없습니다.<br /> 지도를 축소하거나 위치(지역)를 변경해주세요.</p>
+										</div>
+									</div>
+									<div class="layerWrap typeToast" id="mapPop03">
+										<div class="inner">
+											<p class="txt">분양권 정보가 없습니다.<br /> 지도를 축소하거나 위치(지역)를 변경해주세요.</p>
+										</div>
+									</div>
+									<div class="layerWrap typeToast" id="mapPop04">
+										<div class="inner">
+											<p class="txt">학교 정보가 없습니다.<br /> 지도를 축소하거나 위치(지역)를 변경해주세요.</p>
+										</div>
+									</div>
+									<div class="layerWrap typeToast" id="mapPop05">
+										<div class="inner">
+											<p class="txt">저장된 조건이 없습니다.</p>
+										</div>
+									</div>
+									<div class="layerWrap typeToast" id="mapPop07">
+										<div class="inner">
+											<p class="txt">필터가 저장되었습니다.</p>
+										</div>
+									</div>
+									<!-- //case. 토스트팝업 -->
+
+									<!-- case. 레이어팝업 : 매물정보 -->
+									<div class="layerWrap typeItem" id="mapPop06">
+										<div class="inner">
+											<strong class="itemName ellipsis02">삼성힐스테이트1단지</strong>
+											<div class="itemCategory">
+												<span>아파트</span>
+												<span>132.63/107.53㎡</span>
+												<span>20/25층</span>
+											</div>
+											<div class="itemBtns">
+												<a href="javascript:void(0);" class="btnLink">매매 <span class="em">1</span><span class="blind">건</span></a>
+												<a href="javascript:void(0);" class="btnLink">전세 <span class="em">2</span><span class="blind">건</span></a>
+												<a href="javascript:void(0);" class="btnLink">월세 <span class="em">6</span><span class="blind">건</span></a>
+											</div>
+										</div>
+									</div>
+									<!-- //case. 레이어팝업 : 매물정보 -->
+								</div>
+							</div>
+						</div>
+						<!-- //Map -->
+						<!-- List Link -->
+						<div class="botArea">
+							<dl class="resultBox">
+								<dt>이사 가능한 매물</dt>
+								<dd><span>1211</span><span class="blind">건</span></dd>
+							</dl>
+							<a href="javascript:void(0);" class="btnTransparent"><span class="blind">목록 보기</span></a>
+						</div>
+						<!-- //List Link -->
+					</div>
+				</div>
+				<!-- //neighborhoodWrap -->
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- [popup] 위치정보 수집동의 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop01">
+	<div class="popInner">
+		<div class="layerHeader blind">
+			<p>위치정보 수집동의</p>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<p class="alertMsg">신한 SOL에서 현재 위치정보를<br /> 사용하는데 동의 하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:void(0);" class="btnType btnBlack"><span>아니오</span></a>
+			<a href="javascript:void(0);" class="btnType"><span>예</span></a>
+		</div>
+	</div>
+</div>
+<!-- //[popup] 위치정보 수집동의 -->
+
+<!-- [popup] MY자산 내 구매가능 매물 : 최소금액이 최대금액보다 큰 경우 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop02">
+	<div class="popInner">
+		<div class="layerHeader blind">
+			<p>사용할 예산</p>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<p class="alertMsg">최소 금액이 최대 금액보다 작아야 합니다.</p>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //[popup] MY자산 내 구매가능 매물 : 최소금액이 최대금액보다 큰 경우 -->
+
+<!-- [popup] MY자산 내 구매가능 매물 : 앱 업데이트 유도 -->
+<div class="layerPopWrap hasDim myAssets" id="layPop03">
+	<div class="popInner">
+		<div class="layerHeader blind">
+			<p>앱 업데이트</p>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<p class="alertMsg">MY자산을 연결하시려면 <br /> 신한 SOL 업데이트가 필요합니다.<br /> 지금 업데이트 하시겠습니까?</p>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:void(0);" class="btnType btnBlack"><span>아니오</span></a>
+			<a href="javascript:void(0);" class="btnType"><span>예</span></a>
+		</div>
+	</div>
+</div>
+<!-- //[popup] MY자산 내 구매가능 매물 : 앱 업데이트 유도 -->
+
+<script type="text/javascript">
+
+	/*
+	id-01 : 거주유형 => 아파트:[1], 오피스텔:[2]
+	id-02 : 거래유형 => 매매:[1], 전세:[2], 월세:[3]
+	id-03 : 학교 => [0, 12] 0~12분
+	id-04 : 역세권 => [0, 12] 0~12분
+	id-05 : 준공년도 => [0, 12] 0~12년
+	id-06 : 면적 => [0, 264] 0~264미터
+	id-06-01 : 면적 표현법 => 평형: [1], 미터:[2] 
+	id-07 : 방/욕실수 => [1,2] 방1+ / 욕실수 2+
+	id-08 : 세대수 
+	id-09 : 관리비
+	id-10 : 재건축가능성
+	id-11 : 주차장
+	id-12 : MY자산 내 구매가능 매물
+	id-13 : 보증금/월세
+	*/
+
+	// 진입시 기본값
+	var selectedObj = {
+		'id-01' : [1], 
+		'id-02' : [1],
+		// 'id-06' : [33, 231],
+		// 'id-06-01' : [2], 
+		// 'id-13'	: [[0,999999],[10,500]],
+	};
+
+	// 마이 필터정보
+	var myFilters = [
+		// {
+		// 	'id-01' : [1], 
+		// 	'id-02' : [2],
+		// 	'id-06' : [33, 231],
+		// 	'id-06-01' : [1],
+		// 	'id-12'	: [0,999]
+		// },
+		// {
+		// 	'id-01' : [2], 
+		// 	'id-02' : [3],
+		// 	'id-06' : [103, 231],
+		// 	'id-06-01' : [2], 
+		// 	'id-13'	: [[0,100],[10,20]],
+		// },
+	]
+
+	
+
+	//prefix, suffix, unit을 직접 설정할수 있음
+	var unitObj = {
+		// "id-03" : {prefix:'학교', suffix:'분', unit:''}
+	}
+
+	// prefix, suffix, unit element 에서 구함.
+	var emptyObj = {}
+	$('.uiCtrlTgSingle').each(function(){
+		var $item = $(this);
+		var id = $item.attr('id');
+		var value = unitObj[id];
+
+		var prefix = (value && value['prefix']) || $item.data('prefix') || '';
+		var suffix = (value && value['suffix']) || $item.data('suffix') || '';
+		var unit = (value && value['unit']) || $item.data('unit') || '';
+
+		if(prefix || suffix || unit){
+			var nObj = {prefix:prefix, suffix:suffix, unit:unit};
+			emptyObj[id] = nObj;
+		}
+	});
+
+	unitObj = $.extend(unitObj, emptyObj);
+
+	// 평형 표현방식 설정
+	var pyung = (selectedObj && selectedObj['id-06-01'] && selectedObj['id-06-01']=='1') ? 'meter' : 'pyung';
+	if(unitObj && unitObj['id-06']) unitObj['id-06']['unit'] = pyung;
+
+	// 옵션값 리턴
+	function getData(id){
+		if(id) return selectedObj[id];
+		return selectedObj;
+	}
+
+	// 하단 버튼 모션 함수
+	function animateButton(){
+		var $target = $('.resultBox dd');
+		TweenMax.set($target, {rotationX: 0});
+		TweenMax.to($target, 0.3, {rotationX: 360})
+	}
+
+	$(function() {
+
+		///////////////////////////////////////
+
+		// 이전 옵션으로 돌리기 위한 값 저장 (옵션창 닫을시 사용)
+		var originSelectedObj = $.extend(true,{},selectedObj);
+
+		// 1천만원을 0.1억으로 표현
+		function _addDot(str){
+			var val = parseInt(str)/10;
+			return val.toString();
+		}
+		
+		// id, value값으로 문구를 생성함.(예: 보증금 0~/월세 ~)
+		function _changeOptionLabel(data){
+
+			var id = data.id;
+			var values = data.values;
+			var dprefix = data.prefix;
+			var prefix = dprefix || unitObj[id] && unitObj[id].prefix;
+			var suffix = unitObj[id] && unitObj[id].suffix;
+			var unit = unitObj[id] && unitObj[id].unit;
+			var label='';
+
+			var $val = $('#'+id).find('[data-value="'+ values +'"]').not('.uiRangeSlider');
+			if($val[0])	{
+				label = $val.data('label');
+				return label;
+			}
+
+			if(id=='id-06-01')	{
+				return '';
+			}
+
+			if(unit=='pyung'){
+				if(values[1]==999999){
+					label = prefix+' '+_getPyung(values[0]) +'평이상~';
+				}else{
+					if(values[0] == values[1]){
+						label = prefix+' '+_getPyung(values[0]) + '평';
+					}else{
+						label = prefix+' '+_getPyung(values[0]) +'~'+ _getPyung(values[1]) + '평미만';
+					}
+				}
+			}else if(unit=='dot'){
+
+				if(values[1]==999999){
+					label = prefix+' '+ _addDot(values[0]) + suffix + '이상~';
+				}else{
+					if(values[0] == values[1]){
+						label = prefix+' '+ _addDot(values[0]) + suffix;
+					}else{
+						label = prefix+' '+ _addDot(values[0]) + '~' + _addDot(values[1]) + suffix;
+					}
+				}
+
+			}else if(unit=='cost'){
+
+				var firstLabel = '';
+				var lastLabel = '';
+				var fArr = values[0];
+				var sArr = values[1];
+
+				if(sArr[1]==999999){
+					lastLabel = '/월세'+' '+ sArr[0] + '만~';
+				}else{
+					if(sArr[0] == sArr[1]){
+						if(sArr[0]==0) lastLabel = '';
+						else lastLabel = '/월세'+' '+ sArr[0] + '만';
+					}else{
+						lastLabel = '/월세'+' '+ sArr[0] + '~' + sArr[1] + '만';
+					}
+				}
+
+				if(fArr[1]==999999){
+					firstLabel = '보증금'+' '+ _addDot(fArr[0]) + '억~';
+				}else{
+					if(fArr[0] == fArr[1]){
+						if(fArr[0]==0){
+							firstLabel = '';
+							lastLabel = lastLabel.replace('/','');
+						}else{
+							firstLabel = '보증금'+' '+ _addDot(fArr[0]) + '억';
+						}
+					}else{
+						firstLabel = '보증금'+' '+ _addDot(fArr[0]) + '~' + _addDot(fArr[1]) + '억';
+					}
+				}
+
+				label = firstLabel+lastLabel;
+				if(label==''){
+					label = $('.zone').find('[data-id="'+ data.id +'"]').data('label');
+				}
+
+			}else{
+
+				if (id == 'id-07') {
+					var str1 = (values[0] != 0) ? values[0] : '';
+					var str2 = (values[1] != 0) ? values[1] : '';
+
+					if (str1.length && !str2.length) {
+						label = '방' + str1 + '개+';
+
+					} else if (!str1.length && str2.length) {
+						label = '욕실' + str2 + '개+';
+
+					} else if (str1.length && str2.length) {
+						label = '방' + str1 + '개+/욕실' + str2 + '개+';
+					}
+
+				} else {
+					if(values[1]==999999){
+						label = prefix+' '+ values[0] + suffix + '이상~';
+					}else{
+
+						if(values[0] == values[1]){
+							label = prefix+' '+ values[0] + suffix;
+						}else{
+							label = prefix+' '+ values[0] + '~' + values[1] + suffix;
+						}
+					}
+				}
+				
+			}
+
+			return $.trim(label);
+		}
+
+
+		// 상단 옵션선택을 data-sort 기준으로 sort함.
+		function _sortNaviItems(){
+			var $list = $('.zone').find('[data-sort]');
+			var result = $list.sort(function(a, b){
+				var b1 = $(a).hasClass('selected')? 1 : 0;
+				var b2 = $(b).hasClass('selected')? 1 : 0;
+				var a1 = parseInt($(a).attr('data-sort'));
+				var a2 = parseInt($(b).attr('data-sort'));
+				if(b1 == b2){
+					return (a1 < a2)? -1 : (a1 > a2)? 1: 0;
+				}else{
+					return (b1 < b2)? 1 : -1;
+				}
+			});
+			$('.zone').html(result);
+
+			// 스크롤 위치 잡기
+			setTimeout(function(){
+				if($('.zone').find('.active')[0]){
+					var y = $('.zone').find('.active').offset().left;
+					var left = $('.filterSelect > .inner').scrollLeft();
+					$('.filterSelect > .inner').scrollLeft(left+y-18);
+				}
+			},10);
+
+		}
+
+		// 슬라이더를 생성
+		function _setRangeSlider(selector, callbacks){
+
+			var $selector;
+			if(selector instanceof $){
+				$selector = selector;
+			}else{
+				$selector = $(selector);
+			}
+
+			$selector.each(function(){
+				var stepVal = $(this).attr('data-step');
+				var minVal = $(this).attr('data-min');
+				var maxVal = $(this).attr('data-max');
+				var value = $(this).attr('data-value');
+
+				var opts = {
+					step: parseInt(stepVal ? stepVal : 1),
+					min: parseInt(minVal ? minVal : 0),
+					max: parseInt(maxVal ? maxVal : 1)
+				}	
+				if(value){
+					var vArr = value.split(',');
+					if(vArr.length > 1){
+						opts['values'] = vArr;
+						opts['range'] = true;
+					}else{
+						opts['value'] = value;
+					}
+				}
+				$.extend(opts, callbacks);
+				$(this).slider(opts);
+			});
+
+		}
+
+		// 미터를 평형으로 계산
+		function _getPyung(val){
+			var value = parseInt(val);
+			if(isNaN(value)) return '';
+			value = Math.round( value / 3.3);
+			return value;
+		}
+
+		function _setSliderValue(element, value){
+
+			var $el = null;
+			if(element instanceof $){
+				$el = element;
+			}else{
+				$el = $(element);
+			}
+
+			$el.find('.uiRangeSlider').each(function(){
+
+				var $slider = $(this);
+				var valueArr = Array.isArray(value)? value : value.split(',');
+				var max = $slider.slider('option','max');
+				var valueObj = {};
+				if(valueArr.length > 1){
+					
+					valueObj = { values:[valueArr[0], valueArr[1]] }
+
+				}else{
+					if(value=='all'){
+
+						var max = $slider.slider('option','max');
+						var min = $slider.slider('option','min');
+						valueObj = { values : [min, max] }
+
+					}else if(value=='my-all'){
+
+						var min = $slider.slider('option','min');
+						valueObj = { values : [min, min] }
+
+						var minTarget = $slider.data('minTarget');
+						var maxTarget = $slider.data('maxTarget');
+
+						if(minTarget){
+							$(element).find(minTarget).val('최소');
+						}
+
+						if(maxTarget){
+							$(element).find(maxTarget).val('최대');
+						}
+
+						
+					}else{
+						valueObj = { value : value }
+					}
+				}
+				$slider.slider(valueObj);
+				$slider.find('.ui-slider-handle').eq(0).trigger('mouseover');
+
+
+			});
+
+		}
+
+		function _toggleBottomArea(boolean) {
+			var $target = $('.botArea');
+			if (boolean) {
+				$target.removeClass('hidden');
+			} else {
+				$target.addClass('hidden');
+			}
+		}
+
+		///////////////////////////////////////
+
+
+		var $root = $(this);
+
+		// 마이 필터 생성
+		function buildMyFilter(arr){
+
+			$('#id_my > ul').empty();
+			$('#id_my').addClass('empty');
+
+			function template(idx, txt){
+				return '<li>'+
+						'	<div class="item">'+
+						'		<button type="button" class="btnItemShow" data-index="'+ idx +'"><span class="ellipsis02">'+ txt +'</span></button>'+
+						'		<button type="button" class="btnItemDel" data-index="'+ idx +'"><i class="iconTyMapItemClose"></i><span class="blind">삭제</span></button>'+
+						'	</div>'+
+						'</li>'
+			}
+
+			$.each(arr, function(idx){
+				var str ='';
+				var obj = arr[idx]['id-02'];
+				var prefixStr = null;
+				if(obj=='1'){
+					prefixStr = '매매';
+				}else if(obj=='2'){
+					prefixStr = '전세'
+				}
+
+				$.each(this, function(key, value){
+					var valueStr;
+					if(key=='id-12'){
+						valueStr = _changeOptionLabel({id:key, values:value, prefix:prefixStr});
+					}else{
+						valueStr = _changeOptionLabel({id:key, values:value});
+					}
+					
+					if(valueStr!==''){
+						str += valueStr+"/";
+					}
+				});
+
+				$('#id_my > ul').append(template(idx, str));
+			});
+
+			if(arr.length>0) $('#id_my').removeClass('empty');
+
+			$(document).off('click.myfilterclick');
+			$(document).off('click.myfilterdelete');
+
+			$(document).on('click.myfilterclick', '.btnItemShow',function(e){
+				var idx = $(e.currentTarget).data('index');
+				selectedObj = $.extend(true,{},arr[idx]);
+				originSelectedObj = selectedObj;
+				update();
+			});
+
+			$(document).on('click.myfilterdelete', '.btnItemDel',function(e){
+				var idx = $(e.currentTarget).data('index');
+				arr.splice(idx, 1);
+				
+				buildMyFilter(arr);
+				myFilters = arr;
+
+				// to. 개발
+				// 내용이 없으면 문구 노출
+				if(arr.length == 0){
+					$('#id_my').addClass('empty');
+				}
+				
+			});
+
+		}
+
+
+		// 업데이트
+		function update(){
+
+			$('.zone').find('[data-id]').each(function(){
+				var id = $(this).data('id');
+				if(!selectedObj[id]){
+					var $content = $('.settingDiv').children('[id='+id+']');
+					$content.find('[data-value=all]').trigger('click');
+				}
+			});
+
+
+			$.each(selectedObj, function(key, value){
+
+				var $content = $('.settingDiv').children('[id='+key+']');
+
+				if(key=='id-07'){ // 방/욕실
+					if(value[0]) $content.find('[data-add-type=0]').find('[data-value="'+ value[0] +'"]').trigger('click');
+					if(value[1]) $content.find('[data-add-type=1]').find('[data-value="'+ value[1] +'"]').trigger('click');
+				}else{
+
+					var $target = $content.find('[data-value="'+value.toString()+'"]');
+
+					if($target[0]){
+						if($($target).closest('li').hasClass('active')) {
+							return;
+						}
+						$target.trigger('click');
+
+					}else{
+
+						var $slider = $content.find('.uiRangeSlider');
+						if(key=='id-06'){
+							var unit = unitObj['id-06']['unit'];
+							var $unitBtn = $content.find('.toggleLabel > [data-value="'+ unit +'"]');
+							$unitBtn.trigger('click');
+						}
+						
+
+						$slider.each(function(idx,item){
+
+							var max = $(item).data('max');
+							var min = $(item).data('min');
+							var minTarget = $(item).data('minTarget');
+							var maxTarget = $(item).data('maxTarget');
+							var dataValue = value;
+							
+
+							if(key == "id-12" || key == "id-13"){
+
+								if(key == 'id-13'){
+									dataValue = value[idx];
+								}
+
+								if(minTarget){
+									$(item).closest('[data-add-type]').find(minTarget).val(dataValue[0]);
+								}
+
+								if(maxTarget){
+
+									var $maxInput = $(item).closest('[data-add-type]').find(maxTarget);
+									var maxInput = $maxInput.data('max');
+									if(dataValue[1]==999999){
+										$maxInput.val('최대');
+									}else{
+										if(maxInput<dataValue[1]){
+											$maxInput.val(maxInput);
+										}else{
+											$maxInput.val(dataValue[1]);
+										}
+									}
+									
+								}
+
+								if(dataValue[0] == dataValue[1] && max == dataValue[1]){
+									if(maxTarget) $(item).find(maxTarget).val('최대');
+									dataValue[1] = 999999;
+								}
+
+								if(dataValue[0] == dataValue[1] && min == dataValue[1]){
+									if(minTarget) $(item).find(minTarget).val('최소');
+									if(maxTarget) $(item).find(maxTarget).val('최대');
+								}
+							}
+
+							$(item).slider({values:dataValue});
+
+							$root.triggerHandler('changeSlider',[{
+								id : key, 
+								values : value
+							}]);
+
+						})
+
+					}
+				}
+			});
+			_sortNaviItems();
+			
+		}
+
+		// init
+		function init(){
+
+			$('.uiCtrlTgSingle').each(function(i, item){
+
+				var id = $(this).attr('id');
+				// id-06 일때만 적용
+				if(id=='id-06'){
+
+					$(item).find('.toggleLabel').on('click', 'button', function(e){
+
+						var $target = $(e.currentTarget);
+						$target.hide();
+						$target.siblings().show();
+						var unit = $target.data('value');
+						unitObj['id-06']['unit'] = unit;
+
+						$(item).find('[data-toggle-label]').each(function(){
+							var toggleLabel = $(this).attr(unit==='pyung'? 'data-toggle-label' : 'data-label');
+							$(this).text(toggleLabel);
+						});
+						
+						selectedObj['id-06-01'] = unit==='pyung'? [2] : [1];
+
+						$root.triggerHandler('changeAreaUnit',[{
+							target : item, 
+							id : id
+						}]);
+
+					});
+
+				}
+				
+				// 토글형태
+				$(item).find('.uiToggleTyBtn > ul').on('click','li', function(e){
+
+					var $target = $(e.currentTarget);
+					var label = $target.find('button').data('label');
+					var value = $target.find('button').data('value');
+					var $items = $(item).find('.uiToggleTyBtn > ul > li');
+
+					/// 재건축가능성
+					if(id =='id-10'){
+						var idx = $target.index();
+						if(idx > 0){
+							$items.removeClass('active');
+							for(var i=idx; i<$items.length; i++){
+								$items.eq(i).addClass('active');
+							}
+						}else{
+							$items.eq(0).addClass('active').siblings().removeClass('active');
+						}
+
+					}else{ /// 재건축가능성 이외
+
+						if(id=='id-02'){
+							if(!$target.hasClass('active')){
+								var $content = $('.settingDiv').children('[id=id-13]');
+								$content.find('[data-value=all]').trigger('click');
+								var $self = $('.settingDiv').children('[id=id-12]');
+								$self.find('[data-value=all]').trigger('click');
+
+								unitObj['id-12']['prefix']= value=='1'? '매매':'전세';
+							}
+						}
+						
+						$target.addClass('active').siblings().removeClass('active');
+						if(id=='id-12' || id=='id-13'){
+							_setSliderValue(item, 'my-all');
+						}else{
+							_setSliderValue(item, value);
+						}
+
+						// 방,욕실
+						if(id=='id-07'){
+
+							var mValue = [0,0];
+							$items.filter('.active').each(function(){
+								var type = $(this).closest('[data-add-type]').data('addType');
+								var aVal = $(this).find('button').data('value');
+								if(aVal) mValue[type] = (aVal=='all'? 0 : aVal);
+							});
+
+							value = mValue;
+
+							var firstLabel = '방'+value[0]+'개+';
+							var lastLabel = '/욕실'+value[1]+'개+';
+							
+							if(value[0]==0) {
+								firstLabel = '';
+								lastLabel = lastLabel.replace('/','');
+							};
+							if(value[1]==0) lastLabel = '';
+							label = firstLabel+lastLabel;
+							if(value[0]==0 && value[1]==0) value = 'all';
+						}
+						// 방,욕실 end
+					}
+
+
+					$root.triggerHandler('clickOptionItem',[{
+						target : item, 
+						label : label, 
+						value : value, 
+						id : id
+					}]);
+
+				});
+
+
+				// 평형 적용시 사용
+				$(item).find('.uiMultiTyBtn > ul').on('click','li', function(e){
+
+					var $target = $(e.currentTarget);
+					var label = $target.find('button').data('label');
+					var value = $target.find('button').data('value');
+					var isAll = false;
+
+					if(value=='all'){ // 전체 클릭시
+						$target.addClass('active').siblings().removeClass('active');
+					}else{
+
+						var $active = $(item).find('.uiMultiTyBtn > ul > li.active');
+
+						if($active.length > 1){ // 2번이상 클릭시 
+							$target.addClass('active').siblings().removeClass('active');
+
+						}else{
+
+							if($active.length == 1){ // 2번째 선택시
+
+								var activeValue = $active.find('button').data('value');
+
+								if(activeValue !='all'){ // 2번째 선택이 전체버튼이 아닐때
+
+									var $items = $(item).find('.uiMultiTyBtn > ul > li');
+									var minIdx = Math.min($active.index(), $target.index());
+									var maxIdx = Math.max($active.index(), $target.index());
+
+									// 선택 영역안에 있는 값들을 구함.
+									var itemValues = '';
+									for(var i=minIdx; i<=maxIdx; i++){
+										$items.eq(i).addClass('active');
+										var itemValue = $items.eq(i).find('button').data('value');
+										itemValues +=','+itemValue;
+									}
+
+									var itemValArr = itemValues.substring(1).split(',');
+									itemValArr = itemValArr.sort(function(a,b){
+										var e1 = parseInt(a);
+										var e2 = parseInt(b);
+										return e1 - e2;
+									});
+
+									if(itemValArr.length > 1) {
+										value = itemValArr[0]+','+itemValArr[itemValArr.length-1];
+									}
+									// 선택 영역안에 있는 값들을 구함 end
+
+									if($items.length-1 == maxIdx-minIdx+1){
+										$items.eq(0).addClass('active').siblings().removeClass('active');
+										value = 'all';
+										isAll = true;
+									}
+
+								}else{ // 2번째 선택이 전체버튼 일때
+									$active.removeClass('active');
+								}
+							}
+
+							if(!isAll) $target.addClass('active');
+						}
+					}
+
+					var newLabel = _changeOptionLabel({
+						id : id,
+						values:value.split(',')
+					});
+
+					$root.triggerHandler('clickOptionItem',[{
+						target : item, 
+						label : newLabel, 
+						value : value, 
+						id : id
+					}]);
+					
+					_setSliderValue(item, value);
+
+				});
+
+
+				var myMonthlyCost = getData('id-13');
+				if(!myMonthlyCost) {
+					myMonthlyCost = [[0, 0],[0, 0]];
+				}
+
+				$(item).find('input').on('keyup keypress', function(e){
+
+					if(e.type == 'keypress'){
+						if(e.keyCode < 48 || e.keyCode > 57){
+							return false;
+						}
+					}else{
+						
+						var originVal = $(this).val();
+						var val = parseInt(originVal==''? 0 : originVal);
+						if(isNaN(val)) val = 0;
+
+						$(this).val(val);
+						var $content = $(e.currentTarget).closest('[data-add-type]');
+
+						
+						var $slider = $content.find('.uiRangeSlider');
+						var values = $slider.slider('option','values');
+						var max = $slider.slider('option','max');	
+
+
+						var isMin = $(this).hasClass('pointMin') || $(this).hasClass('pointMin2');
+						var isMax = $(this).hasClass('pointMax') || $(this).hasClass('pointMax2');
+						var maxNum = parseInt($(this).data('max'));
+
+						var arr = values;
+						
+						if(isMin) arr[0] = Math.min(val,max);
+						if(isMax) arr[1] = Math.max(Math.min(val,maxNum), arr[0]); 
+
+						var nArr = [Math.min(arr[0],arr[1]), Math.max(arr[0],arr[1])]
+						$slider.slider({values:nArr});
+						$slider.find('.ui-slider-handle').eq(0).trigger('mouseover');
+						
+						if(maxNum < val || val==999999){ 
+							$(this).val(maxNum);
+						}
+
+						if(id=='id-13'){
+							var type = $content.data('addType');
+							myMonthlyCost[type] = arr;
+							arr = myMonthlyCost;
+						}
+
+
+						$root.triggerHandler('changeSlider',[{
+							id : id, 
+							values : arr
+						}]);
+						
+					}
+
+				});
+				// 슬라이더 이벤트 처리부분
+				
+
+				_setRangeSlider($(item).find('.uiRangeSlider'), { 
+					slide:function(e, ui){
+						if(ui.values && ui.values.length > 1){
+
+							var values = ui.values;
+							var minTarget = $(e.target).data('minTarget');
+							var maxTarget = $(e.target).data('maxTarget');
+
+							if(minTarget){
+								$(item).find(minTarget).val(ui.values[0]);
+							}
+
+							if(maxTarget){
+								$(item).find(maxTarget).val(ui.values[1]);
+							}
+
+
+							if(id=='id-13'){
+								var type = $(this).closest('[data-add-type]').data('addType');
+								myMonthlyCost[type] = ui.values;
+								values = myMonthlyCost;
+							}
+
+							$root.triggerHandler('changeSlider',[{
+								id : id, 
+								values : values
+							}]);
+						}
+					},
+					stop:function(e,ui){
+
+						var $target = $(e.target);
+						var max = $target.data('max');
+						var min = $target.data('min');
+						var minTarget = $target.data('minTarget');
+						var maxTarget = $target.data('maxTarget');
+						var values = ui.values;
+
+						if((ui.values[0] == 0 && ui.values[0] == ui.values[1]) && ui.handleIndex == 1) {
+							$(e.target).slider('option', 'values', [ui.values[0], ui.values[0] + 1]);
+							ui.values[1] = 1;
+							if(id == 'id-06') {
+								$(e.target).slider('option', 'values', [ui.values[0], ui.values[0] + 3]);
+								ui.values[1] = 3;
+							}
+						}
+
+						if(ui.values[0] == ui.values[1] && max == ui.values[1]){
+							if(maxTarget) $(item).find(maxTarget).val('최대');
+							ui.values[1] = 999999;
+							$target.find('.ui-slider-handle').eq(0).trigger('mouseover');
+						}
+
+						if(ui.values[0] == ui.values[1] && min == ui.values[1]){
+							if(minTarget) $(item).find(minTarget).val('최소');
+							if(maxTarget) $(item).find(maxTarget).val('최대');
+							$target.find('.ui-slider-handle').eq(0).trigger('mouseover');
+						}
+
+						if(id=='id-13'){
+							var type = $(this).closest('[data-add-type]').data('addType');
+							myMonthlyCost[type] = ui.values;
+							values = myMonthlyCost;
+						}
+
+
+						$root.triggerHandler('changeSlider',[{
+							id : id, 
+							values : values
+						}]);
+
+
+						var $toggleBtnItem = $(item).find('.uiToggleTyBtn > ul > li');
+						$toggleBtnItem.removeClass('active');
+						var $multiBtnItem = $(item).find('.uiMultiTyBtn > ul > li');
+						$multiBtnItem.removeClass('active');
+						_sortNaviItems();
+					}
+				});
+
+			});
+			
+			update();
+			buildMyFilter(myFilters);
+		}
+
+
+		// 옵션창 열기
+		$('.btnFilterOpen').on('click', function(e){
+			$('.uiMapFilter').addClass('collapse');
+			$('.mapArea').addClass('open');
+			if ($('.zoneTypeMy .myfilter').hasClass('active')) {
+				$('.zoneTypeMy .myfilter').trigger('click');
+			}
+			_toggleBottomArea(false);
+		});
+
+		// 옵션창 닫기
+		$('.btnFilterClose').on('click', function(e){
+			$('.uiMapFilter').removeClass('collapse');
+			$('.mapArea').removeClass('open');
+			$('.settingDiv').children().hide();
+			$('.optionDiv').removeClass('active');
+			_toggleBottomArea(true);
+
+			// 사용자가 세팅값을 설정하고 "매물검색" 버튼을 누르지 않으면,
+			// 설정한 값을 초기화 해야함
+			$('.zone [data-sort]').removeClass('active');
+
+			selectedObj = $.extend(true,{},originSelectedObj);
+			update();
+		});
+
+		$('.mapArea').on('click', function(e) {
+			if(!$(this).hasClass('open')) {return;}
+			e.stopPropagation();
+
+			$('.uiMapFilter').removeClass('collapse');
+			$('.mapArea').removeClass('open');
+			$('.settingDiv').children().hide();
+			$('.optionDiv').removeClass('active');
+			_toggleBottomArea(true);
+
+			// 사용자가 세팅값을 설정하고 "매물검색" 버튼을 누르지 않으면,
+			// 설정한 값을 초기화 해야함
+			$('.zone [data-sort]').removeClass('active');
+
+			selectedObj = $.extend(true,{},originSelectedObj);
+			update();
+		});
+
+		// 필터 아이템 선택시 옵션 열기/닫기
+		$('.zone').on('click', '[data-sort]', function(e){
+			var $target = $(e.currentTarget);
+			var id = $target.data('id');
+			
+			$target.addClass('active').siblings().removeClass('active');
+			$('.myfilter').removeClass('active');
+			$('.settingDiv').removeClass('releaseY');
+			_toggleBottomArea(false);
+
+			if(id=='id-12') {
+				
+				console.log('My 자산 내 구매가능 매물');
+				// to. 개발 전달
+				toggleSetting('id-12'); //자산정보 구해 온 후 호출
+
+			}else{
+				toggleSetting(id);
+			}
+
+		});
+
+		// 필터 저장 버튼
+		$('#uiSaveBtn').on('click', function(e){
+
+			// TO.개발 전달
+
+			// 현재 필터옵션값을 마이 필터에 넣음.
+			var copyData = $.extend(true,{},selectedObj);
+			myFilters.push(copyData);
+			buildMyFilter(myFilters); 
+
+			console.log('필터 저장');
+
+		});
+		
+		// 전체 초기화 버튼
+		$('#uiResetBtn').on('click', function(e){
+
+			selectedObj = {
+				'id-01' : [1], 
+				'id-02' : [1]
+			};
+			update();
+			// TO.개발 전달
+			console.log('전체 초기화');
+			
+		});
+
+		// 매물검색
+		$('#uiSearchBtn').on('click', function(e){
+			// TO.개발 전달
+			originSelectedObj = $.extend(true,{},selectedObj); // 성공 이후에 실행
+			$('.btnFilterClose').trigger('click'); // 매물검색시 창닫음.
+
+			console.log('매물검색');
+		});
+
+
+		// 필터 창을 연다
+		function toggleSetting(id){
+
+			$('.settingDiv').children().not('[id='+id+']').hide();
+			var $sDiv = $('.settingDiv').children('[id='+id+']');
+			$sDiv.show();
+
+			if($sDiv.is(':visible')) {
+				$('.optionDiv').addClass('active');
+				$('.mapArea').addClass('open');
+			}else{
+				$('.optionDiv').removeClass('active');
+				$('.mapArea').removeClass('open');
+			}
+		}
+
+		// 필터 아이템 선택시 옵션 열기/닫기 - MY필터
+		$('.myfilter').on('click', function(e) {
+			var $target = $(e.currentTarget);
+			var id = $target.data('id');
+			if ($target.hasClass('active')) {
+				$target.removeClass('active');
+				$('.settingDiv').removeClass('releaseY');
+			} else {
+				$target.addClass('active');
+				$('.settingDiv').addClass('releaseY');
+				$('.zone [data-sort]').removeClass('active');
+			}
+			$('.settingDiv').children().not('[id='+id+']').hide();
+			var $sDiv = $('.settingDiv').children('[id='+id+']');
+			$sDiv.toggle();
+
+			$('.optionDiv').removeClass('active');
+			_toggleBottomArea(true);
+		});
+
+
+		///////////////////////////////// 
+
+		// 옵션 클릭시 이벤트
+		$root.on('clickOptionItem', function(e, data){
+
+			var id = data.id;
+			var value = data.value;
+			var label = data.label;
+			var $list = $('.zone').find('[data-sort]');
+			var $target = $list.filter('[data-id='+id+']');
+
+			if(value == 'all'){
+				var originLabel = $target.data('label');
+				$target.removeClass('selected').text(originLabel);
+				delete selectedObj[id];
+
+			}else{
+				$target.addClass('selected').text(label);
+				selectedObj[id] = value.toString().split(',');
+			}
+
+			if(id=='id-02'){ 
+
+				if(parseInt(value) > 2){ //월세
+					
+					$list.filter('[data-id="id-12"]').hide();
+					$list.filter('[data-id="id-13"]').show();
+
+					var $content = $('.settingDiv').children('[id=id-12]');
+					$content.find('[data-value=all]').trigger('click');
+
+				}else{ //매매,전세
+
+					$list.filter('[data-id="id-13"]').hide();
+					$list.filter('[data-id="id-12"]').show();
+
+					var $content = $('.settingDiv').children('[id=id-13]');
+					$content.find('[data-value=all]').trigger('click');
+				}
+			}
+
+			_sortNaviItems();
+
+		});
+
+		// 슬라이더 이동시 이벤트
+		$root.on('changeSlider', function(e, data){
+			var id = data.id;
+			var label = _changeOptionLabel(data);
+			var $list = $('.zone').find('[data-sort]');
+			$list.filter('[data-id='+id+']').addClass('selected').text(label);
+			selectedObj[id] = data.values;
+		});
+
+		// 평형/면적 토글시 이벤트
+		$root.on('changeAreaUnit', function(e, data){
+
+			var id = data.id;
+			if(!selectedObj[id]) return;
+
+			var label = _changeOptionLabel({
+				id:id,
+				values : selectedObj[id]
+			});
+
+			var $list = $('.zone').find('[data-sort]');
+			$list.filter('[data-id='+id+']').text(label);
+
+		});
+
+		// 매물/단지/분양/학교 토글
+		$('.uiMapCtrlBtn .btnCtrlMap').on('click', function(e){
+			var $target = $(e.currentTarget);
+
+			if ($target.parents('.group').hasClass('typeIconTxt')) {
+				$target.toggleClass('active');
+			} else {
+				$target.addClass('active').siblings().removeClass('active');
+			}
+
+			if ($target.data('toggle-filter') === true) {
+				$('.mapContainer').addClass('hasFilter');
+			} else if ($target.data('toggle-filter') === false) {
+				$('.mapContainer').removeClass('hasFilter');
+			}
+		});
+
+		init();
+	});
+</script>
+
+<!-- 퍼블확인용 -->
+<script>
+	$(function() {
+		// 매물 상세 레이어 열기
+		$('.speechBubble01').off().on('click', function() {
+			$('#mapPop06').show();
+		});
+
+		// 지도 터치시
+		$('#dummy01').off().on('touchstart', function() {
+			// 매물 상세 레이어, 토스트팝업 닫기
+			$('[id*=mapPop]').hide();
+		});
+
+		// 위치정보동의 팝업 열기
+		$('.iconTyMapCenter').parents('button').off().on('click', function() {
+			$('#layPop01').show();
+		});
+
+		// 위치정보동의 팝업 닫기
+		$('.btnPopClose, .btnType').on('click',function(){
+			$('.layerPopWrap').hide();
+		});
+
+		// 하단버튼 모션
+		$('.botArea > a').on('click', function() {
+			animateButton();
+		});
+
+		$('#uiSaveBtn').on('click', function() {
+			$('#mapPop07').show();
+		})
+	});
+</script>
+<!-- //퍼블확인용 -->
+</body>
+</html>

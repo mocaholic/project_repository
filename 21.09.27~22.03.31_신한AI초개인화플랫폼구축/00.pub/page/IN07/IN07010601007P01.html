@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/financial.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class="openCard">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">카드 이용 내역</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header> 
+		<!-- // header -->
+		 
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="innerBox lineN bgNone">
+					<a href="#layerPopBottomCal" class="btnType2 btnSmall line btnPopOpen"><span>달력열기</span></a>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- BS조회월 선택 -->
+<div class="layerPopBottomWrap hasDim type3" id="layerPopBottomCal">
+	<div class="popInner type2" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit brdNone">조회 월 선택</p><!-- //2021-05-28 수정 -->
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon pt10">
+			<p class="fontN mb15">이번 달부터 <em class="txtBlue1">1년 이내</em>로 조회 가능합니다.</p><!-- //2021-05-28 추가 -->
+			<div class="calConWrap">
+				<div class="calYearList">
+					<button type="button" class="btnCalPrev"><span>이전 년</span></button>
+					<p class="txt">2020년</p>
+					<button type="button" class="btnCalNext"><span>다음 년</span></button>
+				</div>
+				<div class="calMonthList">
+					<ul>
+						<li><button type="button">1월</button></li>
+						<li><button type="button">2월</button></li>
+						<li><button type="button">3월</button></li>
+						<li><button type="button">4월</button></li>
+						<li><button type="button">5월</button></li>
+						<li><button type="button">6월</button></li>
+						<li><button type="button">7월</button></li>
+						<li><button type="button" class="on">8월</button></li>
+						<li><button type="button" disabled="disabled" class="off">9월</button></li>
+						<li><button type="button" disabled="disabled" class="off">10월</button></li>
+						<li><button type="button" disabled="disabled" class="off">11월</button></li>
+						<li><button type="button" disabled="disabled" class="off">12월</button></li>
+					</ul>
+				</div>
+			</div>
+			<!-- 2021-06-07 삭제
+			<div class="mt20"><a href="javascript:;" class="btnType typeR"><span>조회하기</span></a></div> -->
+		</div>
+	</div>
+</div>
+<!-- //BS조회월 선택 -->
+<script type="text/javascript">
+	//$(".btnCalNext").css("visibility","hidden");
+	//$(".btnCalNext").css("visibility","");
+</script>
+</body>
+</html>

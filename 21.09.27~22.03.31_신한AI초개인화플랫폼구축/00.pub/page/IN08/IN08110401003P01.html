@@ -1,0 +1,448 @@
+
+<!-- /********************************************************************
+* @설명			:	생애재무관리 > 재무목표 설계 > 맞춤 설계 > 맞춤설계 결과 등록 > 목표수정팝업
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김재림		2020-11-27		최초작성
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">목표수정</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents">
+				<div class="directPlanWrap">
+					<div class="goalTypeArea">
+						<h2 class="blind">목표유형</h2>
+						<div class="titWrap">
+							<strong>목표유형</strong>
+						</div>
+						<div class="toggleAreaTyColumn col3 typeArea">
+							<ul>
+								<li>
+									<input type="radio" name="rdo1" id="rdo101" checked="checked">
+									<label for="rdo101"><span>여행</span></label>
+								</li>
+								<li>
+									<input type="radio" name="rdo1" id="rdo102">
+									<label for="rdo102"><span>주택</span></label>
+								</li>
+								<li>
+									<input type="radio" name="rdo1" id="rdo103">
+									<label for="rdo103"><span>자동차</span></label>
+								</li>
+								<li>
+									<input type="radio" name="rdo1" id="rdo104">
+									<label for="rdo104"><span>교육</span></label>
+								</li>
+								<li>
+									<input type="radio" name="rdo1" id="rdo105">
+									<label for="rdo105"><span>취미</span></label>
+								</li>
+								<li>
+									<input type="radio" name="rdo1" id="rdo106">
+									<label for="rdo106"><span>레져</span></label>
+								</li>
+							</ul>
+						</div>
+						<div class="moreArea">
+							<a href="#layerPopBottom02" class="btnTypeTextLink btnPopOpen">목표유형 더보기</a>
+						</div>
+					</div>
+					<div class="inputArea">
+						<div class="formGroupBox">
+							<dl class="formItem">
+								<div class="formRow">
+									<dt><label for="inputElement1-1">목표명</label></dt>
+									<dd>
+										<div class="inner">
+											<div class="input">
+												<input type="text" class="inpElement" id="inputElement1-1" placeholder="목표명을 입력하세요." value="명품시계" />
+											</div>
+											<div class="btn">
+												<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											</div>
+										</div>
+									</dd>
+									<dd class="errorMsg">에러 메세지 입력 영역</dd>
+								</div>
+							</dl>
+							<dl class="formItem">
+								<div class="formRow">
+									<dt><label for="inputElement1-2">목표금액</label></dt>
+									<dd>
+										<div class="inner">
+											<div class="input">
+												<input type="text" class="inpElement" id="inputElement1-2" placeholder="목표금액을 입력하세요." value="7,000,000" />
+											</div>
+											<span class="unit">원</span>
+											<div class="btn">
+												<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											</div>
+										</div>
+									</dd>
+									<dd class="errorMsg">에러 메세지 입력 영역</dd>
+								</div>
+							</dl>
+							<dl class="formItem">
+								<div class="formRow">
+									<dt><label for="">목표 기간</label></dt>
+									<dd>
+										<div class="inner">
+											<a href="#layerPopBottom01" class="btnPeriod btnPopOpen">0년 6개월<i class="iconTySelArrow03"></i></a>
+										</div>
+									</dd>
+									<dd class="errorMsg">에러 메세지 입력 영역</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+				</div><!-- //.directPlanWrap -->
+				<div class="btnGroupBox floating fixed">
+					<!-- 비활성화 : disabled="disabled" -->
+					<a href="javascript:void(0)" class="btnType"><span>확인</span></a>
+				</div>
+			</div>
+			<!-- // contents -->
+			
+			<!-- top button -->
+			<a href="javascript:;" class="btnTyCircleTop">Top</a>
+			<!-- //top button -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 기간선택 레이어 팝업 -->
+<div class="layerPopBottomWrap myAssets hasDim" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">기간 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon calTerm">
+			<div class="calCon">
+				<div class="popPicker">
+					<div class="pickerWrap">
+						<div class="swiper-container" id="divFirstList">
+							<!-- 1뎁스 선택 -->
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><button type="button">0년</button></div>
+								<div class="swiper-slide"><button type="button">1년</button></div>
+								<div class="swiper-slide"><button type="button">2년</button></div>
+								<div class="swiper-slide"><button type="button">3년</button></div>
+								<div class="swiper-slide"><button type="button">4년</button></div>
+								<div class="swiper-slide"><button type="button">5년</button></div>
+								<div class="swiper-slide"><button type="button">6년</button></div>
+								<div class="swiper-slide"><button type="button">7년</button></div>
+								<div class="swiper-slide"><button type="button">8년</button></div>
+								<div class="swiper-slide"><button type="button">9년</button></div>
+								<div class="swiper-slide"><button type="button">10년</button></div>
+								<div class="swiper-slide"><button type="button">11년</button></div>
+								<!-- 
+									12년 ~ 29년
+								-->
+								<div class="swiper-slide"><button type="button">30년</button></div>
+							</div>
+							<!-- 1뎁스 선택 -->
+						</div>
+					</div>
+					<div class="pickerWrap">
+						<div class="swiper-container" id="divSecondList">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><button type="button">6개월</button></div>
+								<div class="swiper-slide"><button type="button">7개월</button></div>
+								<div class="swiper-slide"><button type="button">8개월</button></div>
+								<div class="swiper-slide"><button type="button">9개월</button></div>
+								<div class="swiper-slide"><button type="button">10개월</button></div>
+								<div class="swiper-slide"><button type="button">11개월</button></div>
+							</div>
+						</div>
+					</div>
+					<div class="currentCover"></div>
+					<div class="currentCover1"></div>
+					<div class="currentCover2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="btnGroupBox floating fixed">
+			<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //기간선택 레이어 팝업 -->
+
+<!-- 목표 카테고리 선택 팝업 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom02">
+	<div class="popInner hFull">
+		<div class="layerHeader">
+			<p class="layerTit">목표 카테고리 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon hasButton">
+
+			<!--
+				1. name="rdoReal" 클릭 시 name="rdoFake"에 노출되는 항목
+
+				1-1) name="rdoReal" 항목 중 [여행, 주택, 자동차, 교육, 취미, 레져] 클릭시
+				>>> 해당 항목을 name="rdoFake" 에 노출 : [여행, 주택, 자동차, 교육, 취미, 레져]
+				>>> 6번째 까지는 기존 노출대로.
+				
+				1-2) name="rdoReal" 항목 중 [여행, 주택, 자동차, 교육, 취미, 레져] 이외 클릭시 (7번째 항목부터)
+				>>> 해당 항목을 name="rdoFake" 첫번째에 추가 : [{추가}, 여행, 주택, 자동차, 교육, 취미]
+				>>> 뒤로 밀려난 마지막 {레져} 항목은 스타일에서 감추었기에, {레져} 항목을 삭제해도 되고 남겨둬도 됩니다.
+			-->
+
+			<div class="toggleAreaTyColumn col3">
+				<ul>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal01" />
+						<label for="rdoReal01"><span>여행</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal02" />
+						<label for="rdoReal02"><span>주택</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal03" />
+						<label for="rdoReal03"><span>자동차</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal04" />
+						<label for="rdoReal04"><span>교육</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal05" />
+						<label for="rdoReal05"><span>취미</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal06" />
+						<label for="rdoReal06"><span>레져</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal07" />
+						<label for="rdoReal07"><span>피트니스</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal08" />
+						<label for="rdoReal08"><span>쇼핑</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal09" />
+						<label for="rdoReal09"><span>명품</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal10" />
+						<label for="rdoReal10"><span>디지털</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal11" />
+						<label for="rdoReal11"><span>가전제품</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal12" />
+						<label for="rdoReal12"><span>결혼</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal13" />
+						<label for="rdoReal13"><span>은퇴준비</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal14" />
+						<label for="rdoReal14"><span>비상금</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal15" />
+						<label for="rdoReal15"><span>대출상환</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal16" />
+						<label for="rdoReal16"><span>자산일임</span></label>
+					</li>
+					<li>
+						<input type="radio" name="rdoReal" id="rdoReal17" />
+						<label for="rdoReal17"><span>기타</span></label>
+					</li>
+				</ul>
+			</div> <!-- //.toggleAreaTyColumn -->
+
+		</div>
+		<div class="btnGroupBox floating fixed">
+			<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //목표 카테고리 선택 팝업 -->
+
+<!-- 기간선택 레이어 팝업 스크립트 -->
+<script type="text/javascript">
+	var uiMyAssets  = uiMyAssets || {};
+
+	// 기간 선택 팝업
+	uiMyAssets.termSwiper = {
+		init: function() {
+			this.createSelector();
+			this.addEvent();
+		},
+
+		createSelector: function() {
+			this.wrapName = '.pickerWrap';
+			this.termName01 = '#divFirstList';
+			this.termName02 = '#divSecondList';
+		},
+
+		addEvent: function() {
+			if (!$(this.wrapName).length) return;
+			var that = this;
+
+			// swiper - 년
+			this.termSwiper01 = new Swiper(this.termName01, {
+				slidesPerView: 5,
+				direction: 'vertical',
+				centeredSlides: true,
+				observer : true,
+				observeParents : true,
+			});
+
+			// swiper - 개월
+			this.termSwiper02 = new Swiper(this.termName02, {
+				slidesPerView: 5,
+				direction: 'vertical',
+				centeredSlides: true,
+				observer : true,
+				observeParents : true,
+			});
+
+			// 초기 진입시 세팅값
+			// var currentFirst = 0;
+			// var currentSecond = 0;
+			// this.termSwiper01.slideTo(currentFirst);
+			// this.termSwiper02.slideTo(currentSecond);
+
+		},
+
+		// 초기화 및 날짜이동 기능으로 이용하세요
+		// ex) uiMyAssets.termSwiper.setIndex(4, 5);
+		setIndex: function(idx1, idx2) {
+			this.termSwiper01.slideTo(idx1);
+			this.termSwiper02.slideTo(idx2);
+		},
+
+		setDate: function(minDate, maxDate) {
+			var that = this;
+			var minYear = Math.floor(minDate / 12);
+			var minMonth = minDate % 12;
+			var maxYear = Math.floor(maxDate / 12);
+			var maxMonth = maxDate % 12;
+
+			console.log('시작개월(' + minDate + '): ' + minYear + '년 ' + minMonth + '개월');
+			console.log('종료개월(' + maxDate + '): ' + maxYear + '년 ' + maxMonth + '개월');
+
+			// 개월 DOM 생성
+			var slideHTML02 = '';			//중간개월
+			var slideHTML02_first = '';		//시작개월
+			var slideHTML02_last = '';		//종료개월
+
+			// start : 2021-03-24 수정
+			if (minYear !== maxYear) {
+				for (var i = 0; i < 12; i++) {
+					if (i >= minMonth) {
+						slideHTML02_first += '<div class="swiper-slide"><button type="button">' + i + '개월</button></div>';
+					}
+					slideHTML02 += '<div class="swiper-slide"><button type="button">' + i + '개월</button></div>';
+					if (i <= maxMonth) {
+						slideHTML02_last += '<div class="swiper-slide"><button type="button">' + i + '개월</button></div>';
+					}
+				}
+			} else if (minYear === maxYear) {
+				for (var i = minMonth; i <= maxMonth; i++) {
+					slideHTML02_first += '<div class="swiper-slide"><button type="button">' + i + '개월</button></div>';
+				}
+			}
+
+			var resultHTML02 = '<div class="swiper-wrapper">' + slideHTML02 + '</div>';
+			var resultHTML02_first = '<div class="swiper-wrapper">' + slideHTML02_first + '</div>';
+			var resultHTML02_last = '<div class="swiper-wrapper">' + slideHTML02_last + '</div>';
+			$(this.termName02).html(resultHTML02_first);
+
+			// 개월 Swiper init
+			this.termSwiper02 && this.termSwiper02.destroy();
+			this.termSwiper02 = new Swiper(that.termName02, {
+				slidesPerView: 5,
+				direction: 'vertical',
+				centeredSlides: true,
+				observer : true,
+				observeParents : true,
+			});
+
+			// 년 DOM 생성
+			var slideHTML01 = '';
+			for (var i = minYear; i <= maxYear; i++) {
+				slideHTML01 += '<div class="swiper-slide"><button type="button">' + i + '년</button></div>';
+			}
+			var resultHTML01 = '<div class="swiper-wrapper">' + slideHTML01 + '</div>';
+			$(this.termName01).html(resultHTML01);
+
+			// 년 Swiper init
+			this.termSwiper01 && this.termSwiper01.destroy();
+			this.termSwiper01 = new Swiper(that.termName01, {
+				slidesPerView: 5,
+				direction: 'vertical',
+				centeredSlides: true,
+				observer : true,
+				observeParents : true,
+				onSlideChangeStart : function(swiper) {
+					sbCurrentFirst = $(swiper.container).find('.swiper-slide-active').index();
+					$(that.termName02).html(sbCurrentFirst == 0 ? resultHTML02_first : (sbCurrentFirst == swiper.slides.length - 1) ? resultHTML02_last : resultHTML02);
+
+					that.termSwiper02.destroy();
+					that.termSwiper02 = new Swiper(that.termName02, {
+						slidesPerView: 5,
+						direction: 'vertical',
+						centeredSlides: true,
+						observer : true,
+						observeParents : true,
+					});
+				}
+			});
+
+		},
+	};
+
+	$(function() {
+		uiMyAssets.termSwiper.init();
+	});
+</script>
+<!-- //기간선택 레이어 팝업 스크립트 -->
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/ra01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">목돈 만들기</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full pb0">
+				<div class="innerBox bgBlue2 lineN">
+					<p class="fontSL">빅데이터 분석그룹과<br /><em class="bold">목돈 만들기 현황을 비교</em>해보세요.</p>
+				</div>
+				<div class="reportBox">
+					<div class="stepGray">
+						<span class="step">STEP1.</span>
+						<span class="txt">비교할 그룹을 선택해보세요.</span>
+					</div>
+				</div>
+				<div class="innerGap">
+					<p class="mt10">월급여 그룹을 100만원 단위로 선택하여 비교해보세요.</p>
+					<div class="boxTyGray theme">
+						<div class="sliderArea">
+							<div id="slider2">
+								<div id="custom-handle2" class="ui-slider-handle"></div>
+								<p class="dot"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></p>
+								<p class="slider cf num5">
+									<span class="txt">100만원<br /> 이하</span>
+									<span class="txt">1000만원<br /> 이상</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<p class="ac mt15 mb15"><img src="../../../../../../../images/ra01/img_nextstep_arrow.png" style="width:20px;"></p>
+				</div>
+				<div class="reportBox">
+					<div class="stepGray">
+						<span class="step">STEP2.</span>
+						<span class="txt">선택한 그룹과 월 자동이체 금액을 비교해보세요.</span>
+					</div>
+				</div>
+				<div class="innerGap">
+					<div class="boxTyGray theme">
+						<p class="fontL txtNavy bold">적금</p>
+						<p class="mt10"><em>김신한</em>님이 비교그룹보다 <em class="txtNavy bold">14.2만원</em> 더 많이 모으고 계시네요!</p>
+						<div class="boxTycomp">
+							<div class="big">
+								<p>김신한님</p>
+								<p class="amount">40만원</p>
+							</div>
+							<div class="comp">
+								<img src="../../../../../../../images/ra01/img_comp_left_big.png" alt="왼쪽이 큼"/>
+							</div>
+							<div>
+								<p>500만원대 그룹</p>
+								<p class="amount">25만원</p>
+							</div>
+						</div>
+					</div>
+					<div class="boxTyGray theme">
+						<p class="fontL txtNavy bold">펀드</p>
+						<p class="mt10"><em>김신한</em>님이 비교그룹보다 <em class="txtNavy bold">12.2만원</em> 더 적게 모으고 계십니다.</p>
+						<div class="boxTycomp">
+							<div>
+								<p>김신한님</p>
+								<p class="amount">40만원</p>
+							</div>
+							<div class="comp">
+								<img src="../../../../../../../images/ra01/img_comp_right_big.png" alt="오른쪽이 큼"/>
+							</div>
+							<div class="big">
+								<p>600만원대 그룹</p>
+								<p class="amount">25만원</p>
+							</div>
+						</div>
+					</div>
+					<p class="referTxt">본 시뮬레이션은 신한은행 계좌간 월 자동이체 설정금액 기준입니다. </p>
+				</div>
+				
+				
+				
+	
+			</div>
+			<!-- // contents -->
+			
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0)" class="btnType btnBlack"><span>자동이체 금액변경</span></a>
+				<a href="javascript:void(0)" class="btnType"><span>이달의 펀드 보기</span></a>
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<script type="text/javascript">
+var handle2 = $("#custom-handle2");
+$("#slider2").slider({
+	create: function(){
+		//최초 실행
+		handle2.append('<span>'+$(this).slider( "value" )+'만원</span>');
+	},
+	slide: function( event, ui ) {
+		//핸들링시 실행
+		handle2.find('span').text(ui.value+'만원');
+	},
+	min: 100, /* 최소 */
+	max: 1000, /* 최대 */
+	step : 90 /* 스텝 */
+});
+
+</script>
+</body>
+</html>

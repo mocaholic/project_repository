@@ -1,0 +1,295 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	환율전망 서비스 (환율전망 불가 시 안내)
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		이승찬		2020-11-11		최초작성
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0);" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">환율전망서비스</h1>
+				<div class="rSec">
+					<a href="javascript:void(0);" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		 
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets"> <!-- .myAssets -->
+			<!-- contents -->
+			<div class="contents pb0">
+
+				<div class="exchangeRateServiceWrap">
+					<div class="trendArea">
+						<h2 class="blind">환율추이</h2>
+						<div class="trendSetting">
+							<em>최근</em>
+							<a href="#layerPopBottom01" class="btnPeriod btnPopOpen">1주일<i class="iconTySelArrow02"></i></a>
+							<!-- 기간 선택 팝업 -->
+							<div class="layerPopBottomWrap type4 hasDim" id="layerPopBottom01" tabindex="0">
+								<div class="popInner" style="display: block;">
+									<div class="layerHeader">
+										<p class="layerTit">기간 선택</p>
+										<button type="button" class="btnPopClose">팝업 닫기</button>
+									</div>
+									<div class="layerCon">
+										<div class="listOneLineBox type1">
+											<ul>
+												<li><button type="button">1주일</button></li>
+												<li><button type="button">1개월</button></li>
+												<li><button type="button">3개월</button></li>
+												<li><button type="button">6개월</button></li>
+												<li><button type="button">1년</button></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- //기간 선택 팝업 -->
+							<em>환율정보</em>
+							<a href="javascript:void(0)" class="tipOpenNew tyRight iconTyTooltip" title="환율은 USD만 제공하며<br /> 현재 매매기준율 기준입니다.<br /> 휴일의 경우 전 영업일 기준 노출됩니다.">!</a>
+						</div>
+
+						<div class="trendServiceArea">
+							<h3 class="blind">미래환율</h3>
+							<p class="serviceInfoTxt">
+								<em class="week">1주일</em> 저점대비<br />
+								오늘 <em class="number countUp">150.28</em><em class="won">원</em> 올랐어요!
+							</p>
+							<div class="graphBox">
+								<!-- 그래프 영역 -->
+								<div style="min-height:194px; background:rgba(0,0,0,0.3);">그래프
+									<div class="bubbleWrap typeGray alBotEdgeRight" style="top:0; right:0;">
+										<p class="bubbleInner">
+											<span class="txt">
+												<span>오늘</span>
+												<strong class="tickUp"><span>5.32</span><span class="blind">원 오름</span></strong>
+											</span>
+											<em class="amount"><span>1,117.83</span>원</em>
+										</p>
+									</div>
+									<div class="bubbleWrap typeGray alBotEdgeRight" style="top:50%; right:0;">
+										<p class="bubbleInner">
+											<span class="txt">
+												<span>오늘</span>
+												<strong class="tickDown"><span>5.32</span><span class="blind">원 내림</span></strong>
+											</span>
+											<em class="amount"><span>1,117.83</span>원</em>
+										</p>
+									</div>
+								</div>
+								<!-- //그래프 영역 -->
+							</div>
+							<dl class="tipInfo">
+								<div class="item">
+									<dt class="high">고점 <span class="date">(20-10-24)</span></dt>
+									<dd>1,212.54원</dd>
+								</div>
+								<div class="item">
+									<dt class="low">저점 <span class="date">(20-10-25)</span></dt>
+									<dd>1,117.83원</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+
+					<!-- case1-2. 서비스 중단 시 노출 -->
+					<div class="nodataArea">
+						<strong class="blind">서비스 일시중단</strong>
+						<div class="result">
+							<div class="inner">
+								<div class="bubble">
+									<p class="bubbleSquare">
+										<span class="block">AI 통계 분석 중</span>
+									</p>
+									<span class="bubbleArrow"></span>
+								</div>
+							</div>
+						</div>
+						<p class="nodataTxt">현재 시장이 불안정하여<br />데이터 분석을 잠시 중단합니다.</p>
+					</div>
+					<!-- //case1-2. 서비스 중단 시 노출 -->
+
+					<div class="bannerArea">
+						<div class="tabTy03 uiTabs">
+							<a href="#tabView1" class="on" title="현재선택됨"><span>투자</span></a> <!-- 활성화시 class="on" -->
+							<a href="#tabView2"><span>여행</span></a>
+							<a href="#tabView3"><span>선물</span></a>
+						</div>
+						<div class="conInner">
+							<div class="tabViewWrap mb0">
+								<div class="tabView on" id="tabView1">
+									<ul class="bannerList">
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">해외여행에서 가장 중요한 것은?</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>쏠편한 환전</mark></span></a>
+												<i class="iconTyExchangeRate01"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">기다리다 지치지 마세요</strong>
+												<a href="javascript:void(0);" class="itemLink"><span>목표 환율 <mark>자동으로 환전하기</mark></span></a>
+												<i class="iconTyExchangeRate02"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">환테크를 아십니까?</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>외화 예적금</mark></span></a>
+												<i class="iconTyExchangeRate05"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">소중한 내역, 제가 대신 기억할게요</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>쏠 환전내역</mark></span></a>
+												<i class="iconTyExchangeRate06"></i>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="tabView" id="tabView2">
+									<ul class="bannerList">
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">해외여행에서 가장 중요한 것은?</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>쏠편한 환전</mark></span></a>
+												<i class="iconTyExchangeRate01"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">기다리다 지치지 마세요</strong>
+												<a href="javascript:void(0);" class="itemLink"><span>목표 환율 <mark>자동으로 환전하기</mark></span></a>
+												<i class="iconTyExchangeRate02"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">무거우시죠? 한 장만 들고 다녀요</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>글로벌 현금카드</mark></span></a>
+												<i class="iconTyExchangeRate07"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">계획성있는 소비를 하고 싶다면?</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>글로벌 멀티카드</mark></span></a>
+												<i class="iconTyExchangeRate08"></i>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="tabView" id="tabView3">
+									<ul class="bannerList">
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">해외여행에서 가장 중요한 것은?</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>쏠편한 환전</mark></span></a>
+												<i class="iconTyExchangeRate01"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">마음 + 돈 = 감동♥</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>환전선물하기/받기</mark></span></a>
+												<i class="iconTyExchangeRate03"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">누구나 금고 하나쯤은 있잖아요?</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>환전 모바일 금고</mark></span></a>
+												<i class="iconTyExchangeRate04"></i>
+											</div>
+										</li>
+										<li>
+											<div class="bannerItem">
+												<strong class="itemTit">무거우시죠? 한 장만 들고 다녀요</strong>
+												<a href="javascript:void(0);" class="itemLink"><span><mark>글로벌 현금카드</mark></span></a>
+												<i class="iconTyExchangeRate07"></i>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div> <!-- //.exchangeRateServiceWrap -->
+
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<script type="text/javascript">
+	// 숫자카운트 모션
+	function countMotion () {
+		$('.serviceInfoTxt .number').each(function(){
+			var aa = 0;
+			var test = $('.countUp').text();
+			
+			$('.countUp').animate({
+				aa : test
+			},{
+				duration:2000,
+				step:function(a){
+					var test = ''+ Math.floor(a *100) / 100;
+					var i;
+					var cnt = 0;
+					var result = '';
+					for(i = test.length -1; i>=0; i--, cnt++){
+						// if (cnt > 0 && (cnt % 3) == 0){
+						// 	result = ',' + result;
+						// }
+						result = test.substring(i, i + 1) + result;
+					}
+					
+					$(this).empty().text(result)
+				}
+			});
+		});
+	}
+
+	$(function() {
+		$(window).load(function() {
+			countMotion();
+		});
+	});
+</script>
+</body>
+</html>

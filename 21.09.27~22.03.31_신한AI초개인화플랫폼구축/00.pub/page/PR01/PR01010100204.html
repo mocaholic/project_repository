@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr01.css">
+	<script type="text/javascript" src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../../../../../../script/include/library/ui.js"></script>
+	<script type="text/javascript" src="../../../../../../../script/include/library/taphold.js"></script>
+	<script type="text/javascript" src="../../../../../../script/include/library/event.scroll.js"></script><!-- //2020-09-03 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container" class="lock">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">전체계좌 조회</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="totalAcc type2">
+			<div class="dragNdrop">
+				<div class="vArea">
+					<p class="txtBlue2 mb15">Drag & Drop</p>
+					<p><span class="lineTape"><em>이체하실 계좌</em></span>로 끌어다 놓으세요</p>
+				</div>
+			</div>
+			<!-- //드래그엔드롭 메시지 -->
+			
+		
+			<div class="tabSwiper" id="tabSwiper">
+				<div class="swiper-wrapper">
+					<a href="#slide1" class="swiper-slide on" title="현재선택됨"><span>입출금</span></a>
+				</div>
+			</div>
+		
+			<div class="topfix">
+				<div class="listTop">
+					<div class="left">
+						<div class="topSelect"><!-- // .disabled-->
+							<a href="javascript:;" class="btn"><span>전체</span></a>
+							<div class="sub">
+								<!-- data value : 줄임말 -->
+								<ul>
+									<li><input type="radio" name="chk1" id="chk1-1" checked="checked"/> <label for="chk1-1" data-value="전체">전체</label></li>
+									<li><input type="radio" name="chk1" id="chk1-2"/> <label for="chk1-2" data-value="신한은행">신한</label></li>
+									<li><input type="radio" name="chk1" id="chk1-3"/> <label for="chk1-3" data-value="기업은행">기업</label></li>
+									<li><input type="radio" name="chk1" id="chk1-4"/> <label for="chk1-4" data-value="농협">농협</label></li>
+									<li><input type="radio" name="chk1" id="chk1-5"/> <label for="chk1-5" data-value="하나은행">하나</label></li>
+								</ul>
+							</div>
+						</div>
+						<!-- 2021-01-20 추가 -->
+						<div class="topSelMsg">
+							<p>다른 은행 계좌도 조회할 수 있어요</p>
+							<a href="javascript:;" class="msgClose">닫기</a><!-- //2021-02-08 추가 -->
+						</div>
+						<!-- //2021-01-20 추가 -->
+					</div>
+					<div class="right">
+						<a href="javascript:;" class="refresh">새로고침</a>
+						<a href="#layerPopBottom01" class="bsMenu btnPopOpen">메뉴</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- contents -->
+			<div class="contents full pb0 bg">
+				<div class="topAsset curt">
+					<div class="assetCont">
+						<p class="subTit">나의 신한은행 총자산</p>
+						<div class="wBox">
+							<div class="listTypeTable">
+								<ul>
+									<li class="row">
+										<div class="leftCol">
+											<p class="tit txtBlack1">저축/투자 총잔액</p>
+											<p class="fontSSS txtBlack4 mt3">방카슈랑스제외</p>
+										</div>
+										<div class="rightCol vt">
+											<p class="txt bold">2,320,300,300원</p>
+										</div>
+									</li>
+									<li class="row">
+										<div class="leftCol">
+											<p class="tit txtBlack1">대출 총잔액</p>
+										</div>
+										<div class="rightCol">
+											<p class="txt bold">300,300원</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="listTypeTable">
+								<ul>
+									<li class="row">
+										<div class="leftCol">
+											<p class="tit txtBlack1">나의 순자산</p>
+											<p class="fontSSS txtBlack4 mt3">저축/투자 + 대출</p>
+										</div>
+										<div class="rightCol">
+											<p class="txtBlue2 bold">2,320,300,300 원</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="bannerAsset">
+							<a href="javascript:;">
+								<span class="txt1">MY자산서비스</span>
+								<span class="txt2">더 많은 <em class="underTape"><i>금융자산</i></em>을 확인하세요!</span>
+							</a>
+						</div>
+					</div>
+					<div class="btnAsset"><a href="javascript:;">열기/닫기</a></div>
+				</div>
+				<div class="accSet" id="slide1">
+					<div class="innerBox accBg" data-category="입출금">
+						
+						<div class="listTypeTable typeTop">
+							<ul>
+								<li class="row">
+									<div class="leftCol" style="width:auto;"><p class="tit">입출금</p></div>
+									<div class="rightCol">
+										<p class="txt">총 <strong class="txtBlue1 accCateCnt">8개</strong> 계좌</p>
+									</div>
+								</li>
+								<li class="row">
+									<div class="leftCol"><p class="tit">총 잔액
+									<a href="javascript:;" class="tipOpen iconTy27" title="총 잔액은 마이너스 통장을 제외한 입출금 통장 잔액의 합.">?</a>
+									</p></div>
+									<div class="rightCol">
+										<p class="txt accCateAmt amtPrice">54,134,736원</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+				
+						
+						<div class="cardAccList type2"><!-- 2020-11-16 모든 .cardAccList에 .type2 추가 -->
+							<div class="accBox" drag-type1="true">
+								<div class="accInfo" onclick="goPageByAccInfo(this)">
+									<div class="lt">
+										<p class="name">
+											<img src="../../../../../../../images/bank_logo/banklogo_088.png" alt="신한">
+											<span>예적금</span>
+										</p>
+										<p class="num"><em>신한</em> <span class="copy">000-243-129908</span></p>
+									</div>
+									<div class="rb">
+										<p class="txt2"><strong class="msg">계좌확인필요</strong></p>
+									</div>
+								</div>
+							</div>
+				
+						</div>
+				
+					</div>
+				</div>
+							
+				<div class=" innerBox pt5 lineN accBottom">
+					<p><a href="#layerPopBottom02" class="btnAccMore btnPopOpen"><span>계좌 추가</span></a></p>
+					<p class="ac mt40" style="display:none;"><a href="javascript:goAccOrderSetting();" class="txtBlack4 underLine">계좌순서변경</a></p>
+				</div>
+				
+				
+				<div class="aBtnSet">
+					<a href="javascript:sbGoPage('PR01020104001');"><span>휴면계좌조회</span></a>
+					<a href="javascript:sbGoPage('PR03020101401');"><span>해지계좌조회</span></a>
+				</div>
+				
+				
+			</div>
+			<!-- // contents -->
+
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 메뉴(점3개) -->
+<div class="layerPopBottomWrap hasDim type3" id="layerPopBottom01">
+	<div class="popInner select auto">
+		<div class="layerCon">
+			<div class="selectList">
+				<ul>
+					<li><button onclick="">대표계좌 설정</button></li>
+					<li><button onclick="">다른 은행 등록/설정</button></li>
+					<li><button onclick="">계좌 순서 설정</button></li>
+					<li><button onclick="">계좌 관리</button></li>
+					<li><button onclick="">글자 크기 설정</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //메뉴(점3개) -->
+<!-- 계좌추가 -->
+<div class="layerPopBottomWrap hasDim type3" id="layerPopBottom02">
+	<div class="popInner select auto">
+		<!-- 2020-8-06 제거
+		<div class="layerHeader">
+			<p class="layerTit brdNone">계좌추가</p>
+		</div> -->
+		<div class="layerCon">
+			<div class="selectList">
+				<ul>
+					<li><button onclick="">다른 은행 등록/설정</button></li>
+					<li><button onclick="">신규 가입</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //계좌추가 --> 
+
+
+
+
+<script type="text/javascript">
+var tabNum = "";
+var tabSwiper = "";
+var gLine = ""
+var aBtnSet = "";  //2021-02-08 추가
+//페이지 로드 완료후 스와이퍼 실행
+$(window).on("load",function(){
+	var UserAgent = navigator.platform;
+	if(UserAgent.match(/i(Phone|Pod|Pad)/i) != null){
+		$('body').width(screen.width);
+	}
+	
+	tabNum = $(".accSet").size();
+	gLine = $(".topfix").offset().top + $(".topfix").outerHeight(true);
+	var lastTab = $(".tabSwiper a:last").offset().left + $(".tabSwiper a:last").outerWidth(true);
+	if(lastTab > $(window).width()){
+		tabSwiper = new Swiper('.tabSwiper', {
+			slidesPerView: 'auto',
+			observer : true, 
+			freeMode: true,
+		});
+	}
+	
+	//리스트가 기기보다 짧을 경우 2021-02-08 추가
+	aBtnSet = $(".aBtnSet").offset().top + $(".aBtnSet").outerHeight(true);
+	if($(window).height() > aBtnSet){
+		$(".aBtnSet").addClass("floating").css({"padding-top":$(window).height() - aBtnSet + 70});
+	}
+});
+
+
+
+//상단 셀렉트 : 2021-02-03 수정
+$(".topSelect .btn").on("click",function(){
+	if($(this).hasClass("jsNone")){
+		return false;
+	}
+	if($(this).parent().hasClass("disabled")){
+		return false;
+	}
+	if($(this).hasClass("on")){
+		$(".btn").removeClass("on");
+	}else{
+		$(".btn").removeClass("on");
+		$(this).addClass("on");
+		$(".topSelMsg").removeClass("on");
+	}
+});
+//상단 셀렉트 닫기 : 2020-08-06 수정
+$(document).on("mouseup",function(e){
+	var cont = $(".topSelect .btn");
+	if(cont.has(e.target).length == 0){
+		cont.removeClass("on");
+	}
+});
+//상단 셀렉트 라디오 선택 : 2020-08-06 수정
+$(".topSelect .sub input").on("change",function(){
+	$(this).parents(".topSelect").find(".btn").removeClass("on").find("span").text($(this).next().attr("data-value"));
+});
+//상단 셀렉트 직접순서변경 : 2020-08-06 수정
+$(".topSelect .sub .modify").on("click",function(){
+	alert("계좌순서설정 화면이동");
+	$(this).parent().prev().prop("checked",true);
+	$(this).text("나만의 순서");
+	$(this).parents(".topSelect").find(".btn").removeClass("on").find("span").text("나만의 순서");
+});
+
+//새로고침 2020-09-11 수정
+$(".refresh").on("click",function(){
+	if($(this).hasClass("jsNone")){
+		return false;
+	}
+	$("#container").addClass("lock");
+	//slideHeader(0);
+	
+	$(".tabSwiper a:last").addClass("circle").attr("href","javascript:;");
+	$(".accSet:last").removeAttr("id").attr("class","insurSet hide");
+	
+	scrollReset();
+});
+
+
+$(".contents").on("scrollend",function(){
+	$(".accSet").each(function(index){
+		if($(this).parent().hasClass("layerPopLoading")){
+			return false;
+		}
+		var idx = $(this).attr("id");
+		var idxTop = $("#"+idx).offset().top;
+		var idxBot = idxTop + $("#"+idx).height();
+		if((idxTop <= gLine) && (idxBot > gLine)){
+			$(this).addClass("on");
+		}else{
+			$(this).removeClass("on");
+		}
+		//console.log(tabNum + "/" + (index + 1));
+		if(tabNum == (index + 1)){
+			//최종 선택된 넘버
+			var idx = $(".accSet.on").attr("id");
+			//선택된 항목이 없다면
+			if(idx == undefined){
+				idx = "slide1";
+			}
+			//스크롤이 마지막이라면
+			var lastSc = $(".contents").scrollTop()+$(window).height();
+			if(lastSc >= $(".contents").prop("scrollHeight")){
+				idx = "slide"+tabNum;
+			}
+			//버튼으로 이미 선택한경우 작동안함
+			if(!$(".tabSwiper a[href='#"+idx+"']").hasClass("on")){
+				$(".tabSwiper a").removeClass("on");
+				$(".tabSwiper a[href='#"+idx+"']").addClass("on");
+			}
+			slideSelect(idx);
+		}
+	});
+}); 
+
+
+//탭 스와이프 좌우조절
+function slideSelect(idx){
+	var oldIdx = idx;
+	// 최영일 수정;
+	//var slideId = sbReplaceAll(oldIdx,"#","");
+	//var numIdx = sbReplaceAll(slideId,"slide","");
+	//setSortSelectBox(numIdx,$("[href='#"+slideId+"'] span").text());
+//	
+	if($(".tabSwiper").hasClass("swiper-container-horizontal")){
+		idx = Number(idx.split("slide")[1])-1;  // 선택된 넘버값
+		var tabT = tabNum - 3;
+		var nWidth = $(".tabSwiper .swiper-wrapper").offset().left;  // 지금위치
+		if(idx <= 2){  // 왼쪽 정렬
+			$(".tabSwiper .swiper-wrapper").css({"transform":"translate3d(0px, 0px, 0px)","transition-duration":".1s"});
+			return false;
+		}else if((idx > 2) && (idx <= tabT)){ // 가운데 정렬
+			var cWidth = $(".tabSwiper a").eq(idx).offset().left + ($(".tabSwiper a").eq(idx).outerWidth(true)/2);  // 2020-10-06
+																													// 수정
+			var dWidth = $(window).width()/2;
+		}else if(idx > tabT){  // 우측정렬
+			var cWidth = $(".tabSwiper a:last").offset().left + ($(".tabSwiper a:last").outerWidth(true));  // 2020-10-06
+																											// 수정
+			var dWidth = $(window).width();
+		}
+		lastScroll = $(".contents").scrollTop();
+		$(".tabSwiper .swiper-wrapper").css({"transform":"translate3d("+(nWidth+(dWidth-cWidth))+"px, 0px, 0px)","transition-duration":".1s"});
+	}
+
+}
+
+$(".tabSwiper a").off("click").on("click",function(){
+	// 보험공제 영역추가 2020-09-11
+	$(".contents").off("scroll");
+	$(".contents").off("scrollEnd");
+	
+	//if(!_isBangkaRealLoad){
+		if($(this).hasClass("circle")){
+			$(this).removeClass("circle").attr("href","#slide"+tabNum);  // 마지막 탭 추가
+			$(".insurSet.hide").attr("id","slide"+tabNum).attr("class","accSet");	
+		}
+	//}
+	
+	var tabSc = $(this).attr("href");
+	// 탭 클시 header 항상접힘
+	$("#container").addClass("lock");  // header 잠금
+	
+	/*
+	 * 2020-10-08 제거/수정 //tNum = -45; //slideHeader(tNum);
+	 * //$(".contents").scrollTop(lastScroll + $(tabSc).offset().top - 109);
+	 */
+
+	var curIdx = $(".tabSwiper a").index(this);
+	lastScroll = $(".contents").scrollTop();
+	// console.log(tabSc+":\t"+$(tabSc).offset().top+"\t"+lastScroll);
+	var dTop = $(".topfix").offset().top + $(".topfix").height() - 1;
+	var d = lastScroll + $(tabSc).offset().top - dTop; 
+	
+	if(curIdx==0){
+		d=0;
+	}
+	$(".contents").animate({"scrollTop":d},"fast");
+	
+	$(this).siblings().removeClass("on");
+	$(this).addClass("on");
+	slideSelect(tabSc);
+	
+	// 잠금 풀기
+	setTimeout(function(){
+		$("#container").removeClass("lock");
+		//setScrollEvent();
+	},300);
+//	
+	return false;
+});
+
+
+//총자산 영역 열고닫기 버튼 2021-02-08 수정
+$(".btnAsset").on("click",function(){
+	if($(".assetCont").hasClass("on")){
+		$(".assetCont").removeClass("on").slideUp("fast");
+		if($(".aBtnSet").hasClass("floating")){
+			$(".aBtnSet").animate({"padding-top":$(window).height() - aBtnSet + 70},"fast");
+		}
+	}else{
+		$(".assetCont").addClass("on").slideDown("fast");
+		$(".aBtnSet").animate({"padding-top":70},"fast");
+	}
+});
+
+
+//계좌복사
+$(".num .copy").on("click",function(e){
+	alert("계좌번호복사 : "+$(this).text());
+});
+
+
+var _isDrag = false;
+var _is꾹이체실행중=false;
+
+//꾹이체
+var endScrollY = $(".contents").scrollTop();
+function fncSetDragLi(){
+//	var defaults = {
+//	        duration: 5000, // ms
+//	        clickHandler: function(e){console.log(e);} 
+//	};
+//	if($(".btnPress").length<2){
+//		$(".btnPress").remove();
+//		return;
+//	}
+	$(".cardAccList .accBox .btnPress").on("touchstart",function(){
+		$(this).parent().addClass("on");
+		$(".assetCont").removeClass("on").slideUp("fast");
+	});
+	$(".cardAccList .accBox .btnPress").on("touchend",function(){
+		$(".cardAccList .accBox").removeClass("on");
+	});
+	$(".cardAccList .accBox .btnPress").on("taphold",function(e){
+		if(_isDrag)return;
+		if(!($(this).parent().is("[drag-type1=true]")))return;
+
+		$(".contents").off("scroll");
+		$(".contents").off("scrollEnd");
+		$(".smartOffer").hide();
+		
+		$("#container").addClass("useDrag");
+		// 선택된 계좌 그림자영역
+		if(!$(this).parent().next().hasClass("shadow")){
+			$(this).parent().after("<div class='shadow'><span></span></div>");
+		}
+		endScrollY = $(".contents").scrollTop();
+		console.log("taphold endScrollY:"+endScrollY);
+
+		$(".cardAccList .accBox").not('[drag-type2=true]').hide();
+		$(this).parent(".accBox").show();
+		$(".accSet").each(function(i,item){
+			if($(this).find(".accBox:visible").length<1){
+				$(this).hide();
+			}
+		});
+
+		_isDrag = true;
+		var _dragTarget = $(this).parent();  // 수정 2020-09-04
+		var _dropTarget = null;
+		$(this).parent().draggable({
+			classes: {
+				'ui-draggable-dragging': 'onDrag'
+			},
+			containment: 'document',
+			revert: true,
+			axis: 'y',
+			stop: function(e){
+				_isDrag = false;
+				try{
+					$(e.target).draggable( "destroy" );
+					// $(".cardAccList
+					// .accBox").removeClass("ui-draggable-disabled");
+					fncDragEnd();
+				}catch(e){};
+			}
+		});
+		$(".cardAccList .accBox").droppable({
+			activate: function(e){
+				$(e.target).removeClass("ui-droppable-active");
+			},
+			drop: function(e){
+				_isDrag = false;
+				console.log("drop");
+				if(_dropTarget!=null){
+					setTimeout(function() {
+						fncDropCallback(_dragTarget,_dropTarget);
+					}, 700);
+					alert("이체실행");
+					try{
+						fncDragEnd();
+					}catch(e){}
+				}
+			},
+			over: function(e){
+				_dropTarget = $(e.target);
+				try{
+					if($(e.target).draggable("option","disabled")){
+						$(e.target).removeClass("ui-droppable-active, ui-droppable-hover");
+					}else{
+						
+						
+					}
+				}catch(err){
+					console.log(err)
+					
+				}
+			},
+			out: function(e){
+				_dropTarget = null;
+				try{
+					if($(e.target).draggable("option","disabled")){
+						$(e.target).removeClass("ui-droppable-active, ui-droppable-hover");
+						console.log("out");
+					}
+				}catch(e){}
+				
+			}
+		});
+
+		if(!$(".topAsset").next().hasClass("smHeight")){
+			$(".topAsset").after("<div class='smHeight'></div>");
+			$(".aBtnSet").after("<div class='emHeight'></div>");
+		}
+		
+		var event = null;
+		if(e.originalEvent.targetTouches){
+			event = e.originalEvent.targetTouches[0];
+		}else{
+			event = e;
+		}
+		var touchY = event.pageY - $(".contents").offset().top;
+		var targetY =$(this).parents(".accBox")[0].offsetTop+($(this).height()/2);
+
+		console.log(touchY+"\t"+targetY);
+		
+		if(touchY<targetY){
+			var scrollY = targetY-touchY;
+			var maxScrollY = $(".contents")[0].scrollHeight - $(".contents").height();
+			if(scrollY> maxScrollY){
+				var addHeight =scrollY - maxScrollY;
+				$(".emHeight").height(addHeight);
+			}
+			$(".contents").scrollTop(scrollY);
+		}else{
+			$(".smHeight").height(touchY-targetY);
+			$(".contents").scrollTop(0);
+		}
+
+		$(this).trigger(jQuery.extend(e, jQuery.Event("touchstart")));
+
+		var _this = $(this).parent();
+		var dragTime = 0;
+
+		fncDragCallback($(this).parent());
+
+		$(this).on("touchend",function(){
+			_isDrag=false;
+			var _this = $(this).parent();
+			// 드래그여부 체크
+			if(!$(this).hasClass("onDrag")){
+				dragTime = 1;
+			}
+			$("#container").removeClass("useDrag");
+			setTimeout(function() {
+				// console.log("touchEnd");
+				fncDragDisable(_this);
+				// 드래가 안할 경우 초기화
+				if(dragTime == 1){
+					$(".cardAccList .accBox").unbind();
+					$(".cardAccList .accBox .btnPress").unbind();
+					fncSetDragLi();
+				}
+				$(".shadow").remove();
+				$(".smHeight").remove();
+			}, 500);
+		});
+		return false;
+	});
+}
+function fncDragEnd(){
+	$(".cardAccList .accBox").droppable("destroy");
+	$(".cardAccList .accBox").show();
+	$(".cardAccList .accBox").removeClass("ui-draggable-dragging");
+	$(".accSet").show();
+	$(".shadow").remove();
+	$(".smHeight").remove();
+	$(".emHeight").remove();
+	$("#container").removeClass("useDrag");
+	console.log("endScrollY:"+endScrollY);
+	$(".contents").scrollTop(endScrollY);
+	$(".smartOffer").show();
+	setScrollEvent();
+}
+function fncDragDisable(ele){
+	try{
+		if(ele!=undefined){
+			ele.draggable( "destroy" );
+		}else{
+			$(".cardAccList .accBox").draggable( "destroy" );
+		}
+		fncDragEnd();
+		$(".cardAccList .accBox").removeClass("ui-draggable-disabled");
+		$(".cardAccList .accBox").removeClass("ui-draggable-dragging");
+		$(".cardAccList .accBox").droppable("destroy");
+	}catch(e){}
+}
+function fncDragCallback(ele){
+	// drag-type1 이체,drag-type2 입금,drag-type3 출금
+
+	ele.removeClass("ui-draggable-disabled");
+	ele.removeClass("on");
+	ele.addClass("ui-draggable-dragging");
+
+}
+function setSmartOffer(){
+	var param =null;
+
+	if($(".smartOffer").length>1){
+		$(".accBox").eq(4).after($(".smartOffer").eq(1));
+		return;	
+	}else if($(".smartOffer").length<1){
+		var accCnt = $(".accBox").length;
+		if(accCnt>0){
+			$(".topAsset ").after('<div class="smartOffer" style="margin-top:15px;margin-bottom:15px;display:block ;"><img  width="100%" src="https://img.shinhan.com/sbank2016/event/gift_01_20200708092642.png"></img></div>');
+			var smartOfferHtml1 = $('.smartOffer').eq(0);
+			smartOfferHtml1.off().on("click",function(e){
+				sbGoPage("PR03010102200");
+			});
+			if(accCnt>5){
+				$(".accBox").eq(4).after('<div class="smartOffer " style="margin-top:15px;margin-bottom:15px;display:block;"><img  width="100%" src="https://img.shinhan.com/sbank2016/event/gift_02_20200708092727.png "></img></div>');
+				var smartOfferHtml2 = $('.smartOffer').eq(1);
+				smartOfferHtml2.off().on("click",function(e){
+					sbGoPage("PR03010102200");
+				});
+			}
+
+			param  = {dp:'SP_MAIN_004'};
+			drawSmartOffer(param,smartOfferHtml1,function(){
+				if(accCnt>5){
+					param  = {dp:'SP_MAIN_004_2'};
+					drawSmartOffer(param,smartOfferHtml2);
+				}
+			});
+		}
+	}
+}
+fncSetDragLi();
+
+//$(".layerPopLoading").fadeOut("fast");
+
+//로딩 완료시 2021-01-20
+setTimeout(function(){
+	//은행계좌조회 풍선말 뜨기
+	$(".topSelMsg").addClass("on");
+	setTimeout(function(){
+		//5초후 제거
+		$(".topSelMsg").removeClass("on");
+	},5000);  //풍선말 떠있는 시간
+},500);  //로딩완료 후 풍선말 뜨는 시간
+//풍선말 바로제거 2021-02-08 추가
+$(".topSelMsg .msgClose").on("click",function(){
+	$(".topSelMsg").removeClass("on");
+});
+
+
+
+
+
+</script>
+</body>
+</html>

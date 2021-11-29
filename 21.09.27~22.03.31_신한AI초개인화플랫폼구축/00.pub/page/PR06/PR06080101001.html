@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr06.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap" class="headerRp"><!-- 2020-08-20 .headerRp 클래스 추가 -->
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore" id="header_btn_left"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">나의 퇴직연금<span class="label">New</span></h1><!-- 2020-08-20 텍스트수정, span 태그 추가 -->
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+					<a href="javascript:void(0)" class="btnTotal" id="header_btn_right"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents bg">
+				<!-- 2021-11-15 swiper 사용 안함으로 결정 : 이전버전으로 원복 -->
+                <div class="rpTopBg"><!-- 2020-08-21 클래스 수정 -->
+                    <p>차곡차곡 쌓아온 퇴직연금<br>어떻게 운용되는지 궁금하신가요?</p>
+                    <strong>한눈에 보는 퇴직연금</strong>
+                    <span class="visualImg">
+                        <img src="../../../../../../../images/pr06/img_main_visual.png" alt="">
+					</span>
+					<!-- 2021-11-22 버튼 추가 -->
+                    <a href="javascript:void(0)" class="btnOneTouch" style="top:160px">퇴직연금 ETF</a>
+					<!-- // 2021-11-22 버튼 추가 -->
+                    <!-- 2020-10-20 버튼 추가 -->
+                    <a href="javascript:void(0)" class="btnOneTouch" onclick="onTabBtnClick('신한포인트');">신한포인트 자동입금 설정</a>
+                    <!-- // 2020-10-20 버튼 추가 -->
+				</div>
+				<!-- // 2021-11-15 swiper 사용 안함으로 결정 : 이전버전으로 원복 -->
+				
+				<div class="rpFixCont"><!-- 2020-08-21 .rpFixCont 클래스 수정 -->
+					<div class="rpContInr"><!-- 2020-08-21 .rpContInr 클래스 수정 -->
+						<div class="tabMenu on"><!-- 2020-08-20 .on 클래스 추가 -->
+							<div class="rpTab">
+								<a href="javascript:void(0)" class="menu01 on"><span>Main</span></a>
+								<a href="javascript:void(0)" class="menu02"><span>입금현황</span></a>
+								<a href="javascript:void(0)" class="menu03"><span>보유상품</span></a>
+								<a href="javascript:void(0)" class="menu04"><span>매수예정</span></a>
+								<a href="javascript:void(0)" class="menu05 new"><span>상품안내</span></a><!-- 2020-12-29 클래스추가 new -->
+								<a href="javascript:void(0)" class="menu09"><span>수익률분석</span></a>
+								<a href="javascript:void(0)" class="menu07"><span>타기관연금</span></a><!-- 2020-08-25 순서변경(텍스트 수정) -->
+								<a href="javascript:void(0)" class="menu08"><span>주요메뉴</span></a>
+							</div>
+							<button type="button" class="btnTabCtl"><span class="blind">탭 열기/닫기</span></button>
+						</div>
+						<div class="rp accountList skin09 mt10"><!-- 2020-08-06 디자인 수정 : .mt10 클래스 변경 -->
+							<ul><!-- 2020-07-15 ul 태그 추가 -->
+								<li class="bgWhite pb15"><!-- 2021-05-25 .bgWhite .pb15 클래스 추가 -->
+									<button class="btnPopOpen listBox pb5" data-href="#layerPopChoice"><!-- 2021-07-19 수정 : 링크값 추가 / 2021-05-27 .pb5 클래스 추가 -->
+										<span class="tl ellipsis">[퇴직연금] 개인형IRP</span> 
+										<span class="number">000-000-000000</span>
+										<!-- 2021-05-27 기준일 삭제 -->
+										<span class="price bold">19,387,078원</span><!-- 2021-06-17 em 태그 삭제 -->
+										<!-- <span class="ar fontN bold mt10">잔액 <em>99,993,112,161</em><em>원</em></span> --><!-- 2021-05-25 잔액 삭제 -->
+									</button>
+									<p class="ar fontSSS txtBlack3" style="padding:0 20px">금일 잔액변동이 있으니 <a href="javascript:void(0)" class="txtBlack3 underLine">거래내역</a>을 확인하세요.</p><!-- 2021-05-27 .fontSSS 클래스 수정 -->
+								</li>
+							</ul>
+						</div>
+	
+						<div class="etfMsg">
+							<a href="javascript:void(0)">
+								<img src="../../../../../../../images/pr06/img_msg_motion.gif" alt=""/>
+								<span>새로운 메시지가 도착했어요!</span><!-- //2021-07-22 수정 -->
+							</a>
+						</div>
+						<!-- 2021-08-06 수정-->
+						<div class="etfMsg">
+							<a href="javascript:void(0)"><!-- .none 화살표 없을때 -->
+								<img src="../../../../../../../images/pr06/img_msg_none.png" alt=""/>
+								<span>나만의 미래설계 컨설턴트</span>
+							</a>
+						</div>
+						<!-- //2021-08-06 수정-->
+						
+						<!-- 2021-09-29 보류로 주석 처리 -->
+						<!-- <div class="etfBnr">
+							<a href="javascript:void(0)">
+								<p class="fontN txtBlack6" style="letter-spacing:-0.7px"><strong>ETF 투자,</strong> 퇴직연금에서도 할 수 있어요</p>
+								<p class="txt">퇴직연금 ETF 바로가기</p>
+							</a>
+						</div> -->
+						<!-- // 2021-09-29 보류로 주석 처리 -->
+
+						<div class="barGraph">
+							<div class="tabTy02">
+								<!-- 2020-07-14 텍트스 수정 : 원금대비수익률 -> 잔액대비 수익률 -->
+								<a href="#tabView1" class="on"><span>잔액 누적 수익률</span></a><!-- 2020-10-27 텍스트 수정 -->
+								<a href="#tabView2"><span>1년 공시 수익률</span></a><!-- 2020-10-27 텍스트 수정 -->
+							</div>
+							<div class="tabViewWrap">
+								<!-- 2020-08-20 스와이프 영역 추가 -->
+								<div class="tabView swiper-container on"  id="tabView1">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="graphMore"><!-- 2020-07-27 기획수정반영 : 링크 제거 -->
+												<p class="graphTxt">평가금액</p>
+												<strong class="graphTotalNum">1,000,000원 (+42.86%)</strong>
+												<p class="graphDate">2020.06.14 기준</p>
+												<div class="graphBox">
+													<div class="graphBar1"><!-- 2020-07-07 클래스 변경 .graphBar1-->
+														<span class="blind">원금대비 수익률 그래프</span>
+														<!-- 2020-07-27 추가 : 손익에 따라 height 값으로 조절 / +일경우 .txtBlue3, -일경우 .txtRed1 클래스 추가 -->
+														<div class="graphV1" style="height:0%"><p>평가손익<strong class="txtBlue3">-300,000원</strong></p></div>
+														<!-- D : 수익에 따라 height 값으로 조절 -->
+														<div class="graphV2" style="height:70%"><p>잔액<strong>100,700,000원</strong><!-- 2020-08-03 삭제 <span>2020.06.17 기준</span> --></p></div><!-- 2020-07-27 .txtBlack6 클래스 삭제 -->
+													</div>
+												</div>
+											</div>
+											<a href="javascript:void(0)" class="tipOpen" title="
+												<p class='txt al'>현재까지 납입한 원금에 대한 수익률입니다.<br><!-- 2020-07-07 클래스 수정 leftT -> al -->
+													(단, 지급된 금액이 있는 경우 차감)<br>
+													평가금액은 전일자 기준이며, 잔액(원금)은 당일자 기준입니다.</p>
+											">잔액 누적 수익률 안내 <i class="iconTyQuestion1"></i></a><!-- 2020-10-27 텍스트 변경 -->
+										</li>
+										<li class="swiper-slide">
+											<!-- 2020-08-27 추가 -->
+											<p class="rpRoundTxt">최근 1년 누적 수익률</p>
+											<p class="fontSS txtBlack3 mt5">전월 기준</p>
+											<!-- // 2020-08-27 추가 -->
+											<div class="chartBox" style="background:#f8ff88;height:175px"><!-- 2020-08-20 그래프 추가 후 style 제거 -->
+												차트 영역
+											</div>
+										</li>
+									</ul>
+									<div class="swiper-pagination"></div>
+								</div>
+								<div class="tabView swiper-container" id="tabView2">
+									<ul class="swiper-wrapper">
+										<li class="swiper-slide">
+											<div class="graphMore"><!-- 2020-07-27 기획수정반영 : 링크 제거 -->
+												<p class="graphTxt">평가금액</p>
+												<strong class="graphTotalNum">1,000,000원 (+42.86%)</strong>
+												<p class="graphDate">2020.06.14 기준</p>
+												<!-- 2020-10-27 수정 -->
+												<div class="graphBoxTbl">
+													<div class="graphBar2">
+														<span class="blind">1년 공시 수익률</span>
+														<!-- 전체 100% 기준 : 수익에 따라 height % 값으로 조절 -->
+														<div class="graphV1" style="height:20%"><span class="blind">기간수익</span></div>
+														<div class="graphV2 minus" style="height:30%"><span class="blind">순 입금액</span></div><!-- 마이너스 값일 경우 .minus 클래스 추가 -->
+														<div class="graphV3" style="height:50%"><span class="blind">1년 전 평가금액</span></div>
+													</div>
+													<ul class="graphVTbl">
+														<li class="graphV1">
+															<!-- 2020-11-30 툴팁 추가 -->
+															<p class="tit"><a href="javascript:void(0)" class="tipOpen mt0" title="
+																<p class='txt al'>기간수익 = 평가금액 - 1년 전 평가금액<br>- 순 입금액</p>
+															">기간 수익 <i class="iconTyQuestion1"></i></a></p>
+															<!-- // 2020-11-30 툴팁 추가 -->
+															<p class="num">144,954원</p>
+														</li>
+														<li class="graphV2 minus"><!-- 마이너스 값일 경우 .minus 클래스 추가 -->
+															<!-- 2020-11-30 툴팁 추가 -->
+															<p class="tit"><a href="javascript:void(0)" class="tipOpen mt0" title="
+																<p class='txt al'>순 입금액 = 총 입금액 - 총 출금액</p>
+															">순 입금액 <i class="iconTyQuestion1"></i></a></p>
+															<!-- // 2020-11-30 툴팁 추가 -->
+															<p class="num">- 6,233,954원</p>
+														</li>
+														<li class="graphV3">
+															<p class="tit">1년 전 평가금액</p>
+															<p class="num">21,532,000,000원</p>
+														</li>
+													</ul>
+												</div>
+												<!-- // 2020-10-27 수정 -->
+											</div>
+											<!-- 2020-10-27 텍스트 수정 -->
+											<a href="javascript:void(0)" class="tipOpen" title="
+												<p class='txt al'>공시수익률은 금융감독원 공시수익률 산출방법을 준용하여 산출하였으며 단순수익률과는 차이가 있습니다. 산출된 공시수익률은 조회기간 내 모든 입금/지급거래가 반영된 수익률이며, 가입기간이 1년 미만인 경우 가입일 이후 수익률로 표시됩니다.
+													(순 입금액은 기간내 ‘입금액-출금액‘ 입니다.</p>
+											">기간 공시수익률 안내 <i class="iconTyQuestion1"></i></a>
+											<!-- // 2020-10-27 텍스트 수정 -->
+										</li>
+										<li class="swiper-slide">
+											<!-- 2020-10-27 수정 -->
+											<div class="innerGap">
+												<div class="formAreaBox type3">
+													<div class="inputBox calRange calendar currnet mt0">
+														<ul class="duration">
+															<li><a href="javascript:void(0)" title="현재선택됨" class="on">1개월</a></li>
+															<li><a href="javascript:void(0)">1년</a></li>
+															<li><a href="javascript:void(0)">가입일이후</a></li>
+															<li><a href="#tabDate">기간선택</a></li>
+														</ul>
+														<dl class="dateInput" id="tabDate">
+															<dd>
+																<input type="text" id="" placeholder="시작일" value="2017.08.16" readonly="readonly" autocomplete="off">
+																<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+															</dd>
+															<dd>
+																<input type="text" id="" placeholder="종료일" value="2017.08.16" readonly="readonly" autocomplete="off">
+																<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+															</dd>
+															<dd>
+																<button type="button" class="btnOpen btn"><span class="iconTy29">검색</span></button>
+															</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="timeBox mt20">
+													<!-- 조회 결과 없을 경우 -->
+													<!-- <div class="titleBox">
+														<p class="img msgIconS02"></p>
+														<p class="txt">조회 결과가 없습니다.</p>
+													</div> -->
+													<!-- // 조회 결과 없을 경우 -->
+													<div class="listTypeTable">
+														<ul>
+															<li class="row">
+																<div class="leftCol half">
+																	<p class="tit">기간 공시수익률 <a href="javascript:void(0)" class="tipOpen iconTy27" title="기간 공시수익률은 금융감독원 공시수익률 산출방법을 준용하여 산출하였으며 단순수익률과는 차이가 있습니다. 산출된 공시수익률은 조회기간 내 모든 입금/지급 거래가 반영된 수익률입니다.">?</a></p>
+																</div>
+																<div class="rightCol half">
+																	<p class="txt">0.3%</p>
+																</div>
+															</li>
+															<li class="row">
+																<div class="leftCol half"><p class="tit">기간수익(①-②-③+④)</p></div>
+																<div class="rightCol half">
+																	<p class="txt">5,000,000원</p>
+																</div>
+															</li>
+															<li class="row">
+																<div class="leftCol half"><p class="tit">①조회종료일 평가금액</p></div>
+																<div class="rightCol half">
+																	<p class="txt">100,000,000원</p>
+																</div>
+															</li>
+															<li class="row">
+																<div class="leftCol half"><p class="tit">②조회시작일 평가금액</p></div>
+																<div class="rightCol half">
+																	<p class="txt">5,000,000원</p>
+																</div>
+															</li>
+															<li class="row">
+																<div class="leftCol half"><p class="tit">③총 입금액</p></div>
+																<div class="rightCol half">
+																	<p class="txt">150,000,000원</p>
+																</div>
+															</li>
+															<li class="row">
+																<div class="leftCol half"><p class="tit">④총 출금액</p></div>
+																<div class="rightCol half">
+																	<p class="txt">0원</p>
+																</div>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<!-- // 2020-10-27 변경 -->
+										</li>
+									</ul>
+									<div class="swiper-pagination"></div>									
+								</div>
+								<!-- // 2020-08-20 스와이프 영역 추가 -->			
+							</div>
+						</div>
+						<!-- // graph -->
+						<!-- 2020-08-06 수익률 비교 / 수익률 현황 추가 -->
+						<div class="inrFullBox full rpCompareBox">
+							<div class="accExceptWrap contAccordion on">
+								<div class="AccorTitle">
+									<a href="javascript:void(0)" role="button" title="세부내역 열기">
+										<p class="tit pl0 pr0">나의 1년 공시 수익률 비교</p><!-- 2020-10-27 텍스트 수정 -->
+										<div class="arrow">
+											<span class="iconTy09">세부내역 열림</span>
+											<span class="iconTy10">세부내역 닫힘</span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont" style="display:block">
+									<!-- 차트 영역 -->
+									<div class="compareChart" style="background:#f8ff88;height:200px">
+										차트 영역
+									</div>
+									<!-- // 차트 영역 -->
+									<!-- 2020-08-20 기획 추가 -->
+									<div class="boxGray">
+										<ul class="dotList">
+											<!-- 2020-10-27 텍스트 수정 -->
+											<li><p>당행가입자</p>
+												고객님과 동일한 제도의 퇴직연금 가입자(1년 공시 수익률 평균)
+											</li>
+											<li><p>로보포트폴리오</p>
+												고객님과 투자성향과 유사한 로보포트폴리오(1년 수익률)
+											</li>
+											<li><p><a href="javascript:void(0)">AI펀드</a></p>
+												유연한 투자 솔루션을 제시하는 인공지능 자산배분 펀드(6개월 수익률)
+											</li>
+											<!-- // 2020-10-27 텍스트 수정 -->
+										</ul>
+									</div>
+									<!-- // 2020-08-20 기획 추가 -->
+									<div class="btnGroupBox mt15"><!-- 2020-08-20 클래스 수정 mt15 -->
+										<a href="javascript:void(0)" class="btnType2 btnSmall lineBlack mr5"><span class="fontS bold">상품 조회</span></a><!-- 2020-08-20 class="fontS bold" 추가 -->
+										<a href="javascript:void(0)" class="btnType2 btnSmall lineBlack mt0"><span class="fontS bold">보유상품 변경</span></a><!-- 2020-08-20 class="fontS bold" 추가 -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 2020-10-27 기간별 공시 수익률 현황 위치 상단 1년 공시 수익률 내로 이동 -->
+						<h2 class="rpMainTit">최근 상품 매매 알림</h2>
+						<div class="accExceptWrap contAccordion stateBox on"><!-- 2020-07-27 .accExceptWrap 클래스 추가 -->
+							<div class="AccorTitle">
+								<a href="javascript:void(0)">
+									<p class="tit">상품 매매가 <strong>진행 중</strong>입니다.</p>
+									<div class="arrow">
+										<span class="iconTy09">세부내역 열림</span>
+										<span class="iconTy10">세부내역 닫힘</span>
+									</div>
+								</a>
+							</div>
+							<div class="AccorCont" style="display:block;">
+								<div class="stateStep">
+									<ul>
+										<li class="done"><!-- 완료시 done 클래스 추가 -->
+											<strong class="tit">신청</strong>
+											<p class="txt">신청일</p>
+											<p class="date">2020.06.01</p>
+										</li>
+										<li class="done">
+											<strong class="tit">매도</strong>
+											<p class="txt">완료일</p>
+											<p class="date">2020.06.01</p>
+										</li>
+										<li>
+											<strong class="tit">매수</strong>
+											<p class="txt">완료일</p>
+											<p class="date">2020.06.01</p>
+										</li>
+									</ul>
+									<!-- 2020-08-06 클래스 변경 p.starTxt -->
+									<p class="starTxt">2개월 이내 가장 최근 진행중인 매매건 입니다.</p>
+									<!-- 2020-07-07 no date 일 경우 노출
+										<strong class="name">김신한 고객님,</strong>
+										<p class="starTxt mt10">최근 2개월 이내의 신청하신 건이 없습니다.<br>'자세히 보기' 버튼을 통해 신청내용을 확인 하세요</p>
+									-->
+								</div>
+								<a href="javascript:void(0);" class="btnMore"><span>자세히 보기</span></a>
+							</div>
+						</div>
+						<h2 class="rpMainTit">신한 퇴직연금 서비스</h2>
+						<div class="rpService">
+							<ul>
+								<li class="svList01">
+									<a href="javascript:void(0);">내모든<br>연금</a>
+								</li>
+								<li class="svList02">
+									<a href="javascript:void(0);">미래설계<br>포유</a><!-- 2020-08-20 br태그 추가 -->
+								</li>
+								<li class="svList03">
+									<a href="javascript:void(0);">스마트<br>연금마당</a>
+								</li>
+								<li class="svList04">
+									<a href="javascript:void(0);">가입자<br>교육</a>
+								</li>
+								<!-- 2020-11-30 추가 -->
+								<li class="svList05">
+									<a href="javascript:void(0);">퇴직연금<br>/IRP소개<span class="lbNew"><em class="blind">NEW</em></span></a><!-- 2020-12-07 new 아이콘 추가 -->
+								</li>
+								<li class="svList06">
+									<a href="javascript:void(0);">쏠(SOL)<br>활용법<span class="lbNew"><em class="blind">NEW</em></span></a><!-- 2020-12-07 new 아이콘 추가 -->
+								</li>
+								<!-- // 2020-11-30 추가 -->
+							</ul>
+						</div>
+						<h2 class="rpMainTit">자주 이용하는 메뉴</h2>
+						<div class="useMenuSwiper swiper-container">
+							<ul class="swiper-wrapper">
+								<!-- 2020-11-19 추가 -->
+								<li class="swiper-slide useMenu07">
+									<a href="javascript:void(0)">
+										퇴직연금DC<br>가입신청
+									</a>
+								</li>
+								<!-- // 2020-11-19 추가 -->
+								<li class="swiper-slide useMenu01">
+									<a href="javascript:void(0)">
+										입금
+									</a>
+								</li>
+								<li class="swiper-slide useMenu02">
+									<a href="javascript:void(0)">
+										보유상품<br>변경
+									</a>
+								</li>
+								<li class="swiper-slide useMenu03">
+									<a href="javascript:void(0)">
+										매수예정<br>상품변경
+									</a>
+								</li>
+								<li class="swiper-slide useMenu04">
+									<a href="javascript:void(0)">
+										운용현황<br>수익률조회
+									</a>
+								</li>
+								<li class="swiper-slide useMenu05">
+									<a href="javascript:void(0)">
+										목표달성<br>자동환매
+									</a>
+								</li>
+								<!-- 2020-08-11 추가 -->
+								<li class="swiper-slide useMenu06">
+									<a href="javascript:void(0)">
+										개인형IRP<br>실명인증
+									</a>
+								</li>
+								<!-- // 2020-08-11 추가 -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 2021-07-19 수정 -->
+<div class="layerPopBottomWrap hasDim" id="layerPopChoice">
+	<div class="popInner" tabindex="0">
+		<div class="layerHeader">
+			<p class="layerTit">퇴직연금 계좌</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li>
+						<button class="btnAccount">
+							<dl>
+								<dt>확정기여(DC) 고조생</dt>
+								<dd>
+									<p class="number">266-003-762323</p>
+									<p class="price"><em>잔액</em> 136,000원</p>
+								</dd>
+							</dl>
+						</button>
+					</li>
+					<li>
+						<button class="btnAccount">
+							<dl>
+								<dt>기업형(IRP)_고조생</dt>
+								<dd>
+									<p class="number">266-004-762323</p>
+									<p class="price"><em>잔액</em> 136,000원</p>
+								</dd>
+							</dl>
+						</button>
+					</li>
+					<li>
+						<button class="btnAccount">
+							<dl>
+								<dt>개인형(IRP)_고조생</dt>
+								<dd>
+									<p class="number">266-004-762323</p>
+									<p class="price"><em>잔액</em> 136,000원</p>
+								</dd>
+							</dl>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //2021-07-19 수정 -->
+</body>
+<script>
+	// 상단 탭
+	$(document).on('click', '.rpTab [class^="menu"]', function(){ // 2020-07-07 수정
+		var $this = $(this);
+
+		if(!$this.is('.on')){
+			$this.addClass('on').siblings('a').removeClass('on');
+		}
+	})
+
+	// 2021-11-23 수정
+	$('.rpFixCont').on('scroll', function(){
+		var scrollVal = $('.rpFixCont').scrollTop();
+		if(scrollVal > 70){
+			$('.btnOneTouch').css({zIndex:0});
+		}else{
+			$('.btnOneTouch').css({zIndex:1});
+		}
+	})
+
+	// 2020-08-20 추가
+	$(window).on("load",function(){
+		setTimeout(function(){
+			$('.tabMenu').removeClass('on');
+			tabPos(); // 2020-08-25 추가
+		}, 700)
+	});
+
+
+	$('.btnTabCtl').on('click', function(){
+		var tabMenu = $('.tabMenu'),
+			tabInr = $('.rpTab');
+			
+		tabMenu.toggleClass('on');
+		if(tabMenu.hasClass('on')){
+			tabMenu.css({height:157}); // 2020-08-25 수정
+		}else {
+			tabMenu.css({height:88.6}); // 2020-08-25 수정
+		}
+		tabPos(); // 2020-08-25 추가
+	})
+
+	// 2020-08-25 추가
+	function tabPos(){
+		var tabH = $('.tabMenu').height(),
+			menuIdx = $('[class^="menu"].on').index(),
+			menuTarget = $('[class^="menu"]');
+		if(!$('.tabMenu').hasClass('on')){
+			if(menuIdx > 3 && menuTarget.hasClass('on')){
+				$('.rpTab').stop().animate({scrollTop:tabH});
+			} else {
+				$('.rpTab').stop().animate({scrollTop:0});
+			}
+		}
+	}
+
+	//IOS 스와이퍼 오류대응
+	var UserAgent = navigator.platform;
+	if(UserAgent.match(/i(Phone|Pod)/i) != null){
+		$('body').width(screen.width);
+	}
+
+	var useMenuSwiper = new Swiper('.useMenuSwiper', {
+		slidesPerView: 'auto', // 2020-11-19 디자인 수정 반영 : 값 변경
+		spaceBetween: 7 // 2020-11-19 디자인 수정 반영 : 값 변경
+	})
+
+	// 2020-08-20 그래프 스와이퍼 추가
+	var graphTabSwiper = new Swiper('.barGraph .swiper-container', {
+		pagination: '.swiper-pagination',
+		observer: true,
+		observeParents: true,
+	})
+
+	// 2021-06-02 상단 비주얼 영역 스와이퍼 추가
+	var topVisualSwiper = new Swiper('.rpMainVisualBox.swiper-container', {
+		slidesPerView: 1,
+		autoplay: 3000,
+		loop: true,
+	})
+	
+	// 2021-06-08 추가
+	$('.rpFixCont').on('scroll', function(){
+		var scrollVal = $('.rpFixCont').scrollTop();
+		if(scrollVal > 170){
+			topVisualSwiper.stopAutoplay();
+		}else{
+			topVisualSwiper.startAutoplay();
+		}
+	})
+	
+</script>
+</html>
