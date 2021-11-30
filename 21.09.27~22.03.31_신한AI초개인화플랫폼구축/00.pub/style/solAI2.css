@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/********************** 전체공통 *****************************/
+
+.solAi .contents.bg { background:#f7f7f8;}
+.solAi .innerBox.bg{background: #f7f7f8;}
+
+.solAi .medium {font-weight: 700 !important;}
+
+
+/*입력형 일반: 검색*/
+.solAi .formAreaBox .inputBox.search dl > dd:first-child {border-color:#eee !important;}
+
+.solAi .inputBox.button input{background-color: transparent;}
+
+/* productChange */
+.solAi .productChange.borderT {border-color: #eee;}
+.solAi .productChange .productBox {border-color: #eee;}
+.solAi .productChange .productBox.full {padding: 20px 0;}
+.solAi .productChange .productBox .boxTyGray2 {margin: 20px 0 0 -34px; padding: 20px; border-radius: 6px;}
+.solAi .productChange .productBox .boxTyGray2 * {font-size: 13px; color: #666;}
+.solAi .productChange .productBox .boxTyGray2.listTypeTable .row .rightCol * {font-weight: 700;}
+
+
+/********************** SolAI *****************************/
+
+/* 공통 */
+
+/* tab .aiType01 */
+.solAi .tabTy02.aiType01 {min-height:52px;}
+.solAi .tabTy02.aiType01 a {color:#666;}
+.solAi .tabTy02.aiType01 a.on {color:#6d5ee7;}
+.solAi .tabTy02.aiType01 a.on:after {height:2px; background:#6d5ee7;}
+.solAi .tabTy02.aiType01[class*=swiper-container] {padding: 0 0 1px;}
+.solAi .tabTy02.aiType01 .swiper-slide {padding: 15px 10px;}
+
+/* label type */
+/* .LabelAi { height: 20px; line-height: 20px; font-size: 10px; min-width: 40px; text-align: center;} */
+.iconTyLabelAi8 {border-color: #ffc756 !important; background-color: #ffc756;}
+.iconTyLabelAi9 {border-color: #64aeea !important; background-color: #64aeea;}
+
+/* icon */ 
+/* .iconTysol6 {width: 26px; height: 22px; background: url('../../images/solRobo/TBD/icon_portfolio01.png') no-repeat 0 0; background-size: 100% auto;}
+.iconTysol7 {width: 26px; height: 22px; background: url('../../images/solRobo/TBD/icon_portfolio03.png') no-repeat 0 0; background-size: 100% auto;} */
+
+
+/* button */
+.solAi .btnSlide span:after{content:"";display:inline-block;width:8px;height:8px;border:solid #777;border-width:1px 1px 0 0;transform:translateY(-30%) rotate(135deg);margin-left:10px;}
+.solAi .btnSlide.on span:after{transform:translateY(30%) rotate(-45deg);}
+.btnMoreArrow.noline {border: none;}
+.btnType2.purple01 {position: relative; display: block; border-radius: 8px; background: #f2f0ff; color: #5d47b1; height: 46px; padding: 0 20px;}
+.btnType2.purple01::after {content:"";width:7px;height:7px;border:solid #666;border-width:0 1.5px 1.5px 0;position:absolute;right:23px;top:50%;-webkit-transform:translateY(-90%) rotate(-45deg); margin-top: 4px;}
+
+/* input .aiTy1 */
+/* 입력필드 */
+.formAreaBox.aiTy1 {margin-top: 40px !important;}
+.formAreaBox.aiTy1 .inputBox dd,
+.formAreaBox.aiTy1.type2.lineTy2 .inputBox dd {border-color: #eee;}
+.formAreaBox.aiTy1.type2.lineTy2 .inputBox dd.on {border-color: #6d5ee7 !important;}
+.formAreaBox.aiTy1 .inputBox input:not([type="checkbox"]):not([type="radio"]) {font-size: 18px; color: #333;}
+
+/* 기간선택버튼 */
+.formAreaBox.aiTy1 .inputBox input[readonly] + .btn {top: 5px;}
+.formAreaBox.aiTy1.type3 .inputBox.calRange .duration li a {background-color: #f7f7f8; border-radius: 4px; color: #666; line-height: 40px; margin: 0 6px 6px 0;}
+.formAreaBox.aiTy1.type3 .inputBox.calRange .duration li:nth-child(4n) a {margin-right: 0;}
+.formAreaBox.aiTy1.type3 .inputBox.calRange .duration li a.on {background-color: #f4f2ff; color: #6d5ee7; font-weight: 700;}
+
+/* 라디오 */
+.formAreaBox.aiTy1 .rdoAreaTy2.col2 {display: flex;}
+.formAreaBox.aiTy1 .rdoAreaTy2.col2 .inputSel {flex: 1;}
+.formAreaBox.aiTy1 .rdoAreaTy2.col2 .inputSel + .inputSel {margin-left: 8px;}
+.formAreaBox.aiTy1 .rdoAreaTy2.col2 input + label {height: 45px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px solid #ddd; border-radius: 6px; color: #666; font-size: 14px;}
+.formAreaBox.aiTy1 .rdoAreaTy2.col2 input:checked + label {border-color: #6d5ee7; color: #6d5ee7; font-weight: 700;}
+
+
+/* slider */
+.sliderBarWrap {margin-top: 13px; display: flex; align-items: center;}
+.sliderBarWrap .txtArea {flex-shrink: 0; font-size: 13px; color: #333;}
+.sliderBarWrap .txtArea .tit {margin-right: 10px; font-weight: 700;}
+.sliderBarWrap .sliderBar.type2 { margin: 0 0 0 15px; height: 10px; border: none; background-color: #d8d8d8; border-radius: 5px;}
+.sliderBarWrap .sliderBar.type2 .bar {border-radius: 5px; background-color: #7575ee;}
+
+/* chart */
+.barChart  {display: flex; align-items: center;}
+.barChart .colorWrap {display: flex; margin-left: 10px;}
+.barChart .colorWrap span {width: 12px; height: 15px; background-color: #016eb3; margin-right: 3px; text-indent: -9999px; overflow: hidden;}
+.barChart .colorWrap.redType span {background-color: #b40113;}
+.barChart .colorWrap span:first-child {opacity: 0.1;}
+.barChart .colorWrap span:nth-child(2) {opacity: 0.25;}
+.barChart .colorWrap span:nth-child(3) {opacity: 0.5;}
+.barChart .colorWrap span:nth-child(4) {opacity: 0.82;}
+.barChart .colorWrap span.on ~ span {display: none !important;}
+
+
+/* .productType.boxType */
+.productType.boxType .row {background-color: #fff; border-radius: 10px; padding: 20px;}
+.productType.boxType .txtPeriod + .tit {margin-top: 12px;}
+.productType.boxType .accountNum {font-size: 13px; color: #666; font-weight: 700;}
+.productType.boxType .row .rightCol.bold * {font-weight: 700 !important;}
+.productType.boxType .tit + .labelTxt {font-size: 14px !important; color: #eb3d50 !important; margin-top: 10px;}
+
+
+
+/* Page */
+
+/* 상품선택 */
+.solAi.prdChoice input[type="radio"] + label:before {width:18px; height:18px; background: none; border: 1px solid #ddd; border-radius: 100%;}
+.solAi.prdChoice input[type="radio"]:checked + label:before {border-color: #6d5ee7;}
+.solAi.prdChoice input[type="radio"]:checked + label::after {content:''; display: inline-block; box-sizing: border-box; position: absolute; top: 5px; left: 5px; width:10px; height:10px; border-radius: 100%; background-color: #6d5ee7;}
+.solAi.prdChoice input[type="radio"]:checked:disabled + label::before {border-color: #ddd;}
+.solAi.prdChoice input[type="radio"]:checked:disabled + label::after {background-color: #ddd;}
+
+.solAi.prdChoice .productChange .productBox:last-child {border-bottom: none;}
+.solAi.prdChoice .productChange .productBox input[type="radio"] + label:before {top:27px;}
+.solAi.prdChoice .productChange .productBox input[type="radio"]:checked + label:after {top:23px;}
+.solAi.prdChoice .productChange .productBox input[type="radio"] {top:48px;}
+.solAi.prdChoice .productChange .productBox .titProduct {display:block; position:relative; padding-right:15px; font-weight: 700;}
+.solAi.prdChoice .productChange .productBox .titProduct::after {content:''; display:block; position:absolute; top:3px; right:0; width:7px; height:13px; background:url(../../images/icon_arrow_right.png) no-repeat 0 0; background-size:7px auto;}
+
+/* 포트설계 > 사전정보입력 */
+.prevInfoWrite .topArea .titZ{display: inline-block; position: relative; margin-bottom: 10px;}
+.prevInfoWrite .topArea .titZ::after{content: 'PORT'; display: flex; align-items: center; justify-content: center; width: 46px; height: 24px; position: absolute; top: -10px; right: -50px; font-size: 11px; color: #fff; font-weight: 700; background-color: #e1ac3f; box-shadow: 3px 3px 4px 0 rgba(110, 83, 39, 0.06); border-radius: 20px; animation: motion 0.6s infinite alternate; }
+@keyframes motion{ 0% {margin-top: 0px;} 100% {margin-top: 5px;} }
+.prevInfoWrite .topArea .fontS{margin: 20px 0 32px;}
+.prevInfoWrite .formAreaBox .inputBox.wrong .error{margin-left: 0;}
+
+/* 포트설계 > 포트정보확인 */
+.popInfoCheck .boxTyRound {margin-top: 30px; padding: 16px;} 
+
+/* 포트관리 > 포트목록 */
+.solAi.portManage .portList { background: transparent;}
+.solAi .aiPortCard {/*overflow:hidden;*/position:relative;min-height:145px;margin:20px 0;padding:16px 16px 66px;border-radius:5px;box-shadow:0px 2px 2px #c4c4c4;background-color:#fff;}
+.solAi .aiPortCard:first-child {margin-top:0;}
+.solAi .aiPortCard:last-child {margin-bottom:0;}
+.solAi .aiPortCard .cardHead {position:relative;min-height:19px;}
+.solAi .aiPortCard .popoverWrap {position:absolute;right:0;top:-6px;}
+.solAi .aiPortCard .popoverWrap .toolBox {left:auto;right:10px;}
+.solAi .aiPortCard .cardData {margin-top:10px;text-align:center;color:#777;}
+.solAi .aiPortCard .cardData p {font-size:13px;}
+.solAi .aiPortCard .cardData .cardName {font-size:15px;color:#333;}
+.solAi .aiPortCard .btnGroupBox {overflow:hidden;position:absolute;left:0;bottom:0;width:100%;border-top:1px solid #e5e5e5;border-radius:0 0 5px 5px;}
+.solAi .aiPortCard .btnGroupBox .btnType {margin-top:0;border-left:1px solid #e5e5e5;font-size:15px;color:#333;background-color:#fff;}
+.solAi .aiPortCard .btnGroupBox .btnType:first-child {border-left:0;}
+.solAi .aiPortCard .btnGroupBox.top{position:static;display:none;width:auto;margin:15px -16px 0 -16px;}
+.solAi .progress{display:table;width:78%;margin:15px auto 0 auto;table-layout:fixed;}
+.solAi .progress ul{display:table-row;}
+.solAi .progress ul li{display:table-cell;position:relative;border-top:2px solid rgba(141, 127, 255, 0.47)}
+.solAi .progress ul li:first-child{width:0;}
+.solAi .progress ul li:after{content:"";width:8px;height:8px;border:1px solid #cac3ff;position:absolute;right:0;top:-6px;background:#fff;border-radius:100%;transform:translate(50%, 0);z-index:1;}
+.solAi .progress ul li > p{-webkit-transform:translateX(50%);white-space:nowrap;font-size:12px;color:#8d7fff;text-align:center;;display:none;}
+.solAi .progress ul li > p:first-child{display:block;}
+.solAi .progress ul li:first-child > p{width:50px;-webkit-transform: translateX(-50%);}
+.solAi .progress ul li > p:first-child{margin-top:12px;}
+.solAi .progress ul li.on > p{color: #6d5ee7;} 
+.solAi .progress ul li.on > p:first-child{font-weight: 700;} 
+.solAi .progress ul li.on:after{background:#8d7fff;border-color:#8d7fff;}
+.solAi .progress ul li.now:before{content:"";width:20px;height:20px;position:absolute;right:0;top:-11px;border-radius:100%;transform:translate(50%, 0);background:#8d7fff ;opacity:0.2;}
+.solAi .progress ul li.empty{width:28%;}
+.solAi .progress ul li.empty + li{width:28%;}
+.solAi .progress ul li.empty p{color:#3789dc;}
+.solAi .progress ul li.empty.on:after{background:#3789dc;border-color:#3789dc;}
+.solAi .progress ul li.empty:before{content:"";width:20px;height:20px;position:absolute;right:0;top:-11px;border-radius:100%;transform:translate(50%, 0);background:#3789dc;opacity:0.2;}
+.solAi .progress ul li.empty p.arrow{height:15px;background:url(../../images/solRobo/TBD/icon_arrow_blue.gif) no-repeat center center;background-size:auto 80%;margin-top:5px;}
+.solAi .progress .date{margin-top:5px;}
+.solAi .progress .msg{margin-top:8px;}
+.solAi .progress .msg > span{display:inline-block;border:1px solid #6d5ee7;border-radius:2px;position:relative;}
+.solAi .progress .msg > span:before{content:"";width:5px;height:5px;border:solid #6d5ee7;border-width:1px 1px 0 0;position:absolute;left:50%;top:-4px;-webkit-transform:translateX(-50%) rotate(-45deg);background:#fff;}
+.solAi .progress .msg.end > span{border-color:#c5c5c5;color:#777;}
+.solAi .progress .msg.end > span:before{border-color:#c5c5c5;}
+.solAi .progress .msg span em{display:inline-block;position:relative;padding:0 5px 0 3px;line-height:1.4;}
+.solAi .progress .msg span em:before{content:"";width:1px;height:13px;background:#6d5ee7;position:absolute;left:-2px;bottom:0;}
+.solAi .progress .msg span em:first-child{padding-left:5px;}
+.solAi .progress .msg span em:first-child:before{display:none;}
+.solAi .progress .msg .balance{background:#3789dc;display:inline-block;color:#fff;line-height:1.4;padding:0 5px;border:1px solid #3789dc;border-radius:2px;position:relative;padding-right:13px;}
+.solAi .progress .msg .balance:after{content:"";width:5px;height:5px;border:solid #fff;border-width:1px 1px 0 0;position:absolute;right:5px;top:50%;-webkit-transform:translateY(-50%) rotate(45deg)}
+.solAi .aiPortCard .prdList {display: none; background: #fbfbfb; padding: 20px 16px 0 16px; margin: 0 -16px -16px -16px;}
+
+/* 포트관리 > 포트상세 */
+.solAi.portManage .portDetail .aiPortCard {border-radius: none; box-shadow: none; padding-bottom: 16px;}
+.solAi.portManage .portDetail .aiPortCard .btnGroupBox {position: initial; width: initial; box-sizing: border-box; padding: 0 11%; margin: 20px -16px -16px;}
+.solAi.portManage .portDetail .aiPortCard .btnGroupBox .btnType {height: 76px; font-size: 12px; color: #777; border-left: none;}
+.solAi.portManage .portDetail .aiPortCard .btnGroupBox .btnType span {flex-direction: column;}
+
+.solAi.portManage .portDetail .productChange {background-color: #fff;}
+
+/* 자산/건강도 진단 */
+.assetHealth .boxTyList.colType {display: block;}
+.assetHealth .boxTyList.colType > div {width: 100%;}
+.assetHealth .boxTyList.colType > div:nth-of-type(even) {margin: 10px 0 0;}
+.assetHealth .boxType .boxTyRound {padding: 10px;}
+
+.assetHealth .contAccordion {margin-top: 3px;}
+.assetHealth .contAccordion .AccorTitle .tit {background-color: #f8f9fb; font-weight: 400;}
+.assetHealth .contAccordion.on .AccorTitle .tit {background-color: #eee; font-weight: 700;}
+.assetHealth .contAccordion .AccorCont {background-color: #f7f7f8; padding: 30px 20px;}
+
+/* 자산/건강도 진단 > 항목별 진단 */
+.solAi.assetHealth .boxTyRound ul {padding: 0 5px;}
+.solAi.assetHealth .boxTyRound ul .sliderBarWrap .txtArea .tit {color: #6161e9;}
+.solAi.assetHealth .boxTyRound ul .sliderBarWrap:nth-child(2) .txtArea .tit {color: #0abfb0;}
+.solAi.assetHealth .boxTyRound ul .sliderBarWrap:last-child .txtArea .tit {color: #fd8d10;}
+.solAi.assetHealth .boxTyRound ul .sliderBarWrap:nth-child(2) .sliderBar.type2 .bar {background-color: #0abfb0;}
+.solAi.assetHealth .boxTyRound ul .sliderBarWrap:last-child .sliderBar.type2 .bar {background-color: #f9c12b;}
+.solAi.assetHealth .boxTyList .sliderBarWrap:first-child {margin-top: 20px;}
+
+/* 자산/건강도 진단 > 포트진단 */
+.assetHealth .diagNone .fontSS {display: flex; align-items: center; justify-content: center;}
+.assetHealth .diagNone .boxTyShadow {padding: 24px 20px 20px; margin-top: 18px;}
+.assetHealth .diagNone .boxTyShadow .txtBlack5 {height: 184px; padding-right: 140px; line-height: 1.7; background: url('../../images/solAI/icon_msg_character01.png') no-repeat right 10px top 18px; background-size: 122px 166px; margin: 20px 0 24px;}
+.assetHealth .portStatusList {margin: 0 -20px;}
+.assetHealth .portStatusList > li  + li {margin-top: 30px;}
+.assetHealth .portStatusList > li .topCard {background-color: #f7f6ff; border-top-left-radius: 35px; padding: 30px 24px 25px;}
+.assetHealth .portStatusList > li.diyTy .topCard {background-color: #f4f9ff;}
+.assetHealth .portStatusList > li .topCard [class*=iconTyLabelAi] {height: 18px; line-height: 18px; vertical-align: top;}
+.assetHealth .portStatusList > li .topCard .listTypeTable .row + .row {margin-top: 15px;}
+.assetHealth .portStatusList > li .topCard .boxTyRound {display: flex;}
+.assetHealth .portStatusList > li .topCard .boxTyRound .barChart {flex: 1; padding: 20px 0 20px 20px;}
+.assetHealth .portStatusList > li .topCard .tit .fontNL {font-weight: 700; padding-left: 9px;}
+.assetHealth .portStatusList > li .topCard .tit +  .boxTyRound {padding: 10px 20px; display: block;}
+.assetHealth .portStatusList .contAccordion .AccorCont .txt.al {margin-top: 16px;}

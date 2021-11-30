@@ -21,7 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
 	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
 	<script src="../../script/include/library/ui.js"></script>	
-	<script src="../../script/PR0903ui.js"></script>
+	<script src="../../script/PR0903ui.js"></script>	
 </head>
 <body>
 <div id="wrap">
@@ -44,25 +44,125 @@
 
 		<!-- contentsWrap -->
 		<div id="contentsWrap">
-			<div class="contents full">
+			<div class="contentsS"><!-- 비주얼 모션 오류 발생으로 기존 class 변경 : contents -> contentsS -->
 				<div class="solAi premierMain">
 					<!-- 비주얼 영역 -->
 					<div class="innerBox lineN visualArea">
-
+						<div class="textArea slideBottom">
+							<span>프리미어 고객을 위한</span>
+							<strong>특별한 혜택</strong>을<br>
+							<strong>경험</strong>하세요.
+						</div>
+						<div class="charArea">
+							<div class="character">
+								<img class="" src="../../../images/solAI/img_main_character01.png" alt="캐릭터 이미지">
+							</div>
+						</div>
+						<div class="textArea bottom slideTop">
+							<p class="text">
+								<strong>초개인화 포트</strong>
+								예적금, 펀드 , ETF까지 한번에 만들 수 있어요.
+							</p>
+							AI가 추천하 GO!<br>
+							내맘대로 추가하 GO!
+						</div>
+						<div class="btnGroupBox type6">
+							<a href="#" class="btnType2 purple02">포트 설계하기</a>
+						</div>
 					</div>
 					<!-- // 비주얼 영역 -->
 					<!-- 컨텐츠 영역 -->
-					<div class="innerBox lineN" style="height:1000px;">
+					<div class="innerBox lineN mainCont bg">
+						<div class="boxTyShadow mt10">
+							<div class="tabTy01">
+								<a href="#tabView1" class="on">나의 총 자산</a>
+								<a href="#tabView2" class="">자산 건강도</a>
+							</div>
+							<div class="conInner">
+							<div class="tabViewWrap">
+								<div class="tabView on" id="tabView1">
+									<p class="investAmount">
+										350,000,000
+										<span class="fontSSS">원</span>
+									</p>
+									<div class="graphArea" style="margin-top:30px; width:100%; height:100px; background:#efefef; text-align:center; line-height:100px;">
+										그래프 영역
+									</div>
+								</div>
+								<div class="tabView" id="tabView2">
+									<div class="graphArea" style="margin-top:30px; width:100%; height:100px; background:#efefef; text-align:center; line-height:100px;">
+										그래프 영역
+									</div>
+									<div class="annotation">
+										<p class="score">
+											<span class="grade vGood">매우좋음</span><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+											97점
+										</p>
+										<ul class="dateNote">
+											<li>
+												<span class="date">2021년 11월 15일</span>
+												<span class="mark">그래프 색상</span>
+											</li>
+											<li>
+												<span class="date">2021년 9월 말<br>(전분기 말)</span>
+												<span class="mark">그래프 색상</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							</div>
+						</div>
+
+						<div class="boxTyPaddingLR">
+							<div class="contAccordion mt30">
+								<div class="AccorTitle brdB7">
+									<a href="javascript:void(0);" class="" title="세부내역 열기" role="button">
+										<p class="tit">이번 달 <strong>만기예정</strong> 계좌 <strong>2</strong>건</p>
+										<div class="arrow">
+											<span class="iconTy09"></span>
+											<span class="iconTy10"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									계좌 정보
+								</div>
+							</div>
+
+							<div class="contAccordion">
+								<div class="AccorTitle brdB7">
+									<a href="javascript:void(0);" class="" title="세부내역 열기" role="button">
+										<p class="tit">전체 계좌</p>
+										<div class="arrow">
+											<span class="iconTy09"></span>
+											<span class="iconTy10"></span>
+										</div>
+									</a>
+								</div>
+								<div class="AccorCont">
+									계좌 정보
+								</div>
+							</div>
+						</div>
+
+						<div class="boxTyShadow mt46">
+						</div>
+					</div>
+
+					<div class="innerBox lineN mainCont">
+						<div class="boxTyRound">
+						</div>
+					</div>
+
+					<div class="innerBox lineN mainCont bgGradient1">
+						<div class="boxTyRound">
+						</div>
 					</div>
 					<!-- // 컨텐츠 영역 -->
 				</div>
 			</div>			
 			<!-- // contents -->
-			<!-- 하단 플로팅 버튼 -->
-			<div class="btnGroupBox floating fixed">
-				<a href="javascript:void(0);" class="btnType light">추천포트보기</a>
-			</div>			
-			<!-- // 하단 플로팅 버튼 -->
 		</div>
 		<!-- // contentsWrap -->
 	</section>
@@ -72,12 +172,12 @@
 
 <script type="text/javascript">
 $(function(){
-	$('.contents').on('scroll',function(){
+
+	$('#contentsWrap > div').on('scroll',function(){
         var scrollTop = $(this).scrollTop();
         var visualHeight = $('.visualArea').innerHeight(); 
         var scrollHeight = $(this).prop('scrollHeight');
-		console.log(scrollTop);
-
+		// console.log(scrollTop);
 
 		if(scrollTop <= visualHeight - 45) {
 			$('#header').addClass('premier');
@@ -92,11 +192,13 @@ $(function(){
         // $("#confirm").attr('disabled', true);
         // }
 	});
-	// var winScrollTop = $(window).scrollTop();
-	// var wrapH = $('#wrap').height();
-	// var visualH = $('.visualArea').scrollTop();
 
-	// console.log(visualH);
+	setTimeout(function() {
+		$('.charArea').css('opacity','1');
+	}, 600);
+
+
+
 });
 	
 </script>
