@@ -1,0 +1,98 @@
+
+/* 기존 가이드 초기화 */
+.solAi .listTypeTable .row .leftCol {width:120px;}
+.solAi .swtichTy01 input[type="checkbox"] {width:42px;}
+.solAi .swtichTy01 input:checked + i {background:#6d5ee7;}
+.solAi .swtichTy01 i {padding:0 5px;}
+.solAi .swtichTy01 input:checked + i:before {left:22px;}
+/* .solAi .swtichTy01 .text {vertical-align:0;} */
+
+/* header */
+#header.premier {background:#533ba3;}
+#header.premier .tit {border-bottom-color:#533ba3; color:#fff;}
+#header.premier .iconTy01 {background-image:url('../../images/icon_historyback_white.png'); background-size:100%;}
+#header.premier .iconTyHome {background-image:url('../../images/icon_mainmenu_h_white.png'); background-size:100%;}                           
+#header.premier .iconTy02 {background-image:url('../../images/icon_menu_white.png'); background-size:100%;}
+
+
+/* 프리미어 메인 */
+.premierMain {}
+
+.visualArea {width:100vw; height:100vh; background:url('../../images/solAI/bg_premier_main.png') no-repeat; background-size:cover; box-sizing:border-box; top:-45px;}
+.visualArea .textArea {position:absolute; top:74px; right:30px; font-size:16px; line-height:1.27; color:#fff3d7; font-weight:400; transform:translate3d(0,0,0); transform-style:preserve-3d; }
+/* .visualArea .text.active {animation:0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s 1 normal both running slideTop;} */
+.visualArea .textArea span {display:block; line-height:2.69;}
+.visualArea .textArea strong {font-size:26px;}
+.visualArea .textArea.bottom {top:70%; /* bottom:119px; */ font-size:21px; line-height:1.52; color:#fff; text-align:right;}
+.slideTop {-webkit-animation: slideTop 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; animation: slideTop 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;}
+
+/**
+* ----------------------------------------
+* animation slideTop
+* ----------------------------------------
+*/
+@-webkit-keyframes slideTop {
+    0% {
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+@keyframes slideTop {
+    0% {
+        -webkit-transform: translateY(100px);
+                transform: translateY(100px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+.charArea {position:absolute; top:50%; right:30px; transform:translateY(-50%); text-align:right;}
+.charArea::before {display:block; content:""; width:107px; height:37px; background:rgba(0, 0, 0, 0.15); position:absolute; top:117px; right:21px; border-radius:50%;}
+.charArea .character {width:126px; height:156px;}
+.charArea .character img {width:100%;}
+.charArea .text {font-size:12px; color:#c8c2f9; line-height:1.33; text-align:right; margin-top:15px;}
+.charArea .text strong {display:block; font-size:18px; line-height:1.67;}
+
+.wobble-hor-bottom {
+    -webkit-animation: wobble-hor-bottom 1.7s both infinite;
+            animation: wobble-hor-bottom 1.7s both infinite;
+}
+@keyframes wobble-hor-bottom {
+    0%, 10%, 20%, 80%, 90%,
+    100% {
+        -webkit-transform: translateX(0%);
+                transform: translateX(0%);
+        -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+    }
+    30% {
+        -webkit-transform: translateX(-30px) rotate(-6deg);
+                transform: translateX(-8px) rotate(-6deg);
+    }
+    40% {
+        -webkit-transform: translateX(15px) rotate(6deg);
+                transform: translateX(5px) rotate(6deg);
+    }
+    50% {
+        -webkit-transform: translateX(-15px) rotate(-3.6deg);
+                transform: translateX(-5px) rotate(-3.6deg);
+    }
+    60% {
+        -webkit-transform: translateX(9px) rotate(2.4deg);
+                transform: translateX(3px) rotate(2.4deg);
+    }
+    70% {
+        -webkit-transform: translateX(-6px) rotate(-1.2deg);
+                transform: translateX(-2px) rotate(-1.2deg);
+    }
+}
+
+.eff {animation:ld-jingle 1s linear infinite; transition:opacity .5s linear,visibility .5s linear;}
+
+
+/* 프리미어라운지 */
