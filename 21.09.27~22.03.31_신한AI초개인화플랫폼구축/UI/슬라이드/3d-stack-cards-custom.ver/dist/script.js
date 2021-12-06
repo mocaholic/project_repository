@@ -74,7 +74,7 @@ $(document).ready(function() {
         setTimeout(function(){
             // var $slicedSlide = $('.slide').slice(slideLength);
             // $slider.prepend($slicedSlide);
-            $slider.prependTo($slider.find('.s' + curIdx));
+            $slider.prepend($slider.find('.s' + curIdx));
             $(document).find(".slide.active").removeClass("active");
             $slider.removeClass("transfomer");
         },300);
