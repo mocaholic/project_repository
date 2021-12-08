@@ -22,239 +22,353 @@
 	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
 	<script src="../../script/include/library/ui.js"></script>	
 	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+	<style>
+		.mainSlideArea {position:relative; padding:18px 0 0;}
+		.mainSlideArea::before {display:block; content:""; background-image:linear-gradient(to bottom, #553da4, #7d6fe3); width:100%; height:244px; border-radius:0 0 30px 30px; position:absolute; top:0; left:0;;}
+
+		.slideWrapper {position:relative; width:calc(100% - 20px); height:100%; box-sizing:border-box; margin:0 10px; overflow:hidden;}
+		.slideWrapper::before {display:block; content:""; padding-top:calc(100% / 328 * 410);}
+		.slideWrapper .slider {width:100%; height:auto; position:absolute; top:66px; left:50%; transform:translateX(-50%);}
+		.slideWrapper .slider::before {display:block; content:""; padding-top:calc(100% / 328 * 348); top:0;}
+		.slideWrapper .slider .slide {position:absolute; width:100%; height:100%; left:0; transition:all .5s ease; transform:perspective(1300px) /* translate3d(0, -110px, -500px) */;}
+		/* .slideWrapper .slider .slide:nth-last-child(4) {transform:perspective(1300px) translate3d(0, -110px, -290px);} */
+		.slideWrapper .slider .slide:nth-last-child(3) {transform:perspective(1300px) translate3d(0, -75px, -210px); top:0;}
+		.slideWrapper .slider .slide:nth-last-child(3) .tabText {left:150px;}
+		.slideWrapper .slider .slide:nth-last-child(3) .boxTyShadow {opacity:.3;}
+		.slideWrapper .slider .slide:nth-last-child(2) {transform:perspective(1300px) translate3d(0, -40px, -130px); top:-10px;}
+		.slideWrapper .slider .slide:nth-last-child(2) .tabText {left:73px;}
+		.slideWrapper .slider .slide:nth-last-child(2) .boxTyShadow {opacity:.6;}
+		.slideWrapper .slider .slide:nth-last-child(1) {transform:perspective(1300px) /* translate3d(0, -5px, -50px)*/;  top:-20px;}
+		.slideWrapper .slider .slide:nth-last-child(1) .tabText {left:0;}
+		.slideWrapper .slider .slide:nth-last-child(1) .boxTyShadow {opacity:1;}
+		.slideWrapper .slider .slide.active {transform:perspective(1300px) translate3d(0, 100px, 0); opacity:0;}
+		.slideWrapper .slider.transfomer .slide:nth-last-child(4) {transform:perspective(1300px) translate3d(0, -110px, -290px);}
+		.slideWrapper .slider.transfomer .slide:nth-last-child(3) {transform:perspective(1300px) translate3d(0, -75px, -210px); top:0;}
+		.slideWrapper .slider.transfomer .slide:nth-last-child(2) {transform:perspective(1300px) translate3d(0, -40px, -130px); top:-10px;}
+		.slideWrapper .slide .tabText {position:absolute; top:-30px; width:87px; height:30px; font-size:13px; line-height:2.31; text-align:center; border-radius:6px 6px 0 0; color:#fff;}
+		.slideWrapper .slide .tabText.t0 {background:#7c6cfe;}
+		.slideWrapper .slide .tabText.t1 {background:#a094fd;}
+		.slideWrapper .slide .tabText.t2 {background:#e3dbff; color:#3e1fb0;}
+		.slideWrapper .slide .boxTyShadow {width:100%; height:100%; padding:22px 24px 20px; box-sizing:border-box; border-top-left-radius:0;}
+		/* boxTyShadow에 ratio 속성 먹일경우 : html -> boxCont 추가 및 css 주석 해제 필요
+		.slideWrapper .slide .boxTyShadow::before {display:block; content:""; padding-top:calc(100% / 328 * 348);}
+		.slideWrapper .slide .boxTyShadow .boxCont {position:absolute; top:0; left:0; width:100%; height:100%; padding:22px 20px; box-sizing:border-box;} */
+		.slideWrapper .slide .txtArea {position:relative;}
+		.slideWrapper .slide .txtArea::before {display:block; content:""; position:absolute; bottom:-27px; right:0; background:url('../../images/solAI/img_main_character02.png') no-repeat; background-size:100%; width:110px; height:150px;}
+		.slideWrapper .slide .txtArea > p strong {color:#4c3891; font-size:18px; font-weight:700;}
+		.slideWrapper .slide .btnGroupBox.type6 {position:absolute; bottom:20px; left:20px; width:calc(100% - 40px);}
+		.slideWrapper .slide .dateNote {display:flex; align-items:center; background:#f8f9fb; border-radius:4px; padding:5px 10px;}
+		.slideWrapper .slide .dateNote li {justify-content:flex-start;}
+		.slideWrapper .slide .dateNote span {display:inline-block;}
+		.slideWrapper .slide .dateNote .date {font-size:11px; padding-left:5px;}
+		.slideWrapper .slide .dateNote .mark {font-size:0; border:none; margin-left:8px;}
+		.slideWrapper .slide .dateNote li + li {margin-left:10px;}
+		.slideWrapper .slide .listTypeTable .row {display:block; background:transparent;}
+		.slideWrapper .slide .listTypeTable .row .leftCol, 
+		.slideWrapper .slide .listTypeTable .row .rightCol {display:block; text-align:right; width:100%;}
+		.slideWrapper .slide .listTypeTable .row .leftCol .tit {font-size:12px;}
+		.slideWrapper .slide .listTypeTable .row .rightCol {font-size:18px;}
+		.slideWrapper .slide .listTypeTable .row + .row {margin-top:0; margin-left:12px;}
+		.slideWrapper .indicator {text-align:center; width:100%; position:absolute; bottom:0; left:0; line-height:0;} 
+		.slideWrapper .indicator > a {display:inline-block; width:6px; height:6px; border-radius:3px; text-indent:-9999px; background:#d8d8d8;}
+		.slideWrapper .indicator > a.on {width:39px; background:#aaa;}
+	</style>
 </head>
 <body>
-<div id="wrap">
-	<!-- container -->
-	<section id="container">
-		<!-- header -->      
-		<header id="headerWrap">
-			<div id="header" class="premier"><!-- class="premier" 추가 -->
-				<div class="lSec">
-					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
-				</div>
-				<h1 class="tit">프리미어 라운지</h1>
-				<div class="rSec">
-					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
-					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
-				</div>
-			</div>
-		</header>
-		<!-- // header -->
-
-		<!-- contentsWrap -->
-		<div id="contentsWrap">
-			<div class="contentsS"><!-- 비주얼 모션 오류 발생으로 기본 class 변경 : contents -> contentsS -->
-				<div class="solAi premierMain">
-					<!-- 슬라이드 영역 -->
-					<div class="mainSlideArea">
-						<div class="slideWrapper">
-							<div class="slider">
-								<!-- 3 -->
-								<div class="slide s2">
-									<a href="javascript:void(0);" class="tabText t2">나의포트</a>
-									<div class="boxTyShadow">
-									</div>
-								</div>
-								<!-- 2 -->
-								<div class="slide s1">
-									<a href="javascript:void(0);" class="tabText t1">건강도</a>
-									<div class="boxTyShadow">
-									</div>
-								</div>
-								<!-- 1 -->
-								<div class="slide s0">
-									<a href="javascript:void(0);" class="tabText t0">포트설계</a>
-									<div class="boxTyShadow">
-										<div class="titleArea">
-											<span></span>
-											<h2 class="titZ">AI 기반 초개인화 포트<br></h2>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="indicator">
-								<a href="#" class="on">1</a>
-								<a href="#">2</a>
-								<a href="#">3</a>
-							</div>
-						</div>
+	<div id="wrap">
+		<!-- container -->
+		<section id="container">
+			<!-- header -->      
+			<header id="headerWrap">
+				<div id="header" class="premier"><!-- class="premier" 추가 -->
+					<div class="lSec">
+						<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
 					</div>
-					<!-- // 슬라이드 영역 -->
-					<!-- 컨텐츠 영역 -->
-					<div class="innerBox mainCont">
-						<div class="">
-							<div class="" id="">
-								<h2 class="blind">나의 총 자산</h2>
-								<p class="investAmount">
-									350,000,000
-									<span class="fontSSS">원</span>
-								</p>
-								<div class="graphArea" style="margin-top:30px; width:100%; height:100px; background:#efefef; text-align:center; line-height:100px;">
-									그래프 영역
+					<h1 class="tit">프리미어 라운지</h1>
+					<div class="rSec">
+						<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+						<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+					</div>
+				</div>
+			</header>
+			<!-- // header -->
+	
+			<!-- contentsWrap -->
+			<div id="contentsWrap">
+				<div class="contentsS"><!-- 비주얼 모션 오류 발생으로 기본 class 변경 : contents -> contentsS -->
+					<div class="solAi premierMain">
+						<!-- 슬라이드 영역 -->
+						<div class="mainSlideArea">
+							<div class="slideWrapper">
+								<div class="slider">
+									<!-- 3 -->
+									<div class="slide s2">
+										<a href="javascript:void(0);" class="tabText t2">나의포트</a>
+										<div class="boxTyShadow">
+											<div class="dpFlex">
+												<h2 class="subTit mb0">나의 포트</h2>
+												<a href="#" class="">더보기</a>
+											</div>
+											<div class="listTypeTable productType boxType mt10">
+												<ul class="dpFlex">
+													<li class="row bgWhite4">
+														<p class="tit bold">초개인화 포트 _ 210910_01</p>
+														<ul class="listTypeTable mt25">
+															<li class="row">
+																<div class="leftCol vm"><p class="tit txtBlack5">평가금액</p></div>
+																<div class="rightCol bold"><p class="txt fontZ"><span class="shinhan">1,200,020</span>원</p></div>
+															</li>
+															<li class="row">
+																<div class="leftCol vm"><p class="tit txtBlack5">수익률</p></div>
+																<div class="rightCol bold"><p class="fontZ txtRed1"><span class="shinhan">+ 1.02</span>%</p></div>
+															</li>
+														</ul>
+													</li>
+													<li class="row bgWhite4">
+														<p class="tit bold">집장만 포트 _ 210815</p>
+														<ul class="listTypeTable mt25">
+															<li class="row">
+																<div class="leftCol vm"><p class="tit txtBlack5">평가금액</p></div>
+																<div class="rightCol bold"><p class="txt fontZ"><span class="shinhan">5,100,970</span>원</p></div>
+															</li>
+															<li class="row">
+																<div class="leftCol vm"><p class="tit txtBlack5">수익률</p></div>
+																<div class="rightCol bold"><p class="fontZ txtBlue10"><span class="shinhan">- 3.05</span>%</p></div>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- 2 -->
+									<div class="slide s1">
+										<a href="javascript:void(0);" class="tabText t1">건강도</a>
+										<div class="boxTyShadow">
+											<div class="dpFlex">
+												<h2 class="subTit mb0">내 포트 건강도</h2>
+												<a href="#" class="">더보기</a>
+											</div>
+											<div class="graphArea" style="width:100%; height:250px; background:#efefef; text-align:center; line-height:250px;">
+												그래프영역
+											</div>
+											<div class="annotation mt12">
+												<ul class="dateNote">
+													<li>
+														<span class="date">2021년 11월 15일</span>
+														<span class="mark">그래프 색상</span>
+													</li>
+													<li>
+														<span class="date">2021년 9월 말 (전분기 말)</span>
+														<span class="mark">그래프 색상</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- 1 -->
+									<div class="slide s0">
+										<a href="javascript:void(0);" class="tabText t0">포트설계</a>
+										<div class="boxTyShadow">										
+											<div class="txtArea">
+												<span class="txtBlack5">내 맘대로 투자 포트를 만들어요</span>
+												<h2 class="titZ mt7">AI 기반 초개인화 포트<br>자산관리</h2>
+												<p class="mt12">
+													투자 성향에 맞는<br>
+													<strong>추천포트 + <br>
+													내가 원하는 상품</strong>을<br>
+													추가해보세요.
+												</p>
+											</div>
+											<div class="btnGroupBox type6">
+												<a href="#" class="btnType2 purple01 bold">포트설계하기</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="indicator">
+									<a href="#" class="on">1</a>
+									<a href="#">2</a>
+									<a href="#">3</a>
 								</div>
 							</div>
 						</div>
-
-						<div class="boxTyPaddingLR">
-							<div class="contAccordion mt30">
-								<div class="AccorTitle brdB7">
-									<a href="javascript:void(0);" title="세부내역 열기" role="button">
-										<p class="tit">이번 달 <strong>만기예정</strong> 계좌 <strong>2</strong>건</p>
-										<div class="arrow">
-											<span class="iconTy09"></span>
-											<span class="iconTy10"></span>
-										</div>
-									</a>
-								</div>
-								<div class="AccorCont">
-									계좌 정보
+						<!-- // 슬라이드 영역 -->
+						<!-- 컨텐츠 영역 -->
+						<div class="innerBox mainCont">
+							<div class="">
+								<div class="" id="">
+									<h2 class="blind">나의 총 자산</h2>
+									<p class="investAmount">
+										350,000,000
+										<span class="fontSSS">원</span>
+									</p>
+									<div class="graphArea" style="margin-top:30px; width:100%; height:100px; background:#efefef; text-align:center; line-height:100px;">
+										그래프 영역
+									</div>
 								</div>
 							</div>
-
-							<div class="contAccordion">
-								<div class="AccorTitle brdB7">
-									<a href="javascript:void(0);" title="세부내역 열기" role="button">
-										<p class="tit">전체 계좌</p>
-										<div class="arrow">
-											<span class="iconTy09"></span>
-											<span class="iconTy10"></span>
-										</div>
-									</a>
+	
+							<div class="boxTyPaddingLR">
+								<div class="contAccordion mt30">
+									<div class="AccorTitle brdB7">
+										<a href="javascript:void(0);" title="세부내역 열기" role="button">
+											<p class="tit">이번 달 <strong>만기예정</strong> 계좌 <strong>2</strong>건</p>
+											<div class="arrow">
+												<span class="iconTy09"></span>
+												<span class="iconTy10"></span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										계좌 정보
+									</div>
 								</div>
-								<div class="AccorCont">
-									계좌 정보
+	
+								<div class="contAccordion">
+									<div class="AccorTitle brdB7">
+										<a href="javascript:void(0);" title="세부내역 열기" role="button">
+											<p class="tit">전체 계좌</p>
+											<div class="arrow">
+												<span class="iconTy09"></span>
+												<span class="iconTy10"></span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										계좌 정보
+									</div>
+								</div>
+							</div>
+	
+							<div class="boxTyShadow mt46 mb20">
+								<div class="dpFlex aiStart">
+									<h2 class="subTit ml8">나의 포트</h2>
+									<p class="ar">
+										<span>포트 보유 현황</span>
+										<span>총<strong>10</strong>개</span>
+									</p>
+								</div>
+								<div class="listTypeTable productType boxType">
+									<ul class="mt30">
+										<li class="row bgWhite4">
+											<p class="tit bold">초개인화 포트 _ 210910_01</p>
+											<p class="fontSSS mt5">신규일자 2021.09.10</p>
+											<ul class="listTypeTable mt25">
+												<li class="row">
+													<div class="leftCol vm"><p class="tit txtBlack5">평가금액</p></div>
+													<div class="rightCol bold"><p class="txt fontZ"><span class="shinhan">1,200,020</span>원</p></div>
+												</li>
+												<li class="row">
+													<div class="leftCol vm"><p class="tit txtBlack5">수익률</p></div>
+													<div class="rightCol bold"><p class="fontZ txtRed1"><span class="shinhan">+ 1.02</span>%</p></div>
+												</li>
+											</ul>
+										</li>
+										<li class="row bgWhite4">
+											<p class="tit bold">집장만 포트 _ 210815</p>
+											<p class="fontSSS mt5">신규일자 2021.07.15</p>
+											<ul class="listTypeTable mt25">
+												<li class="row">
+													<div class="leftCol vm"><p class="tit txtBlack5">평가금액</p></div>
+													<div class="rightCol bold"><p class="txt fontZ"><span class="shinhan">5,100,970</span>원</p></div>
+												</li>
+												<li class="row">
+													<div class="leftCol vm"><p class="tit txtBlack5">수익률</p></div>
+													<div class="rightCol bold"><p class="fontZ txtBlue10"><span class="shinhan">- 3.05</span>%</p></div>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="btnGroupBox ac mt24">
+									<a href="javascript:void(0);" class="btnType3 fontS txtBlack1">더보기</a>
 								</div>
 							</div>
 						</div>
-
-						<div class="boxTyShadow mt46 mb20">
-							<div class="dpFlex aiStart">
-								<h2 class="subTit ml8">나의 포트</h2>
-								<p class="ar">
-									<span>포트 보유 현황</span>
-									<span>총<strong>10</strong>개</span>
-								</p>
+	
+						<div class="innerBox lineN mainCont">
+							<div class="boxTyRound banner mt10">
+								<a href="#" class="block">
+									<h2 class="subTit2">포트 가상 투자<br>결과 보기</h2>
+									<p>만약, 그때 투자했더라면..<br>포트 시뮬레이션에서 확인할 수 있어요.</p>
+								</a>
 							</div>
-							<div class="listTypeTable productType boxType">
-								<ul class="mt30">
-									<li class="row bgWhite4">
-										<p class="tit bold">초개인화 포트 _ 210910_01</p>
-										<p class="fontSSS mt5">신규일자 2021.09.10</p>
-										<ul class="listTypeTable mt25">
-											<li class="row">
-												<div class="leftCol vm"><p class="tit txtBlack5">평가금액</p></div>
-												<div class="rightCol bold"><p class="txt fontZ"><span class="shinhan">1,200,020</span>원</p></div>
-											</li>
-											<li class="row">
-												<div class="leftCol vm"><p class="tit txtBlack5">수익률</p></div>
-												<div class="rightCol bold"><p class="fontZ txtRed1"><span class="shinhan">+ 1.02</span>%</p></div>
-											</li>
-										</ul>
-									</li>
-									<li class="row bgWhite4">
-										<p class="tit bold">집장만 포트 _ 210815</p>
-										<p class="fontSSS mt5">신규일자 2021.07.15</p>
-										<ul class="listTypeTable mt25">
-											<li class="row">
-												<div class="leftCol vm"><p class="tit txtBlack5">평가금액</p></div>
-												<div class="rightCol bold"><p class="txt fontZ"><span class="shinhan">5,100,970</span>원</p></div>
-											</li>
-											<li class="row">
-												<div class="leftCol vm"><p class="tit txtBlack5">수익률</p></div>
-												<div class="rightCol bold"><p class="fontZ txtBlue10"><span class="shinhan">- 3.05</span>%</p></div>
-											</li>
-										</ul>
-									</li>
+	
+							<div class="swiper boxTyRound evtBanner mb28 mt30">
+								<h2 class="blind">이벤트 배너</h2>
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="ratio">
+											<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="ratio">
+											<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="ratio">
+											<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
+							</div>
+	
+						</div>
+	
+						<div class="innerBox lineN mainCont bgGradient1">
+							<div class="boxTyShadow giftLinkArea">
+								<h2 class="titZ">
+									<span class="fontN">고객님을 위해 준비한</span><br>프리미어 기프트
+								</h2>
+								<ul>
+									<li><a href="#">프리미어 고객 <strong>기념일 서비스</strong></a></li>
+									<li><a href="#">신한 <strong>플러스</strong></a></li>
+									<li><a href="#">신한 <strong>프리미엄 쿠폰</strong></a></li>
 								</ul>
 							</div>
-							<div class="btnGroupBox ac mt24">
-								<a href="javascript:void(0);" class="btnType3 fontS txtBlack1">더보기</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="innerBox lineN mainCont">
-						<div class="boxTyRound banner mt10">
-							<a href="#" class="block">
-								<h2 class="subTit2">포트 가상 투자<br>결과 보기</h2>
-								<p>만약, 그때 투자했더라면..<br>포트 시뮬레이션에서 확인할 수 있어요.</p>
-							</a>
-						</div>
-
-						<div class="swiper boxTyRound evtBanner mb28 mt30">
-							<h2 class="blind">이벤트 배너</h2>
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<div class="ratio">
-										<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+	
+							<div class="serviceLinkArea mt40">
+								<h2 class="subTit ac mb15">프리미어 서비스</h2>
+								<div>
+									<div class="boxTyShadow">
+										<a href="#" class="pv1">전문가<br>상담</a>
 									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="ratio">
-										<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+									<div class="boxTyShadow">
+										<a href="#" class="pv2">내 자산<br>리포트</a>
 									</div>
-								</div>
-								<div class="swiper-slide">
-									<div class="ratio">
-										<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+									<div class="boxTyShadow">
+										<a href="#" class="pv3">WM<br>매거진</a>
+									</div>
+									<div class="boxTyShadow">
+										<a href="#" class="pv4">오늘의<br>증시</a>
 									</div>
 								</div>
 							</div>
-							<div class="swiper-pagination"></div>
-						</div>
-
-					</div>
-
-					<div class="innerBox lineN mainCont bgGradient1">
-						<div class="boxTyShadow giftLinkArea">
-							<h2 class="titZ">
-								<span class="fontN">고객님을 위해 준비한</span><br>프리미어 기프트
-							</h2>
-							<ul>
-								<li><a href="#">프리미어 고객 <strong>기념일 서비스</strong></a></li>
-								<li><a href="#">신한 <strong>플러스</strong></a></li>
-								<li><a href="#">신한 <strong>프리미엄 쿠폰</strong></a></li>
-							</ul>
-						</div>
-
-						<div class="serviceLinkArea mt40">
-							<h2 class="subTit ac mb15">프리미어 서비스</h2>
-							<div>
-								<div class="boxTyShadow">
-									<a href="#" class="pv1">전문가<br>상담</a>
-								</div>
-								<div class="boxTyShadow">
-									<a href="#" class="pv2">내 자산<br>리포트</a>
-								</div>
-								<div class="boxTyShadow">
-									<a href="#" class="pv3">WM<br>매거진</a>
-								</div>
-								<div class="boxTyShadow">
-									<a href="#" class="pv4">오늘의<br>증시</a>
-								</div>
+	
+							<div class="bottomTxtArea mt40">
+								<p class="ac">
+									안녕하세요 <strong>김신한</strong>고객님<br>
+									고객님의 전담직원 <strong>강남지점 담당자</strong> 입니다.
+								</p>
+								<p class="fontNL ac mt15">고객님만을 위한<br><a href="#" class="underline bold">My Care 서비스</a>를 만나보세요.</p>
 							</div>
+							
 						</div>
-
-						<div class="bottomTxtArea mt40">
-							<p class="ac">
-								안녕하세요 <strong>김신한</strong>고객님<br>
-								고객님의 전담직원 <strong>강남지점 담당자</strong> 입니다.
-							</p>
-							<p class="fontNL ac mt15">고객님만을 위한<br><a href="#" class="underline bold">My Care 서비스</a>를 만나보세요.</p>
-						</div>
-						
+						<!-- // 컨텐츠 영역 -->
 					</div>
-					<!-- // 컨텐츠 영역 -->
-				</div>
-			</div>			
-			<!-- // contents -->
-		</div>
-		<!-- // contentsWrap -->
-	</section>
-	<!-- // container -->
-</div>
-<!-- // wrap -->
+				</div>			
+				<!-- // contents -->
+			</div>
+			<!-- // contentsWrap -->
+		</section>
+		<!-- // container -->
+		<a href="#" class="allMenuBtn">전체메뉴</a>
+	</div>
+	<!-- // wrap -->
 
 
 <script type="text/javascript">

@@ -44,9 +44,9 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 /* box type */
 .boxTyGray4 {background:#f8f9fb; padding:11px 13px;}
 
-.boxTyShadow {background:#fff; border-radius:10px; box-shadow:0 3px 12px 0 rgba(0, 0, 0, .12); position:relative; padding-bottom:20px; box-sizing:border-box; overflow:hidden;}
+.boxTyShadow {position:relative; background:#fff; border-radius:10px; box-shadow:0 3px 12px 0 rgba(0, 0, 0, .12); padding-bottom:20px; box-sizing:border-box; overflow:hidden;}
 .boxTyShadow.type02 {border-radius:13px; box-shadow:0 2px 12px 0 rgba(22, 37, 66, .12);}
-.boxTyRound {background:#fff; border-radius:13px; overflow:hidden;}
+.boxTyRound {position:relative; background:#fff; border-radius:13px; overflow:hidden;}
 .boxTyRound.gray {background:#f8f9fb;}
 
 .boxTyPaddingLR {padding:0 9px;}
@@ -146,8 +146,10 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 
 .innerBox.type02:after {background:#f1f2f3;}
 
+/* 전체메뉴 */
+.allMenuBtn {/* display:none; */ background:red; width:40px; height:40px; border-radius:50%; position:fixed; bottom:20px; right:20px; text-indent:-9999px; z-index:10; transition:.3s; opacity:0;}
 
-/* 정보입력, 정보확인, 가입완료 */
+/* 포트설계(정보입력, 정보확인, 가입완료 등) */
 .listTitleBox .listSTit {font-size:13px; font-weight:700;}
 .listTitleBox .listTit + .listSTit {margin-top:5px;}
 .listTitleBox .listTit.brdB3 {padding-bottom:7px;}
@@ -170,6 +172,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .formAreaBox.type3 .inputBox.transTerm .dateInput.type02 dd:nth-child(1)::after {content:"동안";}
 .formAreaBox.type3 .inputBox.transTerm .dateInput.type02 dd:nth-child(2)::after {content:"입금";}
 .formAreaBox.type3 .inputBox.transTerm .dateInput.type02 dd .btn {right:34px;}
+.formAreaBox.type3 .inputBox.transTerm .dateInput dd .choiceMonth,
 .formAreaBox.type3 .inputBox.transTerm .dateInput dd .choiceWhen {position:relative;}
 .formAreaBox.type3 .inputBox.transTerm .dateInput dd .btn {top:6px; right:calc(-100% + 17px);}
 .formAreaBox.type3 .inputBox.transTerm .dateInput dd span.txtEnd {position:absolute; right:0; bottom:11px; color:#555;}
@@ -194,6 +197,11 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .listTypeTable.lineType > ul + .listTitleBox {margin-top:20px;}
 .listTypeTable.productType .txtPeriod + .txtPeriod {margin-top:7px;}
 .listTypeTable.productType .tit + .labelTxt {display:block; color:#eb3d4f; font-size:13px;}
+
+.solAi .agreeBox .listTypeTable .row .leftCol {width:180px; word-break:keep-all;}
+
+.agreeBox > div {}
+.agreeBox > div + div {margin-top:30px;}
 
 /* 약관 */
 .termsBox .termsCont .scrollArea {overflow-y:auto; margin:-18px -12px;}
@@ -408,7 +416,8 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .premierMain {}
 .premierMain .boxTyShadow {padding:35px 16px;}
 
-.visualArea {width:100vw; height:calc(100vh - 45px); background:url('../../images/solAI/bg_premier_main.png') no-repeat 0 -45px; background-size:cover; box-sizing:border-box;}
+.visualArea {width:100vw; height:calc(100vh - 45px); height:calc((var(--vh, 1vh) * 100) - 45px); background:#49338f url('../../images/solAI/bg_premier_main.png') no-repeat 0 -45px; background-image:linear-gradient(to bottom, #553da4 0%, #4a368e 83%, #4a368f 83%); background-size:cover; box-sizing:border-box;}
+.visualArea::before {display:block; content:""; width:200%; height:520px; background-image:linear-gradient(to bottom, #563bac -1%, #49338f); position:absolute; top:34.4%; left:-58px; transform:rotate(-17deg); }
 .visualArea .textArea {font-size:16px; line-height:1.27; color:#fff3d7; font-weight:400; transform:translate3d(0,0,0); transform-style:preserve-3d; margin:5px 14px 0 0; text-align:right; letter-spacing:0;}
 .visualArea .textArea span {display:block; line-height:2.69;}
 .visualArea .textArea strong {font-size:26px; font-weight:400;}
@@ -454,14 +463,16 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
     70% {transform:translateX(-2px) rotate(-1.2deg); opacity:.6;}
 }
 
-.mainSlideArea {position:relative; padding:18px 0 0;}
+.mainSlideArea {position:relative; padding:18px 0 0; height:100%; overflow:hidden;}
 .mainSlideArea::before {display:block; content:""; background-image:linear-gradient(to bottom, #553da4, #7d6fe3); width:100%; height:244px; border-radius:0 0 30px 30px; position:absolute; top:0; left:0;;}
 
-.slideWrapper {position:relative; width:calc(100% - 20px); height:100%; box-sizing:border-box; margin:0 10px; overflow:hidden;}
-.slideWrapper::before {display:block; content:""; padding-top:calc(100% / 328 * 410);}
+.slideWrapper {position:relative; width:calc(100% - 32px); height:100%; box-sizing:border-box; margin:0 16px;}
+/* .slideWrapper 에 ratio 속성 먹일경우 : css 주석 해제 필요, slider - position:relative -> absolute로 변경*/
+.slideWrapper::before {display:block; content:""; padding-top:calc(100% / 328 * 400);} 
 .slideWrapper .slider {width:100%; height:auto; position:absolute; top:66px; left:50%; transform:translateX(-50%);}
-.slideWrapper .slider::before {display:block; content:""; padding-top:calc(100% / 328 * 348); top:0;}
-.slideWrapper .slider .slide {position:absolute; width:100%; height:100%; left:0; transition:all .5s ease; transform:perspective(1300px) translate3d(0, -110px, -500px);}
+/* slider 에 ratio 속성 먹일경우 : css 주석 해제 필요, .slide - position:relative -> absolute로 변경 */
+.slideWrapper .slider::before {display:block; content:""; padding-top:calc(100% / 328 * 328); top:0;}
+.slideWrapper .slider .slide {position:absolute; width:100%; height:100%; left:0; transition:all .5s ease; transform:perspective(1300px) /* translate3d(0, -110px, -500px) */;}
 /* .slideWrapper .slider .slide:nth-last-child(4) {transform:perspective(1300px) translate3d(0, -110px, -290px);} */
 .slideWrapper .slider .slide:nth-last-child(3) {transform:perspective(1300px) translate3d(0, -75px, -210px); top:0;}
 .slideWrapper .slider .slide:nth-last-child(3) .tabText {left:150px;}
@@ -469,7 +480,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .slideWrapper .slider .slide:nth-last-child(2) {transform:perspective(1300px) translate3d(0, -40px, -130px); top:-10px;}
 .slideWrapper .slider .slide:nth-last-child(2) .tabText {left:73px;}
 .slideWrapper .slider .slide:nth-last-child(2) .boxTyShadow {opacity:.6;}
-.slideWrapper .slider .slide:nth-last-child(1) {transform:perspective(1300px) translate3d(0, -5px, -50px); top:-20px;}
+.slideWrapper .slider .slide:nth-last-child(1) {transform:perspective(1300px) /* translate3d(0, -5px, -50px) */; top:-20px;}
 .slideWrapper .slider .slide:nth-last-child(1) .tabText {left:0;}
 .slideWrapper .slider .slide:nth-last-child(1) .boxTyShadow {opacity:1;}
 .slideWrapper .slider .slide.active {transform:perspective(1300px) translate3d(0, 100px, 0); opacity:0;}
@@ -481,16 +492,44 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .slideWrapper .slide .tabText.t1 {background:#a094fd;}
 .slideWrapper .slide .tabText.t2 {background:#e3dbff; color:#3e1fb0;}
 .slideWrapper .slide .boxTyShadow {width:100%; height:100%; padding:22px 24px 20px; box-sizing:border-box; border-top-left-radius:0;}
-.slideWrapper .slide .boxTyShadow::before {display:block; content:""; padding-top:calc(100% / 328 * 348);}
+/* boxTyShadow에 ratio 속성 먹일경우 : html -> boxCont 추가 및 css 주석 해제 필요
+ .slideWrapper .slide .boxTyShadow::before {display:block; content:""; padding-top:calc(100% / 328 * 348);}
+.slideWrapper .slide .boxTyShadow .boxCont {position:absolute; top:0; left:0; width:100%; height:100%; padding:22px 20px; box-sizing:border-box;} */
+.slideWrapper .slide .txtArea {position:relative;}
+.slideWrapper .slide .txtArea::before {display:block; content:""; position:absolute; bottom:-27px; right:0; background:url('../../images/solAI/img_main_character02.png') no-repeat; background-size:100%; width:110px; height:150px;}
+.slideWrapper .slide .txtArea > p strong {color:#4c3891; font-size:18px; font-weight:700;}
+.slideWrapper .slide .btnGroupBox.type6 {position:absolute; bottom:20px; left:20px; width:calc(100% - 40px);}
+.slideWrapper .slide .btnType3::after {vertical-align:-1px;}
+.slideWrapper .slide .dateNote {display:flex; align-items:center; background:#f8f9fb; border-radius:4px; padding:5px 10px;}
+.slideWrapper .slide .dateNote li {justify-content:flex-start;}
+.slideWrapper .slide .dateNote span {display:inline-block;}
+.slideWrapper .slide .dateNote .date {font-size:11px; padding-left:5px;}
+.slideWrapper .slide .dateNote .mark {font-size:0; border:none; margin-left:8px;}
+.slideWrapper .slide .dateNote li + li {margin-left:10px;}
+.slideWrapper .slide .listTypeTable .row {display:block; background:transparent; padding:16px 10px;}
+.slideWrapper .slide .listTypeTable .row > .tit {font-size:16px; height:75px; margin:0 6px;}
+.slideWrapper .slide .listTypeTable .row .leftCol, 
+.slideWrapper .slide .listTypeTable .row .rightCol {display:block; text-align:right; width:100%; letter-spacing:0;}
+.slideWrapper .slide .listTypeTable .row .leftCol .tit {font-size:12px; }
+.slideWrapper .slide .listTypeTable .row .rightCol {font-size:21px; margin-top:5px;}
+.slideWrapper .slide .listTypeTable .dpFlex > .row + .row {margin-top:0; margin-left:12px;}
+.slideWrapper .slide .listTypeTable .row > .listTypeTable .row + .row {margin-top:12px;}
 .slideWrapper .indicator {text-align:center; width:100%; position:absolute; bottom:0; left:0; line-height:0;} 
 .slideWrapper .indicator > a {display:inline-block; width:6px; height:6px; border-radius:3px; text-indent:-9999px; background:#d8d8d8;}
 .slideWrapper .indicator > a.on {width:39px; background:#aaa;}
+
+.annotation .dateNote li {display:flex; justify-content:flex-end; align-items:center;}
+.annotation .dateNote li .date {text-align:right; font-size:11px; color:#666; line-height:1.45;}
+.annotation .dateNote li .mark {text-indent:-9999px; width:20px; height:2px; border:none; margin-left:12px; padding:0;}
+.annotation .dateNote li:first-child .mark {background:#ff0000;}
+.annotation .dateNote li:last-child .mark {background:#b1bffc;}
 
 
 .mainCont {}
 .mainCont .tabTy01 {display:flex; justify-content:space-around; align-items:center; background:#f6f6f6; width:calc(100% - 16px); padding:6px 8px; border-radius:25px; box-sizing:border-box; margin:0 auto;}
 .mainCont .tabTy01 a {flex:1; display:flex; justify-content:center; align-items:center; height:36px; border-radius:19px; font-size:15px; background:#f6f6f6; border-color:#f6f6f6;color:#666;}
 .mainCont .tabTy01 a.on {background:#fff; color:#333; font-weight:700;}
+.mainCont .boxTyRound.subTit2 {width:calc(100% - 80px); height:48px; line-height:48px; margin:0 auto 25px; text-align:center; background:#f8f9fb; border-radius:24px;}  
 .mainCont .investAmount {font-size:34px; color:#333; text-align:center;}
 .mainCont .annotation {display:flex; justify-content:space-between; align-items:center; background:#f8f9fb; border-radius:8px; padding:8px 8px 8px 36px;}
 .mainCont .annotation .score {text-align:center; font-weight:700; font-size:28px; width:126px;}
@@ -501,11 +540,6 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .mainCont .annotation .score .grade.bad {color:#fba711;}
 .mainCont .annotation .score .grade.vBad {color:#eb3d4f;}
 .mainCont .annotation .dateNote {background:#fff; padding:10px 12px; border-radius:4px;}
-.mainCont .annotation .dateNote li {display:flex; justify-content:flex-end; align-items:center;}
-.mainCont .annotation .dateNote li .date {text-align:right; font-size:11px; color:#666; line-height:1.45;}
-.mainCont .annotation .dateNote li .mark {text-indent:-9999px; width:20px; height:2px; border:none; margin-left:12px; padding:0;}
-.mainCont .annotation .dateNote li:first-child .mark {background:#ff0000;}
-.mainCont .annotation .dateNote li:last-child .mark {background:#b1bffc;}
 .mainCont .annotation .dateNote li + li {margin-top:6px;}
 .mainCont .contAccordion .AccorTitle .tit {font-size:16px; font-weight:400;}
 .mainCont .contAccordion + .contAccordion {margin-top:19px;}
@@ -515,16 +549,18 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .mainCont .productType.boxType > ul > li.row + li.row {margin-top:20px;}
 .mainCont .productType.boxType .tit.bold {font-size:17px;}
 .mainCont .banner {padding:26px 24px; background:#f8f6ff url('../../images/solAI/img_banner_money.png') no-repeat; background-size:77px 87px;}
-.mainCont .evtBanner .ratio {--aspect-ratio:calc(100% / 328 * 189);}
-.mainCont .evtBanner .swiper-pagination {bottom:25px; left:auto; right:16px; text-align:right;}
+.mainCont .evtBanner {position:relative;}
+.mainCont .evtBanner .ratio {--aspect-ratio:calc(100% / 328 * 189); border-radius:13px; background:#fff; overflow:hidden;}
+.mainCont .evtBanner .swiper-pagination {bottom:-23px; left:auto; right:0; text-align:right;}
 .mainCont .evtBanner .swiper-pagination-bullet {border:none; background:#d8d8d8; border-radius:3px;}
 .mainCont .evtBanner .swiper-pagination-bullet-active {width:39px; background:#aaa;}
 .mainCont .giftLinkArea {padding:0;}
-.mainCont .giftLinkArea h2 {position:relative; height:120px; padding:8px 30px 30px; background-image:linear-gradient(222deg, #f0d48c 102%, #f1d48e 73%, #c58d23 21%); box-sizing:border-box; color:#fff;}
-.mainCont .giftLinkArea ul {margin:21px 30px 0;}
+.mainCont .giftLinkArea h2 {position:relative; /* height:120px; padding:8px 30px 30px; background-image:linear-gradient(222deg, #f0d48c 102%, #f1d48e 73%, #c58d23 21%); color:#fff; */ height:81px; background:url('../../images/solAI/img_character02.png') no-repeat right 0; background-size:107px 81px; box-sizing:border-box; color:#333; margin:30px; padding-top:8px;}
+.mainCont .giftLinkArea ul {margin:21px 22px 39px;}
 .mainCont .giftLinkArea li {font-size:16px}
-.mainCont .giftLinkArea li > a {display:block; padding:15px 0;}
+.mainCont .giftLinkArea li > a {display:block; height:42px; border-radius:21px; background:#f9f7f6; padding-left:18px; line-height:2.625; font-size:16px;}  
 .mainCont .giftLinkArea li > a::after {display:inline-block; content:""; background:url(); background-size:100%; margin-left:10px;}
+.mainCont .giftLinkArea li + li {margin-top:17px;}
 .mainCont .serviceLinkArea > div {display:flex; justify-content:space-between; flex-wrap:wrap; align-items:stretch}
 .mainCont .serviceLinkArea .boxTyShadow {width:calc((100% - 12px) / 2); padding:0; height:116px;}
 .mainCont .serviceLinkArea .boxTyShadow:nth-of-type(n+3) {margin-top:12px;}

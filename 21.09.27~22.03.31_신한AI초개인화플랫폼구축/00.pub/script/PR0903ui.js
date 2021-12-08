@@ -73,12 +73,55 @@ var solAI = {
 			return false;
 		});
 	}, 
+	'allMenuBtn' : function(){
+		$('#contentsWrap > div').on('scroll', function(){
+			var scrollTop = $(this).scrollTop();
+			var screenH = $(window).innerHeight();
+			var scrollHeight = $(this).prop('scrollHeight');
+			console.log(screenH);
+			console.log(scrollTop);
+
+			/* if(scrollTop <= screenH){
+				console.log('OK');
+				$('.allMenuBtn').hide();
+			}else if(scrollTop === 0){
+				$('.allMenuBtn').hide();
+			}else{
+				console.log('NO');
+				$('.allMenuBtn').show();
+				// $('.allMenuBtn').show();
+			} */
+
+			/* if(scrollTop > screenH){				
+				$('.allMenuBtn').show();
+			}else {				
+				$('.allMenuBtn').hide();
+			} */
+			if(scrollTop === 0){				
+				// $('.allMenuBtn').hide();
+				$('.allMenuBtn').css('opacity','0');
+			}else {
+				// $('.allMenuBtn').show();
+				$('.allMenuBtn').css('opacity','1');
+			} 
+		});
+	},
+	// css height 100vh 속성
+	'vh' : function(){
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+		console.log(vh);
+
+	},
 	
 	'init' : function(){
 		solAI.toggleCheck();
 		solAI.toggleRadioM2();
 		solAI.tabRadioM();
 		solAI.tabCheckM();
+		solAI.allMenuBtn();
+		solAI.vh();
+		window.addEventListener('resize', () => solAI.vh());
 	},
 }
 		
@@ -88,6 +131,7 @@ $(function(){
 		solAI.init();
 	});
 });
+
 
 
 
