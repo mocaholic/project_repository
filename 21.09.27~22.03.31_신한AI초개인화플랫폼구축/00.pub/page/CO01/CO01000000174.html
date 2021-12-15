@@ -1,0 +1,217 @@
+
+<!-- /********************************************************************
+* @설명			: 보안매체 OTP 인증
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김황민		2017-10-25	최초작성
+* 2		김황민		2017-10-30	텍스트 2줄시 영역height고정 후  vertical-align middle 처리(.passSubmitText내 .tl, .txt클래스내 span태그 추가)
+* 3		김황민		2017-11-1   보안매체 인증 추가
+* 4		김영훈		2018-01-12  버튼 추가
+* 5		김영훈		2018-02-03	수정
+* 6		김영훈		2018-02-08	수정
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">보안매체 인증</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents">
+
+				<!--계좌입력 2017-10-30 수정-->
+				<div class="passSubmitText">
+					<!-- 2018-01-11 수정 -->
+					<div class="cellDiv">
+						<span class="tl fontSL">
+							<span>OTP 인증번호를<br/> 입력해주세요.</span>
+						</span>
+						<!-- 2018-02-03 태그 추가 -->
+						<div class="errorTxtArea">
+							<!-- display:none 처리는 여기서 하세요 -->
+							<span class="txt fontSS txtRed1"> 
+								<span>일치하지 않습니다.(1/10)</span> 
+							</span>
+							<!-- //display:none 처리는 여기서 하세요 -->
+						</div>
+						<!-- //2018-02-03 태그 추가 -->
+						<span class="key">
+							<!-- 앱접근성 변경 -->
+							<a href="javascript:void(0)" class="passKeyad">
+								<em class="on"> ● <i class="blind">OTP 인증번호 첫번째 자리</i></em>
+								<em> ● <i class="blind">OTP 인증번호 두번째 자리</i></em>
+								<em> ● <i class="blind">OTP 인증번호 세번째 자리</i></em>
+								<em> ● <i class="blind">OTP 인증번호 네번째 자리</i></em>
+							</a>
+							<!-- //앱접근성 변경 -->
+						</span>
+						<a href="javascript:void(0)" class="dcs fontSS txtBlack4 centerT">OTP 인증번호 입력에 어려움이 있으신가요? <i class="iconTy43_1"></i></a>
+						<!-- 2018-02-08 클래스 추가 -->
+						<p class="ac mt30">
+							<a href="javascript:void(0)" class="btnType lineBlack"><span class="fontSS">스마트보안카드 앱 실행</span></a>
+						</p>
+						<!-- //2018-02-08 클래스 추가 -->
+						
+						<!-- 20180329 otp배너  -->
+						<p class="ac mt15">
+							<a href="javascript:void(0)"><img src="../../../../../../images/img_banner_motp.png" width="100%;" alt="OTP 소지가 불편하셨죠? 소지할 필요없는 모바일OTP를 발급 받아보세요.(1회 1억, 1일 5억원 한도)"/></a>
+						</p>
+						<!-- //20180329 otp배너  -->
+					</div>
+					<!-- //2018-01-11 수정 -->
+				</div>
+				<!--//계좌입력 2017-10-30 수정-->
+				<br/><br/><br/>
+				<!--보안카드 번호 입력 2017-11-01 추가-->
+				<div class="passSubmitText">
+					<div class="cellDiv">
+						<span class="tl fontSL card">
+							<span>보안카드 번호를 입력하세요.</span>
+						</span>
+						<span class="txt fontSS txtRed1 card">
+							<span>일치하지 않습니다.(1/10)</span>
+						</span>
+						<span class="txtM fonN">
+							<span>일련번호 <span class="txtBlue1"><em>5</em>,<em>6</em>,<em>8</em></span>번째 숫자 입력</span>
+						</span>
+						<span class="keybox"> <!-- mt30 mt10 으로 간격 조정할수 있습니다.-->
+							<!-- 앱접근성 변경 -->
+							<a href="javascript:void(0)" class="passKeyad">
+								<!-- 비활성 -->
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 첫번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 두번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 세번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 네번째 숫자</i></span>
+								<!-- 입력활성 완료 -->
+								<span class="type current"><em class="on"> ● </em> <i class="blind">보안카드 일련번호 다섯번째 숫자</i></span>
+								<!-- 입력활성 입력전 -->
+								<span class="type"><em> ● </em> <i class="blind">보안카드 일련번호 여섯번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 일곱번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 여덟번째 숫자</i></span>
+							</a>
+							<!-- //앱접근성 변경 -->
+						</span>
+						<span class="keybox type2 mt30"><!-- 넘버타입은 type2 추가-->
+							<!-- 앱접근성 변경 -->
+							<a href="javascript:void(0)" class="passKeyad">
+								<!-- 넘버 -->
+								<span class="number"><em> 02 </em></span>
+
+								<!-- 입력활성 완료 -->
+								<span class="type current">
+									<em class="on"> ● <i class="blind">보안카드 일련번호 앞 두자리중 첫번째 숫자</i></em>
+									<em class="on"> ● <i class="blind">보안카드 일련번호 앞 두자리중 두번째 숫자</i></em>
+								</span>
+
+								<!-- 비활성 -->
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 뒤 두자리중 첫번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 뒤 두자리중 두번째 숫자</i></span>
+							</a>
+							<!-- //앱접근성 변경 -->
+						</span>
+						<span class="keybox type2 mt10">
+							<!-- 앱접근성 변경 -->
+							<a href="javascript:void(0)" class="passKeyad">
+								<!-- 넘버 -->
+								<span class="number"><em> 27 </em></span>
+
+								<!-- 비활성 -->
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 앞 두자리중 첫번째 숫자</i></span>
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 앞 두자리중 두번째 숫자</i></span>
+
+								<!-- 입력활성 완료 -->
+								<span class="type">
+									<!--<em class="on"> ● </em>
+									<em class="on"> ● </em>-->
+									<em class="txt">뒤 두자리</em>
+								</span>
+							</a>
+							<!-- //앱접근성 변경 -->
+						</span>
+
+						<span class="keybox type2 mt30">
+							<a href="javascript:void(0)" class="passKeyad">
+								<!-- 넘버 -->
+								<span class="number"><em> 02 </em></span>
+
+								<!-- 입력활성 완료 current-->
+								<span class="type">
+									<!--<em class="on"> ● </em>
+									<em class="on"> ● </em>-->
+									<em class="txt">앞 두자리</em>
+								</span>
+
+								<!-- 비활성 -->
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 마지막 숫자</i></span> <!-- //앱접근성 변경 -->
+							</a>
+						</span>
+						<span class="keybox type2 mt10">
+							<a href="javascript:void(0)" class="passKeyad">
+								<!-- 넘버 -->
+								<span class="number"><em> 27 </em></span>
+
+								<!-- 비활성 -->
+								<span class="read"><em> ● </em> <i class="blind">보안카드 일련번호 첫번째 숫자</i></span> <!-- //앱접근성 변경 -->
+
+								<!-- 입력활성 완료 -->
+								<span class="type">
+									<!--<em class="on"> ● </em>
+									<em class="on"> ● </em>-->
+									<em class="txt">뒤 두자리</em>
+								</span>
+							</a>
+						</span>
+
+						<!-- 2018-02-26 추가 -->
+						<a href="javascript:void(0)" class="dcs fontSS txtBlue1 centerT">보안카드를 분실하셨나요? <i class="iconTy43_1"></i></a>
+						
+						<a href="javascript:void(0)" class="dcs fontSS txtBlack4 centerT mt10">오류횟수가 초과되었나요? <i class="iconTy43_1"></i></a>
+						<!-- //2018-02-26 추가 -->
+					</div>
+				</div>
+				<!--//보안카드 번호 입력 2017-11-01 추가-->
+
+				<!--키패드 샘플
+				<div style="position:fixed; bottom:0; left:0; width:100%; z-index: 20; color:#333; text-align:center;" class="keypad">
+					<button style="display: block;"><img src="../../../../../../images/temp/keypad2.png" alt="" style="width:100%;  display:block;" /></button>
+				</div>-->
+
+			</div>
+			<!-- // contents -->
+			<!-- 2018-01-12 확인 버튼 추가 -->
+			<div class="btnGroupBox floating">
+				<a href="javascript:void(0)" class="btnType"><span>확인</span></a>
+			</div>
+			<!-- //2018-01-12 확인 버튼 추가 -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

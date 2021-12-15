@@ -1,0 +1,469 @@
+
+<!-- /********************************************************************
+* @설명			: 로그인 후 홈 : 맞춤메뉴 설정
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		이강민		2017-12-09	최초작성
+* 2		박민관		2018-01-19	태그 수정
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/nt01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body class=""><!-- 시니어 size1, size2  -->
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">맞춤메뉴 설정</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="boxTyGray notice">
+					<ul class="dotList">
+						<!-- 2018-01-13 수정 -->
+						<li>맞춤 메뉴는 최대 7개까지 설정이 가능합니다.</li>
+						<li>선택한 메뉴를 길게 누른 후, 원하는 메뉴 위치로 이동하시면 순서가 변경됩니다.</li>
+						<!-- //2018-01-13 수정 -->
+					</ul>
+				</div>
+				<div class="myMenuBox">
+					<!-- <h2 class="title">맞춤메뉴</h2> 2019-01-24 수정 : 삭제 -->
+					<div class="myMenuList drag">
+						<ul>
+							<li>
+								<p class="handle"><span>쏠편한<br /> 환전</span></p>
+								<a href="javascript:void(0)" class="btn">쏠편한 환전 삭제</a>
+							</li>
+							<li>
+								<p class="handle"><span>환전<br /> 모바일금고</span></p>
+								<a href="javascript:void(0)" class="btn">환전 모바일금고 삭제</a>
+							</li>
+							<li>
+								<p class="handle"><span>MY CAR<br /> 대출</span></p>
+								<a href="javascript:void(0)" class="btn">MY CAR 대출 삭제</a>
+							</li>
+							<li>
+								<p class="handle"><span>자동이체</span></p>
+								<a href="javascript:void(0)" class="btn">자동이체 삭제</a>
+							</li>
+							<li>
+								<p class="handle"><span>간편앱출금</span></p>
+								<a href="javascript:void(0)" class="btn">간편앱출금 삭제</a>
+							</li>
+							<li>
+								<p class="handle"><span>신한플러스</span></p>
+								<a href="javascript:void(0)" class="btn">신한플러스 삭제</a>
+							</li>
+							<!-- 	<li>
+								<p class="handle add"><span>영업점 찾기</span></p>
+								<a href="javascript:void(0)" class="btn">영업점 찾기 추가</a>
+							</li> -->
+						</ul>
+						<!-- 2018-10-25 수정 : 마케팅 메뉴 위치변경 불가로 디자인 수정 -->
+						<ul>
+							<li>
+								<p class="mark"><span>마케팅<br /> 메뉴1</span></p><!-- 2018-10-17 수정 : 추가 -->
+							</li>
+							<li>
+								<p class="mark"><span>마케팅<br /> 메뉴2</span></p><!-- 2018-10-17 수정 : 추가 -->
+							</li>
+						</ul>
+						<!-- //2018-10-25 수정 : 마케팅 메뉴 위치변경 불가로 디자인 수정 -->
+						<!--
+						<ul>
+							<li class="recom">
+								<p><span>추천1</span></p>
+							</li>
+							<li class="recom">
+								<p><span>추천2</span></p>
+							</li>
+						</ul>  2018-10-17 수정 : 삭제 -->
+					</div>
+					<!-- <a href="javascript:void(0)" class="reset"><span class="iconTy79"></span>초기화</a> 2018-01-26 마크업 삭제 -->
+				</div>
+				<hr class="lineTy04" /><!-- 2019-01-24 수정 : 추가 -->
+				<div class="myCheckBox">
+					<!-- 2019-01-24 수정 : 추가 -->
+					<div class="innerBox contAccordion">
+						<div class="AccorTitle">
+							<a href="javascript:void(0)">
+								<h2 class="tit"><span class="iconTyAi vt mr5"></span> 인공지능 추천메뉴 보기</h2>
+								<div class="arrow">
+									<span class="iconTy09">세부내역 열힘</span>
+									<span class="iconTy10">세부내역 닫힘</span>
+								</div>
+							</a>
+						</div>
+						<div class="AccorCont pd0">
+							<div class="myCheckList brdT2">
+								<div class="accountSetup type2">
+									<section>
+									<ul>
+										<li>
+											<input type="checkbox" id="checkAi01" name="checkAi01">
+											<label for="checkAi01">
+												<p class="bankName"> MY CAR 대출</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="checkAi02" name="checkAi01">
+											<label for="checkAi02">
+												<p class="bankName">간편앱출금</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="checkAi03" name="checkAi01">
+											<label for="checkAi03">
+												<p class="bankName">MY CAR 대출<br /> (신차/중고차)</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="checkAi04" name="checkAi01">
+											<label for="checkAi04">
+												<p class="bankName">신한카드 승인 내역</p>
+											</label>
+										</li>
+									</ul>
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //2019-01-24 수정 : 추가 -->
+					<div class="myCheckList">
+						<div class="boxTyLabel mt0"><p class="txt">이체/납부</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="check101" name="check101">
+										<label for="check101">
+											<p class="bankName">자동이체</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check102" name="check101">
+										<label for="check102">
+											<p class="bankName"> ATM출금</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check103" name="check101">
+										<label for="check103">
+											<p class="bankName">경조금이체</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check104" name="check101">
+										<label for="check104">
+											<p class="bankName">공과금 스캔납부</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">외환</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="check201" name="check201">
+										<label for="check201">
+											<p class="bankName">쏠편한환전</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check202" name="check201">
+										<label for="check202">
+											<p class="bankName">환전 모바일금고</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check203" name="check201">
+										<label for="check203">
+											<p class="bankName">해외송금</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check204" name="check201">
+										<label for="check204">
+											<p class="bankName">환율</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">마이카</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="checkMyCar01" name="checkMyCar01">
+										<label for="checkMyCar01">
+											<p class="bankName"> MY CAR 대출</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="checkMyCar02" name="checkMyCar01">
+										<label for="checkMyCar02">
+											<p class="bankName">MY CAR 전환대출</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="checkMyCar03" name="checkMyCar01">
+										<label for="checkMyCar03">
+											<p class="bankName">MY CAR 대출<br /> (신차/중고차)</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="checkMyCar04" name="checkMyCar01">
+										<label for="checkMyCar04">
+											<p class="bankName"> MY CAR 전환대출</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">신한카드</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="check301" name="check301">
+										<label for="check301">
+											<p class="bankName">신한카드승인내역</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check302" name="check301">
+										<label for="check302">
+											<p class="bankName">카드결제예정금액</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check303" name="check301">
+										<label for="check303">
+											<p class="bankName">신한카드청구금액</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check304" name="check301">
+										<label for="check304">
+											<p class="bankName">신한카드간편신청</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">생활금융플랫폼</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="check401" name="check401">
+										<label for="check401">
+											<p class="bankName">글로벌멀티카드</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check402" name="check401">
+										<label for="check402">
+											<p class="bankName">가계부</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check403" name="check401">
+										<label for="check403">
+											<p class="bankName">모바일번호표</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check404" name="check401">
+										<label for="check404">
+											<p class="bankName">이벤트/쿠폰박스</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">인증/지원센터</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="check501" name="check501">
+										<label for="check501">
+											<p class="bankName">모바일OTP발급</p>
+										</label>
+									</li>
+									<!-- <li>
+										<input type="checkbox" id="check502" name="check501">
+										<label for="check502">
+											<p class="bankName">영업점찾기</p>
+										</label>
+									</li> -->
+									<li>
+										<input type="checkbox" id="check503" name="check501">
+										<label for="check503">
+											<p class="bankName">공인인증센터</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check504" name="check501">
+										<label for="check504">
+											<p class="bankName">바이오인증센터</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">금융서비스</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<li>
+										<input type="checkbox" id="check601" name="check601">
+										<label for="check601">
+											<p class="bankName">주식현재가</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check602" name="check601">
+										<label for="check602">
+											<p class="bankName">해외주식 현재가</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check603" name="check601">
+										<label for="check603">
+											<p class="bankName">신한플러스</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check604" name="check601">
+										<label for="check604">
+											<p class="bankName">오늘의증시</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check605" name="check601">
+										<label for="check605">
+											<p class="bankName">신한생명 보험계약조회</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check606" name="check601">
+										<label for="check606">
+											<p class="bankName">신한생명 보험료납입</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check607" name="check601">
+										<label for="check607">
+											<p class="bankName">나의금융활동</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="myCheckList">
+						<div class="boxTyLabel"><p class="txt">계좌관리</p></div>
+						<div class="accountSetup type2">
+							<section>
+								<ul>
+									<!-- <li>
+										<input type="checkbox" id="check701" name="check701">
+										<label for="check701">
+											<p class="bankName">장기미이체 해제</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check702" name="check701">
+										<label for="check702">
+											<p class="bankName">이체계좌등록</p>
+										</label>
+									</li>
+									<li>
+										<input type="checkbox" id="check703" name="check701">
+										<label for="check703">
+											<p class="bankName">한도계좌 설정해제</p>
+										</label>
+									</li> -->
+									<li>
+										<input type="checkbox" id="check704" name="check701">
+										<label for="check704">
+											<p class="bankName">해지예상 조회</p>
+										</label>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+
+			<div class="btnGroupBox floating fixed"> <!-- 2018-01-08 클래스 추가 -->
+				<a href="javascript:void(0)" class="btnType btnBlack"><span>초기화</span></a><!-- 2018-01-26 마크업 변경-->
+				<a href="javascript:void(0)" class="btnType"><span>설정저장</span></a><!-- 2018-10-08 수정 -->
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 2018-01-24 스크립트 수정 -->
+<script type="text/javascript">
+	$('.drag > ul').sortable({
+		handle : '.handle', // drag handle 지정
+		tolerance: 'pointer',
+		create: function(e, ui){
+			$(this).find("li").each(function(){
+				var $that = $(this);
+				$that.css({width: $that.outerWidth(), height: $that.outerHeight(), boxSizing:'border-box'})
+			})
+		},
+	});
+	$(".drag > ul").disableSelection();
+	$(".drag > ul > li").droppable() // 2018-01-26 스크립트 추가;
+
+
+</script>
+<!-- //2018-01-24 스크립트 수정 -->
+</body>
+</html>

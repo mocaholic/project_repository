@@ -1,0 +1,167 @@
+
+<!-- /********************************************************************
+* @설명			: 데이터입력/선택 Modal Bottom Sheet
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		장영석		2017-11-01	최초작성
+* 2		김영훈		2017-12-8	버튼 수정
+*********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/pr02.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<script type="text/javascript">
+/* ui call */
+$(document).bind({
+	'ready' : function(){
+		///////////////////////////////////////////////////1. html append
+		var html1 = '<div class="swiper-wrapper"><div class="swiper-slide"><button type="button">1개월</button></div><div class="swiper-slide"><button type="button">2개월</button></div><div class="swiper-slide"><button type="button">3개월</button></div><div class="swiper-slide"><button type="button">6개월</button></div></div>';//두번째 개월 html
+
+		var html2 = '<div class="swiper-wrapper"><div class="swiper-slide"><button type="button">월</button></div><div class="swiper-slide"><button type="button">화</button></div><div class="swiper-slide"><button type="button">수</button></div><div class="swiper-slide"><button type="button">목</button></div><div class="swiper-slide"><button type="button">금</button></div></div>';//두번째 매주 html
+
+		var html3 = '<div class="swiper-wrapper"> </div>';//두번째 매일 html(데이터 없음)
+	
+
+		///////////////////////////////////////////////////2. 원하는 current length 설정
+		currentFirst = 0; //"0"부터 시작
+		currentSecond = 0; //"0"부터 시작
+
+		///////////////////////////////////////////////////3.이체주기 Load
+		calTerm();
+		
+		function calTerm(){
+			if($('.pickerWrap').length){
+
+				$("#divSecondList").html(html1);
+				var termSwiper2 = new Swiper('#divSecondList', {
+					slidesPerView: 5,
+					direction: 'vertical',
+					centeredSlides: true,
+					observer : true,
+					observeParents : true,
+					onSlideChangeStart : function(siwper){
+						sbCurrentSecond = $(siwper.container).find('.swiper-slide-active').index();//current value 전달
+						console.log("개월" + currentFirst);
+						console.log("목록" + currentSecond);
+					}
+				});	
+
+				var termSwiper1 = new Swiper('#divFirstList', {
+					slidesPerView: 5,
+					direction: 'vertical',
+					centeredSlides: true,
+					observer : true,
+					observeParents : true,
+					onSlideChangeStart : function(siwper){
+							sbCurrentFirst = $(siwper.container).find('.swiper-slide-active').index();//current value 전달
+
+							if(sbCurrentFirst == 0){//개월
+								console.log("개월" + sbCurrentFirst);
+								$("#divSecondList").html(html1);
+							}else if(sbCurrentFirst == 1){//매주
+								console.log("매주" + sbCurrentFirst);
+								$("#divSecondList").html(html2);
+							}else{//매일
+								console.log("매일" + sbCurrentFirst);								
+								$("#divSecondList").html(html3);						
+							}
+							termSwiper2.destroy();							
+							termSwiper2 = new Swiper('#divSecondList', {
+								slidesPerView: 5,
+								direction: 'vertical',
+								centeredSlides: true,
+								observer : true,
+								observeParents : true,
+								onSlideChangeEnd : function(siwper){
+									sbCurrentSecond = $(siwper.container).find('.swiper-slide-active').index();//current value 전달
+									console.log("목록" + sbCurrentSecond);
+								}
+							});							
+					}
+				});
+				termSwiper1.slideTo(currentFirst); //첫번째 current
+				termSwiper2.slideTo(currentSecond);//두번째 current
+			}
+		}		
+	}
+});
+</script>
+
+<!-- 주기선택 레이어 팝업 -->
+<div class="layerPopBottomWrap hasDim" id="layerPopBottom01" style="display:block;">
+	<div class="popInner" style="display:block; ">
+		<div class="layerHeader">
+			<p class="layerTit">타이틀 입력</p>
+			
+			<!-- <button type="button" class="btnPopClose">팝업 닫기</button> -->
+			<button type="button" class="btnType2 btnSmall"><span>확인</span></button>
+		</div>
+				
+		<div class="layerCon calTerm">
+
+				<div class="calCon">
+					<div class="popPicker">
+						<div class="pickerWrap">
+							<div class="swiper-container" id="divFirstList">										
+								<!-- 1뎁스 선택 -->
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><button type="button">개월</button></div>
+										<div class="swiper-slide"><button type="button">매주</button></div>
+										<div class="swiper-slide"><button type="button">매일</button></div>
+									</div>								
+								<!-- 1뎁스 선택 -->
+							</div>
+						</div>
+						<div class="pickerWrap">
+							<div class="swiper-container" id="divSecondList">
+									<div class="swiper-wrapper">
+									</div>								
+								<!--
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><button type="button">1개월</button></div>
+										<div class="swiper-slide"><button type="button">2개월</button></div>
+										<div class="swiper-slide"><button type="button">3개월</button></div>
+										<div class="swiper-slide"><button type="button">6개월</button></div>
+									</div>	
+
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><button type="button">월</button></div>
+										<div class="swiper-slide"><button type="button">화</button></div>
+										<div class="swiper-slide"><button type="button">수</button></div>
+										<div class="swiper-slide"><button type="button">목</button></div>
+										<div class="swiper-slide"><button type="button">금</button></div>
+									</div>	
+
+								-->
+							</div>
+						</div>
+						<div class="currentCover"></div>
+						<div class="currentCover1"></div>
+						<div class="currentCover2"></div>
+					</div>
+				</div>
+
+				<!-- 2017-12-8 수정 -->
+				<!-- <div class="btnGroupBox floating" style="z-index:9;">
+					<a href="javascript:void(0)" class="btnType"><span>확인</span></a>
+				</div> -->
+				<!-- //2017-12-8 수정 -->		
+			</div>	
+		</div>
+	</div>
+</div>
+<!--// 주기선택 레이어 팝업 -->
+</body>
+</html>

@@ -1,0 +1,123 @@
+
+<!-- /********************************************************************
+* @설명			: 캘린더(년,월)
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김황민		2017-10-25	최초작성
+* 2		김황민		2017-11-03	달력로드 방식 수정
+* 3		김황민		2017-11-07	버튼 위치 수정,취소 버튼 추가 및 타이틀 수정
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<!--<script src="swipe.js"></script>-->
+</head>
+<body>
+<!-- wrap -->
+<script type="text/javascript">
+/* ui call */
+$(document).bind({
+	'ready' : function(){
+		//1. html append
+		$("#divYearList").html('<div class="swiper-wrapper"> <div class="swiper-slide"><button type="button">2000년</button></div> <div class="swiper-slide"><button type="button">2001년</button></div> <div class="swiper-slide"><button type="button">2002년</button></div> <div class="swiper-slide"><button type="button">2003년</button></div> <div class="swiper-slide"><button type="button">2004년</button></div> <div class="swiper-slide"><button type="button">2005년</button></div> <div class="swiper-slide"><button type="button">2006년</button></div> <div class="swiper-slide"><button type="button">2015년</button></div> <div class="swiper-slide"><button type="button">2016년</button></div> <div class="swiper-slide"><button type="button">2017년</button></div> </div>'); //년도 호출
+
+		$("#divMonthList").html('<div class="swiper-wrapper"> <div class="swiper-slide"><button type="button">1월</button></div> <div class="swiper-slide"><button type="button">2월</button></div> <div class="swiper-slide"><button type="button">3월</button></div>											<div class="swiper-slide"><button type="button">4월</button></div>											<div class="swiper-slide"><button type="button">5월</button></div>											<div class="swiper-slide"><button type="button">6월</button></div>											<div class="swiper-slide"><button type="button">7월</button></div>											<div class="swiper-slide"><button type="button">8월</button></div>											<div class="swiper-slide"><button type="button">9월</button></div>											<div class="swiper-slide"><button type="button">10월</button></div>											<div class="swiper-slide"><button type="button">11월</button></div>											<div class="swiper-slide"><button type="button">12월</button></div>		</div>');//월 호출
+
+	
+
+		//2. 원하는 current length 설정
+		currentYear = 2; //"0"부터 시작
+		currentMonth = 5; //"0"부터 시작
+
+		//3.달력 Load
+		ui.carlendar();
+
+
+		sbCurrentCalendar();
+	}
+})	
+
+//4.년도,월 호출
+var sbCurrentYear;
+var sbCurrentMonth; 
+
+function sbCurrentCalendar(){
+	sbCurrentYear = $("#divYearList").find('.swiper-slide-active').text().replace("년","");//년도 current value 전달
+	sbCurrentMonth = $("#divMonthList").find('.swiper-slide-active').text().replace("월","");;//월 current value 전달
+	console.log('year : ' + sbCurrentYear);
+	console.log('month : ' + sbCurrentMonth);			
+}
+</script>
+
+<div id="wrap"><!--완료페이지가 컨텐츠가 center일때-->
+
+	<!-- header -->
+	<header id="headerWrap">
+		<div id="header">
+			<h1 class="tit cal">년월선택</h1>
+		</div>
+	</header>
+	<!-- // header -->
+
+	<!-- container -->
+	<section id="container">
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+
+			<div class="calCon">
+				<div class="popPicker">
+					<div class="pickerWrap">
+						<div class="swiper-container" id="divYearList">										
+							<!--<div class="swiper-wrapper">
+								<div class="swiper-slide"><button type="button">2000</button></div>
+								<div class="swiper-slide"><button type="button">2001</button></div>
+								<div class="swiper-slide"><button type="button">2002</button></div>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div> -->
+						</div>
+					</div>
+					<div class="pickerWrap">
+						<div class="swiper-container" id="divMonthList">
+							<!--<div class="swiper-wrapper">
+								<div class="swiper-slide"><button type="button">1</button></div>
+							</div>-->
+						</div>
+					</div>
+					<div class="currentCover"></div>
+					<div class="currentCover1"></div>
+					<div class="currentCover2"></div>
+				</div>
+			</div>
+		
+
+			<!-- 2017-11-07 -->
+			<div class="btnGroupBox floating" style="z-index: 100;">
+				<a href="javascript:void(0)" class="btnType btnBlack"><span>취소</span></a>
+				<a href="javascript:void(0)" class="btnType" onclick="sbCurrentCalendar()"><span>확인</span></a>
+			</div>				
+			<!--// 2017-11-07 -->
+
+
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+
+
+
+
+
+<!-- // wrap -->
+</body>
+</html>

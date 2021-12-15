@@ -1,0 +1,144 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../style/nt01.css">
+	<script src="../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="guideShpay">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents -->
+			<div class="contents full">
+				<div class="swiper-container shPay">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="txtArea">
+								<p class="t1">내 계좌로 결제하다</p>
+								<p class="t2">신한 Pay</p>
+								<p class="t3">모든 신한카드 가맹점에서 결제할때 마다<br/>마이신한포인트 적립</p>
+							</div>
+							<div class="motionBox">
+								<img src="../../../../images/co/img_shpay_phone01.png" class="vm wfull"/>
+								<div class="coinSet">
+									<div class="coins">
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</div>
+									<div class="coinTxt">
+										<span class="txt">결제할때 마다<br/><em style="color:#0471e9;">0.2%</em> 적립</span>
+										<div class="blueLine"></div>
+									</div>
+								</div>
+							</div>
+							<p class="starTxt">적립기준 및 상세한 정보는 <em style="color:#0471e9;">신한pLay</em> 앱에서 확인해 주세요.</p><!-- //2021-11-17 수정 -->
+						</div>
+						<div class="swiper-slide">
+							<div class="txtArea">
+								<p class="t1">커피숍, 마트에서도</p>
+								<p class="t2">내 계좌로 터치결제</p>
+								<p class="t3">터치결제, QR, 바코드 결제까지<br/>내 계좌로</p>
+							</div>
+							<div class="motionBox">
+								<img src="../../../../images/co/img_shpay_phone02.png" class="vm wfull"/>
+								<div class="circleBeat">
+									<div class="qr">
+										<span></span>
+										<span></span>
+										<img src="../../../../images/co/img_shpay_qrcode.png"/>
+									</div>
+									<div class="bar">
+										<span></span>
+										<span></span>
+										<img src="../../../../images/co/img_shpay_barcode.png"/>
+									</div>
+								</div>
+							</div>
+							<p class="starTxt">신한pLay 앱 > 월렛에서  <em style="color:#0471e9;">계좌 결제 체크 카드</em>를 확인해보세요.</p><!-- //2021-11-17 수정 -->
+						</div>
+						<div class="swiper-slide">
+							<div class="txtArea">
+								<p class="t1">내 계좌로</p>
+								<p class="t2">신한Pay 시작하기</p>
+							</div>
+							<div class="motionBox">
+								<div class="stepMotion">
+									<!-- 2021-11-17 수정 -->
+									<ul>
+										<li>
+											<p class="tit">01. 신한pLay 설치</p>
+											<p class="gray">신한pLay(신한Pay) 가입</p>
+										</li>
+										<li>
+											<p class="tit">02. 월렛</p>
+											<p class="gray"><em class="txtBlue8">신한은행 계좌 결제기능</em> 추가하기</p>
+										</li>
+										<li>
+											<p class="tit">03. 계좌 인증 가입 완료!</p>
+											<p class="gray">계좌비밀번호로 간편 인증</p>
+										</li>
+									</ul>
+									<!-- //2021-11-17 수정 -->
+								</div>
+							</div>
+							<p class="starTxt">적립기준 및 상세한 정보는 <em style="color:#0471e9;">신한pLay</em> 앱에서 확인해 주세요.</p><!-- //2021-11-17 수정 -->
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<!-- // contents -->
+			<div class="btnGroupBox floating fixed">
+				<!-- <a href="javascript:void(0)" class="btnType btnBlack"><span>My월렛</span></a> -->
+				<a href="javascript:void(0)" class="btnType"><span>신한pLay(신한Pay) 바로가기</span></a><!-- //2021-11-17 수정 -->
+			</div>
+			<!-- <div class="bottomMsg on">
+				<strong class="txtBlue8">이미 계좌</strong>를 등록하셨다면
+			</div> -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<script type="text/javascript">
+var UserAgent = navigator.platform;
+if(UserAgent.match(/i(Phone|Pod|Pad)/i) != null){
+	$('body').width(screen.width);
+}
+var swiper = new Swiper('.shPay', {
+	pagination: '.swiper-pagination', //블릿삽입
+	//2021-04-22 수정
+	onSlideChangeEnd: function (swiper) {
+		if(swiper.activeIndex > 0){
+			$(".bottomMsg").removeClass("on");
+		}else{
+			$(".bottomMsg").addClass("on");
+		}
+	}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+
+<!-- /********************************************************************
+* @설명			: My 활동 목록
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		장영석		2017-12-07	최초작성
+* 2		김동하		2017-12-20	수정
+* 3		김동하		2018-01-03	수정
+* 4		김동하		2018-01-05	수정
+* 5		김동하		2018-01-16	수정
+* 6		김동하		2018-01-23	수정
+* 7		김동하		2018-02-06	수정
+* 8		김동하		2018-02-08	수정
+* 9		김동하		2018-02-13	수정
+* 10	김동하		2018-02-14	수정
+* 11	김동하		2018-02-26	수정
+* 12	김동하		2018-03-08	접근성수정
+*********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>			
+				<h1 class="tit">My 활동</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy02">전체 메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">					
+			<div class="topWrap"> <!-- 2018-02-08 div 추가 -->
+				<div class="myCalendarWrap type02"> <!-- 2018-01-23 클래스 추가 -->
+					<button title="주간보기" class="badge large weeks">주간보기</button> <!-- 앱접근성 변경 -->
+					<button title="월간보기" class="badge large month">월간보기</button> <!-- 앱접근성 변경 -->
+					<button title="일정추가하기" class="badge large scheduleAdd">일정추가하기</button> <!-- 앱접근성 변경 -->
+					<div class="dateWrap">
+						<button title="이전 달" class="btnPrevMonth"><span>이전 달</span></button> <!-- 앱접근성 변경 -->
+						<span class="date">
+							<em class="year">2017</em>.<em class="month">08</em>.<em class="day">24</em> <!-- 2017-12-20 김동하 수정 -->
+						</span>
+						<button title="다음 달" class="btnNextMonth"><span>다음 달</span></button> <!-- 앱접근성 변경 -->
+					</div>
+					
+				</div>
+				<!-- <p class="noScheduleNotice">고객님의 개인일정을 등록할 수 있습니다.</p> --> <!-- 일정 없을때 노출 2018-01-05 김동하 추가-->
+				<div class="scheduleListWrap">
+					<div class="innerWrap">
+						<a href="#">생일파티모임</a>
+						<a href="#">유럽으로 여행시작...</a>
+						<a href="#">생일파티모임</a>
+						<a href="#">생일파티모임</a>
+						<a href="#">생일파티모임</a>
+						<a href="#">생일파티모임</a>
+						<!-- 갯수 5개 이상일 경우 +아이콘 등장 -->
+						<a href="#" class="btnScheduleMore">더보기</a> <!-- 펼쳐지면 on 클래스 추가 -->
+					</div>
+				</div>
+			</div> <!-- //2018-02-08 div 추가 -->
+			<!-- contents -->
+			<div class="contents full pd0">
+				<div class="outWrap">
+					<div class="titleWrap myList">
+						<ul class="classify">
+							<li><a href="#tabView1" title="입출금 탭" class="on">입출금</a></li> <!-- 활성화시 on클래스 추가 --> <!-- 앱접근성 변경 -->
+							<li><a href="#tabView2" title="금융일정 탭">금융일정</a></li> <!-- 앱접근성 변경 -->
+						</ul>
+					</div>
+					<div class="innerBox lineN plan pt0"> <!-- 2018-02-08 클래스 추가 -->
+						<!-- 2017-12-20 김동하 수정 -->
+						<!-- 미래 시점 거래 내역 -->
+						<div class="activityList tyFuture">
+							<div class="conInner">
+								<div class="tabViewWrap">
+									<div class="tabView on" id="tabView1">
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.10</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price withdraw">출금 <span>10,000,000</span>원</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.08</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price deposit">입금 <span>25,000,000</span>원</p>
+													</div>
+												</div>
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price withdraw">출금 <span>40,000</span>원</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.06</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price deposit">입금 <span>25,000,000</span>원</p>
+													</div>
+												</div>
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price withdraw">출금 <span>40,000</span>원</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.04</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price deposit">입금 <span>25,000,000</span>원</p>
+													</div>
+												</div>
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag">11:20</p>
+														<p class="txt">
+															<span class="accountNum"> ***-***-*****</span>
+															<span class="tradeTit">더피프티원</span>
+														</p>
+														<p class="price withdraw">출금 <span>40,000</span>원</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="tabView" id="tabView2">
+										<!-- 2018-02-26 추가 -->
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.15</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">대출이자</i></p>
+														<!-- 2018-02-26 추가 -->
+														<p class="timeTag2"><button title="대출이자확인하기" class="iconTy112">이자확인</button></p>
+														<!-- // 2018-02-26 추가 -->
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">
+																입금 <em>***-***-*****</em>
+																<span class="tipOpen iconTy27" title="입금계좌 : S드림 직장인신용대출(마이너스통장)">?</span>
+															</span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- // 2018-02-26 추가 -->
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.10</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">자동이체</i></p>
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">
+																입금 <em>***-***-*****</em>
+																<span class="tipOpen iconTy27" title="입금계좌 : S드림 직장인신용대출(마이너스통장)">?</span>
+															</span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.08</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">타행이체</i></p>
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">입금(국민) <em>***-***-*****</em></span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">신한카드결제</i></p>
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">카드번호 <em>****-****-****-****</em></span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.05</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">자동이체</i></p>
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">
+																입금 <em>***-***-*****</em>
+																<span class="tipOpen iconTy27" title="입금계좌 : S드림 직장인신용대출(마이너스통장)">?</span>
+															</span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="itemGroup">
+											<p class="date"><span class="shinhan">8.03</span></p>
+											<div class="itemWrap">
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">타행이체</i></p>
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">입금(국민) <em>***-***-*****</em></span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+												<div class="item">
+													<span class="badge large"></span>
+													<div class="listTxt">
+														<p class="timeTag"><i class="iconTyLabel02">신한카드결제</i></p>
+														<p class="txt">
+															<span class="accountNum">출금 <em>***-***-*****</em></span>
+															<span class="accountNum">카드번호 <em>****-****-****-****</em></span>
+														</p>
+														<a href="javascript:void(0)"><p class="price withdraw"><span>10,000,000</span>원</p></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //미래 시점 거래 내역 -->
+						<!-- // 2017-12-20 김동하 수정 -->
+						<!-- 2018-02-13 수정 -->
+						<div class="accountNotiWrap">
+							<div class="boxTyGray notice fontN">
+								금융일정의 경우 타행자동이체, 휴일자동이체 시 등록일과 실제 이체일간 차이가 있을 수 있습니다.
+							</div>
+						</div>
+						<!-- // 2018-02-13 수정 -->
+					</div>
+					<!-- 일정없는경우 2018-01-05 김동하 추가-->
+					<div class="titleBox pt50 pb50">
+						<p class="img noSearch"></p>
+						등록된 금융일정이 없습니다.<br />다른 일자를 선택해 주세요.
+					</div>
+					<!-- //일정없는경우 -->
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+<!-- 2018-01-16 추가 -->
+<script>
+	var $controller = $(".btnScheduleMore"),
+		$el = $(".scheduleListWrap"),
+		height = $el.height();
+
+	$controller.on("click", function(){
+		if($(this).toggleClass("on").hasClass("on")){ // on 클래스가 있을 때 
+			TweenMax.to($el, .35, {height: 300})
+		} else { // on 클래스가 없을 때
+			TweenMax.to($el, .35, {height: height })
+		}
+	})
+
+	// 2018-02-14 스크립트 추가
+	var ToolTipBox = (function(window, $, undefined){
+
+		var Type = {};
+
+		Type.hasLinked = ''; 
+		Type.hasLinked += '<div class="tooltipBox">';
+		Type.hasLinked += 	'<div class="reDiv">';
+		Type.hasLinked += 		'<a href="javascript:void(0)" class="btnType3" onclick=""></a>';
+		Type.hasLinked += 		'<button class="closeBtn">';
+		Type.hasLinked +=			'<i class="iconTy32"></i>';
+		Type.hasLinked +=		'</button>';
+		Type.hasLinked +=	'</div>';
+		Type.hasLinked += '</div>';
+		Type.hasLinked += '<div class="wdim"></div>';
+
+		Type.hasNotLinked = ''; 
+		Type.hasNotLinked += '<div class="tooltipBox">';
+		Type.hasNotLinked += 	'<div class="reDiv">';
+		Type.hasNotLinked += 		'<button class="closeBtn">';
+		Type.hasNotLinked +=			'<i class="iconTy32"></i>';
+		Type.hasNotLinked +=		'</button>';
+		Type.hasNotLinked +=	'</div>';
+		Type.hasNotLinked += '</div>';
+		Type.hasNotLinked += '<div class="wdim"></div>';	
+
+		// ClassName
+		var ToolTipBoxClass = '.tooltipBox',
+			ToolTipTxtClass  = '.reDiv',
+			ToolTipLinkClass = '.btnType3',
+			WhiteDimmedClass = '.wdim',
+			itemClass = '.item',
+			itemGroupClass = '.itemGroup',
+			CloseBtnClass = '.closeBtn';
+
+		// jQuery Object
+		var $ToolTipBox = '',
+			$WhiteDimed = '';	
+
+
+		var Event = {
+			CLICK_CLOSE_BTN : 'click.closeBtn',
+		}
+
+	
+		return {
+
+				/*
+				 * @params elem - HTMLElement || jQuery Object
+				 * @params option.tooltipTxt - String
+				 * @params option.link - Boolean
+				 * @params option.tooltipLink - Function 
+				 * @params option.tooltipLinkTxt - String
+				 */
+
+			create: function(elem, option ){
+				var $parents = $(elem).parents(itemGroupClass),
+					parentsIndex = $parents.index(),
+					$item = $(elem).parents(itemClass),
+					itemIndex = $item.index();
+
+				var $target = $parents.find(itemClass).eq(itemIndex).find(elem)				
+
+				if( $(elem).next(ToolTipBoxClass).length > 0 ){ 
+					$(elem).nextAll().remove(); 
+				}
+
+				if(option.link) // 링크가 있는 경우
+				{
+					$target.after(Type.hasLinked);
+					$ToolTipBox = $target.next(".tooltipBox");
+					$ToolTipBox.find(ToolTipTxtClass).prepend(document.createTextNode(option.tooltipTxt));
+					$ToolTipBox.find(ToolTipLinkClass)[0].onclick = option.tooltipLink;
+					$ToolTipBox.find(ToolTipLinkClass).text(option.tooltipLinkTxt);
+				}
+
+				else // 링크가 없는 경우
+				{	
+					$target.after(Type.hasNotLinked);
+					$ToolTipBox = $target.next(".tooltipBox");
+					$ToolTipBox.find(ToolTipTxtClass).prepend(document.createTextNode(option.tooltipTxt));
+				}
+				this.set($target);
+				this.addEvent();
+			},
+
+			set: function($elem){
+				var offsetY = $elem.position().top
+				$(ToolTipBoxClass).css({display:'none'})
+				$elem.next().css({"top":$(window).height()*0.8 > offsetY + $ToolTipBox.height() ? offsetY : offsetY- $ToolTipBox.height()-25, display: "block"});
+			},
+
+			addEvent: function(){
+				
+				$WhiteDimed = $(WhiteDimmedClass);
+				
+				$(ToolTipBoxClass).find(CloseBtnClass).on(Event.CLICK_CLOSE_BTN, function(){
+					$(ToolTipBoxClass).css({display:'none'})
+					$WhiteDimed.css({display:'none'})
+				})
+
+				$WhiteDimed.on(Event.CLICK_CLOSE_BTN, function(){
+					$(ToolTipBoxClass).css({display:'none'})
+					$WhiteDimed.css({display:'none'})
+				})
+			}
+		}
+
+	})(this, jQuery)
+		
+
+	// 2018-02-14 스크립트 추가
+</script>
+<!-- // 2018-01-16 추가 -->
+</body>
+</html>

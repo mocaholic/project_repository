@@ -1,0 +1,195 @@
+
+<!-- /********************************************************************
+* @설명			: My 활동 목록
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		장영석		2017-12-07	최초작성
+* 2		김동하		2017-12-27	수정
+* 3		김동하		2018-01-03	수정
+* 4		김동하		2018-02-06	수정
+* 5		김동하		2018-02-13	수정
+* 6		김동하		2018-03-08	접근성수정
+*********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/in01.css">
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>			
+				<h1 class="tit">My 활동</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy02">전체 메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		
+		<!-- contentsWrap -->
+		<div id="contentsWrap">					
+			<!-- contents -->
+			<div class="contents full pd0">
+				<div class="myCalendarWrap type02"> <!-- 2018-01-03 김동하 클래스 type02 추가 -->
+					<button title="주간보기" class="badge large weeks">주간보기</button> <!-- 앱접근성 변경 -->
+					<button title="오늘보기" class="badge large goToday">오늘보기</button> <!-- 앱접근성 변경 -->
+					<div class="dateWrap">
+						<button title="이전달" class="btnPrevMonth"><span>이전달</span></button> <!-- 앱접근성 변경 -->
+						<span class="date">
+							<em class="year">2017</em>.<em class="month">08</em>
+						</span>
+						<button title="다음달" class="btnNextMonth"><span>다음달</span></button> <!-- 앱접근성 변경 -->
+					</div>
+				</div>
+				
+				<div class="calendarCont myCalendarTable">
+					<table>
+						<caption>달력</caption>
+						<colgroup>
+							<col style="width:14.28%">
+							<col style="width:14.28%">
+							<col style="width:14.28%">
+							<col style="width:14.28%">
+							<col style="width:14.28%">
+							<col style="width:14.28%">
+							<col style="width:14.28%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="sunday">일</th> <!-- 2018-02-13 수정 -->
+								<th>월</th>
+								<th>화</th>
+								<th>수</th>
+								<th>목</th>
+								<th>금</th>
+								<th class="saturday">토</th> <!-- 2018-02-13 수정 -->
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="dateSun"><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td class="dateSat">
+									<a href="#"><span>1</span></a>
+								</td>
+							</tr>
+							<tr>
+								<td class="dateSun"><a href="#"><span>2</span></a></td>
+								<td><a href="#"><span>3</span></a></td>
+								<td><a href="#"><span>4</span></a></td>
+								<td><a href="#"><span>5</span></a></td>
+								<td class="selected"> <!-- 선택된 날짜 selected 클래스추가 -->
+									<a href="#">
+										<span>6</span>
+										<div class="infoCalendar">
+											<em class="hasTrade">등록된 내용이 있음</em>
+											<ul>
+												<li class="accountHistory">입출금<em class="count">00</em></li> <!-- 2018-02-06 입출금만 accountHistory 클래스 추가 -->
+												<li>개인일정</li>
+												<li>자동이체</li>
+												<li><em class="count">+3</em></li>
+											</ul>
+										</div>
+									</a>
+								</td>
+								<td><a href="#"><span>7</span></a></td>
+								<td class="dateSat"><a href="#"><span>8</span></a></td>
+							</tr>
+							<tr>
+								<td class="dateSun"><a href="#"><span>9</span></a></td>
+								<td><a href="#"><span>10</span></a></td>
+								<td><a href="#"><span>11</span></a></td>
+								<td><a href="#"><span>12</span></a></td>
+								<td><a href="#"><span>13</span></a></td>
+								<td><a href="#"><span>14</span></a></td>
+								<td class="dateSat"><a href="#"><span>15</span></a></td>
+							</tr>
+							<tr>
+								<td class="dateSun"><a href="#"><span>16</span></a></td>
+								<td><a href="#"><span>17</span></a></td>
+								<td><a href="#"><span>18</span></a></td>
+								<td class="">
+									<a href="#">
+										<span>19</span>
+										<div class="infoCalendar">
+											<em class="hasTrade">등록된 내용이 있음</em>
+											<ul>
+												<li class="accountHistory">입출금<em class="count">03</em></li> <!-- 2018-02-06 입출금만 accountHistory 클래스 추가 -->
+												<li>개인일정</li>
+												<li>자동이체</li>
+												<li><em class="count">+3</em></li>
+											</ul>
+										</div>
+									</a>
+								</td>
+								<td><a href="#"><span>20</span></a></td>
+								<td><a href="#"><span>21</span></a></td>
+								<td class="dateSat"><a href="#"><span>22</span></a></td>
+							</tr>
+							<tr>
+								<td class="dateSun"><a href="#"><span>23</span></a></td>
+								<td><a href="#"><span>24</span></a></td>
+								<td class="">
+									<a href="#">
+										<span>25</span>
+										<div class="infoCalendar">
+											<em class="hasTrade">등록된 내용이 있음</em>
+											<ul>
+												<li class="accountHistory">입출금<em class="count">05</em></li> <!-- 2018-02-06 입출금만 accountHistory 클래스 추가 -->
+												<li>개인일정</li>
+												<li>자동이체</li>
+												<li><em class="count">+3</em></li>
+											</ul>
+										</div>
+									</a>
+								</td>
+								<td><a href="#"><span>26</span></a></td>
+								<td><a href="#"><span>27</span></a></td>
+								<td><a href="#"><span>28</span></a></td>
+								<td class="dateSat"><a href="#"><span>29</span></a></td>
+							</tr>
+							<tr>
+								<td class="dateSun"><a href="#"><span>30</span></a></td>
+								<td><a href="#"><span>31</span></a></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td><span>&nbsp;</span></td>
+								<td class="dateSat"><span>&nbsp;</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+			<!-- // contents -->
+
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+</body>
+</html>
