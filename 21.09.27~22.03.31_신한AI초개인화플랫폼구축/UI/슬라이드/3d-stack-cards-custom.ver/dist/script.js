@@ -21,6 +21,7 @@ $(document).ready(function() {
         console.log(curIdx);
         if(startX-endX>50){
             console.log('오른쪽에서 왼쪽');
+            console.log(curIdx);
             if(curIdx >= slideLength){
                 curIdx = 0;
             }else {
@@ -83,7 +84,7 @@ $(document).ready(function() {
         
     });
 
-    function nextSlide() {
+    function prevSlide() {
         lastElem().addClass("active");
         // $slider.addClass("transfomer");
         setTimeout(function(){
@@ -96,7 +97,7 @@ $(document).ready(function() {
         indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
     }
 
-    function prevSlide(){
+    function nextSlide(){
         var $slicedSlide = $('.slide').slice(0,1).addClass("active");
         $slider.append($slicedSlide);
         setTimeout(function(){
