@@ -74,12 +74,39 @@ var solAI = {
 		});
 	}, 
 	'allMenuBtn' : function(){
+		if($('.premierMain').find('> .visualArea').length > 0){
+			$('.allMenuBtn > label, .allMenuBtn .back').addClass('filterWhite');
+			// console.log('!!!')
+		}else{
+			// console.log('OK')
+		}
+		// 전체메뉴 플로팅 버튼(flip 타입)
+		$('.allMenuBtn .flipBox').click(function(){
+			$('.allMenuList').addClass('on');
+		});
+
+		// 전체메뉴popup 버튼 클릭 시
+		$('.allMenuList a').click(function(){
+			var parentC = $(this).parents('ul').attr('class');
+			// console.log(parentC);
+			if($(this).hasClass('btnClose')){
+				// $('.allMenuBtn input:checkbox[id="menuBtn"]').prop('checked', false); 기본타입 시
+				$('.allMenuList').removeClass('on');
+			}else if(parentC == "depth2"){
+	
+			}else{
+				$('.allMenuList > ul > li > a').removeClass('on');
+				$(this).addClass('on');
+			}
+		});
+
+		// scroll 시 전체메뉴, top버튼 교차 노출
 		$('#contentsWrap > div').on('scroll', function(){
 			var scrollTop = $(this).scrollTop();
 			var screenH = $(window).innerHeight();
 			var scrollHeight = $(this).prop('scrollHeight');
-			console.log(screenH);
-			console.log(scrollTop);
+			// console.log(screenH);
+			// console.log(scrollTop);
 
 			/* if(scrollTop <= screenH){
 				console.log('OK');
@@ -99,12 +126,70 @@ var solAI = {
 			} */
 			if(scrollTop === 0){				
 				// $('.allMenuBtn').hide();
-				$('.allMenuBtn').css('opacity','0');
+				$('.allMenuBtn').css('opacity','1');
+				
 			}else {
 				// $('.allMenuBtn').show();
-				$('.allMenuBtn').css('opacity','1');
+				$('.allMenuBtn').css('opacity','0');
 			} 
 		});
+	},
+	'topBtn' : function(){ // Sol AI 프리미어 메인만 적용(클래스 다름) : 기존 top 버튼 기능 적용
+		/* $('#contentsWrap > div').on('scroll', function(){			
+			var scrollTop = $(this).scrollTop();
+			var screenH = $(window).innerHeight();
+			var scrollHeight = $(this).prop('scrollHeight');
+			drawTopButtonHtml = '<a href="javascript:;" class="btnTyCircleTop">Top</a>';
+			if(scrollTop === 0){				
+				$('.topBtn').css('opacity','0');
+			}else {
+				$('.topBtn').css('opacity','1');
+			} 
+		}); */
+		if($(".btnTyCircleTop").length > 0 ){ $(".btnTyCircleTop").remove() }
+		
+		var contents = document.querySelector(".contentsS"),
+			$btnTyCircleTop = '',
+			drawTopButtonHtml = '<a href="javascript:;" class="btnTyCircleTop">Top</a>',
+			btnTyCircleTopHeight = 0,
+			isSet = false;
+	
+		
+		function set(){
+			isSet = true;
+			$("#contentsWrap").append(drawTopButtonHtml);
+			$btnTyCircleTop = $(".btnTyCircleTop");
+			$btnTyCircleTop.css({opacity:0});
+
+			// $btnGroupBoxFix.length && TweenMax.set($btnTyCircleTop, { bottom: '+='+ $btnGroupBoxFix.outerHeight() })
+			
+			btnTyCircleTopHeight = $btnTyCircleTop.outerHeight(true);			
+			// console.log(isSet);
+		}
+
+		$(contents).on("scroll", function(){
+			var sTop = $(this).scrollTop();
+			
+			// console.log(sTop);
+			// console.log($(window).outerHeight(true));
+			if( !isSet ){ set() }
+
+			if(getScrollTop(sTop)){ // 기준 스크롤 top보다 클 때
+				TweenMax.set($btnTyCircleTop, {opacity:1});				
+				
+			} else { // 작을 때
+				TweenMax.set($btnTyCircleTop, {opacity:0});
+			}
+		})
+
+		function getScrollTop(sTop){
+			return sTop > $(window).outerHeight(true) /2;
+		}
+
+		$(document).on("click", ".btnTyCircleTop", function(){
+			$('.contentsS').animate({'scrollTop':0}).focus();
+			return false;
+		})
 	},
 	// css height 100vh 속성
 	'vh' : function(){
@@ -120,6 +205,7 @@ var solAI = {
 		solAI.tabRadioM();
 		solAI.tabCheckM();
 		solAI.allMenuBtn();
+		solAI.topBtn();
 		solAI.vh();
 		window.addEventListener('resize', () => solAI.vh());
 	},
