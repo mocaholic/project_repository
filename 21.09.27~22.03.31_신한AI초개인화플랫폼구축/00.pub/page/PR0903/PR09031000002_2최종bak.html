@@ -17,11 +17,11 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title>신한은행</title>
-	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">	
-	<link rel="stylesheet" type="text/css" href="../../../../../../style/solAI.css">
-	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
-	<script src="../../../../../../script/include/library/ui.js"></script>	
-	<script src="../../../../../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
 </head>
 <body>
 	<div id="wrap">
@@ -31,12 +31,12 @@
 			<header id="headerWrap">
 				<div id="header" class="premier"><!-- class="premier" 추가 -->
 					<div class="lSec">
-						<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+						<a href="javascript:;" class="btnBefore" tabindex="1"><span class="iconTy01">이전</span></a>
 					</div>
 					<h1 class="tit">프리미어 라운지</h1>
 					<div class="rSec">
-						<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
-						<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+						<a href="javascript:;" class="btnHome" tabindex="2"><span class="iconTyHome">처음으로</span></a>
+						<a href="javascript:;" class="btnTotal" tabindex="3"><span class="iconTy02">전체메뉴</span></a>
 					</div>
 				</div>
 			</header>
@@ -50,55 +50,23 @@
 						<div class="mainSlideArea">
 							<div class="slideWrapper">
 								<div class="slider">
-									<!-- 포트설계 -->
-									<div class="slideItem" data-class="1" data-position="1">
-										<a href="javascript:void(0);" class="tabText t1">포트설계</a>
-										<div class="boxTyShadow">										
-											<div class="txtArea">
-												<span class="txtBlack5">내 맘대로 투자 포트를 만들어요</span>
-												<h2 class="titZ mt6">AI 기반 초개인화 포트<br>자산관리</h2>
-												<p class="mt15">
-													투자 성향에 맞는<br>
-													<strong>추천포트 + <br>
-													내가 원하는 상품</strong>을<br>
-													추가해보세요.
-												</p>
+									<!-- 포트묶음관리(포트 미가입자)
+									<div class="slide s2">
+										<a href="javascript:void(0);" class="tabText t2">포트묶음관리</a>
+										<div class="boxTyShadow">
+											<div class="txtArea mt3">
+												<h2 class="titL txtPurple6">내 자산, 이제 포트로<br>관리해 보세요.</h2>
+												<p class="">신규가입없이 고객님이 보유하고 계신 기존 계좌들을 포트로 묶어 관리할 수 있어요.</p>
+												<p class="mt8 fontL">"포트 묶음관리" 어렵지 않아요.</p>
 											</div>
 											<div class="btnGroupBox type6">
-												<a href="#" class="btnType2 purple01 bold">포트 설계하기</a>
+												<a href="#" class="btnType2 purple01 bold">포트 만들기 GoGo!</a>
 											</div>
 										</div>
-									</div>
-									<!-- 건강도 -->
-									<div class="slideItem" data-class="2" data-position="2">
-										<a href="javascript:void(0);" class="tabText t2">건강도</a>
-										<div class="boxTyShadow">
-											<div class="dpFlex">
-												<h2 class="subTit mb0">내 포트 건강도</h2>
-												<a href="#" class="btnType3 txtBlack1 fontS">더보기</a>
-											</div>
-											<div class="graphArea mt10">
-												<div class="graph" style="width:100%; height:calc(100% - 37px); background:#efefef; text-align:center; line-height:18;">
-													그래프영역
-												</div>
-												<div class="annotation mt12">
-													<ul class="dateNote">
-														<li>
-															<span class="date">2021년 11월 15일</span>
-															<span class="mark">그래프 색상</span>
-														</li>
-														<li>
-															<span class="date">2021년 9월 말 (전분기 말)</span>
-															<span class="mark">그래프 색상</span>
-														</li>
-													</ul>
-												</div>
-											</div>											
-										</div>
-									</div>
+									</div> -->
 									<!-- 나의포트(포트 가입자) -->
-									<div class="slideItem" data-class="3" data-position="3">
-										<a href="javascript:void(0);" class="tabText t3">나의포트</a>
+									<div class="slide s2" tabindex="6">
+										<a href="javascript:void(0);" class="tabText t2">나의포트</a>
 										<div class="boxTyShadow">
 											<div class="dpFlex">
 												<h2 class="subTit mb0">나의 포트</h2>
@@ -136,25 +104,58 @@
 											</div>
 										</div>
 									</div>
-									<!-- 포트묶음관리(포트 미가입자)
-									<div class="slideItem" data-class="3" data-position="3">
-										<a href="javascript:void(0);" class="tabText t3">포트묶음관리</a>
+									<!-- 건강도 -->
+									<div class="slide s1" tabindex="5">
+										<a href="javascript:void(0);" class="tabText t1">건강도</a>
 										<div class="boxTyShadow">
-											<div class="txtArea mt3">
-												<h2 class="titL txtPurple6">내 자산, 이제 포트로<br>관리해 보세요.</h2>
-												<p class="">신규가입없이 고객님이 보유하고 계신 기존 계좌들을 포트로 묶어 관리할 수 있어요.</p>
-												<p class="mt8 fontL">"포트 묶음관리" 어렵지 않아요.</p>
+											<div class="dpFlex">
+												<h2 class="subTit mb0">내 포트 건강도</h2>
+												<a href="#" class="btnType3 txtBlack1 fontS">더보기</a>
+											</div>
+											<div class="graphArea mt10">
+												<div class="graph" style="width:100%; height:calc(100% - 37px); background:#efefef; text-align:center; line-height:18;">
+													그래프영역
+												</div>
+												<div class="annotation mt12">
+													<ul class="dateNote">
+														<li>
+															<span class="date">2021년 11월 15일</span>
+															<span class="mark">그래프 색상</span>
+														</li>
+														<li>
+															<span class="date">2021년 9월 말 (전분기 말)</span>
+															<span class="mark">그래프 색상</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+									<!-- 포트설계 -->
+									<div class="slide s0" tabindex="4">
+										<a href="javascript:void(0);" class="tabText t0">포트설계</a>
+										<div class="boxTyShadow">										
+											<div class="txtArea">
+												<span class="txtBlack5">내 맘대로 투자 포트를 만들어요</span>
+												<h2 class="titZ mt6">AI 기반 초개인화 포트<br>자산관리</h2>
+												<p class="mt15">
+													투자 성향에 맞는<br>
+													<strong>추천포트 + <br>
+													내가 원하는 상품</strong>을<br>
+													추가해보세요.
+												</p>
 											</div>
 											<div class="btnGroupBox type6">
-												<a href="#" class="btnType2 purple01 bold">포트 만들기 GoGo!</a>
+												<a href="#" class="btnType2 purple01 bold">포트 설계하기</a>
 											</div>
 										</div>
-									</div> -->
+									</div>
 								</div>
 								<div class="indicator">
-									<a href="#" data-class="1" class="on">1</a>
-									<a href="#" data-class="2">2</a>
-									<a href="#" data-class="3">3</a>
+									<a href="#" class="on">1</a>
+									<a href="#">2</a>
+									<a href="#">3</a>
 								</div>
 							</div>
 						</div>
@@ -517,13 +518,14 @@
 			});
 			
 			// 메인 슬라이드
-			function detectActive(){
-				// get active
-				var get_active = $('.slider .slideItem:first-child').data('class');
-				$('.indicator a').removeClass('on');
-				$('.indicator a[data-class='+ get_active +']').addClass('on');
-			}
-			/* 터치 */
+			var $slider = $('.slider');
+			var slide = $('.slider > .slide');
+			var slideLength = $('.slider > .slide').length - 1;
+			var indicator = $('.indicator');
+			var curIdx = 0;
+	
+			console.log(curIdx);
+	
 			var startX, startY, endX, endY;
 			$('.slider').on('touchstart', function(event){
 				startX = event.originalEvent.changedTouches[0].screenX;
@@ -533,56 +535,89 @@
 			$('.slider').on('touchend', function(event){
 				endX = event.originalEvent.changedTouches[0].screenX;
 				endY = event.originalEvent.changedTouches[0].screenY;
-
+	
 				if(startX - endX > 50){
-					// console.log('오른쪽에서 왼쪽');
+					console.log('오른쪽에서 왼쪽');
+					if(curIdx >= slideLength){
+						curIdx = 0;
+					}else{
+						curIdx = curIdx + 1;
+					}
+					console.log(curIdx);
+	
 					nextSlide();
+					indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
 					
 				}else if(endX - startX > 50){
-					// console.log('왼쪽에서 오른쪽');
+					console.log('왼쪽에서 오른쪽');
+	
+					if(curIdx <= -2){
+						curIdx = 0;
+					}else{
+						curIdx = curIdx - 1;
+					}
+					console.log(curIdx);
+	
 					prevSlide();
+					indicator.find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
 				}
 			});
-
+	
+			// 메인 슬라이드 - 인디케이터
+			$('.indicator a').on('click', function(){
+				var curIdx = $(this).index();
+	
+				console.log(curIdx);
+	
+				$slider.find('.s' + curIdx).addClass('active');
+				$slider.addClass('transfomer');
+				setTimeout(function(){
+					$slider.append($slider.find('.s' + curIdx));
+					$(document).find('.slide.active').removeClass('active');
+					$slider.removeClass('transfomer');
+				}, 300);
+				$(this).addClass('on').siblings().removeClass('on');
+			});
+			// 메인 슬라이드 - 탭
+			$('.tabText').on('click', function(){
+				var curIdx = $(this).attr('class').replace(/[^0-9]/g, "");
+	
+	
+				$(this).parent().addClass('active');
+				$slider.addClass('transfomer');
+				setTimeout(function(){
+					$slider.append($slider.find('.s' + curIdx));
+					$(document).find('.slide.active').removeClass('active');
+					$slider.removeClass('transfomer');
+				}, 300);
+				
+				$('.indicator').find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
+			});
+	
 			function nextSlide(){
-				var total = $('.slideItem').length;
-				$('.slider .slideItem:first-child').hide().appendTo('.slider').fadeIn();
-				$.each($('.slideItem'), function(index, slideItem){
-					$(slideItem).attr('data-position', index + 1);
-				});
-				detectActive();
+				lastElem().addClass('active');
+				// $slider.addClass('transfomer');
+				setTimeout(function(){
+					var $slicedSlide = $('.slide').slice(slideLength);
+					$slider.prepend($slicedSlide);
+					$(document).find('.slide.active').removeClass('active');
+					$slider.removeClass('transfomer');
+				},300);
+				$('.indicator').find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
 			}
-
+	
 			function prevSlide(){
-				var total = $('.slideItem').length;
-				$('.slider .slideItem:last-child').hide().prependTo('.slider').fadeIn();
-				$.each($('.slideItem'), function(index, slideItem){
-					$(slideItem).attr('data-position', index + 1);
-				});
-				detectActive();
+				var $slicedSlide = $('.slide').slice(0,1).addClass('active');
+				$slider.append($slicedSlide);
+				setTimeout(function(){
+					lastElem().removeClass('active')	
+				},50);
+				$('.indicator').find('a').eq(curIdx).addClass('on').siblings().removeClass('on');
 			}
-
-			$('.indicator a').click(function(){
-				$('.indicator a').removeClass('on');
-				$(this).addClass('on');
-				var get_slide = $(this).attr('data-class');
-				console.log(get_slide);
-				$('.slider .slideItem[data-class='+ get_slide +']').hide().prependTo('.slider').fadeIn();
-				$.each($('.slideItem'), function(index, slideItem){
-					$(slideItem).attr('data-position', index + 1);
-				});
-			});
-
-			$('body').on('click', '.slider .slideItem:not(:first-child)', function(){
-				var get_slide = $(this).attr('data-class');
-				console.log(get_slide);
-				$('.slider .slideItem[data-class='+ get_slide +']').hide().prependTo('.slider').fadeIn();
-				$.each($('.slideItem'), function(index, slideItem){
-					$(slideItem).attr('data-position', index + 1);
-				});
-
-				detectActive();
-			});
+	
+			function lastElem(){
+				return $('.slider > .slide').last();
+			}
 	
 			
 			// 이벤트 배너
