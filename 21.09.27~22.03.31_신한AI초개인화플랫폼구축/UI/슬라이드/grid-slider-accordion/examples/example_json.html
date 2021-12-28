@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+<title>Grid Accordion - Example JSON</title>
+
+<link rel="stylesheet" type="text/css" href="../dist/css/grid-accordion.min.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/examples.css" media="screen"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+<script type="text/javascript" src="../libs/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../dist/js/jquery.gridAccordion.min.js"></script>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		// instantiate the accordion
+		$('#example-json').gridAccordion({
+			JSONSource: 'accordion.json',
+			width: 960,
+			height: 800,
+			responsiveMode: 'custom',
+			columns: 3,
+			rows: 3,
+			autoplay: false,
+			mouseWheel:false,
+			breakpoints: {
+				600: {columns: 2, rows: 2}
+			}
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	
+	<!-- Grid Accordion -->
+
+	<div id="example-json" class="grid-accordion"></div>
+
+    <!-- End of Grid Accordion -->
+
+</body>
+</html>
