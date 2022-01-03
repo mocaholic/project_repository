@@ -7,6 +7,8 @@
 * 번호	작업자		작업일			변경내용
 *------------------------------------------------------------------------------------------
 * 1     윤지혜      2021-12-24     최초 작성
+* 2     윤지혜      2021-12-30     문구/메뉴명 및 부분 마크업 수정
+* 3     윤지혜      2021-12-31     html, body style 추가
 ***************************************************************************************/ 
 -->
 
@@ -22,6 +24,9 @@
 	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
 	<script src="../../script/include/library/ui.js"></script>	
 	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+	<style>
+		html, body {background:linear-gradient(180deg, #553da4 0%, #553da4 25%, #fff 25%, #fff 100%);}
+	</style>
 </head>
 <body>
 	<div id="wrap">
@@ -54,16 +59,20 @@
 								<strong>경험</strong>하세요.
 							</div>
 							<!-- <div class="card">
-								<img src="../../../../../../../images/solAI/img_main_card.png" alt="카드 이미지">
+								<img src="../../../images/solAI/img_main_card.png" alt="카드 이미지">
 							</div> -->
 							<div class="charArea">
 								<div class="character">
-									<img src="../../../images/solAI/img_main_character01.png" alt="메인 캐릭터 이미지">
+									<!-- 21.12.30 마크업 수정 -->
+									<div class="ratio">
+										<img src="../../../images/solAI/img_main_character01.png" alt="메인 캐릭터 이미지">
+									</div>
+									<!-- // 21.12.30 마크업 수정 -->
 								</div>
 							</div>
 							<div class="textArea bottom slideTop">
 								<p class="text">
-									<strong>초개인화 포트</strong>
+									<strong>MY포트</strong><!-- 21.12.30 문구 수정 -->
 									예적금, 펀드, ETF까지 한번에 만들 수 있어요.
 								</p>
 								AI가 추천하 GO!<br>
@@ -76,15 +85,15 @@
 						<!-- // 비주얼 영역 -->
 						<!-- 컨텐츠 영역 -->
 						<div class="innerBox mainCont lineN bg">
-							<div class="boxTyShadow">
+							<div class="boxTyShadow pb20"><!-- 21.12.30 class 추가 -->
 								<div class="tabTy01">
 									<a href="#tabView1" class="on">나의 총 자산</a>
 									<a href="#tabView2" >자산 건강도</a>
 								</div>
 								<div class="conInner">
-									<div class="tabViewWrap">
+									<div class="tabViewWrap mb0"><!-- 21.12.30 class 추가 -->
 										<!-- 나의 총 자산 -->
-										<div class="tabView on" id="tabView1">
+										<div class="tabView mb10 on" id="tabView1"><!-- 21.12.30 class 추가 -->
 											<h2 class="blind">나의 총 자산</h2>
 											<p class="investAmount">
 												350,000,000
@@ -138,7 +147,7 @@
 														<span class="mark">그래프 색상</span>
 													</li>
 													<li>
-														<span class="date">2021년 10월 말(전분기 말)</span>
+														<span class="date">2021년 10월 말<span>(전분기 말)</span></span>
 														<span class="mark">그래프 색상</span>
 													</li>
 												</ul>
@@ -208,7 +217,7 @@
 								<div class="dpFlex aiStart ml8 mr8">
 									<h2 class="subTit ml8">나의 포트</h2>
 									<p class="ar">
-										<span class="txtBlack5">포트 보유 현황</span>
+										<span class="txtBlack5">MY포트 보유 현황</span><!-- 21.12.30 문구 수정 -->
 										<span>총<strong>10</strong>개</span>
 									</p>
 								</div>
@@ -217,7 +226,7 @@
 									<!-- 포트 있을 경우 -->
 									<ul class="mt20">
 										<li class="row bg">
-											<p class="tit bold">초개인화 포트 _ 210910_01</p>
+											<p class="tit bold">MY포트 _ 210910_01</p><!-- 21.12.30 문구 수정 -->
 											<p class="fontSSS mt5 txtBlack5">신규일자 2021.09.10</p>
 											<ul class="listTypeTable mt25">
 												<li class="row">
@@ -262,8 +271,8 @@
 						<div class="innerBox mainCont">
 							<div class="boxTyRound banner mt20">
 								<a href="#" class="block">
-									<h2 class="subTit2">포트 가상 투자<br>결과 보기</h2>
-									<p>만약, 그때 투자했더라면..<br>포트 시뮬레이션에서 확인할 수 있어요.</p>
+									<h2 class="subTit2">MY포트 가상 투자<br>결과 보기</h2><!-- 21.12.30 문구 수정 -->
+									<p>만약, 그때 투자했더라면..<br>MY포트 시뮬레이션에서 확인 할 수 있어요.</p>
 								</a>
 							</div>
 
@@ -273,45 +282,46 @@
 								<div class="swiper">
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-											<!-- 배너 텍스트/이미지 분리시 -->
+											<!-- 배너 텍스트/이미지 분리시 : 21.12.30 마크업 수정  -->
 											<div class="evtBnBox">
-												<div class="ratio">
-													<!-- <img src="../../../../../../../images/solAI/img_evt_banner.png" alt="신한카드 포인트로 투자계좌 개설하기"> -->
-													<span class="label">진행 중인 이벤트</span>
-													<a href="#"><i class="arrow_bottom">이벤트 상세 보기</i></a>
-												</div>
+												<a href="#">
+													<div class="ratio">
+														<img src="../../../images/solAI/img_evt_banner.png" alt="신한카드 포인트로 투자계좌 개설하기">
+														<span class="label">진행 중인 이벤트</span>
+													</div>
+												</a>
 											</div>
-											<!-- // 배너 텍스트/이미지 분리시 -->
+											<!-- // 배너 텍스트/이미지 분리시 : 21.12.30 마크업 수정 -->
 										</div>
 										<div class="swiper-slide">
 											<!-- 배너 통이미지로 적용시 -->
 											<a href="#">
 												<div class="ratio">
-													<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+													<img src="../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
 												</div>
 											</a>
 											<!-- // 배너 통이미지로 적용시 -->
 										</div>
 										<div class="swiper-slide">
 											<div class="ratio">
-												<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+												<img src="../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
 											</div>
 										</div>
 										<div class="swiper-slide">
 											<div class="ratio">
-												<img src="../../../../../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
+												<img src="../../../images/event/img_event_dm2019_4.jpg" alt="이벤트 배너">
 											</div>
 										</div>
 									</div>
 									<div class="swiper-pagination"></div>
 								</div>
 								<!-- // 진행중인 이벤트 있을 경우 -->
-								<!-- 진행중인 이벤트 있을 경우 -->
+								<!-- 진행중인 이벤트 없을 경우 -->
 								<div class="noData">
 									<i class="iconTySol8"></i>
 									진행중인 이벤트가 없습니다.
 								</div>
-								<!-- // 진행중인 이벤트 있을 경우 -->
+								<!-- // 진행중인 이벤트 없을 경우 -->
 							</div>
 						</div>
 
@@ -386,7 +396,7 @@
 			</div>
 			<ul>
 				<li>
-					<a href="javascript:void(0);" class="on">포트 설계</a>
+					<a href="javascript:void(0);" class="on">MY포트 설계</a><!-- 21.12.30 메뉴명 수정 -->
 					<ul class="depth2">
 						<li><a href="#">포트 신규 설계</a></li>
 						<li><a href="#">포트 가상 투자</a></li>
@@ -394,7 +404,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="javascript:void(0);">포트 관리</a>
+					<a href="javascript:void(0);">MY포트 관리</a><!-- 21.12.30 메뉴명 수정 -->
 					<ul class="depth2">
 						<li><a href="#">포트 목록</a></li>
 						<li><a href="#">포트 리밸런싱</a></li>

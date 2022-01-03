@@ -198,6 +198,107 @@ var solAI = {
 		console.log(vh);
 
 	},
+	'mainSlide' : function(){
+		function detectActive(){
+			// get active
+			var get_active = $('.slider .slideItem:first-child').data('class');
+			$('.indicator a').removeClass('on');
+			$('.indicator a[data-class='+ get_active +']').addClass('on');
+		}
+		/* touch */
+		var startX, startY, endX, endY;
+		$('.slider').on('touchstart', function(event){
+			startX = event.originalEvent.changedTouches[0].screenX;
+			startY = event.originalEvent.changedTouches[0].screenY;
+			console.log('hi');
+		});
+		$('.slider').on('touchend', function(event){
+			endX = event.originalEvent.changedTouches[0].screenX;
+			endY = event.originalEvent.changedTouches[0].screenY;
+
+			if(startX - endX > 50){
+				console.log('오른쪽에서 왼쪽');
+				nextSlide();
+				
+			}else if(endX - startX > 50){
+				console.log('왼쪽에서 오른쪽');
+				prevSlide();
+			}
+		});
+
+		function nextSlide(){
+			var total = $('.slideItem').length;
+			$('.slider .slideItem:first-child').hide().appendTo('.slider').fadeIn();
+			$.each($('.slideItem'), function(index, slideItem){
+				$(slideItem).attr('data-position', index + 1);
+			});
+			detectActive();
+		}
+
+		function prevSlide(){
+			var total = $('.slideItem').length;
+			$('.slider .slideItem:last-child').hide().prependTo('.slider').fadeIn();
+			$.each($('.slideItem'), function(index, slideItem){
+				$(slideItem).attr('data-position', index + 1);
+			});
+			detectActive();
+		}
+
+		$('.indicator a').click(function(){
+			$('.indicator a').removeClass('on');
+			$(this).addClass('on');
+			var get_slide = $(this).attr('data-class');
+			console.log(get_slide);
+			$('.slider .slideItem[data-class='+ get_slide +']').hide().prependTo('.slider').fadeIn();
+			$.each($('.slideItem'), function(index, slideItem){
+				$(slideItem).attr('data-position', index + 1);
+			});
+		});
+
+		$('body').on('click', '.slider .slideItem:not(:first-child)', function(){
+			var get_slide = $(this).attr('data-class');
+			console.log(get_slide);
+			$('.slider .slideItem[data-class='+ get_slide +']').hide().prependTo('.slider').fadeIn();
+			$.each($('.slideItem'), function(index, slideItem){
+				$(slideItem).attr('data-position', index + 1);
+			});
+
+			detectActive();
+		});
+	},
+	'pullDownR' : function(){/* pull down to refresh */
+		var touchStartHandler ,
+			 touchMoveHandler,
+			 touchPoint;
+			//  only needed for touch events on chrome.
+			if((window.chrome || navigator.userAgent.match('CriOS')) && "ontouchstart" in document.documentElement) {
+				touchStartHandler = function(){
+					// only need to handle single touch cases
+					touchPoint = event.touches.length === 1 ? event.touches[0].clientY : null;
+				}
+				touchMoveHandler = function(event){
+					var newTouchPoint;
+					// only need to handle single touch cases
+					if(event.touches.length !== 1){
+						touchPoint = null;
+						return;
+					}
+					// only need to defaultPrevent when scrolling up
+					newTouchPoint = event.touches[0].clientY;
+					if(newTouchPoint > touchPoint){
+						event.preventDefault();
+					}
+					touchPoint = newTouchPoint;
+				}
+				document.addEventListener("touchstart", touchStartHandler,{
+					passive: false
+				});
+				document.addEventListener("touchmove", touchMoveHandler,{
+					passive: false
+				});
+			}
+
+	},
 	
 	'init' : function(){
 		solAI.toggleCheck();
@@ -207,6 +308,8 @@ var solAI = {
 		solAI.allMenuBtn();
 		solAI.topBtn();
 		solAI.vh();
+		solAI.mainSlide();
+		// solAI.pullDownR();
 		window.addEventListener('resize', () => solAI.vh());
 	},
 }
