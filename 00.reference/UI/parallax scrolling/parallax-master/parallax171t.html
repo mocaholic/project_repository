@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i'" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <style>
+        /* reset */
+        * {margin:0; padding:0; font-family: 'Lato';}
+        li {list-style: none;}
+        a {text-decoration: none;}
+        
+        /* nav */
+        #nav {position: fixed; left: 0; top: 0px; width: 100%; height: 61px; z-index: 1000; background-color: rgba(0,0,0,0.3); transition: all 0.3s ease;}
+        #nav h1 {float: left; color: #fff; font-size: 40px; padding: 5px 5px 5px 15px; font-family: 'Abel' }
+        
+        /* section */
+        #section {
+            text-align: center; color: #fff;
+            background: -webkit-radial-gradient(center, ellipse cover, #272C4E 0%, #1C1C1F 100%);
+        }
+        #section h2 {font-size: 70px; font-weight: 200; text-transform: uppercase; padding: 20% 0;}
+        
+        /* container */
+        .container {width: 1200px; margin: 0 auto;}
+
+        /* post */
+        #postWrap {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #postWrap .post {
+            position: relative;
+            width: 100%;
+            min-height: 450px;
+            background-image: url(https://tistory2.daumcdn.net/tistory/2933724/skin/images/banner01.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 30px 30px 100px 30px;
+            background-color: #272C4E; 
+            
+        }
+        #postWrap .post:nth-child(2) {filter: hue-rotate(10deg) sepia(140%)}
+        #postWrap .post:nth-child(3) {filter: saturate(200%);}
+        #postWrap .post:nth-child(4) {filter: invert(10%);}
+        #postWrap .post:nth-child(5) {filter: hue-rotate(50deg)}
+        #postWrap .post:nth-child(6) {filter: hue-rotate(150deg)}
+        #postWrap .post:nth-child(7) {filter: hue-rotate(250deg)}
+        #postWrap .post:nth-child(8) {filter: hue-rotate(350deg)}
+        #postWrap .post:nth-child(9) {filter: grayscale(100%)}
+        #postWrap .post:nth-child(10) {filter: brightness(60%);}
+        
+
+        @media (max-width: 1220px){
+            .container {width: 100%;}
+            #postWrap .post {width: 90%; margin: 30px auto 100px auto;}
+        };
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h1>Web's</h1>
+    </nav>
+    
+    <section id="section">
+        <h2>스크롤을 내리면 이미지가<br>기울어지는 효과입니다.</h2>
+        <div class="container">
+            <div id="postWrap">
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+                <div class="post"></div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script>
+        const app = document.getElementById('postWrap');
+        let pageYOffset = window.pageYOffset
+
+        const render = () => {
+            const newPageOffset = window.pageYOffset
+            const diff = newPageOffset - pageYOffset
+            
+            TweenMax.to(app, .3, {
+                // skewX: -diff * 0.03,
+                skewY: diff * 0.3,
+                ease: Power4.ease
+            })
+        
+            pageYOffset = newPageOffset
+            requestAnimationFrame(render)
+        }
+
+        render();
+    </script>
+</body>
+</html>

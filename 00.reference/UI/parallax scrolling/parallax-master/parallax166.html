@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+    <title>Parallax</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i'" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <style>
+        /* reset */
+        * {margin:0; padding:0; font-family: 'Lato';}
+        li {list-style: none;}
+        a {text-decoration: none;}
+        
+        /* nav */
+        #nav {position: fixed; left: 0; top: 0px; width: 100%; height: 61px; z-index: 1000; background-color: rgba(255,255,255,0.3); transition: all 0.3s ease;}
+        #nav.on {position: fixed; top: -61px;}
+        #nav h1 {float: left; color: #fff; font-size: 40px; padding: 5px 5px 5px 15px; font-family: 'Abel' }
+        
+        /* dot */
+        #dot {position: fixed; right: 20px; top:50%; z-index: 10; transform: translatey(-50%);}
+        #dot li {
+            position: relative;
+            width: 20px; height: 20px; border-radius:50%; 
+            box-shadow: 0 0 0 2px rgba(255,255,255,0);
+            margin: 8px;
+            transition: box-shadow 0.3s ease;
+        }
+        #dot li a { 
+            background-color: rgba(255,255,255,0.7);
+            width: 100%; height: 100%;
+            position: absolute; top:0; left: 0;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        #dot li.active {box-shadow: 0 0 0 2px rgba(255,255,255,1);}
+        #dot li.active a {transform: scale(0.4);}
+        #dot li a em {display: none;}   
+        
+        /* contents */
+        #contents {text-align: center; color: #fff;}
+        #contents > div {height: 100vh; display: flex; justify-content : center; align-items : center;}
+        #contents > div h2 {font-size: 70px; font-weight: 200; text-transform: uppercase;}
+        #contents > div h2 strong {font-weight: 700; font-style: italic; display: block;}
+        
+        /* section */
+        #section1 {background:radial-gradient(ellipse farthest-corner at center top, #A3A1FF, #3A3897);}
+        #section2 {background:radial-gradient(ellipse farthest-corner at center bottom, #3AA17E, #00537E);}
+        #section4 {background:radial-gradient(ellipse farthest-corner at center top, #29ABE2, #4F00BC);}
+        #section5 {background:radial-gradient(ellipse farthest-corner at center top, #FF5300, #45145A);}
+        #section6 {background:radial-gradient(ellipse farthest-corner at center bottom, #852D91, #312A6C);}
+        #section3 {background:radial-gradient(ellipse farthest-corner at center top, #FBB03B, #D4145A);}
+        
+        /* container */
+        .container {width: 1200px; margin: 0 auto;}
+        
+        /* text animation */ 
+        #section1 h2 span {opacity: 0; display: inline-block; }
+        #section1.show h2 span {animation: ani1 .35s ease forwards;}
+        #section1.show h2 span:nth-of-type(1) {animation-delay: 0s;}
+        #section1.show h2 span:nth-of-type(2) {animation-delay: .05s;}
+        #section1.show h2 span:nth-of-type(3) {animation-delay: .1s;}
+        #section1.show h2 span:nth-of-type(4) {animation-delay: .15s;}
+        #section1.show h2 span:nth-of-type(5) {animation-delay: .2s;}
+        #section1.show h2 span:nth-of-type(6) {animation-delay: .25s;}
+        #section1.show h2 span:nth-of-type(7) {animation-delay: .3s;}
+        #section1.show h2 span:nth-of-type(8) {animation-delay: .35s;}
+        #section1.show h2 span:nth-of-type(9) {animation-delay: .4s;}
+        #section1.show h2 span:nth-of-type(10) {animation-delay: .45s;}
+        #section1.show h2 span:nth-of-type(11) {animation-delay: .5s;}
+        #section1.show h2 span:nth-of-type(12) {animation-delay: .55s;}
+        #section1.show h2 span:nth-of-type(13) {animation-delay: .6s;}
+        #section1.show h2 span:nth-of-type(14) {animation-delay: .65s;}
+        #section1.show h2 span:nth-of-type(15) {animation-delay: .7s;}
+        #section1.show h2 span:nth-of-type(16) {animation-delay: .75s;}
+        
+        @keyframes ani1 {
+            0%   {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    
+        #section2 h2 span {opacity: 0; display: inline-block;}
+        #section2.show h2 span {animation: ani2 .35s ease forwards;}
+        #section2.show h2 span:nth-of-type(1) {animation-delay: 0s;}
+        #section2.show h2 span:nth-of-type(2) {animation-delay: .05s;}
+        #section2.show h2 span:nth-of-type(3) {animation-delay: .1s;}
+        #section2.show h2 span:nth-of-type(4) {animation-delay: .15s;}
+        #section2.show h2 span:nth-of-type(5) {animation-delay: .2s;}
+        #section2.show h2 span:nth-of-type(6) {animation-delay: .25s;}
+        #section2.show h2 span:nth-of-type(7) {animation-delay: .3s;}
+        #section2.show h2 span:nth-of-type(8) {animation-delay: .35s;}
+        #section2.show h2 span:nth-of-type(9) {animation-delay: .4s;}
+        #section2.show h2 span:nth-of-type(10) {animation-delay: .45s;}
+        #section2.show h2 span:nth-of-type(11) {animation-delay: .5s;}
+        #section2.show h2 span:nth-of-type(12) {animation-delay: .55s;}
+        #section2.show h2 span:nth-of-type(13) {animation-delay: .6s;}
+        #section2.show h2 span:nth-of-type(14) {animation-delay: .65s;}
+        #section2.show h2 span:nth-of-type(15) {animation-delay: .7s;}
+        #section2.show h2 span:nth-of-type(16) {animation-delay: .75s;}
+        #section2.show h2 span:nth-of-type(17) {animation-delay: .8s;}
+        #section2.show h2 span:nth-of-type(18) {animation-delay: .85s;}
+        #section2.show h2 span:nth-of-type(19) {animation-delay: .9s;}
+        #section2.show h2 span:nth-of-type(20) {animation-delay: .95s;}
+        #section2.show h2 span:nth-of-type(21) {animation-delay: 1s;}
+        #section2.show h2 span:nth-of-type(22) {animation-delay: 1.05s;}
+        #section2.show h2 span:nth-of-type(23) {animation-delay: 1.1s;}
+        #section2.show h2 span:nth-of-type(24) {animation-delay: 1.15s;}
+        #section2.show h2 span:nth-of-type(25) {animation-delay: 1.2s;}
+        #section2.show h2 span:nth-of-type(26) {animation-delay: 1.25s;}
+        
+        @keyframes ani2 {
+            0%   {transform: translate(-150px, -50px) rotate(-180deg) scale(3);}
+            60%  {transform: translate(20px, 20px) rotate(30deg) scale(.3);}
+            100% {transform: translate(0) rotate(0) scale(1); opacity: 1;}
+        }
+        
+        
+        #section3 h2 span {opacity: 0; display: inline-block;}
+        #section3.show h2 span {animation: ani3 .35s ease forwards;}
+        #section3.show h2 span:nth-of-type(1) {animation-delay: 0s;}
+        #section3.show h2 span:nth-of-type(2) {animation-delay: .05s;}
+        #section3.show h2 span:nth-of-type(3) {animation-delay: .1s;}
+        #section3.show h2 span:nth-of-type(4) {animation-delay: .15s;}
+        #section3.show h2 span:nth-of-type(5) {animation-delay: .2s;}
+        #section3.show h2 span:nth-of-type(6) {animation-delay: .25s;}
+        #section3.show h2 span:nth-of-type(7) {animation-delay: .3s;}
+        #section3.show h2 span:nth-of-type(8) {animation-delay: .35s;}
+        #section3.show h2 span:nth-of-type(9) {animation-delay: .4s;}
+        #section3.show h2 span:nth-of-type(10) {animation-delay: .45s;}
+        #section3.show h2 span:nth-of-type(11) {animation-delay: .5s;}
+        #section3.show h2 span:nth-of-type(12) {animation-delay: .55s;}
+        #section3.show h2 span:nth-of-type(13) {animation-delay: .6s;}
+        #section3.show h2 span:nth-of-type(14) {animation-delay: .65s;}
+        #section3.show h2 span:nth-of-type(15) {animation-delay: .7s;}
+        #section3.show h2 span:nth-of-type(16) {animation-delay: .75s;}
+        #section3.show h2 span:nth-of-type(17) {animation-delay: .8s;}
+        #section3.show h2 span:nth-of-type(18) {animation-delay: .85s;}
+        #section3.show h2 span:nth-of-type(19) {animation-delay: .9s;}
+        #section3.show h2 span:nth-of-type(20) {animation-delay: .95s;}
+        
+        @keyframes ani3 {
+            0%   {transform: translate(200px, -100px) scale(2);}
+            60%  {transform: translate(0px, 20px) rotate(-180deg) scale(.5);}
+            100% {transform: translate(0) rotate(0) scale(1); opacity:1;}
+        } 
+        
+        #section4 h2 span {opacity:0; display: inline-block;}
+        #section4 h2 span.show {opacity:1; animation: ani4 .35s ease forwards;}
+        
+        @keyframes ani4 {
+            40% {transform: translate(50px, 0) scale(.7); opacity: 1; color: #348c04;}
+            60% {color: #0f40ba;}
+            80% {transform: translate(0) scale(2);opacity: 0;}
+            100% {transform: translate(0) scale(1);opacity: 1;}
+        }
+        
+        #section5 h2 span {opacity:0; display: inline-block;}
+        #section5 h2 span.show {opacity:1; animation: ani5 .35s ease forwards;}
+        @keyframes ani5 {
+            30% {transform: translate(0, -50px) rotate(180deg) scale(1);}
+	        50% {transform: translate(0, 20px) scale(.8) rotate(0deg); opacity: 1;}
+            80% {transform: translate(-100px, -100px) scale(1.5) rotate(-180deg); opacity: 0;}
+            100% {transform: translate(0) scale(1) rotate(0deg); opacity: 1;}
+        }
+        
+        #section6 h2 span {opacity:0; display: inline-block;}
+        #section6 h2 span.show {opacity:1; animation: ani6 .45s ease forwards;}
+        @keyframes ani6 {
+            30% {transform: translate(0, -50px) rotate(180deg) scale(1);}
+            60% {transform: translate(0, 20px) scale(.8) rotate(0deg);}
+            100% {transform: translate(0) scale(1) rotate(0deg);opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <h1>WEB'S</h1>
+    </nav>
+    
+    <div id="dot">
+        <ul>
+            <li class="active"><a href="#"><em>menu1</em></a></li>
+            <li><a href="#"><em>menu2</em></a></li>
+            <li><a href="#"><em>menu3</em></a></li>
+            <li><a href="#"><em>menu4</em></a></li>
+            <li><a href="#"><em>menu5</em></a></li>
+            <li><a href="#"><em>menu6</em></a></li>
+        </ul>
+    </div>
+
+    <div id="contents">
+        <div id="section1">
+            <div>
+                <h2><span>바</span><span>쁘</span><span>게</span> <span>살</span><span>던</span><span>가</span><span>!</span><br> <span>바</span><span>쁘</span><span>게</span> <span>죽</span><span>던</span><span>가</span><span>!</span></h2>
+            </div>
+        </div>
+        <div id="section2">
+            <div class="container">
+                <h2><span>편</span><span>안</span><span>함</span><span>이</span> <span>끝</span><span>나</span><span>고</span> <span>궁</span><span>핍</span><span>이</span> <span>시</span><span>작</span><span>될</span> <span>때</span><br> <span>인</span><span>생</span><span>의</span> <span>가</span><span>름</span><span>침</span><span>이</span> <span>시</span><span>작</span><span>된</span><span>다</span><span>.</span></h2>
+            </div>
+        </div>
+        <div id="section3">
+            <div class="container">
+                <h2><span>시</span><span>간</span><span>이</span> <span>약</span><span>이</span><span>면</span> <span>뭐</span><span>해</span><span>!</span><br> <span>마</span><span>음</span><span>이</span> <span>기</span><span>억</span><span>하</span><span>는</span><span>데</span><span>~</span></h2>
+            </div>
+        </div>
+        <div id="section4">
+            <div class="container">
+                <h2><span>예</span><span>쁜</span> <span>꽃</span><span>을</span> <span>찍</span><span>으</span><span>려</span><span>면</span><br> <span>예</span><span>쁜</span> <span>꽃</span><span>을</span> <span>볼</span> <span>줄</span> <span>알</span><span>아</span><span>야</span><span>지</span><span>.</span></h2>
+            </div>
+        </div>
+        <div id="section5">
+            <div class="container">
+                <h2><span>항</span><span>상</span> <span>이</span><span>길</span> <span>수</span><span>는</span> <span>없</span><span>지</span><span>만</span><br> <span>항</span><span>상</span> <span>배</span><span>울</span> <span>수</span><span>는</span> <span>있</span><span>습</span><span>니</span><span>다</span><span>.</span></h2>
+            </div>
+        </div>
+        <div id="section6">
+            <div class="container">
+                <h2><span>난</span><span>쟁</span><span>이</span><span>들</span><span>에</span> <span>둘</span><span>러</span><span>싸</span><span>여</span> <span>있</span><span>다</span><span>고</span><br> <span>거</span><span>인</span><span>이</span> <span>되</span><span>는</span> <span>것</span><span>은</span> <span>아</span><span>니</span><span>다</span><span>.</span></h2>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        var dot = $("#dot > ul > li");
+        var cont = $("#contents > div");
+
+        dot.click(function(e){
+            e.preventDefault();
+            var target = $(this);
+            var index = target.index();
+            var section = cont.eq(index);
+            var offset = section.offset().top;
+            $("html,body").animate({ scrollTop:offset },600,"easeInOutExpo");
+        });
+        
+        $(window).scroll(function(){
+            var wScroll = $(this).scrollTop();
+            
+            if(wScroll >= cont.eq(0).offset().top){
+                dot.removeClass("active");
+                dot.eq(0).addClass("active");
+            }
+            if(wScroll >= cont.eq(1).offset().top){
+                dot.removeClass("active");
+                dot.eq(1).addClass("active");
+            }
+            if(wScroll >= cont.eq(2).offset().top){
+                dot.removeClass("active");
+                dot.eq(2).addClass("active");
+            }
+            if(wScroll >= cont.eq(3).offset().top){
+                dot.removeClass("active");
+                dot.eq(3).addClass("active");
+            }
+            if(wScroll >= cont.eq(4).offset().top){
+                dot.removeClass("active");
+                dot.eq(4).addClass("active");
+            }
+            if(wScroll >= cont.eq(5).offset().top){
+                dot.removeClass("active");
+                dot.eq(5).addClass("active");
+            }
+            
+            //Text Animation CSS
+            if(wScroll >= cont.eq(0).offset().top - $(window).height()/3 ){
+                cont.eq(0).addClass("show");
+            }
+            if(wScroll >= cont.eq(1).offset().top - $(window).height()/3 ){
+                cont.eq(1).addClass("show");
+            }
+            if(wScroll >= cont.eq(2).offset().top - $(window).height()/3 ){
+                cont.eq(2).addClass("show");
+            }
+            
+            //Text Animation Script
+            if(wScroll >= cont.eq(3).offset().top - $(window).height()/3 ){
+                $("#section4 h2 span").each(function(i){
+                    setTimeout(function(){
+                        $("#section4 h2 span").eq(i).addClass("show");
+                    },100*(i+1));
+                });
+            }
+            if(wScroll >= cont.eq(4).offset().top - $(window).height()/3 ){
+                $("#section5 h2 span").each(function(i){
+                    setTimeout(function(){
+                        $("#section5 h2 span").eq(i).addClass("show");
+                    },100*(i+1));
+                });
+            } 
+            if(wScroll >= cont.eq(5).offset().top - $(window).height()/3 ){
+                $("#section6 h2 span").each(function(i){
+                    setTimeout(function(){
+                        $("#section6 h2 span").eq(i).addClass("show");
+                    },100*(i+1));
+                });
+            } 
+        });
+        
+    </script>
+</body>
+</html>
