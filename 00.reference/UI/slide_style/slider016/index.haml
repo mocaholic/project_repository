@@ -1,0 +1,59 @@
+#wrap
+  %h1.badge{"data-splitting" => "chars"} 2018TOPTEN
+  %input{:checked => "checked", :name => "record", :type => "radio"}/
+  -9.times do
+    %input{:name => "record", :type => "radio"}/
+  -10.times do
+    .cover
+      .inner
+  .title
+    %h1{"data-splitting" => "chars"} Rolling Blackouts C.F.
+    %h1{"data-splitting" => "chars"} Portrayal of Guilt
+    %h1{"data-splitting" => "chars"} Daughters
+    %h1{"data-splitting" => "chars"} Swingin' Utters
+    %h1{"data-splitting" => "chars"} Devils Teeth
+    %h1{"data-splitting" => "chars"} Culture Abuse
+    %h1{"data-splitting" => "chars"} Sleep
+    %h1{"data-splitting" => "chars"} Janelle Monáe
+    %h1{"data-splitting" => "chars"} Fucked Up
+    %h1{"data-splitting" => "chars"} Lucy Dacus
+  .info
+    %h3 "Hope Downs"
+    %h3 "Let Pain Be Your Guide"
+    %h3 "You Won't Get What You Want"
+    %h3 "Peace and Love"
+    %h3 "Suki Yaki Hot!"
+    %h3 "Bay Dream"
+    %h3 "The Sciences"
+    %h3 "Dirty Computer"
+    %h3 "Dose Your Dreams"
+    %h3 "Historian"
+    %a{:href => "https://rollingblackoutscoastalfever.bandcamp.com/album/hope-downs", :target => "blank"} Listen
+    %a{:href => "https://portrayalofguilt.com/album/let-pain-be-your-guide", :target => "blank"} Listen
+    %a{:href => "https://daughters.bandcamp.com/album/you-wont-get-what-you-want", :target => "blank"} Listen
+    %a{:href => "https://swinginutters.bandcamp.com/album/peace-and-love", :target => "blank"} Listen
+    %a{:href => "https://devilsteeth.bandcamp.com/album/suki-yaki-hot", :target => "blank"} Listen
+    %a{:href => "https://cultureabuse.bandcamp.com/album/bay-dream", :target => "blank"} Listen
+    %a{:href => "https://vimeo.com/265792803", :target => "blank"} Listen
+    %a{:href => "https://soundcloud.com/janelle-monae/sets/dirty-computer", :target => "blank"} Listen
+    %a{:href => "https://fuckedup.bandcamp.com/album/dose-your-dreams", :target => "blank"} Listen
+    %a{:href => "https://open.spotify.com/album/01GO03odsNlNLtvNETukWT", :target => "blank"} Listen
+
+  .markers
+    -10.times do
+      .box
+    .indicator
+      
+     
+
+%svg{:style => "display:none", :version => "1.1", :xmlns => "http://www.w3.org/2000/svg"}
+  %defs
+    %filter#wave
+      %feturbulence#turbulence{:basefrequency => "0.1 0.001", :numoctaves => "1", :result => "noise", :seed => "13"}
+      %fedisplacementmap#displacement{:in => "SourceGraphic", :in2 => "noise", :scale => "50"}
+
+%svg{:style => "display:none", :version => "1.1", :xmlns => "http://www.w3.org/2000/svg"}
+  %defs
+    %filter#jagged
+      %feturbulence#turbulence{:basefrequency => "0.02", :numoctaves => "3", :result => "noise", :seed => "0"}
+      %fedisplacementmap#displacement{:in => "SourceGraphic", :in2 => "noise", :scale => "2"}
