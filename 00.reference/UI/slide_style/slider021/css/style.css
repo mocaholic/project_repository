@@ -1,0 +1,132 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #231F20;
+  font-size: 20px;
+  background: #FFF3F5;
+}
+
+.wrap {
+  position: relative;
+  margin-left: 65px;
+  margin-top: 65px;
+}
+
+.stepper {
+  margin-top: -65px;
+  margin-left: -65px;
+  width: 30px;
+  height: 30px;
+  background: #FF4957;
+  cursor: pointer;
+  width: 130px;
+  height: 130px;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 64px;
+  position: relative;
+  box-shadow: -1px 57px 80px -17px rgba(255, 73, 87, 0.25);
+  overflow: hidden;
+  z-index: 2;
+}
+.stepper span {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+.stepper span.active {
+  -webkit-transform: translateY(0) translateX(-50%);
+          transform: translateY(0) translateX(-50%);
+}
+.stepper span.hide {
+  opacity: 0;
+}
+
+.arrow-top {
+  position: absolute;
+  top: -120px;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 50px;
+}
+
+.arrow-bottom {
+  position: absolute;
+  bottom: -57px;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 50px;
+}
+
+.github {
+  width: 40px;
+  height: 40px;
+  background: url(http://alikinvv.github.io/github.svg) no-repeat center;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  -webkit-animation: github 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s infinite;
+          animation: github 3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s infinite;
+}
+
+@-webkit-keyframes github {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes github {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.desc {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: #ffbac1;
+}
