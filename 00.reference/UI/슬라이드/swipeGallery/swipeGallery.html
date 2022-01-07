@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=divice-width, initial-scale=1.0"/>
+	<title>swipeGallery</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="swipe.js"></script>
+	<style type="text/css">
+		* {margin:0; padding:0;}
+		ul,li {list-style:none;}
+		img {border:0;}
+		#sliderWrap li {display:none; width:90%; margin:5px auto;}
+		#sliderWrap li:first-child {display:block;}
+		#sliderWrap li img {width:100%;}
+		.arrowBox a {display:block; width:46px; height:46px; background:url(images/arrow-btn.png) no-repeat; text-indent:-999px;}
+		.arrowBox a:last-child {background-position:0 0;}
+		.arrowBox a:first-child {background-position:-46px 0; float:right;}
+	</style>
+</head>
+<body>
+	<div id="sliderWrap">
+		<ul>
+			<li><img src="images/s1.jpg" alt="" /></li>
+			<li><img src="images/s2.jpg" alt="" /></li>
+			<li><img src="images/s3.jpg" alt="" /></li>
+			<li><img src="images/s4.jpg" alt="" /></li>
+			<li><img src="images/s5.jpg" alt="" /></li>
+			<li><img src="images/s6.jpg" alt="" /></li>
+			<li><img src="images/s7.jpg" alt="" /></li>
+		</ul>
+	</div>
+	<div class="arrowBox">
+		<a href="#">다음</a>
+		<a href="#">이전</a>
+	</div>
+	<script>
+		$(function(){
+			var sliderWrap=document.getElementById('sliderWrap');
+			sliderObj=new Swipe(sliderWrap);
+			$('.arrowBox a').eq(0).click(function(){
+				sliderObj.next();
+			})
+			$('.arrowBox a').eq(1).click(function(){
+				sliderObj.prev();
+			})
+		})
+	</script>
+</body>
+</html>
