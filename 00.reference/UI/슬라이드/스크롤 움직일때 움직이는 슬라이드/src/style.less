@@ -1,0 +1,224 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #20303e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+  user-select: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  cursor: none;
+}
+
+main {
+  width: 85vw;
+  height: 80vh;
+  box-shadow: 0 16px 18px rgba(22, 35, 43, 0.19);
+  transform: rotate(0);
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &-main {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      &-img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-image: var(--img);
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &-circle {
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+
+      width: 32vmin;
+      height: 32vmin;
+      overflow: hidden;
+      clip-path: circle(16vmin at center);
+
+      &-img {
+        width: 100%;
+        height: 100%;
+        clip-path: circle(16vmin at center);
+        position: relative;
+        transform: rotate(0);
+
+        &::after {
+          content: '';
+          position: fixed;
+          width: 85vw;
+          height: 80vh;
+          display: block;
+          background-image: var(--img);
+          top: calc(-40vh + 16vmin);
+          left: calc(-85vw / 2 + 16vmin);
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(39, 108, 190, 0.33);
+      mix-blend-mode: exclusion;
+      z-index: 20;
+    }
+  }
+}
+
+.cursor {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #eae3cf;
+  mix-blend-mode: hard-light;
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  transition: opacity .4s;
+  top: -30px;
+  left: -30px;
+
+  &-f {
+    position: fixed;
+    border-radius: 50%;
+    border: 1px dashed #eae3cf;
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    animation: spin 2.6s linear infinite paused;
+    transition: background-color .3s;
+    --next: 0;
+    --prev: 0;
+  }
+
+  &.clicked {
+    .cursor-f {
+      background-color: rgba(234, 227, 207, 0.12);
+    }
+  }
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.btns {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  z-index: 999;
+  mix-blend-mode: exclusion;
+  transition-duration: .6s;
+
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .arrow {
+    display: block;
+    width: 2vmax;
+    height: 1vmax;
+    border: none;
+    background: url("data:image/svg+xml,%3Csvg width='14' height='7' viewBox='0 0 14 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 6L7 1L13 6' stroke='%23EAE3CF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+    background-size: 100%;
+    margin: .5vmax 0;
+    padding: 1vmax 0;
+    transition-duration: .3s;
+
+    &.next {
+      transform: rotate(180deg);
+
+      &:hover {
+        transform: rotate(180deg) translateY(-4px);
+      }
+    }
+
+    &.prev:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.65);
+  position: absolute;
+  bottom: .4em;
+  font-size: .85em;
+  width: 100%;
+  z-index: 999;
+  text-shadow: 1px 1px 0 #75757547;
+  text-align: end;
+
+  p {
+    margin: .6em .9em;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.44);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    &:hover {
+      padding-bottom: 2px;
+    }
+  }
+
+  kbd {
+    width: 13px;
+    height: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.59);
+    display: inline-block;
+    border-radius: 3px;
+    font-size: .76em;
+    vertical-align: middle;
+    text-align: center;
+  }
+}
