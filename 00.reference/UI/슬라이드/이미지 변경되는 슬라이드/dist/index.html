@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Another design implementation</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.1/css/all.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main>
+  <section class="menu">
+    <span>Logo</span>
+    <nav>
+      <a href="">Something</a>
+      <a href="">Something</a>
+      <a href="">Something</a>
+    </nav>
+    <span>Other Stuff</span>
+  </section>
+  <header><h1>Book the Talent</h1></header>
+  <section class="hero">
+    <div class="hero__main">
+      <div class="layer layer-displayed" data-scene="1">
+        <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1513792859704-f49baf5c0b70?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=522c9283a0ad870843048349acb08736&auto=format&fit=crop&w=1050&q=80')"></div>
+      </div>
+      <div class="layer" data-scene="2">
+        <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1510855412585-af057ac84251?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bc9e3d133bcd845118e779ea56c9bb49&auto=format&fit=crop&w=1189&q=80')"></div>
+      </div>
+      <div class="layer" data-scene="3">
+        <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1517453881932-462e65217f7a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89c50aab146008513d49a905cfd903d4&auto=format&fit=crop&w=1050&q=80')"></div>
+      </div>
+      <div class="text">
+        <div class="text__layers">
+          <span class="layer layer-displayed" data-scene="1">Marcus Ohslon</span>
+          <span class="layer" data-scene="2">Benjamin Vunk</span>
+          <span class="layer" data-scene="3">Marisa Green</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__second">
+      <div class="layer layer-displayed" data-scene="1">
+        <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1523944339743-0fe06f079939?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=32ea302b4d051f92ebd80985d90cb4d4&auto=format&fit=crop&w=658&q=80')"></div>
+      </div>
+      <div class="layer" data-scene="2">
+        <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1512646737873-990ddc1a8e48?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1a92535fa6c18e78089680b09e039995&auto=format&fit=crop&w=650&q=80')"></div>
+      </div>
+      <div class="layer" data-scene="3">
+        <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1508901459911-fc63f8c7e521?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ce36b4cfc6cbab935c17c5114a91f229&auto=format&fit=crop&w=334&q=80')"></div>
+      </div>
+    </div>
+    <div class="hero__third">
+      <div class="layer__wrapper">
+        <div class="layer layer-displayed" data-scene="1">
+          <span>Richard Steffon</span>
+          <span>S/ Moda</span>
+        </div>
+        <div class="layer" data-scene="2">
+          <span>Maria Jeferaf</span>
+          <span>Muse Magazine</span>
+        </div>
+        <div class="layer" data-scene="3">
+          <span>Zaileene</span>
+          <span>Fashion Floor</span>
+        </div>
+      </div>
+      <button onclick="switchLayer(); return true;">NEXT TALENT ></button>
+    </div>
+    <div class="hero__footer">
+      <div class="container">
+        <div class="layer layer-displayed" data-scene="1">
+          <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1506091618538-5c362f734eab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b6e37e3cf92364310d45e3d7940c4190&auto=format&fit=crop&w=1052&q=80')"></div>
+        </div>
+        <div class="layer" data-scene="2">
+          <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1500917129638-ca7e13bc30f3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e004a8ee3c1a65041db94f60439b704&auto=format&fit=crop&w=1050&q=80')"></div>
+        </div>
+        <div class="layer" data-scene="3">
+          <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1498387727476-b30055b2ef21?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=753c6cf02995c1bfc3f015037549b06b&auto=format&fit=crop&w=1050&q=80')"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="layer layer-displayed" data-scene="1">
+          <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7834d8f490640ffe7e7f251227679b3d&auto=format&fit=crop&w=701&q=80')"></div>
+        </div>
+        <div class="layer" data-scene="2">
+          <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1522322659370-3c98da30c99c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38cc8e2b8e8c4439192c1130a861e3da&auto=format&fit=crop&w=655&q=80')"></div>
+        </div>
+        <div class="layer" data-scene="3">
+          <div class="layer-image-wrapper" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e1297fa068f9bd048e8e42b6f1ccbd1e&auto=format&fit=crop&w=334&q=80')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="layer layer-displayed" data-scene="1" style="background-image: url('https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72b653203146f33bb76721c00cf5cbb2&auto=format&fit=crop&w=334&q=80')"></div>
+      <div class="layer" data-scene="2" style="background-image: url('https://images.unsplash.com/photo-1512146587460-f94274cc6b9f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ef91c21318c8ffa1a9da0ba9f5b9207&auto=format&fit=crop&w=334&q=80')"></div>
+        <div class="layer" data-scene="3" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7880e3b80dd9960e65d543cd39d3540e&auto=format&fit=crop&w=334&q=80')"></div>
+    </div>
+    <div class="line"></div>
+  </section>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
