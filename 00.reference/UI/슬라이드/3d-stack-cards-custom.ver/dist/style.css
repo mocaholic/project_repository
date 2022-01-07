@@ -1,0 +1,175 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: purple;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+.description {
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 30px;
+  line-height: 60px;
+}
+
+#slider-wrapp {
+  width: calc(100% - 32px);
+  /* max-width: 900px; */
+  height: auto;
+  /* margin: 150px auto; */
+  text-align: center;
+  margin:0 16px;
+}
+#slider-wrapp::before {
+  display:block;
+  content:"";
+  /* padding-top:calc(100% / 328 * 426); */
+  padding-top:150px;
+}
+#slider-wrapp #slider::before {
+  display:block;
+  content:"";
+  padding-top:calc(100% / 328 * 378);
+}
+#slider-wrapp #slider .shadowBox::before {
+  display:block;
+  content:"";
+  padding-top:calc(100% / 328 * 348);
+}
+
+#slider-wrapp #slider {
+  width: 100%;
+  height: auto;
+  position: relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+#slider-wrapp #slider .slide {
+  color: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: 0;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-transform: perspective(1300px) /* translate3d(0px, -130px, -500px) */;
+  transform: perspective(1300px) /* translate3d(0px, -130px, -500px) */;
+}
+#slider-wrapp #slider .slide img {
+  padding: 3px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  width: 100%;
+}
+/* #slider-wrapp #slider .slide:nth-last-child(4) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -110px, -290px);
+  transform: perspective(1300px) translate3d(0px, -110px, -290px);
+}
+#slider-wrapp #slider .slide:nth-last-child(3) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  top:-21px;
+}
+#slider-wrapp #slider .slide:nth-last-child(3) .tabText {left:154px;}
+#slider-wrapp #slider .slide:nth-last-child(3) .shadowBox {opacity:.3;}
+#slider-wrapp #slider .slide:nth-last-child(2) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  top:-31px;
+}
+#slider-wrapp #slider .slide:nth-last-child(2) .tabText {left:77px;}
+#slider-wrapp #slider .slide:nth-last-child(2) .shadowBox {opacity:.6;}
+#slider-wrapp #slider .slide:nth-last-child(1) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  top:-41px;
+}
+#slider-wrapp #slider .slide:nth-last-child(1) .tabText {left:0;}
+#slider-wrapp #slider .slide:nth-last-child(1) .shadowBox {border-radius:0 10px 10px 10px;}
+#slider-wrapp #slider .slide.active {
+  -webkit-transform: perspective(1300px) translate3d(0px, 100px, 0px);
+  transform: perspective(1300px) translate3d(0px, 100px, 0px);
+  opacity: 0;
+}
+
+#slider-wrapp #slider.transfomer .slide:nth-last-child(4) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  top:-21px; 
+}
+#slider-wrapp #slider.transfomer .slide:nth-last-child(3) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  top:-31px;
+}
+#slider-wrapp #slider.transfomer .slide:nth-last-child(2) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  top:-41px;
+}  */
+
+/* 접근성 ver. */
+#slider-wrapp #slider .slide:nth-child(4) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -110px, -290px);
+  transform: perspective(1300px) translate3d(0px, -110px, -290px);
+}
+#slider-wrapp #slider .slide:nth-child(3) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  top:-21px;
+  z-index:1;
+}
+#slider-wrapp #slider .slide:nth-child(3) .tabText {left:154px;}
+#slider-wrapp #slider .slide:nth-child(3) .shadowBox {opacity:.3;}
+#slider-wrapp #slider .slide:nth-child(2) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  top:-31px;
+  z-index:2;
+}
+#slider-wrapp #slider .slide:nth-child(2) .tabText {left:77px;}
+#slider-wrapp #slider .slide:nth-child(2) .shadowBox {opacity:.6;}
+#slider-wrapp #slider .slide:nth-child(1) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  top:-41px;
+  z-index:3
+}
+#slider-wrapp #slider .slide:nth-child(1) .tabText {left:0;}
+#slider-wrapp #slider .slide:nth-child(1) .shadowBox {border-radius:0 10px 10px 10px;}
+#slider-wrapp #slider .slide.active {
+  -webkit-transform: perspective(1300px) translate3d(0px, 100px, 0px);
+  transform: perspective(1300px) translate3d(0px, 100px, 0px);
+  opacity: 0;
+}
+
+#slider-wrapp #slider.transfomer .slide:nth-child(4) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  transform: perspective(1300px) translate3d(0px, -75px, -210px);
+  top:-21px;
+}
+#slider-wrapp #slider.transfomer .slide:nth-child(3) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  transform: perspective(1300px) translate3d(0px, -40px, -130px);
+  top:-31px;
+}
+#slider-wrapp #slider.transfomer .slide:nth-child(2) {
+  -webkit-transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  transform: perspective(1300px) translate3d(0px, -5px, -50px);
+  top:-41px;
+} 
+
+.slide .tabText {position:absolute; top:-30px; width:87px; height:30px; font-size:13px; line-height:2.31; text-align:center; border-radius:6px 6px 0 0;}
+.slide .tabText.t0 {background:#7c6cfe; color:#fff;}
+.slide .tabText.t1 {background:#a094fd; color:#fff;}
+.slide .tabText.t2 {background:#e3dbff; color:#3e1fb0;}
+.shadowBox {background:#fff; box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.13); border-radius:10px; position:relative; padding:20px;}
+
+
+.indicator {}
+.indicator > a {display:inline-block; width:6px; height:6px; border-radius:3px; text-indent:-9999px; background:#d8d8d8; }
+.indicator > a.on {width:39px; background:#aaa;}
