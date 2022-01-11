@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg filter : 기본 및 gooey effect</title><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        * {margin:0; padding:0;}
+        ul,li {list-style:none;}
+        body {
+            background: white;
+            position:relative;
+        }
+        body > div {position:relative; display:flex; justify-content:space-between; padding:20px;}
+
+        .guide {width:520px;}
+        .guide ul {margin-top:15px;}
+        .guide li {font-size:14px; color:#666; line-height:1.5; position:relative; padding-left:10px;}
+        .guide li::before {display:block; content:""; position:absolute; top:8px; left:0; width:3px; height:3px; border-radius:50%; background:#666;}
+        .guide p {}
+        xmp {background:#f7f7f7; border-radius:10px; border:1px solid #ddd; padding:10px 20px;}
+
+        .square {
+            position: absolute;
+            background: #5677fc;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 100px;
+            margin-top: -50px;
+            margin-left: -50px;
+            filter: url("#blur");
+        }
+        :nth-of-type(2) .square {
+            filter:url("#drop-shadow");
+        }
+
+        .wrap_box {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background: #aaa;
+            filter: blur(10px) contrast(30);
+        }
+        .ball {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: #333;
+            border-radius: 50%;
+        }
+        .ball:first-child {
+            left: 30%;
+            -webkit-animation: ani-1 2s ease infinite;
+                    animation: ani-1 2s ease infinite;
+        }
+        .ball:last-child {
+            left: 70%;
+            -webkit-animation: ani-2 2s ease infinite;
+                    animation: ani-2 2s ease infinite;
+        }
+
+        @-webkit-keyframes ani-1 {
+            0% {
+                left: 30%;
+            }
+            50% {
+                left: 50%;
+            }
+            100% {
+                left: 30%;
+            }
+        }
+
+        @keyframes ani-1 {
+            0% {
+                left: 30%;
+            }
+            50% {
+                left: 50%;
+            }
+            100% {
+                left: 30%;
+            }
+        }
+        @-webkit-keyframes ani-2 {
+            0% {
+                left: 70%;
+            }
+            50% {
+                left: 50%;
+            }
+            100% {
+                left: 70%;
+            }
+        }
+        @keyframes ani-2 {
+            0% {
+                left: 70%;
+            }
+            50% {
+                left: 50%;
+            }
+            100% {
+                left: 70%;
+            }
+        }
+
+        .blobs {
+            filter: url("#goo");
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .blob {
+            position: absolute;
+            background: crimson;
+            left: 140px;
+            top: 120px;
+            width: 110px;
+            height: 110px;
+            line-height: 100px;
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            border-radius: 100%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+
+        .s2 {
+            left: 260px;
+            background: blueviolet;
+        }
+        .pop {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.5);}
+
+    </style>
+</head>
+<body>
+    <!-- svg filter : IE 10, Android 4.4 부터 지원, 필요한 경우 -webkit-filter 처럼 프리픽스 사용 -->
+    <div>
+        <h1>기본 : blur effect</h1>
+        <div class="square"></div>
+        <!-- -->
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="blur">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                </filter>
+            </defs>
+        </svg>
+
+        <div class="guide">
+            <xmp>   
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+        <filter id="blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+    </defs>
+</svg>
+            </xmp>
+            <ul>
+                <li>모든 SVG 필터는 [defs] 요소 안에 정의.(defs = definitions) 필터를 적용하려면 위와 같이...</li>
+                <li>
+                    in="SourceGraphic" : in 속성은 *필터 프리미티브(a filter primitive)에 대한 입력을 정의! <br>
+                    SourceGraphic은 필터가 적용되기 전 오리지널 요소<br>
+                    = 결국 오리지널 그래픽에다가 블러 효과를 주어라,(3px의 blur를 SourceGraphic에 in) 란 뜻
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div>
+        <h1>Type2 : shadow effect</h1>
+        <div class="square"></div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+                <filter id="drop-shadow">
+                    <!-- Get the element's graphic,  throught the SourceGraphic keyword in the 'in' attribute, apply a blur filter, and name the output through the 'result' attr -->
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="shadow" />
+                    
+                    <!-- Get the previous output, shift its position, and output with the same name -->
+                    <feOffset in="shadow" dx="3" dy="4" result="shadow" />
+                    
+                    <!-- Darken the result of the previous filters -->
+                    <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0" result="shadow" />
+                    
+                    <!-- Put the original graphics atop the shadow we made -->
+                    <feBlend in="SourceGraphic" in2="shadow" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <div>
+        <h1>Type3 : gooey effect(css ver.)</h1>
+        <div class="wrap_box">
+            <div class="ball"></div>
+            <div class="ball"></div>    
+        </div>
+        <div class="guide">
+            위와 같이 css만으로 gooey효과를 줄 수 있으나 흑백 외에는 처리가 힘들다는 것, blur 처리되므로 활용히 힘들다는 것, background를 반드시 필요로 하므로 투명한 배경을 만들 수 없다는 단점이 있음.<br>
+            그래서 SVG 필터를 사용!! 색상을 검정으로 바꾸지 않고 오로지 알파 채널의 contrast만 조절할 수 있음.<br>
+            여기에 SourceGraphic을 가지고 오리지널 그래픽 요소가 보이게 처리 + 알파 채널을 다룰 것이므로 투명한 배경이 필요!!
+        </div>
+    </div>
+    <div>
+        <h1>Type4 : gooey effect(svg ver.) <span style="font-size:16px; color:#aaa;">Move your mousepoint!</span></h1>
+        <button type="button">gooey effect 보기</button>
+        <div class="pop">
+            <div class="blobs">
+                <div class="blob">2</div>
+                <div class="blob s2">1</div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+        <script>
+            $('button').click(function(){
+                $('.pop').css('display','block');           
+            });
+            
+            var svgElem = document.querySelector(".s2");
+
+            window.addEventListener('mousemove', function (e) {
+                let x = e.screenX;
+                let y = e.clientY;
+                svgElem.style.top = y + 'px';
+                svgElem.style.left = x + "px";
+                console.log(svgElem.style.top);
+            }, false);
+
+        </script>
+    </div>
+</body>
+</html>
