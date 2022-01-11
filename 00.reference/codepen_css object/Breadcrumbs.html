@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #c7ffd3;
+            font-family: Roboto Mono;
+            font-size: 18px;
+            font-weight: 700;
+            color: #666;
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .title-definiton {
+            width: 500px;
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            position: relative;
+        }
+        li:last-child a {
+            cursor: default;
+        }
+        li:last-child::before, li:last-child::after {
+            background: #ffffc0;
+        }
+        li:not(:last-child):hover::before, li:not(:last-child):hover::after {
+            background: lightsalmon;
+        }
+        li::before, li::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 50%;
+            width: 100%;
+            background: white;
+            border-left: 2px solid #666;
+            border-right: 2px solid #666;
+            z-index: -2;
+        }
+        li::before {
+            top: -2px;
+            transform: skew(30deg);
+            border-top: 2px solid #666;
+        }
+        li::after {
+            bottom: -2px;
+            transform: skew(-30deg);
+            border-bottom: 2px solid #666;
+        }
+
+        a {
+            display: inline-block;
+            position: relative;
+            line-height: 2.5;
+            padding: 0 20px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        li:first-child {
+            background-color: white;
+            border-left: 2px solid #666;
+            left: -5px;
+            box-sizing: content-box;
+        }
+        li:first-child:hover {
+            background-color: lightsalmon;
+        }
+        li:first-child::before, li:first-child::after {
+            left: 5px;
+        }
+
+        .footer {
+            margin: 100px 0;
+        }
+
+        .c-btn {
+            text-decoration: none;
+            padding: 0 18px;
+            border: 2px solid #666;
+            border-radius: 5px;
+            color: #666;
+            transition: all 0.3s ease-in-out;
+        }
+        .c-btn:hover {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <h5>Cutup #6</h5>
+        <h1>Breadcrumbs</h1>
+        <p class="title-definiton">Showing the hierarchy of content between the site's root and the user's current location.</p>
+        <nav> <!--To provide navigation links-->
+            <ol class="breadcrumb " itemscope itemtype="http://schema.org/BreadcrumbList">
+                
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="name">Home</span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </li>
+                
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="name">Level 1</span>
+                    </a>
+                    <meta itemprop="position" content="2" />
+                </li>
+                
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="#">
+                        <span itemprop="name">Level 2</span>
+                    </a>
+                    <meta itemprop="position" content="3" />
+                </li>
+                
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="#"> 
+                        <span itemprop="name">Current Location</span>
+                    </a>
+                    <meta itemprop="position" content="4" />
+                </li>
+        
+            </ol>
+        </nav>	
+        <br> <br>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <h5>Please check this article.</h5>
+            <a class="c-btn" href="https://medium.com/@nana8/69de0d1ad00" target="_black">Go to the Medium</a>
+        </div>
+    </footer>	
+
+</body>
+</html>
