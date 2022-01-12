@@ -141,6 +141,15 @@
         }
         .pop {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.5);}
 
+        .box {
+            position:relative;
+            width:600px;
+            -webkit-filter:url("#goo");
+            filter:url("#goo"); 
+        }
+        .box > .ball:first-of-type {background:yellow;}
+        .box > .ball:last-of-type {background:paleturquoise;}
+
     </style>
 </head>
 <body>
@@ -215,7 +224,11 @@
     </div>
     <div>
         <h1>Type4 : gooey effect(svg ver.) <span style="font-size:16px; color:#aaa;">Move your mousepoint!</span></h1>
-        <button type="button">gooey effect 보기</button>
+        <button type="button">gooey effect 보기: 마우스 포인트</button>
+        <div class="box">
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
         <div class="pop">
             <div class="blobs">
                 <div class="blob">2</div>
@@ -236,7 +249,7 @@
             $('button').click(function(){
                 $('.pop').css('display','block');           
             });
-            
+
             var svgElem = document.querySelector(".s2");
 
             window.addEventListener('mousemove', function (e) {

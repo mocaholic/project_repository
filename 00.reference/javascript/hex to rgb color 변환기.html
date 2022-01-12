@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hex to rgb/ rgb to hex color 변환기</title>
+    <style>
+        #color {width:100vw;}
+        #color > div {flex:1;}
+        .flex {display:flex; justify-content:center; align-items:center;}
+        dd {color:brown;}
+        .result {width:calc(100% - 100px);}
+        .result::before {display:inline-block; content:":"; color:#000; margin-right:20px;}
+    </style>
+</head>
+<body>
+
+    <div class="flex" id="color">
+        <div>
+        <h1>HEX to RGB</h1>
+        <dl class="flex">
+            <dd>
+            <input type="text" placeholder="HEX color" id="hex" onKeyPress="if( event.keyCode==13 ){hex2rgb();}"> <!-- event.keyCode == 13 // 엔터키를 눌렀을 때 -->
+            </dd>
+            <dd class="result" id="rRgb"></dd>
+        </dl>
+        </div>
+        
+        <div>
+        <h1>RGB to HEX</h1>
+        <dl class="flex">
+            <dd>
+            <input type="text" placeholder="RGB color" id="rgb" onKeyPress="if( event.keyCode==13 ){rgb2hex();}">
+            </dd>
+            <dd class="result" id="rHex"></dd>
+        </dl>
+        </div>
+    </div>
+  
+    <script>
+        const colorD = document.getElementById("color");
+
+        function hexToRgb(){ 
+            /* 맨 앞의 "#" 기호를 삭제하기. */ 
+            var hex = document.getElementById('hex').value.trim().replace( "#", "" ); 
+        console.log(hex);
+            
+            /* rgb로 각각 분리해서 배열에 담기. */ 
+            var rgb = ( 3 === hex.length ) ? 
+                hex.match( /[a-f\d]/gi ) : hex.match( /[a-f\d]{2}/gi );     
+        console.log(rgb);
+            
+            rgb.forEach(function (str, x, arr){     
+                /* rgb 각각의 헥사값이 한자리일 경우, 두자리로 변경하기. */ 
+                if ( str.length == 1 ) str = str + str; 
+                
+                /* 10진수로 변환하기. */ 
+                arr[ x ] = parseInt( str, 16 ); 
+            }); 
+            
+            return "rgb(" + rgb.join(", ") + ")"; 
+        } 
+
+        function rgbToHex (){ 
+            /* 
+            ** 컬러값과 쉼표만 남기고 삭제하기. 
+            ** 쉼표(,)를 기준으로 분리해서, 배열에 담기. 
+            */ 
+            var rgb = document.getElementById('rgb').value.trim().replace( /[^%,.\d]/g, "" ).split( "," ); 
+            
+            rgb.forEach(function (str, x, arr){ 
+            
+                /* 컬러값이 "%"일 경우, 변환하기. */ 
+                if ( str.indexOf( "%" ) > -1 ) str = Math.round( parseFloat(str) * 2.55 ); 
+                
+                /* 16진수 문자로 변환하기. */ 
+                str = parseInt( str, 10 ).toString( 16 ); 
+                if ( str.length === 1 ) str = "0" + str; 
+                
+                arr[ x ] = str; 
+            }); 
+            
+            return "#" + rgb.join( "" ); 
+        } 
+
+        function hex2rgb(event) {                
+        document.getElementById("rRgb").innerHTML = hexToRgb(); 
+        }
+
+        function rgb2hex(event) {                
+        document.getElementById("rHex").innerHTML = rgbToHex(); 
+        }
+
+        function init() {
+        colorD.addEventListener("submit", hex2rgb);
+        colorD.addEventListener("submit", rgb2hex);
+        //input 에서 submit 되어 있을때,hex2rgb함수가 실행되도록 이벤트 추가
+        }
+        init();
+    </script>
+</body>
+</html>
