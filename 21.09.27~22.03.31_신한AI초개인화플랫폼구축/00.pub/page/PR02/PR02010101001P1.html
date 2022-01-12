@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../style/pr02.css">
+	<script type="text/javascript" src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="../../script/include/library/ui.js"></script>
+</head>
+<body class="transfer">
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">				
+				<h1 class="tit brdNone">예약이체 일정 설정</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- contents --> 
+			<div class="contents">
+				<div class="dateArea">
+					<div class="date">
+						<a href="javascript:;" class="prev">이전</a>
+						<span>2019. 03</span>
+						<a href="javascript:;" class="next">다음</a>
+					</div>
+				</div>
+				<table class="dateTable">
+					<thead>
+						<tr>
+							<th scope="col">일</th>
+							<th scope="col">월</th>
+							<th scope="col">화</th>
+							<th scope="col">수</th>
+							<th scope="col">목</th>
+							<th scope="col">금</th>
+							<th scope="col">토</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button type="button" onclick="" disabled="disabled">1</button></td>
+							<td><button type="button" onclick="" disabled="disabled">2</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" onclick="" disabled="disabled">3</button></td>
+							<td><button type="button" onclick="" disabled="disabled">4</button></td>
+							<td><button type="button" onclick="" disabled="disabled">5</button></td>
+							<td><button type="button" onclick="" disabled="disabled">6</button></td>
+							<td><button type="button" onclick="" disabled="disabled">7</button></td>
+							<td><button type="button" onclick="" disabled="disabled">8</button></td>
+							<td><button type="button" onclick="" disabled="disabled">9</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" onclick="" disabled="disabled">10</button></td>
+							<td class="today"><button type="button" onclick="">11</button></td>
+							<td><button type="button" onclick="">12</button></td>
+							<td><button type="button" onclick="">13</button></td>
+							<td class="on"><button type="button" onclick="">14</button></td>
+							<td><button type="button" onclick="">15</button></td>
+							<td><button type="button" onclick="">16</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" onclick="">17</button></td>
+							<td><button type="button" onclick="">18</button></td>
+							<td><button type="button" onclick="">19</button></td>
+							<td><button type="button" onclick="">20</button></td>
+							<td><button type="button" onclick="">21</button></td>
+							<td><button type="button" onclick="">22</button></td>
+							<td><button type="button" onclick="">23</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" onclick="">24</button></td>
+							<td><button type="button" onclick="">25</button></td>
+							<td><button type="button" onclick="">26</button></td>
+							<td><button type="button" onclick="">27</button></td>
+							<td><button type="button" onclick="">28</button></td>
+							<td><button type="button" onclick="">29</button></td>
+							<td><button type="button" onclick="">30</button></td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="mt15 txtBlack4 fontSS">6개월 이내로 예약 가능(토요일/공휴일 불가)</p><!-- 2020-07-09 수정 -->
+				<div class="formAreaBox mt30"><!-- 2020-07-09 수정 -->
+					<div class="inputBox wrong"> <!-- .on .wrong .button .radio .calendar .password -->
+						<dl>
+							<dt>예약날짜</dt>
+							<dd class="brdNone"><!-- 2020-07-09 수정 -->
+								<input type="tel" id="" placeholder="달력에서 선택" value="" readonly="readonly">
+								<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+							</dd>
+						</dl>
+						<div class="error">error 문구 출력</div>
+					</div>
+					<div class="inputBox button wrong"> <!-- .button // -->
+						<dl>
+							<dt>예약시간</dt>
+							<dd>
+								<input type="text" id="inp01" placeholder="선택하여 입력" value="오전 7시 ~ 8시" readonly="readonly"><!-- 2020-07-09 수정 -->
+								<a href="#layerPopBottom01"  class="btn btnPopOpen"><span class="iconTy40">내역 열림</span></a><!-- //2020-08-07 클래스수정-->
+							</dd>
+						</dl>
+						<div class="error">error 문구 출력</div>
+						<p class="inputTxt txtBlue2">가장 빠른 예약 가능 시간입니다.</p><!-- //2020-12-29 추가 -->
+					</div>
+				</div>
+				<p class="mt20">
+					<input type="checkbox" id="result"/>
+					<label for="result">이체결과알림(문자)</label>
+				</p>
+				<div class="formAreaBox type2" style="display:none;" id="resultNum">
+					<div class="inputBox mt5"> <!-- .on .wrong .button .radio .calendar .password -->
+						<dl>
+							<dd class="">
+								<input type="tel" class="normal" placeholder="직접 입력" value=""><!-- //2020-08-12 클래스수정-->
+								<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+							</dd>
+						</dl>
+						<div class="error">error 문구 출력</div>
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+			<div class="btnGroupBox floating fixed">			
+				<button onclick="void(0)" class="btnType" style="display:none;"><span>다음</span></button>
+				<!-- 등록/취소 -->
+				<button onclick="void(0)" class="btnType btnBlack"><span>등록취소</span></button>
+				<button onclick="void(0)" class="btnType"><span>확인</span></button>
+			</div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+<!-- 예약시간 2020-08-07 수정-->
+<div class="layerPopBottomWrap hasDim list" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">예약시간</p>
+			<a href="javascript:;" class="btnPopClose">팝업 닫기</a>
+		</div>
+		<div class="layerCon pt10"><!-- //2020-08-24 수정 -->
+			<div class="listOneLineBox type1 mt0"><!-- //2020-08-12 클래스 수정-->
+				<ul>
+					<li><button onclick="">오전 7시 ~ 8시</button></li>
+					<li><button onclick="">오전 9시 ~ 10시</button></li>
+					<li><button onclick="">오전 9시 ~ 10시</button></li>
+					<li><button onclick="">오전 11시 ~ 12시</button></li>
+					<li><button onclick="">오후 1시 ~ 2시</button></li>
+					<li><button onclick="">오후 2시 ~ 3시</button></li>
+					<li><button onclick="">오후 4시 ~ 5시</button></li>
+					<li><button onclick="">오후 6시 ~ 7시</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //예약시간 2020-08-07 수정-->
+
+
+
+<script type="text/javascript">
+	$("#result").on("change",function(){
+		if($(this).is(":checked")){
+			$("#resultNum").slideDown("fast",function(){
+				$(".contents").animate({scrollTop:$(".contents").height()},"fast");
+			});
+		}else{
+			$("#resultNum").slideUp("fast");
+		}
+	});
+	
+	
+	//2020-07-13 기능추가
+	var moveTouchY = "";
+	var popTop = "";
+	//버튼 쓸어내리면 닫기
+	$(".layerHeader").on("touchmove",function(event){
+		event.preventDefault();
+		var e = event.originalEvent;
+		moveTouchY = e.targetTouches[0].pageY;
+		popTop = $(this).offset().top;
+		if(moveTouchY > (popTop+40)){
+			$(".btnPopClose").trigger("click");  //2020-08-26 수정
+		}
+	});
+</script>
+</body>
+</html>
