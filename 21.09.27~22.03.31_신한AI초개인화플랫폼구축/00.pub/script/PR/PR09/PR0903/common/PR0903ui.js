@@ -124,13 +124,19 @@ var solAI = {
 			}else {				
 				$('.allMenuBtn').hide();
 			} */
+		
+
 			if(scrollTop === 0){				
 				// $('.allMenuBtn').hide();
 				$('.allMenuBtn').css('opacity','1');
+				// void target.offsetWidth,
+				$('.flipBox').addClass('effect');
 				
 			}else {
 				// $('.allMenuBtn').show();
 				$('.allMenuBtn').css('opacity','0');
+				$('.flipBox').attr('style','animation-delay:;');
+				$('.flipBox').removeClass('effect');
 			} 
 		});
 	},
@@ -191,11 +197,12 @@ var solAI = {
 			return false;
 		})
 	},
+	
 	// css height 100vh 속성
 	'vh' : function(){
 		let vh = window.innerHeight * 0.01;
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
-		console.log(vh);
+		// console.log(vh);
 
 	},
 	'mainSlide' : function(){
@@ -308,7 +315,7 @@ var solAI = {
 		solAI.allMenuBtn();
 		solAI.topBtn();
 		solAI.vh();
-		solAI.mainSlide();
+		//solAI.mainSlide();
 		// solAI.pullDownR();
 		window.addEventListener('resize', () => solAI.vh());
 	},

@@ -1,3 +1,4 @@
+
 <!-- 
 /********************************************************************
 * @경로			:	SOL AI > 포트폴리오 설계 > 추천결과 (시연용 : 디자인 적용)
@@ -10,6 +11,10 @@
 * 3		윤지혜		21-11-22	   	디자인 확정(전체 수정)
 * 4		윤지혜		21-11-24	   	마크업 수정(추천기준, 추천상품수)
 * 5		윤지혜		21-11-25	   	슬라이더 스크립트 수정
+* 6		윤지혜		21-12-16	   	상품구성 > 상품명 button type 추가
+* 7		윤지혜		21-12-21	   	마크업 수정 및 범례 추가
+* 8		김연수		22-01-13        MY포트로 용어 통일
+* 9		윤지혜		22-01-14        여백 및 버튼 아이콘 class 적용
 *********************************************************************/ 
 -->
 
@@ -36,7 +41,7 @@
 				<div class="lSec">
 					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
 				</div>
-				<h1 class="tit">초개인화 포트 설계</h1>
+				<h1 class="tit">MY포트 설계</h1>
 				<div class="rSec">
 					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
 					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
@@ -58,7 +63,7 @@
                                     <dl>
                                         <dd>
                                             <input type="text" title="투자성향" placeholder="선택하여 입력" readonly="readonly" autocomplete="off" value="공격투자형">
-                                            <button type="button" data-href="#layerPopBottom02" class="btn btnPopOpen"><span class="iconTy40">내역 열림</span></button>
+                                            <button type="button" data-href="#layerPopBottom02" class="btn"><span class="iconTy40">내역 열림</span></button>
                                         </dd>
                                     </dl>
                                 </div>
@@ -71,7 +76,7 @@
                     <!-- 추천 포트 선택 -->
                     <div class="recomPort">
                         <h3 class="titM txtWhite1 ml8">
-                            추천기준<a href="javascript:void(0)" class="tipOpen iconTySol9" title="아이콘형 툴팁이 들어갑니다." data-role="링크텍스트" data-rel="testAlert()">?</a><!-- 21.11.25 icon class 수정 -->
+                            추천기준<a href="javascript:void(0)" class="ml5 iconTySol3" title="아이콘형 툴팁이 들어갑니다." data-role="링크텍스트" data-rel="testAlert()">?</a><!-- 22.01.14 icon class 수정 -->
                         </h3>
 
                         <!-- 21.11.24 수정 : 마크업 변경 li -> radio -->
@@ -155,10 +160,10 @@
                         <div class="constAsset">
                             <div class="listTitleBox mt20 mb20">
                                 <div class="left">
-                                    <h2 class="subTit mb0">포트 자산구성</h2>
+                                    <h2 class="subTit mb0 ml8">포트 자산구성</h2><!-- 22.01.14 class="ml8" 추가 적용 -->
                                 </div>
                                 <div class="right">
-                                    <a href="#" class="">추천 이유 <span class="iconTy">팝업보기</span></a>
+                                    <a href="#" class="mr8">추천 이유 <span class="iconTySol12">팝업보기</span></a><!-- 22.01.14 여백 및 icon class 적용 -->
                                 </div>
                             </div>
                             <div class="boxTyShadow">
@@ -174,9 +179,31 @@
                                             <span>펀드/EFT</span>
                                             <strong>100%</strong>
                                         </p>
-                                        <div class="graphArea" style="height:240px; line-height:240px;">
-                                            그래프 영역
+                                        <!-- 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
+                                        <div class="graphArea">
+                                            <div class="graph" style="margin:20px; background:#eee; height:200px; line-height:200px;">
+                                                그래프 영역
+                                            </div>
+                                            <ul>
+												<li>
+													<span class="legend bggraph01"></span>
+													<span>국내주식 45%</span>
+												</li>
+												<li>
+													<span class="legend bggraph02"></span>
+													<span>해외선진 35%</span>
+												</li>
+												<li>
+													<span class="legend bggraph05"></span>
+													<span>해외이머징 15%</span>
+												</li>
+												<li>
+													<span class="legend bggraph03"></span>
+													<span>채권 5%</span>
+												</li>
+											</ul>
                                         </div>
+                                        <!-- // 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
                                     </li>
                                     <li>
                                         <p>
@@ -197,7 +224,7 @@
                                     <h2 class="subTit mb0">포트 상품구성</h2>
                                 </div>
                                 <div class="right">
-                                    <a href="#" class="txtBlack5"><span class="iconTy">초기화</span>처음으로</a>
+                                    <a href="#" class="txtBlack5"><span class="iconTySol13 mr5">초기화</span>처음으로</a><!-- 22.01.14 icon class 적용 -->
                                 </div>
                             </div>
 
@@ -352,6 +379,26 @@
                                                 </ul>
                                                 <button type="button" class="prdBtnDel">삭제</a>
                                             </li>
+
+                                            <!-- 21.12.16 추가 : a -> button type -->
+                                            <li class="row">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabelAi1">예적금</i>
+                                                </div>
+                                                <button type="button" href="#layerPopBottom02" class="tit txtBlack8 btnPopOpen">예적금 상품 선택</button>
+                                                <ul class="listTypeTable mt20">
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">투자비중</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">50</span>%</p></div>
+                                                    </li>
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">신규예정금액</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+                                            <!-- // 21.12.16 추가 : a -> button type -->
                                         </ul>
                                     </div>
                                 </div>
@@ -377,6 +424,16 @@
                         </div>
                         <div class="AccorCont">
                             <ul class="dotList">
+                                <li>MY포트 신규 설계  거래는 오전 9시~오후 11시 30분까지 , 리밸런싱(상품 재조정) 거래는 은행 영업일의 오전 9시 ~ 오후 3시까지 가능합니다.</li>
+                                <li>
+                                    상품군에 따라 가입할 수 있는  시간이 차이가 있습니다. 
+                                    <ul class="dashList">
+                                        <li>예적금/펀드 : 오전 9시~오후 11시 30분까지</li>
+                                        <li>ELF : 평일 오전 9시 ~ 오후 4시(주말 및 공휴일 불가능)</li>
+                                        <li>신탁(ETF, ELT) : 평일 오전 9시 ~ 오후 5시(주말 및 공휴일 불가능)</li>
+                                    </ul>
+                                </li>
+                                <li>MY포트 리밸런싱(상품 재조정)은 신규, 해지, 입금, 출금의 거래를 한꺼번에 신청할 수 있는 기능입니다.</li>
                                 <li>제안한 상품 중 일부를 해지할 경우 남아있는 상품에 대해서는 자산재분배를 하실 수 없습니다.</li>
                                 <li>적금 이자율은 조건별 우대금리를 포함한 금리이며, 거래실적 등 실제 충족여부에 따라 달라질 수 있습니다.</li>
                                 <li>펀드상품은 목표만기일에 자동으로 해지처리 되지 않으며, 해지 요청 시 환매대금 입금은 일정기간이 소요됩니다.</li>

@@ -9,6 +9,9 @@
 * 1     윤지혜      2021-12-24     최초 작성
 * 2     윤지혜      2021-12-30     문구/메뉴명 및 부분 마크업 수정
 * 3     윤지혜      2021-12-31     html, body style 추가
+* 4     윤지혜      2022-01-05     전체메뉴 버튼 class 추가 및 나의 총 자산 '원' class 수정
+* 5     윤지혜      2022-01-06     전체메뉴 버튼 animation style 추가
+* 6     윤지혜      2022-01-07     하단 컨텐츠 UI 수정
 ***************************************************************************************/ 
 -->
 
@@ -97,7 +100,7 @@
 											<h2 class="blind">나의 총 자산</h2>
 											<p class="investAmount">
 												350,000,000
-												<span class="fontSSS">원</span>
+												<span class="fontNL">원</span><!-- 22.01.05 class 수정 -->
 											</p>
 											<div class="graphArea">
 												<div class="graph" style="margin-top:30px; width:100%; height:100px; background:#efefef; text-align:center; line-height:100px;">
@@ -258,7 +261,7 @@
 									<!-- 포트 없을 경우 -->
 									<p class="noData">
 										<i class="iconTySol8"></i>
-										보유하신 포트가 없습니다.
+										보유하신 MY포트가 없습니다.
 									</p>
 									<!-- // 포트 없을 경우 -->
 								</div>
@@ -337,23 +340,30 @@
 								</ul>
 							</div>
 
+							
+							<!-- 22.01.07 컨텐츠 UI 수정 -->
 							<div class="serviceLinkArea mt40">
-								<h2 class="subTit ml8 mb15">프리미어 서비스</h2>
+								<h2 class="titM ml8 mb15">프리미어 서비스</h2>
 								<div>
 									<div class="boxTyShadow">
-										<a href="#" class="pv1">전문가<br>상담</a>
+										<p class="subTit2">1:1 전문가 상담</p>
+										<div class="linkBox">
+											<a href="#">자산관리 컨시어지 뱅킹</a>
+											<a href="#">세무 상담</a>
+										</div>
 									</div>
 									<div class="boxTyShadow">
-										<a href="#" class="pv2">내 자산<br>리포트</a>
+										<a href="#" class="pv2">프리미어<br>리포트</a>
 									</div>
 									<div class="boxTyShadow">
 										<a href="#" class="pv3">WM<br>매거진</a>
 									</div>
 									<div class="boxTyShadow">
-										<a href="#" class="pv4">오늘의<br>증시</a>
+										<a href="#" class="pv4">오늘의 증시</a>
 									</div>
-								</div>
+								</div>								
 							</div>
+							<!-- // 22.01.07 컨텐츠 UI 수정 -->
 
 							<div class="bottomTxtArea mt40 mb30">
 								<p class="ac">
@@ -382,7 +392,7 @@
 			<label for="menuBtn">전체메뉴</label>
 			-->
 			<!-- flip 버전 -->
-			<div class="flipBox">
+			<div class="flipBox effect" style="animation-delay:1s;"><!-- 22.01.05 class="effect" 추가 -->
 				<div class="icon front">icon</div>
 				<div class="back">메뉴</div>
 			</div>	
@@ -498,6 +508,7 @@
 
 				if(scrollTop <= visualHeight){
 					$('#header').addClass('premier');
+				}else if(scrollTop == 0){
 				}else{
 					$('#header').removeClass('premier');
 				}
@@ -515,6 +526,10 @@
 		setTimeout(function(){
 			$('.charArea').css('opacity','1');
 		}, 600);
+
+		/* setTimeout(function(){
+			$('.allMenuBtn').css('opacity','1');
+		}, 250); */
 		
 	</script>
 </body>

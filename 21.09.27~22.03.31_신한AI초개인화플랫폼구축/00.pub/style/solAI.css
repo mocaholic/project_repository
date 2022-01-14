@@ -1,5 +1,15 @@
 @charset "utf-8"; 
 @import 'solAI2.css';
+/* 폰트 */
+@font-face {
+	font-family:'montserrat';
+	font-style:normal;
+	font-weight:400;
+	src:
+		local('OneShinhanLight'),
+		url(../../images/solAI/montserrat-v15-latin-500.woff) format('woff')
+}
+
 
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,menu,a,span {line-height:1.5;}
 
@@ -136,7 +146,8 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .iconTySol7 {} 
 .iconTySol8 {width: 48px; height: 48px; background: url('../../images/pwm/common/ic_confirm.png') no-repeat 50% 50%; background-size: 100% auto;}
 .iconTySol9 {width:16px; height:16px; background:url('../../images/in08/myassets/icon_tooltip_gray02.png') no-repeat; background-size:100%;} 
-
+.iconTySol12 {width:16px; height:16px; background:url('../../images/solAI/arrow_right.png') no-repeat; background-size:100%; vertical-align:-3px;}  
+.iconTySol13 {width:20px; height:20px; background:url('../../images/solAI/icon_refresh.png') no-repeat; background-size:100%; vertical-align:-4px;}  
 
 /* 말풍선 */
 .sBubble {display:block; box-sizing:border-box; background:#efecff; line-height:1.5; position:relative; text-align:center; padding:4px 10px; border-radius:6px; color:#333;}
@@ -351,6 +362,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 
 .constPrd > div:not(.productType) {padding-left:8px; padding-right:8px;}
 .constPrd .sBubble.gray::before {left:auto; right:84px;}
+.constPrd .listTypeTable .row .leftCol {width:auto;}
 
 .solAi .makingPrd .formAreaBox .inputBox {margin-top:0;}
 .solAi .makingPrd .formAreaBox .inputBox dt {color:#777; font-weight:400;}
@@ -363,6 +375,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .solAi .makingPrd .listTypeTable .row.on .prdBtnDel {display:block;}
 
 .formAreaBox .inputBox dt.type2 {width:150px;}
+.formAreaBox.accountSelect .dpFlex .error {width:auto; margin-top:4px;}
 
 .mpTop {padding-top:30px; border-top:1px solid #eee;}
 .mpTop .listTitleBox {margin-bottom:14px;}
@@ -378,16 +391,21 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .assetHealth .tabTy02 a.on:after {height:2px; background:#6d5ee7;}
 .assetHealth .innerBox  {padding-bottom:40px;}
 .assetHealth .innerBox .subTit {margin-bottom:20px;}
-.assetHealth .innerBox .subTit:first-of-type {margin-top:20px;}
+.assetHealth .innerBox .subTit:first-of-type {margin-top:10px;}
 .assetHealth .innerBox > div + .subTit, .assetHealth .innerBox > div + .subTit:first-of-type {margin-top:30px;}
 .assetHealth .dateArea {display:flex; align-items:center;}
 .assetHealth .dateArea > span {text-align:right; color:#666; font-size:12px; margin-right:12px;}
 .assetHealth .dateArea .btn {width:26px; height:26px; background:#f2f4f6; border-radius:50%; text-align:center; box-sizing:border-box; padding-top:1px;}
 .assetHealth .dateArea + div {margin-top:12px;}
-.assetHealth .boxTyShadow .titleBox {display:flex; justify-content:space-between; align-items:center; position:relative; height:95px; padding:0 21px 5px; border-radius:10px 10px 0 0; /* background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:100%; */} 
-.assetHealth .boxTyShadow .titleBox::before {display:block; content:""; width:100%; height:100%; background:linear-gradient(180deg, #c49cff 0%, #96b4ff 50%,  rgba(120, 196, 255, 0) 100%); background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:100%; position:absolute; top:0; left:0; z-index:1;}
-.assetHealth .boxTyShadow .titleBox .subTit {color:#fff; margin-bottom:0; margin-top:-17px; z-index:2;}
-.assetHealth .boxTyShadow .titleBox .dateArea {z-index:2; margin-top:-17px;}
+/* .assetHealth .boxTyShadow .titleBox.ratio {padding:0; --aspect-ratio:calc(100% / 328 * 95);}
+.assetHealth .boxTyShadow .titleBox .dpFlex {position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; padding:0 20px; box-sizing:border-box; /* background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:cover; } */
+/* .assetHealth .boxTyShadow .titleBox {display:flex; justify-content:space-between; align-items:center; position:relative; height:95px; padding:0 21px 5px; border-radius:10px 10px 0 0; background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:100%;}  */
+/* .assetHealth .boxTyShadow .titleBox::before {display:block; content:""; width:100%; height:100%; background:linear-gradient(180deg, #c49cff 0%, #96b4ff 50%,  rgba(120, 196, 255, 0) 100%); background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:100%; position:absolute; top:0; left:0; z-index:1;} */
+.assetHealth .boxTyShadow .titleBox {position:relative; --aspect-ratio:calc(100% / 328 * 95); padding:0;}
+.assetHealth .boxTyShadow .titleBox::before {display:block; content:""; padding-top:var(--aspect-ratio);}
+.assetHealth .boxTyShadow .titleBox::after {display:block; content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:100%; z-index:1;}
+.assetHealth .boxTyShadow .titleBox .subTit {color:#fff; margin:0; position:absolute; top:calc(50% - 10px); transform:translateY(-50%); left:20px; z-index:2;}
+.assetHealth .boxTyShadow .titleBox .dateArea {position:absolute; top:calc(50% - 10px); transform:translateY(-50%); right:20px; z-index:2;}
 .assetHealth .boxTyShadow .titleBox .dateArea > span {color:#fff;}
 .assetHealth .boxTyShadow .titleBox .dateArea > span > strong {display:block;}
 .assetHealth .boxTyShadow .titleBox .dateArea .btn {background:#fff;}
@@ -420,7 +438,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .assetHealth .diagnosisBox .txtBox {position:relative; background:#8d7fff; padding:20px 20px 20px 106px; border-radius:6px; color:#fff;}
 .assetHealth .diagnosisBox .txtBox strong {display:block; font-size:15px; font-weight:500;}
 .assetHealth .diagnosisBox .txtBox strong + strong {margin-top:4px; font-size:14px;}
-.assetHealth .diagnosisBox .txtBox::before {display:block; content:""; position:absolute; top:19px; left:20px; background:#fff url('../../images/solAI/icon_msg_character01.png') no-repeat center; width:66px; height:66px; border-radius:50%; background-size:100%;}
+.assetHealth .diagnosisBox .txtBox::before {display:block; content:""; position:absolute; top:50%; left:20px; transform:translateY(-50%); background:#fff url('../../images/solAI/img_smimg.png') no-repeat center calc(100% + 1px); width:66px; height:66px; border-radius:50%; background-size:52px 54px;}
 
 .assetHealth .circlePanel {width:100%; height:240px; position:relative;}
 .assetHealth .circlePanel.vGood {background:url('../../images/solAI/circ_verygood.png') no-repeat center; background-size:100%;}
@@ -611,7 +629,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .slideWrapper .slideItem[data-class="1"] .txtArea > p {line-height:28px; font-size:16px;}
 .slideWrapper .slideItem[data-class="1"] .txtArea > p strong {color:#4c3891; font-weight:700; font-size:19px;}
 .slideWrapper .slideItem[data-class="3"] .txtArea h2 {padding-bottom:110px;}
-.slideWrapper .slideItem[data-class="3"] .txtArea h2::before {display:block; content:""; position:absolute; top:18px; top:16%; right:15px; background:url('../../images/solAI/img_main_character03.png') no-repeat; background-size:100%; width:174px; height:123px; width:61.145%; height:100%;}
+.slideWrapper .slideItem[data-class="3"] .txtArea h2::before {display:block; content:""; position:absolute; top:18px; top:16%; right:15px; background:url('../../images/solAI/img_main_character03.png') no-repeat right 0; background-size:contain; width:174px; height:123px; width:61.145%; height:100%;}
 .slideWrapper .slideItem .btnGroupBox.type6 {position:absolute; bottom:20px; left:20px; width:calc(100% - 40px);}
 .slideWrapper .slideItem .btnType3::after {vertical-align:-1px;}
 .slideWrapper .slideItem .graphArea {height:calc(100% - 30px);}
@@ -655,8 +673,8 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .mainCont .graphArea ul {width:230px; margin:30px auto 0; display:flex; flex-wrap:wrap; justify-content:center;}
 .mainCont .graphArea li {margin:0 10px;}
 .mainCont .boxTyRound.subTit2 {width:calc(100% - 80px); height:48px; line-height:48px; margin:0 auto 15px; text-align:center; background:#f8f9fb; border-radius:24px;}  
-.mainCont .investAmount {font-size:30px; color:#333; text-align:center;}
-.mainCont .investAmount span {margin-left:-5px;}
+.mainCont .investAmount {font-size:30px; color:#333; text-align:center; font-family:'montserrat';}
+.mainCont .investAmount span {margin-left:-5px; font-family:inherit;}
 .mainCont .annotation {display:flex; justify-content:space-between; align-items:center; background:#f8f9fb; border-radius:8px; padding:8px;}
 .mainCont .annotation .score {text-align:center; font-weight:700; font-size:28px; width:110px; padding:6px 0;}
 .mainCont .annotation .score .grade {display:block; font-weight:700; font-size:14px;}
@@ -679,6 +697,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 /* .mainCont .productType.boxType .noData::before {display:block; content:""; background:url('../../images/pwm/common/ic_confirm.png') no-repeat 50% 50%; width:48px; height:48px; background-size:100%;} */
 .mainCont .productType.boxType .noData i {display:block; margin:0 auto 12px; }
 .mainCont .banner {padding:26px 24px; background:#f8f6ff url('../../images/solAI/img_banner_money.png') no-repeat calc(100% - 20px) 16px; background-size:23.5% auto;}
+.mainCont .banner p {font-size:13px;}
 .mainCont .evtBanner {position:relative; }
 .mainCont .evtBanner .ratio {--aspect-ratio:calc(100% / 328 * 189); border-radius:13px; background:transparent; overflow:hidden;}
 .mainCont .evtBanner .swiper {position:relative;}
@@ -688,22 +707,29 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .mainCont .evtBanner .swiper-pagination-bullet-active {width:39px; background:#aaa;}
 .mainCont .evtBanner .noData {background:#f8f9fb; border-radius:13px; text-align:center; font-size:13px; height:189px; padding-top:54px; box-sizing:border-box; margin-bottom:-8px;}
 .mainCont .evtBanner .noData i {display:block; margin:0 auto 12px;}
-.mainCont .giftLinkArea {padding:0;}
+.mainCont .giftLinkArea {padding:0; border-radius:13px;}
 .mainCont .giftLinkArea h2 {position:relative; /* height:120px; padding:8px 30px 30px; background:linear-gradient(222deg, #f0d48c 102%, #f1d48e 73%, #c58d23 21%); color:#fff; */ height:81px; background:url('../../images/solAI/img_character02.png') no-repeat right 0; background-size:auto 100%; box-sizing:border-box; color:#333; margin:30px; padding-top:8px;}
-.mainCont .giftLinkArea ul {margin:21px 22px 39px;}
+.mainCont .giftLinkArea ul {margin:21px 22px 30px;}
 .mainCont .giftLinkArea li {font-size:16px}
 .mainCont .giftLinkArea li > a {display:block; height:42px; border-radius:21px; background:#f9f7f6; padding-left:30px; line-height:2.625; font-size:16px;}  
 .mainCont .giftLinkArea li > a::after {display:inline-block; content:""; background:url(); background-size:100%; margin-left:10px;}
 .mainCont .giftLinkArea li + li {margin-top:15px;}
 .mainCont .serviceLinkArea > div {display:flex; justify-content:space-between; flex-wrap:wrap; align-items:stretch}
-.mainCont .serviceLinkArea .boxTyShadow {width:calc((100% - 12px) / 2); padding:0; height:116px;}
-.mainCont .serviceLinkArea .boxTyShadow:nth-of-type(n+3) {margin-top:12px;}
+.mainCont .serviceLinkArea .boxTyShadow {width:calc((100% - 12px) / 2); padding:0; min-height:116px; margin-top:12px; border-radius:13px;}
+.mainCont .serviceLinkArea .boxTyShadow:first-of-type {margin-top:0; width:100%;}
+.mainCont .serviceLinkArea .boxTyShadow:first-of-type .subTit2 {background:linear-gradient(254deg, #f0d48c 0%, #f1d48c 0.35%, #c58d23 100%);/* background-image:linear-gradient(254deg, #f0d48c 133%, #f1d48c 99%, #c58d23 38%); */ padding:12px 0 12px 20px; color:#fff;}
+.mainCont .serviceLinkArea .boxTyShadow:first-of-type .linkBox {margin:20px; margin-bottom:20px;}
+.mainCont .serviceLinkArea .boxTyShadow:first-of-type .linkBox a {font-size:15px; font-weight:700; line-height:1.87; padding:0;}
+.mainCont .serviceLinkArea .boxTyShadow:first-of-type .linkBox a::after {display:inline-block; content:""; background:url('../../images/solAI/arrow_half_right_black.png') no-repeat; background-size:100%; width:40px; height:11px; margin-left:16px; position:relative; bottom:0; right:0;}
+.mainCont .serviceLinkArea .boxTyShadow:first-of-type .linkBox a + a {margin-top:16px;}
+.mainCont .serviceLinkArea .boxTyShadow:last-of-type {margin-top:20px; width:100%; background:#f7f7f8; min-height:60px; box-shadow:none;}
+.mainCont .serviceLinkArea .boxTyShadow:last-of-type a {font-size:14px; line-height:60px; padding:0 0 0 40px;}
 .mainCont .serviceLinkArea .boxTyShadow a {display:block; position:relative; width:100%; height:100%; padding:15px 20px; box-sizing:border-box; font-size:15px;}
 .mainCont .serviceLinkArea .boxTyShadow a::after {display:block; content:""; position:absolute; bottom:20px; right:20px; width:45%; height:50%;}
 .mainCont .serviceLinkArea .boxTyShadow a.pv1::after {background:url('../../images/solAI/icon_service01.png') no-repeat right bottom; background-size:contain;}
 .mainCont .serviceLinkArea .boxTyShadow a.pv2::after {background:url('../../images/solAI/icon_service02.png') no-repeat right bottom; background-size:contain;}
 .mainCont .serviceLinkArea .boxTyShadow a.pv3::after {background:url('../../images/solAI/icon_service03.png') no-repeat right bottom; background-size:contain;}
-.mainCont .serviceLinkArea .boxTyShadow a.pv4::after {background:url('../../images/solAI/icon_service04.png') no-repeat right bottom; background-size:contain;}
+.mainCont .serviceLinkArea .boxTyShadow a.pv4::after {background:url('../../images/solAI/icon_service05.png') no-repeat; background-size:contain; width:100px; height:60px; bottom:0; right:36px;}
 .mainCont .bottomTxtArea p {line-height:1.8; }
 
 .evtBnBox {position:relative; /* --aspect-ratio:calc(100% / 328 * 189); */ border-radius:13px; background:#4e3096; box-sizing:border-box;}
@@ -718,7 +744,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 
 /* 전체메뉴 */
 /* .allMenuBtn {background:red; width:40px; height:40px; border-radius:50%; position:fixed; bottom:20px; left:20px; text-indent:-9999px; z-index:10; transition:.3s; opacity:1;} */
-.allMenuBtn {transition:all .35s ease;}
+.allMenuBtn {transition:all .1s ease; /* opacity:0; */ /* animation:fadeIn .5s 1s forwards; */} 
 .allMenuBtn .icon {position:absolute; bottom:18px; left:18px; background:url('../../images/solAI/btn_floating_icon_img.png') no-repeat; background-size:100%; width:100%; height:100%; border-radius:50%; overflow:hidden; /* animation:fadeOut 1s .5s forwards; */ text-indent:-9999px; box-shadow:0 3px 13px 0 rgba(0, 0, 0, .2); }
 .allMenuBtn input[type="checkbox"] {width:68px; height:68px; bottom:0; left:0; background:transparent; border-radius:50%; animation-duration:.2s; animation-fill-mode:forwards; opacity:1; transition:all 2s cubic-bezier(0.25, 0.75, 0.5, 1.25);  -webkit-appearance:none; appearance:none; z-index:5;}
 .allMenuBtn input[type="checkbox"] + label {position:fixed; bottom:18px; left:18px; width:50px; height:50px; border-radius:50%; overflow:hidden; text-indent:-9999px; padding-left:0; opacity:0; animation:fadeIn 1s .5s  forwards; box-shadow:0 3px 13px 0 rgba(0, 0, 0, .2); }  
@@ -727,10 +753,11 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .allMenuBtn > input[type="checkbox"]:checked {animation-name:bgExpand;}
 .allMenuBtn input[type="checkbox"]:checked ~ .allMenuList {width:100%; height:100%; /* transition:all 1s cubic-bezier(0.5, 0, 0.05, 1.75), background-color 1s ease; */ animation-name:fadeIn; z-index:5;}
 
-.flip {/* width:100%; height:100%; box-sizing:border-box; */ /* width:50px; height:50px; */ width:14%; padding-bottom:14%; /* -webkit-perspective:1000; */ perspective:1000; /* width:68px; height:68px; padding:calc(100vh - 68px) 0 0 18px; */ position:absolute; bottom:18px; left:18px; /* z-index:5; */}    
+.flip {/* width:100%; height:100%; box-sizing:border-box; */ /* width:50px; height:50px; */ width:14%; padding-bottom:14%; max-width:50px; /* -webkit-perspective:1000; */ perspective:1000; /* width:68px; height:68px; padding:calc(100vh - 68px) 0 0 18px; */ position:absolute; bottom:18px; left:18px; /* z-index:5; */}    
 .flip.full {width:100%; height:100%; padding-top:calc(100vh - 68px); box-sizing:border-box;} 
 /* .flip.full .flipBox {margin-top:calc(100vh - 68px);} */
-.flipBox {position:relative; width:100%; height:100%; padding-bottom:100%; margin-bottom:-100%; /* margin:calc(100vh - 68px) 0 0 18px;  margin-left:18px; */transform-style:preserve-3d; z-index:5; transition:.5s; animation:flip .7s forwards; animation-delay:1s;}
+.flipBox {position:relative; width:100%; height:100%; padding-bottom:100%; margin-bottom:-100%; /* margin:calc(100vh - 68px) 0 0 18px;  margin-left:18px; */transform-style:preserve-3d; z-index:5; transition:.5s;}
+.flipBox.effect {animation:flip .8s forwards;}
 .front.icon, .back {position:absolute; width:100%; height:100%; bottom:0; left:0; -webkit-backface-visibility:hidden; backface-visibility:hidden; /* z-index:5; */ background-color:rgba(255,255,255,.17);}
 .back {-webkit-transform:rotateY(180deg); transform:rotateY(180deg); border-radius:50%; overflow:hidden; text-indent:-9999px; width:100%; height:100%; box-shadow:0 3px 13px 0 rgba(0, 0, 0, .2);}
 .back::before {display:block; content:""; background:url('../../images/solAI/btn_floating_menu2.png') no-repeat; background-size:100%; width:100%; height:100%;}
@@ -851,6 +878,65 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 .giftSlide .swiper-pagination-bullet {background:#eee; border:none;}
 .giftSlide .swiper-pagination-bullet-active {background:#5d0782;}
 
+/* 상품몰 이어하기 팝업 */
+.floatingFixTr {overflow:hidden;position:absolute;bottom:0;left:0;right:0;width:100%;height:73px;background:rgba(74, 148, 223, 0.9);border-radius:16px 16px 0 0;box-shadow:0 0 18px 4px rgba(5, 85, 166, 0.4);transition:all 0.5s;}
+.floatingFixTr.down {height:24px}
+.floatingFixTr.down p {display:none;}
+.floatingFixTr .btnPopOpen {padding:0 24px;width:100%;height:100%;font-size:15px;color:#fff}
+.floatingFixTr .btnPopOpen:before {content:'';display:block;position:absolute;top:7px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:#b7d4f2;border-radius:10px}
+.floatingFixTr .btnPopOpen p {position:relative;margin-top:7px;padding-left:48px;v}
+.floatingFixTr .btnPopOpen p:before {content:'';display:block;position:absolute;left:0;top:50%;width:35px;height:35px;margin-top:-17.5px;background:url('../../images/pr05/bg_floating_fix_tr.png') no-repeat left center;background-size:100%}
+.layerPopBottomWrap.layerBlTyp .layerHeader {padding:21px 14px 35px;height:122px;background:rgba(75,149,223,0.9);box-sizing:border-box;}
+.layerPopBottomWrap.layerBlTyp .layerHeader * {color:#fff;}
+.layerPopBottomWrap.layerBlTyp .layerHeader.on {height:auto}
+.layerBlTyp .layerHeader .btnInfoMore {position:absolute;right:14px;bottom:11px;padding:3px 16px 3px 5px;font-size:13px}
+.layerBlTyp .layerHeader .btnInfoMore:before {content:'';display:block;position:absolute;right:0;top:50%;margin-top:-5px;width:6px;height:10px;background:url('../../images/icon_arrow_wh_right.png') no-repeat center;background-size:100% auto;transform:rotate(90deg)}
+.layerBlTyp .layerHeader.on .btnInfoMore:before {transform:rotate(-90deg)}
+.layerBlTyp .layerHeader .dotList >  li + li {margin-top:5px}
+.layerPopBottomWrap.layerBlTyp .btnPopClose {margin:0;height:20px;width:100%;top:0;right:50%;transform:translateX(50%);background-image:none;}
+.layerBlTyp .btnPopClose:before {content:'';display:block;position:absolute;top:7px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:#b7d5f2;border-radius:10px;}
+.layerBlTyp .layerHeader .dotList > li:before {background:#fff}
+.layerBlTyp .layerHeader .dotList {overflow:hidden;height:100%}
+.layerBlTyp .popInner {overflow:hidden;height:80%}
+.layerBlTyp .layerCon {height:calc(100% - 122px)}
+.ongoingProdList li {position:relative;padding:17px 16px 15px;border-bottom:1px solid #e9e9e9}
+.ongoingProdList li a {display:block;}
+.ongoingProdList li i {position:absolute;right:16px;top:23px;}
+.ongoingProdList li .prodName {width:70%;font-size:15px;font-weight:bold}
+.ongoingProdList li .date {margin-top:15px;color:#959595}
+.ongoingProdList li.salesEnding i, .ongoingProdList li.salesEnding .prodName, .ongoingProdList li.salesEnding .date {opacity:0.6;}
+.ongoingProdList li.salesEnding:before {content:'';display:block;position:absolute;right:19px;top:50%;transform:translateY(-50%);width:66px;height:59px;background:url('../../images/pr05/img_sales_ending.png') no-repeat;background-size:100% auto;z-index:1}
+.layerPopBottomWrap.layerBlTyp.wH2 .layerHeader {padding-bottom:75px;height:160px;}
+.layerPopBottomWrap.layerBlTyp.wH2 .layerHeader.on {height:auto;padding-bottom:35px;}
+.layerPopBottomWrap.layerBlTyp.wH2 .layerCon {height:calc(100% - 160px)}
+.ongoingProdList.type2 > ul > li {border-bottom:5px solid #fafafa}
+.ongoingProdList.type2 li .prodName {width:100%;}
+.ongoingProdList.type2 li .date {font-size:13px;}
+.ongoingProdList.type2 li .date + .date {margin-top:10px;}
+.ongoingProdList.type2 li i {right:0;top:0;}
+.progressB{display:table;width:96%;margin:15px auto 0;padding:12px 0 5px;table-layout:fixed;}
+.progressB ul{display:table-row;}
+.progressB ul li{display:table-cell;position:relative;padding:0;border-bottom:1px solid #ddd;text-align:right;}
+.progressB ul li:first-child{width:0;}
+.progressB ul li:after{content:"";position:absolute;right:0;bottom:-5px;z-index:1;transform:translateX(50%);width:5px;height:5px;border:2px solid #ddd;background:#fff;border-radius:100px;}
+.progressB ul li > p{display:none;position:relative;top:-13px;right:0;z-index:2;-webkit-transform: translateX(50%);padding:2px 6px;background:#4399ff;border-radius:100px;font-weight:bold;font-size:11px;color:#fff;text-align:center;white-space:nowrap;}
+.progressB ul li > p:after{content: "";position:absolute;left:50%;bottom:-6px;-webkit-transform:translateX(-50%);width:0;height:0;border-width:3px;border-style:solid;border-color:#4399ff transparent transparent transparent;}
+.progressB ul li:first-child > p{-webkit-transform: translateX(-12%);}
+.progressB ul li:last-child > p{-webkit-transform: translateX(12%);}
+.progressB ul li:first-child > p:after{left:14%;}
+.progressB ul li:last-child > p:after{left:initial;right:6%;}
+.progressB ul li.on, .progressB ul li.off {border-color:#4399ff;}
+.progressB ul li.on:after, .progressB ul li.off:after {border-color:#4399ff;}
+.progressB ul li.on:after{bottom:-7px;width:7px;height:7px;border-width:3px;}
+.progressB ul li.on > p {display:inline-block;}
+
+/* 기념일 팝업 */
+#anniversaryPop .popInner {background:transparent; width:280px;}
+#anniversaryPop .layerCon {background:#fff8e2 url('../../images/solAI/bg_popup_anniversary.png') no-repeat; background-size:280px 226px; text-align:center; padding-top:240px; padding-bottom:40px; font-size:18px;  border-radius:20px; overflow:hidden;}
+#anniversaryPop .layerCon strong {}
+#anniversaryPop .layerCon span {display:block; font-size:24px; margin-top:5px;}
+#anniversaryPop .btnPopClose {top:-36px; right:0; margin-top:0; background:url('../../images/solAI/icon_close_white.png') no-repeat; background-size:100%;}
+
 /* BS */
 .layerCon.prdDetail .ratio {--aspect-ratio:calc(100% / 328 * 218); border-radius:10px; overflow:hidden;}
 .layerCon.prdDetail > p {letter-spacing:0; line-height:1.71; /* word-break:keep-all; */}
@@ -867,7 +953,7 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
     .charArea {width:35%;}
     .slideWrapper .slider {width:100%;}
     .mainCont .listTypeTable .row .leftCol {width:auto;}
-    .mainCont .banner p {font-size:13px;}
+    /* .mainCont .banner p {font-size:13px;} */
     .mainCont .giftLinkArea h2 {background-size:39% auto; margin:20px; font-size:20px;}
     .mainCont .giftLinkArea h2 span {font-size:13px !important;}
     .annotation .dateNote li .date span {display:block;}
@@ -888,4 +974,13 @@ input[type="checkbox"] + label:before, input[type="radio"] + label:before {z-ind
 @media screen and (min-width:410px) and (max-width:420px) {
     /* .slideWrapper .slideItem[data-class="3"] .txtArea h2 {padding-bottom:120px;} */
     .slideWrapper .slideItem[data-class="3"] .txtArea h2::before {top:8%; width:58.145%;}
+}
+
+@media screen and (min-width:421px) {
+    .slideWrapper .slideItem[data-class="1"] .txtArea::before {width:110px; height:150px;}
+    .slideWrapper .slideItem[data-class="3"] .txtArea h2::before {top:0; height:90%;}
+}
+
+@media screen and (min-width:750px) {
+    .flip {padding-bottom:50px;}
 }
