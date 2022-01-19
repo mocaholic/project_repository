@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll SnapChat</title>
+    <style>
+    body {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            justify-content: center;
+            grid-gap: 2rem;
+            gap: 2rem;
+            min-height: 100vh;
+        }
+
+        .chat-ui {
+            --chat-ui_theme: hsl(200, 100%, 50%);
+            --chat-ui_theme_compliment: color(var(--chat-ui_theme) hue(+200));
+            --chat-ui_theme_text-color: white;
+            --chat-ui_bg: hsl(0, 0%, 90%);
+            --chat-ui_width: 350px;
+            --chat-ui_height: 480px;
+            --chat-ui_message_bg: white;
+            --chat-ui_message_bg2: hsl(0, 0%, 85%);
+            --chat-ui_message_text-color: hsl(0, 0%, 10%);
+            --chat-ui_message_font-size: 0.8rem;
+            --chat-ui_easing-quick: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            
+            width: 320px;
+            height: 480px;
+            position: relative;
+            background: var(--chat-ui_bg);
+            overflow: hidden;
+            box-shadow: 0 3rem 10rem hsl(0, 0%, 60%);
+            resize: both;
+        }
+
+        .chat-titlebar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            contain: layout;
+            background: blue;
+            background: var(--chat-ui_theme, blue);
+            color: white;
+            color: var(--chat-ui_theme_text-color, white);
+            box-shadow: 0 0.1rem 1rem hsla(0, 0%, 0%, .4);
+            overflow: hidden;
+            padding: .5rem 1rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 11;
+            will-change: transform;
+            transition: transform 0.15s var(--chat-ui_easing-quick)
+        }
+
+        .chat-titlebar > h5 {
+            font-size: 1rem;
+            font-weight: normal;
+            line-height: 1.1;
+            flex: 2;
+            margin: 0;
+        }
+
+        .chat-avatar {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            margin: 0;
+            overflow: hidden;
+            display: inline-block
+        }
+
+        .chat-avatar > img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .chat-scrollview {
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            -ms-scroll-chaining: none;
+                overscroll-behavior: contain;
+            -ms-scroll-snap-type: y proximity;
+                scroll-snap-type: y proximity;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .chat-messagelist {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            min-height: 100%
+        }
+
+        .chat-messagelist > .chat-cluster:last-child {
+            scroll-snap-align: end;
+            scroll-margin-block-end: 5rem;
+        }
+
+        .chat-cluster {
+            margin: 0.25rem 3rem 0.75rem 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-self: flex-start;
+            align-items: flex-end
+        }
+
+        .chat-cluster[mine] {
+            margin-left: 3rem;
+            margin-right: 0.5rem;
+            align-self: flex-end
+        }
+
+        .chat-cluster[mine] > section {
+            align-items: flex-end;
+        }
+
+        .chat-cluster > .chat-avatar {
+            margin-right: 0.5rem;
+            bottom: 1rem;
+            position: sticky;
+        }
+
+        .chat-cluster > section {
+            flex: 2;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: column
+        }
+
+        .chat-cluster > section > h3 {
+            margin: 0 0 0 0.7rem;
+            font-size: 0.7rem;
+            font-weight: lighter;
+            color: hsl(0, 0%, 60%);
+        }
+
+        .chat-message {
+            background-attachment: fixed;
+            background-image: linear-gradient(var(--chat-ui_theme), 30%, hotpink);
+            background-size: 100% 120%;
+            color: white;
+            font-size: var(--chat-ui_message_font-size);
+            line-height: 1.4;
+            padding: 0.5rem 0.75rem;
+            margin: 0;
+            border-radius: 0.25rem 1rem 1rem 0.25rem
+        }
+
+        .chat-message:first-of-type {
+            border-radius: 1rem 1rem 1rem 0.25rem;
+        }
+
+        .chat-message:not(:first-child) {
+            margin-top: 3px;
+        }
+
+        [mine] .chat-message {
+            background: var(--chat-ui_message_bg2);
+            color: var(--chat-ui_message_text-color);
+            border-radius: 1rem 0.25rem 0.25rem 1rem;
+        }
+
+        .chat-authoring {
+            position: absolute;
+            z-index: 12;
+            bottom: 0.5rem;
+            right: 0;
+            box-sizing: border-box;
+            margin: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 1rem 1rem 2px;
+            box-shadow: 0.25rem 0.5rem 1rem hsla(0, 0%, 0%, .2);
+            background: white;
+            caret-color: blue;
+            caret-color: var(--chat-ui_theme, blue);
+            font-size: 0.9rem;
+            font-weight: lighter;
+            line-height: 1.4em;
+            width: calc(100% - 1rem);
+            transition: width 0.15s var(--chat-ui_easing-quick)
+        }
+
+        .chat-authoring:focus {
+            width: calc(100% - 1rem);
+            outline: none;
+        }
+
+        .chat-authoring:empty:not(:focus) {
+            width: 50%;
+        }
+
+        .chat-authoring:empty::after {
+            content: "Say Something..";
+        }
+    </style>
+</head>
+<body>
+    <textarea placeholder="Send a message as the bot.."></textarea>
+    <div class="chat-ui">
+    <div class="chat-titlebar">
+        <h5>Chat UI</h5>
+        <div class="chat-avatar">
+        <img src="https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif" alt="">
+        </div>
+    </div>
+    
+    <div class="chat-scrollview">
+        <div class="chat-messagelist">
+        
+        <div class="chat-cluster">
+            <div class="chat-avatar">
+            <img src="https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif" alt="">
+            </div>
+            <section>
+            <h3>Snap Bot</h3>
+            <div class="chat-message">Hi!</div>
+            <div class="chat-message">I'm a bot</div>        
+            </section>
+        </div>
+        
+        <div mine class="chat-cluster">
+            <section>
+            <div class="chat-message">Hi!</div>
+            <div class="chat-message">I'm not a bot</div>
+            <div class="chat-message">But I am static text that was put here by a human. The only dynamic stuff you'll find here is whatever someone types in the "say something" text area hehe.</div>
+            </section>
+        </div>
+        
+        <div class="chat-cluster">
+            <div class="chat-avatar">
+            <img src="https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif" alt="">
+            </div>
+            <section>
+            <h3>Snap Bot</h3>
+            <div class="chat-message">Makes sense.</div>
+            <div class="chat-message">I see this chat implementation is using scroll snap points?</div>
+            <div class="chat-message">Can you tell me more about that?</div>
+            </section>
+        </div>
+        
+        <div mine class="chat-cluster">
+            <section>
+            <div class="chat-message">sure!</div>
+            <div class="chat-message">scroll-snapping got an update and this is a demo to show the feature.</div>
+            <div class="chat-message">On Chrome 81, all these chats automatically snap to the scroll bottom. In Chrome 80, we'd need to write custom javascript to maintain the position at the bottom.</div>
+            <div class="chat-message">Now CSS can do it!</div>
+            </section>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="chat-authoring" contenteditable></div>
+    </div>
+
+    <script>
+        const bot = document.querySelector('textarea')
+        const author = document.querySelector('.chat-authoring')
+        const scrollview = document.querySelector('.chat-scrollview')
+        const messagelist = document.querySelector('.chat-messagelist')
+        const bot_template = message => `
+        <div class="chat-cluster">
+            <div class="chat-avatar">
+            <img src="https://cdn.dribbble.com/users/37530/screenshots/2937858/drib_blink_bot.gif" alt="">
+            </div>
+            <section>
+            <h3>Snap Bot</h3>
+            <div class="chat-message">${message}</div>
+            </section>
+        </div>
+        `
+
+        const user_template = message => `
+        <div mine class="chat-cluster">
+            <section>
+            <div class="chat-message">${message}</div>
+            </section>
+        </div>
+        `
+
+        scrollview.scrollTop = scrollview.scrollHeight
+
+        bot.addEventListener('keypress', e => {
+        const {keyCode} = e
+        
+        if (keyCode === 13) {
+            e.preventDefault()
+            
+            if (!messagelist.querySelector('.chat-cluster:last-child').hasAttribute('mine')) {
+            messagelist.querySelector('.chat-cluster:last-child > section').innerHTML += `<div class="chat-message">${bot.value}</div>`
+            }
+            else {
+            messagelist.innerHTML += bot_template(bot.value)
+            }
+            
+            bot.value = ''
+        }
+        })
+
+        author.addEventListener('keypress', e => {
+        const {keyCode} = e
+        
+        if (keyCode === 13) {
+            e.preventDefault()
+            
+            if (messagelist.querySelector('.chat-cluster:last-child').hasAttribute('mine')) {
+            messagelist.querySelector('.chat-cluster:last-child > section').innerHTML += `<div class="chat-message">${author.innerHTML}</div>`
+            }
+            else {
+            messagelist.innerHTML += user_template(author.innerHTML)
+            }
+            
+            author.innerHTML = ''
+        }
+        })
+    </script>
+</body>
+</html>
