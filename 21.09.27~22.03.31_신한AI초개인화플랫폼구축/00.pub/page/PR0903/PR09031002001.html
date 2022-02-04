@@ -1,0 +1,146 @@
+<!-- 
+/***************************************************************************************
+* @경로			:	
+* @설명			:	SOL AI > 프리미어 서비스 > 프리미어 기프트 > 기념일 서비스 > 신청/변경
+****************************************************************************************
+* 번호	작업자		작업일			변경내용
+*------------------------------------------------------------------------------------------
+* 1     윤지혜      2021-12-20      최초 작성
+***************************************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">기념일 서비스</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+				<div class="solAi anniversaryService">
+					<div class="infoBox">
+						<p>
+							<span class="txtPurple4 bold">김신한</span> 고객님의 생일을 맞아
+							<strong>신한이 축하의 마음을<br>전해드립니다.</strong>
+						</p>
+					</div>
+					<div class="innerBox lineN">
+						<p class="infoTxt">
+							아래에서 <strong class="txtPurple4">선물을 고르신 후<br>배송받으실 주소를 입력</strong>해주세요.
+							<span class="block mt8 fontSS txtBlack5">기프티콘은 휴대폰 LMS로 전송됩니다.</span>
+						</p>
+						<div class="prdList">
+							<ul>
+								<li>
+									<input type="radio" name="giftPrd"  id="giftPrd1">
+									<label for="">사은품</label>
+									<a href="#">
+										<div class="ratio">
+											<img src="../../../images/solAI/img_prm_top01.png" alt="사은품 이미지">
+										</div>
+										<div class="prdInfo">
+											<span>기본사은품</span>
+											<p>
+												<strong class="block mb4 txtBlack1">[발뮤다]</strong>	
+												더 토스터 K05B
+											</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<input type="radio" name="giftPrd"  id="giftPrd1">
+									<label for="">사은품</label>
+									<a href="#">
+										<div class="ratio">
+											<img src="../../../images/solAI/img_prm_top02.png" alt="사은품 이미지">
+										</div>
+										<div class="prdInfo">
+											<p>
+												<strong class="block mb4 txtBlack1">[Apple]</strong>	
+												에어팟 3세대 블루투스 이어폰
+											</p>
+										</div>
+									</a>
+								</li>
+								<li>
+									<input type="radio" name="giftPrd"  id="giftPrd1">
+									<label for="">사은품</label>
+									<a href="#">
+										<div class="ratio">
+											<img src="../../../images/solAI/img_prm_top02.png" alt="사은품 이미지">
+										</div>
+										<div class="prdInfo">
+											<p>
+												<strong class="block mb4 txtBlack1">[자연식품]</strong>	
+												배도라지즙 2박스
+											</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<ul class="dotList mt30">
+							<li>사은품 신청/변경 기한은 <strong class="txtPurple4">2021-11-21</strong> 까지 입니다.</li>
+							<li>신청하지 않으신 고객님께서는 기본 선물로 배송됩니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>			
+			<!-- // contents -->
+			<!-- 하단 플로팅 버튼 -->
+			<div class="btnGroupBox floating fixed">
+				<a href="#" class="btnType light">신청하기</a>
+			</div>			
+			<!-- // 하단 플로팅 버튼 -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+<script type="text/javascript">
+
+	$(function(){
+		// 레이어팝업 닫기
+		$('.btnPopClose, .btnType').on('click',function(){
+			$('.layerPopWrap').hide();
+		});
+
+		// test용 스크립트
+		$('.prdList li a').click(function(){
+			console.log('test');
+		});
+	});
+	
+</script>
+</body>
+</html>

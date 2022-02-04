@@ -6,12 +6,16 @@
 ****************************************************************************************
 * 번호	작업자		작업일			변경내용
 *------------------------------------------------------------------------------------------
-* 1     윤지혜      2021-12-24     최초 작성
-* 2     윤지혜      2021-12-30     문구/메뉴명 및 부분 마크업 수정
-* 3     윤지혜      2021-12-31     html, body style 추가
-* 4     윤지혜      2022-01-05     전체메뉴 버튼 class 추가 및 나의 총 자산 '원' class 수정
-* 5     윤지혜      2022-01-06     전체메뉴 버튼 animation style 추가
-* 6     윤지혜      2022-01-07     하단 컨텐츠 UI 수정
+* 1     윤지혜      21-12-24     최초 작성
+* 2     윤지혜      21-12-30     문구/메뉴명 및 부분 마크업 수정
+* 3     윤지혜      21-12-31     html, body style 추가
+* 4     윤지혜      22-01-05     전체메뉴 버튼 class 추가 및 나의 총 자산 '원' class 수정
+* 5     윤지혜      22-01-06     전체메뉴 버튼 animation style 추가
+* 6     윤지혜      22-01-07     하단 컨텐츠 UI 수정
+* 7     윤지혜      22-01-14     띄어쓰기 수정
+* 8		윤지혜		22-01-17     신탁 이어하기 팝업 화면 적용
+* 9		윤지혜		22-01-27     이벤트배너 인디케이터 위치 변경 및 목록 페이지 바로가기 링크 추가
+* 10    윤지혜		22-01-28     전체메뉴 > 프리미어메인 링크 추가
 ***************************************************************************************/ 
 -->
 
@@ -28,7 +32,7 @@
 	<script src="../../script/include/library/ui.js"></script>	
 	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
 	<style>
-		html, body {background:linear-gradient(180deg, #553da4 0%, #553da4 25%, #fff 25%, #fff 100%);}
+		html, body {background:linear-gradient(180deg, #553da4 0%, #553da4 40%, #fff 40%, #fff 100%);}
 	</style>
 </head>
 <body>
@@ -317,6 +321,11 @@
 										</div>
 									</div>
 									<div class="swiper-pagination"></div>
+									<!-- 22.01.27 추가 -->
+									<a href="#" class="btn">
+										<span class="iconTySol12">이벤트 목록</span>
+									</a>
+									<!-- // 22.01.27 추가 -->
 								</div>
 								<!-- // 진행중인 이벤트 있을 경우 -->
 								<!-- 진행중인 이벤트 없을 경우 -->
@@ -335,7 +344,7 @@
 								</h2>
 								<ul>
 									<li><a href="#">프리미어 고객 <strong>기념일 서비스</strong></a></li>
-									<li><a href="#">신한 <strong>플러스</strong></a></li>
+									<li><a href="#">신한<strong>플러스</strong></a></li><!-- 22.01.14 띄어쓰기 수정 -->
 									<li><a href="#">신한 <strong>프리미엄 쿠폰</strong></a></li>
 								</ul>
 							</div>
@@ -379,6 +388,14 @@
 					</div>
 				</div>			
 				<!-- // contents -->
+
+				<!-- 22.01.17 추가 : bottom fix button -->
+				<div class="floatingFixTr">
+					<button type="button" class="btnPopOpen" data-href="#layerPop01">
+						<p>진행 중인 상품 가입 이어하기</p>
+					</button>
+				</div>
+				<!-- // 22.01.17 추가 : bottom fix button -->
 			</div>
 			<!-- // contentsWrap -->
 		</section>
@@ -405,6 +422,11 @@
 				<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">전체메뉴 닫기</span></a>
 			</div>
 			<ul>
+				<!-- 22.01.28 추가 -->				
+				<li>
+					<a href="#" class="home">프리미어 메인</a>
+				</li>
+				<!-- // 22.01.28 추가 -->
 				<li>
 					<a href="javascript:void(0);" class="on">MY포트 설계</a><!-- 21.12.30 메뉴명 수정 -->
 					<ul class="depth2">
@@ -487,8 +509,8 @@
 			</ul>
 			<div class="bsArea">
 				<div>
-					<input type="checkbox" id="naverAgain" name="naverAgain">
-					<label for="naverAgain" class="fontN">다시 보지 않기</label>
+					<input type="checkbox" id="neverAgain" name="neverAgain">
+					<label for="neverAgain" class="fontN">다시 보지 않기</label>
 				</div>
 				<button type="button" class="txtBlack6 fontN">확인</button>
 			</div>
@@ -496,6 +518,153 @@
 		</div>
 	</div>
 	<!-- // BS : 홈 화면 설정 -->
+	<!-- 22.01.17 추가 : 상품몰 이어하기 팝업 -->
+	<div class="layerPopBottomWrap type3 layerBlTyp wH2 hasDim" id="layerPop01">
+		<div class="popInner">
+			<div class="layerHeader">
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+				<p class="referTxt fontS">신탁은 운용 결과에 따라 원금의 일부 또는 전부 손실이 발생 할 수 있습니다.</p><!-- 2020-12-08 수정 : 안내문구 추가 -->
+				<ul class="dotList mt5"><!-- 2020-12-08 수정 : mt5 추가 -->
+					<li>현재 가입진행 중인 상품 목록입니다.</li>
+					<li>고객님의 유효한 투자성향은 공격투자형 입니다.</li>
+					<li>거래가능 시간 : 평일 09:00 ~ 17:00<br /> (토요일 및 공휴일 불가능)</li>
+					<li>가입 전 고객님의 투자성향 분석이 필요합니다.</li>
+					<li>비대면으로 신탁 상품 가입 시 상담원과의 영상통화를 통해 상품설명을 들으셔야 합니다. (약10~15분 소요)</li>
+					<li>최근 5영업일 간 영상통화 완료하셨던 상품을 이어서 가입하실 수 있습니다.
+						<p class="referTxt mt3">영상통화 시 데이터 요금이 발생됩니다.</p>
+					</li>
+				</ul>
+				<button class="btnInfoMore">더보기</button>
+			</div>
+			<div class="layerCon full">
+				<!-- 2020-12-08 수정 -->
+				<div class="ongoingProdList type2">
+					<ul>
+						<li>
+							<a href="javascript:void(0)">
+								<!-- 
+									위험 등급
+									- 안정형 : .iconTyLabel01
+									- 안전추구형 : .iconTy107
+									- 위험중립형 : .iconTy108
+									- 적극투자형 : .iconTy109
+									- 다소높은위험 : .iconTy111
+								-->
+								<p class="prodName">멀티플렉스시리즈 제일차 상품 제일차 신탁</p>
+								<div class="rel">
+									<i class="iconTy111">다소높은위험</i>
+									<p class="date">예약일시 : 2020.12.10 09:10</p>
+									<p class="date">유효기간: 2020년 8월24일</p>
+								</div>
+								<div class="progressB">
+									<ul>
+										<li class="on">
+											<p>약관동의 완료</p>
+										</li>
+										<li>
+											<p>영상통화 예약</p>
+										</li>
+										<li>
+											<p>영상통화 완료</p>
+										</li>
+										<li>
+											<p>신규 진행중</p>
+										</li>
+									</ul>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<p class="prodName">멀티플렉스시리즈 제일차 상품 제일차 신탁</p>
+								<div class="rel">
+									<i class="iconTy111">다소높은위험</i>
+									<p class="date">유효기간: 2020년 8월24일</p>
+								</div>
+								<div class="progressB">
+									<ul>
+										<li class="off">
+											<p>약관동의 완료</p>
+										</li>
+										<li class="on">
+											<p>영상통화 예약</p>
+										</li>
+										<li>
+											<p>영상통화 완료</p>
+										</li>
+										<li>
+											<p>신규 진행중</p>
+										</li>
+									</ul>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<p class="prodName">멀티플렉스시리즈 제일차 상품 제일차 신탁</p>
+								<div class="rel">
+									<i class="iconTy111">다소높은위험</i>
+									<p class="date">예약일시 : 2020.12.10 09:10</p>
+									<p class="date">유효기간: 2020년 8월24일</p>
+								</div>
+								<div class="progressB">
+									<ul>
+										<li class="off">
+											<p>약관동의 완료</p>
+										</li>
+										<li class="off">
+											<p>영상통화 예약</p>
+										</li>
+										<li class="on">
+											<p>영상통화 완료</p>
+										</li>
+										<li>
+											<p>신규 진행중</p>
+										</li>
+									</ul>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)">
+								<p class="prodName">멀티플렉스시리즈 제일차 상품 제일차 신탁</p>
+								<div class="rel">
+									<i class="iconTy111">다소높은위험</i>
+									<p class="date">유효기간: 2020년 8월24일</p>
+								</div>
+								<div class="progressB">
+									<ul>
+										<li class="off">
+											<p>약관동의 완료</p>
+										</li>
+										<li class="off">
+											<p>영상통화 예약</p>
+										</li>
+										<li class="off">
+											<p>영상통화 완료</p>
+										</li>
+										<li class="on">
+											<p>신규 진행중</p>
+										</li>
+									</ul>
+								</div>
+							</a>
+						</li>
+						<li class="salesEnding"><!-- 판매종료일 경우 salesEnding 클래스 추가 -->
+							<a href="javascript:void(0)">일차 신탁</p>
+								<div class="rel">
+									<i class="iconTy111">다소높은위험</i>
+									<p class="date">유효기간: 2020년 8월24일</p>
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- //2020-12-08 수정 -->
+			</div>
+		</div>
+	</div>
+	<!-- // 22.01.17 추가 : 상품몰 이어하기 팝업 -->
 
 	<script type="text/javascript">
 
@@ -513,7 +682,12 @@
 					$('#header').removeClass('premier');
 				}
 			});
-
+			
+			//2022-01-24 ios 대응
+			var UserAgent = navigator.platform;
+			if(UserAgent.match(/i(Phone|Pod|Pad)/i) != null){
+				$('body').width(screen.width);
+			}
 			// 이벤트 배너
 			var swiper = new Swiper('.evtBanner .swiper', {
 				spaceBetween: 16,
@@ -530,7 +704,7 @@
 		/* setTimeout(function(){
 			$('.allMenuBtn').css('opacity','1');
 		}, 250); */
-		
+
 	</script>
 </body>
 </html>

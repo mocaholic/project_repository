@@ -15,8 +15,6 @@
 * 7		윤지혜		21-12-21	   	마크업 수정 및 범례 추가
 * 8		김연수		22-01-13        MY포트로 용어 통일
 * 9		윤지혜		22-01-14        여백 및 버튼 아이콘 class 적용
-* 10    윤지혜		22-01-27        버튼, 문구 추가 및 포트 자산구성 디자인 변경
-* 11    윤지혜		22-02-03        문구 위치 수정
 *********************************************************************/ 
 -->
 
@@ -87,26 +85,21 @@
                                 <input type="radio" id="recStandard1" name="recStandard" checked="checked">
                                 <label for="recStandard1">자산선호도</label>
                                 <p>선호하는 상품<br>유형을 기준으로</p>
+                                <dl>
+                                    <dt>선호자산</dt>
+                                    <dd>국내주식, 채권</dd>
+                                </dl>
                             </div>
                             <div class="">
                                 <input type="radio" id="recStandard2" name="recStandard">
                                 <label for="recStandard2">거래성향</label>
                                 <p>위험 및 투자 패턴을<br>기준으로</p>
+                                <dl>
+                                    <dt>거래성향</dt>
+                                    <dd>--</dd>
+                                </dl>
                             </div>
                         </div>
-
-                        <!-- 22.01.27 추가 -->
-                        <div class="recStandard type02 mt20">
-                            <div class="on"><!-- 선택 시 class="on" 적용 -->
-                                <input type="radio" id="recStandard2_1" name="recStandard2" checked="checked">
-                                <label for="recStandard2_1">당/타기관<br>자산 기준</label>
-                            </div>
-                            <div class="">
-                                <input type="radio" id="recStandard2_2" name="recStandard2">
-                                <label for="recStandard2_2">신규<br>자산 기준</label>
-                            </div>
-                        </div>
-                        <!-- // 22.01.27 추가 -->
                         <!-- // 21.11.24 수정 : 마크업 변경 -->
                         <div class="contAccordion on">
                             <div class="AccorTitle brdBNone">
@@ -140,7 +133,7 @@
                                         <!-- // 21.11.24 수정 : 마크업 변경 a -> radio -->
                                     </div>
                                     <div class="sliderArea">
-                                        <em>과거 수익률/과거 변동성</em>
+                                        <em>기대수익률/위험도</em>
                                         <p class="fontSSS txtBlack5 mt4">좌우로 이동하시면 추천 상품이 변경되요</p>
                                         <div class="portSlider">
                                             <div class="ptSlider" id="ptSlider">
@@ -165,7 +158,7 @@
                     <!-- 자산 구성 -->                        
                     <div class="innerBox lineN">
                         <div class="constAsset">
-                            <div class="listTitleBox mt20 mb10"><!-- 22.02.03 class 수정 : mb20 -> mb10 -->
+                            <div class="listTitleBox mt20 mb20">
                                 <div class="left">
                                     <h2 class="subTit mb0 ml8">포트 자산구성</h2><!-- 22.01.14 class="ml8" 추가 적용 -->
                                 </div>
@@ -173,24 +166,11 @@
                                     <a href="#" class="mr8">추천 이유 <span class="iconTySol12">팝업보기</span></a><!-- 22.01.14 여백 및 icon class 적용 -->
                                 </div>
                             </div>
-                            <!-- 22.02.03 추가 -->
-                            <dl class="dpFlex jcStart mb20">
-                                <dt class="ml8 bold">선호자산 :</dt>
-                                <dd class="ml10 txtPurple4">국내주식, 채권, ELF</dd>
-                            </dl>
-                            <!-- // 22.02.03 추가 -->
                             <div class="boxTyShadow">
                                 <ul class="listHorizLine">
                                     <li>
                                         <p>
                                             <span>유동성(예적금)</span>
-                                            <strong>0%</strong>
-                                        </p>
-                                    </li>
-                                    <!-- 22.01.27 수정 : 대체(ELF/ELT) 와 펀드 EFT 위치 변경 -->
-                                    <li>
-                                        <p>
-                                            <span>대체(ELF/ELT)</span>
                                             <strong>0%</strong>
                                         </p>
                                     </li>
@@ -201,7 +181,7 @@
                                         </p>
                                         <!-- 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
                                         <div class="graphArea">
-                                            <div class="graph" style="background:#eee; height:200px; line-height:200px;">
+                                            <div class="graph" style="margin:20px; background:#eee; height:200px; line-height:200px;">
                                                 그래프 영역
                                             </div>
                                             <ul>
@@ -225,25 +205,14 @@
                                         </div>
                                         <!-- // 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
                                     </li>
-                                    <!-- // 22.01.27 수정 : 대체(ELF/ELT) 와 펀드 EFT 위치 변경 -->
+                                    <li>
+                                        <p>
+                                            <span>대체(ELF/ELT)</span>
+                                            <strong>0%</strong>
+                                        </p>
+                                    </li>
                                 </ul>
                             </div>
-                            <!-- 22.01.27 추가 -->
-                            <div class="dpFlex mt30">
-                                <dl class="ml8 dpFlex">
-                                    <dt><strong>과거 수익률</strong></dt>
-                                    <dd class="txtRed1 ml10"><strong>12.00%</strong></dd>
-                                </dl>
-                                <dl class="mr8 dpFlex">
-                                    <dt><strong>과거 변동성</strong></dt>
-                                    <dd class="txtRed1 ml10"><strong>10.25%</strong></dd>
-                                </dl>
-                            </div>
-                            
-                            <div class="boxTyRound gray fontSSS mt20 txtBlack5">
-                                ※ 과거 수익률은 최근 5년간의 자산구분별 벤치마크 지수의 수익률을 투자비중으로 가중평균한 연환산 수익률을 의미하며, 과거 변동성은 과거 수익률의 연환산 표준편차로 계산합니다.
-                            </div>
-                            <!-- // 22.01.27 추가 -->
                         </div>
                     </div>
                     <!-- // 자산 구성 -->

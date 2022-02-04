@@ -1,11 +1,11 @@
  /********************************************************************
 * @업무명		: 
-* @설명		: 
+* @설명		    : 
 * @파일명		: PR0903ui.js
 *********************************************************************
 * 번호	작업자		작업일			변경내용
 *--------------------------------------------------------------------
-* 1		윤지혜
+* 1		�ㅼ���
 *********************************************************************/
  
 
@@ -80,13 +80,7 @@ var solAI = {
 		}else{
 			// console.log('OK')
 		}
-
-		if($('.floatingFixTr').length > 0){
-			$('.allMenuBtn').css({'bottom':'105px', /* 'transition':'none' */});
-			// $('.allMenuBtn').addClass('type2');
-		}
-		
-		// 전체메뉴 플로팅 버튼 (flip 타입)
+		// 전체메뉴 플로팅 버튼(flip 타입)
 		$('.allMenuBtn .flipBox').click(function(){
 			$('.allMenuList').addClass('on');
 		});
@@ -96,15 +90,13 @@ var solAI = {
 			var parentC = $(this).parents('ul').attr('class');
 			// console.log(parentC);
 			if($(this).hasClass('btnClose')){
-				// $('.allMenuBtn input:checkbox[id="menuBtn"]').prop('checked', false); 기본타입시
+				// $('.allMenuBtn input:checkbox[id="menuBtn"]').prop('checked', false); 기본타입 시
 				$('.allMenuList').removeClass('on');
 			}else if(parentC == "depth2"){
-				
+	
 			}else{
-				if($(this).next('.depth2').length){
-					$('.allMenuList > ul > li > a').removeClass('on');
-					$(this).addClass('on');
-				}
+				$('.allMenuList > ul > li > a').removeClass('on');
+				$(this).addClass('on');
 			}
 		});
 
@@ -134,21 +126,17 @@ var solAI = {
 			} */
 		
 
-			if(scrollTop <= 10){				
+			if(scrollTop === 0){				
 				// $('.allMenuBtn').hide();
-				// $('.allMenuBtn').css('opacity','1');
+				$('.allMenuBtn').css('opacity','1');
 				// void target.offsetWidth,
 				$('.flipBox').addClass('effect');
 				
-			}else{
-				$('.flipBox').removeClass('effect');
+			}else {
 				// $('.allMenuBtn').show();
-				// $('.allMenuBtn').css('opacity','1');
-				// $('.flipBox').attr('style','animation-delay:;');
-				// $('.flipBox').removeClass('effect');
-				/* setTimeout(function(){
-					$('.flipBox').removeClass('effect');
-				}, 10); */
+				$('.allMenuBtn').css('opacity','0');
+				$('.flipBox').attr('style','animation-delay:;');
+				$('.flipBox').removeClass('effect');
 			} 
 		});
 	},
@@ -192,13 +180,11 @@ var solAI = {
 			// console.log($(window).outerHeight(true));
 			if( !isSet ){ set() }
 
-			if(getScrollTop(sTop)){ // 기준 스크롤 탑 보다 클 때
-				TweenMax.set($btnTyCircleTop, {opacity:1});			
-				$btnTyCircleTop.css('visibility','inherit');
+			if(getScrollTop(sTop)){ // 기준 스크롤 top보다 클 때
+				TweenMax.set($btnTyCircleTop, {opacity:1});				
 				
 			} else { // 작을 때
 				TweenMax.set($btnTyCircleTop, {opacity:0});
-				$btnTyCircleTop.css('visibility','hidden');
 			}
 		})
 
@@ -231,18 +217,18 @@ var solAI = {
 		$('.slider').on('touchstart', function(event){
 			startX = event.originalEvent.changedTouches[0].screenX;
 			startY = event.originalEvent.changedTouches[0].screenY;
-			
+			console.log('hi');
 		});
 		$('.slider').on('touchend', function(event){
 			endX = event.originalEvent.changedTouches[0].screenX;
 			endY = event.originalEvent.changedTouches[0].screenY;
 
 			if(startX - endX > 50){
-				//console.log('오른쪽에서 왼쪽');
+				console.log('오른쪽에서 왼쪽');
 				nextSlide();
 				
 			}else if(endX - startX > 50){
-				// console.log('왼쪽에서 오른쪽');
+				console.log('왼쪽에서 오른쪽');
 				prevSlide();
 			}
 		});
@@ -278,7 +264,7 @@ var solAI = {
 
 		$('body').on('click', '.slider .slideItem:not(:first-child)', function(){
 			var get_slide = $(this).attr('data-class');
-			// console.log(get_slide);
+			console.log(get_slide);
 			$('.slider .slideItem[data-class='+ get_slide +']').hide().prependTo('.slider').fadeIn();
 			$.each($('.slideItem'), function(index, slideItem){
 				$(slideItem).attr('data-position', index + 1);
@@ -286,24 +272,6 @@ var solAI = {
 
 			detectActive();
 		});
-	},
-	'continuePop' : function(){
-		$('.btnInfoMore').on('click', function(){
-			var lyHeader = $(this).parents('.layerBlTyp').find('.layerHeader'),
-				lyCont = lyHeader.siblings('.layerCon');
-			
-			lyHeader.toggleClass('on');
-			
-			if(lyHeader.hasClass('on')){
-				var lyHeaderH = lyHeader.outerHeight();
-				lyCont.css({height:'calc(100% - ' + lyHeaderH + 'px)'});
-			} else {
-				lyCont.removeAttr('style');
-			}
-		})
-		$('.contents, .floatingFixTr').on('touchstart', function(){
-			$('.floatingFixTr').addClass('down')
-		})
 	},
 	'pullDownR' : function(){/* pull down to refresh */
 		var touchStartHandler ,
@@ -338,6 +306,7 @@ var solAI = {
 			}
 
 	},
+	
 	'init' : function(){
 		solAI.toggleCheck();
 		solAI.toggleRadioM2();
@@ -346,9 +315,8 @@ var solAI = {
 		solAI.allMenuBtn();
 		solAI.topBtn();
 		solAI.vh();
-		// solAI.mainSlide();
-		solAI.pullDownR();
-		solAI.continuePop();
+		//solAI.mainSlide();
+		// solAI.pullDownR();
 		window.addEventListener('resize', () => solAI.vh());
 	},
 }
