@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+	<link rel="stylesheet" type="text/css" href="../../../../../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<div id="wrap">
+	<section id="container">
+		<!--header-->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">마이데이터전송요구</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose">
+						<span class="iconTy03">팝업닫기</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<!--//header-->
+
+		<!--content-->
+		<div id="contentsWrap" class="myAssets">
+			<div class="contents">
+				<!--mydata-->
+				<div class="mydataWrap">
+					<div class="titWrap mb30">
+						<h2 class="serviceTit">휴대폰 본인인증</h2>
+					</div>
+					<div class="contWrap">
+						<div class="termsBox">
+							<div class="titArea">
+								<input type="checkbox" id="agree" /><label for="agree" class="txtBlack5">전체동의</label>								
+								<a href="javascript:void(0)" class="arrowLink"><span class="hide">전체동의 상세보기</span></a>
+							</div>
+						</div>
+						<div class="formGroupBox md_formGroupBox mt40">
+							<p class="link_txt4 pdApply mb15">
+								고객님의 본인명의 휴대폰 정보를 입력 후, 인증요청을 선택해 주세요.
+							</p>
+							<div class="formItem">
+								<dl class="formRow"><!--성명-->
+									<dt><label for="inputElement1-1">성명</label></dt>
+									<dd>
+										<div class="inner">
+											<div class="input">
+												<span class="hiddenFocus"></span>
+												<input type="text" class="inpElement" id="inputElement1-1" placeholder="성명" autocomplete="off">
+											</div>
+											<div class="btn">
+												<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											</div>
+										</div>
+									</dd>
+									<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+								</dl>
+							</div>
+							<div class="formItem">
+								<dl class="formRow"><!--생년월일-->
+									<dt><label for="inputElement1-1">생년월일</label></dt>
+									<dd>
+										<div class="inner">
+											<div class="input">
+												<span class="hiddenFocus"></span>
+												<div class="num_box">
+													<div class="num_item num_item_1">
+														<input type="text" id="inputElement1-1" class="inpElement inpPN" placeholder="생년월일 6자리" autocomplete="off">
+													</div>
+													<div class="num_item num_item_2">-</div>
+													<div class="num_item num_item_3">
+														<input type="password" id="inputElement1-2" class="inpElement leftT_im" placeholder="" maxlength="1" autocomplete="off" title="주민번호 첫번째 자리">
+													</div>
+												</div>
+											</div>
+											<div class="btn">
+												<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											</div>
+										</div>
+									</dd>
+									<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+								</dl>
+							</div>
+							<div class="formItem">
+								<dl class="formRow"><!--통신사-->
+									<dt><label for="inputElement1-1">통신사</label></dt>
+									<dd class="rightT">
+										<a href="#layerPopBottom01_1" class="btnPopOpen btnType3">통신사 선택</a>
+									</dd>
+									<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+								</dl>
+							</div>
+							<div class="formItem">
+								<dl class="formRow">
+									<dt><label for="inputElement1-1">휴대폰번호</label></dt>
+									<dd>
+										<div class="inner">
+											<div class="input input_telecom">
+												<span class="hiddenFocus"></span>
+												<input type="text" class="inpElement" id="inputElement1-1" placeholder="휴대폰번호 입력" autocomplete="off">
+												<button type="button" class="btnTypeR btnSmall btnCertifi">인증요청</button>
+											</div>
+											<div class="btn">
+												<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											</div>
+										</div>
+									</dd>
+									<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+								</dl>
+							</div>
+							<div class="formItem formItem_number">
+								<dl class="formRow">
+									<dt><label for="inputElement1-1">인증번호</label></dt>
+									<dd>
+										<div class="inner">
+											<div class="input">
+												<span class="hiddenFocus"></span>
+												<input type="text" class="inpElement" id="inputElement1-1" placeholder="6자리 입력" autocomplete="off">
+											</div>
+											<div class="btn">
+												<button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button>
+											</div>
+										</div>
+									</dd>
+									<dd class="timer">
+										<span class="txtRed1">02:58</span>
+									</dd>
+									<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+								</dl>
+							</div>
+							<!--
+							<p class="subInfo2 mt20">
+								고객님의 본인명의 휴대폰 정보를 입력 후, 인증요청을 선택해 주세요.
+							</p>
+							-->
+						</div>
+					</div>
+				</div>
+				<!--//mydata-->
+			</div>
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0);" class="btnType btnBlack"><span>이전</span></a>
+				<a href="javascript:void(0);" class="btnType"><span>다음</span></a>
+			</div>
+		</div>
+		<!--//content-->
+	</section>
+
+	<!-- BottomSheet : s -->
+	<div id="layerPopBottom01_1" class="layerPopBottomWrap hasDim myAssets">
+		<div class="popInner">
+			<div class="layerHeader">
+				<p class="layerTit">통신사 선택</p>
+				<button type="button" class="btnPopClose">팝업닫기</button>
+			</div>
+			<div class="layerCon">
+				<ul class="list_telecom">
+					<li><a href="javascript:void(0)">SKT</a></li>
+					<li><a href="javascript:void(0)">KT</a></li>
+					<li><a href="javascript:void(0)">LG U+</a></li>
+					<li><a href="javascript:void(0)">SKT 알뜰폰</a></li>
+					<li><a href="javascript:void(0)">KT 알뜰폰</a></li>
+					<li><a href="javascript:void(0)">LG U+  알뜰폰</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- BottomSheet : e -->
+	
+</div>
+<script>
+	$(".btnCertifi").on("click",function(){
+		$(".formItem_number").addClass("formItem_on");
+	});
+</script>
+</body>
+</html>

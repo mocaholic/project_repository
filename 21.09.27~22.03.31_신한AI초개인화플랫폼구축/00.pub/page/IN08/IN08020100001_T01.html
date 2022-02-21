@@ -1,0 +1,872 @@
+
+<!-- /*******************************************************************
+* @설명			: 
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일	    2021-12-27	   텍스트 및 내용변경 (주석정보 : 20211227)
+* 2		김남일	    2022-01-03	   텍스트수정 (주석정보 : 20220103)
+* 3		김남일	    2022-01-06	   검색 백버튼 추가 (주석정보 : 20220106)
+* 4		김남일	    2022-01-07	   검색 백버튼 추가 (주석정보 : 20220107)
+* 5		김남일	    2022-01-25	   탭버튼 명칭 수정 (주석정보 : 20220125)
+* 6		김남일	    2022-02-04	   간격수정 (주석정보 : 20220204)
+********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산연결 : 신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+	<link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+
+    <style>  /* 20220114 추가 - 탭메뉴 sticky 적용 시 필요 */ 
+    #contentsWrap .contents {height: 100%; overflow-x: none !important; overflow-y: none !important; -webkit-overflow-scrolling:touch; box-sizing:border-box;}  /* 20220204 padding-bottom:15%; 삭제 */
+    </style>
+
+</head>
+<body>
+	<div id="wrap">
+		<section id="container">
+			<!--header-->
+			<header id="headerWrap">
+				<div id="header">
+					<div class="lSec">
+						<a href="javascript:void(0);" class="btnBefore"><span class="iconTy01">이전</span></a>
+					</div>
+					<h1 class="tit">자산연결</h1>
+					<div class="rSec">
+						<a href="javascript:void(0)" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+						<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+					</div>
+				</div>
+			</header>
+			<!--//header-->
+
+			<!--contentsWrap-->
+			<div id="contentsWrap" class="myAssets">
+                <!--20220114 추가 - 탭메뉴 상단 고정-->
+                <div id="tabMeWRAP" class="md_swiper_sticky" style="display:none;"></div> <!--20220125 수정-->
+                <!--//20220114 추가 - 탭메뉴 상단 고정-->
+
+				<!-- contents -->  <!--20211227-->
+				<div class="contents pb80">  <!--20220204 추가 - pb80-->
+					<div class="mydataWrap myRequest">
+                        <!--title-->
+						<div class="titWrap6"> 
+                            <h2 class="serviceTit">흩어진 내 자산을 모아서 꼼꼼하게 관리해보세요! </h2>
+                            <span class="serviceTitA"><em class="fontCo1">3</em>/<em>5</em></span>
+                        </div>
+                        <!--//title-->
+                        <!-- 검색어 입력 -->
+                        <div class="searchArea pb20">
+                            <div class="formGroupBox">
+                                <dl class="formItem">
+                                    <div class="formRow2">  <!--20220107 자산연결에서 사용하는 검색 formRow2-->
+                                        <dt class="blind"><label for="inputElement1-1">지역 및 단지</label></dt>
+                                        <dd>
+                                            <div class="inner">
+                                                <div class="input"><input type="search" class="inpElement ml5" id="inputElement1-1" placeholder="기관명을 입력해 주세요" autocomplete="off"></div>  <!--20220106 추가 - class="ml5" style="width: 80%;"-->
+                                                <div class="btn"><button type="button" class="btnDelete"><i class="iconTyDeleteValue">삭제</i></button></div>
+                                                <div class="enter">
+                                                    <!-- 비활성화 : disabled="disabled" -->
+                                                    <button type="button" class="btnSearchIcon"><span class="blind">검색</span></button>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                        <dd class="errorMsg">에러 메세지 입력 영역</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- //검색어 입력 -->
+
+                        <!--20220107 업권메뉴 수정-->
+                        <div id="stickyCon">  <!--20220125 수정-->
+                            <div class="md_swiper_frame">
+                                <div class="tabTy03 uiTabs uiCate0">
+                                    <a href="#" onclick="fnMenu(1);return false;" class="on" title="현재 선택됨"><span>은행</span></a>
+                                    <a href="#" onclick="fnMenu(2);return false;"><span>카드</span></a>
+                                    <a href="#" onclick="fnMenu(3);return false;"><span>보험</span></a>
+                                    <a href="#" onclick="fnMenu(4);return false;"><span>증권</span></a>
+                                    <a href="#" onclick="fnMenu(5);return false;"><span>페이</span></a>  <!--20220110-'페이'로 바뀜-->
+                                    <a href="#" onclick="fnMenu(6);return false;"><span>할부금융</span></a>
+                                    <a href="#" onclick="fnMenu(7);return false;"><span>보증보험</span></a>
+                                    <a href="#" onclick="fnMenu(8);return false;"><span>통신</span></a>   <!--class="disabled" 필요시 사용-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20220107 업권메뉴 수정-->
+
+                        <p class="contTxt3">연결한 자산기관 : <strong>11개</strong> </p>
+
+                        <!--20211227 추천-->
+                        <div class="md_swp_cont2">
+							<div id="swp_cont0" class="md_swp_box">
+                                <div class="flexBoxC"> 
+									<div class="itemBox">
+										<p class="contTxt2">추천</p>
+									</div>
+									<div class="itemBox">
+                                        <input type="checkbox" id="oganCheck10" name="oganCheckAll" class="checkAllA" />
+                                        <label for="oganCheck10">전체선택</label>
+                                    </div>
+								</div>
+								<div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">카카오뱅크</span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or1" name="oganCheck1" class="checkThis1" />
+                                        <label for="or1"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_004.png" alt="기관로고">
+                                            <span class="num">3</span>
+                                        </span>
+                                        <span class="tit">KB국민은행</span>
+                                        
+                                    </div>
+
+                                    <!--
+                                        class="checkThis1" - CSS없음. 스크립트 필요 CLASS입니다.
+                                    -->
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or2" name="oganCheck1" class="checkThis1" />  
+                                        <label for="or2"><em class="">3개 연결중</em></label>
+                                    </div>
+                                </div>
+							</div>
+                        </div>
+						<!--//20211227 추천-->
+
+                        <!--20211227 은행-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont1" class="md_swp_box">
+                                <!--
+                                    전체선택,전체해지 체크박스 활성 기능  -ok
+                                    class="checkAll" - 스크립트 필요 CLASS입니다. CSS없음
+                                -->
+                                <div class="flexBoxC">
+									<div class="itemBox">
+										<p class="contTxt2">은행</p>
+									</div>
+									<div class="itemBox">
+                                        <input type="checkbox" id="oganCheck" name="oganCheckAll" class="checkAll" />  
+                                        <label for="oganCheck">전체선택</label>
+                                    </div>
+								</div>
+                                <!--
+                                    체크박스 선택시 바텀시트에 추가 기능 - ok
+                                -->
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">기업은행</span>
+                                    </div>
+                                    <div class="organ_check">
+                                        <input type="checkbox" id="a1" name="oganCheck" class="checkThis" />
+                                        <label for="a1"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_004.png" alt="기관로고">
+                                            <span class="num">3</span>
+                                        </span>
+                                        <span class="tit">KB국민은행</span>
+                                        
+                                    </div>
+                                    <div class="organ_check">
+                                        <input type="checkbox" id="a2" name="oganCheck" class="checkThis" />
+                                        <label for="a2"><em class="">3개 연결중</em></label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_007.png" alt="기관로고">
+                                            <span class="num">2</span>
+                                        </span>
+                                        <span class="tit">수협</span>
+                                    </div>
+                                    <div class="organ_check">
+                                        <input type="checkbox" id="a3" name="oganCheck" class="checkThis" disabled/>  <!--20211119 disabled추가-->
+                                        <label for="a3"><em class="">2개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 은행-->
+
+                        <!--20211227 카드-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont2" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">카드</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck2" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck2">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">카카오뱅크</span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or3" name="oganCheck2" class="checkThis2" />
+                                        <label for="or3"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 카드-->
+
+                        <!--20211227 보험관련-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont3" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">보험</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck3" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck3">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">보험 정보제공자명 </span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or4" name="oganCheck3" class="checkThis3" />
+                                        <label for="or4"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 보험관련-->
+
+                        <!--20211227 증권관련-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont4" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">증권</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck4" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck4">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">증권 정보제공자명  </span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or5" name="oganCheck4" class="checkThis4" />
+                                        <label for="or5"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 증권관련-->
+
+                        <!--20211227 페이/포인트관련-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont5" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">페이</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck5" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck5">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">전자금융 정보제공자명  </span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or6" name="oganCheck5" class="checkThis5" />
+                                        <label for="or6"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 페이/포인트관련-->
+
+                        <!--20211227 할부금융관련-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont6" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">할부금융</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck6" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck6">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">할부금융 정보제공자명  </span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or7" name="oganCheck6" class="checkThis6" />
+                                        <label for="or7"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                        <!--//20211227 할부금융관련-->
+
+                        <!--20211227 보증보험관련-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont7" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">보증보험</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck7" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck7">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">보증보험 정보제공자명  </span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or8" name="oganCheck7" class="checkThis7" />
+                                        <label for="or8"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 보증보험관련-->
+
+                        <!--20211227 통신사관련-->
+                        <div class="md_swp_cont2">
+                            <div id="swp_cont8" class="md_swp_box">
+                                <div class="flexBoxC">
+                                    <div class="itemBox">
+                                        <p class="contTxt2">통신</p>
+                                    </div>
+                                    <div class="itemBox">
+                                        <input type="checkbox" id="oganCheck8" name="oganCheckAll" class="checkAll" />
+                                        <label for="oganCheck8">전체선택</label>
+                                    </div>
+                                </div>
+                                <div class="organ_list">
+                                    <div class="organ_detail">
+                                        <span class="logo">
+                                            <img src="../../../images/bank_logo/banklogo_003.png" alt="기관로고">
+                                            <span class="num">1</span>
+                                        </span>
+                                        <span class="tit">통신 정보제공자명  </span>
+                                        
+                                    </div>
+                                    <div class="organ_check1">
+                                        <input type="checkbox" id="or9" name="oganCheck8" class="checkThis8" />
+                                        <label for="or9"><em class="">1개 연결중</em></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//20211227 통신사관련-->
+
+                        <!--20211227 다가오는기관들-->
+                        <div class="md_swp_cont2">
+                            <div class="organ_text"><!--20211119 disabled추가-->
+                                다가오는 기관들도 놓치지 마세요 (오픈 예정 기관)
+                            </div>
+                            <div class="organ_list disabled"> <!--2021119 disabled-->
+                                <div class="organ_detail">
+                                    <span class="logo">
+                                        <img src="../../../images/bank_logo/banklogo_020.png" alt="기관로고">
+                                    </span>
+                                    <span class="tit">우리은행</span>
+                                    
+                                </div>
+                                <div class="organ_check1">
+                                    <input type="checkbox" id="a4" name="oganCheck" class="checkThis"/>
+                                    <label for="a4"><em class="blind">연결없음</em></label>
+                                </div>
+                            </div>
+                            <div class="organ_list disabled"><!--2021119 disabled-->
+                                <div class="organ_detail">
+                                    <span class="logo">
+                                        <img src="../../../images/bank_logo/banklogo_023.png" alt="기관로고">
+                                    </span>
+                                    <span class="tit">SC제일</span>
+                                </div>
+                                <div class="organ_check1">
+                                    <input type="checkbox" id="a5" name="oganCheck" class="checkThis" />
+                                    <label for="a5"><em class="blind">연결없음</em></label>
+                                </div>
+                            </div>
+                            <div class="organ_list disabled"><!--2021119 disabled-->
+                                <div class="organ_detail">
+                                    <span class="logo">
+                                        <img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고">
+                                    </span>
+                                    <span class="tit">씨티은행</span>
+                                </div>
+                                <div class="organ_check1">
+                                    <input type="checkbox" id="a6" name="oganCheck" class="checkThis" />
+                                    <label for="a6"><em class="blind">연결없음</em></label>
+                                </div>
+                            </div>
+                            <div class="organ_list disabled"><!--2021119 disabled-->
+                                <div class="organ_detail">
+                                    <span class="logo">
+                                        <img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고">
+                                    </span>
+                                    <span class="tit">씨티은행</span>
+                                </div>
+                                <div class="organ_check1">
+                                    <input type="checkbox" id="a7" name="oganCheck" class="checkThis" />
+                                    <label for="a7"><em class="blind">연결없음</em></label>
+                                </div>
+                            </div> 
+                            <div class="organ_list disabled"><!--2021119 disabled-->
+                                <div class="organ_detail">
+                                    <span class="logo">
+                                        <img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고">
+                                    </span>
+                                    <span class="tit">씨티은행</span>
+                                </div>
+                                <div class="organ_check1">
+                                    <input type="checkbox" id="a7" name="oganCheck" class="checkThis" />
+                                    <label for="a7"><em class="blind">연결없음</em></label>
+                                </div>
+                            </div> 
+                            <div class="organ_list disabled"><!--2021119 disabled-->
+                                <div class="organ_detail">
+                                    <span class="logo">
+                                        <img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고">
+                                    </span>
+                                    <span class="tit">씨티은행</span>
+                                </div>
+                                <div class="organ_check1">
+                                    <input type="checkbox" id="a7" name="oganCheck" class="checkThis" />
+                                    <label for="a7"><em class="blind">연결없음</em></label>
+                                </div>
+                            </div> 
+                        </div>
+                        <!--//20211227 다가오는기관들-->
+
+					</div>
+				</div>
+				<!-- // contents -->
+				<div class="btnGroupBox floating fixed">
+					<a href="javascript:void(0);" class="btnType"><span>연결하기</span></a>
+				</div>
+			</div>
+			<!--//contentsWrap-->
+		</section>
+
+        <!-- BottomSheet : s -->
+        <div class="md_Bottom1">
+			<div class="md_Bottom_head">
+				<a href="javascript:void(0)" class="btnMDB">
+					<span class="cont"><span>4</span>개 기관을 선택하셨어요</span> 
+					<span class="cont_num"><em>0</em></span>
+					<span class="btnArrow"><button type="button" class=""><em>펼침</em></button></span>
+				</a>
+			</div>
+			<div class="md_Bottom_cont">
+				<div class="md_Bottom_cont_inner">
+                    <!--은행-->
+                    <div class="bankAll">  
+                        <p class="md_title">은행</p>
+                        <div class="listup">
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아아아아</span>
+                            </div>
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_004.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">KB국민은행</span>
+                            </div>
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_004.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">KB국민은행</span>
+                            </div>
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/in08/banklogo_004.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">KB국민은행</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//은행-->
+
+                    <!--카드-->
+                    <div class="cardAll mt20">
+                        <p class="md_title">카드</p>
+                        <div class="listup1"> <!--카드일때 listup1-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//카드-->
+
+                    <!--보험-->
+                    <div class="insuranceAll mt20">
+                        <p class="md_title">보험</p> 
+                        <div class="listup2"> <!--보험일때 listup2-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//보험-->
+
+                    <!--증권-->
+                    <div class="stockAll mt20">
+                        <p class="md_title">증권</p>
+                        <div class="listup3"> <!--증권일때 listup3-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//증권-->
+                    
+                    <!--전자금융권-->
+                    <div class="stockAll mt20">
+                        <p class="md_title">전자금융</p>
+                        <div class="listup4"> <!--전자금융일때 listup4-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//전자금융-->
+
+                    <!--할부금융권-->
+                    <div class="stockAll mt20">
+                        <p class="md_title">할부금융</p>
+                        <div class="listup5"> <!--할부금융일때 listup5-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//할부금융권-->
+
+                    <!--보증보험-->
+                    <div class="stockAll mt20">
+                        <p class="md_title">보증보험</p>
+                        <div class="listup6"> <!--보증보험일때 listup6-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//보증보험-->
+
+                    <!--통신-->
+                    <div class="stockAll mt20">
+                        <p class="md_title">통신</p>
+                        <div class="listup7"> <!--통신일때 listup7-->
+                            <div class="orgin_group">
+                                <span class="logo"><img src="../../../images/bank_logo/banklogo_027.png" alt="기관로고"></span>
+                                <a href="javascript:void(0)" class="btnD"><em>삭제</em></a>
+                                <span class="tit">폭스바겐파이낸셜코리아</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//통신-->
+				</div>
+			</div>
+		</div>
+        <!--// BottomSheet : s -->
+	</div>
+
+<!--스와이프-->
+<script>
+    $(document).ready(function(){
+        const mdSwp = new Swiper('.md_swp',{
+            observer : true,
+            observeParents : true,
+            spaceBetween : 6,
+            slidesPerView :'auto',				
+            //slidesPerColumn : 1,
+            onInit: function(swiper){
+                $(swiper.wrapper).find("a").on("click",function(){
+                    var nums = $(this).attr("href").substr(9);
+                    $(this).attr("title","현재 선택 됨").siblings().removeAttr("title");
+                    $(this).find("em").addClass("active");
+                    $(this).siblings().find("em").removeClass("active");
+                    //$(".md_swp_cont2").find(".md_swp_box").hide();
+                    //$(".md_swp_cont2").find("#swp_cont"+nums).show();
+                });
+            }
+        });
+
+        //상단 업권 및 업권 펼침부분
+        var btnCount = 0;
+        $(document).on("click",".menuOn",function(){
+            $(this).removeClass("menuOn").addClass("menuOff");
+			$(this).addClass("active");
+			$(".md_swp_wrap").children().appendTo(".md_swp_pop");
+			$(".md_swp_wrap").css("z-index","-1");
+			$(".md_swp_wrap").css("height","0");
+			$(".md_swp_pop").show();
+        });
+        $(document).on("click",".md_swp a",function(){
+            //btnCount = $(this).index();
+            btnCount = $(this).attr("href").substr(9) - 1;
+            console.log(btnCount);
+        });
+        $(document).on("click",".menuOff",function(){
+				$(this).removeClass("menuOff").addClass("menuOn");
+				$(this).removeClass("active");
+				$(".md_swp_wrap").css("z-index","0");
+				$(".md_swp_pop").children().appendTo(".md_swp_wrap");
+				$(".md_swp_wrap").css("height","initial");
+				$(".md_swp_pop").hide();
+				console.log(btnCount);
+				mdSwp.init();
+				mdSwp.slideTo(btnCount);
+		});
+        //스와이프펼친화면
+        $(".md_swp_ctrl").find("button").on("click",function(){
+			$(".md_swp_wrap").children().appendTo(".md_swp_pop");
+			if($(".md_swp_pop").is(":hidden")==true){
+				$(this).addClass("active");
+				mdSWP_h = $(".md_swp_wrap").find("a").outerHeight();
+				$(".md_swp_wrap").css("z-index","-1");
+				$(".md_swp_pop").css("marginTop",-mdSWP_h)
+				$(".md_swp_pop").show();
+			}else{
+				$(this).removeClass("active");
+				$(".md_swp_wrap").css("z-index","0");
+				$(".md_swp_pop").children().appendTo(".md_swp_wrap");
+				$(".md_swp_pop").hide();
+				mdSwp.init();
+			}
+		});
+
+        //하단바텀시트내용
+        setCount = $(".md_Bottom1").find(".md_Bottom_cont").find(".orgin_group").length;
+        btUp = 64;  //64
+        btDown = ($(".btnGroupBox").height() + $(".md_Bottom_head").height()) - $(".md_Bottom1").height();
+        $(".md_Bottom1").find(".cont_num em").text(setCount);
+        $(".md_swp_box").find(".organ_list").each(function(){
+            org_list_num = $(this).index();
+            $(this).addClass("organ_list"+org_list_num);
+        })
+        // 하단바텀시트열기
+        $(document).on("click",".btnMDB",function(){
+            $(this).removeClass("btnMDB").addClass("btnMDB_on");
+            $(this).find(".btnArrow button").addClass("on");
+            $(".md_Bottom1").animate({bottom:btUp},300);
+            //$(".md_swp_cont").css("padding-bottom","100px"); 
+        });
+        //하단바텀시트닫기
+        $(document).on("click",".btnMDB_on",function(){
+            $(this).removeClass("btnMDB_on").addClass("btnMDB");
+            $(this).find(".btnArrow button").removeClass("on");
+            $(".md_Bottom1").animate({bottom:btDown},200);
+            //$(".md_swp_cont").css("padding-bottom","0");
+        });
+        
+        //체크박스전체 선택
+        $(".checkAll").click(function(){
+            if($(".checkAll").prop("checked")){
+                $(".checkThis").prop("checked",true);
+                $(this).siblings("label").text("전체해제");
+            }else{
+                $(".checkThis").prop("checked",false);
+                $(this).siblings("label").text("전체선택");
+            }
+        });
+        $(".checkThis").click(function(){
+            var checkCount = $(".md_swp_box .organ_list").length;
+            if($("input[name='oganCheck']:checked").length == checkCount){
+                $(".checkAll").prop("checked",true);
+            }else{
+                $(".checkAll").prop("checked",false);
+            }
+        });
+        
+        // 바텀시트 
+        $(".organ_check input").on("click",function(){
+            var checkNum = $(this).parent().parent().attr("class").substr(21);
+            check_count = $(".listup").find(".orgin_group").length;
+            if($(this).is(":checked")==true){
+                var clone_logo = $(this).parent().siblings().find("img").attr("src");
+                var clone_tit = $(this).parent().siblings().find(".tit").text();
+                $(".listup").append("<div class='orgin_group orgin_group"+checkNum+"'><span class='logo'><img src='"+clone_logo+"' alt='' /></span><a href='javascript:void(0)'' class='btnD'><em>삭제</em></a><span class='tit'>"+clone_tit+"</span></div>");
+            }else{
+                $(".orgin_group"+checkNum).remove();
+                check_count = $(".listup").find(".orgin_group").length;
+            }
+            check_count = $(".listup").find(".orgin_group").length;
+            if(check_count > 0){
+                $(".cont_num em").text(check_count);
+                $(".md_Bottom1").find(".cont").text(check_count+"개 기관을 선택하셨어요.");
+            }else{
+                $(".cont_num em").text("0");
+                $(".md_Bottom1").find(".cont").text("연결하실 기관을 선택하세요.");
+                $(".md_Bottom1").find(".md_Bottom_head a").removeClass("btnMDB_on").addClass("btnMDB");
+                $(".md_Bottom1").find(".btnArrow button").removeClass("on");
+                $(".md_Bottom1").animate({bottom:btDown},200);
+               // $(".md_swp_cont").css("padding-bottom","0");
+            }
+        });
+
+        /* 20210701 */
+      
+        /* 20210701 end */
+         $(document).on("click",".btnD",function(){
+             var checkBack = $(this).parent().attr("class").substr(23);
+             check_count = $(".listup").find(".orgin_group").length;
+             $(this).parent().remove();
+             if(checkBack != ''){
+                  $(".md_swp_box").find(".organ_list"+checkBack).find(".organ_check input").attr("checked",false);
+             }
+             check_count = $(".listup").find(".orgin_group").length;
+             if(check_count > 0){
+                 $(".cont_num em").text(check_count);
+                 $(".md_Bottom1").find(".cont").text(check_count+"개 기관을 선택하셨어요.");
+             }else{
+                 $(".cont_num em").text("0");
+                 $(".md_Bottom1").find(".cont").text("연결하실 기관을 선택하세요.");
+                 $(".md_Bottom1").find(".md_Bottom_head a").removeClass("btnMDB_on").addClass("btnMDB");
+                 $(".md_Bottom1").find(".btnArrow button").removeClass("on");
+                 $(".md_Bottom1").animate({bottom:btDown},200);
+                // $(".md_swp_cont").css("padding-bottom","0");
+             }
+         });
+    });
+</script>
+<!--//스와이프-->
+
+<!--원본-열고닫힘-->
+<!--
+<script>
+	$(document).ready(function(){
+		$(document).on("click",".btn_toggle",function(){
+			$(this).toggleClass("on");
+			$(this).parent().parent().siblings(".account_group_detail").slideToggle();
+		});
+	});
+</script>
+-->
+<!--열고닫힘-->
+
+<!--20211227 타겟설정-->
+<script>
+function fnMenu(seq){
+	console.log("fnMenu seq ===> "+seq);
+	var offset = $("#swp_cont" + seq).offset();
+	console.log("offset top ===> "+offset.top);
+    $('.contents').animate({scrollTop : offset.top+ $(".contents").scrollTop() -120}, 500);
+}
+</script>
+
+<!--20220114 sticky-->   <!--20220125 수정-->
+<script>
+    $(".contents").on("scroll touchmove touchstart touchend",function(e){
+        
+        //alert("000000000000");
+        
+        var scrollTop = $(".contents").scrollTop();
+        var titWrapH  = $(".titWrap6").height();
+        var searchAreaH  = $(".searchArea").height();
+          
+        if ( scrollTop > titWrapH+ searchAreaH) {
+            //alert("1111111111");
+    
+            if ( $("#tabMeWRAP .md_swiper_frame").length == 0 ) {
+                $("#stickyCon").children().appendTo("#tabMeWRAP");
+                $("#tabMeWRAP").show();
+            }
+        } else  {
+            //alert("22222222")
+            if ( $("#stickyCon .md_swiper_frame").length == 0 ) {
+                $("#tabMeWRAP").children().appendTo("#stickyCon")
+                $("#tabMeWRAP").hide();
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
