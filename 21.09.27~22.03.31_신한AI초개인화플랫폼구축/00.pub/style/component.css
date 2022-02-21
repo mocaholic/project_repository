@@ -13,6 +13,7 @@
 .iconTyDown{width:18px;height:15px;background:url('../../images/icon_download.png') no-repeat 0 0;background-size:100%;}
 .iconTyHome{width:24px;height:24px; background:url('../../images/icon_mainmenu_h.png') no-repeat 0 0px;background-size:100%;}
 #prdMain .iconTyHome{background-image:url(../../images/icon_mainmenu_w.png);}
+#prdMain .iconTyChatbot{background-image:url(../../images/icon_chatbot_white.png);}
 #prdMain.bgTyBlack .iconTyHome{background-image:url(../../images/icon_mainmenu_h.png);}
 .iconTy06{width:4px;height:16px;background:url('../../images/icon_openlayer2.png') no-repeat 0 0;background-size:100%;}
 .iconTy07{width:12px;height:8px;background:url('../../images/icon_toggle_36x24_2.png') no-repeat 0 0;background-size:100%;}
@@ -303,7 +304,7 @@
 .iconTyStockDown {width: 7px;height: 5px;background: url(../../images/icon_stock.png) no-repeat;background-size: 7px auto;}
 .iconTyStockUp {background-position:0 0;}
 .iconTyStockDown {background-position:0 -8px;}
-.iconTyTerms {width: 15px;height: 19px;background:url('../../images/icon_terms_download.png') no-repeat 0 0; background-size:15px auto;}
+.iconTyTerms {width: 15px;height: 19px;background:url('../../images/icon_terms_download.png') no-repeat 0 0; background-size:100% auto;}
 .iconTyPlus {width:9px;height:9px;background:url('../../images/icon_plus02.png') no-repeat 0 0;background-size:100%;}
 .iconTyPlus02 {width:19px;height:19px;background:url('../../images/icon_plus03.png') no-repeat 0 0;background-size:100%;}
 .iconTyPlus04 {width:19px;height:19px;background:url('../../images/icon_plus04.png') no-repeat 0 0;background-size:100%;}
@@ -363,13 +364,18 @@
 /*header 아이콘 변경 */
 #header [class*=btn].btnBefore{width:40px;margin:0 0 0 8px;}
 #header [class*=btn].btnHome{width:40px;margin:0;padding:0;}
-#header [class*=btn].btnTotal{width:40px;margin:0 8px 0 0;}
+#header [class*=btn].btnTotal{width:40px;margin:0 8px 0 0;padding:0;}
 #header [class*=btn].btnClose{width:40px;margin:0 8px 0 0;}
+#header [class*=btn].btnChatbot{width:40px;}
+#header [class*=btn].btnTermsDownload{width:40px;}
 #header [class*=btn] span.iconTy01,
 #header [class*=btn] span.iconTyHome,
 #header [class*=btn] span.iconTy02,
-#header [class*=btn] span.iconTy03{width:40px;height:40px;}
-#header h1.tit{padding:0 88px 0 88px;}
+#header [class*=btn] span.iconTy03,
+#header [class*=btn] span.iconTyTerms{width:40px;height:40px;}
+.iconTyChatbot{width:40px;height:40px;background:url(../../images/icon_chatbot.png) no-repeat;background-size:100% auto;}
+#header h1.tit{padding:0 128px 0 48px;text-align:left;font-size:16px;color:#121619;}
+#header h1.tit:first-child{padding-left:20px;}
 body.open header #header [class*=btn] span, 
 body.openMain header #header [class*=btn] span{left:50%;right:auto;}
 body.open header #header .rSec [class*=btn], 
@@ -1883,6 +1889,10 @@ input[type="checkbox"]:checked + label:before {background-position:0 -19px;}
 input[type="checkbox"]:disabled + label:before {background-position:0 -38px;}
 input[type="checkbox"]:checked:disabled + label:before {background-position:0 -57px;}
 
+input[type="checkbox"].noGray:disabled + label:before {background-position:0 0;}
+input[type="checkbox"].noGray:checked:disabled + label:before {background-position:0 -19px;}
+
+
 .vtT input[type="checkbox"] + label:before, .vtT input[type="radio"] + label:before {top:0; margin:0;}
 
 input[type="checkbox"] + .type2 { color:#fff;}
@@ -1946,6 +1956,8 @@ input[type="radio"].type2 {background-image:url(../../images/icon_checkbox_57x57
 .tabTypeR2 ul li.on a{background-color:#3789dc;border-color:#3789dc;color:#fff;}
 input[type="checkbox"]:disabled + label, input[type="checkbox"]:checked:disabled + label,
 input[type="radio"]:disabled + label, input[type="radio"]:checked:disabled + label {color:#bbb;}
+input[type="checkbox"].noGray:disabled + label, input[type="checkbox"].noGray:checked:disabled + label,
+input[type="radio"].noGray:disabled + label, input[type="radio"].noGray:checked:disabled + label {color:#333;}
 input[type="text"]:disabled, input[type="tel"]:disabled, input[type="number"]:disabled, input[type="email"]:disabled {position:relative; top:1px; padding-bottom:1px; color:#777 !important; border-bottom:1px solid #eee;}
 input[type="text"]:disabled::placeholder, input[type="tel"]:disabled::placeholder, input[type="number"]:disabled::placeholder, input[type="email"]:disabled::placeholder {color:#aeaeae !important;}
 
