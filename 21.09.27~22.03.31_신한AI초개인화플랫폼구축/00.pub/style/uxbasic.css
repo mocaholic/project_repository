@@ -97,6 +97,9 @@ body.uxBasic .subTitWrap .snbDep02.type01 .tit *{line-height:1.3;}
 .formAreaBox.type2.lineTy2 .inputBox.tel .telDiv .btnDelete {right:80px}
 
 .formAreaBox.type2.lineTy2 .inputBox.btnR input {padding-right:110px}
+/* 인풋 내에 삭제 버튼 + 변경버튼 있을때 */
+.formAreaBox.type2.lineTy2 .inputBox.btnR2 input {padding-right:86px}
+.formAreaBox.type2.lineTy2 .inputBox.btnR2 .btnDelete {right:56px;}
 .formAreaBox .inputBox .btnLineR {display:block;position:absolute;right:0;bottom:6px;padding:0 9px;height:32px;border:1px solid #d6dbe1;border-radius:4px;text-align:center;line-height:30px;box-sizing:border-box}
 .formAreaBox .inputBox .btnLineR.on {color:#0471e9;border-color:#0471e0}
 .formAreaBox .inputBox .btnLineR[disabled] {border-color:#d6dbe1;color:#d6dbe1}
@@ -292,6 +295,13 @@ input[type="radio"].chk.ty2 + label {margin-left:2px;margin-right:0;padding:0;to
 .layerPopWrap.type4 .layerCon{padding:30px 20px;margin:0;}
 .layerPopWrap.type4 .btnGroupBox > .btnType{height:56px;line-height:56px;font-size:17px;background:#0471e9;}
 .layerPopWrap.type4 .btnGroupBox > .btnType.btnBlack{background:#ebeff5;color:#121619;}
+.layerPopWrap.type5 .popInner{background:#fff;}
+.layerPopWrap.type5 .layerCon{padding:30px 20px;}
+.layerPopWrap.type5 .btnGroupBox > .btnType{height:50px;line-height:50px;font-size:16px;background:#0471e9;}
+.layerPopWrap.type5 .btnGroupBox > .btnType.btnBlack{background:#e8ebf0;color:#121619;}
+
+/* bs */
+.layerPopBottomWrap.type4 .btnPopClose {background:url('../../images/icon_close7.png') no-repeat center / 24px}
 
 /* Message(img+tit+txt) */
 .noDataBox2 {padding:55px 0;text-align:center;}
@@ -304,3 +314,44 @@ input[type="radio"].chk.ty2 + label {margin-left:2px;margin-right:0;padding:0;to
 .productChange.tyN01 .titProduct {font-size:16px;color:#121619;}
 .productChange.tyN01 .labelGroup {margin-bottom:10px}
 .productChange.tyN01 .labelGroup [class*=iconTy] {height:18px;line-height:18px;border-radius:2px;}
+.boxList.tyN01 {padding:0 20px;border-color:#ebeff5;border-radius:12px;box-shadow:0 2px 8px 0 rgba(0,0,0,0.04)}
+.boxList.tyN01 li {border-color:#ebeff5;}
+.boxList.tyN01 li a {padding:16px 19px 16px 0;font-size:14px;}
+.boxList.tyN01 li a:after {right:4px;}
+.boxList.tyN02 {border:0 none}
+.boxList.tyN02 li {margin-top:12px;border:1px solid #ebeff5;border-radius:12px;}
+.boxList.tyN02 li .inner {padding:13px 19px;}
+.boxList.tyN02 li input[type="checkbox"].chk.ty2 + .chkLabel {margin-left:8px}
+.boxListN li {margin-top:8px;border:1px solid #d6dbe1;border-radius:4px;}
+.boxListN li a {display:block;position:relative;padding:6px 8px;color:#121619;}
+.boxListN li:first-chlid {margin-top:0;}
+
+/* 설문조사 */
+.surveyWrap .shortPageInner {padding-bottom:0}
+.surveyWrap .surveyTop {padding:50px 20px 20px;height:102.4vw;background:url('../../images/bg_survey_top.png') no-repeat left top / 100% auto;box-sizing:border-box}
+.surveyWrap .surveyTop .surveyTit {font-weight:bold;font-size:14px}
+.surveyWrap .surveyTop .surveyTit span {font-size:24px}
+.surveyWrap .surveyTop .surveyTit .txtLineBl {position:relative;color:#368ded;}
+.surveyWrap .surveyTop .surveyTit .txtLineBl:before {content:'';display:block;position:absolute;bottom:2px;left:0;width:100%;height:12px;background:rgba(4, 113, 233, 0.1)}
+.surveyWrap .surveyTop .surveyTxt {margin-top:20px;color:#808892}
+.surveyWrap .surveyCont {padding:24px 20px 90px;background:#f3f6fb}
+.surveyWrap .surveyBox {padding:20px 16px;border-radius:12px;box-shadow:0 2px 4px 0 rgba(22, 37, 66, 0.08);background:#fff}
+.surveyWrap .surveyBox + .surveyBox {margin-top:12px}
+.surveyWrap .surveyBox .surveyNum {display:inline-block;padding:1px 5px 2px;font-size:11px;font-weight:bold;color:#368ded;text-align:center;border-radius:2px;background:#e5f0fc}
+.surveyWrap .surveyBox .surveyQ {margin-top:7px;color:#000;font-weight:bold;font-size:14px;line-height:1.8}
+.surveyWrap .surveyBox .surveyQ span {color:#565c63}
+.surveyWrap .surveyBox .surveyA {margin-top:16px}
+.surveyWrap .surveyBox .surveyA .chk {margin-top:2px;vertical-align:top}
+.surveyWrap .surveyBox .surveyA label {margin-left:5px !important;color:#121619;width:calc(100% - 30px);line-height:1.7}
+.surveyWrap .surveyBox .surveyA li + li {margin-top:10px}
+.surveyWrap .surveyBox .surveyA.typCol {-webkit-display:flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;margin-bottom:24px}
+.surveyWrap .surveyBox .surveyA.typCol li + li {margin-top:0}
+.surveyWrap .surveyBox .surveyA.typCol label {width:auto}
+.surveyWrap .surveyBox .surveyDefault {-webkit-display:flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;height:385px;background:#f8f9fc;border-radius:12px}
+.surveyWrap .surveyBox .surveyDefault .txt {text-align:center;color:#0471e9}
+.surveyWrap .surveySelList li {display:none}
+.surveyWrap .surveySelList li.on {display:block;text-align:center}
+.surveyWrap .surveySelList img {width:240px}
+.surveyWrap .surveyBox .surveyTxtarea {display:block;padding:16px;width:100%;height:152px;border:1px solid #d6dbe1;border-radius:6px;box-sizing:border-box;resize:none}
+.surveyWrap .surveyBox .surveyTxtarea::placeholder {color:#b9c1c9}
+
