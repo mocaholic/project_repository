@@ -1,0 +1,775 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL AI > 포트폴리오 설계 > 추천결과 (시연용 : 디자인 적용)
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		윤지혜		21-10-29	   	최초작성
+* 2		윤지혜		21-11-03	   	투자상품구성 하단 버튼 추가
+* 3		윤지혜		21-11-22	   	디자인 확정(전체 수정)
+* 4		윤지혜		21-11-24	   	마크업 수정(추천기준, 추천상품수)
+* 5		윤지혜		21-11-25	   	슬라이더 스크립트 수정
+* 6		윤지혜		21-12-16	   	상품구성 > 상품명 button type 추가
+* 7		윤지혜		21-12-21	   	마크업 수정 및 범례 추가
+* 8		김연수		22-01-13        MY포트로 용어 통일
+* 9		윤지혜		22-01-14        여백 및 버튼 아이콘 class 적용
+* 10    윤지혜		22-01-27        버튼, 문구 추가 및 포트 자산구성 디자인 변경
+* 11    윤지혜		22-02-03        문구 위치 수정
+* 12    윤지혜		22-02-18        추천기준 > 투자성향 문구 <br> 위치 변경, 포트 상품 구성 > 금액/원 태그 분리
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+    <script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+    
+    <script src="../../script/include/library/highcharts.js"></script>
+    <script src="../../script/include/library/highcharts-more.js"></script>
+    <script src="../../script/sample/pbservice/pbservice_pub.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            /* var dWidth = $(window).innerWidth();
+            console.log(dWidth);
+            if(dWidth <= 355){
+                doughnutG(function(){
+                    console.log('ddd');
+                });
+            } else{
+                console.log('hi')
+            } */
+            doughnutG();
+        });
+
+        function doughnutG(){
+            Highcharts.chart('graphCont',{
+                // 차트 색상 지정
+                colors : ["#826cd6", "#ffb81e", "#94c2eb", "#f089f5"], // 차트 색상 지정
+		        credits : {enabled : false}, // highchart 워터마크 숨김처리
+                chart : {
+                    styleMode : true,
+                    type : 'pie',
+                    // renderTo : 'dounutChart' // 차트가 그려질 태그의 ID
+                    // plotBackgroundColor : null, // 차트 배경 
+                    plotBorderWidth : 0, // 그래프 영역 border 굵기
+                    plotShadow : false,
+                    margin : [0, 0, 0, 0],
+                    spacingRight : 0, // 차트 우측 여백  (default 10)
+                    spacingLeft : 0,
+                    verticalAlign : 'top',
+                    align : 'right',                    
+                    height : 350,
+                    style : { // 차트 전체 스타일
+                        fontFamily : 'shinhan',
+                        fontWeight : '400',
+                        fontSize : '14px',
+                    },
+                    backgroundColor : 'rgba(255,255,255,0)', // 차트 배경 투명 지정 (default : white)
+                    // height : '100%',
+                },
+                title : { // 차트 타이틀 (미지정 시 text : '' )
+                    text : '' ,
+                    align : 'center',
+                    // verticalAlign : 'middle',
+                    verticalAlign : 'middle',
+                    /* x : 10, */
+                    y : -10,
+                    // width : 200,
+                    style : {
+                        fontSize : '14px',
+                        // align : 'center',
+                        color : 'red',
+                    },
+                    // format : '펀드/ETF 구성비중 ',
+                },
+                legend : { // 범례
+                    // dataLabels :, 
+                    // floating : true, // 범례를 차트 영역 위로 띄울 시 true
+                    // layout : 'vertical', // 범례 세로 정렬 시 (default horizontal)
+                    borderWidth : 0, // 범례 테두리
+                    align : 'center',
+                    verticalAlign : 'bottom',
+                    x : -5,
+                    // y : -30,
+                    y : 0,
+                    // width : '100%',
+                    // size : '100%',
+                    title : {
+                        text : '',
+                    },
+                    symbolRadius : '100%', // 범례 심볼 모서리 라운드
+                    // symbolWidth : 10, 
+                    // symbolHeight : 10,
+                    itemDistance : 10, // 범례 간 간격
+                    itemMarginTop : 10, // 범례  margin top (bottom도 존재)
+                    itemStyle : {
+                        // fontFamily : 'shinhan',
+                        fontSize : '14px',
+                        fontWeight : '400',
+                        color : '#666',
+                        verticalAlign : -3,
+                        align : 'center',
+                    },
+                    format : '<span class="gDataLabel">{point.name} : <span>{y}%</span></span>',
+                    /* x : 0,
+                    y : '100%', */
+                },
+                /* accessibility : {
+                    point : {
+                        valueSuffix : '%'
+                    }
+                }, */
+                plotOptions : { 
+                    pie : { // 도넛 차트 전체 옵션 지정                        
+                        size : '70%',
+                        // size : 182,
+                        // align: 'center',
+                        // verticalAlign : 'top',
+                        borderWidth : 0, // 차트 테두리
+                        dataLabels : { 
+                            enabled : false,
+                            // format : '{point.name} : {y}', // label의 포맷
+                            distance : -25,
+                            style : {
+                                color : 'white',
+                                textOutline : 0,
+                                fontSize : '11px',
+                            },                            
+                        },
+                        // center : ['50%', '50%'], // plot area 기준 정중앙에 위치한 차트의 위치 조정 옵션 (default [x : 50%, y : 50%])
+                        showInLegend : true, // 범례 show/hide 설정 
+                        
+                    }
+                },
+                tooltip : {
+                    useHTML : true, // 툴팁 포맷을 html로 변경할 경우 true (default = false)
+                    formatter : function() { // 커스텀 tooltip html
+                        // return '<div class="gTooltip">' + this.point.name + '<strong class="" style="color: ' + this.point.color + '">' + this.y + '%</strong></div>'
+                    }
+                },
+               /*  xAxis : {
+                    categories : ['국내주식', '해외선진', '해외이머징', '채권'],
+                    labels : {
+                        y : 20,
+                        style : {
+                            // marginTop : 10,
+                        }
+                    }
+                }, */
+                series : [{
+                    type : 'pie',
+                    name : '',
+                    colorByPoint : true,
+                    // allowPointSelect : true,
+                    innerSize : '60%', // 도넛차트 내부 구멍 사이즈 설정(필수) 70%
+                    // keys : ['name', 'y', 'selected', 'sliced'],
+                    data : [
+                        ['국내주식', 29.9],
+                        ['해외선진qmffksjdfdddddddd', 71.5],
+                        ['해외이머징', 16.4],
+                        ['채권', 15.4],
+                        ['국내주식A', 29.9],
+                        ['해외선진B', 71.5],
+                        ['해외이머징C', 16.4],
+                        ['채권D', 15.4]
+                    ],
+                    
+                    valueSuffix : '%',
+                }]
+            });
+        }
+
+        // 해상도 체크
+
+
+        // 차트 다시 그리기
+        // doughnutG.reflow();
+
+        
+    </script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->        
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">MY포트 설계</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+                <div class="solAi recommend">
+                    <!-- 투자성향 결과 타이틀 -->
+                    <div class="innerBox lineN pb0 type02">
+                        <div class="formAreaBox">
+                            <div class="top">
+                                고객님의 투자성향은<br>
+                                <div class="inputBox">
+                                    <dl>
+                                        <dd>
+                                            <input type="text" title="투자성향" placeholder="선택하여 입력" readonly="readonly" autocomplete="off" value="공격투자형">
+                                            <button type="button" data-href="#layerPopBottom02" class="btn"><span class="iconTy40">내역 열림</span></button>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                입니다.
+                                <p class="txt">추천 포트를 선택해주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 투자성향 결과 타이틀 -->
+                    <!-- 추천 포트 선택 -->
+                    <div class="recomPort">
+                        <h3 class="titM txtWhite1 ml8">
+                            추천기준<a href="javascript:void(0)" class="ml5 iconTySol3" title="아이콘형 툴팁이 들어갑니다." data-role="링크텍스트" data-rel="testAlert()">?</a><!-- 22.01.14 icon class 수정 -->
+                        </h3>
+
+                        <!-- 21.11.24 수정 : 마크업 변경 li -> radio -->
+                        <div class="recStandard">
+                            <div class="on"><!-- 선택 시 class="on" 적용 -->
+                                <input type="radio" id="recStandard1" name="recStandard" checked="checked">
+                                <label for="recStandard1">자산선호도</label>
+                                <p>선호하는 상품<br>유형을 기준으로</p>
+                            </div>
+                            <div class="">
+                                <input type="radio" id="recStandard2" name="recStandard">
+                                <label for="recStandard2">거래성향</label>
+                                <p>위험 및 투자<br>패턴을 기준으로</p>
+                            </div>
+                        </div>
+
+                        <!-- 22.01.27 추가 -->
+                        <div class="recStandard type02 mt20">
+                            <div class="on"><!-- 선택 시 class="on" 적용 -->
+                                <input type="radio" id="recStandard2_1" name="recStandard2" checked="checked">
+                                <label for="recStandard2_1">당/타기관<br>자산 기준</label>
+                            </div>
+                            <div class="">
+                                <input type="radio" id="recStandard2_2" name="recStandard2">
+                                <label for="recStandard2_2">신규<br>자산 기준</label>
+                            </div>
+                        </div>
+                        <!-- // 22.01.27 추가 -->
+                        <!-- // 21.11.24 수정 : 마크업 변경 -->
+                        <div class="contAccordion on">
+                            <div class="AccorTitle brdBNone">
+                                <a href="javascript:void(0)" title="세부내역 닫기" role="button">
+                                    <p class="tit"><strong>추천포트 변경</strong>을 원하시나요?</p>
+                                    <div class="arrow">
+                                        <span class="iconTy09"></span>
+                                        <span class="iconTy10"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="AccorCont" style="display:block;">
+                                <div class="boxTyShadow">
+                                    <div class="dpFlex">
+                                        <em>펀드/ETF<br>추천상품수</em>
+                                        <!-- 21.11.24 수정 : 마크업 변경 a -> radio -->
+                                        <ul>
+                                            <li>
+                                                <input type="radio" id="recPrd1" name="recPrd">
+                                                <label for="recPrd1">3개</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="recPrd2" name="recPrd" checked="checked">
+                                                <label for="recPrd2">4개</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" id="recPrd3" name="recPrd">
+                                                <label for="recPrd3">5개</label>
+                                            </li>
+                                        </ul>
+                                        <!-- // 21.11.24 수정 : 마크업 변경 a -> radio -->
+                                    </div>
+                                    <div class="sliderArea">
+                                        <em>과거 수익률/과거 변동성</em>
+                                        <p class="fontSSS txtBlack5 mt4">좌우로 이동하시면 추천 상품이 변경되요</p>
+                                        <div class="portSlider">
+                                            <div class="ptSlider" id="ptSlider">
+                                                <div id="custom-handle" class="ui-slider-handle" style="left:0%;"></div>
+                                            </div>
+                                            <div class="txtArea">
+                                                <span class="min">낮음</span>
+                                                <span class="sBubble" style="left:20%;">제안포트</span>
+                                                <span class="max">높음</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btnGroupBox type6 mt30">
+                                        <a href="javascript:void(0)" class="btnType"><span>추천포트 변경</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 추천 포트 선택 -->
+
+                    <!-- 자산 구성 -->                        
+                    <div class="innerBox lineN">
+                        <div class="constAsset">
+                            <div class="listTitleBox mt20 mb10"><!-- 22.02.03 class 수정 : mb20 -> mb10 -->
+                                <div class="left">
+                                    <h2 class="subTit mb0 ml8">포트 자산구성</h2><!-- 22.01.14 class="ml8" 추가 적용 -->
+                                </div>
+                                <div class="right">
+                                    <a href="#" class="mr8">추천 이유 <span class="iconTySol12">팝업보기</span></a><!-- 22.01.14 여백 및 icon class 적용 -->
+                                </div>
+                            </div>
+                            <!-- 22.02.03 추가 -->
+                            <dl class="dpFlex jcStart mb20">
+                                <dt class="ml8 bold">선호자산 :</dt>
+                                <dd class="ml10 txtPurple4">국내주식, 채권, ELF</dd>
+                            </dl>
+                            <!-- // 22.02.03 추가 -->
+                            <div class="boxTyShadow" style="">
+                                <ul class="listHorizLine">
+                                    <li style="box-sizing:border-box;">
+                                        <p>
+                                            <span>유동성(예적금)</span>
+                                            <strong>0%</strong>
+                                        </p>
+                                    </li>
+                                    <!-- 22.01.27 수정 : 대체(ELF/ELT) 와 펀드 EFT 위치 변경 -->
+                                    <li style="box-sizing:border-box;">
+                                        <p>
+                                            <span>대체(ELF/ELT)</span>
+                                            <strong>0%</strong>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p style="">
+                                            <span>펀드/EFT</span>
+                                            <strong>100%</strong>
+                                        </p>
+                                        <!-- 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
+                                        <div class="graphArea">
+                                            <!-- <div class="graph" style="background:#eee; height:200px; line-height:200px;">
+                                                그래프 영역
+                                            </div> -->
+                                            <div class="graph chart">
+                                                <!-- <p class="graphTitle">펀드/ETF 구성비중</p> -->
+                                                <div id="graphCont" class="graphCont"></div>
+                                            </div>
+                                            <!-- <ul>
+												<li>
+													<span class="legend bggraph01"></span>
+													<span>국내주식 45%</span>
+												</li>
+												<li>
+													<span class="legend bggraph02"></span>
+													<span>해외선진 35%</span>
+												</li>
+												<li>
+													<span class="legend bggraph05"></span>
+													<span>해외이머징 15%</span>
+												</li>
+												<li>
+													<span class="legend bggraph03"></span>
+													<span>채권 5%</span>
+												</li>
+											</ul> -->
+                                        </div>
+                                        <!-- // 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
+                                    </li>
+                                    <!-- // 22.01.27 수정 : 대체(ELF/ELT) 와 펀드 EFT 위치 변경 -->
+                                </ul>
+                            </div>
+                            <!-- 22.01.27 추가 -->
+                            <div class="dpFlex mt30">
+                                <dl class="ml8 dpFlex">
+                                    <dt><strong>과거 수익률</strong></dt>
+                                    <dd class="txtRed1 ml10"><strong>12.00%</strong></dd>
+                                </dl>
+                                <dl class="mr8 dpFlex">
+                                    <dt><strong>과거 변동성</strong></dt>
+                                    <dd class="txtRed1 ml10"><strong>10.25%</strong></dd>
+                                </dl>
+                            </div>
+                            
+                            <div class="boxTyRound gray fontSSS mt20 txtBlack5">
+                                ※ 과거 수익률은 최근 5년간의 자산구분별 벤치마크 지수의 수익률을 투자비중으로 가중평균한 연환산 수익률을 의미하며, 과거 변동성은 과거 수익률의 연환산 표준편차로 계산합니다.
+                            </div>
+                            <!-- // 22.01.27 추가 -->
+                        </div>
+                    </div>
+                    <!-- // 자산 구성 -->
+                    <!-- 상품구성 -->
+                    <div class="innerBox lineN bg">
+                        <div class="constPrd">
+                            <div class="listTitleBox mt20 mb30">
+                                <div class="left">
+                                    <h2 class="subTit mb0">포트 상품구성</h2>
+                                </div>
+                                <div class="right">
+                                    <a href="#" class="txtBlack5"><span class="iconTySol4 mr5 vt">초기화</span>처음으로</a><!-- 22.01.14 icon class 적용 -->
+                                </div>
+                            </div>
+
+                            <div class="listTypeTable mb30">
+                                <ul>
+                                    <li class="row">
+                                        <div class="leftCol">
+                                            <p class="txtBlack5">총 투자금액</p>
+                                        </div>
+                                        <div class="rightCol">
+                                            <p class="txt">
+                                                <span class="shinhan">300,000,000</span>
+                                                원
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li class="row">
+                                        <div class="leftCol vm">
+                                            <p class="txtBlack5">신규예정금액 합계</p>
+                                        </div>
+                                        <div class="rightCol">
+                                            <p class="fontSL txtPurple4 bold">
+                                                <span class="shinhan">300,000,000</span>
+                                                원
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="mpTop">
+                                <div class="listTitleBox">
+                                    <div class="left">
+                                        <h2 class="subTit3 mb0">총 상품 <span class="txtPurple5">3</span>개</h2>
+                                    </div>
+                                    <div class="right">
+                                        <span class="swtichTy01">
+                                            <label for="dummy">
+                                                <span class="text">신탁상품 제외</span>
+                                                <input type="checkbox" name="dummy" id="dummy" value="dummy" autocomplete="off">
+                                                <i></i>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="sBubble gray">※ 신탁상품 (ETF, ELT) 은 <strong>영상통화 (약10분)</strong> 필수입니다.</p> <!-- 신탁상품제외 버튼 노출 시 동시 노출 -->
+                            </div>
+
+                            <div class="makingPrd">
+                                <div class="listTypeTable productType boxType">
+                                    <div class="formAreaBox">
+                                        <ul class="mt20">
+                                            <li class="row">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabelAi1">예적금</i>
+                                                </div>
+                                                <a href="#" class="tit txtBlack8">예적금 상품 선택</a>
+                                                <ul class="listTypeTable mt20">
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">투자비중</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">50</span>%</p></div>
+                                                    </li>
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">신규예정금액</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+
+                                            <li class="row">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabelAi2">펀드</i>
+                                                    <i class="iconTyLabel02">국내주식</i>
+                                                    <i class="iconTy110">다소높은위험</i>
+                                                </div>
+                                                <a href="#" class="tit">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</a>
+                                                <ul class="listTypeTable mt20">
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">투자비중</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">50</span>%</p></div>
+                                                    </li>
+                                                    <li class="row mt0">
+                                                        <div class="inputBox disable"> <!-- .makingPrd .listTypeTable > .row.on일때 .disable 제거 -->
+                                                            <dl>
+                                                                <dt>신규예정금액</dt>
+                                                                <dd>
+                                                                    <!-- .makingPrd .listTypeTable > .row.on일때 readonly 제거 -->
+                                                                    <input type="text" title="신규예정금액" class="ar readonly" value="000,000" readonly="readonly">
+                                                                    <button type="button" class="btnDelete" style="right:14px"><i class="iconTy28">삭제</i></button>
+                                                                    <span class="unit bold">원</span>
+                                                                </dd>
+                                                            </dl>
+                                                            <!-- <div class="error">error 문구 출력</div> -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+
+                                            <!-- li class="on" 일때 -->
+                                            <li class="row on">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabelAi2">펀드</i>
+                                                    <i class="iconTyLabel02">해외선진</i>
+                                                    <i class="iconTy108">보통위험</i>
+                                                </div>
+                                                <a href="#" class="tit">한화단기하이일드증권투자신탁[채권]종류C-E</a>
+                                                <ul class="listTypeTable mt20">
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">투자비중</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">20</span>%</p></div>
+                                                    </li>
+                                                    <li class="row mt0">
+                                                        <div class="inputBox"> <!-- .makingPrd .listTypeTable > .row.on일때 .disable 제거 -->
+                                                            <dl>
+                                                                <dt>신규예정금액</dt>
+                                                                <dd>
+                                                                    <!-- .makingPrd .listTypeTable > .row.on일때 readonly 제거 -->
+                                                                    <input type="text" title="신규예정금액" class="ar readonly" value="000,000">
+                                                                    <button type="button" class="btnDelete" style="right:14px"><i class="iconTy28">삭제</i></button>
+                                                                    <span class="unit bold">원</span>
+                                                                </dd>
+                                                            </dl>
+                                                            <!-- <div class="error">error 문구 출력</div> -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+                                            <!-- // li class="on" 일때 -->
+
+                                            <li class="row">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabelAi5">ELT</i>
+                                                    <i class="iconTyLabel02">영상통화</i>
+                                                </div>
+                                                <a href="#" class="tit txtBlack8">ELT 상품 선택</a>
+                                                <ul class="listTypeTable mt20">
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">투자비중</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">20</span>%</p></div>
+                                                    </li>
+                                                    <li class="row mt0">
+                                                        <div class="inputBox disable"> <!-- .makingPrd.on일때 .disable 제거 -->
+                                                            <dl>
+                                                                <dt>신규예정금액</dt>
+                                                                <dd>
+                                                                    <!-- .makingPrd.on일때 readonly 제거 -->
+                                                                    <input type="text" title="신규예정금액" class="ar readonly" value="000,000" readonly="readonly">
+                                                                    <button type="button" class="btnDelete" style="right:14px"><i class="iconTy28">삭제</i></button>
+                                                                    <span class="unit bold">원</span>
+                                                                </dd>
+                                                            </dl>
+                                                            <!-- <div class="error">error 문구 출력</div> -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+
+                                            <!-- 21.12.16 추가 : a -> button type -->
+                                            <li class="row">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabelAi1">예적금</i>
+                                                </div>
+                                                <button type="button" href="#layerPopBottom02" class="tit txtBlack8 btnPopOpen">예적금 상품 선택</button>
+                                                <ul class="listTypeTable mt20">
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">투자비중</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">50</span>%</p></div>
+                                                    </li>
+                                                    <li class="row">
+                                                        <div class="leftCol"><p class="tit txtBlack5">신규예정금액</p></div>
+                                                        <div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+                                            <!-- // 21.12.16 추가 : a -> button type -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="btnGroupBox mt20 mb40">
+                                <a href="#" class="underline txtBlack5">원하는 상품을 직접 추가할 수 있어요.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // 상품구성 -->
+                    <!-- 알아두세요 -->
+                    <div class="contAccordion notice1" >
+                        <div class="AccorTitle brdBNone">
+                            <a href="javascript:void(0)">
+                                <p class="tit txtBlack1">알아두세요!</p>
+                                <div class="arrow">
+                                    <span class="iconTy09">세부내역 열림</span>
+                                    <span class="iconTy10">세부내역 닫힘</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="AccorCont">
+                            <ul class="dotList">
+                                <li>MY포트 신규 설계  거래는 오전 9시~오후 11시 30분까지 , 리밸런싱(상품 재조정) 거래는 은행 영업일의 오전 9시 ~ 오후 3시까지 가능합니다.</li>
+                                <li>
+                                    상품군에 따라 가입할 수 있는  시간이 차이가 있습니다. 
+                                    <ul class="dashList">
+                                        <li>예적금/펀드 : 오전 9시~오후 11시 30분까지</li>
+                                        <li>ELF : 평일 오전 9시 ~ 오후 4시(주말 및 공휴일 불가능)</li>
+                                        <li>신탁(ETF, ELT) : 평일 오전 9시 ~ 오후 5시(주말 및 공휴일 불가능)</li>
+                                    </ul>
+                                </li>
+                                <li>MY포트 리밸런싱(상품 재조정)은 신규, 해지, 입금, 출금의 거래를 한꺼번에 신청할 수 있는 기능입니다.</li>
+                                <li>제안한 상품 중 일부를 해지할 경우 남아있는 상품에 대해서는 자산재분배를 하실 수 없습니다.</li>
+                                <li>적금 이자율은 조건별 우대금리를 포함한 금리이며, 거래실적 등 실제 충족여부에 따라 달라질 수 있습니다.</li>
+                                <li>펀드상품은 목표만기일에 자동으로 해지처리 되지 않으며, 해지 요청 시 환매대금 입금은 일정기간이 소요됩니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- // 알아두세요 -->
+                </div>
+			</div>			
+			<!-- // contents -->
+			<!-- 하단 플로팅 버튼 -->
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0);" class="btnType btnBlack">
+					<span>이전</span>
+				</a>
+				<a href="javascript:void(0);" class="btnType">
+					<span>다음</span>
+				</a>
+			</div>	
+			<!-- // 하단 플로팅 버튼 -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- BS : 투자성향 선택 -->
+<div class="layerPopBottomWrap hasDim type4" id="layerPopBottom02">
+    <div class="popInner">
+        <div class="layerHeader">
+            <p class="layerTit">조회구분</p>
+            <button type="button" class="btnPopClose">팝업 닫기</button>
+        </div>
+        <div class="layerCon">
+            <div class="listOneLineBox type1">
+                <ul>
+                    <li>
+                        <button onclick="">
+                            공격투자형
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            적극투자형
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="">
+                            위험중립형
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            안정추구형
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            안정형
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // BS : 투자성향 선택 -->
+
+<script>
+	$(function(){
+		// 레이어팝업 닫기
+		$('.btnPopClose, .btnType').on('click',function(){
+			$('.layerPopWrap').hide();
+		});
+
+        // 추천기준
+        $('.recStandard input:radio').click(function(){
+            if($(this).is(':checked')){
+                $(this).parent().addClass('on').siblings().removeClass('on');
+            }
+        });
+
+        // 기대수익률/위험도 슬라이더
+        // .portSlider : 슬라이더 전체 영역
+        // #ptSlider : 슬라이더 호출 개체
+		// #custom-handle : 슬라이더 핸들러(드래그)
+        
+        var rangeMin = 300000;			// 투자 최소금액
+        var rangeMax = 1200000;			// 투자 최대금액
+        var portValue = 500000;			// 제안포트
+		var rangeValue = portValue;		// 현재 제안포트
+        var rangeStep = 10000;			// 수익률/위험도 스탭 (현재 만원 단위로 이동)
+        
+        // 최소값, 추천상품값 세팅
+		var setValue = function(min, max, port) {
+			// min : 투자 최소금액
+            // max : 투자 최대금액
+            // port : 제안포트
+			var minVal = parseInt((min / max) * 100);
+            var portVal = parseInt((port / max) * 100);
+            // $('.ui-slider-range-min').css('padding-left', portVal + '%');
+            $('#custom-handle').css('left', portVal + '%');
+            $('.ui-slider-range-min').css('width',portVal + '%');
+			$('.portSlider .sBubble').css('left', portVal + '%');
+                // console.log(portVal);
+		};
+
+        $("#ptSlider").slider({
+            create: function(){
+                // 최초 생성시
+                setValue(rangeMin, rangeMax, portValue);
+
+            },
+            slide: function( event, ui ) {
+                // 핸들러 drag시
+            },
+            stop: function( evnet, ui ) {
+				// 핸들러 keyup시
+			},
+            min: rangeMin,		// 슬라이더 최소값
+			max: rangeMax,		// 슬라이더 최대값
+			step : rangeStep,	// 슬라이더 스탭
+			value: rangeValue,	// 슬라이더 초기값
+			range: 'min',		// 디자인을 위한 dom 추가 옵션 (슬라이더 게이지 영역)
+        });
+	});
+	
+</script>
+</body>
+</html>

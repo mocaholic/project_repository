@@ -23,6 +23,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,inpu
 .solAi .swtichTy01 i {padding:0 5px;}
 .solAi .swtichTy01 input:checked + i:before {left:22px;}
 .solAi .medium {font-weight: 700 !important;}
+.solAi .formAreaBox .inputBox.wrong .error {text-align:right; margin-left:0;}
 
 /* 상단고정 타이틀 */
 .subTitWrap .snbDep02.type01 .tit {line-height: 1.3;}
@@ -53,6 +54,8 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,inpu
 #header.premier [class*=btn] span.iconTy02, 
 #header.premier [class*=btn] span.iconTy03,
 #header.premier [class*=btn] span.iconTyChatbot {filter:brightness(0) invert(1);}
+
+#header .tit .btnPopOpen {display:inline-block; width:30px; height:32px; float:none;}
 
 /* 프리미어 메인 모션 오류 발생으로 기존 클래스 변경 : contents -> contentsS */
 .contentsS {height:100%; overflow-x:hidden; overflow-y:auto; -webkit-overflow-scrolling:touch; box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
@@ -104,6 +107,8 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .mb16 {margin-bottom:16px !important;}
 .mb28 {margin-bottom:28px !important;}
 .mb40 {margin-bottom:40px !important;}
+
+.pr50 {padding-right:50px !important;}
 
 /* border */
 .brdT2 {border-top:1px solid #e9e9e9 !important;}
@@ -194,7 +199,7 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 .btnType2.purple02 {background:#7d6fe3;}
 
-.solAi .btnSlide span:after {content:"";display:inline-block;width:8px;height:8px;border:solid #777;border-width:1px 1px 0 0;transform:translateY(-30%) rotate(135deg);margin-left:10px;}
+.solAi .btnSlide span:after {content:"";display:inline-block;width:8px;height:8px;border:solid #777;border-width:1px 1px 0 0;transform:translateY(-30%) rotate(135deg);/* margin-left:10px; */}
 .solAi .btnSlide.on span:after {transform:translateY(30%) rotate(-45deg);}
 .btnMoreArrow.noline {border: none;}
 .btnType2.purple01 {position: relative; display: block; border-radius: 8px; background: #f2f0ff; color: #5d47b1; height: 46px; padding: 0 20px;}
@@ -249,6 +254,11 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .inputList li input[type="radio"] + label:before {top:0; margin-top:0;}
 .inputList li + li {margin-top:10px;}
 
+.circleDec {counter-reset:circnum;}
+.circleDec li {position:relative; padding-left:15px;}
+.circleDec li::before {/* display:block; */ counter-increment:circnum; content:counter(circnum)') '; position:absolute; top:1px; left:0; font-size:12px;}
+.circleDec li + li {margin-top:5px;}
+
 /* tab .aiType01 */
 .solAi .tabTy01.aiType01 a {height: 44px; font-size: 15px; color: #666; border: none; border-radius: 0; background: #f7f7f8;}
 .solAi .tabTy01.aiType01 .on {color: #fff; background: #7c6fe4;}
@@ -289,16 +299,22 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .sliderBarWrap .sliderBar.type2 {margin: 0 0 0 15px; height: 10px; border: none; background-color: #d8d8d8; border-radius: 5px;}
 .sliderBarWrap .sliderBar.type2 .bar {border-radius: 5px; background-color: #7575ee;}
 
+/* ps */
+.psTxt {position:relative; padding-left:15px;}
+.psTxt::before {display:block; content:'※'; position:absolute; top:0; left:0; }
+
 /* chart */
 .barChart  {display: flex; align-items: center;}
 .barChart .colorWrap {display: flex; margin-left: 10px;}
-.barChart .colorWrap span {width: 12px; height: 15px; background-color: #016eb3; margin-right: 3px; text-indent: -9999px; overflow: hidden;}
-.barChart .colorWrap.redType span {background-color: #b40113;}
-.barChart .colorWrap span:first-child {opacity: 0.1;}
-.barChart .colorWrap span:nth-child(2) {opacity: 0.25;}
-.barChart .colorWrap span:nth-child(3) {opacity: 0.5;}
+.barChart .colorWrap span {width:10px; height:15px; background: #fff; margin-right: 3px; text-indent: -9999px; overflow: hidden; border:1px solid #ddd; box-sizing:border-box;} 
+.barChart .colorWrap span.on {border-color:#4399ff; background:#4399ff;}
+.barChart .colorWrap.redType span {}
+.barChart .colorWrap.redType span.on {border-color: #eb394f; background: #eb394f;}
+/* .barChart .colorWrap span:first-child.on {opacity: 0.1;}
+.barChart .colorWrap span:nth-child(2).on {opacity: 0.25;}
+.barChart .colorWrap span:nth-child(3).on {opacity: 0.5;}
 .barChart .colorWrap span:nth-child(4) {opacity: 0.82;}
-.barChart .colorWrap span.on ~ span {display: none !important;}
+.barChart .colorWrap span.on ~ span {display: none !important;} */
 
 /* 그래프범례색깔 */
 .bggraph01 {background:#826cd6 !important}
@@ -323,6 +339,18 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .bggraph20 {background:#4bbfe0 !important}
 .bggraph21 {background:#fe8d81 !important}
 
+/* highChart *//* 
+.highcharts-point {}
+.graph.chart {position:relative;}
+.graphCont {margin-top:0; }
+.highcharts-series.highcharts-pie-series {transform:scale(.9, .9);}
+.gDataLabel {display:block; } */
+/* .graphTitle {position:absolute !important; top:72%; left:50%; transform:translateX(-50%); font-weight:700;} */
+
+/* highChart type2 */    
+/* .assetHealth .graphCont {margin-top:0;}
+.assetHealth .highcharts-series.highcharts-pie-series {transform:translate(5%, 0) scale(.9, .9);} */
+/* .highcharts-label.highcharts-legend-title {transform:translate(25%, 10px);} */
 
 /* img */
 .ratio {--aspect-ratio:calc(100% / 9*16); position:relative;}
@@ -433,7 +461,9 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .solAi .listTypeTable .row > button.tit {display:table; width:100%; position:relative; padding-right:15px; font-weight: 700;}
 
 /* 약관 */
-.termsBox .termsCont .scrollArea {overflow-y:auto; margin:-18px -12px;}
+.termsBox .termsCont .scrollArea {overflow-y:auto; margin:-18px -12px 5px; -webkit-overflow-scrolling:touch;}
+/* .termsBox .termsCont .scrollArea::-webkit-scrollbar {width:2px;} */
+/* .termsBox .termsCont .scrollArea::-webkit-scrollbar-thumb {background:#ddd;} */
 .termsBox .swiper-wrapper .termsList {border-top:none;}
 .termsBox .termsList > li > .formAreaBox {margin-right:-22px;}
 .termsBox .termsList > li > .formAreaBox .rdoAreaTy2 input + label {display:table-cell !important;}
@@ -525,18 +555,20 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .recStandard.type02 div input[type="radio"]:checked + label:before {background-color:#6d5ee7;}
 .recStandard + .contAccordion {margin-top:30px;}
 
-.portSlider  {position:relative; padding-bottom:17px; margin-top:26px;}
+.portSlider  {position:relative; padding-bottom:35px; margin-top:36px; width:calc(100% - 3px);}
 .portSlider #ptSlider {border:none; background:#f7f7f8; border-radius:9px; height:12px;}
 .portSlider .txtArea {display:flex; justify-content:space-between; width:100%; margin-top:8px;}
-.portSlider .txtArea > span {font-size:12px; color:#999; line-height:1.5;}
-.portSlider .sBubble {position:absolute; left:0; bottom:0; width:66px; height:26px; background:#efecff; margin-left:-33px; }
-.portSlider .sBubble::before {display:block; content:""; position:absolute; top:-35px; left:50%; width:1px; height:23px; border-left:1px dashed #333; transform:translateX(0); border-bottom-color:transparent; z-index:2;}
+.portSlider .txtArea > span {font-size:12px; line-height:1.5; position:absolute; z-index:1;}
+.portSlider .sBubble {position:absolute; left:0; bottom:1px; width:66px; height:26px; background:#efecff; margin-left:-33px; color:#333;}
+.portSlider .sBubble::before {display:block; content:""; position:absolute; top:-35px; left:50%; width:1px; height:23px; border-left:1px dashed #333; transform:translateX(0); border-bottom-color:transparent; z-index:1;}
 .portSlider .sBubble::after {display:block; content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%); border:6px solid transparent; border-bottom-color:#efecff; border-top:0;}
-.ptSlider .ui-slider-handle {top:-12px; margin-left:-17px; background:url('../../images/solAI/btn_level_control.png') no-repeat; background-size:100%; /* border-radius:50%; box-shadow:0 1px 4px 0 rgba(0,0,0,.1); border:1px solid #e5e5e5;  */ border:none; width:40px; height:40px; z-index:3;}
+.portSlider .txtArea .min {top:-25px; left:0; color:#999; }
+.portSlider .txtArea .max {top:-25px; right:-3px; color:#999; }
+.ptSlider .ui-slider-handle {top:-12px; margin-left:-20px; background:url('../../images/solAI/btn_level_control.png') no-repeat; background-size:100%; /* border-radius:50%; box-shadow:0 1px 4px 0 rgba(0,0,0,.1); border:1px solid #e5e5e5;  */ border:none; width:40px; height:40px; z-index:3;}
 .ptSlider .ui-slider-handle::before {}
 .ptSlider .ui-slider-handle::after {}
 .ptSlider .ui-slider-range-min {background:linear-gradient(to right, #65a4ff, #d87cde 50%, #fe2222 100%); border-radius:6px; width:100%;} 
-
+ 
 .constAsset {padding-bottom:20px;}
 .constAsset .boxTyShadow {padding:20px;}
 .constAsset .listHorizLine {display:flex; flex-wrap:wrap;}
@@ -545,10 +577,11 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .constAsset .listHorizLine > li strong {font-size:16px; line-height:1.88; margin-left:10px;}
 .constAsset .listHorizLine > li span {font-size:14px; color:#666; line-height:1.29; letter-spacing:-0.07em;}
 .constAsset .listHorizLine > li:nth-child(2) {text-align:right;}
-.constAsset .listHorizLine > li:nth-child(3) {width:100%; margin-top:20px; text-align:center;}
-.constAsset .listHorizLine > li:nth-child(3) p {background:#fcfdff; border:1px solid #ddd9ff; border-radius:10px; padding:10px 0;}
-.constAsset .listHorizLine > li:nth-child(3) p::before {display:block; content:""; position:absolute; bottom:-16px; left:50%; transform:translateX(-50%); width:0; height:0; border:16px solid transparent; border-top-color:#efecff; border-bottom:0; z-index:2;}
-.constAsset .listHorizLine > li:nth-child(3) p::after {display:block; content:""; position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:0; height:0; border:16px solid transparent; border-top-color:#fcfdff; border-bottom:0; z-index:2;}
+.constAsset .listHorizLine > li:nth-child(3) {width:100%; margin:20px 0 0; text-align:center; border:1px solid #ddd9ff; border-radius:10px; background:#fcfdff;}
+.constAsset .listHorizLine > li:nth-child(3) p {/* position:absolute; */ top:0%; left:50%; transform:translateX(-50%); margin:15px 0 -40px;}
+/* .constAsset .listHorizLine > li:nth-child(3) > p {background:#fcfdff; border:1px solid #ddd9ff; border-radius:10px; padding:10px 0;}
+.constAsset .listHorizLine > li:nth-child(3) > p::before {display:block; content:""; position:absolute; bottom:-16px; left:50%; transform:translateX(-50%); width:0; height:0; border:16px solid transparent; border-top-color:#efecff; border-bottom:0; z-index:2;}
+.constAsset .listHorizLine > li:nth-child(3) > p::after {display:block; content:""; position:absolute; bottom:-14px; left:50%; transform:translateX(-50%); width:0; height:0; border:16px solid transparent; border-top-color:#fcfdff; border-bottom:0; z-index:2;} */
 .constAsset .listHorizLine .graphArea {/* padding:30px 0; margin:26px -100% 0; position:relative; text-align:center; */ /* position:absolute; top:76px; left:-100%; width:300%; height:320px; */ /* overflow:hidden; */}
 .constAsset .listHorizLine .graphArea .graph {}
 .constAsset .listHorizLine .graphArea ul {display:flex; flex-wrap:wrap; justify-content:center;}
@@ -581,15 +614,16 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 /* 포트관리 */
 .solAi.portManage .portList {background: transparent;}
-.solAi .aiPortCard {/*overflow:hidden;*/position:relative;min-height:145px;margin:20px 0;padding:16px 16px 66px;border-radius:5px;box-shadow:0px 2px 2px #c4c4c4;background-color:#fff; box-shadow:0px 2px 6px #c4c4c4;}
+.solAi .aiPortCard {/*overflow:hidden;*/position:relative;min-height:145px;margin:20px 0;padding:16px 16px 66px;/* padding:16px;  */border-radius:5px;box-shadow:0px 2px 2px #c4c4c4;background-color:#fff; box-shadow:0px 2px 6px #c4c4c4;}
 /* .solAi .aiPortCard:first-child {margin-top:0;} */
 .solAi .aiPortCard:last-child {margin-bottom:0;}
 .solAi .aiPortCard .cardHead {position:relative;min-height:19px;}
 .solAi .aiPortCard .popoverWrap {position:absolute;right:0;top:-6px;}
 .solAi .aiPortCard .popoverWrap .toolBox {left:auto;right:10px;}
-.solAi .aiPortCard .cardData {margin-top:10px;text-align:center;color:#777;}
+.solAi .aiPortCard .cardData {margin-top:10px;text-align:center;color:#777; /* padding-bottom:50px; */}
 .solAi .aiPortCard .cardData p {font-size:13px;}
 .solAi .aiPortCard .cardData .cardName {font-size:15px;color:#333;}
+/* .solAi .aiPortCard .cardData + .progress {margin-top:-35px;} */
 .solAi .aiPortCard .btnGroupBox {overflow:hidden;position:absolute;left:0;bottom:0;width:100%;border-top:1px solid #e5e5e5;border-radius:0 0 5px 5px;}
 .solAi .aiPortCard .btnGroupBox .btnType {margin-top:0;border-left:1px solid #e5e5e5;font-size:15px;color:#333;background-color:#fff;}
 .solAi .aiPortCard .btnGroupBox .btnType:first-child {border-left:0;}
@@ -637,6 +671,8 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 .solAi.portManage .portDetail .productChange {background-color: #fff;}
 
+.productChange .productBox .listTyArrowLink:after {display:none;}
+
 .portRebal .aiPortCard:first-child {margin-top: 0;}
 .portRebal .productChange input[type="checkbox"]:checked + label:before {background: url(../../images/solAI/icon_check_purple.png) no-repeat; background-size: 19px auto;}
 .portRebal .boxTyGray2 {padding: 20px 24px; background: #f7f7f8;}
@@ -663,6 +699,8 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 .solAi.portBundle .aiPortCard:first-child {margin-top: 0;}
 .solAi.portBundle .makingPrd .listTypeTable .row .prdBtnDel {top: 8px; right: 5px;}
+.solAi.portBundle .btnType2.purple01 {height:auto; line-height:1.5; padding:10px 20px; width:100%;}
+.solAi.portBundle ~ .titleBox {padding-top:100px;}
 .portBundle .btnWrap {display: flex; flex-direction: column; align-items: center; padding: 20px 0;}
 .portBundle .btnWrap .btnSmall.line {width: 90px; background: transparent; margin-top: 15px;}
 
@@ -685,6 +723,9 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .assetHealth .dateArea > span {text-align:right; color:#666; font-size:12px; margin-right:12px;}
 .assetHealth .dateArea .btn {width:26px; height:26px; background:#f2f4f6; border-radius:50%; text-align:center; box-sizing:border-box; padding-top:1px;}
 .assetHealth .dateArea + div {margin-top:12px;}
+.assetHealth .dateArea.right {justify-content:flex-end;}
+.assetHealth .dateArea.right .btn {background:#fff; border:1px solid #ddd;}
+.assetHealth .dateArea.right .btn span {height:17px;}
 .assetHealth .boxTyShadow .titleBox {position:relative; --aspect-ratio:calc(100% / 328 * 95); padding:0;}
 .assetHealth .boxTyShadow .titleBox::before {display:block; content:""; padding-top:var(--aspect-ratio);}
 .assetHealth .boxTyShadow .titleBox::after {display:block; content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: url('../../images/solAI/bg_gradient.png') no-repeat; background-size:100%; z-index:1;}
@@ -693,7 +734,9 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .assetHealth .boxTyShadow .titleBox .dateArea > span {color:#fff;}
 .assetHealth .boxTyShadow .titleBox .dateArea > span > strong {display:block;}
 .assetHealth .boxTyShadow .titleBox .dateArea .btn {background:#fff;}
+.assetHealth .boxTyShadow .titleBox .btnPopOpen .iconTySol3 {filter:brightness(0) invert(1);}
 .assetHealth .boxTyShadow .assetChkUp {padding:0 21px;}
+.assetHealth .boxTyShadow .assetChkUp .listTypeTable .row .leftCol {width:127px;}
 .assetHealth .totalOpinion {position:relative;}
 .assetHealth .totalOpinion .txt {font-size:16px; line-height:1.5; position:relative;}
 .assetHealth .totalOpinion .dotList li {font-size:15px;}
@@ -745,8 +788,9 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .assetHealth .halfCircle.normal {background:url('../../images/solAI/half_circ_normal.png') no-repeat center bottom; background-size:100%;}
 .assetHealth .halfCircle.bad {background:url('../../images/solAI/half_circ_bad.png') no-repeat center bottom; background-size:100%;}
 .assetHealth .halfCircle.vBad {background:url('../../images/solAI/half_circ_verybad.png') no-repeat center bottom; background-size:100%;}
-.assetHealth .halfCircle.type2 {width:180px; height:90px;}
-.assetHealth .halfCircle  > strong {font-size:16px; position:absolute; bottom:0; left:50%; transform:translateX(-50%); letter-spacing:-0.08em;}
+.assetHealth .halfCircle.type2 {max-width:180px; height:90px;}
+.assetHealth .halfCircle.type2 > strong {font-size:16px;}
+.assetHealth .halfCircle  > strong {font-size:15px; position:absolute; bottom:0; left:50%; transform:translateX(-50%); letter-spacing:-0.07em;}
 .assetHealth .halfCircle.vGood > strong {color:#0783d0;}
 .assetHealth .halfCircle.good > strong {color:#40b5fc;} 
 .assetHealth .halfCircle.normal > strong {color:#1dc359;}
@@ -769,9 +813,12 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .assetHealth .assetChkUp .graphArea .annotation .dateNote li:nth-child(2) .mark {width: 21px;}
 .assetHealth .assetChkUp .graphArea .annotation .dateNote li + li {margin-left: 10px;}
 
-.assetHealth .graphArea.totalAssets {margin-top: 20px;}
+.assetHealth .graphArea.totalAssets {margin-top: 20px; position:relative;}
 .assetHealth .graphArea.totalAssets .legendList {width: 288px; margin: 20px auto 0; display: flex; flex-wrap: wrap; justify-content: center;}
 .assetHealth .graphArea.totalAssets .legendList > li {width: 50%; margin-bottom: 4px;}
+
+.assetHealth .btnPopOpen .iconTySol3 {vertical-align:-4px; margin-left:10px;}
+.assetHealth .btnPopOpen .iconTySol3.ml0 {vertical-align:-5px;}
 
 .solAi.assetHealth .graphArea.profitLoss {padding-bottom: 7px;}
 .solAi.assetHealth .graphArea.profitLoss .legendList {margin-top: 13px; display: flex; padding-left: 46px;}
@@ -807,7 +854,7 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .assetHealth .graphArea.assetPort .legendList {padding-left: 20px;}
 .assetHealth .graphArea.assetPort .legendList > li + li {margin-top: 6px;}
 
-.assetHealth .assetChkUp .boxTyRound.round6 {padding: 15px 20px; margin-top: 10px;}
+.assetHealth .assetChkUp .boxTyRound.round6 {padding: 15px 10px; margin-top: 10px;}
 
 .assetHealth .btnType3.fontS::after {margin-top: -3px;} 
 
@@ -996,7 +1043,7 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 .annotation .dateNote li {display:flex; justify-content:flex-end; align-items:center;}
 .annotation .dateNote li .date {text-align:right; font-size:12px; color:#666; line-height:1.45;}
-.annotation .dateNote li .mark {text-indent:-9999px; width:15px; height:2px; border:none; margin-left:8px; padding:0;}
+.annotation .dateNote li .mark {text-indent:-9999px; width:15px; height:4px; border:none; margin-left:8px; padding:0;}
 .annotation .dateNote li:first-child .mark {background:#ff0000;}
 .annotation .dateNote li:nth-child(2) .mark {background:#b1dffc; height:4px;}
 
@@ -1004,8 +1051,11 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .mainCont .tabTy01 {display:flex; justify-content:space-around; align-items:center; background:#f6f6f6; width:calc(100% - 16px); padding:6px 8px; border-radius:25px; box-sizing:border-box; margin:0 auto;}
 .mainCont .tabTy01 a {flex:1; display:flex; justify-content:center; align-items:center; height:36px; border-radius:19px; font-size:15px; background:#f6f6f6; border-color:#f6f6f6;color:#666;}
 .mainCont .tabTy01 a.on {background:#fff; color:#333; font-weight:700;}
-.mainCont .graphArea ul {width:230px; margin:30px auto 0; display:flex; flex-wrap:wrap; justify-content:center;}
+.mainCont .graphArea > ul {width:230px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:center;}
 .mainCont .graphArea li {margin:0 10px;}
+.mainCont .graphArea .ac.fontSSS {margin-top:-16px;}
+.mainCont .graphArea .psTxt {margin:10px auto 0; font-size:11px; position:relative; color:#999; text-align:center; letter-spacing:0;}  
+.mainCont .graphArea .psTxt::before {content:''; display:inline-block; width:3px; height:3px; border-radius:50%; background:#999; vertical-align:3px; margin-right:5px; } 
 .mainCont .boxTyRound.subTit2 {width:calc(100% - 80px); height:48px; line-height:48px; margin:0 auto 15px; text-align:center; background:#f8f9fb; border-radius:24px;}  
 .mainCont .investAmount {font-size:30px; color:#333; text-align:center; font-family:'montserrat';}
 .mainCont .investAmount span {margin-left:-5px; font-family:inherit;}
@@ -1207,6 +1257,7 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 .monthlyReport .formAreaBox.bold .inputBox input {font-size: 22px; color: #fdde80; font-weight: 700; height: 32px; background: transparent;}
 .monthlyReport .formAreaBox.bold .inputBox input[readonly] + .btn {top: 2px;}
 .monthlyReport .formAreaBox.bold .inputBox .btn .iconTy40 {background: url('../../images/solAI/arrow_bot_yellow.png') no-repeat; width: 16px; height: 16px; background-size: 16px auto;}
+.monthlyReport .formAreaBox.bold .inputBox + p {color:#fdde80; margin-top:10px;}
 .monthlyReport .fontSSS.txtWhite1 {opacity: 0.7; margin: 12px 0 40px;}
 .monthlyReport .boxTyShadow {padding: 24px 20px;}
 .monthlyReport .boxTyShadow + .boxTyShadow {margin-top: 11px;}
@@ -1373,10 +1424,14 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 .layerPopWrap .popInner > .btnPopClose {top:0; margin-top:0;}
 .layerPopWrap .layerHeader.brdBNone + .layerCon {margin-bottom:0; padding-top:0;}
+.layerPopWrap .popScroll {max-height:350px;}
 
 .solAi .eventList li .iconTyRdLine1 {position:absolute; top:8px; left:8px; background:#fff; z-index:1;}
 
 .popInner .btnType span {letter-spacing:-0.05em;}
+
+.layerPopTooltip .dotListN li + li {margin-top:8px;}
+
 
 /* 아이폰5, 갤럭시10 */
 @media screen and (max-width:355px) {
@@ -1401,6 +1456,7 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
     .slideWrapper .slideItem[data-position="3"] .tabText {left:164px;}
     .slideWrapper .slideItem[data-class="2"] .tabText {width:95px;}
     .slideWrapper .slideItem[data-class="3"] .txtArea h2 {padding-bottom:100px;}
+    .mainCont .serviceLinkArea .boxTyShadow a::after {right:9px;}
 
     /* 전체메뉴 */
     .allMenuList .depth2 {left:142px; width:calc(100% - 142px);}
@@ -1421,11 +1477,21 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
     /* 자산건강도 */
     .diagnosisBox .dotList.dot5 li::before {top:8px; transform:translateY(0);}
+    .assetHealth .listTitleBox .subTit .num {font-size:13px; padding:0 5px; margin-left:0;}
+    .assetHealth .listTitleBox .right .btnType3.fontS.txtBlack1 {font-size:13px !important;}
+    .assetHealth .portStatusList > li .topCard .boxTyRound .barChart {padding-left:15px;}
+
+    /* highChart */
+    /* .graphCont {margin-top:-10px;} */
+    /* .highcharts-series.highcharts-pie-series {transform:scale(.9, .9);} */
+    /* .highcharts-series.highcharts-pie-series {transform:translate(calc(25% - 30px), 0) scale(.7, .7);} */
+    /* .assetHealth .highcharts-series.highcharts-pie-series {transform:translate(10%, 0) scale(.8, .8);} */
+
 }
 
 @media screen and (max-width:365px) {
     /* 자산건강도 */
-    .assetHealth .halfCircle > strong {font-size:14px; letter-spacing:-0.07em;}
+    .assetHealth .halfCircle > strong {font-size:12px; letter-spacing:-0.1em;}
     .assetHealth .boxTyRound.gray .subTit2 {font-size:14px; letter-spacing:-0.09em;}
 }
 
@@ -1436,6 +1502,7 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 @media screen and (min-width:410px) and (max-width:420px) {
     /* .slideWrapper .slideItem[data-class="3"] .txtArea h2 {padding-bottom:120px;} */
     .slideWrapper .slideItem[data-class="3"] .txtArea h2::before {top:8%; width:58.145%;}
+    /* .highcharts-series.highcharts-pie-series {transform:translate(calc(25% - 38px), 0) scale(.7, .7);} */
 }
 
 @media screen and (min-width:421px) {
@@ -1445,4 +1512,6 @@ input[type="checkbox"]:checked + label.formAiTy2:before {background: url('../../
 
 @media screen and (min-width:750px) {
     .flip {padding-bottom:50px;}
+    /* .highcharts-series.highcharts-pie-series {transform:translate() scale(.9, .9);} */
+    /* .assetHealth .highcharts-series.highcharts-pie-series {transform:translate(10%, 5%) scale(.8, .8);} */
 }
