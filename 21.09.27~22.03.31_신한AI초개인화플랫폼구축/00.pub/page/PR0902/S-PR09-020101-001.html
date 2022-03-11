@@ -1,0 +1,1127 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL PB > 포트폴리오 관리 > 나의 포트폴리오
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		노소영
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>SOL PB</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+	<link rel="stylesheet" type="text/css" href="../../style/pwm.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/PR/PR09/PR0902/common/PR0902ui.js"></script> <!-- pwm ui script -->
+	
+	<script src="../../script/include/library/highcharts.js"></script> <!-- chart script -->
+	<script src="../../script/include/library/highcharts-more.js"></script> <!-- chart script -->
+	<script src="../../script/sample/pbservice/pbservice_pub.js"></script> <!-- chart script -->
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			fnc포트폴리오관리_총자산();							     //id:포트폴리오관리_총자산
+			fnc포트폴리오관리_종합수익률그래프("총자산", "224, 127, 180");	 //id:종합수익률_총자산
+			fnc포트폴리오관리_총자산액그래프("예금", "147, 112, 224");		 //id:포트폴리오관리_예금
+			fnc포트폴리오관리_종합수익률그래프("예금", "147, 112, 224");	 //id:종합수익률_예금
+			fnc포트폴리오관리_총자산액그래프("채권", "255, 133, 179");		 //id:포트폴리오관리_채권
+			fnc포트폴리오관리_종합수익률그래프("채권", "255, 133, 179");	 //id:종합수익률_채권
+			fnc포트폴리오관리_총자산액그래프("주식", "16, 200, 185");		 //id:포트폴리오관리_주식
+			fnc포트폴리오관리_종합수익률그래프("주식", "16, 200, 185");	 //id:종합수익률_주식
+			fnc포트폴리오관리_총자산액그래프("대체", "255, 184, 30");		 //id:포트폴리오관리_대체
+			fnc포트폴리오관리_종합수익률그래프("대체", "255, 184, 30");	 //id:종합수익률_대체
+		});
+		
+		$(window).load(function(){
+			pwmDublieSlide.init(); //다중슬라이드
+			pwmAlarmSet.init(); //목표수익률 알람 설정
+		});
+	</script>
+	
+</head>
+<body>
+	<!-- wrap S -->
+	<div class="pwm">
+		<!-- container S -->
+		<section>
+			<header>
+				<h1 class="cntrTit">나의 총자산</h1><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+				<span class="pwmSwtichTy03">
+					<label for="pofolChk3">
+						<input type="checkbox" name="pofolChk3" id="pofolChk3" value="pofolChk"><i></i>
+					</label>
+				</span>	
+				<button type="button" class="btnPre" onclick="history.go(-1)">이전페이지</button>
+			</header>
+			
+			<!-- contentsWrap S -->
+			<div class="contentsWrap">
+				
+				<!-- contents S -->
+				<div class="contents">
+				
+					<div class="pwmPortfolio">
+						
+						<!-- 총자산 S -->
+						<div class="pofolBoxblue pwmListMotion">
+							<!-- 상단 정보 S -->
+							<div class="pofolInfoTxt">
+								<strong>오늘의 <b>내 총자산</b>은<br/>
+								<em>6</em><i>억</i><em>5,321</em><span>만원 입니다</span></strong>
+								<p>1년 전 보다 <span>3,632만원</span>이<br/>늘었습니다!</p><!-- 값 없을 경우 display:none; 처리 -->
+								<span class="pwmSwtichTy02">
+									<label for="pofolChk">
+										<input type="checkbox" name="pofolChk" id="pofolChk" value="pofolChk"><i></i>
+									</label>
+								</span>	
+							</div>
+							<!-- //상단 정보 E -->
+							<!-- 차트 S -->
+							<div class="pwmDublieSlide pofolSwiper">
+								<div class="swiper-container pwmDublieCont">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="pofolchart" id="포트폴리오관리_총자산">총자산 그래프</div>
+											<!--<div class="pofolchart">
+												<div class="pwmNodataTxt">
+													<div class="pwmConfirm01"></div>
+													<strong>해당기간의 보유 자산이 없습니다.</strong>
+												</div> 
+											</div>-->
+										</div>
+										<div class="swiper-slide">
+											<em>198,091,120원</em>
+											<div class="pofolchart" id="포트폴리오관리_예금">예금 그래프</div>
+										</div>
+										<!-- [20200208] 퍼블 수정 : 순서변경 S-->
+										<div class="swiper-slide">
+											<em>198,091,120원</em>
+											<div class="pofolchart" id="포트폴리오관리_채권">채권 그래프</div>
+										</div>
+										<div class="swiper-slide">
+											<em>198,091,120원</em>
+											<div class="pofolchart" id="포트폴리오관리_주식">주식 그래프</div>
+										</div>
+										<!--//[20200208] 퍼블 수정 : 순서변경 E-->
+										<div class="swiper-slide">
+											<em>198,091,120원</em>
+											<div class="pofolchart" id="포트폴리오관리_대체">대체 그래프</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-container pwmDublieBtn">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">총자산</div>
+										<div class="swiper-slide">예금</div>
+										<!-- [20200208] 퍼블 수정 : 순서변경 S-->
+										<div class="swiper-slide">채권</div>
+										<div class="swiper-slide">주식</div>
+										<!--//[20200208] 퍼블 수정 : 순서변경 E-->
+										<div class="swiper-slide">대체</div>
+									</div>
+								</div>
+							</div>
+							<!-- //차트 E -->
+							<p class="pwmInfoTT">대출 (마이너스통장포함), 미수금은 제외, 차트는 방카, 노란우산 제외</p><!-- [20210405] 퍼블 수정 : 기획문구변경-->
+							<!-- 버튼 S -->
+							<div class="btnGroupBox">
+								<a href="#pop01" class="pwmBtnBgwhiteBlue btnPopOpen"><span>전체계좌 보기 (<em>29</em>)</span></a>
+							</div>
+							<!-- //버튼 E -->
+						</div>
+						<!-- //총자산 E -->
+						
+						<!-- 종합수익률 S -->
+						<div class="pofolBoxWhite pwmListMotion">
+							<!-- 상단 정보 S -->
+							<div class="pofolInfoTxt">
+								<strong>고객님의 <b>종합수익률</b>은<br/><em>9.8%</em><span>입니다</span></strong>
+								<p>1년 전 보다 <span>0.6%</span><br/>올랐습니다!</p><!-- 값 없을 경우 display:none; 처리 -->
+								
+								<!-- [20200225] 퍼블 수정 : 기획추가 S-->
+								<a href="#pop02" class="pwmAlarm btnPopOpen">
+									<span>목표수익률 알람<em class="pwmFtMain03">+30%</em></span>
+									<span>위험수익률 알람<em class="pwmFtMain04">-30%</em></span>
+								</a><!-- 퍼블추가 em 수익률 추가 -->
+								<!--//[20200225] 퍼블 수정 : 기획추가 E-->
+								
+							</div>
+							<!-- //상단 정보 E -->
+							<!-- 차트 S -->
+							<div class="pwmDublieSlide pofolSwiper">
+								<div class="swiper-container pwmDublieCont">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<em>9.8%</em>
+											<div class="pofolchart" id="종합수익률_총자산">종합 그래프</div>
+											<!--<div class="pofolchart">
+												<div class="pwmNodataTxt">
+													<div class="pwmConfirm01"></div>
+													<strong>해당기간의 수익률은 0%입니다.</strong>
+												</div> 
+											</div>-->
+										</div>
+										<div class="swiper-slide">
+											<em>9.8%</em>
+											<div class="pofolchart" id="종합수익률_예금">예금 그래프</div>
+										</div>
+										<!-- [20200208] 퍼블 수정 : 순서변경 S-->
+										<div class="swiper-slide">
+											<em>9.8%</em>
+											<div class="pofolchart" id="종합수익률_채권">채권 그래프</div>
+										</div>
+										<div class="swiper-slide">
+											<em>9.8%</em>
+											<div class="pofolchart" id="종합수익률_주식">주식 그래프</div>
+										</div>
+										<!--//[20200208] 퍼블 수정 : 순서변경 E-->
+										<div class="swiper-slide">
+											<em>9.8%</em>
+											<div class="pofolchart" id="종합수익률_대체">대체 그래프</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-container pwmDublieBtn">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">종헙</div><!-- [20200209] 퍼블 수정 : 종합 문구변경 -->
+										<div class="swiper-slide">예금</div>
+										<!-- [20200208] 퍼블 수정 : 순서변경 S-->
+										<div class="swiper-slide">채권</div>
+										<div class="swiper-slide">주식</div>
+										<!--//[20200208] 퍼블 수정 : 순서변경 E-->
+										<div class="swiper-slide">대체</div>
+									</div>
+								</div>
+							</div>
+							<!-- //차트 E -->
+							<p class="pwmInfoTT">방카, 노란우산, 유동성, 퇴직연금, ELS, ISA 제외</p><!-- [20210405] 퍼블 수정 : 기획문구변경-->
+							<!-- 버튼 S -->
+							<div class="btnGroupBox">
+								<a href="#pop04" class="pwmBtnBgwhiteBlue btnPopOpen"><span>상담이 필요한 상품 (<em>29</em>)</span></a>
+							</div>
+							<!-- //버튼 E -->
+						</div>
+						<!-- //종합수익률 E -->
+						
+						<!-- 수익률순 S -->
+						<div class="pofolListBox pofoDeco pwmChkArea pwmListMotion">
+							<div class="pofolInfoTxt">
+								<span class="pofolIcon01"></span>
+								<strong>고객님의 <b>상품</b>을 <b>수익률 순</b>으로<br/>확인해보세요</strong>
+							</div>
+							<ol>
+								<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+									<strong><span>01</span><b><!-- [20200324] 기획추가 --><span class="pwmBankIcon"><span>신한금융투자</span></span><!--//-->[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+									<!-- <div class="pwmNodataTxt">
+										<div class="pwmConfirm01"></div>
+										<strong>보유 자산이 없습니다.</strong>
+									</div> -->
+								</li>
+								<li>
+									<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>06</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>07</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>08</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>09</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>10</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>11</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+							</ol>
+							<div class="btnGroupBox">
+								<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+							</div>
+						</div>
+						<!-- //수익률순 E -->
+						
+						<!-- 실현이익  S -->
+						<div class="pofolListBox pofoDecoR pwmChkArea pwmListMotion">
+							<div class="pofolInfoTxt pofolRight">
+								<span class="pofolIcon02"></span>
+								<strong><span class="underLine">2021년 기준</span> <b>실현이익</b>은<br/><b>93,200,000원</b>입니다</strong><!-- [20200302] 퍼블 수정 : 기획문구변경 (2021년) -->
+								<p class="txt">신한PWM센터 관리계좌의<br/>실현이익을 확인해보세요.</p><!-- [20200302] 퍼블 수정 : 기획문구변경 -->
+								<a href="#pop05" class="pwmBadgeLineWhite btnPopOpen"><span>기간조회</span></a>	
+							</div>
+							<p class="pwmInfoTT pwmGrayBg">입출금 계좌 제외 및 해지금액 (원화환산), 원천징수금액 기준입니다.</p><!-- [20200302] 퍼블 수정 : 기획문구변경 -->
+							<p class="pwmInfoTT pwmGrayBg">복합점포 미동의 또는 신한금융투자 정보 호출 에러시, 신한은행 실현이익만 제공해드립니다.</p><!-- [20200408] 퍼블 수정 : 기획문구추가 -->
+							<ol>
+								<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+									<strong><span>01</span><b><!-- [20200324] 기획추가 --><span class="pwmBankIcon"><span>신한금융투자</span></span><!--//-->[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+									<!-- <div class="pwmNodataTxt">
+										<div class="pwmConfirm01"></div>
+										<strong>보유 자산이 없습니다.</strong>
+									</div> -->
+								</li>
+								<li>
+									<strong><span>02</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>03</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>04</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>05</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>06</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>07</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>08</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>09</span><b>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</b></strong>
+									<p class="pofol_pl">000-000-000000</p><!-- [20200302] 퍼블 수정 : 기획변경 계좌번호추가 -->
+									<div>
+										<!-- [20200208] 퍼블 추가 -->
+										<!-- [20200302] 퍼블 수정 : 기획변경 존 원리금, 원금 삭제하고 실현이익 금액 출력  -->
+										<em><b>실현이익</b>439,719,369<span>원</span></em>
+										<!-- <em><b>원리금</b>439,719,369<span>원</span></em> -->
+										<!--//[20200208] 퍼블 추가 -->
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+							</ol>
+							<div class="btnGroupBox">
+								<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+							</div>
+						</div>
+						<!-- //실현이익 E -->
+						
+						
+						<!-- 주식투자현황  S -->
+						<div class="pofolListBox01 pofoDeco pwmChkArea pwmListMotion">
+							<div class="pofolInfoTxt">
+								<span class="pofolIcon03"></span>
+								<strong>고객님의 <b>주식투자 현황</b>입니다</strong>
+								<p>나의 주식 상품을<br/>수익률 순으로 확인해보세요</p>
+							</div>
+							<p class="pwmInfoTT pwmGrayBg">조회 시점의 주식가격이 반영되었습니다.</p><!-- [20210420] 퍼블수정 : 문구 추가-->
+							<ol>
+								<li>
+									<strong><span>01</span><b>삼성전자</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+									<!-- <div class="pwmNodataTxt">
+										<div class="pwmConfirm01"></div>
+										<strong>보유 자산이 없습니다.</strong>
+									</div> -->
+								</li>
+								<li>
+									<strong><span>02</span><b>SK하이닉스</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>03</span><b>네이버</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>04</span><b>현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차현대차</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>05</span><b>LG전자</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>06</span><b>LG전자</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>07</span><b>현대차</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+								<li>
+									<strong><span>08</span><b>LG전자</b></strong>
+									<div>
+										<em>439,719,369<span>원</span></em>
+										<span class="pwmBadgeLinered">14.25%</span>
+									</div>
+								</li>
+							</ol>
+							<div class="btnGroupBox">
+								<a href="javascript:void(0)" class="pwmBtnLineGray small pwmClick"><span>상품 전체 보기 (<em>29</em>)</span></a><!-- click 시 리스트 내용 다보이고 버튼 숨김 처리 -->
+							</div>
+						</div>
+						<!-- //주식투자현황 E -->
+						
+						<!-- 포폴분석 S -->
+						<div class="pofolGo"><!-- [20210208] 퍼블수정 : pwmListMotion class추가 --><!-- [20210309] 퍼블수정 : pwmListMotion class삭제 -->
+							<strong>나의 총자산을<br/>분석합니다</strong><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+							<a href="#none" class="pwmGoIcon"></a>
+						</div>
+						<div class="pwmFloatingMFixed">
+							<div class="pwmImgIn"><img src="/images/pwm/temp/pb_photo_s.png" alt=""/></div>
+							<a href="#">고객님의 포트폴리오에 대해 상담이 필요하세요?</a>
+						</div>
+						<!-- //포폴분석 E -->
+						
+					</div>
+				</div>
+				<!-- // contents E -->
+				
+				<!-- floating S -->
+				 <div class="btnGroupBox">
+					<a href="#pop06" class="pwmBtnBg large btnPopOpen"><span>유형별 자산현황 보기</span></a>
+				</div>
+				<!--// floating E -->
+				
+			</div>
+			<!-- // contentsWrap E -->
+		</section>
+		<!-- // container E -->
+	</div>
+	<!-- // wrap E -->
+	
+	
+	
+	
+	<!-- 전체계좌 보기 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt large" id="pop01">
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">전체계좌 보기 (<span>29</span>)</h1>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt">
+						<span class="pwmTitIcon01 mt40"></span>
+						<strong>총 <span>26</span>개의 <strong><span>은행계좌</span></strong>가 있습니다.</strong>
+						<p>은행계좌 보기는 SOL의 전체계좌로 이동하여<br/>이용하실 수 있습니다.</p>
+						<div class="btnGroupBox mt40 mb40">
+							<a href="#layerPopBottom010" class="pwmBtnBgwhiteBlue btnPopOpen"><span>은행계좌 보기 (<em>26</em>)</span></a>
+						</div>
+					</div>
+					<hr class="pwmLine" />
+					<div class="pofolInfoTxt mt60 mb40">
+						<!-- [20200208] 퍼블 : 문구변경-->
+						<strong class="mb0">총 <span>3</span>개의 <strong><span>신한금융투자 계좌</span></strong>가<br/>있습니다.</strong>
+					</div>
+					<div class="pofolListBox02">
+						<ul>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+								<!-- [20200208] 퍼블 : 내용없음 추가 S
+								<div class="pwmNodataTxt">
+									<div class="pwmConfirm01"></div>
+									<strong>보유 자산이 없습니다.</strong>
+								</div> 
+								<!--//[20200208] 퍼블 : 내용없음 추가 E-->
+							</li>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+							</li>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+							</li>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+							</li>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+							</li>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+							</li>
+							<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+								<span class="pwmBankIcon">
+									<span>신한금융투자</span>
+								</span>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>000-00-0000-0000</p>
+								<div>
+									<em>439,719,369<span>원</span></em>
+									<span class="pwmBadgeLinered">14.25%</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //전체계좌 보기 레이어 팝업 -->
+	
+	
+	<!-- 목표,위험 수익률 알람 설정 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt large" id="pop02"><!-- [20210403] 퍼블 수정 : 아이폰6 ios 10 오류로 임시 처리 : large추가 -->
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">목표,위험 수익률 알람 설정</h1><!-- [20200224] 퍼블 수정 : 기획문구변경-->
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt mt20 mb40">
+						<p class="pwmFt13">설정하신 목표, 위험 수익률을 달성하면<br/>해당 수익률 달성 시 앱과 카카오톡을 통해 알려드립니다.</p>
+					</div>
+					<div class="pofolListBox04 toggleRadWrap alarmTy">
+						<ul>
+							<li>
+								<strong>알람여부</strong>
+								<div class="pwmRadBtn02">
+									<span>
+										<input type="radio" name="alram" id="" checked />
+										<label><i></i>알람수신</label>
+									</span>
+									<span>
+										<input type="radio" name="alram" id="" />
+										<label><i></i>알람미수신</label>
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="pofolListBox04 toggleRadCont">
+						<ul>
+							<li>
+								<strong>알람대상</strong>
+								<div class="pwmRadBtn02">
+									<span>
+										<input type="radio" name="alram01" id="" checked />
+										<label><i></i>앱</label>
+									</span>
+									<span>
+										<input type="radio" name="alram01" id="" />
+										<label><i></i>카카오톡</label>
+									</span>
+									<span>
+										<input type="radio" name="alram01" id="" />
+										<label><i></i>앱+카카오톡</label>
+									</span>
+								</div>
+							</li>
+							<li>
+								<div class="flexColumnArea formAreaBox">
+									<div class="flexRowArea flexBetween">
+										<strong>목표 수익률</strong>
+										<div class="pwmRadBtn02 small toggleRadWrap chuTy">
+											<span>
+												<input type="radio" name="alram02" id="" checked="checked" />
+												<label>+ 선택</label>
+											</span>
+											<span>
+												<input type="radio" name="alram02" id="" />
+												<label>- 선택</label>
+											</span>
+										</div>
+									</div>
+									<div class="pwmFormArea toggleRadCont plus">
+										<div class="inputBox">
+											<div>
+												<input type="number" id="" placeholder="수익률을 입력하세요." value=""/>
+												<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+											</div>
+											<div class="error">error 문구 출력</div>					
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="flexColumnArea formAreaBox">
+									<div class="flexRowArea flexBetween">
+										<strong>위험 수익률</strong>
+										<div class="pwmRadBtn02 small toggleRadWrap chuTy">
+											<span>
+												<input type="radio" name="alram029" id="" checked="checked" />
+												<label>+ 선택</label>
+											</span>
+											<span>
+												<input type="radio" name="alram029" id="" />
+												<label>- 선택</label>
+											</span>
+										</div>
+									</div>
+									<div class="pwmFormArea toggleRadCont plus">
+										<div class="inputBox">
+											<div>
+												<input type="number" id="" placeholder="수익률을 입력하세요." value=""/>
+												<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+											</div>
+											<div class="error">error 문구 출력</div>					
+										</div>
+									</div>
+									<span class="pwmInfoTT">수익률은 소수점 이하를 입력할 수 없습니다.</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="btnGroupBox">
+				<a href="#pop03" class="pwmBtnBg large btnPopOpen" disabled="disabled"><span>확인</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- //목표,위험 수익률 알람 설정 레이어 팝업 -->
+	
+	
+	<!-- 목표,위험 수익률 알람 설정 완료 레이어 팝업 -->
+	<div class="layerPopWrap hasDim pwmPopSt small" id="pop03">
+		<div class="popInner">
+			<div class="layerHeader">
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="flexArea">
+						<!-- [20200201] 퍼블 수정 : .pwmPopIconAlram 클래스명 변경 -->
+						<span class="pwmPopIconAlram"></span>
+						<!-- [20200201] 퍼블 수정 : .pwmFt13 클래스 삭제, 텍스트 수정 -->
+						<p>
+							<span>공유</span> 고객님,<br/>오늘부터<br/>
+							목표 수익률 <span class="pwmFtMain03 pwmFtBold">+10%</span> 달성 시<br/><!-- [20210309] 퍼블 수정 : 디자인추가 -->
+							위험 수익률 <span class="pwmFtMain04 pwmFtBold">-10%</span> 달성 시<br/><!-- [20210309] 퍼블 수정 : 디자인추가-->
+							알람을<br/>보내드리겠습니다.
+						</p>
+					</div>
+				</div>
+				<div class="btnGroupBox">
+					<a href="javascript:void(0);" class="pwmBtnBg small btnType"><span>확인</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //목표,위험 수익률 알람 설정 완료 레이어 팝업 -->
+	
+	
+	<!-- 상담이 필요한 상품 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt large" id="pop04">
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">상담이 필요한 상품 (<span>29</span>)</h1>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt">
+						<span class="pwmTitIcon02 mt40"></span>
+                        <strong>고객님의 금융상품중<br><strong><span>상담이 필요한 상품</span></strong>이 있습니다.</strong>
+					</div>
+					<div class="pofolListBox02 mt40">
+						<ul>
+							<li>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>OOOOOOOOOOOOOOOO</p>
+								<div class="tar">
+									<em>439,719,369<span>원</span></em>
+                                </div>
+                                <div class="pofolRateList">
+                                    <strong class="pwmFt13">수익률</strong>
+                                    <ul>
+                                        <li>1개월<em class="decline">9.7</em></li>
+                                        <li>3개월<em>100.678</em></li>
+                                        <li>6개월<em class="decline">38.2</em></li>
+                                        <li>1년<em>45.1</em></li>
+                                    </ul>
+                                </div>
+							</li>
+							<li>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>OOOOOOOOOOOOOOOO</p>
+								<div class="tar">
+									<em>439,719,369<span>원</span></em>
+                                </div>
+                                <div class="pofolRateList">
+                                    <strong class="pwmFt13">수익률</strong>
+                                    <ul>
+                                        <li>1개월<em class="decline">9.7</em></li>
+                                        <li>3개월<em>100.678</em></li>
+                                        <li>6개월<em class="decline">38.2</em></li>
+                                        <li>1년<em>45.1</em></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>OOOOOOOOOOOOOOOO</p>
+								<div class="tar">
+									<em>439,719,369<span>원</span></em>
+                                </div>
+                                <div class="pofolRateList">
+                                    <strong class="pwmFt13">수익률</strong>
+                                    <ul>
+                                        <li>1개월<em class="decline">9.7</em></li>
+                                        <li>3개월<em>100.678</em></li>
+                                        <li>6개월<em class="decline">38.2</em></li>
+                                        <li>1년<em>45.1</em></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+								<strong>[주식] KB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-EKB중국본토A주증권자투자신탁[주식]종류A-E</strong>
+								<p>OOOOOOOOOOOOOOOO</p>
+								<div class="tar">
+									<em>439,719,369<span>원</span></em>
+                                </div>
+                                <div class="pofolRateList">
+                                    <strong class="pwmFt13">수익률</strong>
+                                    <ul>
+                                        <li>1개월<em class="decline">9.7</em></li>
+                                        <li>3개월<em>100.678</em></li>
+                                        <li>6개월<em class="decline">38.2</em></li>
+                                        <li>1년<em>45.1</em></li>
+                                    </ul>
+                                </div>
+							</li>
+						</ul>
+					</div>
+				</div>
+            </div>
+            <!-- floating S -->
+            <div class="pwmFloatingMFixed">
+                <div class="pwmImgIn"><img src="/images/pwm/temp/pb_photo_s.png" alt=""/></div>
+                <a href="#">보고 계신 상품과 관련하여 상담이 필요하신가요?</a>
+            </div>
+            <!-- floating E -->
+		</div>
+	</div>
+	<!-- //상담이 필요한 상품 레이어 팝업 -->
+	
+	
+	<!-- 기간 선택 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt period" id="pop05"><!-- [20210403] 퍼블 수정 : 아이폰6 ios 10 오류로 임시 처리 : period추가 -->
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">기간 선택</h1>
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt mt20 mb40">
+						<p class="pwmFt13">실현 이익을 조회할 기간을 선택해주세요.</p>
+					</div>
+					<div class="pofolListBox04">
+						<ul>
+							<li>
+								<strong>기간선택</strong>
+								<div class="pwmRadBtn02"><!-- [20200225] 퍼블 수정 : 기획변경 toggleRadWrap updownTy 제거 -->
+									<span>
+										<input type="radio" name="datetype" id="" checked />
+										<label><i></i>2021년</label>
+									</span>
+									<span>
+										<input type="radio" name="datetype" id="" />
+										<label><i></i>2020년</label>
+									</span>
+									<span>
+										<input type="radio" name="datetype" id="" />
+										<label><i></i>2019년</label>
+									</span>
+								</div>
+								<!-- <div class="pwmFormArea formAreaBox toggleRadCont">
+									<div class="inputBox calRange calendar">
+										<dl class="dateInput">
+											<dd>
+												<input type="text" id="" placeholder="시작일" value="2020.02.02" readonly="readonly"/>[20200225] 퍼블 수정 : readonly 추가
+												<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+											</dd>
+											<dd>
+												<input type="text" id="" placeholder="종료일" value="2020.02.02" readonly="readonly" disabled="disabled" />[20200225] 퍼블 수정 : readonly 추가
+												<button type="button" class="btn" disabled="disabled"><span class="iconTy34">달력 열기</span></button>
+											</dd>
+										</dl>	
+									</div>
+								</div> -->
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="btnGroupBox">
+				<a href="#" class="pwmBtnBg large"><span>확인</span></a>
+			</div>
+		</div>
+	</div>
+	<!-- //기간 선택 레이어 팝업 -->
+	
+	
+	<!-- 유형별 자산현황 레이어 팝업 -->
+	<div class="layerPopBottomWrap hasDim pwmPopSt large" id="pop06">
+		<div class="popInner">
+			<div class="layerHeader">
+				<h1 class="layerTit">유형별 자산현황 보기</h1><!-- [20210208] 퍼블 수정 : 타이틀 변경 --><!-- [20210224] 퍼블 수정 : 기획문구변경 -->
+				<button type="button" class="btnPopClose">팝업 닫기</button>
+			</div>
+			<div class="layerCon fixedCon">
+				<div class="conInner">
+					<div class="pofolInfoTxt disBlock mt20 mb40">
+						<p class="pwmFt13">금투 상품에 대한 문의는 신한 금융투자로 문의하세요.</p>
+					</div>
+					<div class="pwmTab pwmTabTy04 mlmr20">
+						<!-- [20210208] 퍼블 수정 : 자산유형 순서 변경 -->
+						<a href="#tabView1" class="on"><span>예금</span></a>
+						<a href="#tabView2"><span>채권</span></a>
+						<a href="#tabView3"><span>주식</span></a>
+						<a href="#tabView4"><span>대체</span></a>
+						<!-- // [20210208] 퍼블 수정 : 자산유형 순서 변경 -->
+					</div>
+					<div class="conBody scrInner">
+						<div class="pwmTabCont">
+							<div class="tabView on" id="tabView1">
+								<div class="pofolListBox03">
+									<ul>
+										<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+											<span class="pwmBankIcon">
+												<span>신한금융투자</span>
+											</span>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+											<span class="pwmBankIcon">
+												<span>신한금융투자</span>
+											</span>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="tabView" id="tabView2">
+								<div class="pofolListBox03">
+									<ul>
+										<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+											<span class="pwmBankIcon">
+												<span>신한금융투자</span>
+											</span>
+											<strong>2[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+                                        </li>
+                                        <li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+											<span class="pwmBankIcon">
+												<span>신한금융투자</span>
+											</span>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="tabView" id="tabView3">
+								<div class="pofolListBox03">
+									<ul>
+										<li class="investTxtWrap"><!-- [20210412] 퍼블수정 : 금융투자 케이스 class 추가 -->
+											<span class="pwmBankIcon">
+												<span>신한금융투자</span>
+											</span>
+											<strong>3[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+										<li>
+											<strong>[선진] KB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-EKB중국본토A주증권자투자신탁상품[주식]종류 A-E</strong>
+											<p>000-000-000000</p>
+											<div class="tar">
+												<em>439,719,369<span>원</span></em>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="tabView" id="tabView4">
+								<!-- 해당 자산 미 보유 시 S -->
+								<!-- 디자인 변경 및 추가 예정 -->
+								<div class="pwmNodataBox mt100 mb100">
+									<div class="pwmNodataTxt">
+										<div class="pwmConfirm01"></div>
+										<strong>보유 자산이 없습니다.</strong>
+									</div>
+								</div>
+								<!--// 해당 자산 미 보유 시 E -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //유형별 자산현황 레이어 팝업 -->
+	
+</body>
+</html>
