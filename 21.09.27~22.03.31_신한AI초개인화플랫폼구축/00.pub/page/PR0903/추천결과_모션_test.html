@@ -1,0 +1,276 @@
+<!-- 
+/***************************************************************************************
+* @경로			:	
+* @설명			:	SOL AI > 추천결과 모션 테스트
+****************************************************************************************
+* 번호	작업자		작업일			변경내용
+*------------------------------------------------------------------------------------------
+* 1    윤지혜      2022-03-10      최초 작성
+***************************************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+	<script>
+		var pwmScrMotion = {
+			init : function(){
+				this.bindEvt();
+			},
+			bindEvt : function(){
+				pwmScrMotion.updownMotion(); // 새로고침 or 화면 진입 시 모션
+				$('.contents , .layerCon').on("scroll", function(e){
+					$(".pwmListMotion").each(function(inx,ele){
+						if(!ele){return}
+						if(pwmScrMotion.updownPos(ele, -20)){
+							$(ele).css({"opacity":"0", "transform":"translateY(100px)","transition":"transform 0.7s, opacity 1s"});
+						}else{
+							$(ele).css({"opacity":"1", "transform":"translateY(0px)","transition":"transform 0.7s, opacity 1s"});
+						}
+					});
+				});
+			},
+			updownPos : function(ele,trigerDiff){
+				var posTop = ele.getBoundingClientRect();
+				var innerHeight = $(window).height();
+				return posTop.top > innerHeight + (trigerDiff || 0);
+			},
+			updownState : function(ele,trigerDiff){
+				var offset = ele.getBoundingClientRect();
+				var innerHeight = $(window).height() + $(window).scrollTop();
+				var isScrYN = false;
+				if(offset.top >= 0) {
+					if(offset.bottom <= innerHeight + (trigerDiff || 0) || offset.top < innerHeight) isScrYN = true; 
+				}
+				return isScrYN;
+			},
+			updownMotion : function(){
+				var pwmListMotionTime = 0;
+				$(".pwmListMotion").each(function(inx,ele){
+					if(!ele){return}
+					var pwmBoxMotion = false;
+					if(pwmScrMotion.updownState(ele, 0)){
+						pwmBoxMotion = true;
+						pwmListMotionTime += 500;
+					}
+					if(pwmBoxMotion){
+						$(ele).animate({
+							opacity:0
+							},
+							{duration : pwmListMotionTime,
+							start : function(){
+								$(ele).css({"opacity":"0", "transform":"translateY(100px)","transition":"transform 0.7s, opacity 1s"});
+							},
+							complete : function(){
+								$(ele).css({"opacity":"1", "transform":"translateY(0px)","transition":"transform 0.7s, opacity 1s"});
+							}
+						}, 500);
+					}
+				});
+			}
+		}
+		// pwmScrMotion.init();	
+		
+	</script> 
+	<style>
+		.recomPort::before {display:none;}
+		.motionBox {opacity:0;}
+		/* 추천기준 */
+		.recomPortInfo {position:relative; display:flex; justify-content:space-between; align-items:center; margin:10px 20px 0;}
+		.recomPortInfo .left {display:inline-block; position:relative; padding:0 15px 0 10px;}
+		.recomPortInfo i {display:block; text-indent:-9999px; opacity:0;}
+		.char {background:url('../../../images/event/icon_char_sol81.png') no-repeat center; width:63px; height:63px; background-size:cover; border-radius:100%; overflow:hidden; animation:focusIn .3s ease-in .15s forwards;} /* 임시 이미지 및 사이즈 */
+		.queMark {background:url('../../../images/event/icon_char_sol81.png') no-repeat 0 -10px; width:11px; height:63px; background-size:cover; overflow:hidden; position:absolute;}
+		.q1 {top:0; left:3px; transform:rotate(-10deg); animation:focusIn .2s ease-in .4s forwards;}
+		.q2 {top:10px; right:13px; transform:rotate(49deg); animation:focusIn .2s ease-in .5s forwards;}
+		.infoBalloon {display:inline-block; position:relative; width:calc(100% - 105px); background:#f8f9fb; padding:10px; border-radius:10px; box-sizing:border-box; animation:focusIn .3s ease-in .1s forwards; opacity:0; box-shadow:0 3px 12px 0 rgba(0,0,0,.12);}
+		/* .infoBalloon::before {content:""; position:absolute; top:50%; left:-10px; transform:translateY(-50%); border-style:solid; border-color:transparent #f8f9fb; border-width:10px 11px 10px 0;} */
+		.infoBalloon a {display:block; opacity:0; position:relative;/* overflow:hidden; white-space:nowrap; width:10px; animation:typing .4s ease-in 1s forwards; */animation:focusIn .4s ease-in .4s forwards;}
+		.infoBalloon a > i {display:inline-block; opacity:1; position:absolute; top:50%; right:0; transform:translateY(-50%); /* position:absolute; top:50%; right:10px; animation:CandG .4s ease-in .4s infinite both; */} 
+		/* .typed-out{
+			overflow: hidden;
+			border-right: .15em solid orange;
+			white-space: nowrap;
+			animation: 
+				typing 1s forwards;
+			font-size: 1.6rem; 
+			width: 0;
+			} */
+			@keyframes typing {
+				from {width:0;}
+				to {width:100%;}
+			}
+			@keyframes CandG {
+				from {right:10px;}
+				to {right:0px;}
+			}
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">추천결과</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+				<div class="solAi recommend">
+					<!-- 투자성향 결과 타이틀 -->
+                    <div class="innerBox lineN pb0 type02">
+                        <div class="formAreaBox">
+                            <div class="top">
+                                고객님의 투자성향은<br>
+                                <div class="inputBox">
+                                    <dl>
+                                        <dd>
+                                            <input type="text" title="투자성향" placeholder="선택하여 입력" readonly="readonly" autocomplete="off" value="공격투자형">
+                                            <button type="button" data-href="#layerPopBottom02" class="btn"><span class="iconTy40">내역 열림</span></button>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                입니다.
+                                <p class="txt">추천 포트를 선택해주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+					<!-- // 투자성향 결과 타이틀 -->
+					<!-- 추천기준 -->
+					<div class="recomPortInfo">
+						<div class="left">
+							<i class="char">캐릭터 이미지</i>
+							<i class="queMark q1">물음표 아이콘</i>
+							<i class="queMark q2">물음표 아이콘</i>
+						</div>
+						<div class="infoBalloon">
+							<a href="#" class="">추천기준이 궁금하신가요<i class="iconTySol12">></i></a>
+						</div>
+					</div>
+					<!-- // 추천기준 -->
+					<!-- 추천 포트 선택 -->
+                    <div class="recomPort motionBox">
+						
+					</div>
+					<!-- // 추천 포트 선택 -->
+					<!-- 자산 구성 -->                        
+                    <div class="innerBox lineN motionBox">
+					</div>
+					<!-- // 자산 구성 -->
+					<!-- 상품구성 -->
+                    <div class="innerBox lineN bg motionBox">
+					</div>
+					<!-- // 상품구성 -->
+				</div>
+			</div>			
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 계좌선택 레이어 팝업 -->
+<div class="layerPopBottomWrap hasDim type4" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit brdBNone">조회월 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type2">
+				<ul>
+					<li><button class="txtBlack1" onclick="">2021년 10월</button></li>
+					<li><button class="txtBlack1">2021년 9월</button></li>
+					<li><button class="txtBlack1">2021년 8월</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 계좌선택 레이어 팝업 -->
+
+<!-- 2022.01.10 전체수정(디자인변경) -->
+<!-- 2022.01.25 MonthlyReport통합 -->
+<script type="text/javascript">
+	function scrollFix() {
+		$('.contents').scroll(function(){
+			var tab = $('.tabTy02.aiType02').offset().top;
+			var window = $(this).scrollTop();
+			if(tab <= window) {
+				$('.tabTy02.aiType02').addClass('fixed');
+			} else {
+				$('.tabTy02.aiType02').removeClass('fixed');
+			}
+		});
+	};
+
+	function contTop() {
+		$(".tabTy02.aiType02 a").click(function(){
+			$(".contents").scrollTop(0);
+		});
+	};
+
+	function chartSwipe() {
+		var swiper = new Swiper('.assetSizeChart, .fundChart', {
+			observer: true,
+			observeParents: true,
+			pagination: '.swiper-pagination',
+		});
+	};
+
+	// noSwipeTab에 pagination추가된 유형
+	function tabSwipePagination() {
+		if($(".js-tab-swiper-type4").length){
+			console.log('tabSwipe tabSwipePagination 호출')
+			var $menu = $(".anchorWrap");				
+			var $target = $('.js-tab-swiper-type4');
+			var swiper = new Swiper(".js-tab-swiper-type4", {
+				observer: true,
+				observeParents: true,
+				calculateHeight:true,
+				pagination: '.swiper-pagination',
+				onInit: function(swiper){
+					$menu.on("click", "a", function(){
+						var index = $(this).index();
+						swiper.slideTo(index);
+					});
+				},
+				onSlideChangeEnd: function(swiper){
+					$menu.find("a").removeClass("on").removeAttr("title").eq(swiper.activeIndex).addClass("on").attr("title", "현재 선택 됨");
+				}
+			})
+		}
+	};
+
+	$(window).bind('load', function(){
+		scrollFix();
+		contTop();
+		chartSwipe();
+		tabSwipePagination();
+	});
+</script>
+</body>
+</html>
