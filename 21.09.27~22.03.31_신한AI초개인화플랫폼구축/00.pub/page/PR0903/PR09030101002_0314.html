@@ -17,9 +17,6 @@
 * 9		윤지혜		22-01-14        여백 및 버튼 아이콘 class 적용
 * 10    윤지혜		22-01-27        버튼, 문구 추가 및 포트 자산구성 디자인 변경
 * 11    윤지혜		22-02-03        문구 위치 수정
-* 12    윤지혜		22-02-18        추천기준 > 투자성향 문구 <br> 위치 변경, 포트 상품 구성 > 금액/원 태그 분리
-* 13    윤지혜		22-03-11        기획서 변경으로 선호자산영역 마크업 수정
-* 14    윤지혜		22-03-16        기획서 및 디자인 변경
 *********************************************************************/ 
 -->
 
@@ -34,13 +31,7 @@
 	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
 	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
 	<script src="../../script/include/library/ui.js"></script>	
-    <script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
-    
-    <script src="../../script/include/library/highcharts.js"></script>
-    <script src="../../script/include/library/highcharts-more.js"></script>
-    <script src="../../script/sample/pbservice/pbservice_pub.js"></script>
-
-    
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -65,11 +56,11 @@
 		<div id="contentsWrap">
 			<div class="contents full">
                 <div class="solAi recommend">
+                    <!-- 투자성향 결과 타이틀 -->
                     <div class="innerBox lineN pb0 type02">
                         <div class="formAreaBox">
-                            <!-- 투자성향 결과 타이틀 -->
                             <div class="top">
-                                고객님의 투자성향은
+                                고객님의 투자성향은<br>
                                 <div class="inputBox">
                                     <dl>
                                         <dd>
@@ -78,40 +69,18 @@
                                         </dd>
                                     </dl>
                                 </div>
-                            </div>                              
-                            <!-- // 투자성향 결과 타이틀 -->
-
-                            <!-- 투자금액 -->
-                            <div class="inputBox currnet"><!-- wrong -->
-                                <dl class="boxTyRound gray">
-                                    <dt class="txtBlack5 normal">총 투자 금액</dt>
-                                    <dd>
-                                        <input type="text" class="ar" placeholder="" value="000,000" autocomplete="off" title="총 투자 금액">
-                                        <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
-                                        <span class="unit">원</span>
-                                    </dd>
-                                </dl>
-                                <div class="error al">총 투자금액 10만원 이상부터 MY포트 가입이 가능합니다.</div>
+                                입니다.
+                                <p class="txt">추천 포트를 선택해주세요.</p>
                             </div>
-                            <!-- // 투자금액 -->
                         </div>
                     </div>
-
-                    <!-- 추천기준 -->
-                    <div class="recomAni mt24">
-                        <div class="left">
-                            <i class="char">캐릭터 이미지</i>
-                            <i class="queMark q1">물음표 아이콘1</i>
-                            <i class="queMark q2">물음표 아이콘2</i>
-                        </div>
-                        <div class="infoBalloon">
-                            <a href="#" class=""><strong>추천기준</strong>을 알려드릴게요!<i class="iconTySol12">></i></a>
-                        </div>
-                    </div>
-                    <!-- // 추천기준 -->
-                    
+                    <!-- // 투자성향 결과 타이틀 -->
                     <!-- 추천 포트 선택 -->
-                    <div class="recomPort motionBox">
+                    <div class="recomPort">
+                        <h3 class="titM txtWhite1 ml8">
+                            추천기준<a href="javascript:void(0)" class="ml5 iconTySol3" title="아이콘형 툴팁이 들어갑니다." data-role="링크텍스트" data-rel="testAlert()">?</a><!-- 22.01.14 icon class 수정 -->
+                        </h3>
+
                         <!-- 21.11.24 수정 : 마크업 변경 li -> radio -->
                         <div class="recStandard">
                             <div class="on"><!-- 선택 시 class="on" 적용 -->
@@ -122,19 +91,19 @@
                             <div class="">
                                 <input type="radio" id="recStandard2" name="recStandard">
                                 <label for="recStandard2">거래성향</label>
-                                <p>위험 및 투자<br>패턴을 기준으로</p>
+                                <p>위험 및 투자 패턴을<br>기준으로</p>
                             </div>
                         </div>
 
                         <!-- 22.01.27 추가 -->
-                        <div class="recStandard type02 mt30">
+                        <div class="recStandard type02 mt20">
                             <div class="on"><!-- 선택 시 class="on" 적용 -->
                                 <input type="radio" id="recStandard2_1" name="recStandard2" checked="checked">
-                                <label for="recStandard2_1">머니버스 자산기준</label>
+                                <label for="recStandard2_1">당/타기관<br>자산 기준</label>
                             </div>
                             <div class="">
                                 <input type="radio" id="recStandard2_2" name="recStandard2">
-                                <label for="recStandard2_2">AI 추천기준</label>
+                                <label for="recStandard2_2">신규<br>자산 기준</label>
                             </div>
                         </div>
                         <!-- // 22.01.27 추가 -->
@@ -196,43 +165,33 @@
                     <!-- 자산 구성 -->                        
                     <div class="innerBox lineN">
                         <div class="constAsset">
-                            <div class="listTitleBox mt20 mb20"><!-- 22.02.03 class 수정 : mb20 -> mb10 -->
+                            <div class="listTitleBox mt20 mb10"><!-- 22.02.03 class 수정 : mb20 -> mb10 -->
                                 <div class="left">
                                     <h2 class="subTit mb0 ml8">포트 자산구성</h2><!-- 22.01.14 class="ml8" 추가 적용 -->
                                 </div>
+                                <div class="right">
+                                    <a href="#" class="mr8">추천 이유 <span class="iconTySol12">팝업보기</span></a><!-- 22.01.14 여백 및 icon class 적용 -->
+                                </div>
                             </div>
-
                             <!-- 22.02.03 추가 -->
-                            <dl class="dpFlex jcStart boxTyRound gray mb20">
-                                <dd class="ml10">고객님의 선호자산은 <span class="txtPurple4 bold">국내주식, 채권, ELF</span> 입니다.</dd>
+                            <dl class="dpFlex jcStart mb20">
+                                <dt class="ml8 bold">선호자산 :</dt>
+                                <dd class="ml10 txtPurple4">국내주식, 채권, ELF</dd>
                             </dl>
                             <!-- // 22.02.03 추가 -->
-
-                            <!-- 추천이유 -->
-                            <div class="recomAni seq2 mt24">
-                                <div class="left">
-                                    <i class="char">캐릭터 이미지2</i>
-                                    <i class="spark">반짝 아이콘</i>
-                                </div>
-                                <div class="infoBalloon">
-                                    <a href="#" class=""><strong class="txtPurple4">추천이유</strong>가 궁금해요!<i class="iconTySol12">></i></a>
-                                </div>
-                            </div>
-                            <!-- // 추천이유 -->
-
-                            <div class="boxTyShadow motionBox">
+                            <div class="boxTyShadow">
                                 <ul class="listHorizLine">
                                     <li>
                                         <p>
                                             <span>유동성(예적금)</span>
-                                            <strong>00.00%</strong>
+                                            <strong>0%</strong>
                                         </p>
                                     </li>
                                     <!-- 22.01.27 수정 : 대체(ELF/ELT) 와 펀드 EFT 위치 변경 -->
                                     <li>
                                         <p>
-                                            <span>대체(ELF)</span>
-                                            <strong>00.00%</strong>
+                                            <span>대체(ELF/ELT)</span>
+                                            <strong>0%</strong>
                                         </p>
                                     </li>
                                     <li>
@@ -242,14 +201,10 @@
                                         </p>
                                         <!-- 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
                                         <div class="graphArea">
-                                            <div class="graph" style="height:200px; line-height:200px;">
+                                            <div class="graph" style="background:#eee; height:200px; line-height:200px;">
                                                 그래프 영역
                                             </div>
-                                            <div class="graph chart">
-                                                <!-- <p class="graphTitle">펀드/ETF 구성비중</p> -->
-                                                <div id="graphCont" class="graphCont"></div>
-                                            </div>
-                                            <!-- <ul>
+                                            <ul>
 												<li>
 													<span class="legend bggraph01"></span>
 													<span>국내주식 45%</span>
@@ -266,7 +221,7 @@
 													<span class="legend bggraph03"></span>
 													<span>채권 5%</span>
 												</li>
-											</ul> -->
+											</ul>
                                         </div>
                                         <!-- // 21.12.21 수정 : 마크업 수정 및 범례 추가 -->
                                     </li>
@@ -293,14 +248,14 @@
                     </div>
                     <!-- // 자산 구성 -->
                     <!-- 상품구성 -->
-                    <div class="innerBox lineN bg motionBox">
+                    <div class="innerBox lineN bg">
                         <div class="constPrd">
                             <div class="listTitleBox mt20 mb30">
                                 <div class="left">
                                     <h2 class="subTit mb0">포트 상품구성</h2>
                                 </div>
                                 <div class="right">
-                                    <a href="#" class="txtBlack5"><span class="iconTySol4 mr5 vt">초기화아이콘</span>초기화</a><!-- 22.01.14 icon class 적용 -->
+                                    <a href="#" class="txtBlack5"><span class="iconTySol13 mr5">초기화</span>처음으로</a><!-- 22.01.14 icon class 적용 -->
                                 </div>
                             </div>
 
@@ -311,10 +266,7 @@
                                             <p class="txtBlack5">총 투자금액</p>
                                         </div>
                                         <div class="rightCol">
-                                            <p class="txt">
-                                                <span class="shinhan">300,000,000</span>
-                                                원
-                                            </p>
+                                            <p class="txt">300,000,000원</p>
                                         </div>
                                     </li>
                                     <li class="row">
@@ -322,10 +274,7 @@
                                             <p class="txtBlack5">신규예정금액 합계</p>
                                         </div>
                                         <div class="rightCol">
-                                            <p class="fontSL txtPurple4 bold">
-                                                <span class="shinhan">300,000,000</span>
-                                                원
-                                            </p>
+                                            <p class="fontSL txtPurple4 bold">300,000,000원</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -590,7 +539,7 @@
 		// 레이어팝업 닫기
 		$('.btnPopClose, .btnType').on('click',function(){
 			$('.layerPopWrap').hide();
-        });
+		});
 
         // 추천기준
         $('.recStandard input:radio').click(function(){
@@ -621,7 +570,7 @@
             $('#custom-handle').css('left', portVal + '%');
             $('.ui-slider-range-min').css('width',portVal + '%');
 			$('.portSlider .sBubble').css('left', portVal + '%');
-                // console.log(portVal);
+                console.log(portVal);
 		};
 
         $("#ptSlider").slider({

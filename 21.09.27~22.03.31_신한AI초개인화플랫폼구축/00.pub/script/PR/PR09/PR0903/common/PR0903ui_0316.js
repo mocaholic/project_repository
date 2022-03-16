@@ -74,12 +74,8 @@ var solAI = {
 		});
 	}, 
 	'allMenuBtn' : function(){
-		
-
-
 		if($('.premierMain').find('> .visualArea').length > 0){
-			$('.allMenuBtn .front, .allMenuBtn .back').addClass('filterWhite');
-			
+			$('.allMenuBtn > label, .allMenuBtn .back').addClass('filterWhite');
 			// console.log('!!!')
 		}else{
 			// console.log('OK')
@@ -117,7 +113,7 @@ var solAI = {
 			var scrollTop = $(this).scrollTop();
 			var screenH = $(window).innerHeight();
 			var scrollHeight = $(this).prop('scrollHeight');
-			// console.log(screenH);  
+			// console.log(screenH);
 			// console.log(scrollTop);
 
 			/* if(scrollTop <= screenH){
@@ -138,15 +134,14 @@ var solAI = {
 			} */
 		
 
-			if(scrollTop <= 100){				
+			if(scrollTop <= 10){				
 				// $('.allMenuBtn').hide();
 				// $('.allMenuBtn').css('opacity','1');
 				// void target.offsetWidth,
-				// $('.flipBox').addClass('effect');
-				$('.front.filterWhite').removeClass('none');
+				$('.flipBox').addClass('effect');
+				
 			}else{
-				// $('.flipBox').removeClass('effect');
-				$('.front.filterWhite').addClass('none');
+				$('.flipBox').removeClass('effect');
 				// $('.allMenuBtn').show();
 				// $('.allMenuBtn').css('opacity','1');
 				// $('.flipBox').attr('style','animation-delay:;');
@@ -216,6 +211,7 @@ var solAI = {
 			return false;
 		})
 	},
+	
 	// css height 100vh 속성
 	'vh' : function(){
 		let vh = window.innerHeight * 0.01;
@@ -345,7 +341,8 @@ var solAI = {
 	'layPopTooltip' : function(){
 		$(document).on('click', '.btnGroupBox > .btnType ', function(){
 			var $target = $(this).parents('[class*=layerPopTooltip]');
-			$('.layerPopWrap').hide();				
+			$('.layerPopWrap').hide();
+				
 		});
 	},
 	'init' : function(){
@@ -357,83 +354,17 @@ var solAI = {
 		solAI.topBtn();
 		solAI.vh();
 		// solAI.mainSlide();
-		// solAI.pullDownR();
+		solAI.pullDownR();
 		solAI.continuePop();
 		solAI.layPopTooltip();
 		window.addEventListener('resize', () => solAI.vh());
 	},
-}
-
-var recomScrMotion = {
-	init : function(){
-		this.bindEvt();
-	},
-	bindEvt : function(){
-		recomScrMotion.updownMotion(); //새로고침or화면진입시모션
-		$('.contents , .layerCon').on('scroll', function(e){
-			$('.motionBox').each(function(inx,ele){
-				if(!ele){return}
-				if(recomScrMotion.updownPos(ele, -20)){
-					$(ele).css({'opacity':'0', 'transform':'translateY(100px)','transition':'transform 0.7s, opacity 1s'});
-				}else{
-					$(ele).css({'opacity':'1', 'transform':'translateY(0)','transition':'transform 0.7s, opacity 1s'});
-				}
-			});
-			$('.seq2').each(function(inx,ele){
-				if(!ele){return}
-				if(recomScrMotion.updownPos(ele, -20)){
-					$(ele).css({'opacity':'0', 'transition':'opacity .5s'});
-				}else{
-					$(ele).css({'opacity':'1', 'transition':'opacity .5s'});
-				}
-			});
-		});
-	},
-	updownPos : function(ele,trigerDiff){
-		var posTop = ele.getBoundingClientRect();
-		var innerHeight = $(window).height();
-		return posTop.top > innerHeight + (trigerDiff || 0);
-	},
-	updownState : function(ele,trigerDiff){
-		var offset = ele.getBoundingClientRect();
-		var innerHeight = $(window).height() + $(window).scrollTop();
-		var isScrYN = false;
-		if(offset.top >= 0) {
-			if(offset.bottom <= innerHeight + (trigerDiff || 0) || offset.top < innerHeight) isScrYN = true; 
-		}
-		return isScrYN;
-	},
-	updownMotion : function(){
-		var motionBoxTime = 0;
-		$(".motionBox").each(function(inx,ele){
-			if(!ele){return}
-			var aiBoxMotion = false;
-			if(recomScrMotion.updownState(ele, 0)){
-				aiBoxMotion = true;
-				motionBoxTime += 500;
-			}
-			if(aiBoxMotion){
-				$(ele).animate({
-					opacity:0
-					},
-					{duration : motionBoxTime,
-					start : function(){
-						$(ele).css({"opacity":"0", "transform":"translateY(100px)","transition":"transform 0.7s, opacity 1s"});
-					},
-					complete : function(){
-						$(ele).css({"opacity":"1", "transform":"translateY(0px)","transition":"transform 0.7s, opacity 1s"});
-					}
-				}, 500);
-			}
-		});
-	}
 }
 		
 
 $(function(){
 	$(window).load(function(){
 		solAI.init();
-		recomScrMotion.init();
 	});
 });
 
