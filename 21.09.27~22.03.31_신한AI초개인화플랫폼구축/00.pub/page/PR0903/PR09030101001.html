@@ -1,0 +1,305 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL AI > 포트폴리오 설계 > 사전정보입력
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		윤지혜		21-10-29	   	최초작성
+* 2		김연수		21-11-22	   	전체설계변경
+* 3		김연수		21-11-24	   	iconTySol7로 클래스변경
+* 4		김연수		21-12-09	   	아이콘/이미지경로수정
+* 5		김연수		22-01-13        MY포트로 용어 통일
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>  
+				<h1 class="tit">MY포트 설계</h1> 
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a> 
+				</div>
+			</div> 
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<!-- 21.11.22 전체수정 -->  
+			<div class="contents full">
+				<div class="solAi prevInfoWrite">
+					<div class="innerBox lineN pt40">
+						<div class="topArea">
+							<h2 class="titZ">딱! 맞는 <strong class="txtPurple4">MY포트</strong><br>추천을 해드립니다.</h2>
+							<p class="fontSSS txtBlack5 lh15">고객님의 데이터와 시장상황을 분석해서<br>선호하는 자산유형 위주로 최적의 상품을 추천합니다.</p>
+							<!-- 21.11.24 iconTySol7로 클래스변경 -->  
+							<!-- 21.12.09 아이콘/이미지경로수정 -->  
+							<div class="fontS"><strong class="txtPurple4">MY포트</strong>가 궁금하시면<a href="javascript:void(0)" class="tipOpen iconTySol3" title="
+								<p class='subTit3'>MY포트란</p>
+								<ul class='dotList'>
+									<li>MY포트는 고객님의 자산관리 성향과 목적에 맞는 '나만의 포트폴리오'로 다양한 상품을 포함하는 신개념의 자산관리 단위입니다. </li>
+									<li>MY포트 자산관리를 통해서 개인별 맞춤 포트 추천, 포트별 자산건강도 진단 및 리밸런싱 제안 등의 차별화된 서비스를 경험하실수 있습니다.</li>
+								</ul>
+							"></a></div>
+							<div class="imgBox">
+								<!-- 21.12.09 아이콘/이미지경로수정 -->  
+								<img src="../../../../../../../images/solAI/img_character01.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="innerBox lineN">
+						<!-- 1. 기본(투자금액 입력) -->
+						<div class="formAreaBox aiTy1 active">
+							<h2 class="fontZ">얼마를 투자하시겠어요?</h2>
+							<div class="inputBox mt25 wrong"><!-- 기본은 class="wrong" 미적용, 에러 발생 시 class="wrong"적용 -->
+								<dl>
+									<dd>
+										<input type="text" placeholder="10만원 이상 입력" autocomplete="off" id="ip1" />
+										<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+									</dd>
+								</dl>
+								<div class="error">투자금액은 최소 10만원 이상입니다.</div><!-- 에러텍스트 -->
+							</div>
+						</div>
+						<!-- // 1. 기본(투자금액 입력) -->
+						<!-- 2. 투자상품 포함여부 -->
+						<!-- <div class="formAreaBox">
+							<h2 class="titL">투자상품(펀드/신탁)을<br>포함할까요?</h2>
+							<div class="inputBox calRange currnet mt40">
+								<div class="rdoAreaTy2 col2">
+									<div class="inputSel">
+										<input type="radio" name="rdo001" id="rdo001_1" checked="checked" autocomplete="off">
+										<label for="rdo001_1">예</label>
+									</div>
+									<div class="inputSel">
+										<input type="radio" name="rdo001" id="rdo001_2" autocomplete="off">
+										<label for="rdo001_2">아니오</label>
+									</div>
+								</div>
+							</div>
+						</div> -->
+						<!-- // 2. 투자상품 포함여부 -->
+						<!-- 3. 신탁상품 포함여부 -->
+						<!-- <div class="formAreaBox">
+							<h2 class="titL">신탁(ETF)상품을<br>포함하겠어요?</h2>
+							<p class="fontSSS txtBlack5 mt8">신탁가입시 영상통화를 통한 상품설명을 진행합니다.</p>
+							<div class="inputBox calRange currnet mt40">
+								<div class="rdoAreaTy2 col2">
+									<div class="inputSel">
+										<input type="radio" name="rdo002" id="rdo002_1" checked="checked" autocomplete="off">
+										<label for="rdo002_1">예</label>
+									</div>
+									<div class="inputSel">
+										<input type="radio" name="rdo002" id="rdo002_2" autocomplete="off">
+										<label for="rdo002_2">아니오</label>
+									</div>
+								</div>
+							</div>
+						</div> -->
+						<!-- // 3. 신탁상품 포함여부 -->
+						<!-- 3. 투자기간 -->
+						<!-- 항목 활성화 시 formAreaBox class="active" 적용 -->
+						<!-- <div class="formAreaBox type3 accordionBox active">
+							<h2 class="titL">투자기간을<br>선택해주세요</h2>
+							<div class="inputBox calRange ">
+								<div class="btnOpen">
+									<p class="txt">24개월 동안</p>
+									<a href="javascript:void(0);" class="btnArrow btnAccordion">
+										<span class="iconTy40">투자기간을 선택해주세요 세부내역 닫기</span>
+									</a>
+								</div>
+								<div class="btnWrapR">
+									<ul class="duration">
+										<li><a href="javascript:void(0)">6개월</a></li>
+										<li><a href="javascript:void(0)">12개월</a></li>
+										<li><a href="javascript:void(0)" class="on" title="현재선택됨">24개월</a></li>
+										<li><a href="javascript:void(0)">36개월</a></li>
+										<li><a href="javascript:void(0)">48개월</a></li>
+										<li><a href="javascript:void(0)">60개월</a></li>
+										<li><a href="#layerPopBottom02" class="btnPopOpen">직접선택</a></li>
+										<li><a href="javascript:void(0)">만기일지정</a></li>
+									</ul>
+								</div>
+							</div>
+						</div> -->
+						<!-- // 3. 투자기간 -->
+						<!-- 4. 추가입금 여부 -->
+						<!-- <div class="formAreaBox">
+							<h2 class="titL">자유롭게<br>추가입금을 하시겠어요?</h2>
+							<div class="inputBox calRange currnet mt40">
+								<div class="rdoAreaTy2 col2">
+									<div class="inputSel">
+										<input type="radio" name="rdo002" id="rdo002_1" checked="checked" autocomplete="off">
+										<label for="rdo002_1">예</label>
+									</div>
+									<div class="inputSel">
+										<input type="radio" name="rdo002" id="rdo002_2" autocomplete="off">
+										<label for="rdo002_2">아니오</label>
+									</div>
+								</div>
+							</div>
+						</div> -->
+						<!-- // 4. 추가입금 여부 -->
+
+
+						<!-- 정보 플로팅 -->    
+						<!-- <div class="floatingArea">
+							!-- 투자기간 --
+							<button class="floatingBox">
+								추가입금을 <strong>하겠습니다.</strong>
+							</button>
+							!-- 투자기간 --
+							<button class="floatingBox">
+								<strong>12개월 동안</strong> 투자합니다.
+							</button>
+							!-- 신탁상품 포함여부 --
+							<button class="floatingBox">
+								신탁(ETF)상품을 <strong>포함하지 않습니다.</strong>
+							</button>
+							!-- 투자상품 포함여부 --
+							<button class="floatingBox">
+								투자상품(펀드/신탁)을 <strong>포함합니다.</strong>
+							</button>
+							!-- 투자금액 --
+							<button class="floatingBox">
+								<strong>5,000,000</strong> 원을 투자합니다.
+							</button>    
+						</div> -->
+						<!-- // 정보 플로팅 -->
+					</div>
+				</div>
+			</div>			
+			<!-- // contents -->
+			<!-- 하단 플로팅 버튼 -->
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0);" class="btnType light">추천포트보기</a>
+			</div>			
+			<!-- // 하단 플로팅 버튼 -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- BS: 직접선택 -->
+<!-- <div class="layerPopBottomWrap hasDim type4" id="layerPopBottom02">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">직접선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li>
+						<button onclick="">6개월</button>
+					</li>
+					<li>
+						<button>7개월</button>
+					</li>
+					<li>
+						<button>8개월</button>
+					</li>
+					<li>
+						<button>9개월</button>
+					</li>
+					<li>
+						<button>10개월</button>
+					</li>
+					<li>
+						<button>11개월</button>
+					</li>
+					<li>
+						<button>12개월</button>
+					</li>
+					<li>
+						<button>13개월</button>
+					</li>
+					<li>
+						<button>14개월</button>
+					</li>
+					<li>
+						<button>15개월</button>
+					</li>
+					<li>
+						<button>16개월</button>
+					</li>
+					<li>
+						<button>17개월</button>
+					</li>
+					<li>
+						<button>18개월</button>
+					</li>
+					<li>
+						<button>19개월</button>
+					</li>
+					<li>
+						<button>20개월</button>
+					</li>
+					<li>
+						<button>21개월</button>
+					</li>
+					<li>
+						<button>22개월</button>
+					</li>
+					<li>
+						<button>23개월</button>
+					</li>
+					<li>
+						<button>24개월</button>
+					</li>
+					<li>
+						<button>25개월</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- BS -->
+
+<script type="text/javascript">
+	// 보고용 script
+	// $(function(){
+	// 	// 플로팅 버튼 위치 (투자기간 직접선택 시)
+	// 	$('.btnAccordion').click(function(){
+	// 		if($(this).parent().siblings('.btnWrapR').css('display') == 'block'){
+	// 			$('.floatingArea').removeClass('move');
+	// 		}else {
+	// 			$('.floatingArea').addClass('move');
+	// 		}
+	// 	});
+
+	// 	// 레이어팝업 닫기
+	// 	$('.btnPopClose, .btnType').on('click',function(){
+	// 		$('.layerPopWrap').hide();
+	// 	});
+	// });
+	
+</script>
+</body>
+</html>

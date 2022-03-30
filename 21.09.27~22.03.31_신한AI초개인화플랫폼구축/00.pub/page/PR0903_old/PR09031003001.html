@@ -1,0 +1,625 @@
+<!-- 
+/***************************************************************************************
+* @경로			:	
+* @설명			:	SOL AI > 프리미어서비스 > 프리미어MonthlyReport > 내자산현황
+****************************************************************************************
+* 번호	작업자		작업일			변경내용
+*------------------------------------------------------------------------------------------
+* 1    김연수      2021-12-10      최초 작성
+* 2    김연수      2022-01-10      전체수정(디자인변경)
+* 3    김연수      2022-01-20      text수정
+* 4    김연수      2022-01-25      MonthlyReport통합
+***************************************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">Monthly Report</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+				<!-- 2022.01.10 전체수정(디자인변경) -->
+				<div class="solAi monthlyReport">
+					<div class="monthlyBg">
+						<div class="formAreaBox bold">
+							김신한님의 2021년<br>
+							<div class="inputBox">
+								<dl>
+									<dd>
+										<input type="text" title="투자성향" placeholder="선택하여 입력" readonly="readonly" autocomplete="off" value="12월">
+										<button type="button" data-href="#layerPopBottom01" class="btn" onclick="bottomPopOpen(this);"><span class="iconTy40">내역 열림</span></button>
+									</dd>
+								</dl>
+							</div>
+							자산현황입니다.
+						</div>
+						<p class="fontSSS txtWhite1">2021.12.31 23:00 기준</p>
+
+						<!-- 2022.01.25 MonthlyReport통합 -->
+						<!-- tab -->
+						<div class="tabTy02 aiType02">
+							<!-- 활성화시 class="on" -->
+							<a href="#tabView1" class="on"><span>내 자산현황</span></a>
+							<a href="#tabView2" class=""><span>초개인화 그룹비교</span></a>
+							<a href="#tabView3" class=""><span>이달의 스케쥴</span></a>
+						</div>
+						<!-- // tab -->
+
+						<div class="tabViewWrap">
+							<div class="tabView on"  id="tabView1">
+								<div class="boxTyShadow">
+									<h2 class="titM cf">
+										전체자산
+										<!-- 22.01.20 text수정 -->
+										<div class="fontSSS txtBlack5 normal fr">(방카슈랑스 제외)</div>
+									</h2>
+									<div class="fontZ bold">180,407,000원</div>
+									<!-- 늘었을때 -->
+									<p class="AssetsTxt">지난달 보다<span class="txtRed1 up">40,000,000원</span> 늘었어요</p>
+									<!-- 줄었을때 -->
+									<!-- <p class="AssetsTxt">지난달 보다<span class="txtRed1 down">40,000,000원</span> 줄었어요</p> -->
+									<div class="graphArea">
+										<div class="graph" style="width:100%; height:170px; text-align:center; background:#f7f7f7; line-height:12.14;">
+											그래프 영역
+										</div>
+										<ul class="legendList">
+											<li>
+												<span class="legend bggraph02"></span>
+												<span class="txtBlack5">예적금</span>
+												<span class="txtBlack4">(40%)</span>
+												<p class="bold">100,000,000원</p>
+											</li>
+											<li>
+												<span class="legend bggraph06"></span>
+												<span class="txtBlack5">펀드</span>
+												<span class="txtBlack4">(30%)</span>
+												<p class="bold">40,712,230원</p>
+											</li>
+											<li>
+												<span class="legend bggraph05"></span>
+												<span class="txtBlack5">신탁</span>
+												<span class="txtBlack4">(21%)</span>
+												<p class="bold">5,350,000원</p>
+											</li>
+											<li>
+												<span class="legend bggraph04"></span>
+												<span class="txtBlack5">퇴직연금</span>
+												<span class="txtBlack4">(6%)</span>
+												<p class="bold">7,120,000원</p>
+											</li>
+											<li>
+												<span class="legend bggraph03"></span>
+												<span class="txtBlack5">기타</span>
+												<span class="txtBlack4">(3%)</span>
+												<p class="bold">31,295원</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+		
+								<div class="boxTyShadow">
+									<h2 class="titM">대출 잔액</h2>
+									<div class="fontZ bold">10,500,000원</div>
+									<!-- 늘었을때 -->
+									<p class="AssetsTxt">지난달 보다<span class="txtBlue2 up">10,000,000원</span> 늘었어요</p>
+									<!-- 줄었을때 -->
+									<!-- <p class="AssetsTxt">지난달 보다<span class="txtBlue2 down">10,000,000원</span> 줄었어요</p> -->
+								</div>
+							</div>
+
+
+							<div class="tabView"  id="tabView2">
+								<div class="boxTyShadow">
+									<div class="listTitleBox">
+										<div class="left"><h2 class="titM">초개인화 그룹선택</h2></div>
+									
+										<div class="right vt"><button type="button" class="btnFilter"><span class="blind">필터열기</span></button></div>
+									</div>
+									
+									<ul class="filterPick">
+										<li>#50대</li>
+										<li>#남자</li>
+										<li>#서울시 강남구</li>
+										<li>#1,200만원 초과~4,600만원 이하</li>
+										<li>#공격투자형</li>
+									</ul>
+									
+									<div class="boxTyRound gray round6">
+										<p class="fontSSS txtBlack5">※ 신한 초개인화 그룹은 프리미어 고객을 대상으로 연령, 성별, 거주지, 연소득, 투자성향을 기초로 고객님과 가장 유사한 비교 그룹을 선정하여 적용합니다.</p>
+									</div>
+		
+									<div class="assetSizeChart swipe">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide">
+												<h2 class="titM">내 자산 VS 초개인화 자산 규모 비교</h2>
+												<p class="fontSSS txtBlack5 mb10">(단위: 백만원)</p>
+												<div class="chartArea" style="width:100%; height:224px; text-align:center; background:#f7f7f7; line-height:12.14;">
+													차트 영역1
+												</div>
+												<ul class="legendList">
+													<li>
+														<span class="legend bggraph02"></span>
+														<span class="fontSS">나</span>
+													</li>
+													<li>
+														<span class="legend bggraph07"></span>
+														<span class="fontSS">초개인화 그룹</span>
+													</li>
+												</ul>
+											</li>
+											<li class="swiper-slide">
+												<h2 class="titM">자산 배분 현황</h2>
+												<div class="chartArea" style="width:100%; height:224px; text-align:center; background:#ffcbda; line-height:12.14;">
+													차트 영역2
+												</div>
+												<ul class="legendList">
+													<li>
+														<span class="legend bggraph02"></span>
+														<span class="fontSS">나</span>
+													</li>
+													<li>
+														<span class="legend bggraph07"></span>
+														<span class="fontSS">초개인화 그룹</span>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<div class="swiper-pagination"></div>
+									</div>
+		
+									<div class="fundChart swipe">
+										<ul class="swiper-wrapper">
+											<li class="swiper-slide">
+												<h2 class="titM">펀드 유형별 구성 현황</h2>
+												<div class="chartArea" style="width:100%; height:392px; text-align:center; background:#ffcbda; line-height:12.14;">
+													차트 영역1
+												</div>
+												<ul class="legendList">
+													<li>
+														<span class="legend bggraph08"></span>
+														<span class="fontSS">나</span>
+													</li>
+													<li>
+														<span class="legend bggraph09"></span>
+														<span class="fontSS">초개인화 그룹</span>
+													</li>
+												</ul>
+											</li>
+											<li class="swiper-slide">
+												<h2 class="titM">펀드 수익률 현황</h2>
+												<div class="chartArea" style="width:100%; height:392px; text-align:center; background:#f7f7f7; line-height:12.14;">
+													차트 영역2
+												</div>
+												<ul class="legendList">
+													<li>
+														<span class="legend bggraph08"></span>
+														<span class="fontSS">나</span>
+													</li>
+													<li>
+														<span class="legend bggraph09"></span>
+														<span class="fontSS">초개인화 그룹</span>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<div class="swiper-pagination"></div>
+									</div>
+								</div>
+		
+								<div class="boxTyShadow">
+									<h2 class="titM">초개인화 그룹 Top 5</h2>
+								
+									<div class="tabTy02 aiType03">
+										<div class="swiper-wrapper anchorWrap">
+											<!-- 활성화시 class="on" -->
+											<a href="javascript:;" class="swiper-slide on"><span>보유펀드</span></a>
+											<a href="javascript:;" class="swiper-slide"><span>펀드판매</span></a>
+											<a href="javascript:;" class="swiper-slide"><span>수익률</span></a>
+										</div>
+									</div>
+									<div class="js-tab-swiper-type4">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide">
+												<ul class="topList">
+													<li>
+														<div class="rank">1위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">국내 주식</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">2위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi9">ELF</i>
+																<i class="iconTyLabel02">ELF</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">KTB지수연계증권투자신탁NSE-60호A-E[ELS파생형]</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">3위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">블랙록글로벌자산배분증권투자신택[주식혼합-재간접형](H)종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">4위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">파인만코어셀렉트증권자투자신탁1호[주식]종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">5위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">한화단기하이일드증권투자신탁[채권]종류C-E</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="topList">
+													<li>
+														<div class="rank">1위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi9">ELF</i>
+																<i class="iconTyLabel02">ELF</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">KTB지수연계증권투자신탁NSE-60호A-E[ELS파생형]</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">2위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">블랙록글로벌자산배분증권투자신택[주식혼합-재간접형](H)종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">3위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">파인만코어셀렉트증권자투자신탁1호[주식]종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">4위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">한화단기하이일드증권투자신탁[채권]종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">5위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">국내 주식</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div class="swiper-slide">
+												<ul class="topList">
+													<li>
+														<div class="rank">1위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">블랙록글로벌자산배분증권투자신택[주식혼합-재간접형](H)종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">2위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">파인만코어셀렉트증권자투자신탁1호[주식]종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">3위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">해외 선진</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">한화단기하이일드증권투자신탁[채권]종류C-E</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">4위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi9">ELF</i>
+																<i class="iconTyLabel02">ELF</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">KTB지수연계증권투자신탁NSE-60호A-E[ELS파생형]</p>
+														</div>
+													</li>
+													<li>
+														<div class="rank">5위</div>
+														<div class="prd">
+															<div class="txtPeriod">
+																<i class="iconTyLabelAi2">펀드</i>
+																<i class="iconTyLabel02">국내 주식</i>
+																<i class="iconTy109">다소높은위험</i>
+															</div>
+															<p class="tit">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</p>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="swiper-pagination"></div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="tabView"  id="tabView3">
+								<div class="boxTyShadow">
+									<h2 class="titM cf">
+										만기도래 상품 알림
+										<div class="fontSSS txtBlack5 normal fr">(향후 2개월)</div>
+									</h2>
+									<div class="boxTyRound gray round6">
+										<div class="bold mb5">신한 S힐링 여행적금</div>
+										<span class="fontSSS txtBlack5 bold">110-480-123456</span>
+										<em class="fontSSS txtPurple4 pl10">만기일 2020.11.23</em>
+										<div class="fontSL ar bold mt12">3,434,944원</div>
+									</div>
+									<div class="boxTyRound gray round6 mt10">
+										<div class="bold mb5">쏠편한 정기예금</div>
+										<span class="fontSSS txtBlack5 bold">110-480-123456</span>
+										<em class="fontSSS txtPurple4 pl10">만기일 2020.11.23</em>
+										<div class="fontSL ar bold mt12">30,000,000원</div>
+									</div>
+		
+									<!-- 기준월에 만기도래 상품이 없는 경우 -->
+									<div class="titleBox">
+										<i class="iconTySol8"></i>
+										<div class="fontSS mt12">만기도래 상품이 없습니다.</div>
+									</div>
+								</div>
+		
+								<div class="boxTyShadow">
+									<h2 class="titM">10월 이벤트 알림</h2>
+									<ul class="eventList">
+										<li> 
+											<a href="javascript:;">
+												<div class="imgBox">
+													<img src="../../../images/solAI/temp_event_banner01.png" alt="" />
+												</div>
+												<div class="tit fontS multiLineEllipsis">파리바게뜨 모바일 케익 교환권</div>
+												<p class="date">2022.12.15 ~ 2022.12.25</p> 
+											</a>
+										</li>
+										<li class="end">
+											<a href="javascript:;">
+												<i class="iconTyRdBox2">종료</i>
+												<div class="imgBox">
+													<img src="../../../images/solAI/temp_event_banner01.png" alt="" />
+												</div>
+												<div class="tit fontS multiLineEllipsis">뮤지컬 옴니버스에 고객님을 초대합니다 뮤지컬 옴니버스에 고객님을 초대합니다  뮤지컬 옴니버스에 고객님을 초대합니다</div>
+												<p class="date">2021.12.15 ~ 2021.12.25</p> 
+											</a>
+										</li>
+									</ul>
+		
+									<!-- 기준월에 이벤트가 없는 경우 -->
+									<div class="titleBox">
+										<i class="iconTySol8"></i>
+										<div class="fontSS mt12">이달의 이벤트가 없습니다.</div>
+									</div>
+								</div>
+								<div class="boxTyShadow">
+									<h2 class="titM">이달의 뉴스</h2>
+									<ul class="newsList">
+										<li> 
+											<a href="javascript:;">
+												<div class="imgBox">
+												</div>
+												<div class="txt">
+													<div class="tit multiLineEllipsis">제목 최대 2줄까지 노출 제목 최대 2줄까지 노출제목 최대 2줄까지 노출 제목 최대 2줄까지 노출</div>
+													<p class="date">2021.11.01</p> 
+												</div>
+											</a>
+										</li>
+										<li> 
+											<a href="javascript:;">
+												<div class="imgBox">
+													<img src="../../../images/solAI/temp_news_img01.png" alt="" />
+												</div>
+												<div class="txt">
+													<div class="tit multiLineEllipsis">제목 최대 2줄까지 노출 제목 최대 2줄까지 노출 제목 최대 2줄까지 노출</div>
+													<p class="date">2021.11.01</p> 
+												</div>
+											</a>
+										</li>
+									</ul>
+		
+									<!-- 기준월에 뉴스가 없는 경우 -->
+									<div class="titleBox">
+										<i class="iconTySol8"></i>
+										<div class="fontSS mt12">이달의 뉴스가 없습니다.</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="btnArea">
+							<!-- 구독전 -->
+							<button type="button" class="btnType2 purple02">구독하기</button>
+							<!-- 구독후 -->
+							<!-- <button type="button" class="btnType btnBlack">취소하기</button> -->
+						</div>
+					</div>
+				</div>
+			</div>			
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- 계좌선택 레이어 팝업 -->
+<div class="layerPopBottomWrap hasDim type4" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit brdBNone">조회월 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type2">
+				<ul>
+					<li><button class="txtBlack1" onclick="">2021년 10월</button></li>
+					<li><button class="txtBlack1">2021년 9월</button></li>
+					<li><button class="txtBlack1">2021년 8월</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- // 계좌선택 레이어 팝업 -->
+
+<!-- 2022.01.10 전체수정(디자인변경) -->
+<!-- 2022.01.25 MonthlyReport통합 -->
+<script type="text/javascript">
+	function scrollFix() {
+		$('.contents').scroll(function(){
+			var tab = $('.tabTy02.aiType02').offset().top;
+			var window = $(this).scrollTop();
+			if(tab <= window) {
+				$('.tabTy02.aiType02').addClass('fixed');
+			} else {
+				$('.tabTy02.aiType02').removeClass('fixed');
+			}
+		});
+	};
+
+	function contTop() {
+		$(".tabTy02.aiType02 a").click(function(){
+			$(".contents").scrollTop(0);
+		});
+	};
+
+	function chartSwipe() {
+		var swiper = new Swiper('.assetSizeChart, .fundChart', {
+			observer: true,
+			observeParents: true,
+			pagination: '.swiper-pagination',
+		});
+	};
+
+	// noSwipeTab에 pagination추가된 유형
+	function tabSwipePagination() {
+		if($(".js-tab-swiper-type4").length){
+			console.log('tabSwipe tabSwipePagination 호출')
+			var $menu = $(".anchorWrap");				
+			var $target = $('.js-tab-swiper-type4');
+			var swiper = new Swiper(".js-tab-swiper-type4", {
+				observer: true,
+				observeParents: true,
+				calculateHeight:true,
+				pagination: '.swiper-pagination',
+				onInit: function(swiper){
+					$menu.on("click", "a", function(){
+						var index = $(this).index();
+						swiper.slideTo(index);
+					});
+				},
+				onSlideChangeEnd: function(swiper){
+					$menu.find("a").removeClass("on").removeAttr("title").eq(swiper.activeIndex).addClass("on").attr("title", "현재 선택 됨");
+				}
+			})
+		}
+	};
+
+	$(window).bind('load', function(){
+		scrollFix();
+		contTop();
+		chartSwipe();
+		tabSwipePagination();
+	});
+</script>
+</body>
+</html>

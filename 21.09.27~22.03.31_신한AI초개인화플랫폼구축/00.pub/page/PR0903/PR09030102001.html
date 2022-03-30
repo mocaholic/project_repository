@@ -1,0 +1,209 @@
+
+<!-- 
+/********************************************************************
+* @경로			:	SOL AI > 포트가상투자 > 포트목록
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김연수	  2021-11-22       최초작성
+* 2		김연수	  2021-12-01       UI설계변경
+* 3		윤지혜	  2022-03-23       전체메뉴 추가
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">포트 가상 투자</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+				<div class="solAi portSimul">
+					<div class="boxTyGray notice">
+						<ul class="dotList">
+							<li>가상투자를 통한 수익률추이를 확인할 수 있습니다.<br>(포트 등록일 기준 최근 3년 이내)</li>
+							<li>등록일 기준 다음날부터 수익률 추이 시뮬레이션이 가능합니다.</li>
+						</ul>
+						<p class="mt5"><a href="#" class="btnType2 btnSmall lineBlack"><span>포트설계하기</span></a></p>				
+					</div>		
+					
+					<!-- 21.12.01 포트목록UI변경 --> 
+					<div class="innerBox lineN">
+						<div class="formAreaBox type3">
+							<div class="inputBox calRange calendar currnet mt0"> <!-- .calRange .calendar// -->
+								<ul class="duration">
+									<li><a href="javascript:void(0)" class="">1개월</a></li>
+									<li><a href="javascript:void(0)">3개월</a></li>
+									<li><a href="javascript:void(0)">6개월</a></li>
+									<li><a href="#tabView2" class="on" title="현재선택됨">기간선택</a></li>
+								</ul>
+								<dl class="dateInput" id="tabView2" style="display: block;">
+									<dd>
+										<input type="text" id="" placeholder="시작일" value="2018.09.03" readonly="readonly" autocomplete="off">
+										<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+									</dd>
+									<dd>
+										<input type="text" id="" placeholder="종료일" value="2018.10.03" readonly="readonly" autocomplete="off">
+										<button type="button" class="btn"><span class="iconTy34">달력 열기</span></button>
+									</dd>
+									<dd>
+										<button type="button" class="btnOpen btn"><span class="iconTy29">검색</span></button>
+									</dd>								
+								</dl>
+							</div>
+						</div>
+
+
+						<div class="boxTyLabel">
+							포트<div class="fr">총 <strong class="txtBlue2">10</strong>건</div>
+						</div>
+
+						<div class="aiPortCard">
+							<div class="cardData">
+								<a href="javascript:;" class="cardName">포트별명은열다섯자까지저장가능</a>
+								<p>2022.00.00</p>
+								<p class="mt15">투자금액 <strong class="txtBlack1 fontLL">1,200,020</strong> 원</p>
+							</div>
+							<div class="btnGroupBox">
+								<a href="javascript:;" class="btnType"><span>삭제</span></a>
+								<a href="javascript:;" class="btnType"><span>상세보기</span></a>
+							</div>
+						</div>
+						<div class="aiPortCard">
+							<div class="cardData">
+								<a href="javascript:;" class="cardName">초개인화 포트_210910_01</a>
+								<p>2022.00.00</p>
+								<p class="mt15">투자금액 <strong class="txtBlack1 fontLL">500,000,000</strong> 원</p>
+							</div>
+							<div class="btnGroupBox">
+								<a href="javascript:;" class="btnType"><span>삭제</span></a>
+								<a href="javascript:;" class="btnType"><span>상세보기</span></a>
+							</div>
+						</div>
+
+						<!-- 저장된포트정보가 없을 경우 노출 -->
+						<div class="titleBox">
+							<div class="img msgIconS02"></div>
+							<p class="txt noData">포트 가상투자 정보가 없습니다.</p>
+						</div>
+						<!--// 저장된포트정보가 없을 경우 노출 -->
+					</div>
+				</div>
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+
+	<!-- 22.03.23 추가 : 전체메뉴 -->
+	<!-- 플로팅 버튼 -->
+	<div class="allMenuBtn flip">
+		<!-- flip 버전 -->
+		<div class="flipBox effect" style="animation-delay:1s;">
+			<div class="icon front">icon</div>
+			<div class="back">메뉴</div>
+		</div>	
+		<!-- // flip 버전 -->
+	</div>
+		<!-- 전체메뉴 팝업 -->
+	<div class="allMenuList">
+		<div class="header">
+			<h1>프리미어라운지 전체메뉴</h1>
+			<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">전체메뉴 닫기</span></a>
+		</div>
+		<ul>
+			<li>
+				<a href="javascript:void(0);" class="on">MY포트 설계</a>
+				<ul class="depth2">
+					<li><a href="#">포트 신규 설계</a></li>
+					<li><a href="#">포트 가상투자</a></li>
+					<li><a href="#">MY포트 거래이력</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);">MY포트 관리</a>
+				<ul class="depth2">
+					<li><a href="#">MY포트 목록</a></li>
+					<li><a href="#">리밸런싱</a></li>
+					<li><a href="#">포트 묶음 관리</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);">자산 건강도</a>
+				<ul class="depth2">
+					<li><a href="#">전체 자산 진단</a></li>
+					<li><a href="#">포트 진단</a></li>
+					<li><a href="#">개별상품 진단</a></li>
+					<li><a href="#">투자가이던스</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);">프리미어 기프트</a>
+				<ul class="depth2">
+					<li><a href="#">기념일 서비스</a></li>
+					<li><a href="#">신한 플러스</a></li>
+					<li><a href="#">신한 프리미엄 쿠폰</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0);">프리미어 서비스</a>
+				<ul class="depth2">
+					<li><a href="#">자산관리컨시어지뱅킹</a></li>
+					<li><a href="#">세무상담</a></li>
+					<li><a href="#">프리미어 이벤트</a></li>
+					<li><a href="#">Monthly 리포트</a></li>  
+					<li><a href="#">WM 매거진</a></li>
+				</ul>
+			</li>
+		</ul>
+		<!-- 홈 화면 설정 -->
+		<div class="homeTheme">
+			<h2 class="subTit3 mb20 normal">Sol 프리미어 홈 화면 설정</h2>
+			<ul>
+				<li>
+					<input type="radio" name="homeTheme" id="homeTheme1" checked="checked">
+					<label for="homeTheme1">카드형</label>
+				</li>
+				<li>
+					<input type="radio" name="homeTheme" id="homeTheme2">
+					<label for="homeTheme2">나열형</label>
+				</li>
+			</ul>
+		</div>
+		<!-- // 홈 화면 설정 -->
+	</div>
+	<!-- // 전체메뉴 -->
+	<!-- 22.03.23 추가 : 전체메뉴 -->
+</div>
+<!-- // wrap -->
+</body>
+</html>

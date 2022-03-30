@@ -1,0 +1,711 @@
+<!-- 
+/***************************************************************************************
+* @경로			:	
+* @설명			:	SOL AI > 자산건강도 > 포트진단
+****************************************************************************************
+* 번호	작업자		작업일			변경내용
+*------------------------------------------------------------------------------------------
+* 1     김연수     2021-11-23      최초 작성
+* 2     김연수     2021-11-25      유형추가
+* 3     김연수     2021-12-16      title수정
+* 4     김연수     2022-01-20      그래프영역범례추가
+* 5     김연수     2022-01-21      iconTySol8삭제
+***************************************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">자산 건강도</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full pb0">
+				<div class="solAi assetHealth">
+					<!-- 상단 tab -->
+					<div class="tabTy02 aiType01 js-tab-swiper swiper-container-horizontal">
+						<div class="swiper-wrapper">
+							<!-- 활성화시 class="on" -->
+							<a href="javascript:;" class="swiper-slide"><span>전체자산진단</span></a>
+							<a href="javascript:;" class="swiper-slide on"><span>포트진단</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>개별상품진단</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>투자가이던스</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>투자가이던스</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>투자가이던스</span></a>
+						</div>
+					</div>
+					<!-- // 상단 tab -->
+					<div class="innerBox lineN bgWhite3">
+						<!-- 포트진단이 있을때 -->
+						<h2 class="subTit">포트계좌현황</h2>
+						<div class="boxTyShadow">
+							<div class="titleBox">
+								<h3 class="subTit">현황 그래프</h3>
+								<div class="dateArea">
+									<span>
+										기준일자
+										<strong>2021-10</strong>
+									</span>
+									<a href="javascript:void(0);" class="btn">
+										<span class="iconTy33">달력</span>
+									</a>
+								</div>
+							</div>
+							<div class="assetChkUp">
+								<div class="graphArea mt24" style="width:100%; height:210px; text-align:center; background:#f7f7f7; line-height:12.14;">
+									그래프 영역
+								</div>
+							</div>
+						</div>
+						<!-- //포트진단이 있을때 -->
+
+						<!-- 포트진단이 없을때 -->
+						<div class="diagNone">
+							<!-- 22.01.21 iconTySol8삭제 -->  
+							<div class="fontSS">현재 보유하신 포트가 없습니다.<br>포트 구성 및 상품 등록이 필요합니다.</div>
+							<div class="boxTyShadow">
+								<p class="fontZL">AI 포트를 구성해 보세요.</p>
+								<div class="txtBlack5">어렵지 않아요.<br>5분이면 가장 효율적인<br>포트를 구성하실 수<br>있습니다.</div>
+								<a href="javascript:;" class="btnType2 purple01 arrow"><span class="bold">포트 신규등록</span></a>
+							</div>
+						</div>
+						<!-- //포트진단이 없을때 -->
+						
+					</div>
+
+					<div class="innerBox type02 lineN">
+
+						<!-- 21.12.16 title수정 -->  
+						<div class="listTitleBox pt20 mb15">
+							<div class="left">
+								<h2 class="subTit mg0">보유포트 현황 <span class="num">총 <strong>3</strong>개</span></h2>
+							</div>
+							<div class="right">
+								<a href="javascript:;" class="btnType3 fontS txtBlack1">포트 리밸런싱</a>
+							</div>
+						</div>
+						<!-- 포트진단이 있을때 -->
+						<ul class="portStatusList">
+							<li>
+								<div class="topCard">
+									<p class="tit">
+										<i class="iconTyLabelAi6">AI</i>
+										<span class="fontNL">나만의 포트1</span>
+									</p>
+									<ul class="listTypeTable mt25">
+										<li class="row">
+											<div class="leftCol">
+												<span class="txtBlack5">상품 <strong class="txtBlack1">2개</strong></span>
+											</div>
+											<div class="rightCol">
+												<span class="txtBlack5">기간수익률 <strong class="txtRed1"> +12.00%</strong></span>
+											</div>
+										</li>
+										<li class="row">
+											<div class="leftCol"><span class="tit">평가금액</span></div>
+											<div class="rightCol"><p class="fontSL txt"><strong class="shinhan">57,000,000</strong>원</p></div>
+										</li>
+									</ul>
+									<div class="boxTyRound round6 mt25">
+										<div class="barChart">
+											<strong class="fontSSS">수익성</strong>
+											<div class="colorWrap">
+												<span class="on">매우낮음</span>
+												<span class="on">낮음</span>
+												<span class="on">보통</span>
+												<span class="on">높음</span>
+												<span class="on">매우높음</span>
+											</div>
+										</div>
+										<div class="barChart">
+											<strong class="fontSSS">위험</strong>
+											<div class="colorWrap redType">
+												<span class="on">매우낮음</span>
+												<span class="on">낮음</span>
+												<span>보통</span>
+												<span>높음</span>
+												<span>매우높음</span>
+											</div>
+										</div>
+									</div>
+									<div class="ar mt15">
+										<a href="javascript:;" class="btnType3 txtBlack1">성과분석</a>
+									</div>
+								</div>
+								<div class="contAccordion">
+									<div class="AccorTitle">
+										<a href="javascript:;">
+											<h3 class="tit">포트진단</h3>
+											<div class="arrow">
+												<span class="iconTy09">세부내역 열림</span>
+												<span class="iconTy10">세부내역 닫힘</span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										<div class="boxTyList">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 수익성</h2>
+												<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>매우좋음</strong>
+												</div>
+												<p class="txt">
+													나의 수익률
+													<span class="txtBlack1"><strong>15.25</strong>%</span>
+												</p>
+											</div>
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 안정성</h2>
+												<div class="halfCircle normal"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>보통</strong>
+												</div>
+												<p class="txt">
+													위험
+													<span class="txtBlack1"><strong>17.00</strong>%</span>
+												</p>
+											</div>
+										</div>
+										<div class="boxTyList colType mt10">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 효율성</h2>
+												<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>매우좋음</strong>
+												</div>
+												<div class="txt al">
+													<strong class="fontNL txtBlack4">진단결과</strong>
+													<ul class="dotList dot5 mt10">
+														<li>위험도 대비 수익률이 낮습니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="boxTyList colType mt10">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 자산구성</h2>
+
+												<!-- 22.01.20 그래프영역범례추가 -->
+												<div class="graphArea assetPort">
+													<div class="graph" style="width:100px; height:100px; text-align:center; background:#f7f7f7; line-height:7;">
+														그래프 영역
+													</div>
+													<ul class="legendList">
+														<li>
+															<span class="legend bggraph01"></span>
+															<span class="txtBlack5">국내주식 55.83%</span>
+														</li>
+														<li>
+															<span class="legend bggraph03"></span>
+															<span class="txtBlack5">해외선진 34.83%</span>
+														</li>
+														<li>
+															<span class="legend bggraph04"></span>
+															<span class="txtBlack5">해외이머징 10.34%</span>
+														</li>
+													</ul>
+												</div>
+												<div class="txt al">
+													<strong class="fontNL txtBlack4">진단결과</strong>
+													<ul class="dotList dot5 mt10">
+														<li>총 <strong>3</strong>개의 자산에 분산하여 투자하고 있습니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="contAccordion">
+									<div class="AccorTitle">
+										<a href="javascript:;">
+											<h3 class="tit">포트 구성상품</h3>
+											<div class="arrow">
+												<span class="iconTy09">세부내역 열림</span>
+												<span class="iconTy10">세부내역 닫힘</span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										<div class="listTypeTable productType boxType">
+											<ul class="mt10">
+												<li class="row">
+													<div class="boxTyRound gray round6 mb10">
+														<p>나만의 포트 1</p>
+													</div>
+													<div class="txtPeriod">
+														<i class="iconTyLabel02">국내주식</i>
+														<i class="iconTy109">다소높은위험</i>
+													</div>
+													<p class="tit bold">KODEX 선진국MSCI World</p>
+													<p class="accountNum mt8">110-480-12A4**</p>
+													<ul class="listTypeTable mt25">
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">평가금액</p></div>
+															<div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">금리/수익률</p></div>
+															<div class="rightCol bold"><p class="txtRed1"><span class="shinhan">+50,000</span>원</p></div>
+														</li>
+													</ul>
+												</li>
+												<li class="row">
+													<div class="boxTyRound gray round6 mb10">
+														<p>나만의 포트 1</p>
+													</div>
+													<div class="txtPeriod">
+														<i class="iconTyLabel02">국내주식</i>
+														<i class="iconTy109">다소높은위험</i>
+													</div>
+													<p class="tit bold">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</p>
+													<p class="accountNum mt8">110-480-12A4**</p>
+													<ul class="listTypeTable mt25">
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">평가금액</p></div>
+															<div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">금리/수익률</p></div>
+															<div class="rightCol bold"><p class="txtRed1"><span class="shinhan">+50,000</span>원</p></div>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<!-- 21.11.25 DIY포트일경우 diyTy클래스추가 -->  
+							<li class="diyTy">
+								<div class="topCard">
+									<p class="tit">
+										<i class="iconTyLabelAi7">DIY</i>
+										<span class="fontNL">나만의 포트 2</span>
+									</p>
+									<ul class="listTypeTable mt25">
+										<li class="row">
+											<div class="leftCol">
+												<span class="txtBlack5">상품 <strong class="txtBlack1">2개</strong></span>
+											</div>
+											<div class="rightCol">
+												<span class="txtBlack5">기간수익률 <strong class="txtRed1"> +12.00%</strong></span>
+											</div>
+										</li>
+										<li class="row">
+											<div class="leftCol"><span class="tit">평가금액</span></div>
+											<div class="rightCol"><p class="fontSL txt"><strong class="shinhan">57,000,000</strong>원</p></div>
+										</li>
+									</ul>
+									<div class="boxTyRound round6 mt25">
+										<div class="barChart">
+											<strong class="fontSSS">수익성</strong>
+											<div class="colorWrap">
+												<span class="on">매우낮음</span>
+												<span class="on">낮음</span>
+												<span>보통</span>
+												<span>높음</span>
+												<span>매우높음</span>
+											</div>
+										</div>
+										<div class="barChart">
+											<strong class="fontSSS">위험</strong>
+											<div class="colorWrap redType">
+												<span class="on">매우낮음</span>
+												<span class="on">낮음</span>
+												<span class="on">보통</span>
+												<span>높음</span>
+												<span>매우높음</span>
+											</div>
+										</div>
+									</div>
+									<div class="ar mt15">
+										<a href="javascript:;" class="btnType3 txtBlack1">성과분석</a>
+									</div>
+								</div>
+								<div class="contAccordion">
+									<div class="AccorTitle">
+										<a href="javascript:;">
+											<h3 class="tit">포트진단</h3>
+											<div class="arrow">
+												<span class="iconTy09">세부내역 열림</span>
+												<span class="iconTy10">세부내역 닫힘</span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										<div class="boxTyList">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 수익성</h2>
+												<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>매우좋음</strong>
+												</div>
+												<p class="txt">
+													나의 수익률
+													<span class="txtBlack1"><strong>15.25</strong>%</span>
+												</p>
+											</div>
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 안정성</h2>
+												<div class="halfCircle normal"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>보통</strong>
+												</div>
+												<p class="txt">
+													위험
+													<span class="txtBlack1"><strong>17.00</strong>%</span>
+												</p>
+											</div>
+										</div>
+										<div class="boxTyList colType mt10">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 효율성</h2>
+												<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>매우좋음</strong>
+												</div>
+												<div class="txt al">
+													<strong class="fontNL txtBlack4">진단결과</strong>
+													<ul class="dotList dot5 mt10">
+														<li>위험도 대비 수익률이 낮습니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="boxTyList colType mt10">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 자산구성</h2>
+
+												<!-- 22.01.20 그래프영역범례추가 -->
+												<div class="graphArea assetPort">
+													<div class="graph" style="width:100px; height:100px; text-align:center; background:#f7f7f7; line-height:7;">
+														그래프 영역
+													</div>
+													<ul class="legendList">
+														<li>
+															<span class="legend bggraph01"></span>
+															<span class="txtBlack5">국내주식 55.83%</span>
+														</li>
+														<li>
+															<span class="legend bggraph03"></span>
+															<span class="txtBlack5">해외선진 34.83%</span>
+														</li>
+														<li>
+															<span class="legend bggraph04"></span>
+															<span class="txtBlack5">해외이머징 10.34%</span>
+														</li>
+													</ul>
+												</div>
+												<div class="txt al">
+													<strong class="fontNL txtBlack4">진단결과</strong>
+													<ul class="dotList dot5 mt10">
+														<li>총 <strong>3</strong>개의 자산에 분산하여 투자하고 있습니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="contAccordion">
+									<div class="AccorTitle">
+										<a href="javascript:;">
+											<h3 class="tit">포트 구성상품</h3>
+											<div class="arrow">
+												<span class="iconTy09">세부내역 열림</span>
+												<span class="iconTy10">세부내역 닫힘</span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										<div class="listTypeTable productType boxType">
+											<ul class="mt10">
+												<li class="row">
+													<div class="boxTyRound gray round6 mb10">
+														<p>나만의 포트 2</p>
+													</div>
+													<div class="txtPeriod">
+														<i class="iconTyLabel02">국내주식</i>
+														<i class="iconTy109">다소높은위험</i>
+													</div>
+													<p class="tit bold">KODEX 선진국MSCI World</p>
+													<p class="accountNum mt8">110-480-12A4**</p>
+													<ul class="listTypeTable mt25">
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">평가금액</p></div>
+															<div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">금리/수익률</p></div>
+															<div class="rightCol bold"><p class="txtRed1"><span class="shinhan">+50,000</span>원</p></div>
+														</li>
+													</ul>
+												</li>
+												<li class="row">
+													<div class="boxTyRound gray round6 mb10">
+														<p>나만의 포트 2</p>
+													</div>
+													<div class="txtPeriod">
+														<i class="iconTyLabel02">국내주식</i>
+														<i class="iconTy109">다소높은위험</i>
+													</div>
+													<p class="tit bold">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</p>
+													<p class="accountNum mt8">110-480-12A4**</p>
+													<ul class="listTypeTable mt25">
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">평가금액</p></div>
+															<div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">금리/수익률</p></div>
+															<div class="rightCol bold"><p class="txtRed1"><span class="shinhan">+50,000</span>원</p></div>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="topCard">
+									<p class="tit">
+										<i class="iconTyLabelAi6">AI</i>
+										<span class="fontNL">나만의 포트 3</span>
+									</p>
+									<ul class="listTypeTable mt25">
+										<li class="row">
+											<div class="leftCol">
+												<span class="txtBlack5">상품 <strong class="txtBlack1">2개</strong></span>
+											</div>
+											<div class="rightCol">
+												<span class="txtBlack5">기간수익률 <strong class="txtRed1"> +12.00%</strong></span>
+											</div>
+										</li>
+										<li class="row">
+											<div class="leftCol"><span class="tit">평가금액</span></div>
+											<div class="rightCol"><p class="fontSL txt"><strong class="shinhan">57,000,000</strong>원</p></div>
+										</li>
+									</ul>
+									<div class="boxTyRound round6 mt25">
+										<div class="barChart">
+											<strong class="fontSSS">수익성</strong>
+											<div class="colorWrap">
+												<span class="on">매우낮음</span>
+												<span class="on">낮음</span>
+												<span>보통</span>
+												<span>높음</span>
+												<span>매우높음</span>
+											</div>
+										</div>
+										<div class="barChart">
+											<strong class="fontSSS">위험</strong>
+											<div class="colorWrap redType">
+												<span class="on">매우낮음</span>
+												<span class="on">낮음</span>
+												<span class="on">보통</span>
+												<span class="on">높음</span>
+												<span>매우높음</span>
+											</div>
+										</div>
+									</div>
+									<div class="ar mt15">
+										<a href="javascript:;" class="btnType3 txtBlack1">성과분석</a>
+									</div>
+								</div>
+								<div class="contAccordion">
+									<div class="AccorTitle">
+										<a href="javascript:;">
+											<h3 class="tit">포트진단</h3>
+											<div class="arrow">
+												<span class="iconTy09">세부내역 열림</span>
+												<span class="iconTy10">세부내역 닫힘</span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										<div class="boxTyList">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 수익성</h2>
+												<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>매우좋음</strong>
+												</div>
+												<p class="txt">
+													나의 수익률
+													<span class="txtBlack1"><strong>15.25</strong>%</span>
+												</p>
+											</div>
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 안정성</h2>
+												<div class="halfCircle normal"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>보통</strong>
+												</div>
+												<p class="txt">
+													위험
+													<span class="txtBlack1"><strong>17.00</strong>%</span>
+												</p>
+											</div>
+										</div>
+										<div class="boxTyList colType mt10">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 효율성</h2>
+												<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+													<strong>매우좋음</strong>
+												</div>
+												<div class="txt al">
+													<strong class="fontNL txtBlack4">진단결과</strong>
+													<ul class="dotList dot5 mt10">
+														<li>위험도 대비 수익률이 낮습니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="boxTyList colType mt10">
+											<div class="boxTyRound ac">
+												<h2 class="subTit2 mt4">포트 자산구성</h2>
+
+												<!-- 22.01.20 그래프영역범례추가 -->
+												<div class="graphArea assetPort">
+													<div class="graph" style="width:100px; height:100px; text-align:center; background:#f7f7f7; line-height:7;">
+														그래프 영역
+													</div>
+													<ul class="legendList">
+														<li>
+															<span class="legend bggraph01"></span>
+															<span class="txtBlack5">국내주식 55.83%</span>
+														</li>
+														<li>
+															<span class="legend bggraph03"></span>
+															<span class="txtBlack5">해외선진 34.83%</span>
+														</li>
+														<li>
+															<span class="legend bggraph04"></span>
+															<span class="txtBlack5">해외이머징 10.34%</span>
+														</li>
+													</ul>
+												</div>
+												<div class="txt al">
+													<strong class="fontNL txtBlack4">진단결과</strong>
+													<ul class="dotList dot5 mt10">
+														<li>총 <strong>3</strong>개의 자산에 분산하여 투자하고 있습니다.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="contAccordion">
+									<div class="AccorTitle">
+										<a href="javascript:;">
+											<h3 class="tit">포트 구성상품</h3>
+											<div class="arrow">
+												<span class="iconTy09">세부내역 열림</span>
+												<span class="iconTy10">세부내역 닫힘</span>
+											</div>
+										</a>
+									</div>
+									<div class="AccorCont">
+										<div class="listTypeTable productType boxType">
+											<ul class="mt10">
+												<li class="row">
+													<div class="boxTyRound gray round6 mb10">
+														<p>나만의 포트 3</p>
+													</div>
+													<div class="txtPeriod">
+														<i class="iconTyLabel02">국내주식</i>
+														<i class="iconTy109">다소높은위험</i>
+													</div>
+													<p class="tit bold">KODEX 선진국MSCI World</p>
+													<p class="accountNum mt8">110-480-12A4**</p>
+													<ul class="listTypeTable mt25">
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">평가금액</p></div>
+															<div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">금리/수익률</p></div>
+															<div class="rightCol bold"><p class="txtRed1"><span class="shinhan">+50,000</span>원</p></div>
+														</li>
+													</ul>
+												</li>
+												<li class="row">
+													<div class="boxTyRound gray round6 mb10">
+														<p>나만의 포트 3</p>
+													</div>
+													<div class="txtPeriod">
+														<i class="iconTyLabel02">국내주식</i>
+														<i class="iconTy109">다소높은위험</i>
+													</div>
+													<p class="tit bold">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</p>
+													<p class="accountNum mt8">110-480-12A4**</p>
+													<ul class="listTypeTable mt25">
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">평가금액</p></div>
+															<div class="rightCol bold"><p class="txt"><span class="shinhan">550,000</span>원</p></div>
+														</li>
+														<li class="row">
+															<div class="leftCol"><p class="tit txtBlack5">금리/수익률</p></div>
+															<div class="rightCol bold"><p class="txtRed1"><span class="shinhan">+50,000</span>원</p></div>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- 21.11.25 신탁신규대기 케이스추가 -->  
+							<li>
+								<div class="topCard">
+									<p class="tit">
+										<i class="iconTyLabelAi6">AI</i>
+										<span class="fontNL">나만의 포트 4</span>
+									</p>
+									<div class="boxTyRound round6 mt25">
+										<p class="subTit5">신탁신규 대기</p>
+										<div class="fontSS txtBlack5">신탁신규 대기 안내 문구(약2줄)<br>신탁신규 대기 안내 문구(약2줄)</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<!-- //포트진단이 있을때 -->
+					</div>
+
+					
+				</div>
+			</div>			
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

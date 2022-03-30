@@ -1,0 +1,887 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	SOL AI design guide
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		윤지혜
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>SOL AI</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css"> 
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script> <!-- solAI ui script -->
+	<style type="text/css">
+		/* * {box-sizing:border-box;} */
+		body {-moz-user-select:auto; -ms-user-select:auto; -khtml-user-select:auto; -webkit-user-select:auto; -webkit-touch-callout:default;}
+		.contentsWrap {width:100vw; height:calc(100% - 50px); overflow-y:auto;}
+		.guideCont {padding:0 20px; -webkit-overflow-scrolling: touch;}
+		.guideCont h2.guideTl {font-size:14px; display:block; padding:10px; background:#3789dc; color:#fff; margin:70px 0 0;}
+		.guideCont h2.guideTl:first-child {margin-top:10px;}
+		.guideCont h2.guideTl:first-of-type {margin-top:0;}
+		.guideCont > div {position: relative; border:solid 2px #3789dc; padding:20px; overflow:hidden;}
+		hr {margin:20px 0; border:dashed 1px #3789dc; width:calc(100% + 40px); margin-left:-20px;}
+		.btnGroupBox + .btnGroupBox {margin-top: 10px;}
+		.ratio {--aspect-ratio:calc(100% / 328 * 189);}
+	</style>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="">
+        <!-- container -->
+        <section id="container">
+            <header id="headerWrap">
+                <div id="header">
+                    <h1 class="tit">SOL AI 스타일 가이드</h1>
+                </div>
+            </header>
+            
+            <!-- contentsWrap -->
+            <div id="contentsWrap" style="padding:20px 0;">
+                <!-- contents -->
+                <div class="contents guideCont solAi">
+    
+                    <!-- ========== 타이틀 ========== -->
+                    <h2 class="guideTl">Title</h2> 
+                    <div>
+                        <div class="titZZ">.titZZ 25px</div>
+                        <div class="titZ">.titZ 22px</div>
+                        <h2 class="titL">.titL 20px</h2>
+                        <h2 class="titML">.titML 19px</h2>
+                        <h3 class="titM">.titM 16px</h3>
+                    </div>
+    
+                    <!-- ========== font ========== -->
+                    <h2 class="guideTl">font</h2> 
+                    <div>
+                        <div class="fontSSSS">.fontSSSS 11px</div>
+                        <h2 class="fontLL">.fontLL 20px</h2>
+                    </div>
+    
+                    <!-- ========== color ========== -->
+                    <h2 class="guideTl">Color</h2>
+                    <div>					
+                        <p class="mb10 bold">text</p>
+                        <p class="txtBlack7">■ txtBlack7 : #888</p>
+                        <p class="txtBlack8">■ txtBlack8 : #aaa</p>
+                        <p class="txtBlue10">■ txtBlue10 : #4399ff</p>
+                        <p class="txtPurple3">■ txtPurple3 : #5d0782</p>
+                        <p class="txtPurple4">■ txtPurple4 : #6d5ee7</p>
+                        <p class="txtPurple5">■ txtPurple5 : #7650c8</p>
+                        <p class="txtPurple6">■ txtPurple6 : #4c3891</p>
+    
+                        <hr/>
+    
+                        <p class="mt20 mb10 bold">bg</p>					
+                        <p class="bgWhite3"><span style="color:#333;"> bgWhite3 : #f7f7f7</span></p>					
+                        <p class="bgWhite4"><span style="color:#333;"> bgWhite4 : #f8f9fb</span></p>
+                        <p class="bgWhite5"><span style="color:#333;"> bgWhite5 : #fafafa</span></p>
+                        <p class="bgPurple1"><span style="color:#fff;"> bgPurple1 : #4c4882</span></p>
+                        <p class="bgGradient1"><span style="color:#333;"> bgGradient1 : linear-gradient(to bottom, #fbf9f7, #f5f1eb)</span></p>
+                        
+                    </div>
+    
+                    <!-- ========== highlighter ========== -->
+                    <h2 class="guideTl">highlighter</h2>
+                    <div>					
+                        <p class="mb10 bold">텍스트 <strong class="highlighter">강조 텍스트 : .highlighter</strong> text</p>
+                        <p class="mb10 bold">텍스트 <strong class="highlighter purple2">강조 텍스트 : .highlighter.purple2</strong> text</p>
+                    </div>
+    
+                    <!-- ========== tag / badge ========== -->
+                    <h2 class="guideTl">tag / badge</h2>
+                    <div>
+                        <i class="iconTyRdBox1">실패거래</i>
+                        <i class="iconTyRdBox2">종료</i>
+                        <i class="iconTyRdLine1">거래 진행중</i>
+                        <i class="iconTyRdLine2">거래 완료</i>
+    
+                        <hr/>
+                        
+                        <p class="mb10 bold">* LabelAi</p>
+                        <i class="iconTyLabelAi1">예적금</i>
+                        <i class="iconTyLabelAi2">펀드</i>
+                        <i class="iconTyLabelAi3">국내주식</i>
+                        <i class="iconTyLabelAi4">리밸런싱</i>
+                        <i class="iconTyLabelAi5">ELT</i>
+                        <i class="iconTyLabelAi7">DIY</i>
+                        <i class="iconTyLabelAi6">AI</i>
+                        <i class="iconTyLabelAi8">ETF</i>
+                        <i class="iconTyLabelAi9">ELF</i>
+    
+                        <hr/>
+    
+                        <i class="iconTyLabelZone1">Red Zone</i>
+                        <i class="iconTyLabelZone2">Blue Zone</i>
+                        <i class="iconTyLabelZone3">Gray Zone</i>
+                    </div>
+                
+                    <!-- ========== icon ========== -->
+                    <h2 class="guideTl">icon</h2>
+                    <div>
+                        <i class="iconTySol1">수정</i> 
+                        <i class="iconTySol2">!</i> 
+                        <i class="iconTySol3">?</i> 
+                        <i class="iconTySol4">새로고침</i> 
+                        <i class="iconTySol5">경고</i> 
+                        <i class="iconTySol6"></i>
+    
+                        <i class="iconTySol8"></i>
+                        <i class="iconTySol9"></i>
+                        <i class="iconTySol10"></i>
+                        <i class="iconTySol11"></i>
+                        <i class="iconTySol12">></i>
+                        <i class="iconTySol13">새로고침</i>
+                    </div>
+    
+                    <!-- ========== button ========== -->
+                    <h2 class="guideTl">button</h2>
+                    <div>
+                        <p class="mb10 bold">* .btnGroupBox.type6</p>
+                        <div class="btnGroupBox type6">
+                            <a href="#" class="btnType">버튼 - height:48</a>
+                        </div>
+                        <div class="btnGroupBox type6">
+                            <a href="#" class="btnType2">버튼</a>
+                        </div>
+    
+                        <hr/>
+    
+                        <p class="mb10 bold">* .btnMoreArrow</p>
+                        <a href="javascript:void(0)" class="btnMoreArrow"><span>더보기</span></a>
+                        <p class="mb10 bold">* .btnMoreArrow.noline</p>
+                        <a href="javascript:void(0)" class="btnMoreArrow noline"><span>더보기</span></a>
+    
+                        <hr/>
+    
+                        <p class="mb10 bold">* .btnType2.purple01</p>
+                        <a href="javascript:;" class="btnType2 purple01 arrow"><span class="bold">포트 신규등록</span></a>
+                    </div>
+    
+                    <!-- ========== box type ========== -->
+                    <h2 class="guideTl">Box Type</h2>
+                    <div style="background:#e0e7ff">
+                        <p class="mb10 bold">* .boxTyShadow</p>
+                        <div class="boxTyShadow" style="height:100px;">
+                            Shadow Box 기본
+                        </div>
+                        
+                        <div class="boxTyShadow type02" style="margin-top:20px; height:100px;">
+                            .type02
+                        </div>
+    
+                        <hr>
+    
+                        <p class="mb10 bold">* .boxTyRound</p>
+                        <div class="boxTyRound" style="height:100px;">
+                            기본 <br>
+                        </div>
+    
+                        <div class="boxTyRound gray" style="height:100px; margin-top:20px;">
+                            .gray <br>
+                        </div>
+    
+                    </div>
+    
+                    <!-- ========== 말풍선 ========== -->
+                    <h2 class="guideTl">말풍선</h2> 
+                            
+                    <div>
+                        <p class="mb10 bold">* .sBubble</p>
+                        <div class="sBubble">
+                            말풍선 기본(top)
+                        </div>
+                        
+                        <div class="sBubble gray" style="margin-top:20px;">
+                            말풍선 .gray
+                        </div>
+                        
+                        <div class="sBubble right" style="margin-top:20px; height:100px;">
+                            말풍선(right) .right
+                        </div>
+                        
+                        <div class="sBubble line" style="margin-top:20px; height:100px;">
+                            말풍선 line타입(top) .line
+                        </div>
+                    </div>
+                
+                    <!-- ========== list type ========== -->
+                    <h2 class="guideTl">List Type</h2> 	
+                    <div>				
+                        <p class="mb10 bold">* .dotList.dot5</p>
+                        <ul class="dotList dot5">
+                            <li>리스트</li>
+                            <li>리스트</li>
+                        </ul>
+    
+                    </div>
+    
+                    <!-- ========== Tab ========== -->
+                    <h2 class="guideTl">Tab</h2>
+                    <div>
+                        <p class="mb10 bold">* tabTy01.aiType01</p>
+                        <div class="tabTy01 aiType01">
+                            <!-- 활성화시 class="on" -->
+                            <a href="javascript:;" class="on"><span>프리미어 이벤트</span></a>
+                            <a href="javascript:;" class=""><span>참여한 이벤트</span></a>
+                        </div>
+    
+                        <hr>
+    
+                        <p class="mb10 bold">* tabTy02.aiType01</p>
+                        <div class="tabTy02 aiType01">
+                            <!-- 활성화시 class="on" -->
+                            <a href="#tabView1" class="fontN on"><span>첫번째 탭</span></a>
+                            <a href="#tabView2" class="fontN"><span>두번째 탭</span></a>
+                            <a href="#tabView3" class="fontN"><span>세번째 탭</span></a>
+                        </div>
+                        <div class="conInner">
+                            <div class="tabViewWrap mt0">
+                                <div class="tabView on"  id="tabView1">첫번째 탭 내용</div>
+                                <div class="tabView"  id="tabView2">두번째 탭 내용</div>
+                                <div class="tabView"  id="tabView3">세번째 탭 내용</div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <!-- ========== 상품리스트 ========== -->
+                    <h2 class="guideTl">product List</h2>
+                    <div>
+                        <div class="innerBox bg lineN" style="margin:-20px;">
+                            <!-- .makingPrd -->
+                            <p class="mb10 bold">* 편집가능 상품리스트 .makingPrd </p>
+                            <div class="makingPrd">
+                                <div class="listTypeTable productType boxType">
+                                    <div class="formAreaBox">
+                                        <ul class="">
+                                            <li class="row">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabel02">해외선진</i>
+                                                    <i class="iconTy111">높은위험</i>
+                                                    <i class="iconTy111_1">매우높은위험</i>
+                                                </div>
+                                                <a href="javascript:;" class="tit">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</a><!-- .makingPrd.on일때 a -> p -->
+                                                <ul class="listTypeTable">
+                                                    <li class="row">
+                                                        <div class="leftCol type2">
+                                                            <p class="tit">투자비중</p>
+                                                        </div>
+                                                        <div class="rightCol">
+                                                            <p class="txt bold">
+                                                                <span class="shinhan bold">70.00</span>%
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="row mt0">
+                                                        <div class="inputBox unit disable"> <!-- .makingPrd.on일때 .disable 제거 -->
+                                                            <dl>
+                                                                <dt>신규예정금액</dt>
+                                                                <dd>
+                                                                    <!-- .makingPrd.on일때 readonly 제거 -->
+                                                                    <input type="text" title="신규예정금액" class="ar readonly" value="000,000" readonly="readonly">
+                                                                    <button type="button" class="btnDelete" style="right:14px"><i class="iconTy28">삭제</i></button>
+                                                                    <span class="unit bold">원</span>
+                                                                </dd>
+                                                            </dl>
+                                                            <!-- <div class="error">error 문구 출력</div> -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <hr/>
+                            
+                            <p class="mb10 bold">* 편집모드 활성화 .makingPrd ul > .row.on </p>
+                            <div class="makingPrd">
+                                <div class="listTypeTable productType boxType">
+                                    <div class="formAreaBox">
+                                        <ul class="">
+                                            <li class="row on">
+                                                <div class="txtPeriod">
+                                                    <i class="iconTyLabel02">해외선진</i>
+                                                    <i class="iconTy108">보통위험</i>
+                                                    <i class="iconTy109">다소높은위험</i>
+                                                </div>
+                                                <a href="#" class="tit">미래에셋코스피200인덱스증권자투자신탁1호[주식]종류C-E</a>
+                                                <ul class="listTypeTable">
+                                                    <li class="row">
+                                                        <div class="leftCol type2">
+                                                            <p class="tit">투자비중</p>
+                                                        </div>
+                                                        <div class="rightCol">
+                                                            <p class="txt bold">
+                                                                <span class="shinhan bold">70.00</span>%
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="row mt0">
+                                                        <div class="inputBox unit">
+                                                            <dl>
+                                                                <dt>신규예정금액</dt>
+                                                                <dd>
+                                                                    <input type="text" title="신규예정금액" class="ar" value="000,000">
+                                                                    <button type="button" class="btnDelete" style="right:14px"><i class="iconTy28">삭제</i></button>
+                                                                    <span class="unit bold">원</span>
+                                                                </dd>
+                                                            </dl>
+                                                            <!-- <div class="error">error 문구 출력</div> -->
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <button type="button" class="prdBtnDel">삭제</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // .makingPrd -->
+                        </div>
+    
+                    </div>
+                    
+    
+                    <!-- ========== 상태그래프  ========== -->
+                    <h2 class="guideTl">case별 상태그래프</h2> 	
+                    <div>
+                        <p class="mb10 bold">* .circlePanel </p>
+                        <div class="assetHealth">
+                            <div class="circlePanel vGood">
+                                <p class="txtArea">
+                                    <span class="eval">매우 좋음</span>
+                                    <strong class="score">97점</strong>
+                                </p>
+                            </div>
+                            <div class="circlePanel good">
+                                <p class="txtArea">
+                                    <span class="eval">좋음</span>
+                                    <strong class="score">70점</strong>
+                                </p>
+                            </div>
+                            <div class="circlePanel normal">
+                                <p class="txtArea">
+                                    <span class="eval">보통</span>
+                                    <strong class="score">50점</strong>
+                                </p>
+                            </div>
+                            <div class="circlePanel bad">
+                                <p class="txtArea">
+                                    <span class="eval">나쁨</span>
+                                    <strong class="score">30점</strong>
+                                </p>
+                            </div>
+                            <div class="circlePanel vBad">
+                                <p class="txtArea">
+                                    <span class="eval">매우 나쁨</span>
+                                    <strong class="score">10점</strong>
+                                </p>
+                            </div>
+    
+                            <hr>
+    
+                            <p class="mb10 bold">* .halfCircle </p>
+                            <div class="assetHealth">
+                                <div class="halfCircle vGood">
+                                    <strong>매우 좋음</strong>
+                                </div>
+                                <div class="halfCircle good">							
+                                    <strong>좋음</strong>
+                                </div>
+                                <div class="halfCircle normal">
+                                    <strong>보통</strong>
+                                </div>
+                                <div class="halfCircle bad">
+                                    <strong>나쁨</strong>
+                                </div>
+                                <div class="halfCircle vBad">
+                                    <strong>매우 나쁨</strong>
+                                </div>
+                            </div>
+    
+                            <p class="mt20 mb10 bold">* .halfCircle.type2 </p>
+                            <div class="assetHealth">
+                                <div class="halfCircle vGood type2">
+                                    <strong>매우 좋음</strong>
+                                </div>
+                                <div class="halfCircle good type2">							
+                                    <strong>좋음</strong>
+                                </div>
+                                <div class="halfCircle normal type2">
+                                    <strong>보통</strong>
+                                </div>
+                                <div class="halfCircle bad type2">
+                                    <strong>나쁨</strong>
+                                </div>
+                                <div class="halfCircle vBad type2">
+                                    <strong>매우 나쁨</strong>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <hr>
+    
+                        <p class="mb10 bold">* .barChart</p>
+                        <div class="barChart">
+                            <strong class="fontSSS">default </strong>
+                            <div class="colorWrap">
+                                <span class="on">매우낮음</span>
+                                <span class="on">낮음</span>
+                                <span class="on">보통</span>
+                                <span>높음</span>
+                                <span>매우높음</span>
+                            </div>
+                        </div>
+                        <div class="barChart">
+                            <strong class="fontSSS">redType</strong>
+                            <div class="colorWrap redType">
+                                <span class="on">매우낮음</span>
+                                <span class="on">낮음</span>
+                                <span class="on">보통</span>
+                                <span class="on">높음</span>
+                                <span class="on">매우높음</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- ========== form ========== -->
+                    <h2 class="guideTl">Form</h2> 
+                    <div>
+                        <div class="formAreaBox type3">
+                            <div class="inputBox transTerm mt20">
+                                <p class="tit">적립방식</p>
+                                <dl class="dateInput choicePeriod">
+                                    <dd>
+                                        <span class="choiceMonth">
+                                            <em tabindex="0">12개월</em>
+                                        </span>
+                                        <span class="txt">동안</span>
+                                    </dd>
+                                    <dd>
+                                        <span class="choiceWhen">
+                                            <input type="text" title="언제" value="언제" readonly="readonly" autocomplete="off">
+                                            <button type="button" data-href="#layerPopBottom02" class="btn btnPopOpen"><span class="iconTy40">내역 열림</span></button>
+                                        </span>
+                                        <span class="txtEnd">입금</span>
+                                    </dd>
+                                </dl>
+                                <p class="mt15 txtBlack3">※ 자동이체는 12월 10일부터 출금됩니다.</p>
+                            </div>	
+                        </div>
+                        <hr>
+                        
+                        <div class="formAreaBox mt10">
+                            <div class="dpFlex">
+                                <div class="chargeTopChoice toggleCheck">
+                                    <input type="checkbox" id="taxfree" autocomplete="off">
+                                    <label for="taxfree">비과세종합저축</label>
+                                </div>
+                                <a href="#" class="btnType3">자세히 보기</a>
+                            </div>
+                            <div class="toggleChkCont">
+                                <div class="conBox lineType blue">
+                                    <div class="listTypeTable">
+                                        <ul>
+                                            <li class="row">
+                                                <div class="leftCol">
+                                                    <p class="tit">비과세종합저축<br>가입총액</p>
+                                                </div>
+                                                <div class="rightCol">
+                                                    <p class="txt">20,000,000원</p>
+                                                </div>
+                                            </li>
+                                            <li class="row">
+                                                <div class="leftCol">
+                                                    <p class="tit">비과세종합저축<br>한도잔여</p>
+                                                </div>
+                                                <div class="rightCol">
+                                                    <p class="txt">1,500,000원</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="inputBox currnet mt15">
+                                    <dl>
+                                        <dt>비과세종합저축<br>신청금액</dt>
+                                        <dd>
+                                            <input type="text" title="비과세 신청금액 입력" placeholder="비과세 신청금액 입력" autocomplete="off">
+                                            <button type="button" class="btnDelete">
+                                                <i class="iconTy28">삭제</i>
+                                            </button>
+                                        </dd>										
+                                    </dl>
+                                    <p class="mt10 fontSS txtBlack3">※ 잔여한도 초과 시 신규불가</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <!-- 라디오버튼 타입 1 -->
+                        <div class="formAreaBox mt10">
+                            <div class="inputBox radio currnet">
+                                <dl>
+                                    <dt>라디오버튼 선택<br>항목 노출 1</dt>
+                                    <dd class="toggleRadioM2 col2">						
+                                        <input type="radio" name="profitNotice" id="profitNotice1" autocomplete="off">
+                                        <label for="profitNotice1">예</label>
+                                        <input type="radio" name="profitNotice" id="profitNotice2" autocomplete="off">
+                                        <label for="profitNotice2">아니오</label>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- 라디오버튼 선택 시 노출되는 항목 -->
+                            <div class="toggleRadioCont" style="display:none;">
+                                <div class="formAreaBox">
+                                    <div class="inputBox tel currnet">
+                                        <dl>
+                                            <dt>정기수익률발송일(매월)</dt>
+                                            <dd>
+                                                <input type="number" placeholder="선택하여 입력" readonly="readonly" autocomplete="off"> <!-- 2018-02-02 type 변경 -->
+                                                <button type="button" class="btn"><span class="iconTy40">내역 열림</span></button>
+                                            </dd>
+                                        </dl>			
+                                    </div>
+                                    
+                                    <div class="inputBox">
+                                        <dl>
+                                            <dt>통지 기준수익률(+)</dt>
+                                            <dd>
+                                                <input type="text" placeholder="+ 1~100" style="ime-mode:active;" autocomplete="off">
+                                                <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+                                                <span class="unit">%</span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    
+                                    <div class="inputBox">
+                                        <dl>
+                                            <dt>통지 위험수익률(-)</dt>
+                                            <dd>
+                                                <input type="text" placeholder="+ 1~100" style="ime-mode:active;" autocomplete="off">
+                                                <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+                                                <span class="unit">%</span>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="mt10 fontSS txtBlack3">※ 유의사항</div>
+                                </div>
+                            </div>
+                            <!-- // 라디오버튼 선택 시 노출되는 항목 -->
+                                                    
+                            <!-- 라디오버튼 타입 2 -->
+                            <div class="inputBox radio currnet">
+                                <dl>
+                                    <dt>라디오버튼 선택<br>항목 노출 2</dt>
+                                    <dd class="toggleRadioM2 col2">						
+                                        <input type="radio" name="operatReport2" id="operatReport2-1" autocomplete="off">
+                                        <label for="operatReport2-1">예</label>
+                                        <input type="radio" name="operatReport2" id="operatReport2-2" autocomplete="off">
+                                        <label for="operatReport2-2">아니오</label>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- 라디오버튼 선택 시 노출되는 항목 -->
+                            <div class="toggleRadioCont" style="display:none;">
+                                <div class="formAreaBox">
+                                    <div class="inputBox radio currnet">
+                                        <dl>
+                                            <dt>라디오버튼 선택<br>항목 노출 (tab)</dt>
+                                            <dd class="tabRadioM col2">						
+                                                <input type="radio" name="notiMethod" id="notiMethod1" autocomplete="off">
+                                                <label for="notiMethod1">이메일</label>
+                                                <input type="radio" name="notiMethod" id="notiMethod2" autocomplete="off">
+                                                <label for="notiMethod2">SMS</label>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="tabRCont">
+                                        <div class="inputBox tel currnet">
+                                            <dl>
+                                                <dt>이메일주소</dt>
+                                                <dd class="relativeWrap">
+                                                    <input type="email" title="이메일주소" placeholder="이메일주소" value="yiabb@mail.com" autocomplete="off">
+                                                    <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>								
+                                                    <a href="javascript:void(0)" class="btnType2 btnSmall2 line"><span>변경</span></a>
+                                                </dd>
+                                            </dl>	
+                                        </div>
+                                        <div class="inputBox tel currnet">
+                                            <dl>
+                                                <dt>휴대폰번호</dt>
+                                                <dd class="telDiv pd0 relativeWrap">
+                                                    <input type="tel" title="휴대폰번호 첫번째 자리" value="010" autocomplete="off">- 
+                                                    <input type="tel" title="휴대폰번호 두번째 자리" value="1234" autocomplete="off">- 
+                                                    <input type="tel" title="휴대폰번호 세번째 자리" value="****" autocomplete="off">
+                                                    <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+                                                    <!-- 휴대폰 번호 있을경우 출력 -->	
+                                                    <a href="javascript:void(0)" class="btnType2 btnSmall2 line"><span>변경</span></a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 라디오버튼 선택 시 노출되는 항목 -->
+                            
+                            <!-- 라디오버튼 타입 3 -->
+                            <div class="inputBox radio currnet">
+                                <dl>
+                                    <dt>라디오버튼 선택 시<br>2번만 노출 (tab)</dt>
+                                    <dd class="tabRadioM type2 col2">						
+                                        <input type="radio" name="notiMethod2" id="notiMethod2-1" autocomplete="off">
+                                        <label for="notiMethod2-1">아니오</label>
+                                        <input type="radio" name="notiMethod2" id="notiMethod2-2" autocomplete="off">
+                                        <label for="notiMethod2-2">예</label>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- 1번 비노출 2번 노출 -->
+                            <div class="tabRCont">
+                                <div class="inputBox tel currnet">
+                                    <dl>
+                                        <dt>휴대폰번호</dt>
+                                        <dd class="telDiv pd0 relativeWrap">
+                                            <input type="tel" title="휴대폰번호 첫번째 자리" value="010" autocomplete="off">- 
+                                            <input type="tel" title="휴대폰번호 두번째 자리" value="1234" autocomplete="off">- 
+                                            <input type="tel" title="휴대폰번호 세번째 자리" value="****" autocomplete="off">
+                                            <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+                                            <!-- 휴대폰 번호 있을경우 출력 -->	
+                                            <a href="javascript:void(0)" class="btnType2 btnSmall2 line"><span>변경</span></a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <!-- // 1번 비노출 2번 노출 -->
+                            
+                            <!-- 체크박스 타입 -->
+                            <div class="inputBox radio currnet">
+                                <dl>
+                                    <dt>체크박스 선택항목<br>중복 노출 (tab)</dt>
+                                    <dd class="tabCheckM col2">						
+                                        <input type="checkbox" name="billReceive" id="billReceive1" autocomplete="off">
+                                        <label for="billReceive1">휴대폰</label>
+                                        <input type="checkbox" name="billReceive" id="billReceive2" autocomplete="off">
+                                        <label for="billReceive2">이메일</label>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- 체크박스 선택 케이스에 따른 항목 -->
+                            <div class="tabChkCont">
+                                <div class="inputBox tel currnet">
+                                    <dl>
+                                        <dt>휴대폰번호</dt>
+                                        <dd class="telDiv pd0 relativeWrap">
+                                            <input type="tel" title="휴대폰번호 첫번째 자리" value="010" autocomplete="off">- 
+                                            <input type="tel" title="휴대폰번호 두번째 자리" value="1234" autocomplete="off">- 
+                                            <input type="tel" title="휴대폰번호 세번째 자리" value="****" autocomplete="off">
+                                            <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
+                                            <!-- 휴대폰 번호 있을경우 출력 -->	
+                                            <a href="javascript:void(0)" class="btnType2 btnSmall2 line"><span>변경</span></a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="inputBox currnet">
+                                    <dl>
+                                        <dt>이메일주소</dt>
+                                        <dd class="relativeWrap">
+                                            <input type="email" title="이메일주소" placeholder="이메일주소" value="yiabb@mail.com" autocomplete="off">
+                                            <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>								
+                                            <a href="javascript:void(0)" class="btnType2 btnSmall2 line"><span>변경</span></a>
+                                        </dd>
+                                    </dl>	
+                                    <div class="error">error 문구 출력</div>
+                                </div>
+                            </div>
+                            <!-- // 체크박스 선택 케이스에 따른 항목 -->
+                        </div>
+                        
+                        <hr>
+    
+                    </div>
+    
+                    <!-- ========== Form(.aiTy1) ========== -->
+                    <h2 class="guideTl">Form ( .aiTy1 )</h2>
+                    <div>
+                        <div class="formAreaBox type2 lineTy2 aiTy1">
+                            <div class="inputBox"><!-- 기본은 class="wrong" 미적용, 에러 발생 시 class="wrong"적용 -->
+                                <dl>
+                                    <dt class="txtBlack5 normal">예적금 신규예정금액</dt>
+                                    <dd class="price">
+                                        <input type="text" placeholder="10만원 이상 입력" value="120,000,000원" autocomplete="off" />
+                                        <!-- <button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button> -->
+                                    </dd>
+                                </dl>
+                                <!-- <div class="error">error 문구 출력</div> -->
+                            </div>
+                        </div>
+    
+                        <hr/>
+    
+                        <div class="formAreaBox type3 accordionBox aiTy1">
+                            <div class="inputBox calRange">
+                                <dl class="btnOpen">
+                                    <dt class="txtBlack5 normal">투자기간</dt>
+                                    <dd>
+                                        <input type="text" title="투자기간" placeholder="1~60개월 동안" value="" readonly="readonly">
+                                        <button type="button" class="btn btnArrow btnAccordion on"><span class="iconTy40">내역 열림</span></button>
+                                    </dd>
+                                </dl>
+                                <div class="btnWrapR" style="display: block;">
+                                    <ul class="duration">
+                                        <li><a href="javascript:void(0)">6개월</a></li>
+                                        <li><a href="javascript:void(0)">12개월</a></li>
+                                        <li><a href="javascript:void(0)" class="on" title="현재선택됨">24개월</a></li>
+                                        <li><a href="javascript:void(0)">36개월</a></li>
+                                        <li><a href="javascript:void(0)">48개월</a></li>
+                                        <li><a href="javascript:void(0)">60개월</a></li>
+                                        <li><a href="#layerPopBottom02" class="btnPopOpen">직접선택</a></li>
+                                        <li><a href="javascript:void(0)">만기일지정</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <hr/>
+    
+                        <div class="formAreaBox aiTy1">
+                            <div class="txtBlack5">자유롭게 추가입금을 하시겠어요?</div>
+                            <div class="inputBox calRange currnet">
+                                <div class="rdoAreaTy2 col2">
+                                    <div class="inputSel">
+                                        <input type="radio" name="rdo002" id="rdo002_1" checked="checked" autocomplete="off">
+                                        <label for="rdo002_1">예</label>
+                                    </div>
+                                    <div class="inputSel">
+                                        <input type="radio" name="rdo002" id="rdo002_2" autocomplete="off">
+                                        <label for="rdo002_2">아니오</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <!-- ========== Input Icon(formAiTy) ========== -->
+                    <h2 class="guideTl">Input Icon</h2>
+                    <div>
+                        <p class="mb10 bold">* formAiTy1(원형)</p>
+                        <div>
+                            <input type="radio" id="radio001" name="radio1">
+                            <label for="radio001" class="formAiTy1">radio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="check001" name="check1">
+                            <label for="check001" class="formAiTy1">checkbox</label>
+                        </div>
+    
+                        <hr/>
+    
+                        <p class="mb10 bold">* formAiTy2(네모)</p>
+                        <div>
+                            <input type="radio" id="radio002" name="radio2">
+                            <label for="radio002" class="formAiTy2">radio</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="check002" name="check2">
+                            <label for="check002" class="formAiTy2">checkbox</label>
+                        </div>
+    
+                    </div>
+                
+    
+                    <!-- ========== slider ========== -->
+                    <h2 class="guideTl">slider</h2>
+                    <div>
+                        <p class="mb10 bold">* .sliderBar</p>
+                        <div class="sliderBar">
+                            <span class="bar" style="width:30%;"></span>
+                            <div class="txtArea">
+                                <span class="current">3,000원</span> / <span class="total">10,000원</span>
+                            </div>
+                        </div>
+    
+                        <p class="mt20 mb10 bold">* .sliderBar.type2</p>
+                        <div class="sliderBarWrap">
+                            <div class="txtArea">
+                                <span class="tit">유동성(상)</span>
+                                <span class="current bold">50.00%</span>
+                            </div>
+                            <div class="sliderBar type2">
+                                <span class="bar" style="width:50%;"></span>
+                            </div>
+                        </div>
+    
+                        <hr>
+    
+                        <p class="mt20 mb10 bold">* .portSlider</p>
+                        <div class="portSlider">
+                            <div class="ptSlider" id="ptSlider">
+                                <div id="custom-handle" class="ui-slider-handle" style="left:70%;"></div>
+                            </div>
+                            <div class="txtArea">
+                                <span class="min">낮음</span>
+                                <span class="sBubble" style="left:20%;">제안포트</span>
+                                <span class="max">높음</span>
+                            </div>
+                        </div>
+                        <script>
+                            // 기대수익률/위험도 슬라이더
+                            var handle = $("#custom-handle");
+                            $("#ptSlider").slider({
+                                create: function(){
+                                    // handle.text( $( this ).slider( "value" ) );
+                                },
+                                slide: function( event, ui ) {
+                                    // handle.text( ui.value );
+                                },
+                                value: 70,
+                                range: "min",
+                                orientation: "horizontal"
+                            });
+                        </script>
+                    </div>
+    
+    
+    
+                </div>
+                <!-- // contents -->
+            </div>
+            <!-- // contentsWrap -->
+        </section>
+        <!-- // container -->
+    </div>
+    <!-- // wrap -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
