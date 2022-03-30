@@ -1,0 +1,422 @@
+
+<!-- /********************************************************************
+* @설명			:  
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일		2022-01-05	   와싱 (수정 정보 : 20220105)
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../../../../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../../../../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../../../../../script/include/library/ui.js"></script>
+	<script src="../../../../../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+	<div id="wrap">
+		<section id="container">
+			<!--header-->
+			<header id="headerWrap">
+				<div id="header">
+					<h1 class="tit"><span>%업권명%</span>상세조회</h1>
+					<div class="rSec">
+						<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업닫기</span></a>
+					</div>
+				</div>
+			</header>
+			<!--//header-->
+
+			<!--content-->
+			<div id="contentsWrap" class="myAssets">
+				<!-- contents -->
+				<div class="contents full">
+					<div class="mydataWrap myRequest">
+						<div class="myRequest_body">
+                            <div class="account_group">
+                                <div class="myRequest_head3">
+                                    <h2 class="hide">업권명상세조회</h2>
+                                    <span class="tit_logo"><img src="../../../../../../../images/in08/mydata/icon_brand.png" alt="브랜드CI" /></span>
+                                    <p class="status_txt">KB국민은행</p>
+                                    <span class="accountNm">개인형 IRP 상품명개인형</span>
+                                    <p class="acc_underLine">1035898111111</p>  <!--20211102 선택사용-->
+                                   <!-- <p class="accountNo">기준일자 <span>2021.11.02</span></p> --> <!--20211102 날짜-->
+                                </div>
+                                <div class="account_group_detail">
+                                    <h4 class="exInfo">개인형IRP 계좌 상세정보</h4>
+                                    <ul class="prod_list4">  <!--20211130 수정-자동차부분 참고-->
+                                        <li>
+                                            <span class="ti1">계좌잔액</span><span class="tiCon1"><span>900,000,000</span>원 </span>
+                                        </li>
+                                        <li>
+                                            <span class="ti1">평가금액</span><span class="tiCon1"><span>NNN,NNN</span>원</span>
+                                        </li>
+                                        <li> <!--20211130 css수정-->
+                                            <span class="ti1">개설일 </span>
+                                            <span class="tiCon1">
+                                                <span>YYYY.MM.DD YYYY.MM.DD YYYY.MM.DD YYYY.MM.DD </span> 
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <a href="#layerBottom_extension" class="btnPopOpen">
+                                                <span class="ti1">운용상품 수</span>
+                                                <span class="tiCon1"><span>N<i class="iconTyTooltip05"></i></span></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="titGroup2">
+                                    <span class="brand_asset3">
+                                        <button type="button" class="btn_toggle on"><em>목록닫기</em></button>
+                                    </span>
+                                </div>								
+                            </div>
+                        </div>
+
+                        <div class="myRequest_body mg0 pd0">
+							<div class="conInner">
+								<div class="tabViewWrap">
+                                    <!-- 조회기간날짜 -->
+                                    <div class="flexBox">
+                                        <div class="itemBox1">
+                                            <strong class="tit">조회기간<span class="dateTi">2020.10.22</span><span class="txtBlack5">2022.02.25</span></strong>
+                                        </div>
+                                    </div>
+									<div class="contWrap">
+										<!-- 조회기간내용 -->
+                                        <div class="trans_info_box4"> <!--trans_info_box4 클래스를 사용할때는 가로라인 필요시 hr라인을 삽입해서 사용-->
+                                            <!--요일-->
+                                            <div class="flexBox_all">
+                                                <p class="sbTitle">YYYY.MM.DD <span>요일</span></p>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head fontCo3">HH:MM:SS</div>
+                                                    <div class="flexBox_cont"></div>
+                                                </div>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head">거래구분</div>
+                                                    <div class="flexBox_cont">입금</div>
+                                                </div>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head">거래금액</div>
+                                                    <div class="flexBox_cont">N,NNN,NNN<span>원</span></div>
+                                                </div>
+                                                <hr class="line3"> <!--디자인라인-->
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head fontCo3">HH:MM:SS</div>
+                                                    <div class="flexBox_cont"></div>
+                                                </div>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head">거래구분</div>
+                                                    <div class="flexBox_cont">입금</div>
+                                                </div>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head">거래금액</div>
+                                                    <div class="flexBox_cont">N,NNN,NNN<span>원</span></div>
+                                                </div>
+                                            </div>
+                                            <!--요일-->
+                                            <div class="flexBox_all">
+                                                <p class="sbTitle">YYYY.MM.DD <span>수요일</span></p>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head fontCo3">HH:MM:SS</div>
+                                                    <div class="flexBox_cont"></div>
+                                                </div>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head">거래구분</div>
+                                                    <div class="flexBox_cont">입금</div>
+                                                </div>
+                                                <div class="flexBox">
+                                                    <div class="flexBox_head">거래금액</div>
+                                                    <div class="flexBox_cont">N,NNN,NNN<span>원</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//조회기간내용-->
+									</div>
+								</div>
+                                <!--내용없을때-->
+                                <div class="tabViewWrap">
+                                    <!-- 조회기간날짜 -->
+                                    <div class="flexBox">
+                                        <div class="itemBox1">
+                                            <strong class="tit">조회기간<span class="dateTi">2020.10.01</span><span class="txtBlack5">2021.10.01</span></strong>
+                                        </div>
+                                    </div>
+									<div class="contWrap">
+										<!-- 조회기간내용 -->
+                                        <div class="trans_info_box3">
+                                            <div class="flexBox_all">
+                                                <div class="trans_info_box2">
+                                                    <div class="noData">
+                                                        <p>거래내역이 없습니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- //조회기간내용 -->
+									</div>
+								</div>
+                                <!--//내용없을때-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // contents -->
+			</div>
+			<!--//content-->
+		</section>
+        <!-- BottomSheet : s -->
+            <!--개별운용상품목록 상세정보-->
+            <div id="layerBottom_extension" class="layerPopBottomWrap hasDim myAssets">
+                <div class="popInner mdpopInner_noline hFull">
+                    <div class="layerHeader">
+                        <p class="layerTit"></p>
+                        <button type="button" class="btnPopClose">팝업닫기</button>
+                    </div>
+                    <div class="layerCon hasButton pl16 pr16">
+                        <div class="md_PopBottom1">
+                            <p class="tit">개별운용상품목록<span class="medium">(N건)</span> </p>  <!--20220105 수정-->
+                            <p class="txt mb20">
+                                <em class="fcPrimary medium">김신한</em>님의 개인형 IRP 계좌 상세정보입니다.
+                            </p>
+                            <p class="txt01">기준일자 : <span>2021.11.02</span></p> <!--20211102 추가--> <!--필요시 사용-->
+                        </div>
+                        <div class="md_PopBottomCon1">
+                            <div class="flexBox_all">
+                                <p class="sbTitle">개인운용상품1</p>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">개별운용상품명  </div>
+                                    <div class="flexBox_cont">BNK저축은행/정기예금/1년</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">상품유형  </div>
+                                    <div class="flexBox_cont">원리금 보장 </div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">평가금액</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">납입(투자)원금</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">신규일</div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">만기일</div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">약정이자율</div>
+                                    <div class="flexBox_cont"><span class="pr5">연</span>N%</div>  <!--20220105 수정-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md_PopBottomCon1">
+                            <div class="flexBox_all">
+                                <p class="sbTitle">개인운용상품2</p>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">개별운용상품명  </div>
+                                    <div class="flexBox_cont">BNK저축은행/정기예금/1년</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">상품유형  </div>
+                                    <div class="flexBox_cont">원리금 보장 </div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">평가금액</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">납입(투자)원금</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">신규일</div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">만기일</div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">약정이자율</div>
+                                    <div class="flexBox_cont"><span class="pr5">연</span>N%</div>  <!--20220105 수정-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//개별운용상품목록 상세정보-->
+            <!--이자적용목록(N)-->
+            <!--
+            <div id="layerBottom_interest" class="layerPopBottomWrap hasDim myAssets">
+                <div class="popInner mdpopInner_noline hFull">
+                    <div class="layerHeader">
+                        <p class="layerTit"></p>
+                        <button type="button" class="btnPopClose">팝업닫기</button>
+                    </div>
+                    <div class="layerCon hasButton pl16 pr16">
+                        <div class="md_PopBottom1">
+                            <p class="tit">이자적용목록(N) </p>
+                        </div>
+                        <div class="md_PopBottomCon1">
+                            <div class="flexBox_all">
+                                <p class="sbTitle">이자적용목록1</p>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자적용시작일  </div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자적용종료일  </div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">적용이율</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자금액</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자종류</div>
+                                    <div class="flexBox_cont">전액연체이자</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md_PopBottomCon1">
+                            <div class="flexBox_all">
+                                <p class="sbTitle">이자적용목록2</p>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자적용시작일  </div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자적용종료일  </div>
+                                    <div class="flexBox_cont">YYYY.MM.DD</div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">적용이율</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자금액</div>
+                                    <div class="flexBox_cont">NNN,NNN<span>원</span></div>
+                                </div>
+                                <div class="flexBox">
+                                    <div class="flexBox_head">이자종류</div>
+                                    <div class="flexBox_cont">전액연체이자</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+            <!--//이자적용목록(N)-->
+        <!-- //BottomSheet : s -->
+	</div>
+    <!--열고닫힘-->
+	<script>
+        $(document).ready(function(){
+            $(document).on("click",".btn_toggle",function(){
+                $(this).toggleClass("on");
+                $(this).parent().parent().siblings(".account_group_detail").slideToggle();
+            });
+        });
+    </script>
+     <!--//열고닫힘-->
+     <!--스와이프-->
+    <script type="text/javascript">
+        function toggleTag() {
+            if(!$('.uiToggleTag').length) return;
+    
+            var $ctrl = $('.uiToggleTag').find('.btns a');
+            $ctrl.on('click', function() {
+                $(this).parents('.uiToggleTag').toggleClass('active');
+            });
+        }
+        
+        // start : 2021-04-15 수정 (탭이동시 swiper index 오류로 swiper 초기화시킴)
+        var newSwiper1;
+        var newSwiper2;
+        
+        function loadSwiper(id) {
+            var slidesLength = $(id).find('.swiper-slide').length;
+            var swiper = new Swiper(id, {
+                // 슬라이드 폭 css로 설정
+                slidesPerView: 'auto',
+                spaceBetween: slidesLength == 1 ? 0 : 10,
+                resistanceRatio: 0,
+                observer: true,
+                observeParents: true,
+    
+                // 페이징 커스텀
+                pagination: '.swiper-pagination',
+                paginationBulletRender: function(swiper, index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + '번 슬라이드</span>';
+                },
+    
+                // init
+                onInit: function(swiper) {
+                    if (swiper.slides.length == 1) {
+                        swiper.disableTouchControl();
+                        swiper.paginationContainer.addClass('swiper-pagination-hidden');
+                        swiper.slides.addClass('onlyOne');
+                    }
+                },
+            });
+            _selectSwiper(id, swiper);
+        }
+    
+        function _selectSwiper(id, swiper) {
+            if (id === '#pickBanner1') {
+                newSwiper1 = swiper;
+                return newSwiper1;
+            } else if (id === '#pickBanner2') {
+                newSwiper2 = swiper;
+                return newSwiper2;
+            }
+        }
+    
+        function handleResetSwiper(event) {
+            var $this = $(event.currentTarget);
+            if ($this.hasClass('on')) return;
+    
+            var idx = $this.index();
+            setTimeout(function() {
+                if (idx == 0) {
+                    newSwiper1.slideTo(0);
+                } else if (idx == 1) {
+                    newSwiper2.slideTo(0);
+                }
+            }, 100);
+        }
+    
+        function init() {
+            toggleTag();
+            loadSwiper('#pickBanner1');
+            loadSwiper('#pickBanner2');
+    
+            $('.tabTyMyAsset01 a').on('click.tabs', handleResetSwiper);
+        }
+    
+        $(function() {
+            init();
+        });
+        // end : 2021-04-15 수정
+    </script>
+    <!--//스와이프-->
+</body>
+</html>

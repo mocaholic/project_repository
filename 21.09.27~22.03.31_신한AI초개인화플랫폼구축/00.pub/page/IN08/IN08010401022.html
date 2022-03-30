@@ -1,0 +1,356 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일		2021-10-08		최초작성
+* 2		김남일		2021-11-17		메뉴명 수정 (수정정보 : 20211117)
+* 3		김남일		2021-11-25		타이틀 언더라인 수정,차트사이즈 동일하게 적용 (수정정보 : 20211125)
+* 4		김남일		2021-11-26		개선사항-와싱요청반영 (수정정보 : 20211126)
+* 5		김남일		2021-12-08		개선사항-링크 및 차트색추가 (수정정보 : 20211208)
+*********************************************************************/ 
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap" class="myAssetsMainServiceBg">
+	<!-- container -->
+	<section id="container">
+        <!-- header -->
+        <header id="headerWrap">
+			<div id="header">
+                <h1 class="blind">Data Pick</h1>
+                <!-- dummy 네이티브 바닥 영역 -->
+                <div class="dummy">
+                    <!-- 2021-04-01 수정 -->
+                    <div class="dummyText">
+                        <img src="../../../images/in08/myassets/icon_myassets_main.png" alt="아이콘">
+                        <p>이번달 주요일정 관리</p>
+                    </div>
+                    <!-- //2021-04-01 수정 -->
+                    <div class="dummyOption">
+                        <i class="iconTyDummyHeaderPerson"></i>
+                        <i class="iconTyDummyHeaderBtn"></i>
+                    </div>
+                </div>
+                <!-- //dummy 네이티브 바닥 영역 -->
+			</div>
+        </header>
+        <!-- //header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+            <div class="mainServiceArea">
+                <div class="dummyRound" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div class="loadPage">
+                    <div id="loadPage1" class="mainServiceCont" style="display:block;">
+                        <!-- header 하이챠트 -->
+                        <div class="inner2">
+                            <div class="feedTitle pt0">
+                                <div class="detailHeader1">
+                                    <h2 class="blind">Data Pick 안내</h2>
+                                    <div class="optionArea">
+                                        <h3 class="flag">Data Pick</h3>
+                                    </div>
+                                </div>
+                                <!-- [메시지 노출 Case] 2021125 수정 mark추가 - 20211123 와싱 요청 반영-->
+                                <h3 class="tit">
+                                    <mark>또래 부자</mark>들과<br />금융자산을 비교해 보세요
+                                </h3>
+                                <!-- //[메시지 노출 Case] 2021125 수정 mark추가 - 20211123 와싱 요청 반영-->
+                            </div>
+                            <!--20211020 차트넣기 수정-->
+                            <div class="feedItem">
+                                <div class="feedChartArea1 pt0"> <!--20211102 추가수정-->
+                                    <div class="flex-container">
+                                        <div class="flex-item01">차트넣기1</div>  <!--20211125 사이즈 수정-->
+                                        <div class="flex-item">차트넣기2</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//20211020 차트넣기 수정-->
+                            <div class="myAssetsBubbleWrap03">
+                                <div class="category3">
+                                    <ul>  <!--20211208 수정-->
+                                        <li><span class="first"></span>입출금</li>
+                                        <li><span class="second"></span> 예적금</li>
+                                        <li><span class="third"></span>골드/실버</li>
+                                        <li><span class="fourth"></span>외화</li>
+                                        <li><span class="fifth"></span>펀드/주식</li>  <!--20211208 수정-->
+                                        <li><span class="sixth"></span>신탁</li>       <!--20211208 수정-->
+                                        <li><span class="seventh"></span>보험</li>     <!--20211208 수정-->
+                                        <li><span class="indigo"></span>개인연금</li>   <!--20211208 추가-->
+                                        <li><span class="eighth"></span>기타자산</li>   <!--20211208 수정-->
+                                    </ul>
+                                    <!--
+                                    <ul> 삭제 20211208
+                                        <li><span class="fifth"></span>펀드/주식</li> 
+                                        <li><span class="sixth"></span>신탁</li>      
+                                        <li><span class="seventh"></span>보험</li>    
+                                        <li><span class="navi"></span>개인연금</li>    
+                                    </ul>
+                                    -->
+                                </div>
+                                <div class="category4">
+                                    <a href="#">또래 부자는 어떤 상품에 가입했을까?</a>  <!--20211123 와싱 요청 반영-->
+                                </div>
+                            </div>
+                        </div>
+                       <!-- //header 하이챠트 -->
+                       <div class="inner mt20">
+                            <div class="feedList">
+                                <!--알려드림-->
+                                <div class="feedItem1 tyAlarmDefault">
+                                    <div class="feedBadgeBox">
+                                        <em class="feedBadgeTyBdeffbf9">알려드림</em> <!--20211117 메뉴명수정-->
+                                    </div>
+                                    <p class="feedMsg">머니버스 고객의 데이터<br/><mark>분석 결과</mark>를 알려드려요</p> <!--20211126 와싱 요청 반영- 언더라인수정 > mark-->
+                                    <div class="detailBox mt30">
+                                        <a href="javascript:void(0)"> <!--20211208 추가-->
+                                            <div class="descArea2">
+                                                <em>빅데이터 랭킹쇼</em><i class="iconTyMessageEmoji011"></i>  <!--20211123 css 이미지바꿈-->
+                                                <p>랭킹으로 알아보는 빅데이터의 세계</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="detailBox">
+                                        <a href="javascript:void(0)"> <!--20211208 추가-->
+                                            <div class="descArea2">
+                                                <em>데이터 분석 vs 대전</em><i class="iconTyMessage20"></i>
+                                                <p>데이터가 궁금해? 두근두근 데이터 대전</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="btnBox mt30">
+                                        <a href="javascript:void(0)" class="btnType btnGray small">요즘, 금융 데이터 트렌드는 뭘까? </a> <!--20211123 와싱 요청 반영-->
+                                    </div>
+                                </div>
+                                <!-- //알려드림 -->
+                                <!-- 골라드림 -->
+                                <div class="feedItem1 mt20">
+                                    <div class="feedBadgeBox">
+                                        <em class="feedBadgeTyBdeffbf9">골라드림</em> <!--20211117 메뉴명수정-->
+                                    </div>
+                                    <p class="feedMsg">내 금융활동을 분석한<br/><mark>테마 상품</mark>을 골라드려요 </p> <!--20211126 와싱 요청 반영- 언더라인수정 > mark-->
+                                    <div class="detailBox1">
+                                        <dl>
+                                            <a href="javascript:void(0)"> <!--20211208 추가-->
+                                                <dt class="leftCon">적금만기가 다가올 때 선택하는 다음 적금은? </dt>
+                                                <dd class="rightNum">15<span>건</span></dd>
+                                            </a>
+                                        </dl>
+                                        
+                                        <dl class="dlOther">
+                                            <a href="javascript:void(0)"> <!--20211208 추가-->
+                                                <dt class="leftCon">나만의 특징적인 소비분야를 위한 카드는? </dt>
+                                                <dd class="rightNum">3<span>건</span</dd>
+                                            </a>
+                                        </dl>
+                                        <dl class="dlOther">
+                                            <a href="javascript:void(0)"> <!--20211208 추가-->
+                                                <dt class="leftCon">지역별 많이 가입하는 적금은? </dt>
+                                                <dd class="rightNum">3<span>건</span</dd>
+                                            </a>
+                                        </dl>
+                                    </div>
+                                    <div class="btnBox mt30">
+                                        <a href="javascript:void(0)" class="btnType btnGray small">테마별 상품 확인하기 </a>
+                                    </div>
+                                </div>
+                                <!-- //골라드림 -->
+                                <!-- 찾아드림 -->
+                                <div class="feedItem1 mt20">
+                                    <div class="feedBadgeBox">
+                                        <em class="feedBadgeTyBdeffbf9">찾아드림</em>  <!--20211117 메뉴명수정-->
+                                    </div>
+                                    <p class="feedMsg"><mark>필요한 조건</mark>으로<br/>콕~ 집어 찾아드려요  </p> <!--20211126 와싱 요청 반영- 언더라인수정 > mark-->
+                                    <div class="mainDetailWrap">
+                                        <div class="detailContents">
+                                            <div class="mustHaveWrap mb0">
+                                                <ul class="loginBox"> <!--20211123 순서 수정-->
+                                                    <li class="join">
+                                                        <a href="javascript:void(0)">적금</a>
+                                                        <span>가입</span>
+                                                    </li>
+                                                    <li class="disJoin">
+                                                        <a href="javascript:void(0)"><i class="disJoin1"></i>예금</a>
+                                                        <span>미가입</span>
+                                                    </li>
+                                                    <li class="join">
+                                                        <a href="javascript:void(0)">입출금</a>
+                                                        <span>가입</span>
+                                                    </li>
+                                                </ul>
+                                                <ul class="loginBox mt20">
+                                                    <li class="disJoin">
+                                                        <a href="javascript:void(0)"><i class="disJoin1"></i>대출</a>
+                                                        <span>미가입</span>
+                                                    </li>
+                                                    <li class="join">
+                                                        <a href="javascript:void(0)">카드</a>
+                                                        <span>가입</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btnBox">
+                                        <a href="javascript:void(0)" class="btnType btnGray small">상품 검색하기</a>
+                                    </div>
+                                </div>
+                                <!-- //찾아드림 -->
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="mainServiceTabArea">
+                    <ul class="mstWrap1">
+                        <!-- 2021-01-08 수정 -->
+                        <li><button type="button"><i class="iconTyPrevSwiper"></i><span>자산분석</span></button></li>
+                        <!-- //2021-01-08 수정 -->
+                    </ul>
+                </div>
+                <div class="myAssetsMainBg">
+                    <button type="button" class="btnCloseSwiper"><i class="iconTyCloseSwiper"></i></button>
+                </div>
+            </div>
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<script type="text/javascript">
+	function initPagge() {
+        TweenMax.set($('.loadPage'),  {y: 90, opacity:0.8});
+        TweenMax.to($('.loadPage'), 1.2, {ease: Expo.easeOut, y: 0, opacity:1});
+        TweenMax.set($('.dummyRound'),  {y: 90, opacity:0.8});
+        TweenMax.to($('.dummyRound'), 1.2, {ease: Expo.easeOut, y: 0, opacity:1});
+
+
+        if(!$('.mstWrap').length) {return;}
+        $('.mstWrap').on('click', 'button', function(e) {
+            var $target = $(e.currentTarget);
+            var idName = $target.attr('data-href');
+
+            $('.mainServiceCont').hide();
+            $(document).find(idName).show();
+            $target.parent().siblings('li').removeClass('active');
+            $target.parent().addClass('active');
+        });
+    }
+    
+    function initCalculation($el, $panel) {
+        var $wrapper = $($el);
+        var $btnToggle = $wrapper.find('.feedCalculationToggle');
+        var $scollPanel = $($panel);
+        var $toggleLike = $wrapper.find('.lstBillArea');
+        var $resetArea = $wrapper.find('.resetArea');
+        var $toggleArea = null;
+        var $clickedBtn = null;
+        var $likeDiv = null;
+        var $feedBtn = $wrapper.find('.feedBtn');
+        var isOpened = false;
+        var isClicked = false;
+        var toggleText = ['접기', '보기'];
+
+        $feedBtn.off().on('click', function(e) {
+            _scrollTo($wrapper);
+            if($(this).text() != "다시 계산하기"){
+                if($(this).text() == "계산하기"){
+                } else {
+                }
+                $(this).text("다시 계산하기");
+                $(".feedCalResultText").show();
+                $(".feedRecomGray").show();
+            } else {
+                $(".btnRefresh").trigger("click");
+            }
+        });
+
+        $resetArea.off().on('click', '.btnResetCal', function(e) {
+            e.preventDefault();
+
+            $wrapper.find('.like').each(function() {
+                $(this).removeClass('active');
+            });
+        });
+
+        $toggleLike.off().on('click', '.like > button', function(e) {
+            e.preventDefault();
+
+            $clickedBtn = $(e.currentTarget);
+            $likeDiv = $clickedBtn.parent();
+            isClicked = $likeDiv.hasClass('active');
+            $likeDiv[isClicked ? 'removeClass' : 'addClass']('active');
+        });
+
+        $btnToggle.off().on('click', function(e) {
+            var $toggleTextEl = $(e.currentTarget).find('.toggleText');
+            $toggleArea = $(e.currentTarget).parent('.feedCalculationLstArea');
+
+            if(isOpened) {
+                $toggleArea.removeClass('active');
+                $toggleTextEl.html(toggleText[1]);
+
+                isOpened = false;
+            } else {
+                $toggleArea.addClass('active');
+                $toggleTextEl.html(toggleText[0]);
+                isOpened = true;
+
+                _scrollTo($wrapper);
+            }
+        });
+
+        /* 2021-04-15 수정 */
+        /*
+        function _scrollTo($el) {
+            var nTop = $el.offset().top;
+            var sTop = $scollPanel.scrollTop() - ($('.feedRecomGray').height() - ($scollPanel.attr('class') == 'mainServiceCont' ? -82 : $scollPanel.attr('class') == 'mainDetailWrap' ? -20 : 0));
+
+            setTimeout(function() {
+                $scollPanel.animate({scrollTop:nTop + sTop}, 350);
+            }, 250);
+        }
+        */
+        function _scrollTo($el) {
+            var nTop = $el.offset().top;
+            var sTop = $scollPanel.scrollTop();
+
+            setTimeout(function() {
+                $scollPanel.animate({scrollTop:(nTop + sTop) - ($('#simulResDiv .feedBadgeBox').outerHeight() + $('#simulResDiv .feedMsg').outerHeight() + 10)}, 350);
+            }, 250);
+        }
+        /* //2021-04-15 수정 */
+    }    
+
+    $(window).bind('load', function() {
+        initPagge();
+        /* 2021-04-15 수정 */
+        // initCalculation('#calItem01', '#contentsWrap .mainServiceCont');
+        initCalculation('#simulResDiv', '#contentsWrap .mainServiceCont');
+        /* //2021-04-15 수정 */
+    });
+</script>
+
+
+</body>
+</html>

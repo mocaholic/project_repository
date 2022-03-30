@@ -1,0 +1,473 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	상품 Pick > (Tab) 개인화 추천
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일		2021-09-29	   최초작성
+* 2		김남일		2021-11-17	   탭수정(css수정 및 메뉴명 수정)(수정정보 : 20211117)
+* 3		김남일		2021-11-23	   와싱 요청 반영 (수정정보 : 20211123)
+* 4		김남일		2021-11-25	   타이틀 언더라인 (수정정보 : 20211125)
+* 5		김남일		2021-11-26	   개선사항 (수정정보 : 20211126)
+* 6		김남일		2021-11-29	   개선사항 (수정정보 : 20211126)
+* 7		김남일		2022-01-03	   개선사항 (수정정보 : 20220103)
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<div id="wrap">
+	<section id="container">
+		<header id="headerWrap">
+			<div id="header">
+                <div class="lSec">
+                    <a href="javascript:void(0);" class="btnBefore"><span class="iconTy01">이전</span></a>
+                </div>
+				<h1 class="tit">Data Pick</h1>
+				<div class="rSec">
+                    <a href="javascript:void(0)" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+                    <a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+                </div>
+			</div>
+		</header>
+		<div id="contentsWrap" class="myAssets">
+			<div class="contents full">
+                <!-- 탭 --> <!--20211117 탭 css수정-->
+                <div class="tabTy_03_1 floatTab in">
+                    <a href="javascript:void(0)"><span>또래부자픽</span></a>
+                    <a href="javascript:void(0)" class="on"><span>골라드림</span></a><!--탭 on-->
+                    <a href="javascript:void(0)"><span>찾아드림</span></a>
+                    <a href="javascript:void(0)"><span>알려드림</span></a>
+                </div>
+                <!-- // 탭 -->
+                <!-- 내용1 -->
+                <div class="tabViewWrap mt0 mb0">
+                    <div class="tabView" id="tabView1" tabindex="1"> 
+                        또래부자픽
+                    </div>
+                </div>
+                <!-- //내용1 -->
+                <!--내용2-->
+                <div class="tabViewWrap mt0 mb0">
+                    <div class="tabView on" id="tabView2"  tabindex="2"><!--탭내용 on-->
+                        <!--골라드림-->
+                        <div class="mainDetailWrap_r1">
+                            <div class="detailContents mt40">
+                                <div class="consumAnalysisArea assetAnalysisArea">
+                                    <!-- [메시지 노출 Case] 2021125 수정 mark추가 -->
+                                    <div class="descArea1">내 금융활동을 분석한<br><mark>테마 상품</mark>을 골라드려요 </div> <!--20211122 와싱 요청 반영 > 20211129 와싱 요청 반영-->
+                                    <!-- //[메시지 노출 Case] 2021125 수정 mark추가 -->
+                                </div>
+                            </div>
+                            <!--나를위한테마-->
+                            <div class="persAll">
+                                <p class="colorTitle">나를 위한 테마</p>
+                                <p class="colorTitle1">적금만기가 다가올 때 선택하는 다음 적금은?</p>
+                                <div class="mainDetailWrapR">
+                                    <div class="detailContents">
+                                        <div class="scrollX">
+                                            <ul class="recomProdList typeRow">
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="listInner">
+                                                            <div class="thumbArea">
+                                                                <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+                                                            </div>
+                                                            <div class="infoArea">
+                                                                <p class="prodCategory">
+                                                                    <span>기관명</span>
+                                                                    <span>적금</span>
+                                                                    <em class="badgeSmall">가입중</em>
+                                                                </p>
+                                                                <strong class="prodTit ellipsis">쏠편한 정기예금 상품명한줄노출</strong>
+                                                                <div class="prodValue">
+                                                                    <div class="valueItem medium">최고 연 <em class="large"><span>1.3</span>%</em></div>
+                                                                    <div class="valueItem">~ 최저 연 <span>1.2</span>%</div>
+                                                                </div>
+                                                                <div class="prodTxt">
+                                                                    <span class="txtItem">기준일 20.04.12</span>
+                                                                    <span class="txtItem">세전</span>
+                                                                    <span class="txtItem">1개월~60개월 </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="listInner">
+                                                            <div class="thumbArea">
+                                                                <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+                                                            </div>
+                                                            <div class="infoArea">
+                                                                <p class="prodCategory">
+                                                                    <span>기관명</span>
+                                                                    <span>적금</span>
+                                                                </p>
+                                                                <strong class="prodTit ellipsis">쏠편한 정기예금 상품명한줄노출</strong>
+                                                                <div class="prodValue">
+                                                                    <div class="valueItem medium">최고 연 <em class="large"><span>1.3</span>%</em></div>
+                                                                    <div class="valueItem">~ 최저 연 <span>1.2</span>%</div>
+                                                                </div>
+                                                                <div class="prodTxt">
+                                                                    <span class="txtItem">기준일 20.04.12</span>
+                                                                    <span class="txtItem">세전</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="colorTitle1">나만의 특징적인 <br>소비분야를 위한 카드</p>
+                                <div class="mainDetailWrapR">
+                                    <div class="detailContents">
+                                        <div class="scrollX">
+                                            <ul class="recomProdList typeRow">
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="listInner">
+                                                            <div class="thumbArea typeCard">
+                                                                <span class="img"><img src="../../../images/in08/myassets/img_recomprod_card_default.png" alt="" /></span> <!-- 기본카드이미지 -->
+                                                                <!-- <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_card02.png" alt="" /></span> --> <!-- 스크래핑카드이미지 -->
+                                                            </div>
+                                                            <div class="infoArea">
+                                                                <p class="prodCategory">
+                                                                    <span>신한카드</span>
+                                                                    <span>카드</span>
+                                                                    <em class="badgeSmall">가입중</em>
+                                                                </p>
+                                                                <strong class="prodTit ellipsis">신한카드 The CLASSIC+ CLASSIC+</strong>
+                                                                <div class="prodValue1"><!--20211111 세로구분선 추가-->
+                                                                    <div class="valueItem medium">국내 <em class="large"><span>1.29</span>%</em></div>
+                                                                    <div class="valueItem medium pl16">해외겸용 <em><span>1.29</span>%</em></div>
+                                                                </div>
+                                                                <div class="prodTxt">
+                                                                    <span class="txtItem">전월실적 <em>40만원</em>이상</span>
+                                                                </div>
+                                                                <div class="prodTag mt7"> <!--20211111 mt7추가 - 긴 카드상세 조건(날위한혜택)시 1줄만 보여진다 -->
+                                                                    <span>항공</span>
+                                                                    <span>면세점</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="listInner">
+                                                            <div class="thumbArea typeCard">
+                                                                <span class="img"><img src="../../../images/in08/myassets/img_recomprod_card_default.png" alt="" /></span> <!-- 기본카드이미지 -->
+                                                                <!-- <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_card02.png" alt="" /></span> --> <!-- 스크래핑카드이미지 -->
+                                                            </div>
+                                                            <div class="infoArea">
+                                                                <p class="prodCategory">
+                                                                    <span>신한카드</span>
+                                                                    <span>카드</span>
+                                                                    <em class="badgeSmall">가입중</em>
+                                                                </p>
+                                                                <strong class="prodTit ellipsis">SOCAR 신한카드</strong>
+                                                                <div class="prodValue1"> <!--20211111 한줄추가-->
+                                                                    <div class="valueItem2">최고연최고연최고연최고연최고연최고연최고연최고연최고연최고연최고연</div>
+                                                                </div>
+                                                                <div class="prodTxt">
+                                                                    <span class="txtItem">전월실적 <em>40만원</em>이상</span>
+                                                                </div>
+                                                                <div class="prodTag mt7"> <!--20211111 mt7추가 - 긴 카드상세 조건(날위한혜택)시 1줄만 보여진다 -->
+                                                                    <span>음식</span>
+                                                                    <span>통신</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//나를위한테마-->
+                            <!--모두를위한테마-->
+                            <div class="persAllR">
+                                <p class="colorTitle">모두를 위한 테마</p>
+                                <p class="colorTitle1">지역별 많이 가입하는 적금은?</p>
+                                <div class="mainDetailWrapR">
+                                    <div class="detailContents">
+                                        <div class="scrollX">
+                                            <ul class="recomProdList typeRow">
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="listInner">
+                                                            <div class="thumbArea">
+                                                                <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+                                                            </div>
+                                                            <div class="infoArea">
+                                                                <p class="prodCategory">
+                                                                    <span>기관명</span>
+                                                                    <span>적금</span>
+                                                                </p>
+                                                                <strong class="prodTit ellipsis">쏠편한 정기예금 상품명한줄노출</strong>
+                                                                <div class="prodValue">
+                                                                    <div class="valueItem medium">최고 연 <em class="large"><span>1.3</span>%</em></div>
+                                                                    <div class="valueItem">~ 최저 연 <span>1.2</span>%</div>
+                                                                </div>
+                                                                <div class="prodTxt">
+                                                                    <span class="txtItem">기준일 20.04.12</span>
+                                                                    <span class="txtItem">세전</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="listInner">
+                                                            <div class="thumbArea">
+                                                                <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_bank_shinhan.png" alt="" /></span>
+                                                            </div>
+                                                            <div class="infoArea">
+                                                                <p class="prodCategory">
+                                                                    <span>기관명</span>
+                                                                    <span>적금</span>
+                                                                </p>
+                                                                <strong class="prodTit ellipsis">쏠편한 정기예금 상품명한줄노출</strong>
+                                                                <div class="prodValue">
+                                                                    <div class="valueItem medium">최고 연 <em class="large"><span>1.3</span>%</em></div>
+                                                                    <div class="valueItem">~ 최저 연 <span>1.2</span>%</div>
+                                                                </div>
+                                                                <div class="prodTxt">  <!--따옴표가 필요할때 사용-->
+                                                                    <span class="txtItem">기준일 20.04.12</span>
+                                                                    <span class="txtItem">세전</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="colorTitle1">아침형/점심형/저녁형 고객의<br> 베스트 상품</p>
+                                <div class="mainDetailWrapR">  <!--20220103 이미지삭제-->
+                                    <div class="detailContents">
+                                        <div class="scrollX">
+                                            <ul class="recomProdList typeRow">
+                                                    <!--20220103 개선사항추가-->
+                                                    <li>
+                                                        <a href="javascript:void(0);">
+                                                            <div class="listInner"> 
+                                                                <!--이미지 삭제
+                                                                <div class="thumbArea typeCard">
+                                                                    <span class="img"><img src="../../../images/in08/myassets/img_recomprod_card_default.png" alt="" /></span> 
+                                                                </div>
+                                                                -->
+                                                                <div class="infoArea">
+                                                                    <p class="prodCategory">
+                                                                        <span>신한금융투자</span>
+                                                                        <span>펀드</span>
+                                                                        <em class="badgeSmall">가입중</em>  <!--20211126 필요시 사용-->
+                                                                    </p>
+                                                                    <strong class="prodTit ellipsis">쏠편한 정기예금 상품명한줄노출</strong>
+                                                                    <div class="prodValue1"><!--세로구분선-->
+                                                                        <div class="valueItem">수익률(3개월)</div>
+                                                                        <div class="valueItem medium pl16"><span class="large txtRed1">+1.29%</span></div> <!--20211126 color 추가 - + 빨강-->
+                                                                        <!--<div class="valueItem medium pl16"><span class="large txtBlue8">-1.29%</span></div>--> <!--20211126 color 추가 - - 파랑-->
+                                                                        <!--<div class="valueItem medium pl16"><span class="large txtBlack6">1.29%</span></div>--> <!--20211126 color 추가 - 검정-->
+                                                                    </div>
+                                                                    <div class="prodTxt">
+                                                                        <span class="txtItem">혼합형</span>
+                                                                        <span class="txtItem">수수료 미징구</span>
+                                                                        <span class="txtItem">온라인</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <!--//20220103 개선사항추가-->
+                                                    <li>
+                                                        <a href="javascript:void(0);">
+                                                           <strong class="prodTitInfo">투자성향분석 후 확인 가능합니다</strong><!--20211111-Disabled때 한줄로 빨간글 보여주는방법-->  <!--20211229 css수정-->
+                                                            <div class="listInner listDisabled"> <!--Disabled-->
+                                                                <!--
+                                                                <div class="thumbArea typeCard">
+                                                                    <span class="img"><img src="../../../images/in08/myassets/img_recomprod_card_default.png" alt="" /></span> 기본카드이미지 -->
+                                                                    <!-- <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_card02.png" alt="" /></span> --> <!-- 스크래핑카드이미지 -->
+                                                                <!--</div>
+                                                                 -->
+                                                                <div class="infoArea">
+                                                                    <p class="prodCategory">
+                                                                        <span>신한금융투자</span>
+                                                                        <span>펀드</span>
+                                                                    </p>
+                                                                    <strong class="prodTit hw10"></strong> <!--20211111-Disabled때 '투자성향분석 후 확인 가능합니다' 보여줄때 hw10사용 - 제목빼기-->
+                                                                    <!--<strong class="prodTit ellipsis">쏠편한 정기예금 상품명한줄노출</strong>-->
+                                                                    <div class="prodValue1"><!--세로구분선-->
+                                                                        <div class="valueItem medium">국내 <em class="large"><span>1.29</span>%</em></div>
+                                                                        <div class="valueItem medium pl16">해외겸용 <em><span>1.29</span>%</em></div>
+                                                                    </div>
+                                                                    <div class="prodTxt">
+                                                                        <span class="txtItem">혼합형</span>
+                                                                        <span class="txtItem">수수료 미징구</span>
+                                                                        <span class="txtItem">온라인</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);">
+                                                            <div class="listInner">
+                                                                <!--
+                                                                <div class="thumbArea typeCard">
+                                                                    <span class="img"><img src="../../../images/in08/myassets/img_recomprod_card_default.png" alt="" /></span> 기본카드이미지 -->
+                                                                    <!-- <span class="img"><img src="../../../images/in08/myassets/@img_recomprod_card02.png" alt="" /></span> --> <!-- 스크래핑카드이미지 -->
+                                                                <!--</div>
+                                                                 -->
+                                                                <div class="infoArea">
+                                                                    <p class="prodCategory">
+                                                                        <span>신한카드</span>
+                                                                        <span>카드</span>
+                                                                    </p>
+                                                                    <strong class="prodTit ellipsis">SOCAR 신한카드</strong>
+                                                                    <div class="prodValue1"><!--세로구분선-->
+                                                                        <div class="valueItem medium">국내 <em class="large"><span>1.29</span>%</em></div>
+                                                                        <div class="valueItem medium pl16">해외겸용 <em><span>1.29</span>%</em></div>
+                                                                    </div>
+                                                                    <div class="prodTxt">
+                                                                        <span class="txtItem">기준일 20.04.12</span>
+                                                                        <span class="txtItem">세전</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--20220103 추천펀드 없을때 사용-->
+                                <div class="mainDetailWrapR2">
+                                    <div class="detailContents">
+                                        <div class="scrollX">
+                                            <ul class="recomProdList2 typeRow"> 
+                                                <!--20220103 추천펀드없음-->
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <div class="listInner"> 
+                                                            <div class="infoArea">
+                                                                <p class="infoRec">고객님의 투자성향에 해당하는 <br/>추천 펀드가 없습니다.<br/>추천 펀드가 없습니다</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <!--//20220103 추천펀드없음-->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--//20220103 추천펀드 없을때 사용-->
+                            </div>
+                            <div class="pConTex_all">
+                                <p class="pConTex">타 기관 상품의 정확한 정보는 해당 기관 홈페이지를 참고하세요. </p> <!--20211123 와싱 요청 반영-->
+                            </div>
+                            <!--//모두를위한테마-->
+                        </div>
+                        <!--//개인화추천-->
+                    </div>
+                </div>
+                <!--//내용2-->
+                <!--내용3-->
+                <div class="tabViewWrap mt0 mb0">
+                    <div class="tabView" id="tabView3"  tabindex="3">
+                        찾아드림
+                    </div>
+                </div>
+                <!--//내용3-->
+                <!--내용4-->
+                <div class="tabViewWrap mt0 mb0">
+                    <div class="tabView" id="tabView4"  tabindex="4">
+                        알려드림
+                    </div>
+                </div>
+                <!--//내용4-->
+			</div>
+		</div>
+	</section>
+</div>
+
+<!--상단메뉴 탭스크립트-->
+<!--<script type="text/javascript">
+	//////window.onload = init;
+	// console.log("THE START OF HIGH CHART");
+
+	$(function() {
+		//탭 click 2020-01-09 수정
+		var scrollH = $(".floatTab.in").offset().top - 45;
+		$(".tabTy_03_1 a").click(function(e) {
+			e.preventDefault();
+			//탭 활성화
+			$(".tabTy_03_1 a").removeClass("on");
+			var idx = $(this).parent().find("a").index(this);
+			$(".tabViewWrap .tabView").removeClass("on");
+			if (idx == 0) {	//Tab1
+				$(".tabTy_03_1.in a:eq(0), .tabTy_03_1.fix a:eq(0)").addClass("on");
+				$("#tabView1").addClass("on");
+			} else if(idx == 1) {	//Tab2
+				$(".tabTy_03_1.in a:eq(1), .tabTy_03_1.fix a:eq(1)").addClass("on");
+				$("#tabView2").addClass("on");
+            } else if(idx == 2) {	//Tab3
+				$(".tabTy_03_1.in a:eq(2), .tabTy_03_1.fix a:eq(2)").addClass("on");
+				$("#tabView3").addClass("on");
+            } else if(idx == 3) {	//Tab3
+				$(".tabTy_03_1.in a:eq(3), .tabTy_03_1.fix a:eq(3)").addClass("on");
+				$("#tabView4").addClass("on");
+            } else {  //Tab3
+				//탭 컨트롤
+				//$("#contentsWrap .contents").animate({scrollTop:scrollH + 1});
+				startProgCir();  //4번탭일때 바로실행
+			}
+			
+			//파란영역까지 스크롤
+			//$("#contentsWrap .contents").animate({  // 준거집단선택시 위로 올리는 애니
+			//	scrollTop : scrollH
+			//}, 500);
+			
+		});
+		
+		var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수 20191010 추가
+		if(UserAgent.match(/i(Phone|Pod)/i) != null){
+			$("body").width(screen.width);
+		}
+		
+		//스크롤 발생시 탭 상단 고정
+		$("#contentsWrap .contents").scroll(function() {
+			if ( $(this).scrollTop() >= $(".chart-type-A").height() ) {
+				//fix
+				$(".floatTab.fix").show();
+			}
+			if ( $(this).scrollTop() < $(".chart-type-A").height() + 81 ) {
+				//fix해제
+				$(".floatTab.fix").hide();
+			}
+		});
+	});
+</script>-->
+</body>
+</html>

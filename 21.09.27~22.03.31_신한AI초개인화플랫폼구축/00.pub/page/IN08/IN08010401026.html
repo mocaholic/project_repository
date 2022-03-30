@@ -1,0 +1,365 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	상품 Pick > (Tab) BD가 알려주마
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일		2021-09-29	   최초작성
+* 2		김남일		2021-11-17	   탭수정(css수정 및 메뉴명 수정)(수정정보 : 20211117)
+* 3		김남일		2021-11-23	   문구 와싱 요청 반영 (수정정보 : 20211123 와싱 요청 반영)
+* 4		김남일		2021-11-25	   타이틀 언더라인 수정,와싱 요청 반영  (수정정보 : 20211125)
+* 5		김남일		2021-12-30     텍스트 개선 및 추가 (수정정보 : 20211230)
+* 6		김남일		2022-01-04     개선 (수정정보 : 20220104)
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<div id="wrap">
+	<section id="container">
+		<header id="headerWrap">
+			<div id="header">
+                <div class="lSec">
+                    <a href="javascript:void(0);" class="btnBefore"><span class="iconTy01">이전</span></a>
+                </div>
+				<h1 class="tit">Data Pick</h1>
+				<div class="rSec">
+                    <a href="javascript:void(0)" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+                    <a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+                </div>
+			</div>
+		</header>
+		<div id="contentsWrap" class="myAssets">
+			<div class="contents full">
+                <!-- 탭 --> <!--20211117 탭 css수정-->
+                <div class="tabTy_03_1 floatTab in">
+                    <a href="javascript:void(0)"><span>또래부자픽</span></a>
+                    <a href="javascript:void(0)"><span>골라드림</span></a>
+                    <a href="javascript:void(0)"><span>찾아드림</span></a>
+                    <a href="javascript:void(0)" class="on"><span>알려드림</span></a><!--탭 on-->
+                </div>
+                <!-- // 탭 -->
+                <!-- 내용1 -->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView" id="tabView1" tabindex="1"> <!--탭내용 on-->
+						<!--상세내용-->
+						또래부자픽
+						<!--//상세내용-->
+					</div>
+				</div>
+                <!-- //내용1 -->
+                <!--내용2-->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView" id="tabView2"  tabindex="2">
+                        골라드림
+					</div>
+				</div>
+                <!--//내용2-->
+                <!--내용3-->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView" id="tabView3"  tabindex="3">
+						찾아드림
+					</div>
+				</div>
+                <!--//내용3-->
+                <!--내용4-->
+                <div class="tabViewWrap mt0 mb0">
+					<div class="tabView on" id="tabView4"  tabindex="4">
+                        <!--알려드림-->
+						<div class="mainDetailWrap_r">
+							<div class="detailContents mt40">
+								<div class="consumAnalysisArea assetAnalysisArea">
+									<!-- [메시지 노출 Case] 2021125 수정 mark추가 - 20211126 와싱 요청 반영 -->
+									<div class="descArea1">머니버스 고객의 데이터 <br><mark>분석 결과</mark>를 알려드려요</div>
+									<!-- //[메시지 노출 Case] 2021125 수정 mark추가 - 20211126 와싱 요청 반영 -->
+								</div>
+							</div>
+							<!--빅데이터 랭킹쇼-->
+							<div class="detailHeader">
+								<div class="descArea2">
+									<em>빅데이터 랭킹쇼</em><i class="iconTyMessageEmoji011"></i>  <!--20211123 css수정 iconTyMessageEmoji01 > iconTyMessageEmoji011 -->
+								</div>
+						    </div>
+							<!--상세내용-->
+							<div class="mydataWrap myRequest">
+								<div class="myRequest_body pr0 pl0 pt20">
+									<div class="conInner">
+										<div class="contWrap">
+											<!-- 열림닫힘1 -->
+											<div class="account_group2">
+												<div class="titGroup5">  <!--20220104 개선-->
+													<p class="tit_brand tit_brand_none">신한 고객의 최다 검색 부동산<span class="badgeSmall">NEW</span></p>
+													<p class="tit_brand_con">SOL에서 가장 많이 검색하는 아파트 단지는?</p> 
+													<span class="pos_r">
+														<button type="button" class="btn_toggle on"><em>목록닫기</em></button>
+													</span>
+												</div>
+												<div class="account_group_detail">
+													<ul class="prod_list3">  
+														<!--상세영역-->
+														<li>
+															<ul class="prod_head1_1">
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">1</em><span>대치동 은마아파트</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">2</em><span>영등포 아크로타임스퀘어</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">3</em><span>개포 래미안 포레스트</span> </a></li> 
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">4</em><span>종로 경희궁 자이	</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">5</em><span>마포 래미안 푸르지오 </span> </a></li>
+															</ul>     
+														</li>
+														<!--//상세영역-->
+													</ul>
+												</div>								
+											</div>
+											<!-- //열림닫힘1 -->
+											<!-- 열림닫힘2 -->
+											<div class="account_group2 mt10">
+												<div class="titGroup5"> <!--20220104 개선-->
+													<p class="tit_brand tit_brand_none">고액 자산가들의 최대 주식<span class="badgeSmall">NEW</span></p>
+													<p class="tit_brand_con">내 또래 부자는 어떤 주식을 선호할까?</p>
+													<span class="pos_r">
+														<button type="button" class="btn_toggle"><em>목록닫기</em></button>
+													</span>
+												</div>
+												<div class="account_group_detail dp_none">
+													<ul class="prod_list3">  
+														<!--상세영역-->
+														<li>
+															<ul class="prod_head1_1">
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">1</em><span>text1</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">2</em><span>text2</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">3</em><span>text3</span> </a></li> 
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">4</em><span>text4</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">5</em><span>text5</span> </a></li>
+															</ul>     
+														</li>
+														<!--//상세영역-->
+													</ul>
+												</div>								
+											</div>
+											<!-- //열림닫힘2 -->
+											<!-- 열림닫힘3 -->
+											<div class="account_group2 mt10">
+												<div class="titGroup5">  <!--20220104 개선-->
+													<p class="tit_brand tit_brand_none">환전은 언제 해야 가장 좋은가<span class="badgeSmall">NEW</span></p>
+													<p class="tit_brand_con">내 또래들은 몇 월에 가장 많이 할까?</p>
+													<span class="pos_r">
+														<button type="button" class="btn_toggle"><em>목록닫기</em></button>
+													</span>
+												</div>
+												<div class="account_group_detail dp_none">
+													<ul class="prod_list3">  
+														<!--상세영역-->
+														<li>
+															<ul class="prod_head1_1">
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">1</em><span>text1</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">2</em><span>text2</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">3</em><span>text3</span> </a></li> 
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">4</em><span>text4</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">5</em><span>text5</span> </a></li>
+															</ul>      
+														</li>
+														<!--//상세영역-->
+													</ul>
+												</div>								
+											</div>
+											<!-- //열림닫힘3 -->
+											<div class="btnGroupBox mt30">
+												<a href="javascript:void(0);" class="btnType btnMore lineBlack"><span><i class="iconTySelArrow03"></i> 더보기</span></a> <!--아이콘작업해야함-->
+											</div>
+										</div>
+									</div>
+								</div>
+						    </div>
+							<!--//상세내용-->
+							<!--//빅데이터 랭킹쇼-->
+
+							<!-- 참조) 구분선 하나 추가되었습니다 -->
+							<hr class="full mt50" />
+
+							<!--데이터분석vs대전-->
+							<div class="detailHeader">
+								<div class="descArea2">
+									<em>데이터 분석 vs 대전</em><i class="iconTyMessage20"></i>
+								</div>
+						    </div>
+							<!--상세내용-->
+							<div class="mydataWrap myRequest">
+								<div class="myRequest_body pr0 pl0">
+									<div class="conInner">
+										<div class="contWrap">
+											<!-- 열림닫힘1 -->
+											<div class="account_group2">
+												<div class="titGroup5">   <!--20220104 개선-->
+													<p class="tit_brand tit_brand_none">복날 삼계탕집 VS 치킨<span class="badgeSmall">NEW</span></p>
+													<p class="tit_brand_con">어디 매출액이 더 급등할까?</p>
+													<span class="pos_r">
+														<button type="button" class="btn_toggle"><em>목록닫기</em></button>
+													</span>
+												</div>
+												<div class="account_group_detail dp_none">
+													<ul class="prod_list3">  
+														<!--상세영역-->
+														<li>
+															<ul class="prod_head1_1">
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">1</em><span>text1</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">2</em><span>text2</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">3</em><span>text3</span> </a></li> 
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">4</em><span>text4</span> </a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">5</em><span>text5</span> </a></li>
+															</ul>     
+														</li>
+														<!--//상세영역-->
+													</ul>
+												</div>								
+											</div>
+											<!-- //열림닫힘1 -->
+											<!-- 열림닫힘2 -->
+											<div class="account_group2 mt10">
+												<div class="titGroup5">   <!--20220104 개선-->
+													<p class="tit_brand tit_brand_none">공모주 지금 판다 VS 나중에 판다<span class="badgeSmall">NEW</span></p>
+													<p class="tit_brand_con">공모주 언제 팔아야 좋았을까?</p>
+													<span class="pos_r">
+														<button type="button" class="btn_toggle on"><em>목록닫기</em></button>
+													</span>
+												</div>
+												<div class="account_group_detail">
+													<ul class="prod_list3">  
+														<!--상세영역-->
+														<li>
+															<div class="feedChartArea">
+																<div style="height:277px; background-color:darkorange;">하이차트</div> <!--확인때문에 darkorange색을 넣었습니다.하이차트넣고 background-color빼주세요-->
+															</div>
+														</li>
+														<!--//상세영역-->
+													</ul>
+												</div>								
+											</div>
+											<!-- //열림닫힘2 -->
+											<!-- 열림닫힘3 -->
+											<div class="account_group2 mt10">
+												<div class="titGroup5">   <!--20220104 개선-->
+													<p class="tit_brand tit_brand_none">투자 수익률 카카오 vs 네이버<span class="badgeSmall">NEW</span></p>
+													<p class="tit_brand_con">추가 매수 VS 신규 매수해도 좋을까?</p>
+													<span class="pos_r">
+														<button type="button" class="btn_toggle"><em>목록닫기</em></button>
+													</span>
+												</div>
+												<div class="account_group_detail dp_none">
+													<ul class="prod_list3">  
+														<!--상세영역-->
+														<li>
+															<ul class="prod_head1_1">
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">1</em><span>text1</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">2</em><span>text2</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">3</em><span>text3</span></a></li> 
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">4</em><span>text4</span></a></li>
+																<li><a href="javascript:void(0)" class="brand_names"><em class="brand_names_1">5</em><span>text5</span></a></li>
+															</ul>     
+														</li>
+														<!--//상세영역-->
+													</ul>
+												</div>								
+											</div>
+											<!-- //열림닫힘3 -->
+											<div class="btnGroupBox mt30">
+												<a href="javascript:void(0);" class="btnType btnMore lineBlack"><span><i class="iconTySelArrow03"></i> 더보기</span></a> <!--아이콘작업해야함-->
+											</div>
+										</div>
+									</div>
+								</div>
+						    </div>
+							<!--//상세내용-->
+							<!--//데이터분석vs대전-->
+					    </div>
+						<!--//BD가알려주마-->
+					</div>
+				</div>
+                <!--//내용4-->
+			</div>
+		</div>
+	</section>
+</div>
+
+<!--상단메뉴 탭스크립트-->
+<!--<script type="text/javascript">
+	//////window.onload = init;
+	// console.log("THE START OF HIGH CHART");
+
+	$(function() {
+		//탭 click 2020-01-09 수정
+		var scrollH = $(".floatTab.in").offset().top - 45;
+		$(".tabTy_03_1 a").click(function(e) {
+			e.preventDefault();
+			//탭 활성화
+			$(".tabTy_03_1 a").removeClass("on");
+			var idx = $(this).parent().find("a").index(this);
+			$(".tabViewWrap .tabView").removeClass("on");
+			if (idx == 0) {	//Tab1
+				$(".tabTy_03_1.in a:eq(0), .tabTy_03_1.fix a:eq(0)").addClass("on");
+				$("#tabView1").addClass("on");
+			} else if(idx == 1) {	//Tab2
+				$(".tabTy_03_1.in a:eq(1), .tabTy_03_1.fix a:eq(1)").addClass("on");
+				$("#tabView2").addClass("on");
+            } else if(idx == 2) {	//Tab3
+				$(".tabTy_03_1.in a:eq(2), .tabTy_03_1.fix a:eq(2)").addClass("on");
+				$("#tabView3").addClass("on");
+            } else if(idx == 3) {	//Tab4
+				$(".tabTy_03_1.in a:eq(3), .tabTy_03_1.fix a:eq(3)").addClass("on");
+				$("#tabView4").addClass("on");
+            } else {  //Tab3
+				//탭 컨트롤
+				//$("#contentsWrap .contents").animate({scrollTop:scrollH + 1});
+				startProgCir();  //4번탭일때 바로실행
+			}
+			
+			//파란영역까지 스크롤
+			//$("#contentsWrap .contents").animate({  // 준거집단선택시 위로 올리는 애니
+			//	scrollTop : scrollH
+			//}, 500);
+			
+		});
+		
+		var UserAgent = navigator.platform; //안드로이드, ios체크를 위한 변수 20191010 추가
+		if(UserAgent.match(/i(Phone|Pod)/i) != null){
+			$("body").width(screen.width);
+		}
+		
+		//스크롤 발생시 탭 상단 고정
+		// $("#contentsWrap .contents").scroll(function() {
+		// 	if ( $(this).scrollTop() >= $(".chart-type-A").height() ) {
+		// 		//fix
+		// 		$(".floatTab.fix").show();
+		// 	}
+		// 	if ( $(this).scrollTop() < $(".chart-type-A").height() + 81 ) {
+		// 		//fix해제
+		// 		$(".floatTab.fix").hide();
+		// 	}
+		// });
+	});
+</script>-->
+<!--열고닫힘-->
+<script>
+	$(document).ready(function(){
+		$(document).on("click",".btn_toggle",function(){
+			$(this).toggleClass("on");
+			$(this).parent().parent().siblings(".account_group_detail").slideToggle();
+		});
+	});
+</script>
+<!--//열고닫힘-->
+</body>
+</html>

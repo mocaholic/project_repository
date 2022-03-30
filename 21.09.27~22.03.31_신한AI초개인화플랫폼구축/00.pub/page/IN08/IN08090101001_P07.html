@@ -1,0 +1,393 @@
+
+<!-- /*******************************************************************
+* @설명			: 캘린더(피드)
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김남일	    2020-10-16	   최초작성
+* 2		김남일	    2020-11-29	   나이키드로우 추가 (주석정보 : 20211129)
+********************************************************************/ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<div id="wrap">
+	<section id="container">
+		<!--header-->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">MY 캘린더 설정</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose">
+						<span class="iconTy03">팝업닫기</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<!--//header-->
+
+		<!--contentsWrap-->
+		<div id="contentsWrap" class="myAssets">
+			<div class="contents">
+				<!--예상금융일정-->
+                <div class="fixedpageWrap mb0 pb10 mt10">
+                    <div class="autoTransBatchChangeWrap">
+                        <div class="debitWrap mt16">
+                            <div class="debitCon">
+                                <ul class="ctrl">
+                                    <li>
+                                        <div class="deHeader">
+                                            <input type="radio" id="radio02_1" name="radio02" checked="checked" />
+                                            <label for="radio02_1">예상 금융일정</label>
+
+                                            <!--토글버튼1-->
+                                            <div class="riToggle">
+                                                <label class="switch" for="ck1">
+                                                    <input type="checkbox" id="ck1" name="chkNm" value="chkNm1" checked> <!-- checked-->
+                                                    <span class="slider round">
+                                                        <p class="chkOn">알림</p>
+                                                        <p class="chkOff" style="display: none;">알림</p>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <!--//토글버튼1-->
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prod_tit">
+                                            <input type="checkbox" id="prod_1" name="prod_1"/>
+                                            <label for="prod_1">입금/지출 항목으로 보기</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="prod_tit">
+                                            <input type="checkbox" id="prod_2" name="prod_2"/>
+                                            <label for="prod_2">입금/지출 금액으로 보기</label>
+                                        </div>
+                                    </li>
+                                    <li class="listBot">
+                                        <div class="prod_tit">
+                                            <input type="checkbox" id="prod_3" name="prod_3" checked="checked"/>
+                                            <label for="prod_3" class="laText">일별 예상 잔액으로 보기</label>
+                                        </div>
+                                        <!--계좌선택-->
+                                        <div class="formGroupBox mt10">
+                                            <div class="detailBox2">
+                                                <dl>
+                                                    <dt class="leftCon">계좌선택</dt>
+                                                    <dd class="rightNum"><a href="#layerPopBottom01_1" class="btnPopOpen fontCo5">계좌를 선택해주세요<i class="iconTySelArrow03 mtMinus5"></i></a></dd>
+                                                    <!--<dd class="rightNum0">신한 1234-456-1234567<a href="#layerPopBottom01_1" class="btnPopOpen"><i class="iconTySelArrow03 mtMinus5"></i></a></dd>--> <!--계좌선택후 계좌만나올때 첫줄-->
+                                                    <dd class="rightNum1">신한 1234-456-1234567</dd>
+                                                    <dd class="rightNum1">신한 1234-456-1234567</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <!--//계좌선택-->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!--//예상금융일정-->
+                <!--IPO공모주 일정-->
+                <div class="fixedpageWrap mb0 pb10">
+                    <div class="autoTransBatchChangeWrap">
+                        <div class="debitWrap">
+                            <div class="debitCon">
+                                <ul class="ctr2"> <!--li가 한개이거나 li가 한개에서 두개로 변할때 사용 class="ctr2"사용-->
+                                    <li>
+                                        <div class="deHeader">
+                                            <input type="radio" id="radio03_1" name="radio03" checked="checked" />
+                                            <label for="radio03_1">IPO 공모주 일정</label>
+                                            <!--토글버튼2-->
+                                            <div class="riToggle">
+                                                <label class="switch" for="ck2">
+                                                    <input type="checkbox" id="ck2" name="chkNm" value="chkNm2"> <!-- no checked-->
+                                                    <span class="slider round">
+                                                        <p class="chkOn" style="display: none;">알림</p>
+                                                        <p class="chkOff">알림</p>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <!--//토글버튼2-->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!--//IPO공모주 일정-->
+                <!--아파트 분양 일정-->
+                <div class="fixedpageWrap mb0 pb10">
+                    <div class="autoTransBatchChangeWrap">
+                        <div class="debitWrap">
+                            <div class="debitCon">
+                                <ul class="ctrl">
+                                    <li>
+                                        <div class="deHeader">
+                                            <input type="radio" id="radio04_1" name="radio04" checked="checked" />
+                                            <label for="radio04_1">아파트 분양 일정</label>
+                                            <!--토글버튼3-->
+                                            <div class="riToggle">
+                                                <label class="switch" for="ck3">
+                                                    <input type="checkbox" id="ck3" name="chkNm" value="chkNm3" checked> <!-- checked-->
+                                                    <span class="slider round">
+                                                        <p class="chkOn">알림</p>
+                                                        <p class="chkOff" style="display: none;">알림</p>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <!--//토글버튼3-->
+                                        </div>
+                                    </li>
+                                    <li class="pb0">
+                                        <div class="toggleAreaTyColumn9 col9">
+                                            <ul>
+                                                <li>
+                                                    <input type="checkbox" name="rdo1" id="rdo101" />
+                                                    <label for="rdo101"><span>전체</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo2" id="rdo102" />
+                                                    <label for="rdo102"><span>서울</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo3" id="rdo103" />
+                                                    <label for="rdo103"><span>부산</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo4" id="rdo104" />
+                                                    <label for="rdo104"><span>대구</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo5" id="rdo105" />
+                                                    <label for="rdo105"><span>인천</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo6" id="rdo106" />
+                                                    <label for="rdo106"><span>광주</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo7" id="rdo107" />
+                                                    <label for="rdo107"><span>대전</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo8" id="rdo108" />
+                                                    <label for="rdo108"><span>울산</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo9" id="rdo109" />
+                                                    <label for="rdo109"><span>세종</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo10" id="rdo110" />
+                                                    <label for="rdo110"><span>경기</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo11" id="rdo111" />
+                                                    <label for="rdo111"><span>강원</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo12" id="rdo112" />
+                                                    <label for="rdo112"><span>충북</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo13" id="rdo113" />
+                                                    <label for="rdo113"><span>충남</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo14" id="rdo114" />
+                                                    <label for="rdo114"><span>전북</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo15" id="rdo115" />
+                                                    <label for="rdo115"><span>전남</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo16" id="rdo116" />
+                                                    <label for="rdo116"><span>경북</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo17" id="rdo117" />
+                                                    <label for="rdo117"><span>경남</span></label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="rdo18" id="rdo118" />
+                                                    <label for="rdo118"><span>제주</span></label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!--//아파트 분양 일정-->
+
+                <!--나이키드로우-->  <!--20211129 추가-->
+                <div class="fixedpageWrap mb0 pb10">
+                    <div class="autoTransBatchChangeWrap">
+                        <div class="debitWrap">
+                            <div class="debitCon">
+                                <ul class="ctr2"> <!--li가 한개이거나 li가 한개에서 두개로 변할때 사용 class="ctr2"사용-->
+                                    <li>
+                                        <div class="deHeader">
+                                            <input type="radio" id="radio06_1" name="radio06" checked="checked" />
+                                            <label for="radio06_1">나이키드로우</label>
+                                            <!--토글버튼2-->
+                                            <div class="riToggle">
+                                                <label class="switch" for="ck5">
+                                                    <input type="checkbox" id="ck5" name="chkNm" value="chkNm5"> <!-- no checked-->
+                                                    <span class="slider round">
+                                                        <p class="chkOn" style="display: none;">알림</p>
+                                                        <p class="chkOff">알림</p>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <!--//토글버튼2-->
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!--//나이키드로우-->
+
+                <!--개인 일정-->
+                <div class="fixedpageWrap mb0 pb10">
+                    <div class="autoTransBatchChangeWrap">
+                        <div class="debitWrap">
+                            <div class="debitCon">
+                                <ul class="ctr2"> <!--li가 한개이거나 li가 한개에서 두개로 변할때 사용 class="ctr2"사용-->
+                                    <li>
+                                        <div class="deHeader">
+                                            <input type="radio" id="radio05_1" name="radio05" checked="checked" />
+                                            <label for="radio05_1">개인 일정</label>
+                                            <!--토글버튼4-->
+                                            <div class="riToggle">
+                                                <label class="switch" for="ck4">
+                                                    <input type="checkbox" id="ck4" name="chkNm" value="chkNm4" checked> <!-- checked-->
+                                                    <span class="slider round">
+                                                        <p class="chkOn">알림</p>
+                                                        <p class="chkOff" style="display: none;">알림</p>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <!--//토글버튼4-->
+                                            <div class="riAdd">
+                                                <div class="tabTy03A uiTabs">
+                                                    <button type="button"><a href="javascript:void(0)"><span>+</span></a></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="tabTy07">
+											<a href="javascript:void(0)"><span>피트니스 PT <i class="iconTyClose"></i></span></a>
+											<a href="javascript:void(0)"><span>친목회비 <i class="iconTyClose"></i></span></a>
+											<a href="javascript:;"><span>라운드 Small <i class="iconTyClose"></i></span></a>
+                                            <a href="javascript:;"><span>라운드 Small <i class="iconTyClose"></i></span></a>
+										</div> 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!--//개인 일정-->
+			</div>
+			<div class="btnGroupBox floating fixed">
+				<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+			</div>
+		</div>
+		<!--//contentsWrap-->
+	</section>
+
+	<!-- BottomSheet : s -->
+	<div id="layerPopBottom01_1" class="layerPopBottomWrap hasDim myAssets">
+		<div class="popInner">
+			<div class="layerHeader">
+				<p class="layerTit">계좌 선택</p>
+				<button type="button" class="btnPopClose">팝업닫기</button>
+			</div>
+            <div class="layerCon">
+                <div class="listOneLineBox1">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="chk" id="chk0101">
+                            <label for="chk0101"><span><span>신한은행</span> 123-456-123456 </span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="chk" id="chk0102">
+                            <label for="chk0102"><span><span>신한은행</span> 123-456-123456 </span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="chk" id="chk0103">
+                            <label for="chk0103"><span><span>신한은행</span> 123-456-123456 </span>
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="chk" id="chk0104">
+                            <label for="chk0104"><span><span>신한은행</span> 123-456-123456 </span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btnGroupBox floating fixed">
+                <a href="javascript:void(0)" class="btnType btnBlack" disabled><span>확인</span></a>
+            </div>
+		</div>
+	</div>
+	<!-- BottomSheet : e -->
+</div>
+
+<script>
+	$(".btnCertifi").on("click",function(){
+		$(".formItem_number").addClass("formItem_on");
+	});
+</script>
+
+<!--토글버튼-->
+<script>
+$(document).ready(function() {
+    $("input[name='chkNm']:checkbox").click(function() {
+
+        var chkVal = $(this).is(":checked");
+        var textVal = $(this).val();
+        var nextObj = $(this).next();
+       // alert('chkVal ===> '+chkVal + ' : textVal===>'+textVal);
+
+        if(chkVal) {
+            nextObj.children("p.chkOn").css("display", "block");
+            nextObj.children("p.chkOff").css("display", "none");
+        }else{
+            nextObj.children("p.chkOn").css("display", "none");
+            nextObj.children("p.chkOff").css("display", "block");
+        }
+    });
+});
+</script>
+<!--//토글버튼-->
+
+</body>
+</html>

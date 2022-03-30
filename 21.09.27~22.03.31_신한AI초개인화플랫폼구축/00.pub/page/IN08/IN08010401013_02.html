@@ -1,0 +1,255 @@
+
+<!-- /********************************************************************
+* @설명			:	메인 > (Tab) 자산관리 > 자산분석 > (Tab)자산비교, (Tab)저축비교
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		김재림		2020-12-04		최초작성
+* 2		김재림		2020-12-16		타이틀 문구 아이콘, 하단 추천 링크 수정, 월 소비금액 확인 버튼 추가, 하이차트 그래프 추가 [수정주석 : 2020-12-16 수정, 추가, 삭제]
+* 3		박기완		2020-12-28		아이콘 수정 (주석정보: 2020-12-28 수정)
+* 4		박기완		2021-01-20		상단영역(나의 금융자산은?/상위N%/말풍선) 중앙정렬로 변경, 자산/저축 tab 동일 (주석정보: 2021-01-20 수정)
+* 5		이승찬		2021-01-20		vs영역 수정
+* 6		이승찬		2021-02-01		컨텐츠 여백 수정
+* 7		김재림		2021-03-15		2차 고도화 반영 (주석정보: 2021-03-15 수정)
+* 8		이승찬		2021-04-14		나와 또래 비교 그래프 수정 / 탭메뉴별 개별성 부여
+* 9		이승찬		2021-04-16		금액 계산시 상단으로 스크롤이동 추가
+* 10	김재림		2021-04-19		[25756] 금액동일한 경우에 대한 메시지 Case 추가 (주석정보: 2021-04-19 추가)
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets" style="height:100% !important;">
+			<!-- mainDetailWrap -->
+			<div class="mainDetailWrap">
+				<!-- tab cont01-->
+                <div>
+                    <!-- detailHeader -->
+                    <div class="detailHeader">
+                        <h2 class="blind">자산분석 안내</h2>
+                        <div class="optionArea">
+                            <h3 class="flag">자산분석</h3>
+                        </div>
+                        <!-- 1구간 1~20%-->
+                        <div class="descArea">비슷한 또래보다<br /><em class="descAreaLine fcPrimary">금융자산</em>이 많으시네요</div>
+                        <!-- // 1구간 1~20% -->
+                        <!-- 2구간 21~50% -->
+                        <div class="descArea" style="display:none;">비슷한 또래보다<br /><em class="descAreaLine fcPrimary">금융자산</em>이 많으시네요</div>
+                        <!-- // 2구간 21~50% -->
+                        <!-- 3구간 51~99% -->
+                        <div class="descArea" style="display:none;">비슷한 또래보다<br /><em class="descAreaLine fcPrimary">금융자산</em>이 적으시네요</div>
+                        <!-- //3구간 51~99% -->
+                        <!-- 금액 동일 시 -->
+                        <div class="descArea" style="display:none;">비슷한 또래와<br /><em class="descAreaLine fcPrimary">금융자산</em>이 비슷해요</div>
+                        <!-- //금액 동일 시 -->
+                    </div>
+                    <!-- detailContents -->
+                    <div class="detailContents">
+                        <div class="consumAnalysisArea assetAnalysisArea">
+                            <div class="myScoreBox">
+                                <!-- 2021-01-20 수정 -->
+                                <!-- 2021-03-15 수정 -->
+                                <!-- [구간에 따른 아이콘 변경]
+                                    data-code="0" : 달 
+                                    data-code="1" : 맑음
+                                    data-code="2" : 약간 흐림
+                                    data-code="3" : 흐림+비
+                                -->
+                                <div class="iconWrap"><i class="iconTyAnalysis" data-code="1"></i></div>
+                                <!-- //2021-03-15 수정 -->
+                                <!-- //2021-01-20 수정 -->
+                                <dl class="scoreInfo">
+                                    <dt class="tit">
+                                        나의 금융자산은
+                                        <!-- 2021-03-15 수정 -->
+                                        <a href="javascript:void(0)" class="tipOpenNew iconTyTooltip02" title="또래의 평균 금융 자산과 비교하여 매일 산정합니다. 금융자산이 많을수록 상위권에 가까워집니다.">?</a> <!--20211206수정-->
+                                        <!-- //2021-03-15 수정 -->
+                                    </dt>
+                                    <dd class="score txtBlack6">상위 <em>13</em>%</dd>
+                                </dl>
+                                <!-- 2021-01-20 수정 -->
+                                <div class="ac">
+                                <!-- //2021-01-20 수정 -->
+                                    <!-- 2021-03-15 수정 -->                      
+                                    <!-- [메시지 노출 Case] -->
+                                    <div class="bubble" style="display:none;">
+                                        <p class="inner">저축액이 많을수록 1%에 가까워져요!</p>
+                                    </div>
+                                    <div class="bubble">
+                                        <p class="inner">자산이 많을수록 1%에 가까워져요!</p>
+                                    </div>
+                                    <!-- //[메시지 노출 Case] -->
+                                    <!-- //2021-03-15 수정 -->
+                                </div>
+                            </div>
+                            <!-- 2021-04-14 수정 -->
+                            <div class="scoreSetBox bgType1">
+                            <!-- //2021-04-14 수정 -->
+                                <div class="inner">
+                                    <div class="leftBox">
+                                        <p>또래 평균
+                                           <a href="#layerPopBottom01_1" class="iconTySelArrow05 btnPopOpen hide" title="또래선택"></a>  <!--20220204 hide추가 필요시 hide삭제-->
+                                        </p>
+                                        <div class="scoreInpWrap readOnly"> <!-- .readOnly / .disabled -->
+                                            <div class="inner">
+                                                <div class="input">
+                                                    <input type="tel" title="또래 평균 금융자산" value="77,777" readonly="readonly" autocomplete="off"> <!-- readonly / disabled -->
+                                                </div>
+                                                <span class="unit tyText2">만원</span>
+                                            </div>
+                                        </div>
+                                        <!-- 2020-12-16 수정 -->
+                                        <div class="textLink">
+                                            <a href="#" class="btnTypeTextLink">비슷한 또래 찾기</a>
+                                        </div>                                    
+                                        <!-- //2020-12-16 수정 -->
+                                    </div>
+                                    <div class="centerBox">VS</div>
+                                    <div class="rightBox">
+                                        <p>
+                                            <!-- 나의 금융자산 -->
+                                            <!-- 2021-01-20 수정 -->
+                                            <span class="al">나의 금융자산
+                                                <a href="javascript:void(0)" class="tipOpenNew iconTyTooltip02 tyRight" title="금융자산은 보유 계좌 잔액과 연결하신 금융자산의 합계를 알려드립니다. 보유하신 자산을 연결하시면 금융자산의 정확도가 올라갑니다.">?</a></p>
+                                            </span>
+                                        </p>
+                                        <div class="scoreInpWrap"> <!-- .readOnly / .disabled -->
+                                            <div class="inner">
+                                                <div class="input">
+                                                    <input type="tel" value="0" title="나의 금융자산" autocomplete="off">  <!-- readonly / disabled -->
+                                                </div>
+                                                <span class="unit tyText2">만원</span>
+                                            </div>
+                                        </div>
+                                        <!-- 2020-12-16 수정 -->
+                                        <div class="buttonLink"> <!-- 활성화 시 .active 추가 -->
+                                            <button type="button" disabled="disabled">확인</button> <!-- 활성화 시 disabled 제거 -->
+                                        </div>                                                   
+                                        <!-- //2020-12-16 수정 -->                   
+                                    </div>
+                                    <div class="linkArea1">
+                                        <em class="badgeTyBdDarkGray3 medium1"><span>남자</span></em>
+                                        <em class="badgeTyBdDarkGray3 medium1"><span>30대</span></em>
+                                        <em class="badgeTyBdDarkGray3 medium1"><span>300만원 이하</span></em>
+                                        <em class="badgeTyBdDarkGray3 medium1"><span>연금소득자</span></em>
+                                        <!--<em class="badgeTyBdDarkGray3 medium1"><span>서울</span></em>
+                                        <em class="badgeTyBdDarkGray3 medium1"><span>아파트</span></em>-->
+                                    </div>
+                                </div>
+                                <!-- 2020-12-16 삭제 -->
+                                <!--
+                                <div class="linkArea">
+                                    <a href="#" class="btnTypeTextLink">비슷한 또래찾기</a>
+                                </div>
+                                -->
+                                <!-- //2020-12-16 수정 -->
+                            </div>
+                            <div class="assetLinkArea02">
+                                <a href="#">또래 부자는 어떤 상품에 가입했을까? </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<!-- //tab cont01-->
+			</div>
+			<!-- // mainDetailWrap -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+
+    <!--팝업-->
+    <div id="layerPopBottom01_1" class="layerPopBottomWrap hasDim myAssets">
+        <div class="popInner">
+            <div class="layerHeader">
+                <p class="layerTit">또래 선택</p>
+                <button type="button" class="btnPopClose">팝업닫기</button>
+            </div>
+            <div class="layerCon">
+                <ul class="list_telecom">
+                    <li class="btnGroupBox"><a href="javascript:void(0)" class="al btnType">또래 상위 2% </a></li>
+                    <li class="btnGroupBox"><a href="javascript:void(0)" class="al btnType">또래 상위 10% </a></li>
+                    <li class="btnGroupBox"><a href="javascript:void(0)" class="al btnType">또래 평균 </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--//팝업-->
+
+</div>
+<!-- // wrap -->
+
+
+<script>
+    // start : 2021-04-16 수정
+    var $wrapper = $('.consumAnalysisArea');
+    var $ctrl = $wrapper.find('.buttonLink button');
+
+    function handleScrollTop(event) {
+        var $target = $(event.target).closest('.mainDetailWrap');
+        $target.stop().animate({scrollTop: 0}, 300);
+    }
+
+    function init() {
+        $ctrl.on('click', handleScrollTop);
+
+        $('.scoreInpWrap').on('focusin focusout', 'input', function(e) {
+            var $target = $(e.currentTarget);
+            if(e.type == 'focusin') {
+                $target.parents('.scoreInpWrap').addClass('focus')
+            } else {
+                $target.parents('.scoreInpWrap').removeClass('focus')
+            }
+        });
+    }
+
+    $(function(){
+        init();
+    });
+    // end : 2021-04-16 수정
+</script>
+ 
+<!-- 퍼블확인용 -->
+<script>
+    var $inputTel = $('.scoreInpWrap input[type=tel]');
+
+    function validator(target) {
+        var hasValue = target.value != undefined && target.value > 0
+        return hasValue ? true : false;
+    }
+
+    function handleChangeInput(event) {
+        var $this = $(event.target);
+        var $btnWrap = $this.closest('.scoreSetBox').find('.buttonLink');
+
+        if (validator(event.target)) {
+            $btnWrap.addClass('active');
+            $btnWrap.find('button').prop('disabled', false);
+        } else {
+            $btnWrap.removeClass('active');
+            $btnWrap.find('button').prop('disabled', true);
+        }
+    }
+
+    $(function() {
+        $inputTel.on('keypress keyup', handleChangeInput);
+    });
+</script>
+<!-- //퍼블확인용 -->
+</body>
+</html>

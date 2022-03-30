@@ -1,0 +1,626 @@
+
+<!-- /********************************************************************
+* @설명			:	MY리포트 > 내카드 리포트 상세보기 > 선택소비/필수소비
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		박기완		2020-12-07	최초작성
+* 2		박기완		2021-01-05	내역  하단 '더보기' 추가필요 (주석정보: 2021-01-05 추가)
+* 3		서영교		2021-04-15	[26641] 문구수정: 지난달 → 전월대비 (주석정보: 2021-04-15 수정)
+* 4		김남일		2021-11-15	탭수정 (주석정보: 20211115 수정)
+*********************************************************************/ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/in08.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+    <script src="../../script/include/library/ui.js"></script>
+    <script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">내카드 리포트</h1>
+				<div class="rSec">
+					<a href="javascript:;" onclick="sbRemoveAllScr();" class="btnHome"><span class="iconTyHome">홈으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<div class="innerBox lineN myReportAccount type2">
+				<p class="tit">한달 동안 사용한 내역을 확인하세요!</p>
+				<p class="circelBtns">
+					<a href="javascript:void(0)" class="financialMonth_btn" data-href="#layerPopBottom02" onclick="bottomPopOpen(this);" id="sMonth">12월</a>
+					<a href="javascript:void(0)" class="financialMonth_btn" data-href="#layerPopBottom01" onclick="bottomPopOpen(this);" id="sAcctNo">전체</a>
+				</p>
+			</div>
+            <!--20211115 추가 - 나눠진탭이 하나로 합쳐짐-->
+            <div class="tabTy_03">
+                <div class="totalPrice1">
+                    <span class="tit">총 결제금액</span>
+                    <span class="txt"><em>135,123,123,123</em><em>원</em></span>
+                </div>
+            </div>
+         
+		    <!-- contents -->
+			<div class="contents full">  <!--20211115 pb0삭제-->
+				<!-- 총 결제금액 -->
+				<div class="tabViewWrap mt0 pb180"> <!--20211115 - pb180추가-->
+					<div class="tabView on" id="tabView1">
+						<div class="innerBox lineN AccountArcoWrap">
+
+							<!-- 내역 없을 경우 -->
+							<div class="noDataWrap bgWhite">
+								<p class="img nodata"></p>
+								<p class="txt">거래내역이 없습니다</p>
+							</div>
+                            <!-- //내역 없을 경우  -->
+                            
+							<!-- 쇼핑 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+                                        <h3 class="tit iconTyCardReport01">쇼핑</h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span class="txtRed1">+100,000원</span></dt> -->
+										<dt>전월대비 <span class="txtRed1">+100,000원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>500,000원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01"  style="display: none;">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">11번가</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">대표일반 나이스</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">쿠팡</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+							<!-- //쇼핑 -->
+
+							<!-- 카페/디저트 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+										<h3 class="tit iconTyCardReport02">카페/디저트 </h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span class="txtBlue1">-1,200원</span></dt> -->
+										<dt>전월대비 <span class="txtBlue1">-1,200원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>500,000원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">11번가</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">대표일반 나이스</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">쿠팡</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+                            <!-- //카페/디저트 -->
+                            
+                            <!-- 도서문화 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+										<h3 class="tit iconTyCardReport03">도서문화 </h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span class="txtRed1">+30,580원</span></dt> -->
+										<dt>전월대비 <span class="txtRed1">+30,580원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>120,100원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">11번가</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">대표일반 나이스</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">쿠팡</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+                            <!-- //도서문화 -->
+                            
+                            <!-- 뷰티/피트니스/생활 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+										<h3 class="tit iconTyCardReport04">뷰티/피트니스/생활 </h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span>+0원</span></dt> -->
+										<dt>전월대비 <span>+0원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>120,100원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">11번가</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">대표일반 나이스</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">쿠팡</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+                            <!-- //뷰티/피트니스/생활 -->
+                            
+                            <!-- 푸드 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+										<h3 class="tit iconTyCardReport05">푸드 </h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span class="txtBlue1">-3,600원</span></dt> -->
+										<dt>전월대비 <span class="txtBlue1">-3,600원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>120,100원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">정가네</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">한솥도시락</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">버거킹 강남역점</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+                            <!-- //푸드 -->
+                            
+                            <!-- 공과금 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+										<h3 class="tit iconTyCardReport06">공과금 </h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span>+0원</span></dt> -->
+										<dt>전월대비 <span>+0원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>120,100원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">정가네</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">한솥도시락</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">버거킹 강남역점</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+                            <!-- //공과금 -->
+                            
+                            <!-- 마트/편의점 -->
+							<div class="contAccordion borderR12 mb20 AccountArco">
+								<!-- AccorTitle_01 -->
+								<div class="AccorTitle AccorTitle_01">
+									<a href="javascript:;" title="세부내역 열기" role="button">
+										<h3 class="tit iconTyCardReport07">마트/편의점 </h3>
+										<div class="arrow">
+											<span class="ico_arrow btn-combo">세부내역 열림</span>
+										</div>
+									</a>
+									<dl class="accTop">
+										<!-- 2021-04-15 수정 -->
+										<!-- <dt>지난달 <span class="txtRed1">+7,210원</span></dt> -->
+										<dt>전월대비 <span class="txtRed1">+7,210원</span></dt>
+										<!-- //2021-04-15 수정 -->
+										<dd>120,100원</dd>
+									</dl>
+								</div>
+								<!-- //AccorTitle_01 -->
+
+								<!-- AccorCont_01 -->
+								<div class="AccorCont AccorCont_01">
+									<div class="listTypeTable_01 halfType lineType">
+										<ul>
+											<li class="row">
+												<div class="leftCol">
+													<p class="tit">정가네</p>
+													<p class="txt">2020.11.19</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">25,700원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">한솥도시락</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">7,351원</p>
+												</div>
+                                            </li>
+                                            <li class="row">
+												<div class="leftCol">
+													<p class="tit">버거킹 강남역점</p>
+													<p class="txt">2020.11.13</p>
+												</div>
+												<div class="rightCol">
+													<p class="txt">108,050원</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<!-- 2021-01-05 추가 -->
+									<div class="btnArea">
+										<button type="button" class="btnType btnMore samll"><span><i class="iconTySelArrow03"></i>더보기</span></button>
+									</div>
+									<!-- //2021-01-05 추가 -->
+								</div>
+								<!-- //AccorCont_01 -->
+							</div>
+							<!-- //마트/편의점 -->
+						</div>
+
+						<!-- banner -->
+						<div class="bannerMy_01">
+							<a href="javascript:;" class="bucketList">
+								<p><span>빠져나가는 카드비 <strong>오늘부터 지출줄이기 도전!</strong></span></p>
+							</a>
+						</div>
+						<!-- //banner -->
+
+					</div>
+				</div>
+				<!-- //총 결제금액 -->
+
+			</div>
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- layerPopWrap : 달력 셀렉트 -->
+<div class="layerPopBottomWrap hasDim" id="layerPopBottom02" tabindex="-1">
+	<div class="popInner" tabindex="0" style="display: block;">
+		<div class="layerHeader">
+			<p class="layerTit" onclick="bottomPopClose(this)">월 선택</p>
+
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">2020년 12월</button></li>
+					<li><button type="button">2020년 11월</button></li>
+					<li><button type="button">2020년 10월</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //layerPopWrap : 달력 셀렉트 -->
+
+<!-- 등록카드 선택 -->
+<div class="layerPopBottomWrap hasDim" id="layerPopBottom01"> 
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit" onclick="bottomPopClose(this)">등록카드 선택</p>
+			<button type="button" class="btnPopClose" id="selAcct">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul id="layerPopBottom01Li">
+					<li><button type="button" value="전체" onclick="inputValue('sAcctNo', this.value, true)">전체</button></li>
+					<li>
+						<button class="btnAccount">
+							<dl>
+								<dt>[신한카드] 신한 Deep Dream</dt>
+								<dd>
+									<p class="number">1111********1700</p>
+								</dd>
+							</dl>
+						</button>
+					</li>
+					<li>
+						<button class="btnAccount">
+							<dl>
+								<dt>[삼성카드] 삼성페이 TapTap</dt>
+								<dd>
+									<p class="number">3333********2207</p>
+								</dd>
+							</dl>
+						</button>
+					</li>
+					<li>
+						<button class="btnAccount">
+							<dl>
+								<dt>[롯데카드] LIKIT ON카드</dt>
+								<dd>
+									<p class="number">5272********3002</p>
+								</dd>
+							</dl>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //등록카드 선택 -->
+
+<script type="text/javascript">
+	$(".tabTy_03 a").on("click",function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	});
+	
+	/* 2020-03-19 제거 
+	$(".contents").scroll(function(){
+		if($(this).scrollTop() < 10){
+			$("#contentsWrap").removeClass("on");
+		}else{
+			$("#contentsWrap").addClass("on");
+		}
+	}); */
+</script>
+</body>
+</html>

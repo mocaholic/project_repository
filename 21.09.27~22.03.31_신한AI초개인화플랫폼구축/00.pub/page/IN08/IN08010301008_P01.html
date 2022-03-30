@@ -1,0 +1,388 @@
+
+<!-- 
+/********************************************************************
+* @설명			:	메인 > 소비관리 > 비슷한 또래찾기
+*********************************************************************
+* 번호	작업자		작업일			변경내용
+*--------------------------------------------------------------------
+* 1		박기완		2020-11-29		최초작성
+* 2		이승찬		2021-01-05		"필수사항" 영역 추가
+* 3		김남일		2021-11-16		선택항목추가
+* 4		김남일		2021-11-25		말줄임표 (수정 정보 : 20211125))
+* 5		김남일		2021-11-29		와싱 요청 반영 (수정 정보 : 20211129)
+* 6		김남일		2021-12-01		상단텍스트 수정,바텀시트 수정 - 주거형태,직업군 (수정 정보 : 20211201)
+* 7		김남일		2021-12-29      텍스트수정 (주석정보 : 20211229)
+*********************************************************************/ 
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>자산분석 : 신한은행</title>
+    <link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
+    <link rel="stylesheet" type="text/css" href="../../style/my_assets.css">
+    <link rel="stylesheet" type="text/css" href="../../style/mydata.css"><!--마이데이터 CSS-->
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>
+	<script src="../../script/include/library/ui_myassets.js"></script> <!-- MY자산 고도화 ui 스크립트 추가 -->
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->
+		<header id="headerWrap">
+			<div id="header">
+				<h1 class="tit">비슷한 또래찾기</h1>
+				<div class="rSec">
+					<a href="javascript:void(0)" class="btnClose"><span class="iconTy03">팝업 닫기</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+		<!-- contentsWrap -->
+		<div id="contentsWrap" class="myAssets">
+			<!-- contents -->
+			<div class="contents pt0">
+
+				<!-- 210105 추가 - 감싸기용 -->
+				<div class="findingPeersWrap">
+				<!-- //210105 추가 - 감싸기용 --> 
+
+					<div class="topInfoBoxGray">
+						<p class="textTy666">고객님의 정보를 알려주시면 또래의 금융자산과 비교해 드릴게요	</p>  <!--20211129 와싱 요청 반영-->
+					</div>
+	
+					<div class="formGroupBox">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-1">성별</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom01" class="btnPeriod btnPopOpen"><span class="medium">여자<i class="iconTySelArrow03"></i></span></a>
+									</div>
+								</dd>
+								<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+							</div>
+						</dl>
+					</div>
+
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-2">연령대</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom02" class="btnPeriod btnPopOpen">30대<i class="iconTySelArrow03"></i></a>
+									</div>
+								</dd>
+								<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+							</div>
+						</dl>
+					</div>
+
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-3">월소득</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom03" class="btnPeriod btnPopOpen">300만원 이하<i class="iconTySelArrow03"></i></a>
+									</div>
+								</dd>
+								<dd class="errorMsg">입력한 값이 일치하지 않습니다.</dd>
+							</div>
+						</dl>
+					</div>
+
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-6">주거형태</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom06" class="btnPeriod btnPopOpen">아파트<i class="iconTySelArrow03"></i></a>
+									</div>
+								</dd>
+							</div>
+						</dl>
+					</div>
+
+					<!--20211116 추가-->
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-6">주거소유</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom07" class="btnPeriod btnPopOpen">자가<i class="iconTySelArrow03"></i></a>
+									</div>
+								</dd>
+							</div>
+						</dl>
+					</div>
+					<!--//20211116 추가-->
+
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt class="le"><label for="inputElement4-5">거주지역</label></dt>
+								<dd class="r">
+									<div class="inner1"> <!--20211125 수정-->
+										<a href="#layerPopBottom05" class="btnPeriod btnPopOpen pl0"><span>서울(양천, 마포, 종로, 성동, 중구)</span><i class="iconTySelArrow03R"></i></a>
+									</div>
+								</dd>
+							</div>
+						</dl>
+					</div>
+
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-4">직업군</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom04" class="btnPeriod btnPopOpen">직장인<i class="iconTySelArrow03"></i></a>
+									</div>
+								</dd>
+							</div>
+						</dl>
+					</div>
+
+					<!--20211116 추가-->
+					<div class="formGroupBox mt10">
+						<dl class="formItem">
+							<div class="formRow">
+								<dt><label for="inputElement4-4">결혼여부</label></dt>
+								<dd>
+									<div class="inner">
+										<a href="#layerPopBottom08" class="btnPeriod btnPopOpen">기혼<i class="iconTySelArrow03"></i></a>
+									</div>
+								</dd>
+							</div>
+						</dl>
+					</div>
+					<!--//20211116 추가-->
+
+					<div class="contWrap mt30">
+						<div class="termsBox">
+							<div class="titArea1">
+								<input type="checkbox" name="agr" id="agree" checked="checked"><label for="agree" class=""><span class="fontCo2">[필수]</span> 개인정보수집 및 이용동의	</label>								
+								<a href="javascript:void(0)"><span class="hide">개인정보 수집 및 이용 동의 상세보기</span></a>
+							</div>
+						</div>
+					</div>
+				<!-- 210105 추가 - 감싸기용 -->
+				</div>
+				<!-- //210105 추가 - 감싸기용 -->
+				
+
+				<div class="btnGroupBox floating fixed">
+					<!-- 비활성화 : disabled="disabled" -->
+					<a href="#layerPop01" class="btnType btnPopOpen"><span>확인</span></a>
+				</div>
+			</div>
+            <!-- // contents -->
+            
+            <!-- top button -->
+            <a href="javascript:;" class="btnTyCircleTop">Top</a>
+            <!-- //top button -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!--  성별layerPopBottom01 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom01">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">기본소득 선택</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">여자</button></li>
+					<li><button type="button">남자</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //성별layerPopBottom01 -->
+
+<!--  연령대layerPopBottom02 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom02">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">연령대</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">20대</button></li>
+					<li><button type="button">30대</button></li>
+					<li><button type="button">40대</button></li>
+					<li><button type="button">50대</button></li>
+					<li><button type="button">60대 이상</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //연령대layerPopBottom02 -->
+
+<!--  월소득layerPopBottom03 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom03">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">월소득</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">100만원 이하</button></li>
+					<li><button type="button">200만원 이하</button></li>
+					<li><button type="button">300만원 이하</button></li>
+					<li><button type="button">500만원 이하</button></li>
+					<li><button type="button">500만원 초과</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //월소득layerPopBottom03 -->
+
+<!--  직업군layerPopBottom04 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom04">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">직업군</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">직장인</button></li>
+					<li><button type="button">자양업자</button></li>
+					<li><button type="button">연금소득자</button></li>
+					<li><button type="button">기타 직업군</button></li>  <!--20211201 수정-->
+				</ul>
+			</div>         
+		</div>
+	</div>
+</div>
+<!-- //직업군layerPopBottom04 -->
+
+<!--  거주지역layerPopBottom05 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom05">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">주거형태</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">서울(서초, 강남, 용산, 송파, 영등포) </button></li>
+					<li><button type="button">서울(양천, 마포, 종로, 성동, 중구)	</button></li>
+					<li><button type="button">서울(광진, 서대문, 동작, 성북, 강동) </button></li>
+					<li><button type="button">서울(강서, 노원,구로, 동대문, 관악)	</button></li>
+					<li><button type="button">서울(은평, 금천, 도봉, 강북, 중랑)</button></li>
+					<li><button type="button">수도권(경기, 인천)</button></li>
+					<li><button type="button">기타(서울, 수도권 외)</button></li>
+				</ul>
+			</div>         
+		</div>
+	</div>
+</div>
+<!-- //거주지역layerPopBottom05 -->
+
+<!--  주거형태layerPopBottom06 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom06">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">주거형태</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">아파트</button></li>
+					<li><button type="button">아파트 외</button></li>  <!--20211201수정-->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //주거형태layerPopBottom06 -->
+
+<!--  주거소유layerPopBottom07 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom07">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">주거소유</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">자가</button></li>
+					<li><button type="button">자가 외</button></li>  <!--20211229수정-->
+					<!--<li><button type="button">월세</button></li>-->
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //주거소유layerPopBottom07 -->
+
+<!--  결혼여부layerPopBottom08 -->
+<div class="layerPopBottomWrap hasDim myAssets" id="layerPopBottom08">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">결혼여부</p>
+			<button type="button" class="btnPopClose">팝업 닫기</button>
+		</div>
+		<div class="layerCon">
+			<div class="listOneLineBox type1">
+				<ul>
+					<li><button type="button">기혼</button></li>
+					<li><button type="button">기혼 외</button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //결혼여부layerPopBottom08 -->
+
+<!-- 210105 추가 -->
+<div class="layerPopWrap hasDim myAssets" id="layerPop01">
+	<div class="popInner">
+		<div class="layerHeader blind">
+			<p class="layerTit">타이틀</p>
+		</div>
+		<div class="layerCon">
+			<div class="conInner">
+				<p class="alertMsg">
+					개인정보 수집 및 이용약관에 동의해주세요.
+				</p>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:void(0);" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- //210105 추가 -->
+
+</body>
+</html>

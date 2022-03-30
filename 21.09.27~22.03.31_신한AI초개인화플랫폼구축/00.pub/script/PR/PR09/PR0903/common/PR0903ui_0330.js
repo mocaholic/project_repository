@@ -84,15 +84,11 @@ var solAI = {
 		}else{
 			// console.log('OK')
 		}
-		
-		/* if($('.premierMain').length > 0){
-			$('.allMenuBtn').css({'bottom':'105px'});
-		} */
 
-		// if($('.floatingFixTr').length > 0){
-		// 	$('.allMenuBtn').css({'bottom':'105px', /* 'transition':'none' */});
-		// 	// $('.allMenuBtn').addClass('type2');
-		// }
+		if($('.floatingFixTr').length > 0){
+			$('.allMenuBtn').css({'bottom':'105px', /* 'transition':'none' */});
+			// $('.allMenuBtn').addClass('type2');
+		}
 		
 		// 전체메뉴 플로팅 버튼 (flip 타입)
 		$('.allMenuBtn .flipBox').click(function(){
@@ -374,7 +370,7 @@ var recomScrMotion = {
 	},
 	bindEvt : function(){
 		recomScrMotion.updownMotion(); //새로고침or화면진입시모션
-		$('.contents').on('scroll', function(e){
+		$('.contents , .layerCon').on('scroll', function(e){
 			$('.motionBox').each(function(inx,ele){
 				if(!ele){return}
 				if(recomScrMotion.updownPos(ele, -20)){
