@@ -749,6 +749,9 @@ hr.lineTy02 {margin:0 -20px; background:#f1f2f3;}
 .portSimul .formAreaBox.type3.tyN01 .inputBox.calRange.type02 .dateBox dd:last-child {width:40px; border:none;}
 .portSimul .formAreaBox.type3.tyN01 .inputBox.calRange.type02 .dateBox dd:last-child .btn {width:40px; height:40px; line-height:40px; border:1px solid #dbdbdb; top:1px;}
 
+/* 포트 거래이력 */
+.portHistory .listTypeTable + .listTypeTable {margin-top:0;}
+
 /* 자산건강도 */
 .assetHealth {}
 .assetHealth .tabTy02[class*=swiper-container] {padding-left:0; padding-right:0;}
@@ -869,8 +872,8 @@ hr.lineTy02 {margin:0 -20px; background:#f1f2f3;}
 .assetHealth .graphArea.totalAssets .legendList {width: 288px; margin: 20px auto 0; display: flex; flex-wrap: wrap; justify-content: center;}
 .assetHealth .graphArea.totalAssets .legendList > li {width: 50%; margin-bottom: 4px;}
 
-.assetHealth .topChar {position:relative; display:flex; justify-content:flex-end; margin-top:40px;}
-.assetHealth .topChar::before {display:block; content:""; position:absolute; top:0; right:0; background-image:url('../../images/solAI/icon_spark.png'), url('../../images/solAI/img_character09.png'); width:96px; height:133px; background-size:16px 27px, 87px 119px; background-position:80px 0, 6px 14px; background-repeat:no-repeat; transform:scaleX(-1);}
+.assetHealth .topChar {position:relative; display:flex; margin-top:40px;}
+.assetHealth .topChar::before {display:block; content:""; position:absolute; top:-10px; right:20px; background-image:url('../../images/solAI/icon_spark.png'), url('../../images/solAI/img_character09.png'); width:96px; height:133px; background-size:16px 27px, 87px 119px; background-position:80px 0, 6px 14px; background-repeat:no-repeat; transform:scaleX(-1);}
 .assetHealth .topChar .infoBalloon {position:relative; background:#f8f9fb; border-radius:10px; padding:8px 8px 8px 18px; margin-top:9px; margin-right:40%; width:200px; box-sizing:border-box;}
 .assetHealth .topChar .infoBalloon::before {display:block; content:""; position:absolute; top:18px; right:-9px; width:0; height:0; border:10px solid transparent; border-left-color:#f8f9fb; border-right:0;}
 .assetHealth .topChar .infoBalloon a {display:block; position:relative; padding-right:25px;}
@@ -1560,6 +1563,7 @@ hr.lineTy02 {margin:0 -20px; background:#f1f2f3;}
     .mainCont .productType.boxType > ul > li.row {padding:16px 10px;} 
     .mainCont .listTypeTable .row .leftCol .fontSS {font-size:12px !important;}
     .mainCont .listTypeTable .row .rightCol .fontLL {font-size:18px !important;}
+    .investmentLink > div {padding:22px 14px;}
 
     /* 전체메뉴 */
     .allMenuList .depth2 {left:142px; width:calc(100% - 142px);}
@@ -1604,9 +1608,13 @@ hr.lineTy02 {margin:0 -20px; background:#f1f2f3;}
     .assetHealth .boxTyList > div .titM {font-size:15px;}
     .assetHealth .tblTyDefault.rowType.bdlrN tbody th {font-size:12px; padding:11px 10px;}
     .assetHealth .contAccordion .AccorCont .titleBox {margin:0 -10px;}
+    .assetHealth .topChar::before {right:0;}
     
     /* 서비스 안내 */
     .premierService .fontNL {font-size:14px !important;}
+
+    /* 거래이력 */
+    .portHistory .conBox.lineType.blue .listTypeTable .row .leftCol {width:80px;}
 }
 
 @media screen and (max-width:365px) {

@@ -1,0 +1,328 @@
+
+<!-- 
+/***************************************************************************************
+* @경로			:	
+* @설명			:	SOL AI > 자산건강도 > 전체자산진단
+****************************************************************************************
+* 번호	작업자		작업일			변경내용
+*------------------------------------------------------------------------------------------
+* 1     윤지혜      2021-11-01      최초 작성
+* 2     윤지혜      2021-11-05      공통 innerBox class ="type02" 추가
+* 3     윤지혜      2021-11-15      디자인 확정(텍스트, class 및 그래프 영역 수정)
+* 4     김연수      2021-11-23      class추가(aiType01) 
+* 5     윤지혜      2021-11-24      자산종합검진의견 영역 수정 
+* 6     윤지혜      2021-12-31      class 삭제 (mt8)
+* 7     윤지혜      2022-01-03      하단 플로팅 버튼 삭제
+* 8     김연수      2022-01-20      그래프영역범례추가/클래스추가
+* 9     윤지혜      2022-02-10      데이터 전체 감싸는 div 추가
+* 10     윤지혜      2022-02-24     tooptip 레이어 팝업 추가
+* 11     윤지혜     2022-03-03      문구 추가
+* 12     윤지혜     2022-03-04      그래프 안내 문구 추가
+* 13     윤지혜     2022-03-10      문구,아이콘 추가 및 수정
+* 14     윤지혜     2022-03-17      항목별 진단 더보기버튼 수정
+* 15     윤지혜     2022-03-23      아이콘 및 문구 추가
+***************************************************************************************/ 
+-->
+
+<!DOCTYPE html> 
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>신한은행</title>
+	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">	
+	<link rel="stylesheet" type="text/css" href="../../style/solAI.css">
+	<script src="../../script/include/library/jquery-1.12.4.min.js"></script>
+	<script src="../../script/include/library/ui.js"></script>	
+	<script src="../../script/PR/PR09/PR0903/common/PR0903ui.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- container -->
+	<section id="container">
+		<!-- header -->      
+		<header id="headerWrap">
+			<div id="header">
+				<div class="lSec">
+					<a href="javascript:;" class="btnBefore"><span class="iconTy01">이전</span></a>
+				</div>
+				<h1 class="tit">자산 건강도</h1>
+				<div class="rSec">
+					<a href="javascript:;" class="btnHome"><span class="iconTyHome">처음으로</span></a>
+					<a href="javascript:;" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
+				</div>
+			</div>
+		</header>
+		<!-- // header -->
+
+		<!-- contentsWrap -->
+		<div id="contentsWrap">
+			<div class="contents full">
+				<div class="solAi assetHealth">
+					<!-- 상단 tab -->
+					<!-- 21.11.23 class추가(aiType01) -->
+					<div class="tabTy02 aiType01 js-tab-swiper swiper-container-horizontal">
+						<div class="swiper-wrapper">
+							<!-- 활성화시 class="on" -->
+							<a href="javascript:;" class="swiper-slide on"><span>전체자산진단</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>포트진단</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>개별상품진단</span></a>
+							<a href="javascript:;" class="swiper-slide"><span>투자가이던스</span></a>
+						</div>
+					</div>
+					<!-- // 상단 tab -->
+					<div><!-- 22.02.10 추가 -->
+						<div class="innerBox type02 lineN bgWhite3"><!-- 21.11.05 class="type02" 추가 : 공통 inner와 여백 다름 -->
+							<h2 class="subTit">
+								전체자산 진단현황
+								<a href="#layTooltip1" class="btnPopOpen"><i class="iconTySol3">도움말</i></a>
+							</h2>
+							<div class="boxTyShadow">
+								<div class="titleBox">
+									<h3 class="subTit">자산 종합검진</h3>
+									<div class="dateArea">
+										<span>
+											기준년월
+											<strong>2021-10</strong>
+										</span>
+										<a href="javascript:void(0);" class="btn">
+											<span class="iconTy33">달력</span>
+										</a>
+									</div>
+								</div>
+								<div class="assetChkUp">
+									<div class=""><!-- 21.12.31 class 삭제 -->
+										<div class="ar">
+											<span class="fontSSSS txtBlack5">(단위 : 원, %)</span>
+										</div>
+										<div class="circlePanel vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+											<p class="txtArea">
+												<span class="eval">매우 좋음</span>
+												<strong class="score">97점</strong>
+											</p>
+										</div>
+									</div>
+
+									<!-- 22.01.20 그래프영역범례추가 -->
+									<div class="graphArea">
+										<div class="graph" style="width:100%; height:252px; text-align:center; background:#f7f7f7; line-height:12.14;">그래프 영역</div>
+										<div class="annotation">
+											<ul class="dateNote">
+												<li>
+													<span class="date">현재 분기</span>
+													<span class="mark">그래프 색상</span>
+												</li>
+												<li>
+													<span class="date">지난 분기</span>
+													<span class="mark">그래프 색상</span>
+												</li>
+											</ul>
+										</div>
+										<p class="psTxt mt20 txtBlack4 fontSS">자산종합검진 다이어그램의 면적이 넓을수록, 항목별 점의 위치가 바깥쪽에 위치할수록 자산건강도가 좋습니다.</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- <h2 class="subTit txtBlack4">자산 종합 검진의 종합의견</h2> -->
+							<div class="listTitleBox mt30 mb20">
+								<div class="left">
+									<h2 class="subTit mg0 txtBlack4">종합의견</h2>
+								</div>
+								<div class="right">
+									<span class="fontSSS txtBlack4">기준일자 2022-03-03</span>
+								</div>
+							</div>
+							<!-- 21.11.24 수정 : 케이스 변경 - 1~ 4개까지 의견 노출 -->
+							<div class="totalOpinion pb20">
+								<ul class="dotList dot5">
+									<li>
+										<div class="charTxt">
+											<p class="sBubble right">
+												전분기 <strong>80점</strong>에서 현재 <strong>97점</strong>으로 <strong>상향</strong>되었습니다.
+											</p>
+										</div>
+									</li>
+									<li>
+										고객님의 자산 건강도 <strong>종합점수</strong>는 <strong>97점으로 매우 좋은 편</strong>입니다.
+									</li>
+									<li>
+										고객님의 자산 건강도 <strong>종합점수</strong>는 <strong>97점으로 매우 좋은 편</strong>입니다.
+									</li>
+									<li>
+										고객님의 자산 건강도 <strong>종합점수</strong>는 <strong>97점으로 매우 좋은 편</strong>입니다.
+									</li>
+								</ul>							
+							</div>
+							<!-- //21.11.24 수정 : 케이스 변경 - 1~ 4개까지 의견 노출 -->
+							<div class="">
+							</div>
+						</div>
+
+						<!-- 22.01.20 type02클래스추가 -->
+						<div class="innerBox type02 lineN">
+							<h2 class="subTit">전체자산 구성</h2>
+							<!-- <div class="listTitleBox pt20 mb15">
+								<div class="left">
+									<h2 class="subTit mg0">전체자산 구성</h2>
+								</div>
+								<div class="right">
+									<span class="fontSSS txtBlack4">기준일자 2022-03-03</span>
+								</div>
+							</div> -->
+
+							<!-- 22.01.20 그래프영역범례추가 -->
+							<div class="graphArea totalAssets">
+								<div class="graph" style="width:100%; height:182px; text-align:center; background:#f7f7f7; line-height:12.14;">그래프 영역</div>
+								<ul class="legendList">
+									<li>
+										<span class="legend bggraph01"></span>
+										<span class="txtBlack5">대체(ELF/ELT) 50%</span>
+									</li>
+									<li>
+										<span class="legend bggraph03"></span>
+										<span class="txtBlack5">유동성(예적금) 10%</span>
+									</li>
+									<li>
+										<span class="legend bggraph04"></span>
+										<span class="txtBlack5">국내주식 20%</span>
+									</li>
+									<li>
+										<span class="legend bggraph05"></span>
+										<span class="txtBlack5">해외선진 15%</span>
+									</li>
+									<li>
+										<span class="legend bggraph02"></span>
+										<span class="txtBlack5">해외이머징 5%</span>
+									</li>
+								</ul>
+							</div>
+
+							<hr class="lineTy02">
+
+							<div class="topChar">
+                                <div class="infoBalloon">
+                                    <strong class="txtPurple4">항목별 진단내용</strong>을<br>확인해 보세요 !
+								</div>
+                            </div>
+							<h2 class="subTit">항목별 진단</h2>
+							<div class="boxTyList">
+								<div class="boxTyShadow type02">
+									<a href="javascript:void(0);" class="">
+										<h3 class="titM">
+											수익성
+											<!-- <i class="iconTySol12">&gt;</i> -->
+										</h3>
+										<p class="txt">얼마나 벌었을까요?<br>(자산 증식 정도)</p>
+										<div class="halfCircle vGood"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+											<strong>매우 좋음</strong>
+										</div>
+										<span>더보기</span>
+									</a>
+								</div>
+								<div class="boxTyShadow type02">
+									<a href="javascript:void(0);" class="">
+										<h3 class="titM">
+											위험성
+											<!-- <i class="iconTySol12">&gt;</i> -->
+										</h3>
+										<p class="txt">자산 위험도는 어떨까요?<br>(손실 가능성 정도)</p>
+										<div class="halfCircle normal"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+											<strong>보통</strong>
+										</div>
+										<span>더보기</span>
+									</a>
+								</div>
+								<div class="boxTyShadow type02">
+									<a href="javascript:void(0);" class="">
+										<h3 class="titM">
+											유동성
+											<!-- <i class="iconTySol12">&gt;</i> -->
+										</h3>
+										<p class="txt">당장 쓸 수 있는 자산은?<br>(비상예비자금 비중)</p>
+										<div class="halfCircle vBad"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+											<strong>매우비적정</strong>
+										</div>
+										<span>더보기</span>
+									</a>
+								</div>
+								<div class="boxTyShadow type02">
+									<a href="javascript:void(0);" class="">
+										<h3 class="titM">
+											개별상품 위험
+											<!-- <i class="iconTySol12">&gt;</i> -->
+										</h3>
+										<p class="txt">보유상품은 안전한가요?<br>(상품별 위험요인)</p>
+										<div class="halfCircle bad"><!-- case별 class = 매우나쁨 : vBad, 나쁨 : bad, 보통 : normal, 좋음 : good, 매우좋음 : vGood -->
+											<strong>나쁨</strong>
+										</div>
+										<span>더보기</span>
+									</a>
+								</div>
+							</div>
+						</div>
+
+						<!-- 22.03.03 문구 추가 -->
+						<div class="contAccordion off on">
+							<div class="AccorTitle brdBNone bgN">
+								<a href="javascript:void(0)">
+									<p class="tit txtBlack1 bold">자산건강도 산출기준</p>
+									<div class="arrow">
+										<span class="iconTy09">세부내역 열림</span>
+										<span class="iconTy10">세부내역 닫힘</span>
+									</div>
+								</a>
+							</div>
+							<div class="AccorCont pt0 pb0 bgN" style="display:block;">
+								<p class="psTxt">
+									전체 및 포트별 자산건강도 진단 시 예/적금, 금리형 신탁 등의 상품은 월결산정보를 반영하고, 펀드, ETF 등 시가평가 상품은 전영업일 평가정보를 활용해서 산출됩니다.<br>
+									월결산은 매월 약 10일 후 반영되어 실제 계좌정보와 1개월 정도 시차가 발생하므로, 결산 이후 신규개설된 예/적금, 금리형 신탁 계좌 및 입출정보는 진단에서 제외되어 실제 고객 보유 계좌정보와 차이가 발생합니다. <br>
+									따라서, 자산건강도 진단 결과는 고객님의 전체적인 자산구성 및 수익/위험수준을 대략적으로 파악하는 참고자료로만 활용하시기 바랍니다.
+								</p>
+							</div>
+						</div>
+						<!-- 22.03.03 문구 추가 -->
+					</div><!-- // 22.02.10 추가 -->
+				</div>
+			</div>			
+			<!-- // contents -->
+		</div>
+		<!-- // contentsWrap -->
+	</section>
+	<!-- // container -->
+</div>
+<!-- // wrap -->
+
+<!-- layer popup : tooltip -->
+<div class="layerPopWrap hasDim layerPopTooltip" id="layTooltip1">
+	<div class="popInner">
+		<div class="layerHeader">
+			<p class="layerTit">도움말</p>
+		</div>
+		<div class="layerCon">
+			<div class="conInner popScroll">
+				<ul class="dotList">
+					<li>전체자산 종합검진은 고객님의 전체자산에 대하여 수익률을 관리하고 투자목적 달성을 도와드리기 위한 진단체계 입니다. 특정 진단 항목에 의해 편향된 관리를 지양하고 균형감있고 체계적인 자산관리를 제공하기 위해 자산 건강도를 수익성, 위험성, 유동성, 개별상품 위험의 4가지 진단 항목으로 분석한 결과를 제시합니다. </li>
+				</ul>
+			</div>
+		</div>
+		<div class="btnGroupBox">
+			<a href="javascript:;" class="btnType"><span>확인</span></a>
+		</div>
+	</div>
+</div>
+<!-- // layer popup : tooltip -->
+
+
+<script type="text/javascript">
+
+	$(function(){
+		// 레이어팝업 닫기
+		$('.btnPopClose, .btnType').on('click',function(){
+			$('.layerPopWrap').hide();
+		});
+	});
+	
+</script>
+</body>
+</html>
