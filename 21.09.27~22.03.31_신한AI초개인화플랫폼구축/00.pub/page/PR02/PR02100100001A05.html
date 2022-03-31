@@ -3,7 +3,7 @@
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title>신한은행</title>
 	<link rel="stylesheet" type="text/css" href="../../style/shinhan.css">
@@ -22,7 +22,7 @@
 				<div class="lSec">
 					<a href="javascript:void(0)" class="btnBefore"><span class="iconTy01">이전</span></a>
 				</div>
-				<h1 class="tit">이체2</h1>
+				<h1 class="tit">이체</h1>
 				<div class="rSec">
 					<a href="javascript:void(0)" class="btnTotal"><span class="iconTy02">전체메뉴</span></a>
 				</div>
@@ -87,9 +87,9 @@
 							<dl>
 								<dt class="vm">받는분</dt>
 								<dd>
-									<a href="javascript:;" class="btnTxt">최근/★</a>
+									<a href="javascript:;" class="btnTxt on">최근/★</a>
 									<a href="#layerSpeedPop" class="btnTxt btnPopOpen">스피드</a>
-									<a href="javascript:;" class="btnTxt">계좌번호입력</a><!-- //2021-03-09 수정 -->
+									<a href="javascriptL:;" class="btnTxt">계좌번호입력</a><!-- //2021-03-09 수정 -->
 								</dd>
 							</dl>
 						</div>
@@ -122,8 +122,7 @@
 						<div class="inputBox">
 							<dl>
 								<dd>
-									<!-- <input type="tel" placeholder="계좌번호 입력"> -->
-									<input id="iptIpAcct" type="tel" placeholder="계좌번호 입력" value="" onclick="javascript:iptIpAcct_onclick();" onkeyup="javascript:iptIpAcct_onchange(this);" onblur="javascript:iptIpAcct_onblur(this);" onkeydown="javascript:iptIpAcct_onkeydown();" onpaste="javascript:iptAcct_onpaste(this);" autocomplete="off">
+									<input type="tel" placeholder="계좌번호 입력">
 									<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
 								</dd>
 							</dl>
@@ -170,7 +169,7 @@
 									<dt>받는분메모</dt>
 									<dd class="memo">
 										<input type="text" id="iptMemo" name="" value="홍길동" placeholder="7자이내 입력" title="받는통장 메모">
-										<a href="javascript:;" class="btnAccDel">삭제</a>
+										<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
 										<a href="#layerMemoPop" class="btn btnScPop" id="btnMemoPop"><span class="iconTy40">내역 열림</span></a>
 									</dd>
 								</dl>
@@ -180,7 +179,7 @@
 									<dt>내통장메모</dt>
 									<dd class="memo">
 										<input type="text" id="iptMyMemo" name="" value="" placeholder="7자이내 입력" title="내통장메모">
-										<a href="javascript:;" class="btnAccDel">삭제</a>
+										<button type="button" class="btnDelete"><i class="iconTy28">삭제</i></button>
 										<a href="#layerMyMemoPop" class="btn btnScPop" id="btnMyMemoPop"><span class="iconTy40">내역 열림</span></a>
 									</dd>
 								</dl>
@@ -219,7 +218,7 @@
 					<!-- <a href="javascript:void(0);" class="btnType btnBlack"><span>수정</span></a> -->
 					<button data-href="#layerTransInfoPop" class="btnType btnPopOpen"><span>확인</span></button>
 				</div>
-				<p class="mTrans"><button href="javascript:;">추가 이체</button></p><!-- //2021-05-31 button 변경 -->
+				<p class="mTrans"><a href="javascript:;">추가 이체</a></p>
 			</div>
 		</div>
 		<!-- // contentsWrap -->
@@ -227,10 +226,10 @@
 	<!-- // container -->
 </div>
 <!-- // wrap -->
-<div class="temp_pricepad">
+<!-- <div class="temp_pricepad">
 	<p><a href="javascript:;" class="btnPadPrice block"><img src="../../../images/pr02/img_test_price_pad.png" class="wfull vm"/></a></p>
 	<a href="javascript:;" class="btnPadEnter" style="position:absolute;right:0;bottom:0;width:33%;height:21%;background:rgba(0,0,0,0);text-indent:-9999px;">완료</a>
-</div>
+</div> -->
 <!-- <div class="temp_pricepad2">
 	<p><a href="javascript:;" class="btnPadNum block"><img src="../../../images/pr02/img_test_price_pad2.png" class="wfull vm"/></a></p>
 	<a href="javascript:;" class="btnPadEnd" style="position:absolute;left:4%;top:77%;width:92%;height:17%;background:rgba(0,0,0,0);text-indent:-9999px;">완료</a>
@@ -404,7 +403,7 @@
 <!-- //출금계좌 -->
 
 <!-- 이체선택 bottom sheet -->
-<div class="dragPopup2">
+<div class="dragPopup2 on">
 	<div class="popInner2">
 		<div class="layerHeader">
 			<p class="layerTit">받는분</p>
@@ -1492,8 +1491,25 @@
 </div>
 <!-- //스피드이체BS -->
 
-
-
+<!-- 이체코치마크 2021-05-04-->
+<div class="layerCoach on">
+	<div class="popInner">
+		<p><img src="../../../images/pr02/img_transfer_coach1.png" alt="왼쪽으로 밀면 삭제 가능해요!"></p>
+		<div class="accMotion">
+			<div class="accArea">
+				<div class="accInfo">
+					<span class="logo"><img src="../../../images/bank_logo2/bank_035.png"></span>
+					<p><span class="name">김신한</span> <span class="date">2021.04.28</span></p>
+					<p class="num">신한 111-123-123456</p>
+				</div>
+				<span class="favorit"></span>
+			</div>
+			<span class="btnDel"><span>삭제</span></span>
+		</div>
+		<img src="../../../images/pr02/img_transfer_coach2.png" class="hand">
+	</div>
+</div>
+<!-- //이체코치마크 -->
 <script type="text/javascript">
 //공통 드래그팝업 열기
 var popId = "";
@@ -1501,15 +1517,10 @@ var popSc = "";
 $(".btnScPop").on("click", function() {
 	//선택된 항목 표시
 	$(".formAreaBox").removeClass("now").find("dd").removeClass("on");
+	
 	$(".temp_pricepad").slideUp("fast");	
-	//2021-05-31 button 구분
-	if($(this).prop("tagName") == "A"){
-		popId = $(this).attr("href"); //팝업 ID
-	}else{
-		popId = $(this).attr("data-href"); //팝업 ID
-	}
 	
-	
+	popId = $(this).attr("href"); //팝업 ID
 	$(popId).fadeIn("fast").addClass("on");
 	$(".contents").addClass("touchLock");
 	//자동팝업 기능수정(full 일경우 스크롤)
@@ -1594,8 +1605,9 @@ $(".accountSelect").on("click",function(){
 
 //테스트 금액입력
 $(".btnPadPrice").on("click",function(){
-	$("#iptIpAmt").val("99,999,999,999");
-	$("#iptIpAmt_cursor").text("99,999,999,999").next().removeClass("hide");
+	$("#iptIpAmt").val("8,571,000");
+	$("#iptIpAmt_cursor").text("8,571,000").next().removeClass("hide");
+	$("#iptIpAmt").parents("dd").find(".btnAccDel").removeClass("hide");
 	$("#iptIpAmt").parents("dd").find(".hanTxt").css("opacity","1");
 });
 //테스트 금액입력완료
@@ -1603,8 +1615,7 @@ $(".btnPadEnter").on("click",function(){
 	$(this).parent().slideUp("fast");  //보안키패드 닫기
 	$(".formAreaBox.price").removeClass("now");  //금액축소
 	$(".formAreaBox.price dd").removeClass("on");  //가상포커스 제거
-	$(".formAreaBox.toTab").addClass("on");  //받는분 선택
-	$("#iptIpAmt").parents("dd").find(".btnAccDel").removeClass("hide");
+	$(".formAreaBox.toTab").addClass("now");  //받는분 선택
 	//잔여한도 예약이체버튼 숨김
 	$(".btnSmall5").fadeOut(300);
 	$(".inputTxt").animate({"opacity":"0"},300,function(){
@@ -1655,7 +1666,7 @@ $(".listOneLineBox.logo2.accSlide a").on("click",function(){
 	$(".toTab, .toForm").hide();  //받는분 비활성
 	//로딩 걸렸을때
 	setTimeout(function(){
-		//$(".formAreaBox .btnAccDel").addClass("hide");  //x보여짐
+		$(".formAreaBox .btnAccDel").addClass("hide");  //x보여짐
 		$(".formAreaBox .selectAcc").removeClass("hide");  //연필보여짐
 		
 		$(".toForm2").slideDown("fast");
@@ -1792,7 +1803,7 @@ $(".searchBtn").on("click", function() {
 });
 
 //즐겨찾는 계좌
-$(".favorit").on("click", function() {
+$("a.favorit").on("click", function() {
 	if ($(this).hasClass("on")) {
 		$(this).removeClass("on");
 	} else {
@@ -1872,31 +1883,13 @@ function openDp2(){
 	$(".dragPopup2").addClass("on");
 	//받는분메모 영역이 비활성일때만
 	if($(".memoArea").css("display") != "block"){
-		$(".contents").addClass("dp2").delay(300).animate({scrollTop:$(".contents").prop("scrollHeight")});  //스크롤올리기
-		//$(".contents").addClass("dp2").scrollTop($(".contents").prop("scrollHeight"));
+		$(".contents").addClass("dp2").delay(300).animate({scrollTop:$(".contents").prop("scrollHeight")},300);  //스크롤올리기
 	}
 }
 //받는분 BS내리기 2021-02-24 수정
 function closeDp2(){
 	$(".dragPopup2").removeClass("on");
 	$(".contents").removeClass("dp2");
-}
-
-/*테스트*/
-function iptIpAcct_onclick(){
-	console.log("click");
-}
-function iptIpAcct_onchange(){
-	console.log("change")
-}
-function iptIpAcct_onblur(){
-	console.log("blur")
-}
-function iptIpAcct_onkeydown(){
-	console.log("keydown")
-}
-function iptAcct_onpaste(){
-	console.log("paste")
 }
 
 </script>
